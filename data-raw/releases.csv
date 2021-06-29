@@ -1,59 +1,93 @@
-﻿album_name,track_name,release_date
-Taylor Swift,Tim McGraw,2006-06-19
-Taylor Swift,,2006-10-24
-Taylor Swift,Teardrops on My Guitar,2007-02-19
-Taylor Swift,Our Song,2007-09-09
-The Taylor Swift Holiday Collection,,2007-10-14
-Taylor Swift,Picture to Burn,2008-02-03
-Taylor Swift (Deluxe),,2008-03-18
-Taylor Swift,Should've Said No,2008-05-18
-Beautiful Eyes,,2008-07-15
-Fearless,Love Story,2008-09-12
-Fearless,,2008-11-11
-Fearless,White Horse,2008-12-07
-Fearless,You Belong With Me,2009-04-18
-Fearless,Fifteen,2009-08-30
-Fearless (Platinum Edition),,2009-10-26
-Fearless,Fearless,2010-01-03
-,Today Was A Fairytale,2010-01-19
-Speak Now,Mine,2010-08-04
-Speak Now,,2010-10-25
-Speak Now (Deluxe),,2010-10-25
-Speak Now,Back to December,2010-11-15
-Speak Now,Mean,2011-03-13
-Speak Now,The Story of Us,2011-04-19
-Speak Now,Sparks Fly,2011-07-18
-Speak Now (Deluxe),Ours,2011-11-22
-,Safe & Sound,2011-12-26
-,Eyes Open,2012-03-27
-Red,We Are Never Ever Getting Back Together,2012-08-13
-,Ronan,2012-09-08
-Red,Begin Again,2012-10-01
-Red,,2012-10-22
-Red (Deluxe Edition),,2012-10-22
-Red,I Knew You Were Trouble,2012-12-10
-Red,22,2013-03-12
-Red,Red,2013-06-21
-Red,Everything Has Changed,2013-07-16
-Red,The Last Time,2013-11-04
-1989,Shake It Off,2014-08-18
-1989,,2014-10-27
-1989 (Deluxe),,2014-10-27
-1989,Blank Space,2014-11-10
-1989,Style,2015-02-09
-,Bad Blood (Remix),2015-05-17
-1989,Wildest Dreams,2015-08-31
-1989,Out Of The Woods,2016-01-19
-1989 (Deluxe),New Romantics,2016-02-23
-,I Don't Wanna Live Forever,2016-12-09
-reputation,Look What You Made Me Do,2017-08-24
-reputation,...Ready For It?,2017-10-24
-reputation,,2017-11-10
-reputation,End Game,2017-11-14
-reputation,New Year's Day,2017-11-27
-reputation,Delicate,2018-03-12
-reputation,Getaway Car,2018-09-27
-Lover,ME!,
-Lover,You Need to Calm Down,
-Lover,Lover,
-,Christmas Tree Farm,2019-12-06
+﻿album_name,track_name,promotional_release,release_date
+Taylor Swift,Tim McGraw,,2006-06-19
+Taylor Swift,,,2006-10-24
+Taylor Swift,Teardrops on My Guitar,,2007-02-19
+Taylor Swift,Our Song,,2007-09-09
+The Taylor Swift Holiday Collection,,,2007-10-14
+Taylor Swift,Picture to Burn,,2008-02-03
+Taylor Swift (Deluxe),,,2008-03-18
+Taylor Swift,Should've Said No,,2008-05-18
+Beautiful Eyes,I Heart ?,2008-06-23,
+Beautiful Eyes,,,2008-07-15
+Fearless,Change,2008-08-08,
+Fearless,Love Story,,2008-09-12
+Fearless,Breathe,2008-10-21,
+Fearless,You're Not Sorry,2008-10-28,
+Fearless,,,2008-11-11
+Fearless,White Horse,,2008-12-07
+,Crazier,2009-03-20,
+Fearless,You Belong With Me,2008-11-04,2009-04-18
+,American Girl,2009-06-30,
+Fearless,Fifteen,,2009-08-30
+Fearless (Platinum Edition),,,2009-10-26
+Fearless,Fearless,2008-10-14,2010-01-03
+,Today Was A Fairytale,,2010-01-19
+Speak Now,Mine,,2010-08-04
+Speak Now,Speak Now,2010-10-04,
+Speak Now,,,2010-10-25
+Speak Now (Deluxe),,,2010-10-25
+Speak Now (Deluxe),If This Was A Movie,2010-11-08,
+Speak Now (Deluxe),Superman,2010-11-08,
+Speak Now,Back to December,2010-10-11,2010-11-15
+Speak Now,Mean,2010-10-18,2011-03-13
+Speak Now,The Story of Us,,2011-04-19
+Speak Now,Sparks Fly,,2011-07-18
+Speak Now (Deluxe),Ours,,2011-11-22
+,Safe & Sound,,2011-12-26
+,Eyes Open,,2012-03-27
+Red,We Are Never Ever Getting Back Together,,2012-08-13
+,Ronan,,2012-09-08
+Red,Begin Again,2012-09-25,2012-10-01
+Red,State of Grace,2012-10-16,
+Red,,,2012-10-22
+Red (Deluxe Edition),,,2012-10-22
+Red,I Knew You Were Trouble.,2012-10-09,2012-12-10
+Red,22,,2013-03-12
+Red,Red,2012-10-02,2013-06-21
+Red,Everything Has Changed,,2013-07-16
+,Sweeter Than Fiction,2013-10-21,
+Red,The Last Time,,2013-11-04
+1989,Shake It Off,,2014-08-18
+1989,Welcome To New York,2014-10-20,
+1989,,,2014-10-27
+1989 (Deluxe),,,2014-10-27
+1989,Blank Space,,2014-11-10
+1989,Style,,2015-02-09
+,Bad Blood (Remix),,2015-05-17
+1989,Wildest Dreams,,2015-08-31
+1989,Out Of The Woods,2014-10-14,2016-01-19
+1989 (Deluxe),New Romantics,,2016-02-23
+,I Don't Wanna Live Forever,,2016-12-09
+reputation,Look What You Made Me Do,,2017-08-24
+reputation,Gorgeous,2017-10-20,
+reputation,...Ready For It?,,2017-10-24
+reputation,Call It What You Want,2017-11-03,
+reputation,,,2017-11-10
+reputation,End Game,,2017-11-14
+reputation,New Year's Day,,2017-11-27
+reputation,Delicate,,2018-03-12
+reputation,Getaway Car,,2018-09-27
+Lover,ME!,,2019-04-26
+Lover,You Need to Calm Down,,2019-06-14
+Lover,The Archer,2019-07-23,
+Lover,Lover,,2019-08-16
+Lover,,,2019-08-23
+,Beautiful Ghosts,2019-11-15,
+,Christmas Tree Farm,,2019-12-06
+Lover,The Man,,2020-01-27
+,Only The Young,2020-01-31,
+folklore,,,2020-07-24
+folklore (deluxe edition),,,2020-07-24
+folklore,cardigan,,2020-07-27
+folklore,exile,,2020-08-03
+folklore,betty,,2020-08-17
+folklore,the 1,,2020-10-09
+evermore,,,2020-12-11
+evermore (deluxe edition),,,2020-12-11
+evermore,willow,,2020-12-11
+evermore,"no body, no crime",,2021-01-11
+evermore,coney island,,2021-01-18
+Fearless (Taylor's Version),Love Story (Taylor's Version),,2021-02-12
+Fearless (Taylor's Version),You All Over Me,,2021-03-26
+Fearless (Taylor's Version),Mr. Perfectly Fine,,2020-04-07
+Fearless (Taylor's Version),,,2020-04-09
