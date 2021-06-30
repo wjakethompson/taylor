@@ -45,7 +45,6 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
                           select(line, lyric = value, element, element_artist)
                       }))
 
-
 base_info <- lyrics |>
   mutate(bonus_track = str_detect(album_name, "deluxe|platinum")) |>
   mutate(album_name = str_replace_all(album_name, "-", " "),
@@ -139,12 +138,12 @@ base_info <- lyrics |>
   # set up album names for Spotify
   mutate(album_name = case_when(
     album_name == "Taylor Swift (Deluxe)" ~ "Taylor Swift",
-    # album_name == "Fearless (Platinum Edition)" ~ "Fearless",
-    album_name == "Speak Now (Deluxe)" ~ "Speak Now (Deluxe Edition)",
-    # album_name == "Red (Deluxe Edition)" ~ "Red",
-    album_name == "1989 (Deluxe)" ~ "1989 (Deluxe Edition)",
-    album_name == "folklore (deluxe edition)" ~ "folklore (deluxe version)",
-    album_name == "evermore (deluxe edition)" ~ "evermore (deluxe version)",
+    album_name == "Fearless (Platinum Edition)" ~ "Fearless",
+    album_name == "Speak Now (Deluxe)" ~ "Speak Now",
+    album_name == "Red (Deluxe Edition)" ~ "Red",
+    album_name == "1989 (Deluxe)" ~ "1989",
+    album_name == "folklore (deluxe edition)" ~ "folklore",
+    album_name == "evermore (deluxe edition)" ~ "evermore",
     TRUE ~ album_name
   )) |>
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -158,29 +157,7 @@ key_lookup <- tibble(key = 0:11,
                      key_name = c("C", "C#", "D", "D#", "E", "F", "F#", "G",
                                   "G#", "A", "A#", "B"))
 
-spotify <- get_artist_audio_features("taylor swift",
-                                     include_groups = c("album", "single"))
-
-albums <- spotify |>
-  as_tibble() |>
-  distinct(album_name, album_id) |>
-  add_count(album_name) |>
-  filter(n > 1, album_name %in% base_info$album_name) |>
-  arrange(album_name) |>
-  mutate(album_info = map(album_id,
-                          function(.x) {
-                            album <- get_album(.x)
-
-                            tibble(album_type = album$album_type,
-                                   artists = list(album$artists),
-                                   us_market = "US" %in% album$available_markets,
-                                   release_date = album$release_date,
-                                   tracks = album$total_tracks,
-                                   explicit = any(album$tracks$items$explicit))
-                          })) |>
-  unnest(album_info)
-
-singles <- tribble(
+single_uri <- tribble(
   ~track_name,                  ~track_uri,
   "American Girl",              "",
   "Bad Blood (Remix)",          "6xsEAm6w9oMQYYg3jkEkMT",
@@ -194,8 +171,32 @@ singles <- tribble(
   "Safe & Sound",               "0z9UVN8VBHJ9HdfYsOuuNf",
   "Sweeter Than Fiction",       "0RFCHlNuTeUHIB36VuVbOL",
   "Today Was A Fairytale",      "4pFvEWbjBpPUdYRQly0THs"
+)
+
+spotify <- tribble(
+  ~album_name,                           ~album_uri,
+  "Taylor Swift",                        "7mzrIsaAjnXihW3InKjlC3",
+  "The Taylor Swift Holiday Collection", "7vzYp7FrKnTRoktBYsx9SF",
+  "Fearless",                            "43OpbkiiIxJO8ktIB777Nn",
+  "Fearless (Taylor's Version)",         "4hDok0OAJd57SGIT8xuWJH",
+  "Speak Now",                           "5EpMjweRD573ASl7uNiHym",
+  "Red",                                 "1KlU96Hw9nlvqpBPlSqcTV",
+  "1989",                                "34OkZVpuzBa9y40DCy0LPR",
+  "reputation",                          "6DEjYFkNZh67HP7R9PSZvv",
+  "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
+  "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
+  "evermore",                            "6AORtDjduMM3bupSWzbTSG"
 ) |>
-  mutate(album_name = NA_character_, .before = 1) |>
+  mutate(track = map(album_uri,
+                     function(.x) {
+                       album <- get_album(.x)
+
+                       album$tracks$items |>
+                         as_tibble() |>
+                         select(track_name = name, track_uri = id)
+                     })) |>
+  unnest(track) |>
+  bind_rows(single_uri) |>
   mutate(spotify = map(track_uri,
                        function(.x, key_lookup) {
                          if (.x == "") return(NULL)
@@ -218,11 +219,8 @@ singles <- tribble(
   unnest(spotify)
 
 spotify_join <- spotify |>
-  as_tibble() |>
-  bind_rows(singles) |>
   select(album_name, track_name, danceability:tempo, time_signature,
          duration_ms, explicit, key_name, mode_name, key_mode) |>
-  nest(spotify = -c(album_name, track_name)) |>
   # general formatting
   mutate(track_name = case_when(str_detect(album_name, "folklore|evermore") ~
                                   track_name,
@@ -262,7 +260,10 @@ spotify_join <- spotify |>
   # edits for folklore
   mutate(track_name = str_replace_all(track_name, " - bonus track", "")) |>
   # edits for evermore
-  mutate(track_name = str_replace_all(track_name, "‘", "'"))
+  mutate(track_name = str_replace_all(track_name, "‘", "'")) |>
+  # export data for joining
+  write_csv(here("data-raw", "spotify-data.csv")) |>
+  nest(spotify = -c(album_name, track_name))
 
 
 # QC for data ------------------------------------------------------------------
@@ -274,11 +275,22 @@ spotify_join <- spotify |>
    filter(map_lgl(spotify, is.null)) |>
    select(album_name, track_name))
 
+# Check for tracks with multiple records. Should be 0 rows.
+(dups <- spotify_join |>
+  mutate(rows = map_int(spotify, nrow)) |>
+  filter(rows > 1))
+
+# Check for songs in Spotify that are not in base_info
+(extra <- spotify_join |>
+  anti_join(base_info, by = c("album_name", "track_name")))
+
 
 # Write data files -------------------------------------------------------------
 tswift_all_songs <- base_info |>
   left_join(spotify_join, by = c("album_name", "track_name")) |>
   relocate(spotify, .before = lyrics) |>
   unnest(spotify, keep_empty = TRUE)
+
+
 
 # use_data(taylor_lyrics, overwrite = TRUE)
