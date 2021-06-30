@@ -13,8 +13,7 @@ Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
-![Taylor Swift snapping and saying
-“Yes”](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
+![](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
 
 ## Installation
 
