@@ -1,0 +1,55 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(taylor)
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# taylor
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+
+![Taylor Swift snapping and saying "Yes"](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("wjakethompson/taylor")
+```
+
+## Example
+
+There are three main data sets. The first is `tswift_album_songs`, which includes lyrics and audio features from the Spotify API for all songs on Taylor's official studio albums. Notably this excludes singles released separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., *Fearless* is excluded in favor of *Fearless (Taylor's Version)*). We stan artists owning their own songs.
+
+```{r album-songs}
+tswift_album_songs
+```
+
+You can access Taylor's entire discography with `tswift_all_songs`. This includes all of the songs in `tswift_album_songs` plus EPs, individual singles, and the original versions of albums that have been re-released as *Taylor's Version*.
+
+```{r all-songs}
+tswift_all_songs
+```
+
+Finally, there is a small data set, `tswift_albums`, summarizing Taylor's album release history.
+
+```{r albums}
+tswift_albums
+```
