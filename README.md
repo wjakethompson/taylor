@@ -4,6 +4,8 @@
 # taylor
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/wjakethompson/taylor/workflows/R-CMD-check/badge.svg)](https://github.com/wjakethompson/taylor/actions)
 <!-- badges: end -->
 
 The goal of taylor is to provide easy access to a curated data set of
