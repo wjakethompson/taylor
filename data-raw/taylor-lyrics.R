@@ -147,7 +147,7 @@ base_info <- lyrics |>
     TRUE ~ album_name
   )) |>
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
-         track_release, promotional_release, single_release, lyrics)
+         promotional_release, single_release, track_release, lyrics)
 
 
 # Get Spotify information ------------------------------------------------------
@@ -292,7 +292,9 @@ tswift_all_songs <- base_info |>
   unnest(spotify, keep_empty = TRUE) |>
   group_by(album_name) |>
   mutate(album_release = min(album_release)) |>
-  ungroup()
+  ungroup() |>
+  mutate(bonus_track = case_when(is.na(album_name) ~ NA,
+                                 TRUE ~ bonus_track))
 
 tswift_album_songs <- tswift_all_songs |>
   filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
