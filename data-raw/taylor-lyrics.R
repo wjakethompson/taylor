@@ -289,8 +289,19 @@ spotify_join <- spotify |>
 tswift_all_songs <- base_info |>
   left_join(spotify_join, by = c("album_name", "track_name")) |>
   relocate(spotify, .before = lyrics) |>
-  unnest(spotify, keep_empty = TRUE)
+  unnest(spotify, keep_empty = TRUE) |>
+  group_by(album_name) |>
+  mutate(album_release = min(album_release)) |>
+  ungroup()
 
+tswift_album_songs <- tswift_all_songs |>
+  filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
+                           "Speak Now", "Red", "1989", "reputation", "Lover",
+                           "folklore", "evermore"))
 
+tswift_albums <- tswift_all_songs |>
+  distinct(album_name, ep, album_release) |>
+  filter(!is.na(album_name)) |>
+  arrange(album_release)
 
-# use_data(taylor_lyrics, overwrite = TRUE)
+use_data(tswift_all_songs, tswift_album_songs, tswift_albums, overwrite = TRUE)
