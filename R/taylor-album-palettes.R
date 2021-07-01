@@ -13,7 +13,7 @@ album_palettes <- purrr::map(list(
   lover        = c("#EBBED3", "#9C8083", "#8C4F66", "#847262", "#6098B6"),
   folklore     = c("#EBEBEB", "#949494", "#5C5C5C", "#545454", "#3E3E3E"),
   evermore     = c("#E0D9D7", "#D37F55", "#85796D", "#421E18", "#160E10")
-), create_palette)
+), color_palette)
 
 taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                        album = "Lover") {
