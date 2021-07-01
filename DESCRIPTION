@@ -22,10 +22,15 @@ Imports:
     crayon,
     methods,
     vctrs,
-    rlang
+    rlang,
+    ggplot2,
+    scales,
+    glue
 Suggests: 
+    vdiffr,
     knitr,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    ggtext
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
