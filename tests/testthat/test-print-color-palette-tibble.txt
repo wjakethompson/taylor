@@ -1,0 +1,12 @@
+> df1 <- tibble::tibble(red = album_palettes$red, evermore = album_palettes$
++   evermore)
+> print(df1)
+# A tibble: 5 x 2
+  red     evermore
+  <clpal> <clpal> 
+1 #A91E47 #E0D9D7 
+2 #201F39 #D37F55 
+3 #7E6358 #85796D 
+4 #B0A49A #421E18 
+5 #DDD8C9 #160E10 
+

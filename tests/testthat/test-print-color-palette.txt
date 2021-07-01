@@ -1,0 +1,16 @@
+> print(album_palettes$lover)
+<color_palette[5]>
+    #EBBED3 
+    #9C8083 
+    #8C4F66 
+    #847262 
+    #6098B6 
+
+> print(album_palettes$folklore)
+<color_palette[5]>
+    #EBEBEB 
+    #949494 
+    #5C5C5C 
+    #545454 
+    #3E3E3E 
+
