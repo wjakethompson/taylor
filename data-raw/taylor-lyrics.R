@@ -47,24 +47,25 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
 
 base_info <- lyrics |>
   mutate(bonus_track = str_detect(album_name, "deluxe|platinum")) |>
-  mutate(album_name = str_replace_all(album_name, "-", " "),
-         album_name = str_to_title(album_name),
-         album_name = case_when(
-           album_name == "Taylor Swift Deluxe" ~ "Taylor Swift (Deluxe)",
-           album_name == "Fearless Platinum Edition" ~ "Fearless (Platinum Edition)",
-           album_name == "Fearless Taylors Version" ~ "Fearless (Taylor's Version)",
-           album_name == "Speak Now Deluxe" ~ "Speak Now (Deluxe)",
-           album_name == "Red Deluxe Edition" ~ "Red (Deluxe Edition)",
-           album_name == "Red Taylors Version" ~ "Red (Taylor's Version)",
-           album_name == "1989 Deluxe" ~ "1989 (Deluxe)",
-           album_name == "Reputation" ~ "reputation",
-           album_name == "Folklore" ~ "folklore",
-           album_name == "Folklore Deluxe Edition" ~ "folklore (deluxe edition)",
-           album_name == "Evermore" ~ "evermore",
-           album_name == "Evermore Deluxe Edition" ~ "evermore (deluxe edition)",
-           TRUE ~ album_name
-         ),
-         album_name = na_if(album_name, "Non Album")) |>
+  mutate(
+    album_name = str_replace_all(album_name, "-", " "),
+    album_name = str_to_title(album_name),
+    album_name = case_when(
+      album_name == "Taylor Swift Deluxe" ~ "Taylor Swift (Deluxe)",
+      album_name == "Fearless Platinum Edition" ~ "Fearless (Platinum Edition)",
+      album_name == "Fearless Taylors Version" ~ "Fearless (Taylor's Version)",
+      album_name == "Speak Now Deluxe" ~ "Speak Now (Deluxe)",
+      album_name == "Red Deluxe Edition" ~ "Red (Deluxe Edition)",
+      album_name == "Red Taylors Version" ~ "Red (Taylor's Version)",
+      album_name == "1989 Deluxe" ~ "1989 (Deluxe)",
+      album_name == "Reputation" ~ "reputation",
+      album_name == "Folklore" ~ "folklore",
+      album_name == "Folklore Deluxe Edition" ~ "folklore (deluxe edition)",
+      album_name == "Evermore" ~ "evermore",
+      album_name == "Evermore Deluxe Edition" ~ "evermore (deluxe edition)",
+      TRUE ~ album_name
+    ),
+    album_name = na_if(album_name, "Non Album")) |>
   left_join(albums, by = "album_name") |>
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
          lyrics) |>

@@ -74,10 +74,6 @@ check_palette <- function(x, name) {
     abort_bad_argument(name, must = "be a character vector", not = typeof(x))
   }
 
-  # if (length(x) < 1) {
-  #   abort_bad_argument(name, must = "have at least one value specified")
-  # }
-
   # make sure no missing values present
   if (any(rlang::are_na(x))) {
     abort_bad_argument(name, must = "not contain missing values")
