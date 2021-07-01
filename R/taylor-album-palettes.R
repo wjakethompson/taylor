@@ -3,7 +3,7 @@
 #'
 #' Colors derived from album covers at <http://colormind.io/image/>.
 #' @export
-album_palettes <- map(list(
+album_palettes <- purrr::map(list(
   taylor_swift = c("#1BAEC6", "#1D4737", "#523d28", "#AD8562", "#E7DBCC"),
   fearless     = c("#E1D4C2", "#CBA863", "#976F34", "#776456", "#6B5E57"),
   speak_now    = c("#F5E8E2", "#D1A0C7", "#833C63", "#6C3127", "#2E1924"),
@@ -60,39 +60,6 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
 taylor_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1,
                        album = "Lover") {
   function(n) {
-    taylor_col(n, alpha, begin, end, direction, option)
+    taylor_col(n, alpha, begin, end, direction, album)
   }
 }
-
-
-
-
-taylor_pal <- function(aesthetics, palette = "Taylor Swift",
-                       reverse = FALSE, discrete = TRUE,...) {
-  lookup_pal <- tolower(palette)
-  lookup_pal <- gsub("\\ ", "_", lookup_pal)
-  album_pal <- album_palettes[[lookup_pal]]
-
-  if (reverse) {
-    album_pal <- rev(album_pal)
-  }
-
-  pal <- grDevices::colorRampPalette(album_pal)
-
-  if (discrete) {
-    ggplot2::discrete_scale(aesthetics, "taylor_d", pal, ...)
-  } else {
-    ggplot2::continuous_scale(aesthetics, "taylor_c", pal, ...)
-  }
-}
-
-
-scale_colour_taylor_d <- function(album = "evermore", reverse = FALSE) {
-  ggplot2::discrete_scale(aesthetics, "taylor_d",
-                          taylor_pal(palette = album, reverse = reverse),
-                          ...)
-}
-
-scale_color_taylor_d <- scale_colour_taylor_d
-
-scale_fill_taylor_d <- function()
