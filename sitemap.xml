@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://taylor.wjakethompson.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/album_palettes.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/color_palette.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/scale_taylor.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/taylor-package.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/taylor-vctrs.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/tswift_album_songs.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/tswift_albums.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/tswift_all_songs.html</loc>
+  </url>
+</urlset>
