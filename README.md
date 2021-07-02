@@ -22,7 +22,7 @@ Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
-<img src="https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif" width="480" height="480" />
+<img src="man/figures/taylor.gif" width="50%" />
 
 ## Installation
 
