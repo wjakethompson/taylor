@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 :root {
@@ -15,12 +15,11 @@
   --sdb-hover: #160310;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
-  --dk-header: #d37f55;
-  --bw-header: #421e18;
+  --btn-color: #85796d;   /* copy button color */
+  --btn-hover: #d37f55;   /* copy button hover */
 
-
-
-  --accent: #79beee;    /*sky blue*/
+  --col-bullt: #421e18;   /* color for colored list */
+  --thb-captn: #421e18;   /* thumbnail caption */
 }
 
 
@@ -41,7 +40,7 @@ h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code {
 
 body {
   font-size: 18px;
-  font-family: Work Sans;
+  font-family: Mulish;
   line-height: 1.6em;
 }
 
@@ -73,7 +72,7 @@ h4 {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Mulish', sans-serif;
 /*font-weight: normal;*/
 /* font-size: 1.3em; */
 /*  letter-spacing: 1.2pt; */
@@ -136,7 +135,7 @@ p a {
 }
 
 .navbar-brand .version {
-	font-family: "Work Sans", sans-serif;
+	font-family: "Mulish", sans-serif;
 }
 
 .label-default,
@@ -315,7 +314,7 @@ p a {
 /*----TOC sidebar on non-homepages----*/
 
 nav[data-toggle='toc'] .nav > li > a {
-    padding: 4px 20px 4px 10px; /* Left-padding changed from 6px to 5px, so shift left does not happen on hover */
+    padding: 4px 20px 4px 10px;
 }
 
 /* Active, hover, and focus links */
@@ -324,7 +323,7 @@ nav[data-toggle='toc'] .nav > .active > a,
 nav[data-toggle='toc'] .nav > .active:hover > a,
 nav[data-toggle='toc'] .nav > .active:focus > a,
 nav[data-toggle='toc'] ul > li > a:hover {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--nav-bkg);
   padding-left: 10px;
   letter-spacing: 1pt;
   font-size: 15px;
@@ -344,7 +343,7 @@ nav[data-toggle='toc'] > ul > li:first-child {
 nav[data-toggle='toc'] .nav > li > a:hover,
 nav[data-toggle='toc'] .nav > li > a:focus {
   padding-left: 10px;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--nav-bkg);
 }
 
 
@@ -378,21 +377,21 @@ nav[data-toggle='toc'] .nav .nav > .active:focus > a {
 /*----Copy Buttons ----*/
 
 .btn-primary {
-  background-color: var(--pg-header);
-  border-color: var(--pg-header);
+  background-color: var(--btn-color);
+  border-color: var(--btn-color);
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active:hover {
-  background-color: var(--accent);
-  border-color: var(--accent);
+  background-color: var(--btn-hover);
+  border-color: var(--btn-hover);
 }
 
 /*----- COLORED LIST BULLET----*/
 
 ul > li::marker {
-  color: var(--accent);
+  color: var(--col-bullt);
 }
 
 /* from original source docs */
@@ -432,7 +431,7 @@ ul > li::marker {
   padding-top: 4px;
   padding-left: 3px;
   font-size: 0.9em;
-  color: var(--dk-header);
+  color: var(--thb-captn);
 }
 
 a.thumbnail:hover {
