@@ -42,10 +42,11 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                    reputation   = album_palettes[["reputation"]],
                    lover        = album_palettes[["lover"]],
                    folklore     = album_palettes[["folklore"]],
-                   evermore     = album_palettes[["evermore"]],
-                   {rlang::warn(paste0("Album '", album, "' does not exist. ",
-                                       "Defaulting to 'Lover'."))
-                     album_palettes[["lover"]]})
+                   evermore     = album_palettes[["evermore"]], {
+                     rlang::warn(paste0("Album '", album, "' does not exist. ",
+                                        "Defaulting to 'Lover'."))
+                     album_palettes[["lover"]]
+                   })
 
   fn_cols <- grDevices::colorRamp(option, space = "Lab",
                                   interpolate = "spline")

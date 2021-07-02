@@ -45,7 +45,8 @@ test_that("casting and coercion work", {
 
   expect_identical(vec_ptype2(color_palette(), character()), character())
   expect_identical(vec_ptype2(character(), color_palette()), character())
-  expect_identical(vec_ptype2(color_palette(), color_palette()), color_palette())
+  expect_identical(vec_ptype2(color_palette(), color_palette()),
+                   color_palette())
 
   # casting
   expect_identical(vec_cast(wjake_palette, character()), wjake_colors)

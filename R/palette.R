@@ -55,7 +55,7 @@ n_colors <- function(x) attr(x, "n_colors")
 # for compatibility with the S4 system
 methods::setOldClass(c("taylor_color_palette", "vctrs_vctr"))
 
-
+# nolint start
 # Additional helpers -----------------------------------------------------------
 #' @export
 #' @rdname color_palette
@@ -116,3 +116,4 @@ vec_cast.taylor_color_palette.character <- function(x, to, ...) {
 
 #' @export
 vec_cast.character.taylor_color_palette <- function(x, to, ...) vec_data(x)
+#nolint end
