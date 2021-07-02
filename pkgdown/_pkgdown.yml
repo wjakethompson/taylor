@@ -1,0 +1,17 @@
+url: https://taylor.wjakethompson.com
+
+home:
+  title: Taylor Swift song data
+
+authors:
+  W. Jake Thompson:
+    href: https://wjakethompson.com
+
+template:
+  bootstrap: 4
+
+development:
+  mode: auto
+
+figures:
+  fig.retina: 3
