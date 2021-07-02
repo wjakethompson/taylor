@@ -7,8 +7,10 @@ test_that("palette creation work", {
   wjake_colors <- c("#009fb7", "#fed766")
   wjake_palette <- color_palette(wjake_colors)
   wjake_big_palette <- color_palette(wjake_palette, n = 10, type = "continuous")
-  expect_s3_class(wjake_palette, "taylor_color_palette")
-  expect_s3_class(wjake_big_palette, "taylor_color_palette")
+  expect_s3_class(wjake_palette,
+                  c("taylor_color_palette", "vctrs_vctr", "character"))
+  expect_s3_class(wjake_big_palette,
+                  c("taylor_color_palette", "vctrs_vctr", "character"))
   expect_equal(length(wjake_palette), 2L)
   expect_equal(length(wjake_big_palette), 10L)
   expect_equal(wjake_colors, vec_cast(wjake_palette, character()))
@@ -54,7 +56,16 @@ test_that("casting and coercion work", {
   expect_identical(vec_cast(wjake_palette, color_palette()), wjake_palette)
 
   # bad combos
-
+  expect_error(vec_c(wjake_palette, 1L),
+               class = "vctrs_error_incompatible_type")
+  expect_error(vec_c(wjake_palette, 1.0),
+               class = "vctrs_error_incompatible_type")
+  expect_error(vec_ptype2(color_palette(), double()),
+               class = "vctrs_error_incompatible_type")
+  expect_error(vec_ptype2(color_palette(), integer()),
+               class = "vctrs_error_incompatible_type")
+  expect_error(vec_ptype2(color_palette(), logical()),
+               class = "vctrs_error_incompatible_type")
 })
 
 test_that("various formatting works", {
