@@ -1,0 +1,63 @@
+---
+title: "Give your ggplots a Taylor Swift theme"
+output: rmarkdown::html_vignette
+description: |
+  Make your ggplots *gorgeous*.
+vignette: >
+  %\VignetteIndexEntry{Give your ggplots a Taylor Swift theme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(taylor)
+```
+
+In addition to data sets, taylor also includes a few helper functions for easily making plots created with [ggplot2](https://ggplot2.tidyverse.org) have a Taylor Swift theme. For this vignette, I'm assuming you are already familiar with ggplot2 and can make basic plots. 
+
+## ggplot2 scales
+
+You can add album-themed color palettes to your plots using the `scale_color_taylor_d()` and `scale_fill_taylor_d()` for discrete scales, and using `scale_color_taylor_c()` and `scale_fill_taylor_c()` for continuous scales. We'll start will discrete scales.
+
+### Discrete scales
+
+First, let's make a bar graph showing the valence of each song on *evermore*.
+
+```{r warning = FALSE, message = FALSE}
+library(taylor)
+library(ggplot2)
+
+evermore <- tswift_album_songs[tswift_album_songs$album_name == "evermore", ]
+evermore$track_name <- factor(evermore$track_name, levels = evermore$track_name)
+
+p <- ggplot(evermore, aes(x = valence, y = track_name, fill = track_name)) +
+  geom_col(show.legend = FALSE) +
+  expand_limits(x = c(0, 1)) +
+  labs(y = NULL) +
+  theme_minimal()
+p
+```
+
+We can then add some *evermore*-inspired colors using `scale_fill_taylor_d()`.
+
+```{r}
+p + scale_fill_taylor_d(album = "evermore")
+```
+
+The `album` argument can be changed to use a different Taylor-inspired palette. For example, we can switch to *Speak Now* using `album = "Speak Now"`.
+
+```{r}
+p + scale_fill_taylor_d(album = "Speak Now")
+```
+
+
+### Continuous scales
+
+
+
+## Color palettes
+
