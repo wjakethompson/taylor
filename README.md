@@ -5,8 +5,16 @@
 
 <!-- badges: start -->
 
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Signed
+by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/wjakethompson)
 [![R-CMD-check](https://github.com/wjakethompson/taylor/workflows/R-CMD-check/badge.svg)](https://github.com/wjakethompson/taylor/actions)
 [![codecov](https://codecov.io/gh/wjakethompson/taylor/branch/main/graph/badge.svg?token=TECvfoOYHh)](https://codecov.io/gh/wjakethompson/taylor)
+![Minimal R
+Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
 The goal of taylor is to provide easy access to a curated data set of
