@@ -17,12 +17,10 @@ album_palettes <- purrr::map(list(
 
 taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                        album = "Lover") {
-  if (begin < 0 | begin > 1 | end < 0 | end > 1) {
-    rlang::abort("begin and end must be in [0,1]")
-  }
-  if (abs(direction) != 1) {
-    rlang::abort("direction must be 1 or -1")
-  }
+  begin <- check_real_range(begin, name = "begin", lb = 0, ub = 1)
+  end <- check_real_range(end, name = "end", lb = 0, ub = 1)
+  direction <- check_exact_abs_int(direction, name = "direction", value = 1)
+
   if (n == 0) {
     return(character(0))
   }
