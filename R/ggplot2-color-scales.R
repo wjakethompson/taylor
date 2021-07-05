@@ -14,6 +14,15 @@
 #'   at the same time, via `aesthetics = c("colour", "fill")`.
 #' @rdname scale_taylor
 #' @export
+#' @examples
+#' # use taylor_d with discrete data
+#' lover <- subset(taylor_album_songs, album_name == "Lover")
+#' (p <- ggplot(data = lover, aes(x = valence, y = track_name)) +
+#'    geom_col(aes(fill = track_name)))
+#' p + scale_fill_taylor_d()
+#'
+#' # change scale label
+#' p + scale_fill_taylor_d("")
 scale_colour_taylor_d <- function(..., alpha = 1, begin = 0, end = 1,
                                   direction = 1, album = "Lover",
                                   aesthetics = "colour") {
