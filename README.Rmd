@@ -66,3 +66,7 @@ Finally, there is a small data set, `tswift_albums`, summarizing Taylor's album 
 ```{r albums}
 tswift_albums
 ```
+
+## Code of Conduct
+  
+Please note that the taylor project is released with a [Contributor Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
