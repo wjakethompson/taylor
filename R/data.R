@@ -4,7 +4,7 @@
 #' released Taylor Swift songs. This includes albums, EPs, and individually
 #' released singles.
 #'
-#' @format A data frame with `r nrow(tswift_all_songs)` rows and
+#' @format A data frame with `r nrow(taylor_all_songs)` rows and
 #' 27 variables. Each row is one song.
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
@@ -14,6 +14,9 @@
 #'   (YYYY-MM-DD).
 #' * `track_number`: The order of the song on the album or EP.
 #' * `track_name`: The name of the song.
+#' * `artist`: The name of the song artist. Usually Taylor Swift, but will show
+#'   other artists for songs that Taylor is only featured on.
+#' * `featuring`: Any artists that are featured on the track.
 #' * `bonus_track`: Logical. Is the track only present on a deluxe edition of
 #'   the album (`TRUE`) or is does it also appear on the standard version
 #'   (`FALSE`).
@@ -104,31 +107,31 @@
 #'
 #' @source \url{https://genius.com/artists/Taylor-swift}
 #' @source \url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}
-"tswift_all_songs"
+"taylor_all_songs"
 
 #' Data for Songs on Taylor's Official Studio Albums
 #'
 #' A data set containing lyrics to and characteristics of songs on all of
 #' Taylor's official studio albums. Thus, this is a subset of
-#' [`tswift_all_songs`], with EPs and individual singles excluded. Critically,
+#' [`taylor_all_songs`], with EPs and individual singles excluded. Critically,
 #' this subset also only includes versions owned by Taylor when possible,
 #' because we stan artists owning their own work. This means that although both
 #' *Fearless* and *Fearless (Taylor's Version)* appear in full
-#' [`tswift_all_songs`] data, only *Fearless (Taylor's Version)* appears in this
+#' [`taylor_all_songs`] data, only *Fearless (Taylor's Version)* appears in this
 #' subset. This also means that this data set will change as additional
 #' re-releases are made available (i.e., *Red* will soon be replaced with
 #' *Red (Taylor's Version)*).
 #'
-#' @format This is a subset of the [`tswift_all_songs`] data set. Please see
+#' @format This is a subset of the [`taylor_all_songs`] data set. Please see
 #' that documentation for a complete description of all the included fields.
-"tswift_album_songs"
+"taylor_album_songs"
 
 #' Taylor Swift's Albums and EPs
 #'
 #' A data set containing the names of Taylor's official releases, the album
 #' type, and release date.
 #'
-#' @format A data frame with `r nrow(tswift_albums)` rows and 3 variables:
+#' @format A data frame with `r nrow(taylor_albums)` rows and 3 variables:
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
@@ -143,4 +146,4 @@
 #' *folklore: the sleepless nights chapter*, etc.)
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography}
-"tswift_albums"
+"taylor_albums"

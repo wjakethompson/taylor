@@ -18,7 +18,7 @@ albums <- release_dates |>
 
 singles <- release_dates |>
   filter(!is.na(track_name)) |>
-  rename(single_release = release_date) %>%
+  rename(single_release = release_date) |>
   select(album_name, track_name, promotional_release, single_release)
 
 lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
@@ -65,7 +65,8 @@ base_info <- lyrics |>
       album_name == "Evermore Deluxe Edition" ~ "evermore (deluxe edition)",
       TRUE ~ album_name
     ),
-    album_name = na_if(album_name, "Non Album")) |>
+    album_name = na_if(album_name, "Non Album"),
+    album_name = na_if(album_name, "Features")) |>
   left_join(albums, by = "album_name") |>
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
          lyrics) |>
@@ -174,6 +175,17 @@ single_uri <- tribble(
   "Today Was A Fairytale",      "4pFvEWbjBpPUdYRQly0THs"
 )
 
+feature_uri <- tribble(
+  ~track_name,                  ~track_uri,
+  "Babe",                       "7FFfYM4JE1vj5n4rhHxg8q",
+  "Both Of Us",                 "3r9bgSJlJz2zlevcBRYXko",
+  "Gasoline (Remix)",           "645Exr2lJIO45Guht3qyIa",
+  "Half Of My Heart",           "7hR5toSPEgwFZ78jfHdANM",
+  "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
+  "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
+  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss"
+)
+
 spotify <- tribble(
   ~album_name,                           ~album_uri,
   "Taylor Swift",                        "7mzrIsaAjnXihW3InKjlC3",
@@ -197,7 +209,7 @@ spotify <- tribble(
                          select(track_name = name, track_uri = id)
                      })) |>
   unnest(track) |>
-  bind_rows(single_uri) |>
+  bind_rows(single_uri, feature_uri) |>
   mutate(spotify = map(track_uri,
                        function(.x, key_lookup) {
                          if (.x == "") return(NULL)
@@ -214,13 +226,18 @@ spotify <- tribble(
                                   key_mode = paste(key_name, mode_name)) |>
                            select(danceability:tempo, time_signature,
                                   duration_ms, explicit, key_name,
-                                  mode_name, key_mode)
+                                  mode_name, key_mode) |>
+                           mutate(artist = paste(track$artists$name,
+                                                 collapse = ", "),
+                                  .before = 1) |>
+                           separate(artist, c("artist", "featuring"),
+                                    sep = ", ", extra = "merge", fill = "right")
                        },
                        key_lookup = key_lookup)) |>
   unnest(spotify)
 
 spotify_join <- spotify |>
-  select(album_name, track_name, danceability:tempo, time_signature,
+  select(album_name, track_name, artist:tempo, time_signature,
          duration_ms, explicit, key_name, mode_name, key_mode) |>
   # general formatting
   mutate(track_name = case_when(str_detect(album_name, "folklore|evermore") ~
@@ -287,7 +304,7 @@ spotify_join <- spotify |>
 
 
 # Write data files -------------------------------------------------------------
-tswift_all_songs <- base_info |>
+taylor_all_songs <- base_info |>
   left_join(spotify_join, by = c("album_name", "track_name")) |>
   relocate(spotify, .before = lyrics) |>
   unnest(spotify, keep_empty = TRUE) |>
@@ -295,16 +312,17 @@ tswift_all_songs <- base_info |>
   mutate(album_release = min(album_release)) |>
   ungroup() |>
   mutate(bonus_track = case_when(is.na(album_name) ~ NA,
-                                 TRUE ~ bonus_track))
+                                 TRUE ~ bonus_track)) |>
+  relocate(artist, featuring, .after = track_name)
 
-tswift_album_songs <- tswift_all_songs |>
+taylor_album_songs <- taylor_all_songs |>
   filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
                            "Speak Now", "Red", "1989", "reputation", "Lover",
                            "folklore", "evermore"))
 
-tswift_albums <- tswift_all_songs |>
+taylor_albums <- taylor_all_songs |>
   distinct(album_name, ep, album_release) |>
   filter(!is.na(album_name)) |>
   arrange(album_release)
 
-use_data(tswift_all_songs, tswift_album_songs, tswift_albums, overwrite = TRUE)
+use_data(taylor_all_songs, taylor_album_songs, taylor_albums, overwrite = TRUE)

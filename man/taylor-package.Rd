@@ -14,6 +14,7 @@ A comprehensive resource for data on Taylor Swift songs. Data for
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://taylor.wjakethompson.com}
   \item \url{https://github.com/wjakethompson/taylor}
   \item Report bugs at \url{https://github.com/wjakethompson/taylor/issues}
 }
