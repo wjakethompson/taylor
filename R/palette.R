@@ -1,3 +1,47 @@
+#' `palette` vector
+#'
+#' This creates a character vector that represents palettes so when it is
+#' printed, it displays the palette colors.
+#'
+#' @param pal
+#'  * For `color_palette()`: A character vector of hexadecimal codes
+#'  * For `is_color_palette()`: An object to test
+#' @param n The number of colors
+#' @param type The type of palette, either `discrete` or `continuous`. If `n` is
+#'  greater than the number of colors in `pal`, type must be `continuous`.
+#' @export
+#' @examples
+#' # use color_palette() to extend or shorten an existing palette
+#' color_palette(album_palettes$lover, n = 10, type = "continuous")
+#' color_palette(album_palettes$fearless, n = 10, type = "continuous")
+#' color_palette(album_palettes$red, n = 3)
+#'
+#' # you can also define your own color palette
+#' (my_pal <- color_palette(pal = c("#264653", "#2A9D8F", "#E9C46A",
+#'                                  "#F4A261", "#E76F51")))
+#'
+#' # and then use that palette for plotting
+#' library(ggplot2)
+#' (f <- ggplot(faithfuld) +
+#'    geom_tile(aes(waiting, eruptions, fill = density)) +
+#'    scale_fill_gradientn(colours = my_pal))
+color_palette <- function(pal = character(), n = length(pal),
+                          type = c("discrete", "continuous")) {
+  # check palette and cast to character
+  pal <- check_palette(pal, name = "pal")
+  pal <- vec_cast(pal, character())
+
+  # check type
+  type <- rlang::arg_match(type)
+
+  # check n
+  min_color <- ifelse(length(pal) == 0, 0L, 1L)
+  max_color <- ifelse(type == "discrete", length(pal), Inf)
+  n <- check_n_range(n, name = "n", lb = min_color, ub = max_color)
+
+  new_color_palette(pal = pal, n = n, type = type)
+}
+
 new_color_palette <- function(pal = character(), n = length(pal),
                         type = c("discrete", "continuous")) {
   vec_assert(pal, ptype = character())
@@ -18,36 +62,6 @@ new_color_palette <- function(pal = character(), n = length(pal),
            n_colors = n,
            class = "taylor_color_palette",
            inherit_base_type = TRUE)
-}
-
-#' `palette` vector
-#'
-#' This creates a character vector that represents palettes so when it is
-#' printed, it displays the palette colors.
-#'
-#' @param pal
-#'  * For `color_palette()`: A character vector of hex codes
-#'  * For `is_color_palette()`: An object to test
-#' @param n The number of colors
-#' @param type The type of palette, either `discrete` or `continuous`
-#' @export
-#' @examples
-#' color_palette(pal = c("#842000", "#EC9B01", "#3F5D91"), n = 3)
-color_palette <- function(pal = character(), n = length(pal),
-                          type = c("discrete", "continuous")) {
-  # check palette and cast to character
-  pal <- check_palette(pal, name = "pal")
-  pal <- vec_cast(pal, character())
-
-  # check type
-  type <- rlang::arg_match(type)
-
-  # check n
-  min_color <- ifelse(length(pal) == 0, 0L, 1L)
-  max_color <- ifelse(type == "discrete", length(pal), Inf)
-  n <- check_n_range(n, name = "n", lb = min_color, ub = max_color)
-
-  new_color_palette(pal = pal, n = n, type = type)
 }
 
 n_colors <- function(x) attr(x, "n_colors")
@@ -116,4 +130,4 @@ vec_cast.taylor_color_palette.character <- function(x, to, ...) {
 
 #' @export
 vec_cast.character.taylor_color_palette <- function(x, to, ...) vec_data(x)
-#nolint end
+# nolint end

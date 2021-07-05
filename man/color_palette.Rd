@@ -15,18 +15,32 @@ is_color_palette(pal)
 }
 \arguments{
 \item{pal}{\itemize{
-\item For \code{color_palette()}: A character vector of hex codes
+\item For \code{color_palette()}: A character vector of hexadecimal codes
 \item For \code{is_color_palette()}: An object to test
 }}
 
 \item{n}{The number of colors}
 
-\item{type}{The type of palette, either \code{discrete} or \code{continuous}}
+\item{type}{The type of palette, either \code{discrete} or \code{continuous}. If \code{n} is
+greater than the number of colors in \code{pal}, type must be \code{continuous}.}
 }
 \description{
 This creates a character vector that represents palettes so when it is
 printed, it displays the palette colors.
 }
 \examples{
-color_palette(pal = c("#842000", "#EC9B01", "#3F5D91"), n = 3)
+# use color_palette() to extend or shorten an existing palette
+color_palette(album_palettes$lover, n = 10, type = "continuous")
+color_palette(album_palettes$fearless, n = 10, type = "continuous")
+color_palette(album_palettes$red, n = 3)
+
+# you can also define your own color palette
+(my_pal <- color_palette(pal = c("#264653", "#2A9D8F", "#E9C46A",
+                                 "#F4A261", "#E76F51")))
+
+# and then use that palette for plotting
+library(ggplot2)
+(f <- ggplot(faithfuld) +
+   geom_tile(aes(waiting, eruptions, fill = density)) +
+   scale_fill_gradientn(colours = my_pal))
 }
