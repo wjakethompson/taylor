@@ -31,7 +31,7 @@ First, let's make a bar graph showing the valence of each song on *evermore*.
 library(taylor)
 library(ggplot2)
 
-evermore <- tswift_album_songs[tswift_album_songs$album_name == "evermore", ]
+evermore <- subset(taylor_album_songs, album_name == "evermore")
 evermore$track_name <- factor(evermore$track_name, levels = evermore$track_name)
 
 p <- ggplot(evermore, aes(x = valence, y = track_name, fill = track_name)) +
