@@ -98,8 +98,17 @@ obj_print_data.taylor_color_palette <- function(pal, ...) {
 #' @method obj_print_data.taylor_color_palette default
 #' @export
 obj_print_data.taylor_color_palette.default <- function(pal, ...) {
-  styles <- purrr::map(pal, crayon::make_style, bg = TRUE)
-  purrr::walk2(vec_data(pal), styles, ~cat("", .y("  "), .x, "\n"))
+  styles <- lapply(pal, crayon::make_style, bg = TRUE)
+  invisible(
+    mapply(
+      function(.x, .y) {
+        cat("", .y("  "), .x, "\n")
+        return(invisible(.x))
+      },
+      vec_data(pal), styles,
+      USE.NAMES = FALSE
+    )
+  )
 }
 
 

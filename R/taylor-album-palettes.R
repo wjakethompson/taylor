@@ -1,9 +1,10 @@
 #' Color palettes
 #'
 #'
-#' Colors derived from album covers at <http://colormind.io/image/>.
+#'
+#' @source Colors derived from album covers at <http://colormind.io/image/>.
 #' @export
-album_palettes <- purrr::map(list(
+album_palettes <- lapply(list(
   taylor_swift = c("#1BAEC6", "#1D4737", "#523d28", "#AD8562", "#E7DBCC"),
   fearless     = c("#E1D4C2", "#CBA863", "#976F34", "#776456", "#6B5E57"),
   speak_now    = c("#F5E8E2", "#D1A0C7", "#833C63", "#6C3127", "#2E1924"),
@@ -15,6 +16,8 @@ album_palettes <- purrr::map(list(
   evermore     = c("#E0D9D7", "#D37F55", "#85796D", "#421E18", "#160E10")
 ), color_palette)
 
+
+# Scale functions --------------------------------------------------------------
 taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                        album = "Lover") {
   begin <- check_real_range(begin, name = "begin", lb = 0, ub = 1)
@@ -34,18 +37,18 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
   lookup_pal <- gsub("\\ ", "_", lookup_pal)
 
   option <- switch(EXPR = lookup_pal,
-                   taylor_swift = album_palettes[["taylor_swift"]],
-                   fearless     = album_palettes[["fearless"]],
-                   speak_now    = album_palettes[["speak_now"]],
-                   red          = album_palettes[["red"]],
-                   `1989`       = album_palettes[["1989"]],
-                   reputation   = album_palettes[["reputation"]],
-                   lover        = album_palettes[["lover"]],
-                   folklore     = album_palettes[["folklore"]],
-                   evermore     = album_palettes[["evermore"]], {
+                   taylor_swift = taylor::album_palettes[["taylor_swift"]],
+                   fearless     = taylor::album_palettes[["fearless"]],
+                   speak_now    = taylor::album_palettes[["speak_now"]],
+                   red          = taylor::album_palettes[["red"]],
+                   `1989`       = taylor::album_palettes[["1989"]],
+                   reputation   = taylor::album_palettes[["reputation"]],
+                   lover        = taylor::album_palettes[["lover"]],
+                   folklore     = taylor::album_palettes[["folklore"]],
+                   evermore     = taylor::album_palettes[["evermore"]], {
                      rlang::warn(paste0("Album '", album, "' does not exist. ",
                                         "Defaulting to 'Lover'."))
-                     album_palettes[["lover"]]
+                     taylor::album_palettes[["lover"]]
                    })
 
   fn_cols <- grDevices::colorRamp(option, space = "Lab",
