@@ -237,7 +237,7 @@ spotify <- tribble(
   unnest(spotify)
 
 spotify_join <- spotify |>
-  select(album_name, track_name, danceability:tempo, time_signature,
+  select(album_name, track_name, artist:tempo, time_signature,
          duration_ms, explicit, key_name, mode_name, key_mode) |>
   # general formatting
   mutate(track_name = case_when(str_detect(album_name, "folklore|evermore") ~
@@ -312,7 +312,8 @@ taylor_all_songs <- base_info |>
   mutate(album_release = min(album_release)) |>
   ungroup() |>
   mutate(bonus_track = case_when(is.na(album_name) ~ NA,
-                                 TRUE ~ bonus_track))
+                                 TRUE ~ bonus_track)) |>
+  relocate(artist, featuring, .after = track_name)
 
 taylor_album_songs <- taylor_all_songs |>
   filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
