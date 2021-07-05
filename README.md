@@ -116,3 +116,9 @@ tswift_albums
 #> 11 evermore                            FALSE 2020-12-11   
 #> 12 Fearless (Taylor's Version)         FALSE 2021-04-09
 ```
+
+## Code of Conduct
+
+Please note that the taylor project is released with a [Contributor Code
+of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.
