@@ -120,3 +120,29 @@ other values are deprecated.}
 \description{
 Taylor Swift colour scales based on album cover palettes
 }
+\examples{
+# use taylor_d with discrete data
+library(ggplot2)
+(p <- ggplot(taylor_album_songs, aes(x = valence, y = energy)) +
+   geom_point(aes(color = mode_name), size = 2) +
+   theme_bw())
+p + scale_color_taylor_d()
+
+# change scale label
+p + scale_fill_taylor_d("Mode of Track")
+
+# select album palette to use, see ?taylor::album_palettes for more details
+lover <- subset(taylor_album_songs, album_name == "Lover")
+(p <- ggplot(lover, aes(x = valence, y = track_name)) +
+   geom_col(aes(fill = track_name)) +
+   theme_minimal())
+p + scale_fill_taylor_d(album = "Lover")
+p + scale_fill_taylor_d(album = "evermore")
+
+use taylor_c with continuous data
+(p <- ggplot(taylor_album_songs, aes(valence, energy)) +
+   geom_point(aes(color = danceability)) +
+   theme_minimal())
+p + scale_color_taylor_c(album = "Fearless")
+p + scale_color_taylor_c(album = "folklore")
+}
