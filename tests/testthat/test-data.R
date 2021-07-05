@@ -1,10 +1,10 @@
 test_that("data has expected dimensions", {
   # all songs
-  expect_equal(ncol(taylor_all_songs), 27L)
+  expect_equal(ncol(taylor_all_songs), 29L)
   expect_equal(ncol(taylor_all_songs$lyrics[[1]]), 4L)
 
   # album songs
-  expect_equal(ncol(taylor_album_songs), 27L)
+  expect_equal(ncol(taylor_album_songs), 29L)
   expect_equal(ncol(taylor_album_songs$lyrics[[1]]), 4L)
 
   # albums
@@ -13,12 +13,12 @@ test_that("data has expected dimensions", {
 
 test_that("column names match documentation expectation", {
   data_cols <- c("album_name", "ep", "album_release", "track_number",
-                 "track_name",  "bonus_track", "promotional_release",
-                 "single_release", "track_release", "danceability", "energy",
-                 "key", "loudness", "mode", "speechiness", "acousticness",
-                 "instrumentalness", "liveness", "valence", "tempo",
-                 "time_signature", "duration_ms", "explicit", "key_name",
-                 "mode_name", "key_mode", "lyrics")
+                 "track_name", "artist", "featuring", "bonus_track",
+                 "promotional_release", "single_release", "track_release",
+                 "danceability", "energy", "key", "loudness", "mode",
+                 "speechiness", "acousticness", "instrumentalness", "liveness",
+                 "valence", "tempo", "time_signature", "duration_ms",
+                 "explicit", "key_name", "mode_name", "key_mode", "lyrics")
 
   # all songs
   expect_equal(colnames(taylor_all_songs), data_cols)
