@@ -36,7 +36,7 @@ remotes::install_github("wjakethompson/taylor")
 
 ## Example
 
-There are three main data sets. The first is `tswift_album_songs`, which
+There are three main data sets. The first is `taylor_album_songs`, which
 includes lyrics and audio features from the Spotify API for all songs on
 Taylor’s official studio albums. Notably this excludes singles released
 separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*,
@@ -45,61 +45,63 @@ etc.), and non-Taylor-owned albums that have a Taylor-owned alternative
 Version)*). We stan artists owning their own songs.
 
 ``` r
-tswift_album_songs
-#> # A tibble: 163 x 27
-#>    album_name   ep    album_release track_number track_name          bonus_track
-#>    <chr>        <lgl> <date>               <int> <chr>               <lgl>      
-#>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw          FALSE      
-#>  2 Taylor Swift FALSE 2006-10-24               2 Picture To Burn     FALSE      
-#>  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On My Gu… FALSE      
-#>  4 Taylor Swift FALSE 2006-10-24               4 A Place In This Wo… FALSE      
-#>  5 Taylor Swift FALSE 2006-10-24               5 Cold As You         FALSE      
-#>  6 Taylor Swift FALSE 2006-10-24               6 The Outside         FALSE      
-#>  7 Taylor Swift FALSE 2006-10-24               7 Tied Together With… FALSE      
-#>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful      FALSE      
-#>  9 Taylor Swift FALSE 2006-10-24               9 Should've Said No   FALSE      
-#> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (Oh My… FALSE      
-#> # … with 153 more rows, and 21 more variables: promotional_release <date>,
-#> #   single_release <date>, track_release <date>, danceability <dbl>,
-#> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
-#> #   acousticness <dbl>, instrumentalness <dbl>, liveness <dbl>, valence <dbl>,
-#> #   tempo <dbl>, time_signature <int>, duration_ms <int>, explicit <lgl>,
-#> #   key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
+taylor_album_songs
+#> # A tibble: 163 x 29
+#>    album_name  ep    album_release track_number track_name     artist  featuring
+#>    <chr>       <lgl> <date>               <int> <chr>          <chr>   <chr>    
+#>  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… <NA>     
+#>  2 Taylor Swi… FALSE 2006-10-24               2 Picture To Bu… Taylor… <NA>     
+#>  3 Taylor Swi… FALSE 2006-10-24               3 Teardrops On … Taylor… <NA>     
+#>  4 Taylor Swi… FALSE 2006-10-24               4 A Place In Th… Taylor… <NA>     
+#>  5 Taylor Swi… FALSE 2006-10-24               5 Cold As You    Taylor… <NA>     
+#>  6 Taylor Swi… FALSE 2006-10-24               6 The Outside    Taylor… <NA>     
+#>  7 Taylor Swi… FALSE 2006-10-24               7 Tied Together… Taylor… <NA>     
+#>  8 Taylor Swi… FALSE 2006-10-24               8 Stay Beautiful Taylor… <NA>     
+#>  9 Taylor Swi… FALSE 2006-10-24               9 Should've Sai… Taylor… <NA>     
+#> 10 Taylor Swi… FALSE 2006-10-24              10 Mary's Song (… Taylor… <NA>     
+#> # … with 153 more rows, and 22 more variables: bonus_track <lgl>,
+#> #   promotional_release <date>, single_release <date>, track_release <date>,
+#> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
+#> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
+#> #   liveness <dbl>, valence <dbl>, tempo <dbl>, time_signature <int>,
+#> #   duration_ms <int>, explicit <lgl>, key_name <chr>, mode_name <chr>,
+#> #   key_mode <chr>, lyrics <list>
 ```
 
-You can access Taylor’s entire discography with `tswift_all_songs`. This
-includes all of the songs in `tswift_album_songs` plus EPs, individual
+You can access Taylor’s entire discography with `taylor_all_songs`. This
+includes all of the songs in `taylor_album_songs` plus EPs, individual
 singles, and the original versions of albums that have been re-released
 as *Taylor’s Version*.
 
 ``` r
-tswift_all_songs
-#> # A tibble: 206 x 27
-#>    album_name   ep    album_release track_number track_name          bonus_track
-#>    <chr>        <lgl> <date>               <int> <chr>               <lgl>      
-#>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw          FALSE      
-#>  2 Taylor Swift FALSE 2006-10-24               2 Picture To Burn     FALSE      
-#>  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On My Gu… FALSE      
-#>  4 Taylor Swift FALSE 2006-10-24               4 A Place In This Wo… FALSE      
-#>  5 Taylor Swift FALSE 2006-10-24               5 Cold As You         FALSE      
-#>  6 Taylor Swift FALSE 2006-10-24               6 The Outside         FALSE      
-#>  7 Taylor Swift FALSE 2006-10-24               7 Tied Together With… FALSE      
-#>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful      FALSE      
-#>  9 Taylor Swift FALSE 2006-10-24               9 Should've Said No   FALSE      
-#> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (Oh My… FALSE      
-#> # … with 196 more rows, and 21 more variables: promotional_release <date>,
-#> #   single_release <date>, track_release <date>, danceability <dbl>,
-#> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
-#> #   acousticness <dbl>, instrumentalness <dbl>, liveness <dbl>, valence <dbl>,
-#> #   tempo <dbl>, time_signature <int>, duration_ms <int>, explicit <lgl>,
-#> #   key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
+taylor_all_songs
+#> # A tibble: 213 x 29
+#>    album_name  ep    album_release track_number track_name     artist  featuring
+#>    <chr>       <lgl> <date>               <int> <chr>          <chr>   <chr>    
+#>  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… <NA>     
+#>  2 Taylor Swi… FALSE 2006-10-24               2 Picture To Bu… Taylor… <NA>     
+#>  3 Taylor Swi… FALSE 2006-10-24               3 Teardrops On … Taylor… <NA>     
+#>  4 Taylor Swi… FALSE 2006-10-24               4 A Place In Th… Taylor… <NA>     
+#>  5 Taylor Swi… FALSE 2006-10-24               5 Cold As You    Taylor… <NA>     
+#>  6 Taylor Swi… FALSE 2006-10-24               6 The Outside    Taylor… <NA>     
+#>  7 Taylor Swi… FALSE 2006-10-24               7 Tied Together… Taylor… <NA>     
+#>  8 Taylor Swi… FALSE 2006-10-24               8 Stay Beautiful Taylor… <NA>     
+#>  9 Taylor Swi… FALSE 2006-10-24               9 Should've Sai… Taylor… <NA>     
+#> 10 Taylor Swi… FALSE 2006-10-24              10 Mary's Song (… Taylor… <NA>     
+#> # … with 203 more rows, and 22 more variables: bonus_track <lgl>,
+#> #   promotional_release <date>, single_release <date>, track_release <date>,
+#> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
+#> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
+#> #   liveness <dbl>, valence <dbl>, tempo <dbl>, time_signature <int>,
+#> #   duration_ms <int>, explicit <lgl>, key_name <chr>, mode_name <chr>,
+#> #   key_mode <chr>, lyrics <list>
 ```
 
-Finally, there is a small data set, `tswift_albums`, summarizing
+Finally, there is a small data set, `taylor_albums`, summarizing
 Taylor’s album release history.
 
 ``` r
-tswift_albums
+taylor_albums
 #> # A tibble: 12 x 3
 #>    album_name                          ep    album_release
 #>    <chr>                               <lgl> <date>       

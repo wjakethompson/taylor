@@ -14,6 +14,9 @@
 #'   (YYYY-MM-DD).
 #' * `track_number`: The order of the song on the album or EP.
 #' * `track_name`: The name of the song.
+#' * `artist`: The name of the song artist. Usually Taylor Swift, but will show
+#'   other artists for songs that Taylor is only featured on.
+#' * `featuring`: Any artists that are featured on the track.
 #' * `bonus_track`: Logical. Is the track only present on a deluxe edition of
 #'   the album (`TRUE`) or is does it also appear on the standard version
 #'   (`FALSE`).
