@@ -18,7 +18,7 @@ albums <- release_dates |>
 
 singles <- release_dates |>
   filter(!is.na(track_name)) |>
-  rename(single_release = release_date) %>%
+  rename(single_release = release_date) |>
   select(album_name, track_name, promotional_release, single_release)
 
 lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
