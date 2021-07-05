@@ -21,7 +21,7 @@ tribble(
   pwalk(function(album_name, album_uri) {
     album <- get_album(album_uri)
     cover <- album$images |>
-      slice_max(order_by = height, n = 1) %>%
+      slice_max(order_by = height, n = 1) |>
       pull(url)
     save_name <- str_to_lower(album_name) |>
       str_replace_all("\\(taylor's version\\)", "tv") |>

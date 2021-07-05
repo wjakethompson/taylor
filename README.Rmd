@@ -49,22 +49,22 @@ remotes::install_github("wjakethompson/taylor")
 
 ## Example
 
-There are three main data sets. The first is `tswift_album_songs`, which includes lyrics and audio features from the Spotify API for all songs on Taylor's official studio albums. Notably this excludes singles released separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., *Fearless* is excluded in favor of *Fearless (Taylor's Version)*). We stan artists owning their own songs.
+There are three main data sets. The first is `taylor_album_songs`, which includes lyrics and audio features from the Spotify API for all songs on Taylor's official studio albums. Notably this excludes singles released separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., *Fearless* is excluded in favor of *Fearless (Taylor's Version)*). We stan artists owning their own songs.
 
 ```{r album-songs}
-tswift_album_songs
+taylor_album_songs
 ```
 
-You can access Taylor's entire discography with `tswift_all_songs`. This includes all of the songs in `tswift_album_songs` plus EPs, individual singles, and the original versions of albums that have been re-released as *Taylor's Version*.
+You can access Taylor's entire discography with `taylor_all_songs`. This includes all of the songs in `taylor_album_songs` plus EPs, individual singles, and the original versions of albums that have been re-released as *Taylor's Version*.
 
 ```{r all-songs}
-tswift_all_songs
+taylor_all_songs
 ```
 
-Finally, there is a small data set, `tswift_albums`, summarizing Taylor's album release history.
+Finally, there is a small data set, `taylor_albums`, summarizing Taylor's album release history.
 
 ```{r albums}
-tswift_albums
+taylor_albums
 ```
 
 ## Code of Conduct
