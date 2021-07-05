@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>taylor: Lyrics and Song Data for Taylor Swift's Discography — taylor-package • taylor</title>
+<title>Data for Songs on Taylor's Official Studio Albums — taylor_album_songs • taylor</title>
 
 
 <!-- jquery -->
@@ -41,11 +41,17 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="taylor: Lyrics and Song Data for Taylor Swift's Discography — taylor-package" />
-<meta property="og:description" content="A comprehensive resource for data on Taylor Swift songs. Data for
-    all officially released studio albums, extended plays (EPs), and individual
-    singles are included. Data comes from &amp;lt;https://www.genius.com/&amp;gt; (lyrics) and
-    &amp;lt;https://spotify.com/&amp;gt; (song characteristics)." />
+<meta property="og:title" content="Data for Songs on Taylor's Official Studio Albums — taylor_album_songs" />
+<meta property="og:description" content="A data set containing lyrics to and characteristics of songs on all of
+Taylor's official studio albums. Thus, this is a subset of
+taylor_all_songs, with EPs and individual singles excluded. Critically,
+this subset also only includes versions owned by Taylor when possible,
+because we stan artists owning their own work. This means that although both
+Fearless and Fearless (Taylor's Version) appear in full
+taylor_all_songs data, only Fearless (Taylor's Version) appears in this
+subset. This also means that this data set will change as additional
+re-releases are made available (i.e., Red will soon be replaced with
+Red (Taylor's Version))." />
 
 
 
@@ -113,32 +119,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>taylor: Lyrics and Song Data for Taylor Swift's Discography</h1>
-    <small class="dont-index">Source: <a href='https://github.com/wjakethompson/taylor/blob/master/R/taylor-doc.R'><code>R/taylor-doc.R</code></a></small>
-    <div class="hidden name"><code>taylor-package.Rd</code></div>
+    <h1>Data for Songs on Taylor's Official Studio Albums</h1>
+    <small class="dont-index">Source: <a href='https://github.com/wjakethompson/taylor/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>taylor_album_songs.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A comprehensive resource for data on Taylor Swift songs. Data for
-    all officially released studio albums, extended plays (EPs), and individual
-    singles are included. Data comes from &lt;https://www.genius.com/&gt; (lyrics) and
-    &lt;https://spotify.com/&gt; (song characteristics).</p>
+    <p>A data set containing lyrics to and characteristics of songs on all of
+Taylor's official studio albums. Thus, this is a subset of
+<code><a href='taylor_all_songs.html'>taylor_all_songs</a></code>, with EPs and individual singles excluded. Critically,
+this subset also only includes versions owned by Taylor when possible,
+because we stan artists owning their own work. This means that although both
+<em>Fearless</em> and <em>Fearless (Taylor's Version)</em> appear in full
+<code><a href='taylor_all_songs.html'>taylor_all_songs</a></code> data, only <em>Fearless (Taylor's Version)</em> appears in this
+subset. This also means that this data set will change as additional
+re-releases are made available (i.e., <em>Red</em> will soon be replaced with
+<em>Red (Taylor's Version)</em>).</p>
     </div>
 
+    <pre class="usage"><span class='va'>taylor_album_songs</span></pre>
 
 
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://taylor.wjakethompson.com'>https://taylor.wjakethompson.com</a></p></li>
-<li><p><a href='https://github.com/wjakethompson/taylor'>https://github.com/wjakethompson/taylor</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/wjakethompson/taylor/issues'>https://github.com/wjakethompson/taylor/issues</a></p></li>
-</ul>
-
-</div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p><strong>Maintainer</strong>: W. Jake Thompson <a href='mailto:wjakethompson@gmail.com'>wjakethompson@gmail.com</a> (<a href='https://orcid.org/0000-0001-7339-0300'>ORCID</a>)</p>
+    <p>This is a subset of the <code><a href='taylor_all_songs.html'>taylor_all_songs</a></code> data set. Please see
+that documentation for a complete description of all the included fields.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

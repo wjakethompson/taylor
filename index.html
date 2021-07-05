@@ -88,53 +88,55 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>There are three main data sets. The first is <code>tswift_album_songs</code>, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., <em>Only the Young</em>, <em>Christmas Tree Farm</em>, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., <em>Fearless</em> is excluded in favor of <em>Fearless (Taylor’s Version)</em>). We stan artists owning their own songs.</p>
+<p>There are three main data sets. The first is <code>taylor_album_songs</code>, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., <em>Only the Young</em>, <em>Christmas Tree Farm</em>, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., <em>Fearless</em> is excluded in favor of <em>Fearless (Taylor’s Version)</em>). We stan artists owning their own songs.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tswift_album_songs</span>
-<span class="co">#&gt; # A tibble: 163 x 27</span>
-<span class="co">#&gt;    album_name   ep    album_release track_number track_name          bonus_track</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;               &lt;lgl&gt;      </span>
-<span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw          FALSE      </span>
-<span class="co">#&gt;  2 Taylor Swift FALSE 2006-10-24               2 Picture To Burn     FALSE      </span>
-<span class="co">#&gt;  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On My Gu… FALSE      </span>
-<span class="co">#&gt;  4 Taylor Swift FALSE 2006-10-24               4 A Place In This Wo… FALSE      </span>
-<span class="co">#&gt;  5 Taylor Swift FALSE 2006-10-24               5 Cold As You         FALSE      </span>
-<span class="co">#&gt;  6 Taylor Swift FALSE 2006-10-24               6 The Outside         FALSE      </span>
-<span class="co">#&gt;  7 Taylor Swift FALSE 2006-10-24               7 Tied Together With… FALSE      </span>
-<span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful      FALSE      </span>
-<span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Said No   FALSE      </span>
-<span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (Oh My… FALSE      </span>
-<span class="co">#&gt; # … with 153 more rows, and 21 more variables: promotional_release &lt;date&gt;,</span>
-<span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></code></pre></div>
-<p>You can access Taylor’s entire discography with <code>tswift_all_songs</code>. This includes all of the songs in <code>tswift_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
+<code class="sourceCode R"><span class="va">taylor_album_songs</span>
+<span class="co">#&gt; # A tibble: 163 x 29</span>
+<span class="co">#&gt;    album_name  ep    album_release track_number track_name     artist  featuring</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;    </span>
+<span class="co">#&gt;  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  2 Taylor Swi… FALSE 2006-10-24               2 Picture To Bu… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  3 Taylor Swi… FALSE 2006-10-24               3 Teardrops On … Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  4 Taylor Swi… FALSE 2006-10-24               4 A Place In Th… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  5 Taylor Swi… FALSE 2006-10-24               5 Cold As You    Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  6 Taylor Swi… FALSE 2006-10-24               6 The Outside    Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  7 Taylor Swi… FALSE 2006-10-24               7 Tied Together… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  8 Taylor Swi… FALSE 2006-10-24               8 Stay Beautiful Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  9 Taylor Swi… FALSE 2006-10-24               9 Should've Sai… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt; 10 Taylor Swi… FALSE 2006-10-24              10 Mary's Song (… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt; # … with 153 more rows, and 22 more variables: bonus_track &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   promotional_release &lt;date&gt;, single_release &lt;date&gt;, track_release &lt;date&gt;,</span>
+<span class="co">#&gt; #   danceability &lt;dbl&gt;, energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;,</span>
+<span class="co">#&gt; #   speechiness &lt;dbl&gt;, acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   liveness &lt;dbl&gt;, valence &lt;dbl&gt;, tempo &lt;dbl&gt;, time_signature &lt;int&gt;,</span>
+<span class="co">#&gt; #   duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key_name &lt;chr&gt;, mode_name &lt;chr&gt;,</span>
+<span class="co">#&gt; #   key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></code></pre></div>
+<p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tswift_all_songs</span>
-<span class="co">#&gt; # A tibble: 206 x 27</span>
-<span class="co">#&gt;    album_name   ep    album_release track_number track_name          bonus_track</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;               &lt;lgl&gt;      </span>
-<span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw          FALSE      </span>
-<span class="co">#&gt;  2 Taylor Swift FALSE 2006-10-24               2 Picture To Burn     FALSE      </span>
-<span class="co">#&gt;  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On My Gu… FALSE      </span>
-<span class="co">#&gt;  4 Taylor Swift FALSE 2006-10-24               4 A Place In This Wo… FALSE      </span>
-<span class="co">#&gt;  5 Taylor Swift FALSE 2006-10-24               5 Cold As You         FALSE      </span>
-<span class="co">#&gt;  6 Taylor Swift FALSE 2006-10-24               6 The Outside         FALSE      </span>
-<span class="co">#&gt;  7 Taylor Swift FALSE 2006-10-24               7 Tied Together With… FALSE      </span>
-<span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful      FALSE      </span>
-<span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Said No   FALSE      </span>
-<span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (Oh My… FALSE      </span>
-<span class="co">#&gt; # … with 196 more rows, and 21 more variables: promotional_release &lt;date&gt;,</span>
-<span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></code></pre></div>
-<p>Finally, there is a small data set, <code>tswift_albums</code>, summarizing Taylor’s album release history.</p>
+<code class="sourceCode R"><span class="va">taylor_all_songs</span>
+<span class="co">#&gt; # A tibble: 213 x 29</span>
+<span class="co">#&gt;    album_name  ep    album_release track_number track_name     artist  featuring</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;    </span>
+<span class="co">#&gt;  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  2 Taylor Swi… FALSE 2006-10-24               2 Picture To Bu… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  3 Taylor Swi… FALSE 2006-10-24               3 Teardrops On … Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  4 Taylor Swi… FALSE 2006-10-24               4 A Place In Th… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  5 Taylor Swi… FALSE 2006-10-24               5 Cold As You    Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  6 Taylor Swi… FALSE 2006-10-24               6 The Outside    Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  7 Taylor Swi… FALSE 2006-10-24               7 Tied Together… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  8 Taylor Swi… FALSE 2006-10-24               8 Stay Beautiful Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt;  9 Taylor Swi… FALSE 2006-10-24               9 Should've Sai… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt; 10 Taylor Swi… FALSE 2006-10-24              10 Mary's Song (… Taylor… &lt;NA&gt;     </span>
+<span class="co">#&gt; # … with 203 more rows, and 22 more variables: bonus_track &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   promotional_release &lt;date&gt;, single_release &lt;date&gt;, track_release &lt;date&gt;,</span>
+<span class="co">#&gt; #   danceability &lt;dbl&gt;, energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;,</span>
+<span class="co">#&gt; #   speechiness &lt;dbl&gt;, acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   liveness &lt;dbl&gt;, valence &lt;dbl&gt;, tempo &lt;dbl&gt;, time_signature &lt;int&gt;,</span>
+<span class="co">#&gt; #   duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key_name &lt;chr&gt;, mode_name &lt;chr&gt;,</span>
+<span class="co">#&gt; #   key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></code></pre></div>
+<p>Finally, there is a small data set, <code>taylor_albums</code>, summarizing Taylor’s album release history.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tswift_albums</span>
+<code class="sourceCode R"><span class="va">taylor_albums</span>
 <span class="co">#&gt; # A tibble: 12 x 3</span>
 <span class="co">#&gt;    album_name                          ep    album_release</span>
 <span class="co">#&gt;    &lt;chr&gt;                               &lt;lgl&gt; &lt;date&gt;       </span>
