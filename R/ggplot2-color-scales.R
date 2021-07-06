@@ -33,7 +33,7 @@
 #' p + scale_fill_taylor_d(album = "Lover")
 #' p + scale_fill_taylor_d(album = "evermore")
 #'
-#' use taylor_c with continuous data
+#' # use taylor_c with continuous data
 #' (p <- ggplot(taylor_album_songs, aes(valence, energy)) +
 #'    geom_point(aes(color = danceability)) +
 #'    theme_minimal())
