@@ -28,3 +28,23 @@ tribble(
       str_replace_all("\\ ", "-")
     download.file(cover, here("inst", "album-covers", glue("{save_name}.jpeg")))
   })
+
+
+# Palette sorter ---------------------------------------------------------------
+library(tidyverse)
+
+codes <- c("#1D111B", "#8E4272", "#CB9DCD", "#F2DFD1", "#803F2D")
+scales::show_col(codes)
+
+new_codes <- map_dfr(codes, function(x) {
+  col2rgb(x) |>
+    as_tibble(.name_repair = ~"value", rownames = "color") |>
+    pivot_wider(names_from = color, values_from = value) |>
+    mutate(hex = x, .before = 1)
+}) |>
+  arrange(red, green, blue) |>
+  pull(hex)
+
+scales::show_col(new_codes)
+
+dput(new_codes)
