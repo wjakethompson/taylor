@@ -1,12 +1,26 @@
-#' Color palettes
+#' Taylor Swift album palettes
 #'
+#' Pre-made color palettes based on Taylor Swifts album covers. For details on
+#' how to extend and shorten these palettes, or create your own color palette,
+#' see [color_palette()].
 #'
+#' @format A list of length `r length(album_palettes)`. Each element contains a
+#'   color palette for one of Taylor Swift's studio albums. The list elements
+#'   are named according to the name of the album.
 #'
 #' @source Colors derived from album covers at <http://colormind.io/image/>.
+#' @seealso [color_palette()]
 #' @export
+#' @examples
+#' album_palettes
+#'
+#' album_compare
+#'
+#' album_palettes$evermore
 album_palettes <- lapply(list(
   taylor_swift = c("#1BAEC6", "#1D4737", "#523d28", "#AD8562", "#E7DBCC"),
   fearless     = c("#E1D4C2", "#CBA863", "#976F34", "#776456", "#6B5E57"),
+  fearless_tv  = c("#624324", "#A47F45", "#C5AA7C", "#CAA462", "#EEDBA9"),
   speak_now    = c("#F5E8E2", "#D1A0C7", "#833C63", "#6C3127", "#2E1924"),
   red          = c("#A91E47", "#201F39", "#7E6358", "#B0A49A", "#DDD8C9"),
   `1989`       = c("#D8D8CF", "#C6B69C", "#92573C", "#846578", "#5D4E5D"),
@@ -15,6 +29,21 @@ album_palettes <- lapply(list(
   folklore     = c("#EBEBEB", "#949494", "#5C5C5C", "#545454", "#3E3E3E"),
   evermore     = c("#E0D9D7", "#D37F55", "#85796D", "#421E18", "#160E10")
 ), color_palette)
+
+#' @rdname album_palettes
+#' @export
+album_compare <- color_palette(
+  c(taylor_swift = "#1D4737",
+    fearless     = "#976F34",
+    fearless_tv  = "#A47F45",
+    speak_now    = "#833C63",
+    red          = "#A91E47",
+    `1989`       = "#C6B69C",
+    reputation   = "#2C2C2C",
+    lover        = "#6098B6",
+    folklore     = "#949494",
+    evermore     = "#D37F55")
+)
 
 
 # Scale functions --------------------------------------------------------------

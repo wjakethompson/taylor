@@ -9,6 +9,23 @@ test_that("data has expected dimensions", {
 
   # albums
   expect_equal(ncol(taylor_albums), 3L)
+
+  albums <-
+    taylor_all_songs[which((!taylor_all_songs$ep) &
+                             !is.na(taylor_all_songs$album_name)),
+                     "album_name"] |>
+    unique()
+
+  albums <- tolower(albums[[1]])
+  albums <- gsub("\\ ", "_", albums)
+  albums <- gsub("\\(taylor's_version\\)", "tv", albums)
+
+  expect_equal(length(albums), length(album_palettes))
+  expect_equal(length(albums), length(album_compare))
+  expect_equal(length(album_palettes), length(album_compare))
+  expect_equal(albums, names(album_palettes))
+  expect_equal(albums, names(album_compare))
+  expect_equal(names(album_palettes), names(album_compare))
 })
 
 test_that("column names match documentation expectation", {
