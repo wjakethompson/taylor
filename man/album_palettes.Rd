@@ -3,14 +3,36 @@
 \docType{data}
 \name{album_palettes}
 \alias{album_palettes}
-\title{Color palettes}
+\alias{album_compare}
+\title{Taylor Swift album palettes}
 \format{
-An object of class \code{list} of length 9.
+A list of length 10. Each element contains a
+color palette for one of Taylor Swift's studio albums. The list elements
+are named according to the name of the album.
+
+An object of class \code{taylor_color_palette} (inherits from \code{vctrs_vctr}, \code{character}) of length 10.
+}
+\source{
+Colors derived from album covers at \url{http://colormind.io/image/}.
 }
 \usage{
 album_palettes
+
+album_compare
 }
 \description{
-Colors derived from album covers at \url{http://colormind.io/image/}.
+Pre-made color palettes based on Taylor Swifts album covers. For details on
+how to extend and shorten these palettes, or create your own color palette,
+see \code{\link[=color_palette]{color_palette()}}.
+}
+\examples{
+album_palettes
+
+album_compare
+
+album_palettes$evermore
+}
+\seealso{
+\code{\link[=color_palette]{color_palette()}}
 }
 \keyword{datasets}

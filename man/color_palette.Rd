@@ -31,7 +31,9 @@ printed, it displays the palette colors.
 \examples{
 # use color_palette() to extend or shorten an existing palette
 color_palette(album_palettes$lover, n = 10, type = "continuous")
+
 color_palette(album_palettes$fearless, n = 10, type = "continuous")
+
 color_palette(album_palettes$red, n = 3)
 
 # you can also define your own color palette
@@ -40,7 +42,8 @@ color_palette(album_palettes$red, n = 3)
 
 # and then use that palette for plotting
 library(ggplot2)
-(f <- ggplot(faithfuld) +
-   geom_tile(aes(waiting, eruptions, fill = density)) +
-   scale_fill_gradientn(colours = my_pal))
+ggplot(faithfuld) +
+  geom_tile(aes(waiting, eruptions, fill = density)) +
+  scale_fill_gradientn(colours = my_pal) +
+  theme_minimal()
 }
