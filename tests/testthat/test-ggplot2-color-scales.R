@@ -343,14 +343,20 @@ test_that("album scale works", {
   # no leveling
   no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums()
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5) +
+    scale_fill_albums() +
+    scale_color_albums()
 
   # make albums a factor
   lvl_studio <- studio
   lvl_studio$album_name <- factor(lvl_studio$album_name, levels = album_levels)
   normal_level <- ggplot(lvl_studio, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums()
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5) +
+    scale_fill_albums() +
+    scale_color_albums()
 
   # reverse levels
   rlvl_studio <- studio
@@ -358,7 +364,10 @@ test_that("album scale works", {
                                    levels = rev(album_levels))
   reverse_level <- ggplot(rlvl_studio, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums()
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5) +
+    scale_fill_albums() +
+    scale_color_albums()
 
   # random levels
   rand_studio <- studio
@@ -368,7 +377,10 @@ test_that("album scale works", {
                                    levels = album_levels[new_levels])
   rand_level <- ggplot(rand_studio, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums()
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5) +
+    scale_fill_albums() +
+    scale_color_albums()
 
   # bad levels
   small_studio <- studio[c(1, 7, 2, 3, 5), ]
@@ -380,12 +392,18 @@ test_that("album scale works", {
   # default bad label = blank
   miss1 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums()
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5, na.rm = TRUE) +
+    scale_fill_albums() +
+    scale_color_albums()
 
   # red missing
   miss2 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
-    scale_fill_albums(na.value = "red")
+    geom_point(aes(fill = album_name, color = album_name),
+               shape = 21, size = 5) +
+    scale_fill_albums(na.value = "red") +
+    scale_color_albums(na.value = "red")
 
   vdiffr::expect_doppelganger("albums-no-factor", no_level)
   vdiffr::expect_doppelganger("albums-correct-factor", normal_level)
