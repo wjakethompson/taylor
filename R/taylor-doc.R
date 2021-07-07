@@ -1,5 +1,15 @@
-#' @keywords internal
-"_PACKAGE"
+#' taylor: Lyrics and song data for Taylor Swift's discography
+#'
+#' A comprehensive resource for data on Taylor Swift songs. Data for all
+#' officially released studio albums, extended plays (EPs), and individual
+#' singles are included. Data comes from <https://www.genius.com/> (lyrics) and
+#' <https://spotify.com/> (song characteristics).
+#'
+#' @importFrom ggplot2 waiver
+#'
+#' @docType package
+#' @name taylor
+NULL
 
 #' Internal vctrs methods
 #'
