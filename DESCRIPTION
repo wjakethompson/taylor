@@ -24,12 +24,12 @@ Imports:
     rlang,
     ggplot2,
     scales,
-    glue
+    glue,
+    tibble
 Suggests: 
     vdiffr,
     knitr,
     testthat (>= 3.0.0),
-    tibble,
     rmarkdown,
     spelling
 Config/testthat/edition: 3
