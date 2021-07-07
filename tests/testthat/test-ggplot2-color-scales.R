@@ -1,4 +1,4 @@
-library(ggplot2)
+suppressPackageStartupMessages(library(ggplot2))
 
 test_that("discrete fill works", {
   fill_base <- ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
@@ -332,4 +332,65 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("lover-color-c", lover)
   vdiffr::expect_doppelganger("folklore-color-c", folklore)
   vdiffr::expect_doppelganger("evermore-color-c", evermore)
+})
+
+test_that("album scale works", {
+  studio <- subset(taylor_albums, !ep)
+
+  # for testing, give a value to debut
+  studio$metacritic_score[1] <- 72L
+
+  # no leveling
+  no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums()
+
+  # make albums a factor
+  lvl_studio <- studio
+  lvl_studio$album_name <- factor(lvl_studio$album_name, levels = album_levels)
+  normal_level <- ggplot(lvl_studio, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums()
+
+  # reverse levels
+  rlvl_studio <- studio
+  rlvl_studio$album_name <- factor(rlvl_studio$album_name,
+                                   levels = rev(album_levels))
+  reverse_level <- ggplot(rlvl_studio, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums()
+
+  # random levels
+  rand_studio <- studio
+  new_levels <- c(seq(1, length(album_levels), by = 2),
+                  seq(2, length(album_levels), by = 2))
+  rand_studio$album_name <- factor(rand_studio$album_name,
+                                   levels = album_levels[new_levels])
+  rand_level <- ggplot(rand_studio, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums()
+
+  # bad levels
+  small_studio <- studio[c(1, 7, 2, 3, 5), ]
+  beyonce <- rbind(small_studio, data.frame(album_name = "Lemonade",
+                                            ep = FALSE,
+                                            album_release = NA,
+                                            metacritic_score = 92L))
+
+  # default bad label = blank
+  miss1 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums()
+
+  # red missing
+  miss2 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    scale_fill_albums(na.value = "red")
+
+  vdiffr::expect_doppelganger("albums-no-factor", no_level)
+  vdiffr::expect_doppelganger("albums-correct-factor", normal_level)
+  vdiffr::expect_doppelganger("albums-reverse-factor", reverse_level)
+  vdiffr::expect_doppelganger("albums-random-factor", rand_level)
+  vdiffr::expect_doppelganger("albums-blank-bad-label", miss1)
+  vdiffr::expect_doppelganger("albums-specified-bad-label", miss2)
 })
