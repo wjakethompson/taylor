@@ -1,6 +1,6 @@
 #' Taylor Swift album palettes
 #'
-#' Pre-made color palettes based on Taylor Swifts album covers. For details on
+#' Premade color palettes based on Taylor Swifts album covers. For details on
 #' how to extend and shorten these palettes, or create your own color palette,
 #' see [color_palette()].
 #'
@@ -44,6 +44,42 @@ album_compare <- color_palette(
     folklore     = "#949494",
     evermore     = "#D37F55")
 )
+
+
+#' Taylor Swift album ordering
+#'
+#' Easily create a factor variable for Taylor Swift's albums. Rather than
+#' specifying each album individually, you can use this shortcut vector that has
+#' already specified the ordering.
+#'
+#' @format A vector of length `r length(album_levels)`. Each element is an album
+#'   name, in an order that can be used for making factor variables.
+#'
+#' @details
+#' Albums are listed in release order, with one notable exception. The
+#' "Taylor's Version" releases are list directly following the original. That
+#' is, *Fearless (Taylor's Version)* comes directly after *Fearless*, rather
+#' than after *evermore*, when it was released. This is because
+#' "Taylor's Version" is often a stand-in for the original, as in
+#' [`taylor_album_songs`]. Thus, it more often makes more sense for the album to
+#' be placed with the original, rather than in the actual release order.
+#' @export
+#' @examples
+#' library(ggplot2)
+#' studio_albums <- subset(taylor_albums, !ep)
+#'
+#' # by default, albums get plotted in alphabetical order
+#' ggplot(studio_albums, aes(x = metacritic_score, y = album_name)) +
+#'   geom_col()
+#'
+#' # use `album_levels` to create a sensible factor variable
+#' studio_albums$album_name <- factor(studio_albums$album_name,
+#'                                    levels = album_levels)
+#' ggplot(studio_albums, aes(x = metacritic_score, y = album_name)) +
+#'   geom_col()
+album_levels <- c("Taylor Swift", "Fearless", "Fearless (Taylor's Version)",
+                  "Speak Now", "Red", "1989", "reputation", "Lover", "folklore",
+                  "evermore")
 
 
 # Scale functions --------------------------------------------------------------
