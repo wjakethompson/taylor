@@ -4,8 +4,8 @@
 #' released Taylor Swift songs. This includes albums, EPs, and individually
 #' released singles.
 #'
-#' @format A data frame with `r nrow(taylor_all_songs)` rows and
-#' 27 variables. Each row is one song.
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_all_songs)`
+#' rows and `r ncol(taylor_all_songs)` variables. Each row is one song.
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
@@ -122,8 +122,10 @@
 #' re-releases are made available (i.e., *Red* will soon be replaced with
 #' *Red (Taylor's Version)*).
 #'
-#' @format This is a subset of the [`taylor_all_songs`] data set. Please see
-#' that documentation for a complete description of all the included fields.
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_album_songs)`
+#' rows and `r ncol(taylor_album_songs)` variables. This is a subset of the
+#' [`taylor_all_songs`] data set. Please see that documentation for a complete
+#' description of all the included fields.
 "taylor_album_songs"
 
 #' Taylor Swift's Albums and EPs
@@ -131,7 +133,8 @@
 #' A data set containing the names of Taylor's official releases, the album
 #' type, and release date.
 #'
-#' @format A data frame with `r nrow(taylor_albums)` rows and 4 variables:
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_albums)` rows
+#' and `r ncol(taylor_albums)` variables:
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
