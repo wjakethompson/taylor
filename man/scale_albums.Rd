@@ -14,12 +14,24 @@ scale_fill_albums(
   na.value = "grey50"
 )
 
-scale_colour_albums(...)
+scale_colour_albums(
+  ...,
+  aesthetics = "colour",
+  breaks = waiver(),
+  limits = force,
+  na.value = "grey50"
+)
 
-scale_color_albums(...)
+scale_color_albums(
+  ...,
+  aesthetics = "colour",
+  breaks = waiver(),
+  limits = force,
+  na.value = "grey50"
+)
 }
 \arguments{
-\item{...}{Arguments to be passed to}
+\item{...}{Other arguments to be passed to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}}}
 
 \item{aesthetics}{The names of the aesthetics that this scale works with.}
 
@@ -48,5 +60,7 @@ missing values be displayed as? Does not apply to position scales
 where \code{NA} is always placed at the far right.}
 }
 \description{
-something
+A convenience wrapper for comparing albums with color. In contrast, to
+\code{\link{album_palettes}}, \code{scale_fill_albums()} and \code{scale_colour_albums()} use a
+single palette, with one color per album.
 }

@@ -21,7 +21,7 @@ album_palettes
 album_compare
 }
 \description{
-Pre-made color palettes based on Taylor Swifts album covers. For details on
+Premade color palettes based on Taylor Swifts album covers. For details on
 how to extend and shorten these palettes, or create your own color palette,
 see \code{\link[=color_palette]{color_palette()}}.
 }

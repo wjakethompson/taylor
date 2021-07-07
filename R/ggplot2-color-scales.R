@@ -114,14 +114,15 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
 
 #' Taylor Swift album comparison palette
 #'
-#' something
+#' A convenience wrapper for comparing albums with color. In contrast, to
+#' [`album_palettes`], `scale_fill_albums()` and `scale_colour_albums()` use a
+#' single palette, with one color per album.
 #'
 #' @inheritParams ggplot2::discrete_scale
 #' @param ... Other arguments to be passed to [ggplot2::discrete_scale()]
 #'
 #' @rdname scale_albums
 #' @export
-#' @examples
 scale_fill_albums <- function(..., aesthetics = "fill", breaks = waiver(),
                               limits = force, na.value = "grey50") {
   album_names <- names(album_compare)

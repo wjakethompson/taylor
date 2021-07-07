@@ -5,7 +5,7 @@
 \alias{taylor_albums}
 \title{Taylor Swift's Albums and EPs}
 \format{
-A data frame with 12 rows and 3 variables:
+A data frame with 12 rows and 4 variables:
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
 separately from one of Taylor's studio albums or EPs.
@@ -13,10 +13,13 @@ separately from one of Taylor's studio albums or EPs.
 play (\code{TRUE}).
 \item \code{album_release}: The date the album was released, in the ISO-8601 format
 (YYYY-MM-DD).
+\item \code{metacritic_score}: The official album rating from metacritic.
 }
 }
 \source{
 \url{https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography}
+
+\url{https://www.metacritic.com/person/taylor-swift}
 }
 \usage{
 taylor_albums
@@ -27,7 +30,7 @@ type, and release date.
 }
 \details{
 This data set includes all official studio albums and EPs with new tracks.
-This means that compliations or EPs that are a subset of the original albums
+This means that compilations or EPs that are a subset of the original albums
 are not included (e.g., \emph{folklore: the escapism chapter},
 \emph{folklore: the sleepless nights chapter}, etc.)
 }

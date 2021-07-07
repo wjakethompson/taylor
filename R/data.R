@@ -131,19 +131,21 @@
 #' A data set containing the names of Taylor's official releases, the album
 #' type, and release date.
 #'
-#' @format A data frame with `r nrow(taylor_albums)` rows and 3 variables:
+#' @format A data frame with `r nrow(taylor_albums)` rows and 4 variables:
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
 #'   play (`TRUE`).
 #' * `album_release`: The date the album was released, in the ISO-8601 format
 #'   (YYYY-MM-DD).
+#' * `metacritic_score`: The official album rating from metacritic.
 #'
 #' @details
 #' This data set includes all official studio albums and EPs with new tracks.
-#' This means that compliations or EPs that are a subset of the original albums
+#' This means that compilations or EPs that are a subset of the original albums
 #' are not included (e.g., *folklore: the escapism chapter*,
 #' *folklore: the sleepless nights chapter*, etc.)
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography}
+#' @source \url{https://www.metacritic.com/person/taylor-swift}
 "taylor_albums"
