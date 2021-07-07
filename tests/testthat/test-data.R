@@ -8,7 +8,7 @@ test_that("data has expected dimensions", {
   expect_equal(ncol(taylor_album_songs$lyrics[[1]]), 4L)
 
   # albums
-  expect_equal(ncol(taylor_albums), 3L)
+  expect_equal(ncol(taylor_albums), 4L)
 
   albums <-
     taylor_all_songs[which((!taylor_all_songs$ep) &
@@ -50,7 +50,8 @@ test_that("column names match documentation expectation", {
                                                            "element_artist"))
 
   # albums
-  expect_equal(colnames(taylor_albums), c("album_name", "ep", "album_release"))
+  expect_equal(colnames(taylor_albums), c("album_name", "ep", "album_release",
+                                          "metacritic_score"))
 })
 
 test_that("non-TV versions are excluded when possible", {
