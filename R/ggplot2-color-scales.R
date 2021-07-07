@@ -110,3 +110,54 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
     ...
   )
 }
+
+
+#' Taylor Swift album comparison palette
+#'
+#' something
+#'
+#' @inheritParams ggplot2::discrete_scale
+#' @param ... Other arguments to be passed to [ggplot2::discrete_scale()]
+#'
+#' @rdname scale_albums
+#' @export
+#' @examples
+scale_fill_albums <- function(..., aesthetics = "fill", breaks = waiver(),
+                              limits = force, na.value = "grey50") {
+  album_names <- names(album_compare)
+  album_names <- gsub("_", " ", album_names)
+  album_names <- gsub("\\ tv", " (Taylor's Version)", album_names)
+  album_names <- simple_cap(album_names)
+  album_names <- sapply(album_names, function(.x) {
+    if (.x %in% c("Reputation", "Folklore", "Evermore")) return(tolower(.x))
+    return(.x)
+  }, USE.NAMES = FALSE)
+
+  album_pal <- vec_data(album_compare)
+  names(album_pal) <- album_names
+
+  ggplot2::scale_fill_manual(values = album_pal, limits = limits, ...)
+}
+
+#' @rdname scale_albums
+#' @export
+scale_colour_albums <- function(..., aesthetics = "colour", breaks = waiver(),
+                                limits = force, na.value = "grey50") {
+  album_names <- names(album_compare)
+  album_names <- gsub("_", " ", album_names)
+  album_names <- gsub("\\ tv", " (Taylor's Version)", album_names)
+  album_names <- simple_cap(album_names)
+  album_names <- sapply(album_names, function(.x) {
+    if (.x %in% c("Reputation", "Folklore", "Evermore")) return(tolower(.x))
+    return(.x)
+  }, USE.NAMES = FALSE)
+
+  album_pal <- vec_data(album_compare)
+  names(album_pal) <- album_names
+
+  ggplot2::scale_colour_manual(values = album_pal, limits = limits, ...)
+}
+
+#' @rdname scale_albums
+#' @export
+scale_color_albums <- scale_colour_albums
