@@ -13,8 +13,11 @@ test_that("palettes have expected length", {
   expect_true(all(lapply(album_palettes, length) == 5))
 
   # all album compare colors are in their respective full palette
-  expect_true(all(mapply(function(x, y) {x %in% y},
-                         album_compare, album_palettes)))
+  expect_true(
+    all(mapply(function(x, y) {
+      x %in% y
+    },
+               album_compare, album_palettes)))
 
   # palette and factor names
   short_names <- tolower(album_levels)

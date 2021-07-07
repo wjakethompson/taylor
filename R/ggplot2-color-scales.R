@@ -145,17 +145,8 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
 #'   scale_fill_albums()
 scale_fill_albums <- function(..., aesthetics = "fill", breaks = waiver(),
                               limits = force, na.value = "grey50") {
-  album_names <- names(album_compare)
-  album_names <- gsub("_", " ", album_names)
-  album_names <- gsub("\\ tv", " (Taylor's Version)", album_names)
-  album_names <- simple_cap(album_names)
-  album_names <- sapply(album_names, function(.x) {
-    if (.x %in% c("Reputation", "Folklore", "Evermore")) return(tolower(.x))
-    return(.x)
-  }, USE.NAMES = FALSE)
-
-  album_pal <- vec_data(album_compare)
-  names(album_pal) <- album_names
+  album_pal <- vec_data(taylor::album_compare)
+  names(album_pal) <- taylor::album_levels
 
   ggplot2::scale_fill_manual(values = album_pal, limits = limits, ...)
 }
@@ -164,17 +155,8 @@ scale_fill_albums <- function(..., aesthetics = "fill", breaks = waiver(),
 #' @export
 scale_colour_albums <- function(..., aesthetics = "colour", breaks = waiver(),
                                 limits = force, na.value = "grey50") {
-  album_names <- names(album_compare)
-  album_names <- gsub("_", " ", album_names)
-  album_names <- gsub("\\ tv", " (Taylor's Version)", album_names)
-  album_names <- simple_cap(album_names)
-  album_names <- sapply(album_names, function(.x) {
-    if (.x %in% c("Reputation", "Folklore", "Evermore")) return(tolower(.x))
-    return(.x)
-  }, USE.NAMES = FALSE)
-
-  album_pal <- vec_data(album_compare)
-  names(album_pal) <- album_names
+  album_pal <- vec_data(taylor::album_compare)
+  names(album_pal) <- taylor::album_levels
 
   ggplot2::scale_colour_manual(values = album_pal, limits = limits, ...)
 }

@@ -1,2 +1,2 @@
-exclusions: list("R/ggplot2-color-scales.R" = c(49, 73),
+exclusions: list("R/ggplot2-color-scales.R" = c(74, 98, 147, 157),
                  "R/data-checks.R" = 28)
