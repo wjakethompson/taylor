@@ -144,21 +144,25 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
 #'   geom_col(aes(fill = album_name)) +
 #'   scale_fill_albums()
 scale_fill_albums <- function(..., aesthetics = "fill", breaks = waiver(),
-                              limits = force, na.value = "grey50") {
+                              limits = force, na.value = NA) {
   album_pal <- vec_data(taylor::album_compare)
   names(album_pal) <- taylor::album_levels
 
-  ggplot2::scale_fill_manual(values = album_pal, limits = limits, ...)
+  ggplot2::scale_fill_manual(values = album_pal, aesthetics = aesthetics,
+                             breaks = breaks, limits = limits,
+                             na.value = na.value, ...)
 }
 
 #' @rdname scale_albums
 #' @export
 scale_colour_albums <- function(..., aesthetics = "colour", breaks = waiver(),
-                                limits = force, na.value = "grey50") {
+                                limits = force, na.value = NA) {
   album_pal <- vec_data(taylor::album_compare)
   names(album_pal) <- taylor::album_levels
 
-  ggplot2::scale_colour_manual(values = album_pal, limits = limits, ...)
+  ggplot2::scale_colour_manual(values = album_pal, aesthetics = aesthetics,
+                               breaks = breaks, limits = limits,
+                               na.value = na.value, ...)
 }
 
 #' @rdname scale_albums

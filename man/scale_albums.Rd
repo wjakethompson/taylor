@@ -11,7 +11,7 @@ scale_fill_albums(
   aesthetics = "fill",
   breaks = waiver(),
   limits = force,
-  na.value = "grey50"
+  na.value = NA
 )
 
 scale_colour_albums(
@@ -19,7 +19,7 @@ scale_colour_albums(
   aesthetics = "colour",
   breaks = waiver(),
   limits = force,
-  na.value = "grey50"
+  na.value = NA
 )
 
 scale_color_albums(
@@ -27,7 +27,7 @@ scale_color_albums(
   aesthetics = "colour",
   breaks = waiver(),
   limits = force,
-  na.value = "grey50"
+  na.value = NA
 )
 }
 \arguments{
