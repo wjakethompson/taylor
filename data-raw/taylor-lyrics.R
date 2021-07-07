@@ -337,6 +337,7 @@ metacritic <- tribble(
 taylor_albums <- taylor_all_songs |>
   distinct(album_name, ep, album_release) |>
   filter(!is.na(album_name)) |>
+  left_join(metacritic, by = "album_name") |>
   arrange(album_release)
 
 use_data(taylor_all_songs, taylor_album_songs, taylor_albums, overwrite = TRUE)
