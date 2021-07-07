@@ -60,7 +60,28 @@ missing values be displayed as? Does not apply to position scales
 where \code{NA} is always placed at the far right.}
 }
 \description{
-A convenience wrapper for comparing albums with color. In contrast, to
-\code{\link{album_palettes}}, \code{scale_fill_albums()} and \code{scale_colour_albums()} use a
-single palette, with one color per album.
+A convenience wrapper for comparing albums with color. In contrast to
+\code{\link[=scale_fill_taylor_d]{scale_fill_taylor_d()}} and \code{\link[=scale_colour_taylor_d]{scale_colour_taylor_d()}},
+\code{scale_fill_albums()} and \code{scale_colour_albums()} use a single palette, with
+one color per album. Specifically, the \code{\link{album_compare}} palette is used to
+apply a color associated with each album.
+}
+\examples{
+library(ggplot2)
+studio <- subset(taylor_albums, !is.na(metacritic_score))
+
+# create a plot that we want to color or fill by album
+ggplot(studio, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name))
+
+# apply a color inspired by each album cover
+ggplot(studio, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name)) +
+  scale_fill_albums()
+
+# even when the axis or levels are rearranged, the correct color is applied
+studio$album_name <- factor(studio$album_name, levels = album_levels)
+ggplot(studio, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name)) +
+  scale_fill_albums()
 }
