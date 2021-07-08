@@ -19,7 +19,7 @@ library(taylor)
 
 In addition to data sets, taylor also includes a few helper functions for easily making plots created with [ggplot2](https://ggplot2.tidyverse.org) have a Taylor Swift theme. For this vignette, I'm assuming you are already familiar with ggplot2 and can make basic plots. 
 
-## ggplot2 scales
+## ggplot2 color scales
 
 You can add album-themed color palettes to your plots using the `scale_color_taylor_d()` and `scale_fill_taylor_d()` for discrete scales, and using `scale_color_taylor_c()` and `scale_fill_taylor_c()` for continuous scales. We'll start will discrete scales.
 
