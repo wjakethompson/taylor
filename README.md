@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# taylor
+# taylor <a href='https://taylor.wjakethompson.com'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
@@ -22,7 +22,7 @@ Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
-<img src="man/figures/taylor.gif" width="50%" />
+<img src="man/figures/taylor.gif" title="Taylor Swift snapping and saying 'yes.'" alt="Taylor Swift snapping and saying 'yes.'" width="50%" />
 
 ## Installation
 
