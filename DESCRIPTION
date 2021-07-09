@@ -28,6 +28,7 @@ Imports:
     tibble,
     vctrs
 Suggests: 
+    palmerpenguins,
     knitr,
     rmarkdown,
     spelling,
