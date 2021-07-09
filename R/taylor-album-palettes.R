@@ -33,16 +33,16 @@ album_palettes <- lapply(list(
 #' @rdname album_palettes
 #' @export
 album_compare <- color_palette(
-  c(taylor_swift = "#1D4737",
+  c(taylor_swift = "#1BAEC6",
     fearless     = "#976F34",
-    fearless_tv  = "#A47F45",
+    fearless_tv  = "#624324",
     speak_now    = "#833C63",
     red          = "#A91E47",
-    `1989`       = "#C6B69C",
+    `1989`       = "#846578",
     reputation   = "#2C2C2C",
-    lover        = "#6098B6",
+    lover        = "#EBBED3",
     folklore     = "#949494",
-    evermore     = "#D37F55")
+    evermore     = "#421E18")
 )
 
 
