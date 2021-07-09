@@ -18,16 +18,16 @@
 #'
 #' album_palettes$evermore
 album_palettes <- lapply(list(
-  taylor_swift = c("#1BAEC6", "#1D4737", "#523d28", "#AD8562", "#E7DBCC"),
-  fearless     = c("#E1D4C2", "#CBA863", "#976F34", "#776456", "#6B5E57"),
-  fearless_tv  = c("#624324", "#A47F45", "#C5AA7C", "#CAA462", "#EEDBA9"),
-  speak_now    = c("#F5E8E2", "#D1A0C7", "#833C63", "#6C3127", "#2E1924"),
-  red          = c("#A91E47", "#201F39", "#7E6358", "#B0A49A", "#DDD8C9"),
-  `1989`       = c("#D8D8CF", "#C6B69C", "#92573C", "#846578", "#5D4E5D"),
-  reputation   = c("#B9B9B9", "#6E6E6E", "#5B5B5B", "#515151", "#2C2C2C"),
-  lover        = c("#EBBED3", "#9C8083", "#8C4F66", "#847262", "#6098B6"),
-  folklore     = c("#EBEBEB", "#949494", "#5C5C5C", "#545454", "#3E3E3E"),
-  evermore     = c("#E0D9D7", "#D37F55", "#85796D", "#421E18", "#160E10")
+  taylor_swift = c("#1D4737", "#1BAEC6", "#523d28", "#AD8562", "#E7DBCC"),
+  fearless     = c("#6B5E57", "#776456", "#976F34", "#CBA863", "#E1D4C2"),
+  fearless_tv  = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
+  speak_now    = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
+  red          = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
+  `1989`       = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
+  reputation   = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
+  lover        = c("#8C4F66", "#9C8083", "#847262", "#6098B6", "#EBBED3"),
+  folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
+  evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7")
 ), color_palette)
 
 #' @rdname album_palettes
@@ -100,10 +100,12 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
 
   lookup_pal <- tolower(album)
   lookup_pal <- gsub("\\ ", "_", lookup_pal)
+  lookup_pal <- gsub("\\(taylor's_version\\)", "tv", lookup_pal)
 
   option <- switch(EXPR = lookup_pal,
                    taylor_swift = taylor::album_palettes[["taylor_swift"]],
                    fearless     = taylor::album_palettes[["fearless"]],
+                   fearless_tv  = taylor::album_palettes[["fearless_tv"]],
                    speak_now    = taylor::album_palettes[["speak_now"]],
                    red          = taylor::album_palettes[["red"]],
                    `1989`       = taylor::album_palettes[["1989"]],
