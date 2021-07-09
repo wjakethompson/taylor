@@ -17,3 +17,4 @@ Checklist of things that should be updated when adding a new album:
 - [ ] Add new album to factor levels in `R/taylor-album-palettes.R`
 - [ ] Update CSS for pkgdown theme
 - [ ] Create new hex logo, update favicons
+- [ ] Add tests for new palettes to `tests/testthat/test-ggplot2-color-scales.R`
