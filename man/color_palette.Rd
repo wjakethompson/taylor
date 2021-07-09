@@ -24,6 +24,9 @@ is_color_palette(pal)
 \item{type}{The type of palette, either \code{discrete} or \code{continuous}. If \code{n} is
 greater than the number of colors in \code{pal}, type must be \code{continuous}.}
 }
+\value{
+A color palette object.
+}
 \description{
 This creates a character vector that represents palettes so when it is
 printed, it displays the palette colors.

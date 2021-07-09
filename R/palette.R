@@ -9,6 +9,8 @@
 #' @param n The number of colors
 #' @param type The type of palette, either `discrete` or `continuous`. If `n` is
 #'  greater than the number of colors in `pal`, type must be `continuous`.
+#'
+#' @return A color palette object.
 #' @export
 #' @examples
 #' # use color_palette() to extend or shorten an existing palette
