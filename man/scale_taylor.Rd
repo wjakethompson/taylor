@@ -7,6 +7,9 @@
 \alias{scale_colour_taylor_c}
 \alias{scale_color_taylor_c}
 \alias{scale_fill_taylor_c}
+\alias{scale_colour_taylor_b}
+\alias{scale_color_taylor_b}
+\alias{scale_fill_taylor_b}
 \title{Taylor Swift colour scales based on album cover palettes}
 \usage{
 scale_colour_taylor_d(
@@ -78,6 +81,48 @@ scale_fill_taylor_c(
   space = "Lab",
   na.value = "grey50",
   guide = "colourbar",
+  aesthetics = "fill"
+)
+
+scale_colour_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
+  aesthetics = "colour"
+)
+
+scale_color_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
+  aesthetics = "colour"
+)
+
+scale_fill_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
   aesthetics = "fill"
 )
 }

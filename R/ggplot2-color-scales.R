@@ -111,6 +111,51 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
   )
 }
 
+#' @export
+#' @rdname scale_taylor
+scale_colour_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
+                                  direction = 1, album = "Lover", values = NULL,
+                                  space = "Lab", na.value = "grey50",
+                                  guide = "coloursteps",
+                                  aesthetics = "colour") {
+  ggplot2::binned_scale(
+    aesthetics,
+    "taylor_b",
+    scales::gradient_n_pal(
+      taylor_pal(alpha, begin, end, direction, album)(6),
+      values,
+      space
+    ),
+    na.value = na.value,
+    guide = guide,
+    ...
+  )
+}
+
+#' @export
+#' @rdname scale_taylor
+scale_color_taylor_b <- scale_colour_taylor_b
+
+#' @export
+#' @rdname scale_taylor
+scale_fill_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
+                                direction = 1, album = "Lover", values = NULL,
+                                space = "Lab", na.value = "grey50",
+                                guide = "coloursteps", aesthetics = "fill") {
+  ggplot2::binned_scale(
+    aesthetics,
+    "taylor_b",
+    scales::gradient_n_pal(
+      taylor_pal(alpha, begin, end, direction, album)(6),
+      values,
+      space
+    ),
+    na.value = na.value,
+    guide = guide,
+    ...
+  )
+}
+
 
 #' Taylor Swift album comparison palette
 #'
