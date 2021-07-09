@@ -12,6 +12,9 @@ test_that("discrete fill works", {
   fearless <- fill_base +
     scale_fill_taylor_d(album = "Fearless")
 
+  fearless_tv <- fill_base +
+    scale_fill_taylor_d(album = "Fearless (Taylor's Version)")
+
   speak_now <- fill_base +
     scale_fill_taylor_d(album = "speak_now")
 
@@ -35,6 +38,7 @@ test_that("discrete fill works", {
 
   vdiffr::expect_doppelganger("taylor-swift-fill-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-d", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-fill-d", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-fill-d", speak_now)
   vdiffr::expect_doppelganger("red-fill-d", red)
   vdiffr::expect_doppelganger("1989-fill-d", `1989`)
@@ -54,6 +58,9 @@ test_that("discrete color works", {
 
   fearless <- color_base +
     scale_color_taylor_d(album = "Fearless")
+
+  fearless_tv <- color_base +
+    scale_color_taylor_d(album = "Fearless (Taylor's Version)")
 
   speak_now <- color_base +
     scale_color_taylor_d(album = "speak_now")
@@ -78,6 +85,7 @@ test_that("discrete color works", {
 
   vdiffr::expect_doppelganger("taylor-swift-color-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-d", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-color-d", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-color-d", speak_now)
   vdiffr::expect_doppelganger("red-color-d", red)
   vdiffr::expect_doppelganger("1989-color-d", `1989`)
@@ -132,6 +140,9 @@ test_that("continuous fill works", {
   fearless <- fill_base +
     scale_fill_taylor_c(album = "Fearless")
 
+  fearless_tv <- fill_base +
+    scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
+
   speak_now <- fill_base +
     scale_fill_taylor_c(album = "speak_now")
 
@@ -155,6 +166,7 @@ test_that("continuous fill works", {
 
   vdiffr::expect_doppelganger("taylor-swift-fill-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-c", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-fill-c", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-fill-c", speak_now)
   vdiffr::expect_doppelganger("red-fill-c", red)
   vdiffr::expect_doppelganger("1989-fill-c", `1989`)
@@ -302,6 +314,9 @@ test_that("continuous color works", {
   fearless <- color_base +
     scale_color_taylor_c(album = "Fearless")
 
+  fearless_tv <- color_base +
+    scale_color_taylor_c(album = "Fearless (Taylor's Version)")
+
   speak_now <- color_base +
     scale_color_taylor_c(album = "speak_now")
 
@@ -325,6 +340,7 @@ test_that("continuous color works", {
 
   vdiffr::expect_doppelganger("taylor-swift-color-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-c", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-color-c", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-color-c", speak_now)
   vdiffr::expect_doppelganger("red-color-c", red)
   vdiffr::expect_doppelganger("1989-color-c", `1989`)
@@ -332,6 +348,53 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("lover-color-c", lover)
   vdiffr::expect_doppelganger("folklore-color-c", folklore)
   vdiffr::expect_doppelganger("evermore-color-c", evermore)
+})
+
+test_that("binned fill works", {
+  fill_base <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+    geom_tile() +
+    labs(x = NULL, y = NULL)
+
+  taylor_swift <- fill_base +
+    scale_fill_taylor_b(album = "Taylor Swift")
+
+  fearless <- fill_base +
+    scale_fill_taylor_b(album = "Fearless")
+
+  fearless_tv <- fill_base +
+    scale_fill_taylor_b(album = "Fearless (Taylor's Version)")
+
+  speak_now <- fill_base +
+    scale_fill_taylor_b(album = "Speak Now")
+
+  red <- fill_base +
+    scale_fill_taylor_b(album = "Red")
+
+  `1989` <- fill_base +
+    scale_fill_taylor_b(album = "1989")
+
+  reputation <- fill_base +
+    scale_fill_taylor_b(album = "reputation")
+
+  lover <- fill_base +
+    scale_fill_taylor_b(album = "Lover")
+
+  folklore <- fill_base +
+    scale_fill_taylor_b(album = "folklore")
+
+  evermore <- fill_base +
+    scale_fill_taylor_b(album = "evermore")
+
+  vdiffr::expect_doppelganger("taylor-swift-fill-b", taylor_swift)
+  vdiffr::expect_doppelganger("fearless-fill-b", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-fill-b", fearless_tv)
+  vdiffr::expect_doppelganger("speak-now-fill-b", speak_now)
+  vdiffr::expect_doppelganger("red-fill-b", red)
+  vdiffr::expect_doppelganger("1989-fill-b", `1989`)
+  vdiffr::expect_doppelganger("reputation-fill-b", reputation)
+  vdiffr::expect_doppelganger("lover-fill-b", lover)
+  vdiffr::expect_doppelganger("folklore-fill-b", folklore)
+  vdiffr::expect_doppelganger("evermore-fill-b", evermore)
 })
 
 test_that("album scale works", {
