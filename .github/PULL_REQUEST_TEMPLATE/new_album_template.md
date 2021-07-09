@@ -15,3 +15,5 @@ Checklist of things that should be updated when adding a new album:
 - [ ] Add color palette to `R/taylor-album-palettes.R`
 - [ ] Add color to existing `album_compare` palette in `R/taylor-album-palettes.R`
 - [ ] Add new album to factor levels in `R/taylor-album-palettes.R`
+- [ ] Update CSS for pkgdown theme
+- [ ] Create new hex logo, update favicons
