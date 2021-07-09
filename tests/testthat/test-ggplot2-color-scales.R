@@ -397,6 +397,53 @@ test_that("binned fill works", {
   vdiffr::expect_doppelganger("evermore-fill-b", evermore)
 })
 
+test_that("binned color work", {
+  color_base <- ggplot(faithful, aes(eruptions, waiting)) +
+    geom_point(aes(color = eruptions), size = 3) +
+    theme_minimal()
+
+  taylor_swift <- color_base +
+    scale_color_taylor_b(album = "Taylor Swift")
+
+  fearless <- color_base +
+    scale_color_taylor_b(album = "Fearless")
+
+  fearless_tv <- color_base +
+    scale_color_taylor_b(album = "Fearless (Taylor's Version)")
+
+  speak_now <- color_base +
+    scale_color_taylor_b(album = "Speak Now")
+
+  red <- color_base +
+    scale_color_taylor_b(album = "Red")
+
+  `1989` <- color_base +
+    scale_color_taylor_b(album = "1989")
+
+  reputation <- color_base +
+    scale_color_taylor_b(album = "reputation")
+
+  lover <- color_base +
+    scale_color_taylor_b(album = "Lover")
+
+  folklore <- color_base +
+    scale_color_taylor_b(album = "folklore")
+
+  evermore <- color_base +
+    scale_color_taylor_b(album = "evermore")
+
+  vdiffr::expect_doppelganger("taylor-swift-color-b", taylor_swift)
+  vdiffr::expect_doppelganger("fearless-color-b", fearless)
+  vdiffr::expect_doppelganger("fearless-tv-color-b", fearless_tv)
+  vdiffr::expect_doppelganger("speak-now-color-b", speak_now)
+  vdiffr::expect_doppelganger("red-color-b", red)
+  vdiffr::expect_doppelganger("1989-color-b", `1989`)
+  vdiffr::expect_doppelganger("reputation-color-b", reputation)
+  vdiffr::expect_doppelganger("lover-color-b", lover)
+  vdiffr::expect_doppelganger("folklore-color-b", folklore)
+  vdiffr::expect_doppelganger("evermore-color-b", evermore)
+})
+
 test_that("album scale works", {
   studio <- subset(taylor_albums, !ep)
 
