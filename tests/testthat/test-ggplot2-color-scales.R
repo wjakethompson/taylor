@@ -351,7 +351,8 @@ test_that("album scale works", {
   # make albums a factor
   lvl_studio <- studio
   lvl_studio$album_name <- factor(lvl_studio$album_name, levels = album_levels)
-  normal_level <- ggplot(lvl_studio, aes(x = metacritic_score, y = album_name)) +
+  normal_level <- ggplot(lvl_studio,
+                         aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
@@ -362,7 +363,8 @@ test_that("album scale works", {
   rlvl_studio <- studio
   rlvl_studio$album_name <- factor(rlvl_studio$album_name,
                                    levels = rev(album_levels))
-  reverse_level <- ggplot(rlvl_studio, aes(x = metacritic_score, y = album_name)) +
+  reverse_level <- ggplot(rlvl_studio,
+                          aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
