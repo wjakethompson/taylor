@@ -1,0 +1,113 @@
+---
+title: "Using and creating color palettes"
+# output: rmarkdown::html_vignette
+# output:
+#   bookdown::html_document2:
+#     base_format: rmarkdown::html_vignette
+#     number_sections: false
+#     toc: true
+description: |
+  The plots were in screaming color.
+vignette: >
+  %\VignetteIndexEntry{Using and creating color palettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.asp = 0.618,
+  fig.retina = 3,
+  fig.width = 7,
+  out.width = "90%"
+)
+```
+
+The {taylor} package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
+
+# Creating palettes
+
+{taylor} uses [{vctrs}](https://vctrs.r-lib.org/) to create a special vector class of color palettes that can be used to create and visualize palettes. We can create a palette using the `color_palette()` function. We only have to pass a vector of hexadecimal values or valid R color (from `colors()`), and a palette is created that will print a preview of the colors.
+
+```{r}
+library(taylor)
+
+my_pal <- color_palette(c("firebrick", "turquoise", "#0051ba"))
+my_pal
+```
+
+We can also use `color_palette()` on an existing palette to interpolate additional values, by specifying that we want to make a continuous palette out of the few discrete colors that were originally specified.
+
+```{r}
+my_big_pal <- color_palette(my_pal, n = 10, type = "continuous")
+my_big_pal
+```
+
+Similarly, if we have a large color palette, we can select just a few representative colors.
+
+```{r}
+my_small_pal <- color_palette(my_big_pal, n = 5)
+my_small_pal
+```
+
+# Built-in palettes
+
+The {taylor} package comes with a few palettes built-in, based on Taylor Swift's album covers. There can be viewed using `taylor::album_palettes`.
+
+```{r}
+album_palettes
+```
+
+Or we can access a single palette.
+
+```{r}
+album_palettes$fearless_tv
+```
+
+Also included is a palette that includes one representative color from each album, `taylor::album_compare`.
+
+```{r}
+album_compare
+```
+
+# Using color palettes with {ggplot2}
+
+The {taylor} package comes with a set of functions built in for plotting in {ggplot2} with the album palettes. For example, we can use `scale_fill_taylor_c()` to create a continuous scale based on one of the album palettes. For more details on how to use the scale functions included in {taylor}, check out `vignette("plotting")`.
+
+```{r message = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
+library(ggplot2)
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  theme_minimal() -> p
+
+p + scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
+```
+
+You can also use your custom palettes with {ggplot2}. For example, we can create a palette of greens, and then use `ggplot2::scale_fill_gradientn()` or `ggplot2::scale_color_gradientn()` to use the palette.
+
+```{r fig.alt = "The same heatmap as the previous figure, but instead of the fill using a palette based on Fearless (Taylor's Version), the color palette goes from light green to dark green."}
+green_pal <- color_palette(c("#E5F5E0", "#A1D99B", "#31A354"))
+green_pal
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_gradientn(colors = green_pal) +
+  theme_minimal()
+```
+
+Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the [{palmerpenguins}](https://allisonhorst.github.io/palmerpenguins) to map our palette to the species of penguin.
+
+```{r message = FALSE, warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from our custom color palette. Adelie penguins are shown in red circles, Chinstrap penguins in yellow triangles, and Gentoo penguins in blue squares."}
+library(palmerpenguins)
+
+penguin_pal <- color_palette(c("firebrick", "goldenrod", "navy"))
+penguin_pal
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(shape = species, color = species), size = 3) +
+  scale_color_manual(values = penguin_pal) +
+  theme_minimal()
+```
