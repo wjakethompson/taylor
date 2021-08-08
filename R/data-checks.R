@@ -93,3 +93,13 @@ check_exact_abs_int <- function(x, name, value) {
     x
   }
 }
+
+check_character <- function(x, name) {
+  if (!is.character(x)) {
+    abort_bad_argument(name, must = "be character", not = typeof(x))
+  }
+
+  if (is.na(x)) {
+    abort_bad_argument(name, must = "be non-missing")
+  }
+  x
