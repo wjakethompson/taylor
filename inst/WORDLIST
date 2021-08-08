@@ -1,6 +1,7 @@
 CMD
 EP
 EPs
+Metacritic
 Premade
 Spotify
 YYYY
@@ -8,6 +9,7 @@ codecov
 colormap
 colour
 colours
+cpcinema
 danceable
 ggplot
 ggplots
