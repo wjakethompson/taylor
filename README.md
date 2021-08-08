@@ -17,7 +17,7 @@ Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-The goal of taylor is to provide easy access to a curated data set of
+The goal of {taylor} is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
@@ -46,7 +46,7 @@ Version)*). We stan artists owning their own songs.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 163 x 29
+#> # A tibble: 163 × 29
 #>    album_name  ep    album_release track_number track_name     artist  featuring
 #>    <chr>       <lgl> <date>               <int> <chr>          <chr>   <chr>    
 #>  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… <NA>     
@@ -75,7 +75,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 213 x 29
+#> # A tibble: 213 × 29
 #>    album_name  ep    album_release track_number track_name     artist  featuring
 #>    <chr>       <lgl> <date>               <int> <chr>          <chr>   <chr>    
 #>  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… <NA>     
@@ -102,25 +102,25 @@ Taylor’s album release history.
 
 ``` r
 taylor_albums
-#> # A tibble: 12 x 3
-#>    album_name                          ep    album_release
-#>    <chr>                               <lgl> <date>       
-#>  1 Taylor Swift                        FALSE 2006-10-24   
-#>  2 The Taylor Swift Holiday Collection TRUE  2007-10-14   
-#>  3 Beautiful Eyes                      TRUE  2008-07-15   
-#>  4 Fearless                            FALSE 2008-11-11   
-#>  5 Speak Now                           FALSE 2010-10-25   
-#>  6 Red                                 FALSE 2012-10-22   
-#>  7 1989                                FALSE 2014-10-27   
-#>  8 reputation                          FALSE 2017-11-10   
-#>  9 Lover                               FALSE 2019-08-23   
-#> 10 folklore                            FALSE 2020-07-24   
-#> 11 evermore                            FALSE 2020-12-11   
-#> 12 Fearless (Taylor's Version)         FALSE 2021-04-09
+#> # A tibble: 12 × 4
+#>    album_name                          ep    album_release metacritic_score
+#>    <chr>                               <lgl> <date>                   <int>
+#>  1 Taylor Swift                        FALSE 2006-10-24                  NA
+#>  2 The Taylor Swift Holiday Collection TRUE  2007-10-14                  NA
+#>  3 Beautiful Eyes                      TRUE  2008-07-15                  NA
+#>  4 Fearless                            FALSE 2008-11-11                  73
+#>  5 Speak Now                           FALSE 2010-10-25                  77
+#>  6 Red                                 FALSE 2012-10-22                  77
+#>  7 1989                                FALSE 2014-10-27                  76
+#>  8 reputation                          FALSE 2017-11-10                  71
+#>  9 Lover                               FALSE 2019-08-23                  79
+#> 10 folklore                            FALSE 2020-07-24                  88
+#> 11 evermore                            FALSE 2020-12-11                  85
+#> 12 Fearless (Taylor's Version)         FALSE 2021-04-09                  82
 ```
 
 ## Code of Conduct
 
-Please note that the taylor project is released with a [Contributor Code
-of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By
-contributing to this project, you agree to abide by its terms.
+Please note that the {taylor} project is released with a [Contributor
+Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
