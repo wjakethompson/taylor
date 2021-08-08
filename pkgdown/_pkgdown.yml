@@ -13,5 +13,12 @@ template:
 development:
   mode: auto
 
+articles:
+- title: Plotting
+  navbar: ~
+  contents:
+  - plotting
+  - palettes
+
 figures:
   fig.retina: 3
