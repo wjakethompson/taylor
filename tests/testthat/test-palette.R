@@ -1,5 +1,7 @@
 test_that("palette creation work", {
-  expect_error(color_palette(c("red", "blue")), "hexadecimal")
+  expect_error(color_palette(c("firetruck", "ocean")), "hexadecimal")
+  expect_error(color_palette(c("#00ZVPQ", "#IOBNOB")), "hexadecimal")
+  expect_error(color_palette(c("#00ZVPQ", "red")), "hexadecimal")
   expect_error(color_palette(c("#990fb7", "#fed766"), n = 3, "jake"),
                'one of "discrete" or "continuous"')
   expect_error(color_palette(c("#990fb7", "#fed766"), n = 3), "1 and 2")

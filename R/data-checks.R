@@ -22,6 +22,17 @@ check_palette <- function(x, name) {
     abort_bad_argument(name, must = "not contain missing values")
   }
 
+  # look for R color specifications
+  r_colors <- which(x %in% grDevices::colors())
+  if (length(r_colors) > 0) {
+    r_hex <- sapply(x[r_colors], function(.x) {
+      r_rgb <- grDevices::col2rgb(.x)
+      grDevices::rgb(red = r_rgb["red", 1], green = r_rgb["green", 1],
+                     blue = r_rgb["blue", 1], maxColorValue = 255)
+    })
+    x[r_colors] <- r_hex
+  }
+
   # make sure strings are valid hex codes
   valid_hex <- grepl("^#(?:[0-9a-fA-F]{6,8}){1}$", x)
   if (!all(valid_hex)) {
@@ -103,3 +114,4 @@ check_character <- function(x, name) {
     abort_bad_argument(name, must = "be non-missing")
   }
   x
+}
