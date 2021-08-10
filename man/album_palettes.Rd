@@ -4,7 +4,7 @@
 \name{album_palettes}
 \alias{album_palettes}
 \alias{album_compare}
-\title{Taylor Swift album palettes}
+\title{Color palettes based on Taylor Swift's albums}
 \format{
 A list of length 10. Each element contains a
 color palette for one of Taylor Swift's studio albums. The list elements

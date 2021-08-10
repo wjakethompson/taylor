@@ -3,7 +3,7 @@
 \docType{data}
 \name{album_levels}
 \alias{album_levels}
-\title{Taylor Swift album ordering}
+\title{Correct ordering of Taylor Swift's albums}
 \format{
 A vector of length 10. Each element is an album
 name, in an order that can be used for making factor variables.

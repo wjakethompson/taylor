@@ -3,7 +3,7 @@
 \name{color_palette}
 \alias{color_palette}
 \alias{is_color_palette}
-\title{\code{palette} vector}
+\title{Create a custom color palette}
 \usage{
 color_palette(
   pal = character(),

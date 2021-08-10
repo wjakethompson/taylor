@@ -1,4 +1,4 @@
-#' Data for Taylor Swift Songs
+#' Data for Taylor Swift songs
 #'
 #' A data set containing lyrics to and characteristics of all officially
 #' released Taylor Swift songs. This includes albums, EPs, and individually
@@ -109,7 +109,7 @@
 #' @source \url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}
 "taylor_all_songs"
 
-#' Data for Songs on Taylor's Official Studio Albums
+#' Data for songs on Taylor Swift's official studio albums
 #'
 #' A data set containing lyrics to and characteristics of songs on all of
 #' Taylor's official studio albums. Thus, this is a subset of
@@ -128,7 +128,7 @@
 #' description of all the included fields.
 "taylor_album_songs"
 
-#' Taylor Swift's Albums and EPs
+#' Data for Taylor Swift's studio albums and EPs
 #'
 #' A data set containing the names of Taylor's official releases, the album
 #' type, and release date.

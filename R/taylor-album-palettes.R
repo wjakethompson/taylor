@@ -1,4 +1,4 @@
-#' Taylor Swift album palettes
+#' Color palettes based on Taylor Swift's albums
 #'
 #' Premade color palettes based on Taylor Swifts album covers. For details on
 #' how to extend and shorten these palettes, or create your own color palette,
@@ -46,7 +46,7 @@ album_compare <- color_palette(
 )
 
 
-#' Taylor Swift album ordering
+#' Correct ordering of Taylor Swift's albums
 #'
 #' Easily create a factor variable for Taylor Swift's albums. Rather than
 #' specifying each album individually, you can use this shortcut vector that has

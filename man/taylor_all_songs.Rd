@@ -3,7 +3,7 @@
 \docType{data}
 \name{taylor_all_songs}
 \alias{taylor_all_songs}
-\title{Data for Taylor Swift Songs}
+\title{Data for Taylor Swift songs}
 \format{
 A \link[tibble:tibble-package]{tibble} with 213
 rows and 29 variables. Each row is one song.

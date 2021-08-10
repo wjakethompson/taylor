@@ -1,4 +1,4 @@
-#' `palette` vector
+#' Create a custom color palette
 #'
 #' This creates a character vector that represents palettes so when it is
 #' printed, it displays the palette colors.

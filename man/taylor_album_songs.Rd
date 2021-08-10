@@ -3,7 +3,7 @@
 \docType{data}
 \name{taylor_album_songs}
 \alias{taylor_album_songs}
-\title{Data for Songs on Taylor's Official Studio Albums}
+\title{Data for songs on Taylor Swift's official studio albums}
 \format{
 A \link[tibble:tibble-package]{tibble} with 163
 rows and 29 variables. This is a subset of the

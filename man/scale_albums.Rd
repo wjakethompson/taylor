@@ -4,7 +4,7 @@
 \alias{scale_fill_albums}
 \alias{scale_colour_albums}
 \alias{scale_color_albums}
-\title{Taylor Swift album comparison palette}
+\title{Taylor Swift colour scale for album comparisons}
 \usage{
 scale_fill_albums(
   ...,

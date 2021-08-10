@@ -157,7 +157,7 @@ scale_fill_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
 }
 
 
-#' Taylor Swift album comparison palette
+#' Taylor Swift colour scale for album comparisons
 #'
 #' A convenience wrapper for comparing albums with color. In contrast to
 #' [`scale_fill_taylor_d()`] and [`scale_colour_taylor_d()`],

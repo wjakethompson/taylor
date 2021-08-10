@@ -3,7 +3,7 @@
 \docType{data}
 \name{taylor_albums}
 \alias{taylor_albums}
-\title{Taylor Swift's Albums and EPs}
+\title{Data for Taylor Swift's studio albums and EPs}
 \format{
 A \link[tibble:tibble-package]{tibble} with 12 rows
 and 4 variables:
