@@ -8,6 +8,13 @@
 
 <title>Taylor Swift colour scales based on album cover palettes — scale_colour_taylor_d • taylor</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -43,6 +50,7 @@
 
 <meta property="og:title" content="Taylor Swift colour scales based on album cover palettes — scale_colour_taylor_d" />
 <meta property="og:description" content="Taylor Swift colour scales based on album cover palettes" />
+<meta property="og:image" content="https://taylor.wjakethompson.com/logo.png" />
 
 
 
@@ -88,6 +96,21 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/plotting.html">Give your ggplots a Taylor Swift theme</a>
+    </li>
+    <li>
+      <a href="../articles/palettes.html">Using and creating color palettes</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -189,6 +212,48 @@
   na.value <span class='op'>=</span> <span class='st'>"grey50"</span>,
   guide <span class='op'>=</span> <span class='st'>"colourbar"</span>,
   aesthetics <span class='op'>=</span> <span class='st'>"fill"</span>
+<span class='op'>)</span>
+
+<span class='fu'>scale_colour_taylor_b</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  alpha <span class='op'>=</span> <span class='fl'>1</span>,
+  begin <span class='op'>=</span> <span class='fl'>0</span>,
+  end <span class='op'>=</span> <span class='fl'>1</span>,
+  direction <span class='op'>=</span> <span class='fl'>1</span>,
+  album <span class='op'>=</span> <span class='st'>"Lover"</span>,
+  values <span class='op'>=</span> <span class='cn'>NULL</span>,
+  space <span class='op'>=</span> <span class='st'>"Lab"</span>,
+  na.value <span class='op'>=</span> <span class='st'>"grey50"</span>,
+  guide <span class='op'>=</span> <span class='st'>"coloursteps"</span>,
+  aesthetics <span class='op'>=</span> <span class='st'>"colour"</span>
+<span class='op'>)</span>
+
+<span class='fu'>scale_color_taylor_b</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  alpha <span class='op'>=</span> <span class='fl'>1</span>,
+  begin <span class='op'>=</span> <span class='fl'>0</span>,
+  end <span class='op'>=</span> <span class='fl'>1</span>,
+  direction <span class='op'>=</span> <span class='fl'>1</span>,
+  album <span class='op'>=</span> <span class='st'>"Lover"</span>,
+  values <span class='op'>=</span> <span class='cn'>NULL</span>,
+  space <span class='op'>=</span> <span class='st'>"Lab"</span>,
+  na.value <span class='op'>=</span> <span class='st'>"grey50"</span>,
+  guide <span class='op'>=</span> <span class='st'>"coloursteps"</span>,
+  aesthetics <span class='op'>=</span> <span class='st'>"colour"</span>
+<span class='op'>)</span>
+
+<span class='fu'>scale_fill_taylor_b</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  alpha <span class='op'>=</span> <span class='fl'>1</span>,
+  begin <span class='op'>=</span> <span class='fl'>0</span>,
+  end <span class='op'>=</span> <span class='fl'>1</span>,
+  direction <span class='op'>=</span> <span class='fl'>1</span>,
+  album <span class='op'>=</span> <span class='st'>"Lover"</span>,
+  values <span class='op'>=</span> <span class='cn'>NULL</span>,
+  space <span class='op'>=</span> <span class='st'>"Lab"</span>,
+  na.value <span class='op'>=</span> <span class='st'>"grey50"</span>,
+  guide <span class='op'>=</span> <span class='st'>"coloursteps"</span>,
+  aesthetics <span class='op'>=</span> <span class='st'>"fill"</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -254,6 +319,32 @@ other values are deprecated.</p></td>
     </table>
 
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># use taylor_d with discrete data</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='op'>(</span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>taylor_album_songs</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>valence</span>, y <span class='op'>=</span> <span class='va'>energy</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>mode_name</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_color_taylor_d</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># change scale label</span>
+<span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_fill_taylor_d</span><span class='op'>(</span><span class='st'>"Mode of Track"</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># select album palette to use, see ?taylor::album_palettes for more details</span>
+<span class='va'>lover</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>taylor_album_songs</span>, <span class='va'>album_name</span> <span class='op'>==</span> <span class='st'>"Lover"</span><span class='op'>)</span>
+<span class='op'>(</span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>lover</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>valence</span>, y <span class='op'>=</span> <span class='va'>track_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>track_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_fill_taylor_d</span><span class='op'>(</span>album <span class='op'>=</span> <span class='st'>"Lover"</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_fill_taylor_d</span><span class='op'>(</span>album <span class='op'>=</span> <span class='st'>"evermore"</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-6.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># use taylor_c with continuous data</span>
+<span class='op'>(</span><span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>taylor_album_songs</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>valence</span>, <span class='va'>energy</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>danceability</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_color_taylor_c</span><span class='op'>(</span>album <span class='op'>=</span> <span class='st'>"Fearless"</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-8.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>scale_color_taylor_c</span><span class='op'>(</span>album <span class='op'>=</span> <span class='st'>"folklore"</span><span class='op'>)</span>
+</div><div class='img'><img src='scale_taylor-9.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

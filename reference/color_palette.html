@@ -6,8 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>palette vector — color_palette • taylor</title>
+<title>Create a custom color palette — color_palette • taylor</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -41,9 +48,10 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="palette vector — color_palette" />
+<meta property="og:title" content="Create a custom color palette — color_palette" />
 <meta property="og:description" content="This creates a character vector that represents palettes so when it is
 printed, it displays the palette colors." />
+<meta property="og:image" content="https://taylor.wjakethompson.com/logo.png" />
 
 
 
@@ -90,6 +98,21 @@ printed, it displays the palette colors." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/plotting.html">Give your ggplots a Taylor Swift theme</a>
+    </li>
+    <li>
+      <a href="../articles/palettes.html">Using and creating color palettes</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -111,7 +134,7 @@ printed, it displays the palette colors." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1><code>palette</code> vector</h1>
+    <h1>Create a custom color palette</h1>
     <small class="dont-index">Source: <a href='https://github.com/wjakethompson/taylor/blob/master/R/palette.R'><code>R/palette.R</code></a></small>
     <div class="hidden name"><code>color_palette.Rd</code></div>
     </div>
@@ -135,7 +158,7 @@ printed, it displays the palette colors.</p>
     <tr>
       <th>pal</th>
       <td><ul>
-<li><p>For <code>color_palette()</code>: A character vector of hex codes</p></li>
+<li><p>For <code>color_palette()</code>: A character vector of hexadecimal codes</p></li>
 <li><p>For <code>is_color_palette()</code>: An object to test</p></li>
 </ul></td>
     </tr>
@@ -145,17 +168,62 @@ printed, it displays the palette colors.</p>
     </tr>
     <tr>
       <th>type</th>
-      <td><p>The type of palette, either <code>discrete</code> or <code>continuous</code></p></td>
+      <td><p>The type of palette, either <code>discrete</code> or <code>continuous</code>. If <code>n</code> is
+greater than the number of colors in <code>pal</code>, type must be <code>continuous</code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A color palette object.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>color_palette</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#842000"</span>, <span class='st'>"#EC9B01"</span>, <span class='st'>"#3F5D91"</span><span class='op'>)</span>, n <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='co'># use color_palette() to extend or shorten an existing palette</span>
+<span class='fu'>color_palette</span><span class='op'>(</span><span class='va'>album_palettes</span><span class='op'>$</span><span class='va'>lover</span>, n <span class='op'>=</span> <span class='fl'>10</span>, type <span class='op'>=</span> <span class='st'>"continuous"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;color_palette[10]&gt;
+#&gt;  <span style='background-color: #AF5F87;'>  </span> #8C4F66 
+#&gt;  <span style='background-color: #AF8787;'>  </span> #936472 
+#&gt;  <span style='background-color: #AF8787;'>  </span> #9A7A7F 
+#&gt;  <span style='background-color: #AF8787;'>  </span> #947B78 
+#&gt;  <span style='background-color: #AF8787;'>  </span> #897569 
+#&gt;  <span style='background-color: #767676;'>  </span> #7C7A74 
+#&gt;  <span style='background-color: #87AFAF;'>  </span> #6C8B9A 
+#&gt;  <span style='background-color: #87AFD7;'>  </span> #6F9CB9 
+#&gt;  <span style='background-color: #A8A8A8;'>  </span> #ADADC6 
+#&gt;  <span style='background-color: #FFD7D7;'>  </span> #EBBED3 </div><div class='input'>
+<span class='fu'>color_palette</span><span class='op'>(</span><span class='va'>album_palettes</span><span class='op'>$</span><span class='va'>fearless</span>, n <span class='op'>=</span> <span class='fl'>10</span>, type <span class='op'>=</span> <span class='st'>"continuous"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;color_palette[10]&gt;
+#&gt;  <span style='background-color: #626262;'>  </span> #6B5E57 
+#&gt;  <span style='background-color: #626262;'>  </span> #706056 
+#&gt;  <span style='background-color: #626262;'>  </span> #756356 
+#&gt;  <span style='background-color: #AF875F;'>  </span> #81674A 
+#&gt;  <span style='background-color: #AF875F;'>  </span> #8F6C3B 
+#&gt;  <span style='background-color: #AF875F;'>  </span> #A27B3E 
+#&gt;  <span style='background-color: #D7AF5F;'>  </span> #B99453 
+#&gt;  <span style='background-color: #D7D787;'>  </span> #CDAC6D 
+#&gt;  <span style='background-color: #FFD7AF;'>  </span> #D7C097 
+#&gt;  <span style='background-color: #FFD7D7;'>  </span> #E1D4C2 </div><div class='input'>
+<span class='fu'>color_palette</span><span class='op'>(</span><span class='va'>album_palettes</span><span class='op'>$</span><span class='va'>red</span>, n <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;color_palette[3]&gt;
-#&gt;  <span style='background-color: #AF0000;'>  </span> #842000 
-#&gt;  <span style='background-color: #FFAF00;'>  </span> #EC9B01 
-#&gt;  <span style='background-color: #5F87AF;'>  </span> #3F5D91 </div></pre>
+#&gt;  <span style='background-color: #00005F;'>  </span> #201F39 
+#&gt;  <span style='background-color: #AF005F;'>  </span> #A91E47 
+#&gt;  <span style='background-color: #D7AFAF;'>  </span> #B0A49A </div><div class='input'>
+<span class='co'># you can also define your own color palette</span>
+<span class='op'>(</span><span class='va'>my_pal</span> <span class='op'>&lt;-</span> <span class='fu'>color_palette</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#264653"</span>, <span class='st'>"#2A9D8F"</span>, <span class='st'>"#E9C46A"</span>,
+                                 <span class='st'>"#F4A261"</span>, <span class='st'>"#E76F51"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;color_palette[5]&gt;
+#&gt;  <span style='background-color: #005F5F;'>  </span> #264653 
+#&gt;  <span style='background-color: #00AFAF;'>  </span> #2A9D8F 
+#&gt;  <span style='background-color: #FFD787;'>  </span> #E9C46A 
+#&gt;  <span style='background-color: #FFAF87;'>  </span> #F4A261 
+#&gt;  <span style='background-color: #FF875F;'>  </span> #E76F51 </div><div class='input'>
+<span class='co'># and then use that palette for plotting</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>faithfuld</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>geom_tile</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>waiting</span>, <span class='va'>eruptions</span>, fill <span class='op'>=</span> <span class='va'>density</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradientn</a></span><span class='op'>(</span>colours <span class='op'>=</span> <span class='va'>my_pal</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='color_palette-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

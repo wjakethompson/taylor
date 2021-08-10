@@ -6,8 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data for Songs on Taylor's Official Studio Albums — taylor_album_songs • taylor</title>
+<title>Data for songs on Taylor Swift's official studio albums — taylor_album_songs • taylor</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -41,7 +48,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Data for Songs on Taylor's Official Studio Albums — taylor_album_songs" />
+<meta property="og:title" content="Data for songs on Taylor Swift's official studio albums — taylor_album_songs" />
 <meta property="og:description" content="A data set containing lyrics to and characteristics of songs on all of
 Taylor's official studio albums. Thus, this is a subset of
 taylor_all_songs, with EPs and individual singles excluded. Critically,
@@ -52,6 +59,7 @@ taylor_all_songs data, only Fearless (Taylor's Version) appears in this
 subset. This also means that this data set will change as additional
 re-releases are made available (i.e., Red will soon be replaced with
 Red (Taylor's Version))." />
+<meta property="og:image" content="https://taylor.wjakethompson.com/logo.png" />
 
 
 
@@ -98,6 +106,21 @@ Red (Taylor's Version))." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/plotting.html">Give your ggplots a Taylor Swift theme</a>
+    </li>
+    <li>
+      <a href="../articles/palettes.html">Using and creating color palettes</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -119,7 +142,7 @@ Red (Taylor's Version))." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Data for Songs on Taylor's Official Studio Albums</h1>
+    <h1>Data for songs on Taylor Swift's official studio albums</h1>
     <small class="dont-index">Source: <a href='https://github.com/wjakethompson/taylor/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>taylor_album_songs.Rd</code></div>
     </div>
@@ -142,8 +165,10 @@ re-releases are made available (i.e., <em>Red</em> will soon be replaced with
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>This is a subset of the <code><a href='taylor_all_songs.html'>taylor_all_songs</a></code> data set. Please see
-that documentation for a complete description of all the included fields.</p>
+    <p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a> with 163
+rows and 29 variables. This is a subset of the
+<code><a href='taylor_all_songs.html'>taylor_all_songs</a></code> data set. Please see that documentation for a complete
+description of all the included fields.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

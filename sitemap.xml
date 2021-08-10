@@ -4,19 +4,25 @@
     <loc>https://taylor.wjakethompson.com/index.html</loc>
   </url>
   <url>
+    <loc>https://taylor.wjakethompson.com/reference/album_levels.html</loc>
+  </url>
+  <url>
     <loc>https://taylor.wjakethompson.com/reference/album_palettes.html</loc>
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/color_palette.html</loc>
   </url>
   <url>
+    <loc>https://taylor.wjakethompson.com/reference/scale_albums.html</loc>
+  </url>
+  <url>
     <loc>https://taylor.wjakethompson.com/reference/scale_taylor.html</loc>
   </url>
   <url>
-    <loc>https://taylor.wjakethompson.com/reference/taylor-package.html</loc>
+    <loc>https://taylor.wjakethompson.com/reference/taylor-vctrs.html</loc>
   </url>
   <url>
-    <loc>https://taylor.wjakethompson.com/reference/taylor-vctrs.html</loc>
+    <loc>https://taylor.wjakethompson.com/reference/taylor.html</loc>
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/taylor_album_songs.html</loc>
@@ -26,5 +32,14 @@
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/taylor_all_songs.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/reference/title_case.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/articles/palettes.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/articles/plotting.html</loc>
   </url>
 </urlset>
