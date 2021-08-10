@@ -10,7 +10,7 @@ test_that("check palette works", {
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "missing values")
 
-  err <- rlang::catch_cnd(check_palette(c("#009fb7", "red"), "test_arg"))
+  err <- rlang::catch_cnd(check_palette(c("#009fb7", "firetruck"), "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "valid hexadecimal values")
@@ -20,6 +20,12 @@ test_that("check palette works", {
   expect_identical(check_palette(c("#009fb700", "#fed766ff"),
                                  name = "test_arg"),
                    c("#009fb700", "#fed766ff"))
+  expect_identical(check_palette(c("firebrick", "goldenrod", "navy"),
+                                 name = "test_arg"),
+                   c("#B22222", "#DAA520", "#000080"))
+  expect_identical(check_palette(c("firebrick", "#009fb7", "#FED766"),
+                                 name = "test_arg"),
+                   c("#B22222", "#009fb7", "#FED766"))
 })
 
 test_that("check n range works", {
@@ -138,4 +144,21 @@ test_that("check abs value of exact integer works", {
   expect_identical(check_exact_abs_int(-1, "test_arg", 1), -1L)
   expect_identical(check_exact_abs_int(1L, "test_arg", 1), 1L)
   expect_identical(check_exact_abs_int(-1L, "test_arg", 1), -1L)
+})
+
+test_that("character works", {
+  err <- rlang::catch_cnd(check_character(1, "test_arg"))
+  expect_s3_class(err, "error_bad_argument")
+  expect_equal(err$arg, "test_arg")
+  expect_match(err$message, "character")
+  expect_equal(err$not, "double")
+
+  err <- rlang::catch_cnd(check_character(NA_character_, "test_arg"))
+  expect_s3_class(err, "error_bad_argument")
+  expect_equal(err$arg, "test_arg")
+  expect_match(err$message, "non-missing")
+
+  expect_identical(check_character("string", "test_arg"), "string")
+  expect_identical(check_character("String", "test_arg"), "String")
+  expect_identical(check_character("STRING", "test_arg"), "STRING")
 })

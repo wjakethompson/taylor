@@ -7,6 +7,9 @@
 \alias{scale_colour_taylor_c}
 \alias{scale_color_taylor_c}
 \alias{scale_fill_taylor_c}
+\alias{scale_colour_taylor_b}
+\alias{scale_color_taylor_b}
+\alias{scale_fill_taylor_b}
 \title{Taylor Swift colour scales based on album cover palettes}
 \usage{
 scale_colour_taylor_d(
@@ -80,6 +83,48 @@ scale_fill_taylor_c(
   guide = "colourbar",
   aesthetics = "fill"
 )
+
+scale_colour_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
+  aesthetics = "colour"
+)
+
+scale_color_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
+  aesthetics = "colour"
+)
+
+scale_fill_taylor_b(
+  ...,
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  album = "Lover",
+  values = NULL,
+  space = "Lab",
+  na.value = "grey50",
+  guide = "coloursteps",
+  aesthetics = "fill"
+)
 }
 \arguments{
 \item{...}{Other arguments passed on to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}} or
@@ -119,4 +164,30 @@ other values are deprecated.}
 }
 \description{
 Taylor Swift colour scales based on album cover palettes
+}
+\examples{
+# use taylor_d with discrete data
+library(ggplot2)
+(p <- ggplot(taylor_album_songs, aes(x = valence, y = energy)) +
+   geom_point(aes(color = mode_name), size = 2) +
+   theme_bw())
+p + scale_color_taylor_d()
+
+# change scale label
+p + scale_fill_taylor_d("Mode of Track")
+
+# select album palette to use, see ?taylor::album_palettes for more details
+lover <- subset(taylor_album_songs, album_name == "Lover")
+(p <- ggplot(lover, aes(x = valence, y = track_name)) +
+   geom_col(aes(fill = track_name)) +
+   theme_minimal())
+p + scale_fill_taylor_d(album = "Lover")
+p + scale_fill_taylor_d(album = "evermore")
+
+# use taylor_c with continuous data
+(p <- ggplot(taylor_album_songs, aes(valence, energy)) +
+   geom_point(aes(color = danceability)) +
+   theme_minimal())
+p + scale_color_taylor_c(album = "Fearless")
+p + scale_color_taylor_c(album = "folklore")
 }

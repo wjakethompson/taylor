@@ -1,0 +1,170 @@
+---
+title: "Give your ggplots a Taylor Swift theme"
+description: |
+  Make your ggplots *gorgeous*.
+vignette: >
+  %\VignetteIndexEntry{Give your ggplots a Taylor Swift theme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.asp = 0.618,
+  fig.retina = 3,
+  fig.width = 7,
+  out.width = "90%"
+)
+```
+
+In addition to data sets, {taylor} also includes a few helper functions for easily making plots created with [{ggplot2}](https://ggplot2.tidyverse.org) have a Taylor Swift theme. For this vignette, I'm assuming you are already familiar with {ggplot2} and can make basic plots. 
+
+Once you have a ggplot created, you can add album-themed color palettes to your plots using the family of `scale_taylor` functions:
+
+* Discrete scales:
+    * `scale_color_taylor_d()`
+    * `scale_fill_taylor_d()`
+
+* Continuous scales
+    * `scale_color_taylor_c()`
+    * `scale_fill_taylor_c()`
+
+* Binned scales
+    * `scale_color_taylor_b()`
+    * `scale_fill_taylor_b()`
+
+# Discrete scales
+
+First, let's make a bar graph showing the valence of each song on *evermore*.
+
+```{r warning = FALSE, message = FALSE, fig.alt = "A bar graph with song valence on the x-axis and song title on the y-axis. Each bar is a different color, with colors following a rainbow-like palette."}
+library(taylor)
+library(ggplot2)
+
+evermore <- subset(taylor_album_songs, album_name == "evermore")
+evermore$track_name <- factor(evermore$track_name, levels = evermore$track_name)
+
+p <- ggplot(evermore, aes(x = valence, y = track_name, fill = track_name)) +
+  geom_col(show.legend = FALSE) +
+  expand_limits(x = c(0, 1)) +
+  labs(y = NULL) +
+  theme_minimal()
+p
+```
+
+We can then add some *evermore*-inspired colors using `scale_fill_taylor_d()`.
+
+```{r warning = FALSE, fig.alt = "The same bar graph as the previous figure, but the colors of the bars have been updated to use a palette inspired by the album cover of evermore. The palette starts with a dark brown, moving to orange, and finally to a light gray."}
+p + scale_fill_taylor_d(album = "evermore")
+```
+
+The `album` argument can be changed to use a different Taylor-inspired palette. For example, we can switch to *Speak Now* using `album = "Speak Now"`.
+
+```{r warning = FALSE, fig.alt = "The same bar graph as the previous two figures, but the colros of the bars have been updated to use a palette inspired by the album cover of Speak Now. The palette starts with a dark burnt red and then moves to purple and finally a light pink."}
+p + scale_fill_taylor_d(album = "Speak Now")
+```
+
+We can also use these functions for non-Taylor Swift data. For example, here we use `scale_color_taylor_d()` to plot some data from the [{palmerpenguins}](https://allisonhorst.github.io/palmerpenguins) package.
+
+```{r warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from the color palette for Lover."}
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(shape = species, color = species), size = 3) +
+  scale_color_taylor_d(album = "Lover") +
+  theme_minimal()
+```
+
+
+# Continuous and binned scales
+
+When using a continuous scale, values are interpolated between the colors defined in each palette. The *Fearless (Taylor's Version)* palette is a particularly good use case for this. To illustrate, we'll use the classic example included in the {ggplot2} package of the eruptions of the Old Faithful geyser and the duration of the eruptions.
+
+```{r warning = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
+p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  theme_minimal()
+
+p + scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
+```
+
+Similarly, both the *reputation* and *folklore* palettes work great for gray scale images.
+
+```{r warning = FALSE, fig.alt = c("The same heatmap as the previous figure, but the color palette has been changed to use colors inspired by reputation. Less frequent values are show in dark grey, and more common values appear as white.", "The same heatmap as the previous two figures, but the color palette has been changed to use colors inspired by folklore. Less frequent values are show in dark grey, and more common values appear as white.")}
+p + scale_fill_taylor_c(album = "reputation")
+p + scale_fill_taylor_c(album = "folklore")
+```
+
+Just like with other {ggplot2} scales, we can also use the `_b` variants to create a binned color scale.
+
+```{r warning = FALSE, fig.alt = "The same heat map as the previous figures, but instead of a smooth continuous color scale, values have been binned into four categories, with color inspired by the evermore album cover."}
+p + scale_fill_taylor_b(album = "evermore")
+```
+
+
+# Album scales
+
+Finally, there is an album scale that can be used when plotting data from multiple albums. Take for example the [Metacritic](https://www.metacritic.com/person/taylor-swift) ratings of Taylor's albums, stored in `taylor::taylor_albums`.
+
+```{r}
+taylor_albums
+```
+
+Let's create a bar graph showing the rating of each album. We'll first make the album name a factor variable. A convenience variable, `taylor::album_levels`, is included in the package that will let us easily order the factor by album release date.^[Albums are not precisely in release order. Re-releases are ordered next to the original release. See `?taylor::album_levels` for details.] Metacritic doesn't have a rating for Taylor's debut album, *Taylor Swift*, so I will manually assign a value so that we can see the full scale in action. We'll give each bar its own color to add some pizzazz to the plot.
+
+```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors follow the {ggplot2} default, resulting in a rainbow-like palette."}
+metacritic <- taylor_albums
+
+# Not Taylor's best work, so we'll give it a 72
+metacritic$metacritic_score[1] <- 72L
+metacritic <- subset(metacritic, !is.na(metacritic_score))
+metacritic$album_name <- factor(metacritic$album_name,
+                                levels = album_levels)
+
+ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name), show.legend = FALSE) +
+  labs(x = "Metacritic Rating", y = NULL) +
+  theme_minimal()
+```
+
+This is nice, but wouldn't it be better if each color was related to the album? Enter `scale_fill_albums()`!
+
+```{r warning = FALSE, fig.alt = "The same bar graph as the previous image, instead of using the default colors, each bar for each album is filled with a color from that album's cover."}
+ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name), show.legend = FALSE) +
+  scale_fill_albums() +
+  labs(x = "Metacritic Rating", y = NULL) +
+  theme_minimal()
+```
+
+The `scale_fill_albums()` and `scale_color_albums()` functions automatically assign color based on the album name. These are wrappers around `ggplot2::scale_fill_manual()` and `ggplot2::scale_color_manual()`, respectively. This means that the colors will still be assigned correctly, even if the ordering of the albums changes, or not all levels are present.
+
+```{r warning = FALSE, fig.alt = "The same bar graph as the previous image, but only showing five albums, and the ordering of the y-axis has been made random. However, the fill of the bar for each album still corresponds to that album's cover."}
+rand_critic <- metacritic[sample(seq_len(nrow(metacritic)), 5),]
+rand_critic$album_name <- factor(rand_critic$album_name,
+                                 levels = sample(rand_critic$album_name,
+                                                 size = nrow(rand_critic)))
+
+ggplot(rand_critic, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name), show.legend = FALSE) +
+  scale_fill_albums() +
+  labs(x = "Metacritic Rating", y = NULL) +
+  theme_minimal()
+```
+
+However, this also means that album names must match the expected names. That is, if you change or reformat an album name, the fill colors won't be found. For example, if we capitalize all the album titles, the fill color will be missing for *reputation*, *folklore*, and *evermore*, which are stylized in all lower case. The expected names are defined in the `taylor::album_levels` object.
+
+```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors for each bar a based on the ablum cover. On y-axis, evermore, folklore, and repuation, have been spelled in title case, rather than lower case, resulting in no bar showing for these albums."}
+upper_critic <- metacritic
+upper_critic$album_name <- factor(upper_critic$album_name,
+                                  levels = album_levels,
+                                  labels = title_case(album_levels))
+
+ggplot(upper_critic, aes(x = metacritic_score, y = album_name)) +
+  geom_col(aes(fill = album_name), show.legend = FALSE) +
+  scale_fill_albums() +
+  labs(x = "Metacritic Rating", y = NULL) +
+  theme_minimal()
+```

@@ -1,11 +1,11 @@
-#' Data for Taylor Swift Songs
+#' Data for Taylor Swift songs
 #'
 #' A data set containing lyrics to and characteristics of all officially
 #' released Taylor Swift songs. This includes albums, EPs, and individually
 #' released singles.
 #'
-#' @format A data frame with `r nrow(taylor_all_songs)` rows and
-#' 27 variables. Each row is one song.
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_all_songs)`
+#' rows and `r ncol(taylor_all_songs)` variables. Each row is one song.
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
@@ -109,7 +109,7 @@
 #' @source \url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}
 "taylor_all_songs"
 
-#' Data for Songs on Taylor's Official Studio Albums
+#' Data for songs on Taylor Swift's official studio albums
 #'
 #' A data set containing lyrics to and characteristics of songs on all of
 #' Taylor's official studio albums. Thus, this is a subset of
@@ -122,28 +122,33 @@
 #' re-releases are made available (i.e., *Red* will soon be replaced with
 #' *Red (Taylor's Version)*).
 #'
-#' @format This is a subset of the [`taylor_all_songs`] data set. Please see
-#' that documentation for a complete description of all the included fields.
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_album_songs)`
+#' rows and `r ncol(taylor_album_songs)` variables. This is a subset of the
+#' [`taylor_all_songs`] data set. Please see that documentation for a complete
+#' description of all the included fields.
 "taylor_album_songs"
 
-#' Taylor Swift's Albums and EPs
+#' Data for Taylor Swift's studio albums and EPs
 #'
 #' A data set containing the names of Taylor's official releases, the album
 #' type, and release date.
 #'
-#' @format A data frame with `r nrow(taylor_albums)` rows and 3 variables:
+#' @format A [tibble][tibble::tibble-package] with `r nrow(taylor_albums)` rows
+#' and `r ncol(taylor_albums)` variables:
 #' * `album_name`: The name of the album. `NA` if the song was released
 #'   separately from one of Taylor's studio albums or EPs.
 #' * `ep`: Logical. Is the album a full studio album (`FALSE`) or an extended
 #'   play (`TRUE`).
 #' * `album_release`: The date the album was released, in the ISO-8601 format
 #'   (YYYY-MM-DD).
+#' * `metacritic_score`: The official album rating from metacritic.
 #'
 #' @details
 #' This data set includes all official studio albums and EPs with new tracks.
-#' This means that compliations or EPs that are a subset of the original albums
+#' This means that compilations or EPs that are a subset of the original albums
 #' are not included (e.g., *folklore: the escapism chapter*,
 #' *folklore: the sleepless nights chapter*, etc.)
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography}
+#' @source \url{https://www.metacritic.com/person/taylor-swift}
 "taylor_albums"

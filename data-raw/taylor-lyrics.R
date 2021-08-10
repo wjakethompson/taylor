@@ -320,9 +320,24 @@ taylor_album_songs <- taylor_all_songs |>
                            "Speak Now", "Red", "1989", "reputation", "Lover",
                            "folklore", "evermore"))
 
+metacritic <- tribble(
+  ~album_name,                           ~metacritic_score,
+  "Taylor Swift",                        NA_integer_,
+  "Fearless",                            73L,
+  "Fearless (Taylor's Version)",         82L,
+  "Speak Now",                           77L,
+  "Red",                                 77L,
+  "1989",                                76L,
+  "reputation",                          71L,
+  "Lover",                               79L,
+  "folklore",                            88L,
+  "evermore",                            85L
+)
+
 taylor_albums <- taylor_all_songs |>
   distinct(album_name, ep, album_release) |>
   filter(!is.na(album_name)) |>
+  left_join(metacritic, by = "album_name") |>
   arrange(album_release)
 
 use_data(taylor_all_songs, taylor_album_songs, taylor_albums, overwrite = TRUE)

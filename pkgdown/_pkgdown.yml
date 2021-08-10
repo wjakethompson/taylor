@@ -13,5 +13,45 @@ template:
 development:
   mode: auto
 
+reference:
+- title: Data sets
+  contents:
+  - taylor_album_songs
+  - taylor_all_songs
+  - taylor_albums
+
+- title: Plotting
+- subtitle: Color palettes
+  desc: >
+    The color palettes can be used to create custom color palettes, which can
+    then be used in plots. Also included are some pre-made color palettes based
+    on Taylor Swift's album covers. To see these functions in action, see
+    `vignette("palettes")`.
+  contents:
+  - color_palette
+  - is_color_palette
+  - album_palettes
+  - album_compare
+- subtitle: "{ggplot2} scales"
+  desc: >
+    Color scales functions can be used to easily give plots made with {ggplot2}
+    a Taylor Swift theme. These functions use the color palettes based on
+    Taylor Swift's album covers to give an album-based theme to plot objects.
+    For example usage, see `vignette("plotting")`.
+  contents:
+  - starts_with("scale_")
+
+- title: Helpers
+  contents:
+  - album_levels
+  - title_case
+
+articles:
+- title: Plotting
+  navbar: ~
+  contents:
+  - plotting
+  - palettes
+
 figures:
   fig.retina: 3

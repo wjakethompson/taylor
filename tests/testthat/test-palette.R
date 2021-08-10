@@ -1,5 +1,7 @@
 test_that("palette creation work", {
-  expect_error(color_palette(c("red", "blue")), "hexadecimal")
+  expect_error(color_palette(c("firetruck", "ocean")), "hexadecimal")
+  expect_error(color_palette(c("#00ZVPQ", "#IOBNOB")), "hexadecimal")
+  expect_error(color_palette(c("#00ZVPQ", "red")), "hexadecimal")
   expect_error(color_palette(c("#990fb7", "#fed766"), n = 3, "jake"),
                'one of "discrete" or "continuous"')
   expect_error(color_palette(c("#990fb7", "#fed766"), n = 3), "1 and 2")
@@ -28,7 +30,7 @@ test_that("casting and coercion work", {
 
   # combining 2 palettes returns a palette
   expect_identical(c(wjake_palette, album_palettes$red),
-                   color_palette(c("#009fb7", "#fed766", "#A91E47", "#201F39",
+                   color_palette(c("#009fb7", "#fed766", "#201F39", "#A91E47",
                                    "#7E6358", "#B0A49A", "#DDD8C9")))
   expect_s3_class(c(wjake_palette, album_palettes$red),
                   c("taylor_color_palette", "vctrs_vctr", "character"),

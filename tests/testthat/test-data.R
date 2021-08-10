@@ -8,7 +8,24 @@ test_that("data has expected dimensions", {
   expect_equal(ncol(taylor_album_songs$lyrics[[1]]), 4L)
 
   # albums
-  expect_equal(ncol(taylor_albums), 3L)
+  expect_equal(ncol(taylor_albums), 4L)
+
+  albums <-
+    taylor_all_songs[which((!taylor_all_songs$ep) &
+                             !is.na(taylor_all_songs$album_name)),
+                     "album_name"] |>
+    unique()
+
+  albums <- tolower(albums[[1]])
+  albums <- gsub("\\ ", "_", albums)
+  albums <- gsub("\\(taylor's_version\\)", "tv", albums)
+
+  expect_equal(length(albums), length(album_palettes))
+  expect_equal(length(albums), length(album_compare))
+  expect_equal(length(album_palettes), length(album_compare))
+  expect_equal(albums, names(album_palettes))
+  expect_equal(albums, names(album_compare))
+  expect_equal(names(album_palettes), names(album_compare))
 })
 
 test_that("column names match documentation expectation", {
@@ -33,7 +50,8 @@ test_that("column names match documentation expectation", {
                                                            "element_artist"))
 
   # albums
-  expect_equal(colnames(taylor_albums), c("album_name", "ep", "album_release"))
+  expect_equal(colnames(taylor_albums), c("album_name", "ep", "album_release",
+                                          "metacritic_score"))
 })
 
 test_that("non-TV versions are excluded when possible", {

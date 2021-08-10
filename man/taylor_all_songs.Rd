@@ -3,10 +3,10 @@
 \docType{data}
 \name{taylor_all_songs}
 \alias{taylor_all_songs}
-\title{Data for Taylor Swift Songs}
+\title{Data for Taylor Swift songs}
 \format{
-A data frame with 213 rows and
-27 variables. Each row is one song.
+A \link[tibble:tibble-package]{tibble} with 213
+rows and 29 variables. Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
 separately from one of Taylor's studio albums or EPs.

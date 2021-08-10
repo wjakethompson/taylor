@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# taylor
+# taylor <a href='https://taylor.wjakethompson.com'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable
@@ -31,9 +31,9 @@ Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+The goal of {taylor} is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
-```{r echo = FALSE, out.width="50%"}
+```{r echo = FALSE, out.width="50%", fig.alt="Taylor Swift snapping and saying 'yes.'"}
 knitr::include_graphics("man/figures/taylor.gif")
 ```
 
@@ -69,4 +69,4 @@ taylor_albums
 
 ## Code of Conduct
   
-Please note that the taylor project is released with a [Contributor Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the {taylor} project is released with a [Contributor Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
