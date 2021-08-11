@@ -4,6 +4,7 @@
 * windows server 2019 (on github actions), R 4.1.0
 * ubuntu 20.04 (on github actions), R 4.1.0
 * ubuntu 20.04 (on github actions), R-devel
+* win-builder (devel)
 
 ## R CMD check results
 
