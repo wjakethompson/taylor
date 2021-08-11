@@ -4,14 +4,15 @@ Version: 0.1.0
 Authors@R: 
     person(given = "W. Jake",
            family = "Thompson",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "wjakethompson@gmail.com",
            comment = c(ORCID = "0000-0001-7339-0300"))
-Description: A comprehensive resource for data on Taylor Swift songs. Data
-    for all officially released studio albums, extended plays (EPs), and
-    individual singles are included. Data comes from
+Description: A comprehensive resource for data on Taylor Swift songs. Data is
+    included for all officially released studio albums, extended plays (EPs),
+    and individual singles are included. Data comes from
     <https://www.genius.com/> (lyrics) and <https://spotify.com/> (song
-    characteristics).
+    characteristics). Additional functions are included for easily creating data
+    visualizations with color palettes inspired by Taylor Swift's album covers.
 License: MIT + file LICENSE
 URL: https://taylor.wjakethompson.com,
     https://github.com/wjakethompson/taylor
