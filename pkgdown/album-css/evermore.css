@@ -1,0 +1,20 @@
+:root {
+  --nav-bkg: #160310;     /* nav bar background */
+  --nav-link: #E0d9d7;    /* nav bar link color */
+  --nav-higl: #d37f55;    /* nav active and highlight */
+  --a-alpha: #6C797C;     /* pkg version background */
+
+  --pg-header: #85796d;   /* heading color & text links */
+  --text-link: #85796d;   /* hyperlinks in text */
+  --a-hover: #d37f55;     /* hyperlink hover */
+
+  --sdb-link: #d37f55;    /* hyperlinks in sidebar */
+  --sdb-hover: #160310;   /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094; /* author roles */
+
+  --btn-color: #85796d;   /* copy button color */
+  --btn-hover: #d37f55;   /* copy button hover */
+
+  --col-bullt: #421e18;   /* color for colored list */
+  --thb-captn: #421e18;   /* thumbnail caption */
+}
