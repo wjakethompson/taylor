@@ -13,7 +13,7 @@ are named according to the name of the album.
 An object of class \code{taylor_color_palette} (inherits from \code{vctrs_vctr}, \code{character}) of length 10.
 }
 \source{
-Colors derived from album covers at \url{http://colormind.io/image/}.
+Colors derived from album covers using 'Colormind'.
 }
 \usage{
 album_palettes

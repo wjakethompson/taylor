@@ -2,8 +2,8 @@
 #'
 #' A comprehensive resource for data on Taylor Swift songs. Data for all
 #' officially released studio albums, extended plays (EPs), and individual
-#' singles are included. Data comes from <https://www.genius.com/> (lyrics) and
-#' <https://spotify.com/> (song characteristics).
+#' singles are included. Data comes from <https://genius.com/> (lyrics) and
+#' <https://www.spotify.com/us/> (song characteristics).
 #'
 #' @importFrom ggplot2 waiver
 #'

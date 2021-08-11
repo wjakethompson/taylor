@@ -8,7 +8,7 @@
 #'   color palette for one of Taylor Swift's studio albums. The list elements
 #'   are named according to the name of the album.
 #'
-#' @source Colors derived from album covers at <http://colormind.io/image/>.
+#' @source Colors derived from album covers using 'Colormind'.
 #' @seealso [color_palette()]
 #' @export
 #' @examples

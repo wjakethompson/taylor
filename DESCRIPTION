@@ -10,7 +10,7 @@ Authors@R:
 Description: A comprehensive resource for data on Taylor Swift songs. Data is
     included for all officially released studio albums, extended plays (EPs),
     and individual singles are included. Data comes from
-    <https://www.genius.com/> (lyrics) and <https://spotify.com/> (song
+    <https://genius.com/> (lyrics) and <https://www.spotify.com/us/> (song
     characteristics). Additional functions are included for easily creating data
     visualizations with color palettes inspired by Taylor Swift's album covers.
 License: MIT + file LICENSE
