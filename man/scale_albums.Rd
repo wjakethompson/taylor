@@ -59,6 +59,9 @@ notation.
 missing values be displayed as? Does not apply to position scales
 where \code{NA} is always placed at the far right.}
 }
+\value{
+A color scale for use in plots created with \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}.
+}
 \description{
 A convenience wrapper for comparing albums with color. In contrast to
 \code{\link[=scale_fill_taylor_d]{scale_fill_taylor_d()}} and \code{\link[=scale_colour_taylor_d]{scale_colour_taylor_d()}},

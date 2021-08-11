@@ -3,9 +3,9 @@
 #' @inheritParams scales::viridis_pal
 #' @inheritParams scales::gradient_n_pal
 #' @inheritParams ggplot2::continuous_scale
-#' @param ... Other arguments passed on to [ggplot2::discrete_scale()] or
-#' [ggplot2::continuous_scale()] to control name, limits, breaks, labels and
-#'   so forth.
+#' @param ... Other arguments passed on to [ggplot2::discrete_scale()],
+#' [ggplot2::continuous_scale()], or [ggplot2::binned_scale()] to control name,
+#'   limits, breaks, labels and so forth.
 #' @param album A character string indicating the album that should be used for
 #'   the palette.
 #' @param aesthetics Character string or vector of character strings listing the
@@ -13,6 +13,7 @@
 #'   for example, to apply colour settings to the `colour` and `fill` aesthetics
 #'   at the same time, via `aesthetics = c("colour", "fill")`.
 #' @rdname scale_taylor
+#' @return A color scale for use in plots created with [ggplot2::ggplot()].
 #' @export
 #' @examples
 #' # use taylor_d with discrete data
@@ -169,6 +170,7 @@ scale_fill_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
 #' @param ... Other arguments to be passed to [ggplot2::discrete_scale()]
 #'
 #' @rdname scale_albums
+#' @return A color scale for use in plots created with [ggplot2::ggplot()].
 #' @export
 #' @examples
 #' library(ggplot2)
