@@ -5,6 +5,9 @@
 * ubuntu 20.04 (on github actions), R 4.1.0
 * ubuntu 20.04 (on github actions), R-devel
 * win-builder (devel)
+* windows server 2008 (on r-hub), R-devel
+* ubuntu 20.04 (on r-hub), R 4.1.0
+* fedora (on r-hub), R-devel
 
 ## R CMD check results
 
