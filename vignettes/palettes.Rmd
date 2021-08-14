@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 
 The {taylor} package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
 
-# Creating palettes
+## Creating palettes
 
 {taylor} uses [{vctrs}](https://vctrs.r-lib.org/) to create a special vector class of color palettes that can be used to create and visualize palettes. We can create a palette using the `color_palette()` function. We only have to pass a vector of hexadecimal values or valid R color (from `colors()`), and a palette is created that will print a preview of the colors.
 
@@ -52,7 +52,7 @@ my_small_pal <- color_palette(my_big_pal, n = 5)
 my_small_pal
 ```
 
-# Built-in palettes
+## Built-in palettes
 
 The {taylor} package comes with a few palettes built-in, based on Taylor Swift's album covers. There can be viewed using `taylor::album_palettes`.
 
@@ -72,7 +72,7 @@ Also included is a palette that includes one representative color from each albu
 album_compare
 ```
 
-# Using color palettes with {ggplot2}
+## Using color palettes with {ggplot2}
 
 The {taylor} package comes with a set of functions built in for plotting in {ggplot2} with the album palettes. For example, we can use `scale_fill_taylor_c()` to create a continuous scale based on one of the album palettes. For more details on how to use the scale functions included in {taylor}, check out `vignette("plotting")`.
 

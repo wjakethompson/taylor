@@ -35,7 +35,7 @@ Once you have a ggplot created, you can add album-themed color palettes to your 
     * `scale_color_taylor_b()`
     * `scale_fill_taylor_b()`
 
-# Discrete scales
+## Discrete scales
 
 First, let's make a bar graph showing the valence of each song on *evermore*.
 
@@ -78,7 +78,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 ```
 
 
-# Continuous and binned scales
+## Continuous and binned scales
 
 When using a continuous scale, values are interpolated between the colors defined in each palette. The *Fearless (Taylor's Version)* palette is a particularly good use case for this. To illustrate, we'll use the classic example included in the {ggplot2} package of the eruptions of the Old Faithful geyser and the duration of the eruptions.
 
@@ -104,7 +104,7 @@ p + scale_fill_taylor_b(album = "evermore")
 ```
 
 
-# Album scales
+## Album scales
 
 Finally, there is an album scale that can be used when plotting data from multiple albums. Take for example the [Metacritic](https://www.metacritic.com/person/taylor-swift) ratings of Taylor's albums, stored in `taylor::taylor_albums`.
 
