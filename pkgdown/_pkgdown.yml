@@ -10,6 +10,13 @@ authors:
 
 template:
   bootstrap: 4
+  params:
+    ganalytics: G-072GBE15TQ
+    google_site_verification: I34YfmPPi5fq4AIXmf102qEu6wCe1Hd6sF9wJxoioPE
+  opengraph:
+    twitter:
+      creator: "@wjakethompson"
+      card: summary_large_image
   bslib:
     base_font:
       google: "Mulish"
