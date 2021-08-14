@@ -1,11 +1,5 @@
 ---
 title: "Using and creating color palettes"
-# output: rmarkdown::html_vignette
-# output:
-#   bookdown::html_document2:
-#     base_format: rmarkdown::html_vignette
-#     number_sections: false
-#     toc: true
 description: |
   The plots were in screaming color.
 vignette: >
