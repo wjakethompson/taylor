@@ -2,6 +2,7 @@ url: https://taylor.wjakethompson.com
 
 home:
   title: Taylor Swift song data
+  strip_header: true
 
 authors:
   W. Jake Thompson:
@@ -9,6 +10,15 @@ authors:
 
 template:
   bootstrap: 4
+  bslib:
+    base_font:
+      google: "Mulish"
+    heading_font:
+      google: "Mulish"
+    code_font:
+      google: "Source Code Pro"
+    bg: "#FFFFFF"
+    fg: "#333"
 
 development:
   mode: auto
