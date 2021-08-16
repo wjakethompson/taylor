@@ -11,10 +11,9 @@ test_that("data has expected dimensions", {
   expect_equal(ncol(taylor_albums), 4L)
 
   albums <-
-    taylor_all_songs[which((!taylor_all_songs$ep) &
-                             !is.na(taylor_all_songs$album_name)),
-                     "album_name"] |>
-    unique()
+    unique(taylor_all_songs[which((!taylor_all_songs$ep) &
+                                    !is.na(taylor_all_songs$album_name)),
+                            "album_name"])
 
   albums <- tolower(albums[[1]])
   albums <- gsub("\\ ", "_", albums)
