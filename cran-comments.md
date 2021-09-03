@@ -1,7 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Reduced the package size to be under 5 MB.
+* Resolved an issue in the tests where the `|>` operator was not executing
 
 ## Test environments
 * local R installation macOS 11.4, R 4.1.0
