@@ -1,10 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
-pkgdown_sha: ~
+pkgdown: 1.6.1.9001
+pkgdown_sha: 705ff7c650bb1c7d46d35e72f27ad093689e2f29
 articles:
   palettes: palettes.html
   plotting: plotting.html
-last_built: 2021-09-03T14:47Z
+last_built: 2021-09-14T01:31Z
 urls:
   reference: https://taylor.wjakethompson.com/reference
   article: https://taylor.wjakethompson.com/articles
