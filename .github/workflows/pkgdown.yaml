@@ -24,7 +24,9 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
-          extra-packages: r-lib/pkgdown
+          extra-packages: |
+            r-lib/pkgdown
+            bookdown
           needs: website
 
       - name: Deploy package
