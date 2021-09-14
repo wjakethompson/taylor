@@ -2,6 +2,7 @@ url: https://taylor.wjakethompson.com
 
 home:
   title: Taylor Swift song data
+  strip_header: true
 
 authors:
   W. Jake Thompson:
@@ -9,6 +10,22 @@ authors:
 
 template:
   bootstrap: 4
+  params:
+    ganalytics: G-072GBE15TQ
+    google_site_verification: I34YfmPPi5fq4AIXmf102qEu6wCe1Hd6sF9wJxoioPE
+  opengraph:
+    twitter:
+      creator: "@wjakethompson"
+      card: summary_large_image
+  bslib:
+    base_font:
+      google: "Mulish"
+    heading_font:
+      google: "Mulish"
+    code_font:
+      google: "Source Code Pro"
+    bg: "#FFFFFF"
+    fg: "#333"
 
 development:
   mode: auto
@@ -52,6 +69,11 @@ articles:
   contents:
   - plotting
   - palettes
+
+news:
+  releases:
+  - text: "Version 0.2.0"
+    href: https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/
 
 figures:
   fig.retina: 3

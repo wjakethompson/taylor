@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# taylor <a href='https://taylor.wjakethompson.com'><img src='man/figures/logo.png' align="right" height="138" /></a>
+# taylor <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable
@@ -31,6 +31,8 @@ Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/wjakethompson)
 <!-- badges: end -->
+
+## Overview
 
 The goal of {taylor} is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 

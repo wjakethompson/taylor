@@ -41,8 +41,7 @@ scale_color_albums(
 \item \code{waiver()} for the default breaks (the scale limits)
 \item A character vector of breaks
 \item A function that takes the limits as input and returns breaks
-as output. Also accepts rlang \link[rlang:as_function]{lambda} function
-notation.
+as output
 }}
 
 \item{limits}{One of:
@@ -51,8 +50,7 @@ notation.
 \item A character vector that defines possible values of the scale and their
 order
 \item A function that accepts the existing (automatic) values and returns
-new ones. Also accepts rlang \link[rlang:as_function]{lambda} function
-notation.
+new ones
 }}
 
 \item{na.value}{If \code{na.translate = TRUE}, what aesthetic value should the

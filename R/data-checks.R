@@ -36,11 +36,12 @@ check_palette <- function(x, name) {
   # make sure strings are valid hex codes
   valid_hex <- grepl("^#(?:[0-9a-fA-F]{6,8}){1}$", x)
   if (!all(valid_hex)) {
-    bad_val <- x[!valid_hex]
-    abort_bad_argument(name,
-                       must = glue::glue("be valid hexadecimal values.\n",
-                                         "Problematic values: ",
-                                         "{paste(bad_val, collapse = ', ')}"))
+    abort_bad_argument(
+      name,
+      must = glue::glue("be valid hexadecimal values.\n",
+                        "Problematic values: ",
+                        "{paste(x[!valid_hex], collapse = ', ')}")
+    )
   } else {
     x
   }

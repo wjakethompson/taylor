@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# taylor <a href='https://taylor.wjakethompson.com'><img src='man/figures/logo.png' align="right" height="138" /></a>
+# taylor <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 
@@ -17,6 +17,8 @@ Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg) [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/wjakethompson)
 <!-- badges: end -->
+
+## Overview
 
 The goal of {taylor} is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
