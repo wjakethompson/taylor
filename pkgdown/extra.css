@@ -2,8 +2,8 @@
   --nav-bkg: #624324;     /* nav bar background */
   --nav-link: #EEDBA9;    /* nav bar link color */
   --nav-higl: #CAA462;    /* nav active and highlight */
-  --a-alpha: #6C797C;     /* pkg version background */
-  --d-alpha: #FFFFFF;     /* pkg dev version background */
+  --a-alpha: #624324;     /* pkg version background */
+  --d-alpha: #EEDBA9;     /* pkg dev version background */
 
   --pg-header: #A47F45;   /* heading color & text links */
   --text-link: #A47F45;   /* hyperlinks in text */
@@ -67,6 +67,16 @@
     color: var(--nav-higl);
     text-decoration: none;
     background-color: var(--nav-bkg);
+}
+
+.badge-default {
+  color: var(--d-alpha);
+  background-color: var(--a-alpha);
+}
+
+.badge-danger {
+  color: var(--a-alpha);
+  background-color: var(--d-alpha);
 }
 
 
