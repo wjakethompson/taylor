@@ -178,6 +178,7 @@ single_uri <- tribble(
 feature_uri <- tribble(
   ~track_name,                  ~track_uri,
   "Babe",                       "7FFfYM4JE1vj5n4rhHxg8q",
+  "Birch",                      "7wo2UNeQBowm28hfAJsEMz",
   "Both Of Us",                 "3r9bgSJlJz2zlevcBRYXko",
   "Gasoline (Remix)",           "645Exr2lJIO45Guht3qyIa",
   "Half Of My Heart",           "7hR5toSPEgwFZ78jfHdANM",
@@ -272,6 +273,8 @@ spotify_join <- spotify |>
          track_name = str_replace_all(track_name, " - Original Demo Recording",
                                       " (Original Demo Recording)"),
          track_name = str_replace_all(track_name, " - Acoustic Version",
+                                      " (Acoustic Version)"),
+         track_name = str_replace_all(track_name, " - Acoustic",
                                       " (Acoustic Version)")) |>
   # edits for Lover
   mutate(track_name = str_replace_all(track_name, "Me!", "ME!")) |>
