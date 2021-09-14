@@ -70,5 +70,10 @@ articles:
   - plotting
   - palettes
 
+news:
+  releases:
+  - text: "Version 0.2.0"
+    href: https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/
+
 figures:
   fig.retina: 3
