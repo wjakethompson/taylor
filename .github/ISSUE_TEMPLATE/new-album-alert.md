@@ -1,8 +1,10 @@
 ---
 name: New Album Alert
-about: Submit a PR that includes a new Taylor Swift album
-title: NEW ALBUM ALERT: ...
+about: Submit an issue for a new Taylor Swift album
+title: 'NEW ALBUM ALERT: '
 labels: ''
+assignees: ''
+
 ---
 
 Checklist of things that should be updated when adding a new album:
