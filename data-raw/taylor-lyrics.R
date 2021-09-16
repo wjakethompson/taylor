@@ -330,6 +330,7 @@ metacritic <- tribble(
   "Fearless (Taylor's Version)",         82L,
   "Speak Now",                           77L,
   "Red",                                 77L,
+  "Red (Taylor's Version)",              NA_integer_,
   "1989",                                76L,
   "reputation",                          71L,
   "Lover",                               79L,
