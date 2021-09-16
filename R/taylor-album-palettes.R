@@ -23,6 +23,7 @@ album_palettes <- lapply(list(
   fearless_tv  = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
   speak_now    = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
   red          = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
+  red_tv       = c("#592617", "#967862", "#B38468", "#C7C5B6", "#7C9694"),
   `1989`       = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
   reputation   = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
   lover        = c("#8C4F66", "#9C8083", "#847262", "#6098B6", "#EBBED3"),
@@ -38,6 +39,7 @@ album_compare <- color_palette(
     fearless_tv  = "#624324",
     speak_now    = "#833C63",
     red          = "#A91E47",
+    red_tv       = "#592617",
     `1989`       = "#846578",
     reputation   = "#2C2C2C",
     lover        = "#EBBED3",
@@ -78,8 +80,8 @@ album_compare <- color_palette(
 #' ggplot(studio_albums, aes(x = metacritic_score, y = album_name)) +
 #'   geom_col()
 album_levels <- c("Taylor Swift", "Fearless", "Fearless (Taylor's Version)",
-                  "Speak Now", "Red", "1989", "reputation", "Lover", "folklore",
-                  "evermore")
+                  "Speak Now", "Red", "Red (Taylor's Version)", "1989",
+                  "reputation", "Lover", "folklore", "evermore")
 
 
 # Scale functions --------------------------------------------------------------
@@ -108,6 +110,7 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                    fearless_tv  = taylor::album_palettes[["fearless_tv"]],
                    speak_now    = taylor::album_palettes[["speak_now"]],
                    red          = taylor::album_palettes[["red"]],
+                   red_tv       = taylor::album_palettes[["red_tv"]],
                    `1989`       = taylor::album_palettes[["1989"]],
                    reputation   = taylor::album_palettes[["reputation"]],
                    lover        = taylor::album_palettes[["lover"]],
