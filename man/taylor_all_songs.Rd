@@ -5,7 +5,7 @@
 \alias{taylor_all_songs}
 \title{Data for Taylor Swift songs}
 \format{
-A \link[tibble:tibble-package]{tibble} with 213
+A \link[tibble:tibble-package]{tibble} with 214
 rows and 29 variables. Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
