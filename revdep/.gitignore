@@ -2,3 +2,6 @@ checks.noindex
 library.noindex
 cloud.noindex
 data.sqlite
+checks
+library
+*.html
