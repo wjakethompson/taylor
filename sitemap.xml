@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://taylor.wjakethompson.com/404.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/articles/palettes.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/articles/plotting.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/authors.html</loc>
+  </url>
+  <url>
     <loc>https://taylor.wjakethompson.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://taylor.wjakethompson.com/news/index.html</loc>
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/album_levels.html</loc>
@@ -13,6 +43,9 @@
     <loc>https://taylor.wjakethompson.com/reference/color_palette.html</loc>
   </url>
   <url>
+    <loc>https://taylor.wjakethompson.com/reference/index.html</loc>
+  </url>
+  <url>
     <loc>https://taylor.wjakethompson.com/reference/scale_albums.html</loc>
   </url>
   <url>
@@ -20,9 +53,6 @@
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/taylor-vctrs.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/reference/taylor.html</loc>
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/taylor_album_songs.html</loc>
@@ -35,11 +65,5 @@
   </url>
   <url>
     <loc>https://taylor.wjakethompson.com/reference/title_case.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/articles/palettes.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/articles/plotting.html</loc>
   </url>
 </urlset>
