@@ -23,5 +23,6 @@ NULL
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @importFrom tibble tibble
+#' @importFrom methods setOldClass
 ## usethis namespace: end
 NULL
