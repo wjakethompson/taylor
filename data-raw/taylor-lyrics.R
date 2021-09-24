@@ -1,5 +1,6 @@
 library(tidyverse)
 library(spotifyr)
+library(stringi)
 library(readxl)
 library(here)
 library(fs)
@@ -42,7 +43,16 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
                           filter(value != "",
                                  !str_detect(value, "^\\[.*\\]$")) |>
                           rowid_to_column("line") |>
-                          select(line, lyric = value, element, element_artist)
+                          select(line, lyric = value, element, element_artist) %>%
+                          mutate(lyric = str_replace_all(lyric, "’", "'"),
+                                 lyric = str_replace_all(lyric, "‘", "'"),
+                                 lyric = str_replace_all(lyric, "…", "..."),
+                                 lyric = str_replace_all(lyric, "е", "e"),
+                                 lyric = str_replace_all(lyric, " ", " "),
+                                 lyric = str_replace_all(lyric, " ", " "),
+                                 lyric = str_replace_all(lyric, "​", ""),
+                                 lyric = str_replace_all(lyric, "”", "\""),
+                                 lyric = str_replace_all(lyric, "“", "\""))
                       }))
 
 base_info <- lyrics |>
@@ -301,9 +311,38 @@ spotify_join <- spotify |>
   mutate(rows = map_int(spotify, nrow)) |>
   filter(rows > 1))
 
-# Check for songs in Spotify that are not in base_info
+# Check for songs in Spotify not in base_info. 6 rows currently expected:
+# 1-3 Bonus tracks from Speak Now with no lyrics on Genius
+# 4-6 Voice memos from 1989
 (extra <- spotify_join |>
   anti_join(base_info, by = c("album_name", "track_name")))
+
+# Check for non-ASCII characters. 22 errors (6 rows) expected:
+# 2 en dash
+# 9 em dash
+# 8 é
+# 1 í
+# 1 ï
+# 1 ó
+base_info %>%
+  select(where(is.character), lyrics) %>%
+  unnest(lyrics) %>%
+  mutate(across(where(is.character), stringi::stri_enc_isascii,
+                .names = "{.col}_ascii")) %>%
+  filter(!if_all(ends_with("ascii"))) %>%
+  select(album_name, track_name, line, lyric) %>%
+  mutate(ascii_flag = map(lyric,
+                          .f = function(.x) {
+                            str_split(.x, "") %>%
+                              flatten_chr() %>%
+                              enframe() %>%
+                              mutate(ascii = map_lgl(value,
+                                                     stri_enc_isascii)) %>%
+                              filter(!ascii) %>%
+                              select(value, ascii)
+  })) %>%
+  unnest(ascii_flag) %>%
+  count(value)
 
 
 # Write data files -------------------------------------------------------------
