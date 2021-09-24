@@ -61,7 +61,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button type="button" id="version-badge" class="badge badge-danger d-none d-lg-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="In-development version">0.2.0.9000</button>
+    <button type="button" id="version-badge" class="badge badge-danger d-none d-lg-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="In-development version">0.2.1.9000</button>
 
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto ml-3">
@@ -121,7 +121,7 @@
 <p>To install the development version from <a href="https://github.com/" class="external-link">GitHub</a> use:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"wjakethompson/taylor"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"wjakethompson/taylor"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -152,7 +152,7 @@
 <p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">taylor_all_songs</span>
-<span class="co">#&gt; # A tibble: 213 × 29</span>
+<span class="co">#&gt; # A tibble: 214 × 29</span>
 <span class="co">#&gt;    album_name  ep    album_release track_number track_name     artist  featuring</span>
 <span class="co">#&gt;    &lt;chr&gt;       &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;    </span>
 <span class="co">#&gt;  1 Taylor Swi… FALSE 2006-10-24               1 Tim McGraw     Taylor… &lt;NA&gt;     </span>
@@ -165,7 +165,7 @@
 <span class="co">#&gt;  8 Taylor Swi… FALSE 2006-10-24               8 Stay Beautiful Taylor… &lt;NA&gt;     </span>
 <span class="co">#&gt;  9 Taylor Swi… FALSE 2006-10-24               9 Should've Sai… Taylor… &lt;NA&gt;     </span>
 <span class="co">#&gt; 10 Taylor Swi… FALSE 2006-10-24              10 Mary's Song (… Taylor… &lt;NA&gt;     </span>
-<span class="co">#&gt; # … with 203 more rows, and 22 more variables: bonus_track &lt;lgl&gt;,</span>
+<span class="co">#&gt; # … with 204 more rows, and 22 more variables: bonus_track &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   promotional_release &lt;date&gt;, single_release &lt;date&gt;, track_release &lt;date&gt;,</span>
 <span class="co">#&gt; #   danceability &lt;dbl&gt;, energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;,</span>
 <span class="co">#&gt; #   speechiness &lt;dbl&gt;, acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;,</span>
