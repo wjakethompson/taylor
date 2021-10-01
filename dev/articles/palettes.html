@@ -94,7 +94,7 @@
 </nav><div class="container template-article">
 <script src="palettes_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
-    <img src="../package-logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
+    <img src="../logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
       <h1 class="display-4" data-toc-skip>Using and creating color palettes</h1>
             
       
@@ -116,34 +116,34 @@
 <span class="va">my_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"firebrick"</span>, <span class="st">"turquoise"</span>, <span class="st">"#0051ba"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">my_pal</span>
 <span class="co">#&gt; &lt;color_palette[3]&gt;</span>
-<span class="co">#&gt;     #B22222 </span>
-<span class="co">#&gt;     #40E0D0 </span>
-<span class="co">#&gt;     #0051ba</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #D70000;">  </span> #B22222 </span>
+<span class="co">#&gt;  <span style="background-color: #5FFFD7;">  </span> #40E0D0 </span>
+<span class="co">#&gt;  <span style="background-color: #005FD7;">  </span> #0051ba</span></code></pre></div>
 <p>We can also use <code><a href="../reference/color_palette.html">color_palette()</a></code> on an existing palette to interpolate additional values, by specifying that we want to make a continuous palette out of the few discrete colors that were originally specified.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_big_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="va">my_pal</span>, n <span class="op">=</span> <span class="fl">10</span>, type <span class="op">=</span> <span class="st">"continuous"</span><span class="op">)</span>
 <span class="va">my_big_pal</span>
 <span class="co">#&gt; &lt;color_palette[10]&gt;</span>
-<span class="co">#&gt;     #B22222 </span>
-<span class="co">#&gt;     #984C48 </span>
-<span class="co">#&gt;     #7F766F </span>
-<span class="co">#&gt;     #66A096 </span>
-<span class="co">#&gt;     #4CCABC </span>
-<span class="co">#&gt;     #38D0CD </span>
-<span class="co">#&gt;     #2AB0C8 </span>
-<span class="co">#&gt;     #1C90C3 </span>
-<span class="co">#&gt;     #0E70BE </span>
-<span class="co">#&gt;     #0051BA</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #D70000;">  </span> #B22222 </span>
+<span class="co">#&gt;  <span style="background-color: #AF5F5F;">  </span> #984C48 </span>
+<span class="co">#&gt;  <span style="background-color: #767676;">  </span> #7F766F </span>
+<span class="co">#&gt;  <span style="background-color: #87AFAF;">  </span> #66A096 </span>
+<span class="co">#&gt;  <span style="background-color: #5FD7D7;">  </span> #4CCABC </span>
+<span class="co">#&gt;  <span style="background-color: #5FD7D7;">  </span> #38D0CD </span>
+<span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> #2AB0C8 </span>
+<span class="co">#&gt;  <span style="background-color: #00AFD7;">  </span> #1C90C3 </span>
+<span class="co">#&gt;  <span style="background-color: #0087D7;">  </span> #0E70BE </span>
+<span class="co">#&gt;  <span style="background-color: #005FD7;">  </span> #0051BA</span></code></pre></div>
 <p>Similarly, if we have a large color palette, we can select just a few representative colors.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_small_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="va">my_big_pal</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
 <span class="va">my_small_pal</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #B22222 </span>
-<span class="co">#&gt;     #7F766F </span>
-<span class="co">#&gt;     #4CCABC </span>
-<span class="co">#&gt;     #2AB0C8 </span>
-<span class="co">#&gt;     #0E70BE</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #D70000;">  </span> #B22222 </span>
+<span class="co">#&gt;  <span style="background-color: #767676;">  </span> #7F766F </span>
+<span class="co">#&gt;  <span style="background-color: #5FD7D7;">  </span> #4CCABC </span>
+<span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> #2AB0C8 </span>
+<span class="co">#&gt;  <span style="background-color: #0087D7;">  </span> #0E70BE</span></code></pre></div>
 </div>
 <div id="built-in-palettes" class="section level2">
 <h2 class="hasAnchor">
@@ -153,106 +153,106 @@
 <code class="sourceCode R"><span class="va">album_palettes</span>
 <span class="co">#&gt; $taylor_swift</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #1D4737 </span>
-<span class="co">#&gt;     #1BAEC6 </span>
-<span class="co">#&gt;     #523d28 </span>
-<span class="co">#&gt;     #AD8562 </span>
-<span class="co">#&gt;     #E7DBCC </span>
+<span class="co">#&gt;  <span style="background-color: #005F5F;">  </span> #1D4737 </span>
+<span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> #1BAEC6 </span>
+<span class="co">#&gt;  <span style="background-color: #5F5F00;">  </span> #523d28 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #AD8562 </span>
+<span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #E7DBCC </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $fearless</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #6B5E57 </span>
-<span class="co">#&gt;     #776456 </span>
-<span class="co">#&gt;     #976F34 </span>
-<span class="co">#&gt;     #CBA863 </span>
-<span class="co">#&gt;     #E1D4C2 </span>
+<span class="co">#&gt;  <span style="background-color: #626262;">  </span> #6B5E57 </span>
+<span class="co">#&gt;  <span style="background-color: #626262;">  </span> #776456 </span>
+<span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #976F34 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #CBA863 </span>
+<span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> #E1D4C2 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $fearless_tv</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #624324 </span>
-<span class="co">#&gt;     #A47F45 </span>
-<span class="co">#&gt;     #CAA462 </span>
-<span class="co">#&gt;     #C5AA7C </span>
-<span class="co">#&gt;     #EEDBA9 </span>
+<span class="co">#&gt;  <span style="background-color: #875F00;">  </span> #624324 </span>
+<span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #A47F45 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #CAA462 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #C5AA7C </span>
+<span class="co">#&gt;  <span style="background-color: #FFFFAF;">  </span> #EEDBA9 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $speak_now</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #2E1924 </span>
-<span class="co">#&gt;     #6C3127 </span>
-<span class="co">#&gt;     #833C63 </span>
-<span class="co">#&gt;     #D1A0C7 </span>
-<span class="co">#&gt;     #F5E8E2 </span>
+<span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> #2E1924 </span>
+<span class="co">#&gt;  <span style="background-color: #875F00;">  </span> #6C3127 </span>
+<span class="co">#&gt;  <span style="background-color: #AF5F87;">  </span> #833C63 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AFD7;">  </span> #D1A0C7 </span>
+<span class="co">#&gt;  <span style="background-color: #DADADA;">  </span> #F5E8E2 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $red</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #201F39 </span>
-<span class="co">#&gt;     #A91E47 </span>
-<span class="co">#&gt;     #7E6358 </span>
-<span class="co">#&gt;     #B0A49A </span>
-<span class="co">#&gt;     #DDD8C9 </span>
+<span class="co">#&gt;  <span style="background-color: #00005F;">  </span> #201F39 </span>
+<span class="co">#&gt;  <span style="background-color: #AF005F;">  </span> #A91E47 </span>
+<span class="co">#&gt;  <span style="background-color: #626262;">  </span> #7E6358 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AFAF;">  </span> #B0A49A </span>
+<span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #DDD8C9 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $`1989`</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #5D4E5D </span>
-<span class="co">#&gt;     #846578 </span>
-<span class="co">#&gt;     #92573C </span>
-<span class="co">#&gt;     #C6B69C </span>
-<span class="co">#&gt;     #D8D8CF </span>
+<span class="co">#&gt;  <span style="background-color: #875F87;">  </span> #5D4E5D </span>
+<span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> #846578 </span>
+<span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #92573C </span>
+<span class="co">#&gt;  <span style="background-color: #D7D7AF;">  </span> #C6B69C </span>
+<span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #D8D8CF </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $reputation</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #2C2C2C </span>
-<span class="co">#&gt;     #515151 </span>
-<span class="co">#&gt;     #5B5B5B </span>
-<span class="co">#&gt;     #6E6E6E </span>
-<span class="co">#&gt;     #B9B9B9 </span>
+<span class="co">#&gt;  <span style="background-color: #303030;">  </span> #2C2C2C </span>
+<span class="co">#&gt;  <span style="background-color: #4E4E4E;">  </span> #515151 </span>
+<span class="co">#&gt;  <span style="background-color: #585858;">  </span> #5B5B5B </span>
+<span class="co">#&gt;  <span style="background-color: #6C6C6C;">  </span> #6E6E6E </span>
+<span class="co">#&gt;  <span style="background-color: #B2B2B2;">  </span> #B9B9B9 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $lover</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #8C4F66 </span>
-<span class="co">#&gt;     #9C8083 </span>
-<span class="co">#&gt;     #847262 </span>
-<span class="co">#&gt;     #6098B6 </span>
-<span class="co">#&gt;     #EBBED3 </span>
+<span class="co">#&gt;  <span style="background-color: #AF5F87;">  </span> #8C4F66 </span>
+<span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> #9C8083 </span>
+<span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> #847262 </span>
+<span class="co">#&gt;  <span style="background-color: #87AFD7;">  </span> #6098B6 </span>
+<span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> #EBBED3 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $folklore</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #3E3E3E </span>
-<span class="co">#&gt;     #545454 </span>
-<span class="co">#&gt;     #5C5C5C </span>
-<span class="co">#&gt;     #949494 </span>
-<span class="co">#&gt;     #EBEBEB </span>
+<span class="co">#&gt;  <span style="background-color: #444444;">  </span> #3E3E3E </span>
+<span class="co">#&gt;  <span style="background-color: #585858;">  </span> #545454 </span>
+<span class="co">#&gt;  <span style="background-color: #585858;">  </span> #5C5C5C </span>
+<span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> #949494 </span>
+<span class="co">#&gt;  <span style="background-color: #DADADA;">  </span> #EBEBEB </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $evermore</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #160E10 </span>
-<span class="co">#&gt;     #421E18 </span>
-<span class="co">#&gt;     #D37F55 </span>
-<span class="co">#&gt;     #85796D </span>
-<span class="co">#&gt;     #E0D9D7</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #1C1C1C;">  </span> #160E10 </span>
+<span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> #421E18 </span>
+<span class="co">#&gt;  <span style="background-color: #D7875F;">  </span> #D37F55 </span>
+<span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> #85796D </span>
+<span class="co">#&gt;  <span style="background-color: #D0D0D0;">  </span> #E0D9D7</span></code></pre></div>
 <p>Or we can access a single palette.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">album_palettes</span><span class="op">$</span><span class="va">fearless_tv</span>
 <span class="co">#&gt; &lt;color_palette[5]&gt;</span>
-<span class="co">#&gt;     #624324 </span>
-<span class="co">#&gt;     #A47F45 </span>
-<span class="co">#&gt;     #CAA462 </span>
-<span class="co">#&gt;     #C5AA7C </span>
-<span class="co">#&gt;     #EEDBA9</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #875F00;">  </span> #624324 </span>
+<span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #A47F45 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #CAA462 </span>
+<span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #C5AA7C </span>
+<span class="co">#&gt;  <span style="background-color: #FFFFAF;">  </span> #EEDBA9</span></code></pre></div>
 <p>Also included is a palette that includes one representative color from each album, <code><a href="../reference/album_palettes.html">taylor::album_compare</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">album_compare</span>
 <span class="co">#&gt; &lt;color_palette[10]&gt;</span>
-<span class="co">#&gt;     #1BAEC6 </span>
-<span class="co">#&gt;     #976F34 </span>
-<span class="co">#&gt;     #624324 </span>
-<span class="co">#&gt;     #833C63 </span>
-<span class="co">#&gt;     #A91E47 </span>
-<span class="co">#&gt;     #846578 </span>
-<span class="co">#&gt;     #2C2C2C </span>
-<span class="co">#&gt;     #EBBED3 </span>
-<span class="co">#&gt;     #949494 </span>
-<span class="co">#&gt;     #421E18</span></code></pre></div>
+<span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> #1BAEC6 </span>
+<span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #976F34 </span>
+<span class="co">#&gt;  <span style="background-color: #875F00;">  </span> #624324 </span>
+<span class="co">#&gt;  <span style="background-color: #AF5F87;">  </span> #833C63 </span>
+<span class="co">#&gt;  <span style="background-color: #AF005F;">  </span> #A91E47 </span>
+<span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> #846578 </span>
+<span class="co">#&gt;  <span style="background-color: #303030;">  </span> #2C2C2C </span>
+<span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> #EBBED3 </span>
+<span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> #949494 </span>
+<span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> #421E18</span></code></pre></div>
 </div>
 <div id="using-color-palettes-with-ggplot2" class="section level2">
 <h2 class="hasAnchor">
@@ -272,9 +272,10 @@
 <code class="sourceCode R"><span class="va">green_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#E5F5E0"</span>, <span class="st">"#A1D99B"</span>, <span class="st">"#31A354"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">green_pal</span>
 <span class="co">#&gt; &lt;color_palette[3]&gt;</span>
-<span class="co">#&gt;     #E5F5E0 </span>
-<span class="co">#&gt;     #A1D99B </span>
-<span class="co">#&gt;     #31A354</span>
+<span class="co">#&gt;  <span style="background-color: #DADADA;">  </span> #E5F5E0 </span>
+<span class="co">#&gt;  <span style="background-color: #AFFFAF;">  </span> #A1D99B </span>
+<span class="co">#&gt;  <span style="background-color: #5FAF5F;">  </span> #31A354</span>
+
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">waiting</span>, <span class="va">eruptions</span>, fill <span class="op">=</span> <span class="va">density</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradientn</a></span><span class="op">(</span>colors <span class="op">=</span> <span class="va">green_pal</span><span class="op">)</span> <span class="op">+</span>
@@ -287,9 +288,10 @@
 <span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"firebrick"</span>, <span class="st">"goldenrod"</span>, <span class="st">"navy"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">penguin_pal</span>
 <span class="co">#&gt; &lt;color_palette[3]&gt;</span>
-<span class="co">#&gt;     #B22222 </span>
-<span class="co">#&gt;     #DAA520 </span>
-<span class="co">#&gt;     #000080</span>
+<span class="co">#&gt;  <span style="background-color: #D70000;">  </span> #B22222 </span>
+<span class="co">#&gt;  <span style="background-color: #FFAF00;">  </span> #DAA520 </span>
+<span class="co">#&gt;  <span style="background-color: #0000AF;">  </span> #000080</span>
+
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">species</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">penguin_pal</span><span class="op">)</span> <span class="op">+</span>
