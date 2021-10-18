@@ -5,11 +5,7 @@
 \alias{is_color_palette}
 \title{Create a custom color palette}
 \usage{
-color_palette(
-  pal = character(),
-  n = length(pal),
-  type = c("discrete", "continuous")
-)
+color_palette(pal = character(), n = length(pal))
 
 is_color_palette(pal)
 }
@@ -33,9 +29,9 @@ printed, it displays the palette colors.
 }
 \examples{
 # use color_palette() to extend or shorten an existing palette
-color_palette(album_palettes$lover, n = 10, type = "continuous")
+color_palette(album_palettes$lover, n = 10)
 
-color_palette(album_palettes$fearless, n = 10, type = "continuous")
+color_palette(album_palettes$fearless, n = 10)
 
 color_palette(album_palettes$red, n = 3)
 

@@ -14,9 +14,9 @@
 #' @export
 #' @examples
 #' # use color_palette() to extend or shorten an existing palette
-#' color_palette(album_palettes$lover, n = 10, type = "continuous")
+#' color_palette(album_palettes$lover, n = 10)
 #'
-#' color_palette(album_palettes$fearless, n = 10, type = "continuous")
+#' color_palette(album_palettes$fearless, n = 10)
 #'
 #' color_palette(album_palettes$red, n = 3)
 #'
@@ -30,37 +30,27 @@
 #'   geom_tile(aes(waiting, eruptions, fill = density)) +
 #'   scale_fill_gradientn(colours = my_pal) +
 #'   theme_minimal()
-color_palette <- function(pal = character(), n = length(pal),
-                          type = c("discrete", "continuous")) {
+color_palette <- function(pal = character(), n = length(pal)) {
   # check palette and cast to character
   pal <- check_palette(pal, name = "pal")
   pal <- vec_cast(pal, character())
 
-  # check type
-  type <- rlang::arg_match(type)
-
   # check n
-  min_color <- ifelse(length(pal) == 0, 0L, 1L)
-  max_color <- ifelse(type == "discrete", length(pal), Inf)
-  n <- check_n_range(n, name = "n", lb = min_color, ub = max_color)
+  n <- check_pos_int(n, name = "n")
 
-  new_color_palette(pal = pal, n = n, type = type)
+  new_color_palette(pal = pal, n = n)
 }
 
-new_color_palette <- function(pal = character(), n = length(pal),
-                        type = c("discrete", "continuous")) {
+new_color_palette <- function(pal = character(), n = length(pal)) {
   vec_assert(pal, ptype = character())
   vec_assert(n, ptype = integer(), size = 1)
-  type <- rlang::arg_match(type)
 
-  if (length(pal) > 0) {
-    index <- seq(1, length(pal), by = length(pal) / n)
-
-    out <- switch(type,
-                  continuous = grDevices::colorRampPalette(pal)(n),
-                  discrete = pal[index])
+  out <- if (length(pal) == 0) {
+    pal
+  } else if (n > length(pal)) {
+    grDevices::colorRampPalette(pal)(n)
   } else {
-    out <- pal
+    pal[seq(1, length(pal), length.out = n)]
   }
 
   nms <- if (is.null(names(out))) out else names(out)

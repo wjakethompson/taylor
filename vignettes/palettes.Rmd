@@ -32,10 +32,10 @@ my_pal <- color_palette(c("firebrick", "turquoise", "#0051ba"))
 my_pal
 ```
 
-We can also use `color_palette()` on an existing palette to interpolate additional values, by specifying that we want to make a continuous palette out of the few discrete colors that were originally specified.
+We can also use `color_palette()` on an existing palette to interpolate additional values, by specifying that we want more colors than were originally specified.
 
 ```{r}
-my_big_pal <- color_palette(my_pal, n = 10, type = "continuous")
+my_big_pal <- color_palette(my_pal, n = 10)
 my_big_pal
 ```
 
