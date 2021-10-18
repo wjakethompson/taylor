@@ -24,6 +24,7 @@ jobs:
         with:
           extra-packages: |
             r-lib/pkgdown
+            r-lib/rlang
             bookdown
           needs: website
 
