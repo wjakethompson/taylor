@@ -7,8 +7,9 @@
 #'  * For `color_palette()`: A character vector of hexadecimal codes
 #'  * For `is_color_palette()`: An object to test
 #' @param n The number of colors
-#' @param type The type of palette, either `discrete` or `continuous`. If `n` is
-#'  greater than the number of colors in `pal`, type must be `continuous`.
+#' @param type `r lifecycle::badge("deprecated")` `type` is no longer supported;
+#'  this function will automatically interpolate additional or subset values
+#'  based on whether `n` is greater or less than `length(pal)`.
 #'
 #' @return A color palette object.
 #' @export
@@ -30,7 +31,19 @@
 #'   geom_tile(aes(waiting, eruptions, fill = density)) +
 #'   scale_fill_gradientn(colours = my_pal) +
 #'   theme_minimal()
-color_palette <- function(pal = character(), n = length(pal)) {
+color_palette <- function(pal = character(), n = length(pal),
+                          type = deprecated()) {
+  if (is_present(type)) {
+    deprecate_warn(
+      when = "1.0.0",
+      what = "color_palette(type)",
+      details = glue::glue("Ability to specify palette type is no longer ",
+                           "supported. Interpolation of additional values or ",
+                           "subsetting happens automatically based on `n` ",
+                           "and the length of `pal`.")
+    )
+  }
+
   # check palette and cast to character
   pal <- check_palette(pal, name = "pal")
   pal <- vec_cast(pal, character())
@@ -50,7 +63,7 @@ new_color_palette <- function(pal = character(), n = length(pal)) {
   } else if (n > length(pal)) {
     grDevices::colorRampPalette(pal)(n)
   } else {
-    pal[seq(1, length(pal), length.out = n)]
+    pal[as.integer(seq(1, length(pal), length.out = n))]
   }
 
   nms <- if (is.null(names(out))) out else names(out)

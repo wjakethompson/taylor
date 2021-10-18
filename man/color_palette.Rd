@@ -5,7 +5,7 @@
 \alias{is_color_palette}
 \title{Create a custom color palette}
 \usage{
-color_palette(pal = character(), n = length(pal))
+color_palette(pal = character(), n = length(pal), type = deprecated())
 
 is_color_palette(pal)
 }
@@ -17,8 +17,9 @@ is_color_palette(pal)
 
 \item{n}{The number of colors}
 
-\item{type}{The type of palette, either \code{discrete} or \code{continuous}. If \code{n} is
-greater than the number of colors in \code{pal}, type must be \code{continuous}.}
+\item{type}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} \code{type} is no longer supported;
+this function will automatically interpolate additional or subset values
+based on whether \code{n} is greater or less than \code{length(pal)}.}
 }
 \value{
 A color palette object.
