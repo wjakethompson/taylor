@@ -23,6 +23,7 @@ Imports:
     crayon,
     ggplot2,
     glue,
+    lifecycle,
     methods,
     rlang,
     scales,

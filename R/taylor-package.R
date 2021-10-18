@@ -24,5 +24,6 @@ NULL
 ## usethis namespace: start
 #' @importFrom tibble tibble
 #' @importFrom methods setOldClass
+#' @importFrom lifecycle deprecated is_present deprecate_warn deprecate_soft
 ## usethis namespace: end
 NULL
