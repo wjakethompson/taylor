@@ -48,7 +48,6 @@ check_palette <- function(x, name) {
   if (is.null(names(x))) {
     names(new_x) <- x
   } else {
-    nms <- names(x)
     missing_nms <- which(names(x) == "")
     names(new_x)[missing_nms] <- x[missing_nms]
   }
