@@ -1,2 +1,2 @@
 exclusions: list("R/ggplot2-color-scales.R" = c(75, 99, 119, 144, 194, 206),
-                 "R/data-checks.R" = 37)
+                 "R/data-checks.R" = 38)
