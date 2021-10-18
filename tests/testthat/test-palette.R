@@ -25,6 +25,23 @@ test_that("palette creation work", {
   expect_false(is_color_palette(wjake_colors))
 })
 
+test_that("palette is named", {
+  col1 <- c("wheat", "firebrick", "navy")
+  col2 <- c("#009fb7", "#fed766", "#696773")
+  col3 <- c("goldenrod", "#85898a")
+  col4 <- c(ku_blue = "#0051ba", ku_crimson = "#e8000d", "#ffc82d")
+
+  pal1 <- color_palette(col1)
+  pal2 <- color_palette(col2)
+  pal3 <- color_palette(col3)
+  pal4 <- color_palette(col4)
+
+  expect_identical(names(pal1), c("wheat", "firebrick", "navy"))
+  expect_identical(names(pal2), c("#009fb7", "#fed766", "#696773"))
+  expect_identical(names(pal3), c("goldenrod", "#85898a"))
+  expect_identical(names(pal4), c("ku_blue", "ku_crimson", "#ffc82d"))
+})
+
 test_that("casting and coercion work", {
   wjake_colors <- c("#009fb7", "#fed766")
   wjake_names <- c(`#009fb7` = "#009fb7", `#fed766` = "#fed766")
@@ -83,5 +100,22 @@ test_that("various formatting works", {
     print(album_palettes$lover)
 
     print(album_palettes$folklore)
+  })
+
+  verify_output(test_path("test-print-palette-names.txt"), {
+    col1 <- c("wheat", "firebrick", "navy")
+    col2 <- c("#009fb7", "#fed766", "#696773")
+    col3 <- c("goldenrod", "#85898a")
+    col4 <- c(ku_blue = "#0051ba", ku_crimson = "#e8000d", "#ffc82d")
+
+    pal1 <- color_palette(col1)
+    pal2 <- color_palette(col2)
+    pal3 <- color_palette(col3)
+    pal4 <- color_palette(col4)
+
+    print(pal1)
+    print(pal2)
+    print(pal3)
+    print(pal4)
   })
 })

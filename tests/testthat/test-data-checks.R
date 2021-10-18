@@ -16,16 +16,18 @@ test_that("check palette works", {
   expect_match(err$message, "valid hexadecimal values")
 
   expect_identical(check_palette(c("#009fb7", "#fed766"), name = "test_arg"),
-                   c("#009fb7", "#fed766"))
+                   c(`#009fb7` = "#009fb7", `#fed766` = "#fed766"))
   expect_identical(check_palette(c("#009fb700", "#fed766ff"),
                                  name = "test_arg"),
-                   c("#009fb700", "#fed766ff"))
+                   c(`#009fb700` = "#009fb700", `#fed766ff` = "#fed766ff"))
   expect_identical(check_palette(c("firebrick", "goldenrod", "navy"),
                                  name = "test_arg"),
-                   c("#B22222", "#DAA520", "#000080"))
+                   c(firebrick = "#B22222", goldenrod = "#DAA520",
+                     navy = "#000080"))
   expect_identical(check_palette(c("firebrick", "#009fb7", "#FED766"),
                                  name = "test_arg"),
-                   c("#B22222", "#009fb7", "#FED766"))
+                   c(firebrick = "#B22222", `#009fb7` = "#009fb7",
+                     `#FED766` = "#FED766"))
 })
 
 test_that("check n range works", {
