@@ -56,7 +56,7 @@ check_palette <- function(x, name) {
   return(new_x)
 }
 
-check_n_range <- function(x, name, lb, ub) {
+check_pos_int <- function(x, name) {
   if (!is.numeric(x)) {
     abort_bad_argument(name, must = "be numeric", not = typeof(x))
   }
@@ -68,11 +68,8 @@ check_n_range <- function(x, name, lb, ub) {
 
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
-  } else if ((x < lb | x > ub) & ub != Inf) {
-    abort_bad_argument(name, must = glue::glue("be between {lb} and {ub} when ",
-                                               "using a discrete palette"))
-  } else if (x < lb & ub == Inf) {
-    abort_bad_argument(name, must = glue::glue("be at least {lb}"))
+  } else if (x < 0) {
+    abort_bad_argument(name, must = "be greater than 0")
   } else {
     x
   }
