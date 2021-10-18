@@ -63,8 +63,11 @@ new_color_palette <- function(pal = character(), n = length(pal),
     out <- pal
   }
 
+  nms <- if (is.null(names(out))) out else names(out)
+
   new_vctr(out,
            n_colors = n,
+           names = nms,
            class = "taylor_color_palette",
            inherit_base_type = TRUE)
 }

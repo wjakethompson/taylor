@@ -15,7 +15,8 @@ test_that("palette creation work", {
                   c("taylor_color_palette", "vctrs_vctr", "character"))
   expect_equal(length(wjake_palette), 2L)
   expect_equal(length(wjake_big_palette), 10L)
-  expect_equal(wjake_colors, vec_cast(wjake_palette, character()))
+  expect_equal(c(`#009fb7` = "#009fb7", `#fed766` = "#fed766"),
+               vec_cast(wjake_palette, character()))
   expect_equal(n_colors(wjake_palette), 2)
   expect_equal(n_colors(wjake_big_palette), 10)
 
@@ -26,6 +27,7 @@ test_that("palette creation work", {
 
 test_that("casting and coercion work", {
   wjake_colors <- c("#009fb7", "#fed766")
+  wjake_names <- c(`#009fb7` = "#009fb7", `#fed766` = "#fed766")
   wjake_palette <- color_palette(wjake_colors)
 
   # combining 2 palettes returns a palette
@@ -40,12 +42,12 @@ test_that("casting and coercion work", {
   ## these two are calling vec_ptype2.taylor_color_palette.character
   expect_type(c(wjake_palette, "#009fb7"), "character")
   expect_identical(c(wjake_palette, "#009fb7"),
-                   c("#009fb7", "#fed766", "#009fb7"))
+                   c(`#009fb7` = "#009fb7", `#fed766` = "#fed766", "#009fb7"))
 
   ## what are these calling?
   expect_type(c("#009fb7", wjake_palette), "character")
   expect_identical(c("#009fb7", wjake_palette),
-                   c("#009fb7", "#009fb7", "#fed766"))
+                   c("#009fb7", `#009fb7` = "#009fb7", `#fed766` = "#fed766"))
 
   expect_identical(vec_ptype2(color_palette(), character()), character())
   expect_identical(vec_ptype2(character(), color_palette()), character())
@@ -53,7 +55,7 @@ test_that("casting and coercion work", {
                    color_palette())
 
   # casting
-  expect_identical(vec_cast(wjake_palette, character()), wjake_colors)
+  expect_identical(vec_cast(wjake_palette, character()), wjake_names)
   expect_identical(vec_cast(wjake_colors, color_palette()), wjake_palette)
   expect_identical(vec_cast(wjake_palette, color_palette()), wjake_palette)
 
