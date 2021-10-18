@@ -113,7 +113,7 @@ obj_print_data.taylor_color_palette.default <- function(pal, ...) {
         cat("", .y("  "), .x, "\n")
         return(invisible(.x))
       },
-      vec_data(pal), styles,
+      vec_names(pal), styles,
       USE.NAMES = FALSE
     )
   )
