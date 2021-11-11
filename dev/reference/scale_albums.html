@@ -17,17 +17,17 @@ apply a color associated with each album."><meta property="og:image" content="ht
 
   gtag('config', 'G-072GBE15TQ');
 </script></head><body>
-    <a href="#container" class="visually-hidden-focusable">Skip to content</a>
+    <a href="#container" class="visually-hidden-focusable">Skip to contents</a>
     
 
     <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    <a class="navbar-brand" href="../index.html">taylor</a>
+    <a class="navbar-brand me-2" href="../index.html">taylor</a>
+
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</small>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <span class="badge bg-danger d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</span>
 
     <div id="navbar" class="collapse navbar-collapse ms-2">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
@@ -44,29 +44,29 @@ apply a color associated with each album."><meta property="og:image" content="ht
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
-    <a class="dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="../news/index.html">Changelog</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Search" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search..." autocomplete="off"></form>
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul></div>
   </div>
-</nav><div class="container template-reference-topic">
+</nav><div class="container template-reference-topic" id="container">
 <div class="row">
   <div class="col-md-9 contents">
-    <img src="../logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
-    <h1>Taylor Swift colour scale for album comparisons</h1>
-    <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/master/R/ggplot2-color-scales.R"><code>R/ggplot2-color-scales.R</code></a></small>
-    <div class="d-none name"><code>scale_albums.Rd</code></div>
+    <div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Taylor Swift colour scale for album comparisons</h1>
+      <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/HEAD/R/ggplot2-color-scales.R" class="external-link"><code>R/ggplot2-color-scales.R</code></a></small>
+      <div class="d-none name"><code>scale_albums.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
@@ -78,10 +78,11 @@ apply a color associated with each album.</p>
     </div>
 
     <div class="ref-usage section level2 sourceCode">
+    <h2>Usage</h2>
     <pre class="sourceCode r"><code><span class="fu">scale_fill_albums</span><span class="op">(</span>
   <span class="va">...</span>,
   aesthetics <span class="op">=</span> <span class="st">"fill"</span>,
-  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html">waiver</a></span><span class="op">(</span><span class="op">)</span>,
+  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver</a></span><span class="op">(</span><span class="op">)</span>,
   limits <span class="op">=</span> <span class="va">force</span>,
   na.value <span class="op">=</span> <span class="cn">NA</span>
 <span class="op">)</span>
@@ -89,7 +90,7 @@ apply a color associated with each album.</p>
 <span class="fu">scale_colour_albums</span><span class="op">(</span>
   <span class="va">...</span>,
   aesthetics <span class="op">=</span> <span class="st">"colour"</span>,
-  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html">waiver</a></span><span class="op">(</span><span class="op">)</span>,
+  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver</a></span><span class="op">(</span><span class="op">)</span>,
   limits <span class="op">=</span> <span class="va">force</span>,
   na.value <span class="op">=</span> <span class="cn">NA</span>
 <span class="op">)</span>
@@ -97,72 +98,73 @@ apply a color associated with each album.</p>
 <span class="fu">scale_color_albums</span><span class="op">(</span>
   <span class="va">...</span>,
   aesthetics <span class="op">=</span> <span class="st">"colour"</span>,
-  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html">waiver</a></span><span class="op">(</span><span class="op">)</span>,
+  breaks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver</a></span><span class="op">(</span><span class="op">)</span>,
   limits <span class="op">=</span> <span class="va">force</span>,
   na.value <span class="op">=</span> <span class="cn">NA</span>
 <span class="op">)</span></code></pre>
     </div>
 
-    <div class="ref-arguments section level2">
+    <div id="ref-sections">
+    <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt id="ref-argument-...">...</dt>
-      <dd><p>Other arguments to be passed to <code><a href="https://ggplot2.tidyverse.org/reference/discrete_scale.html">ggplot2::discrete_scale()</a></code></p></dd>
-      <dt id="ref-argument-aesthetics">aesthetics</dt>
-      <dd><p>The names of the aesthetics that this scale works with.</p></dd>
-      <dt id="ref-argument-breaks">breaks</dt>
-      <dd><p>One of:</p><ul><li><p><code>NULL</code> for no breaks</p></li>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/waiver.html">waiver()</a></code> for the default breaks (the scale limits)</p></li>
+    <dl><dt>...</dt>
+<dd><p>Other arguments to be passed to <code><a href="https://ggplot2.tidyverse.org/reference/discrete_scale.html" class="external-link">ggplot2::discrete_scale()</a></code></p></dd>
+<dt>aesthetics</dt>
+<dd><p>The names of the aesthetics that this scale works with.</p></dd>
+<dt>breaks</dt>
+<dd><p>One of:</p><ul><li><p><code>NULL</code> for no breaks</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/waiver.html" class="external-link">waiver()</a></code> for the default breaks (the scale limits)</p></li>
 <li><p>A character vector of breaks</p></li>
 <li><p>A function that takes the limits as input and returns breaks
-as output. Also accepts rlang <a href="https://rlang.r-lib.org/reference/as_function.html">lambda</a> function
+as output. Also accepts rlang <a href="https://rlang.r-lib.org/reference/as_function.html" class="external-link">lambda</a> function
 notation.</p></li>
 </ul></dd>
-      <dt id="ref-argument-limits">limits</dt>
-      <dd><p>One of:</p><ul><li><p><code>NULL</code> to use the default scale values</p></li>
+<dt>limits</dt>
+<dd><p>One of:</p><ul><li><p><code>NULL</code> to use the default scale values</p></li>
 <li><p>A character vector that defines possible values of the scale and their
 order</p></li>
 <li><p>A function that accepts the existing (automatic) values and returns
-new ones. Also accepts rlang <a href="https://rlang.r-lib.org/reference/as_function.html">lambda</a> function
+new ones. Also accepts rlang <a href="https://rlang.r-lib.org/reference/as_function.html" class="external-link">lambda</a> function
 notation.</p></li>
 </ul></dd>
-      <dt id="ref-argument-na.value">na.value</dt>
-      <dd><p>If <code>na.translate = TRUE</code>, what aesthetic value should the
+<dt>na.value</dt>
+<dd><p>If <code>na.translate = TRUE</code>, what aesthetic value should the
 missing values be displayed as? Does not apply to position scales
 where <code>NA</code> is always placed at the far right.</p></dd>
-    </dl></div>
-
+</dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A color scale for use in plots created with <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot2::ggplot()</a></code>.</p>
+    <p>A color scale for use in plots created with <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot2::ggplot()</a></code>.</p>
+    </div>
     </div>
 
     <div id="examples">
     <h2>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="va">studio</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">taylor_albums</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">metacritic_score</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span class="r-in"><span class="va">studio</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">taylor_albums</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">metacritic_score</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># create a plot that we want to color or fill by album</span></span>
-<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-plt"><img src="scale_albums-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="scale_albums-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># apply a color inspired by each album cover</span></span>
-<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span class="r-in">  <span class="fu">scale_fill_albums</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-plt"><img src="scale_albums-2.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="scale_albums-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># even when the axis or levels are rearranged, the correct color is applied</span></span>
-<span class="r-in"><span class="va">studio</span><span class="op">$</span><span class="va">album_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">studio</span><span class="op">$</span><span class="va">album_name</span>, levels <span class="op">=</span> <span class="va">album_levels</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in"><span class="va">studio</span><span class="op">$</span><span class="va">album_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">studio</span><span class="op">$</span><span class="va">album_name</span>, levels <span class="op">=</span> <span class="va">album_levels</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">studio</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span class="r-in">  <span class="fu">scale_fill_albums</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-plt"><img src="scale_albums-3.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="scale_albums-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>
   <div class="col-md-3" id="pkgdown-sidebar">
-    <nav id="toc"><h2 data-toc-skip>Contents</h2>
+    <nav id="toc"><h2>On this page</h2>
     </nav></div>
 </div>
 

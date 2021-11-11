@@ -11,17 +11,17 @@ type, and release date."><meta property="og:image" content="https://taylor.wjake
 
   gtag('config', 'G-072GBE15TQ');
 </script></head><body>
-    <a href="#container" class="visually-hidden-focusable">Skip to content</a>
+    <a href="#container" class="visually-hidden-focusable">Skip to contents</a>
     
 
     <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    <a class="navbar-brand" href="../index.html">taylor</a>
+    <a class="navbar-brand me-2" href="../index.html">taylor</a>
+
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</small>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <span class="badge bg-danger d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</span>
 
     <div id="navbar" class="collapse navbar-collapse ms-2">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
@@ -38,29 +38,29 @@ type, and release date."><meta property="og:image" content="https://taylor.wjake
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
-    <a class="dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="../news/index.html">Changelog</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Search" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search..." autocomplete="off"></form>
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul></div>
   </div>
-</nav><div class="container template-reference-topic">
+</nav><div class="container template-reference-topic" id="container">
 <div class="row">
   <div class="col-md-9 contents">
-    <img src="../logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
-    <h1>Data for Taylor Swift's studio albums and EPs</h1>
-    <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/master/R/data.R"><code>R/data.R</code></a></small>
-    <div class="d-none name"><code>taylor_albums.Rd</code></div>
+    <div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Data for Taylor Swift's studio albums and EPs</h1>
+      <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <div class="d-none name"><code>taylor_albums.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
@@ -69,13 +69,14 @@ type, and release date.</p>
     </div>
 
     <div class="ref-usage section level2 sourceCode">
+    <h2>Usage</h2>
     <pre class="sourceCode r"><code><span class="va">taylor_albums</span></code></pre>
     </div>
 
-
+    <div id="ref-sections">
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A <a href="https://tibble.tidyverse.org/reference/tibble-package.html">tibble</a> with 12 rows
+    <p>A <a href="https://tibble.tidyverse.org/reference/tibble-package.html" class="external-link">tibble</a> with 12 rows
 and 4 variables:</p><ul><li><p><code>album_name</code>: The name of the album. <code>NA</code> if the song was released
 separately from one of Taylor's studio albums or EPs.</p></li>
 <li><p><code>ep</code>: Logical. Is the album a full studio album (<code>FALSE</code>) or an extended
@@ -86,8 +87,8 @@ play (<code>TRUE</code>).</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p><a href="https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography">https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography</a></p>
-<p><a href="https://www.metacritic.com/person/taylor-swift">https://www.metacritic.com/person/taylor-swift</a></p>
+    <p><a href="https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography" class="external-link">https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography</a></p>
+<p><a href="https://www.metacritic.com/person/taylor-swift" class="external-link">https://www.metacritic.com/person/taylor-swift</a></p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -96,10 +97,11 @@ This means that compilations or EPs that are a subset of the original albums
 are not included (e.g., <em>folklore: the escapism chapter</em>,
 <em>folklore: the sleepless nights chapter</em>, etc.)</p>
     </div>
+    </div>
 
   </div>
   <div class="col-md-3" id="pkgdown-sidebar">
-    <nav id="toc"><h2 data-toc-skip>Contents</h2>
+    <nav id="toc"><h2>On this page</h2>
     </nav></div>
 </div>
 

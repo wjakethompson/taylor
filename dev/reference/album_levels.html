@@ -13,17 +13,17 @@ already specified the ordering."><meta property="og:image" content="https://tayl
 
   gtag('config', 'G-072GBE15TQ');
 </script></head><body>
-    <a href="#container" class="visually-hidden-focusable">Skip to content</a>
+    <a href="#container" class="visually-hidden-focusable">Skip to contents</a>
     
 
     <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    <a class="navbar-brand" href="../index.html">taylor</a>
+    <a class="navbar-brand me-2" href="../index.html">taylor</a>
+
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</small>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <span class="badge bg-danger d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</span>
 
     <div id="navbar" class="collapse navbar-collapse ms-2">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
@@ -40,29 +40,29 @@ already specified the ordering."><meta property="og:image" content="https://tayl
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
-    <a class="dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="../news/index.html">Changelog</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Search" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search..." autocomplete="off"></form>
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul></div>
   </div>
-</nav><div class="container template-reference-topic">
+</nav><div class="container template-reference-topic" id="container">
 <div class="row">
   <div class="col-md-9 contents">
-    <img src="../logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
-    <h1>Correct ordering of Taylor Swift's albums</h1>
-    <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/master/R/taylor-album-palettes.R"><code>R/taylor-album-palettes.R</code></a></small>
-    <div class="d-none name"><code>album_levels.Rd</code></div>
+    <div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Correct ordering of Taylor Swift's albums</h1>
+      <small class="dont-index">Source: <a href="https://github.com/wjakethompson/taylor/blob/HEAD/R/taylor-album-palettes.R" class="external-link"><code>R/taylor-album-palettes.R</code></a></small>
+      <div class="d-none name"><code>album_levels.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
@@ -72,10 +72,11 @@ already specified the ordering.</p>
     </div>
 
     <div class="ref-usage section level2 sourceCode">
+    <h2>Usage</h2>
     <pre class="sourceCode r"><code><span class="va">album_levels</span></code></pre>
     </div>
 
-
+    <div id="ref-sections">
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
     <p>A vector of length 10. Each element is an album
@@ -91,30 +92,31 @@ than after <em>evermore</em>, when it was released. This is because
 <code><a href="taylor_album_songs.html">taylor_album_songs</a></code>. Thus, it more often makes more sense for the album to
 be placed with the original, rather than in the actual release order.</p>
     </div>
+    </div>
 
     <div id="examples">
     <h2>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="va">studio_albums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">taylor_albums</span>, <span class="op">!</span><span class="va">ep</span><span class="op">)</span></span>
+    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span class="r-in"><span class="va">studio_albums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">taylor_albums</span>, <span class="op">!</span><span class="va">ep</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># by default, albums get plotted in alphabetical order</span></span>
-<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">studio_albums</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">studio_albums</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 rows containing missing values (position_stack).</span>
-<span class="r-plt"><img src="album_levels-1.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="album_levels-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># use `album_levels` to create a sensible factor variable</span></span>
-<span class="r-in"><span class="va">studio_albums</span><span class="op">$</span><span class="va">album_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">studio_albums</span><span class="op">$</span><span class="va">album_name</span>,</span>
+<span class="r-in"><span class="va">studio_albums</span><span class="op">$</span><span class="va">album_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">studio_albums</span><span class="op">$</span><span class="va">album_name</span>,</span>
 <span class="r-in">                                   levels <span class="op">=</span> <span class="va">album_levels</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">studio_albums</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">studio_albums</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">metacritic_score</span>, y <span class="op">=</span> <span class="va">album_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span class="r-in">  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 rows containing missing values (position_stack).</span>
-<span class="r-plt"><img src="album_levels-2.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="album_levels-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>
   <div class="col-md-3" id="pkgdown-sidebar">
-    <nav id="toc"><h2 data-toc-skip>Contents</h2>
+    <nav id="toc"><h2>On this page</h2>
     </nav></div>
 </div>
 

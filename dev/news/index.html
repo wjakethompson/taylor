@@ -9,17 +9,17 @@
 
   gtag('config', 'G-072GBE15TQ');
 </script></head><body>
-    <a href="#container" class="visually-hidden-focusable">Skip to content</a>
+    <a href="#container" class="visually-hidden-focusable">Skip to contents</a>
     
 
     <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    <a class="navbar-brand" href="../index.html">taylor</a>
+    <a class="navbar-brand me-2" href="../index.html">taylor</a>
+
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</small>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <span class="badge bg-danger d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.1.9000</span>
 
     <div id="navbar" class="collapse navbar-collapse ms-2">
       <ul class="navbar-nav me-auto"><li class="nav-item">
@@ -36,41 +36,39 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
-    <a class="dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="../news/index.html">Changelog</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Search" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search..." autocomplete="off"></form>
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/wjakethompson/taylor/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul></div>
   </div>
-</nav><div class="container template-news">
+</nav><div class="container template-news" id="container">
 <div class="row">
   <div class="col-md-9 contents">
-    <img src="../logo.png" class="pkg-logo" alt=""><div class="page-header pb-2 mt-4 mb-2 border-bottom toc-ignore">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href="https://github.com/wjakethompson/taylor/blob/master/NEWS.md"><code>NEWS.md</code></a></small>
+    <div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
+      <small>Source: <a href="https://github.com/wjakethompson/taylor/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 id="taylor-development-version" class="pkg-version" data-toc-text="development version">taylor (development version)<a class="anchor" aria-label="anchor" href="#taylor-development-version"></a>
-</h2>
+<h2 class="pkg-version" data-toc-text="development version" id="taylor-development-version">taylor (development version)<a class="anchor" aria-label="anchor" href="#taylor-development-version"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-development-version">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-development-version"></a>
-</h3>
+<h3 id="breaking-changes-development-version">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-development-version"></a></h3>
 <ul><li>
 <p>The <code>type</code> argument of <code><a href="../reference/color_palette.html">color_palette()</a></code> is deprecated and will be removed in a future release. Previously, if you wanted to interpolate more colors between those originally specified, you needed to specify <code>type = "continuous"</code>. This was misleading, because <code><a href="../reference/color_palette.html">color_palette()</a></code> still returned a discrete number of colors (<code>n</code>). Now, interpolation happens automatically if <code>n</code> is greater than <code>length(pal)</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>ku_blue <span class="op">=</span> <span class="st">"#0051ba"</span>, <span class="st">"firebrick"</span>, <span class="st">"#ffc82d"</span><span class="op">)</span>
+<span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>ku_blue <span class="op">=</span> <span class="st">"#0051ba"</span>, <span class="st">"firebrick"</span>, <span class="st">"#ffc82d"</span><span class="op">)</span>
 <span class="va">my_palette</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="va">my_colors</span><span class="op">)</span>
 
 <span class="co"># old</span>
@@ -83,33 +81,30 @@
 </li>
 </ul></div>
 <div class="section level3">
-<h3 id="minor-improvements-and-fixes-development-version">Minor improvements and fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-fixes-development-version"></a>
-</h3>
+<h3 id="minor-improvements-and-fixes-development-version">Minor improvements and fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-fixes-development-version"></a></h3>
 <ul><li><p>Fix the majority of non-ASCII characters in song lyrics. Remaining characters are en/em dashes and letters with accent marks.</p></li>
 <li>
-<p><code><a href="../reference/color_palette.html">color_palette()</a></code> now preserves color names, either through R color specifications (i.e., <code><a href="https://rdrr.io/r/grDevices/colors.html" class="external-link">colors()</a></code>) or a named vector supplied to <code>pal</code> (<a href="https://github.com/wjakethompson/taylor/issues/12">#12</a>).</p>
+<p><code><a href="../reference/color_palette.html">color_palette()</a></code> now preserves color names, either through R color specifications (i.e., <code><a href="https://rdrr.io/r/grDevices/colors.html" class="external-link">colors()</a></code>) or a named vector supplied to <code>pal</code> (<a href="https://github.com/wjakethompson/taylor/issues/12" class="external-link">#12</a>).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>ku_blue <span class="op">=</span> <span class="st">"#0051ba"</span>, <span class="st">"firebrick"</span>, <span class="st">"#ffc82d"</span><span class="op">)</span>
+<span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>ku_blue <span class="op">=</span> <span class="st">"#0051ba"</span>, <span class="st">"firebrick"</span>, <span class="st">"#ffc82d"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="va">my_colors</span><span class="op">)</span></code></pre></div>
 </li>
 </ul></div>
 </div>
     <div class="section level2">
-<h2 id="taylor-021" class="pkg-version" data-toc-text="0.2.1">taylor 0.2.1<a class="anchor" aria-label="anchor" href="#taylor-021"></a>
-</h2><p class="text-muted">CRAN release: 2021-09-23</p>
+<h2 class="pkg-version" data-toc-text="0.2.1" id="taylor-021">taylor 0.2.1<a class="anchor" aria-label="anchor" href="#taylor-021"></a></h2><p class="text-muted">CRAN release: 2021-09-23</p>
 <ul><li><p>Added “Birch” from Big Red Machine’s <em>How Long Do You Think It’s Gonna Last?</em> to <code>taylor_all_songs</code>.</p></li>
-<li><p>Updated tests for the upcoming release of testthat (<a href="https://github.com/hadley">@hadley</a>, <a href="https://github.com/wjakethompson/taylor/issues/10">#10</a>).</p></li>
+<li><p>Updated tests for the upcoming release of testthat (<a href="https://github.com/hadley" class="external-link">@hadley</a>, <a href="https://github.com/wjakethompson/taylor/issues/10" class="external-link">#10</a>).</p></li>
 </ul></div>
     <div class="section level2">
-<h2 id="taylor-020" class="pkg-version" data-toc-text="0.2.0">taylor 0.2.0<a class="anchor" aria-label="anchor" href="#taylor-020"></a>
-</h2><p class="text-muted">CRAN release: 2021-08-17</p>
+<h2 class="pkg-version" data-toc-text="0.2.0" id="taylor-020">taylor 0.2.0<a class="anchor" aria-label="anchor" href="#taylor-020"></a></h2><p class="text-muted">CRAN release: 2021-08-17</p>
 <ul><li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
 </ul></div>
   </div>
 
   <div class="col-md-3" id="pkgdown-sidebar">
-    <nav id="toc"><h2 data-toc-skip>Contents</h2>
+    <nav id="toc"><h2>On this page</h2>
     </nav></div>
 
 </div>
