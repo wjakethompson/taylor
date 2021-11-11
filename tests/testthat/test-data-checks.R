@@ -16,55 +16,53 @@ test_that("check palette works", {
   expect_match(err$message, "valid hexadecimal values")
 
   expect_identical(check_palette(c("#009fb7", "#fed766"), name = "test_arg"),
-                   c("#009fb7", "#fed766"))
+                   c(`#009fb7` = "#009fb7", `#fed766` = "#fed766"))
   expect_identical(check_palette(c("#009fb700", "#fed766ff"),
                                  name = "test_arg"),
-                   c("#009fb700", "#fed766ff"))
+                   c(`#009fb700` = "#009fb700", `#fed766ff` = "#fed766ff"))
   expect_identical(check_palette(c("firebrick", "goldenrod", "navy"),
                                  name = "test_arg"),
-                   c("#B22222", "#DAA520", "#000080"))
+                   c(firebrick = "#B22222", goldenrod = "#DAA520",
+                     navy = "#000080"))
   expect_identical(check_palette(c("firebrick", "#009fb7", "#FED766"),
                                  name = "test_arg"),
-                   c("#B22222", "#009fb7", "#FED766"))
+                   c(firebrick = "#B22222", `#009fb7` = "#009fb7",
+                     `#FED766` = "#FED766"))
 })
 
-test_that("check n range works", {
-  err <- rlang::catch_cnd(check_n_range("a", "test_arg", 1, 5))
+test_that("check positive integer works", {
+  err <- rlang::catch_cnd(check_pos_int("a", "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "numeric")
   expect_equal(err$not, "character")
 
-  err <- rlang::catch_cnd(check_n_range(NA_integer_, "test_arg", 1, 5))
+  err <- rlang::catch_cnd(check_pos_int(NA_integer_, "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "non-missing")
 
-  err <- rlang::catch_cnd(check_n_range(integer(), "test_arg", 1, 5))
+  err <- rlang::catch_cnd(check_pos_int(integer(), "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "length of 1")
   expect_equal(err$not, 0)
 
-  err <- rlang::catch_cnd(check_n_range(c(2:3), "test_arg", 1, 5))
+  err <- rlang::catch_cnd(check_pos_int(c(2:3), "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
   expect_match(err$message, "length of 1")
   expect_equal(err$not, 2)
 
-  err <- rlang::catch_cnd(check_n_range(6, "test_arg", 1, 5))
+  err <- rlang::catch_cnd(check_pos_int(-2, "test_arg"))
   expect_s3_class(err, "error_bad_argument")
   expect_equal(err$arg, "test_arg")
-  expect_match(err$message, "between 1 and 5")
+  expect_match(err$message, "greater than 0")
 
-  err <- rlang::catch_cnd(check_n_range(-1, "test_arg", 1, Inf))
-  expect_s3_class(err, "error_bad_argument")
-  expect_equal(err$arg, "test_arg")
-  expect_match(err$message, "be at least 1")
-
-  expect_identical(check_n_range(3, "test_arg", 1, 5), 3L)
-  expect_identical(check_n_range(5L, "test_arg", 1, 5), 5L)
-  expect_identical(check_n_range(10L, "test_arg", 1, Inf), 10L)
+  expect_identical(check_pos_int(0, "test_arg"), 0L)
+  expect_identical(check_pos_int(3, "test_arg"), 3L)
+  expect_identical(check_pos_int(5L, "test_arg"), 5L)
+  expect_identical(check_pos_int(10L, "test_arg"), 10L)
 })
 
 test_that("real range works", {

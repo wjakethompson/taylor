@@ -18,5 +18,6 @@ metacritic
 palmerpenguins
 rlang
 stan
+testthat
 vctrs
 viridis

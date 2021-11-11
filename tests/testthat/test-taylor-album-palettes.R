@@ -55,8 +55,10 @@ test_that("direction works", {
 
 test_that("bad album warns", {
   expect_warning(taylor_col(5, album = "sour"), "does not exist")
-  expect_identical(expect_warning(taylor_col(5, album = "sour")),
-                   taylor_col(5, album = "Lover"))
+  expect_warning(
+    expect_identical(taylor_col(5, album = "sour"),
+                     taylor_col(5, album = "Lover"))
+  )
 })
 
 test_that("we get expected values", {

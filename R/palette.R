@@ -7,16 +7,17 @@
 #'  * For `color_palette()`: A character vector of hexadecimal codes
 #'  * For `is_color_palette()`: An object to test
 #' @param n The number of colors
-#' @param type The type of palette, either `discrete` or `continuous`. If `n` is
-#'  greater than the number of colors in `pal`, type must be `continuous`.
+#' @param type `r lifecycle::badge("deprecated")` `type` is no longer supported;
+#'  this function will automatically interpolate additional or subset values
+#'  based on whether `n` is greater or less than `length(pal)`.
 #'
 #' @return A color palette object.
 #' @export
 #' @examples
 #' # use color_palette() to extend or shorten an existing palette
-#' color_palette(album_palettes$lover, n = 10, type = "continuous")
+#' color_palette(album_palettes$lover, n = 10)
 #'
-#' color_palette(album_palettes$fearless, n = 10, type = "continuous")
+#' color_palette(album_palettes$fearless, n = 10)
 #'
 #' color_palette(album_palettes$red, n = 3)
 #'
@@ -31,40 +32,45 @@
 #'   scale_fill_gradientn(colours = my_pal) +
 #'   theme_minimal()
 color_palette <- function(pal = character(), n = length(pal),
-                          type = c("discrete", "continuous")) {
+                          type = deprecated()) {
+  if (is_present(type)) {
+    deprecate_warn(
+      when = "1.0.0",
+      what = "color_palette(type)",
+      details = glue::glue("Ability to specify palette type is no longer ",
+                           "supported. Interpolation of additional values or ",
+                           "subsetting happens automatically based on `n` ",
+                           "and the length of `pal`.")
+    )
+  }
+
   # check palette and cast to character
   pal <- check_palette(pal, name = "pal")
   pal <- vec_cast(pal, character())
 
-  # check type
-  type <- rlang::arg_match(type)
-
   # check n
-  min_color <- ifelse(length(pal) == 0, 0L, 1L)
-  max_color <- ifelse(type == "discrete", length(pal), Inf)
-  n <- check_n_range(n, name = "n", lb = min_color, ub = max_color)
+  n <- check_pos_int(n, name = "n")
 
-  new_color_palette(pal = pal, n = n, type = type)
+  new_color_palette(pal = pal, n = n)
 }
 
-new_color_palette <- function(pal = character(), n = length(pal),
-                        type = c("discrete", "continuous")) {
+new_color_palette <- function(pal = character(), n = length(pal)) {
   vec_assert(pal, ptype = character())
   vec_assert(n, ptype = integer(), size = 1)
-  type <- rlang::arg_match(type)
 
-  if (length(pal) > 0) {
-    index <- seq(1, length(pal), by = length(pal) / n)
-
-    out <- switch(type,
-                  continuous = grDevices::colorRampPalette(pal)(n),
-                  discrete = pal[index])
+  out <- if (length(pal) == 0) {
+    pal
+  } else if (n > length(pal)) {
+    grDevices::colorRampPalette(pal)(n)
   } else {
-    out <- pal
+    pal[as.integer(seq(1, length(pal), length.out = n))]
   }
+
+  nms <- if (is.null(names(out))) out else names(out)
 
   new_vctr(out,
            n_colors = n,
+           names = nms,
            class = "taylor_color_palette",
            inherit_base_type = TRUE)
 }
@@ -110,7 +116,7 @@ obj_print_data.taylor_color_palette.default <- function(pal, ...) {
         cat("", .y("  "), .x, "\n")
         return(invisible(.x))
       },
-      vec_data(pal), styles,
+      vec_names(pal), styles,
       USE.NAMES = FALSE
     )
   )

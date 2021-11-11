@@ -23,31 +23,39 @@ check_palette <- function(x, name) {
   }
 
   # look for R color specifications
-  r_colors <- which(x %in% grDevices::colors())
+  new_x <- x
+  r_colors <- which(new_x %in% grDevices::colors())
   if (length(r_colors) > 0) {
     r_hex <- sapply(x[r_colors], function(.x) {
       r_rgb <- grDevices::col2rgb(.x)
       grDevices::rgb(red = r_rgb["red", 1], green = r_rgb["green", 1],
                      blue = r_rgb["blue", 1], maxColorValue = 255)
     })
-    x[r_colors] <- r_hex
+    new_x[r_colors] <- r_hex
   }
 
   # make sure strings are valid hex codes
-  valid_hex <- grepl("^#(?:[0-9a-fA-F]{6,8}){1}$", x)
+  valid_hex <- grepl("^#(?:[0-9a-fA-F]{6,8}){1}$", new_x)
   if (!all(valid_hex)) {
     abort_bad_argument(
       name,
-      must = glue::glue("be valid hexadecimal values.\n",
+      must = glue::glue("be valid hexadecimal values or from `colors()`.\n",
                         "Problematic values: ",
                         "{paste(x[!valid_hex], collapse = ', ')}")
     )
-  } else {
-    x
   }
+
+  if (is.null(names(x))) {
+    names(new_x) <- x
+  } else {
+    missing_nms <- which(names(x) == "")
+    names(new_x)[missing_nms] <- x[missing_nms]
+  }
+
+  return(new_x)
 }
 
-check_n_range <- function(x, name, lb, ub) {
+check_pos_int <- function(x, name) {
   if (!is.numeric(x)) {
     abort_bad_argument(name, must = "be numeric", not = typeof(x))
   }
@@ -59,11 +67,8 @@ check_n_range <- function(x, name, lb, ub) {
 
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
-  } else if ((x < lb | x > ub) & ub != Inf) {
-    abort_bad_argument(name, must = glue::glue("be between {lb} and {ub} when ",
-                                               "using a discrete palette"))
-  } else if (x < lb & ub == Inf) {
-    abort_bad_argument(name, must = glue::glue("be at least {lb}"))
+  } else if (x < 0) {
+    abort_bad_argument(name, must = "be greater than 0")
   } else {
     x
   }

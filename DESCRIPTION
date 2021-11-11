@@ -1,6 +1,6 @@
 Package: taylor
 Title: Lyrics and Song Data for Taylor Swift's Discography
-Version: 0.2.0.9000
+Version: 0.2.1.9000
 Authors@R: 
     person(given = "W. Jake",
            family = "Thompson",
@@ -23,6 +23,7 @@ Imports:
     crayon,
     ggplot2,
     glue,
+    lifecycle,
     methods,
     rlang,
     scales,

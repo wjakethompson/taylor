@@ -5,11 +5,7 @@
 \alias{is_color_palette}
 \title{Create a custom color palette}
 \usage{
-color_palette(
-  pal = character(),
-  n = length(pal),
-  type = c("discrete", "continuous")
-)
+color_palette(pal = character(), n = length(pal), type = deprecated())
 
 is_color_palette(pal)
 }
@@ -21,8 +17,9 @@ is_color_palette(pal)
 
 \item{n}{The number of colors}
 
-\item{type}{The type of palette, either \code{discrete} or \code{continuous}. If \code{n} is
-greater than the number of colors in \code{pal}, type must be \code{continuous}.}
+\item{type}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} \code{type} is no longer supported;
+this function will automatically interpolate additional or subset values
+based on whether \code{n} is greater or less than \code{length(pal)}.}
 }
 \value{
 A color palette object.
@@ -33,9 +30,9 @@ printed, it displays the palette colors.
 }
 \examples{
 # use color_palette() to extend or shorten an existing palette
-color_palette(album_palettes$lover, n = 10, type = "continuous")
+color_palette(album_palettes$lover, n = 10)
 
-color_palette(album_palettes$fearless, n = 10, type = "continuous")
+color_palette(album_palettes$fearless, n = 10)
 
 color_palette(album_palettes$red, n = 3)
 
