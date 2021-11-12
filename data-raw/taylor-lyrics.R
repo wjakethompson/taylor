@@ -206,6 +206,7 @@ spotify <- tribble(
   "Fearless (Taylor's Version)",         "4hDok0OAJd57SGIT8xuWJH",
   "Speak Now",                           "5EpMjweRD573ASl7uNiHym",
   "Red",                                 "1KlU96Hw9nlvqpBPlSqcTV",
+  "Red (Taylor's Version)",              "6kZ42qRrzov54LcAk4onW9",
   "1989",                                "34OkZVpuzBa9y40DCy0LPR",
   "reputation",                          "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
