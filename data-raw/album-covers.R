@@ -12,6 +12,7 @@ tribble(
   "Fearless (Taylor's Version)", "4hDok0OAJd57SGIT8xuWJH",
   "Speak Now",                   "5MfAxS5zz8MlfROjGQVXhy",
   "Red",                         "1EoDsNmgTLtmwe1BDAVxV5",
+  "Red (Taylor's Version)",      "6kZ42qRrzov54LcAk4onW9",
   "1989",                        "2QJmrSgbdM35R67eoGQo4j",
   "reputation",                  "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                       "1NAmidJlEaVgA3MpcPFYGq",

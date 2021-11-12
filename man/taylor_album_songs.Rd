@@ -5,7 +5,7 @@
 \alias{taylor_album_songs}
 \title{Data for songs on Taylor Swift's official studio albums}
 \format{
-A \link[tibble:tibble-package]{tibble} with 163
+A \link[tibble:tibble-package]{tibble} with 171
 rows and 29 variables. This is a subset of the
 \code{\link{taylor_all_songs}} data set. Please see that documentation for a complete
 description of all the included fields.

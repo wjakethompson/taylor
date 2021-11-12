@@ -1,26 +1,33 @@
 :root {
-  --nav-bkg: #624324;     /* nav bar background */
-  --nav-link: #EEDBA9;    /* nav bar link color */
-  --nav-higl: #CAA462;    /* nav active and highlight */
-  --a-alpha: #624324;     /* pkg version background */
-  --d-alpha: #EEDBA9;     /* pkg dev version background */
+  --nav-bkg: #592617;     /* nav bar background */
+  --nav-link: #C7C5B6;    /* nav bar link color */
+  --nav-higl: #B38468;    /* nav hover background */
 
-  --pg-header: #A47F45;   /* heading color & text links */
-  --text-link: #A47F45;   /* hyperlinks in text */
-  --a-hover: #CAA462;     /* hyperlink hover */
-
-  --sdb-link: #CAA462;    /* hyperlinks in sidebar */
-  --sdb-hover: #624324;   /* hyperlink hover in sidebar*/
+  --sdb-link: #967862;    /* hyperlinks in sidebar */
+  --sdb-hover: #592617;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
-  --toc-link: #A47F45;    /* table of contents links */
-  --toc-bkg: #EEDBA9;     /* table of contents active background */
+  --pg-header: #592617;   /* heading color & text links */
+  --text-link: #592617;   /* hyperlinks in text */
+  --a-hover: #967862;     /* hyperlink hover */
 
-  --btn-color: #A47F45;   /* copy button color */
-  --btn-hover: #CAA462;   /* copy button hover */
+  --btn-color: #967862;   /* copy button color */
+  --btn-hover: #B38468;   /* copy button hover */
 
-  --col-bullt: #A47F45;   /* color for colored list */
-  --thb-captn: #A47F45;   /* thumbnail caption */
+  --toc-active: #C7C5B6;  /* background color for active TOC */
+  --toc-hover: #7C9694;   /* background color for hover TOC */
+}
+
+
+/* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
+/* Collapsible menu button on mobile (--nav-link) */
+span.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(267%) hue-rotate(15deg) brightness(91%) contrast(83%);
+}
+
+/* Anchor image in headings (--text-link) */
+a.anchor {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(86%) saturate(1008%) hue-rotate(342deg) brightness(93%) contrast(91%);
 }
 
 
@@ -35,20 +42,23 @@
   color: var(--nav-link) !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: var(--nav-higl) !important;
+/* active nav links */
+.navbar-light .navbar-nav .active>.nav-link {
+  background: var(--nav-link);
+  color: var(--nav-bkg) !important;
+}
+
+/* inactive nav links hover */
+.navbar-light .navbar-nav .nav-item>.nav-link:hover {
+  background: var(--nav-higl);
+  color: var(--nav-bkg) !important;
 }
 
 /* package name in navbar */
 .navbar-brand {
   color: var(--nav-link) !important;
-}
-
-/* active navbar link */
-.navbar-light .navbar-nav .active > .nav-link {
-  background: var(--nav-link);
-  color: var(--nav-bkg) !important;
-  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 150%;
 }
 
 /* dropdown menu */
@@ -57,45 +67,67 @@
   border-color: var(--nav-link);
 }
 
+/* dropdown menu links */
 .dropdown-item, .dropdown-menu > li > a {
   background-color: var(--nav-bkg);
   color: var(--nav-link);
 }
 
-.dropdown-item:hover, .dropdown-menu > li > a:hover,
-.dropdown-item:focus, .dropdown-menu > li > a:focus {
-    color: var(--nav-higl);
+/* dropdown menu links hover */
+.dropdown-item:hover, .dropdown-menu > li > a:hover {
+    color: var(--nav-bkg);
     text-decoration: none;
-    background-color: var(--nav-bkg);
+    background-color: var(--nav-higl);
 }
 
-.badge-default {
-  color: var(--d-alpha);
-  background-color: var(--a-alpha);
+/* Collapsible menu button on mobile */
+.navbar-light .navbar-toggler {
+  border-color: var(--nav-bkg);
+  color: var(--nav-higl);
 }
 
-.badge-danger {
-  color: var(--a-alpha);
-  background-color: var(--d-alpha);
+/* package verion - dev */
+.text-danger {
+  font-size: 75%;
+  color: var(--nav-bkg) !important;
+  background-color: var(--nav-link);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* package version - release */
+.text-muted {
+  font-size: 75%;
+  color: var(--nav-higl) !important;
+  background-color: var(--nav-bkg);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 
-/* sidebar ------------------------------------------------------------------ */
+/* Sidebar ------------------------------------------------------------------ */
+/* link color */
 #pkgdown-sidebar a {
   color: var(--sdb-link);
   text-decoration: none;
 }
 
+/* link color hover */
 #pkgdown-sidebar a:hover {
   text-decoration: underline;
   color: var(--sdb-hover);
 }
 
+/* headings */
 h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
   font-size: 1.2em;
   text-transform: uppercase;
+  color: var(--pg-header);
 }
 
+/* developer roles */
 #pkgdown-sidebar small.roles {
   font-size: 0.75em;
   color: var(--sdb-roles);
@@ -103,11 +135,15 @@ h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
 
 
 /* Format text -------------------------------------------------------------- */
+/* homepage heading */
+#overview- {
+  margin-top: 0.75em;
+}
+
 /* link colors */
 a {
   color: var(--text-link);
 }
-
 a:hover {
   color: var(--a-hover);
 }
@@ -115,6 +151,11 @@ a:hover {
 /* add underline to links in paragraphs */
 p a {
   text-decoration: underline var(--text-link) dotted;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: from-font;
+}
+p a:hover {
+  text-decoration: underline var(--text-link) solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: from-font;
 }
@@ -162,33 +203,19 @@ h4 {
   border-color: var(--btn-hover);
 }
 
-/* table of contents -------------------------------------------------------- */
-nav[data-toggle="toc"] .nav > li > a {
-  color: var(--toc-link) !important;
-  padding-left: 0.5rem;
-  margin-left: -0.5rem;
-  border-radius: 1rem;
-  border: white solid;
+
+/* Table of contents -------------------------------------------------------- */
+#toc>.nav a.nav-link {
+  color: var(--pg-header) !important;
 }
 
-/* Under hover */
-nav[data-toggle="toc"] .nav > li > a:hover,
-nav[data-toggle="toc"] .nav > li > a:focus,
-/* Current */
-nav[data-toggle="toc"] .nav-link.active,
-nav[data-toggle="toc"] .nav-link.active:hover,
-nav[data-toggle="toc"] .nav-link.active:focus
-{
-  background-color: var(--toc-bkg) !important;
+#toc>.nav a.nav-link.active {
+  background-color: var(--toc-active);
+  color: var(--nav-bkg) !important;
 }
 
-/* Nav: second level (shown on .active) */
-nav[data-toggle="toc"] .nav-link + ul {
-  display: none;
-}
-nav[data-toggle="toc"] .nav-link.active + ul {
-  display: block;
-}
-nav[data-toggle="toc"] .nav .nav > li > a {
-  margin-left: 0.5rem;
+#toc>.nav a.nav-link:hover,
+#toc>.nav a.nav-link:focus {
+  background-color: var(--toc-hover);
+  color: var(--nav-bkg) !important;
 }

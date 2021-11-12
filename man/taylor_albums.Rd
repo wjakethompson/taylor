@@ -5,7 +5,7 @@
 \alias{taylor_albums}
 \title{Data for Taylor Swift's studio albums and EPs}
 \format{
-A \link[tibble:tibble-package]{tibble} with 12 rows
+A \link[tibble:tibble-package]{tibble} with 13 rows
 and 4 variables:
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
