@@ -1,20 +1,16 @@
 :root {
   --nav-bkg: #624324;     /* nav bar background */
   --nav-link: #EEDBA9;    /* nav bar link color */
-  --nav-higl: #CAA462;    /* nav active and highlight */
-  --a-alpha: #6C797C;     /* pkg version background */
-
-  --pg-header: #A47F45;   /* heading color & text links */
-  --text-link: #A47F45;   /* hyperlinks in text */
-  --a-hover: #CAA462;     /* hyperlink hover */
+  --nav-higl: #CAA462;    /* nav hover background */
 
   --sdb-link: #CAA462;    /* hyperlinks in sidebar */
   --sdb-hover: #624324;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
+  --pg-header: #A47F45;   /* heading color & text links */
+  --text-link: #A47F45;   /* hyperlinks in text */
+  --a-hover: #CAA462;     /* hyperlink hover */
+
   --btn-color: #A47F45;   /* copy button color */
   --btn-hover: #CAA462;   /* copy button hover */
-
-  --col-bullt: #A47F45;   /* color for colored list */
-  --thb-captn: #A47F45;   /* thumbnail caption */
 }
