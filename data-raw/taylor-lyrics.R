@@ -170,19 +170,20 @@ key_lookup <- tibble(key = 0:11,
                                   "G#", "A", "A#", "B"))
 
 single_uri <- tribble(
-  ~track_name,                  ~track_uri,
-  "American Girl",              "",
-  "Bad Blood (Remix)",          "6xsEAm6w9oMQYYg3jkEkMT",
-  "Beautiful Ghosts",           "2evEoQAhIMaa9PfjTT5skG",
-  "Christmas Tree Farm",        "2mvabkN1i2gLnGAPUVdwek",
-  "Crazier",                    "5vyxXfD5gLlyPxGZMEjtmd",
-  "Eyes Open",                  "6KEemo78n0RnCQWKkeOdXz",
-  "I Don't Wanna Live Forever", "2y5aJvzXhHPA94U5GFAcXe",
-  "Only The Young",             "2slqvGLwzZZYsT4K4Y1GBC",
-  "Ronan",                      "0Nw8hv79MLJa1yjtsEgz08",
-  "Safe & Sound",               "0z9UVN8VBHJ9HdfYsOuuNf",
-  "Sweeter Than Fiction",       "0RFCHlNuTeUHIB36VuVbOL",
-  "Today Was A Fairytale",      "4pFvEWbjBpPUdYRQly0THs"
+  ~track_name,                         ~track_uri,
+  "American Girl",                     "",
+  "Bad Blood (Remix)",                 "6xsEAm6w9oMQYYg3jkEkMT",
+  "Beautiful Ghosts",                  "2evEoQAhIMaa9PfjTT5skG",
+  "Christmas Tree Farm",               "2mvabkN1i2gLnGAPUVdwek",
+  "Crazier",                           "5vyxXfD5gLlyPxGZMEjtmd",
+  "Eyes Open",                         "6KEemo78n0RnCQWKkeOdXz",
+  "I Don't Wanna Live Forever",        "2y5aJvzXhHPA94U5GFAcXe",
+  "Only The Young",                    "2slqvGLwzZZYsT4K4Y1GBC",
+  "Ronan",                             "0Nw8hv79MLJa1yjtsEgz08",
+  "Safe & Sound",                      "0z9UVN8VBHJ9HdfYsOuuNf",
+  "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
+  "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
+  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL"
 )
 
 feature_uri <- tribble(
