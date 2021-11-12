@@ -2,6 +2,8 @@
 
 ## Breaking changes
 
+* *Red (Taylor's Version)* has replaced *Red* in `taylor_album_songs` (#9).
+
 * The `type` argument of `color_palette()` is deprecated and will be removed in
   a future release. Previously, if you wanted to interpolate more colors between
   those originally specified, you needed to specify `type = "continuous"`. This
@@ -23,6 +25,19 @@
   ```
 
 ## Minor improvements and fixes
+
+* New color palette added to `album_palettes` for *Red (Taylor's Version)*.
+
+* New single color added to `album_compare` for *Red (Taylor's Version)*.
+
+* Metacritic score for *Red (Taylor's Version)* has been added to
+  `taylor_albums`.
+
+* Wildest Dreams (Taylor's Version) has been added as a non-album single.
+  Presumably this will eventually move to *1989 (Taylor's Version)*.
+  
+* Hex logo and pkgdown website have been updated to have a
+  *Red (Taylor's Version)* theme.
 
 * Fix the majority of non-ASCII characters in song lyrics. Remaining characters
   are en/em dashes and letters with accent marks.
