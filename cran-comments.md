@@ -3,14 +3,14 @@
 This is a minor release for compatibility with an upcoming release of testthat.
 
 ## Test environments
-* local R installation macOS 11.4, R 4.1.0
-* macOS 10.15 (on github actions), R 4.1.1
-* windows server 2019 (on github actions), R 4.1.1
-* ubuntu 20.04 (on github actions), R 4.1.1
+* local R installation macOS 11.4, R 4.1.2
+* macOS 10.15 (on github actions), R 4.1.2
+* windows server 2019 (on github actions), R 4.1.2
+* ubuntu 20.04 (on github actions), R 4.1.2
 * ubuntu 20.04 (on github actions), R-devel
 * win-builder (devel)
 * windows server 2008 (on r-hub), R-devel
-* ubuntu 20.04 (on r-hub), R 4.1.1
+* ubuntu 20.04.1 (on r-hub), R 4.1.2
 * fedora (on r-hub), R-devel
 
 ## R CMD check results
