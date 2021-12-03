@@ -56,7 +56,7 @@ Version)*). We stan artists owning their own songs.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 163 × 29
+#> # A tibble: 171 × 29
 #>    album_name   ep    album_release track_number track_name    artist  featuring
 #>    <chr>        <lgl> <date>               <int> <chr>         <chr>   <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw    Taylor… <NA>     
@@ -69,7 +69,7 @@ taylor_album_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautif… Taylor… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sa… Taylor… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song … Taylor… <NA>     
-#> # … with 153 more rows, and 22 more variables: bonus_track <lgl>,
+#> # … with 161 more rows, and 22 more variables: bonus_track <lgl>,
 #> #   promotional_release <date>, single_release <date>, track_release <date>,
 #> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
 #> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
@@ -85,7 +85,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 214 × 29
+#> # A tibble: 245 × 29
 #>    album_name   ep    album_release track_number track_name    artist  featuring
 #>    <chr>        <lgl> <date>               <int> <chr>         <chr>   <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw    Taylor… <NA>     
@@ -98,7 +98,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautif… Taylor… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sa… Taylor… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song … Taylor… <NA>     
-#> # … with 204 more rows, and 22 more variables: bonus_track <lgl>,
+#> # … with 235 more rows, and 22 more variables: bonus_track <lgl>,
 #> #   promotional_release <date>, single_release <date>, track_release <date>,
 #> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
 #> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
@@ -112,7 +112,7 @@ Taylor’s album release history.
 
 ``` r
 taylor_albums
-#> # A tibble: 12 × 4
+#> # A tibble: 13 × 4
 #>    album_name                          ep    album_release metacritic_score
 #>    <chr>                               <lgl> <date>                   <int>
 #>  1 Taylor Swift                        FALSE 2006-10-24                  NA
@@ -127,6 +127,7 @@ taylor_albums
 #> 10 folklore                            FALSE 2020-07-24                  88
 #> 11 evermore                            FALSE 2020-12-11                  85
 #> 12 Fearless (Taylor's Version)         FALSE 2021-04-09                  82
+#> 13 Red (Taylor's Version)              FALSE 2021-11-12                  96
 ```
 
 ## Code of Conduct
