@@ -134,12 +134,15 @@ limits, breaks, labels and so forth.}
 \item{alpha}{The alpha transparency, a number in [0,1], see argument alpha in
 \code{\link[grDevices]{hsv}}.}
 
-\item{begin}{The (corrected) hue in [0,1] at which the viridis colormap begins.}
+\item{begin}{The (corrected) hue in \verb{[0,1]} at which the color map
+begins and ends.}
 
-\item{end}{The (corrected) hue in [0,1] at which the viridis colormap ends.}
+\item{end}{The (corrected) hue in \verb{[0,1]} at which the color map
+begins and ends.}
 
-\item{direction}{Sets the order of colors in the scale. If 1, the default, colors
-are ordered from darkest to lightest. If -1, the order of colors is reversed.}
+\item{direction}{Sets the order of colors in the scale. If 1, the default,
+colors are ordered from darkest to lightest. If -1, the order of colors is
+reversed.}
 
 \item{album}{A character string indicating the album that should be used for
 the palette.}
