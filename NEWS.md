@@ -1,5 +1,13 @@
 # taylor (development version)
 
+* Added "The Joker and the Queen" from Ed Sheeran's *=* to `taylor_all_songs`.
+
+* "This Love (Taylor's Version)" has been added as a non-album single.
+  Presumably this will eventually move to *1989 (Taylor's Version)*.
+
+* Spotify updated audio data for songs on *Red (Taylor's Version)*.
+  These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
+
 # taylor 1.0.0
 
 ## Breaking changes
@@ -35,7 +43,7 @@
 * Metacritic score for *Red (Taylor's Version)* has been added to
   `taylor_albums`.
 
-* Wildest Dreams (Taylor's Version) has been added as a non-album single.
+* "Wildest Dreams (Taylor's Version)" has been added as a non-album single.
   Presumably this will eventually move to *1989 (Taylor's Version)*.
   
 * Hex logo and pkgdown website have been updated to have a
