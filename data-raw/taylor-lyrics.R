@@ -190,7 +190,8 @@ single_uri <- tribble(
   "Safe & Sound",                      "0z9UVN8VBHJ9HdfYsOuuNf",
   "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
   "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
-  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL"
+  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL",
+  "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv"
 )
 
 feature_uri <- tribble(
@@ -202,7 +203,8 @@ feature_uri <- tribble(
   "Half Of My Heart",           "7hR5toSPEgwFZ78jfHdANM",
   "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
   "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
-  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss"
+  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
+  "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP"
 )
 
 spotify <- tribble(
