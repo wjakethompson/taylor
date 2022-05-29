@@ -4,10 +4,10 @@ EP
 EPs
 Metacritic
 Premade
+Sheeran's
 Spotify
 YYYY
 codecov
-colormap
 colour
 colours
 cpcinema
@@ -21,4 +21,3 @@ rlang
 stan
 testthat
 vctrs
-viridis
