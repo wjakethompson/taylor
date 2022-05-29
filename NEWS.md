@@ -7,6 +7,8 @@
 
 * Spotify updated audio data for songs on *Red (Taylor's Version)*.
   These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
+  
+* Fixed some additional non-ASCII characters in the lyrics for all albums (@EricWu2003, #16).
 
 # taylor 1.0.0
 
