@@ -191,7 +191,8 @@ single_uri <- tribble(
   "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
   "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
   "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL",
-  "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv"
+  "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv",
+  "Carolina",                          "4axSuOg3BqsowKjRpj59RU"
 )
 
 feature_uri <- tribble(
@@ -330,9 +331,7 @@ spotify_join <- spotify %>%
 (extra <- spotify_join %>%
   anti_join(base_info, by = c("album_name", "track_name")))
 
-# Check for non-ASCII characters. 27 errors (6 rows) expected:
-# 2 en dash
-# 9 em dash
+# Check for non-ASCII characters. 16 errors (4 rows) expected:
 # 13 é
 # 1 í
 # 1 ï
