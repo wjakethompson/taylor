@@ -93,19 +93,19 @@ test_that("casting and coercion work", {
 })
 
 test_that("various formatting works", {
-  verify_output(test_path("test-print-color-palette-tibble.txt"), {
+  expect_snapshot({
     df1 <- tibble::tibble(red = album_palettes$red,
                           evermore = album_palettes$evermore)
     print(df1)
   })
 
-  verify_output(test_path("test-print-color-palette.txt"), {
+  expect_snapshot({
     print(album_palettes$lover)
 
     print(album_palettes$folklore)
   })
 
-  verify_output(test_path("test-print-palette-names.txt"), {
+  expect_snapshot({
     col1 <- c("wheat", "firebrick", "navy")
     col2 <- c("#009fb7", "#fed766", "#696773")
     col3 <- c("goldenrod", "#85898a")
