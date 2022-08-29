@@ -73,9 +73,9 @@ The {taylor} package comes with a set of functions built in for plotting in {ggp
 ```{r message = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
 library(ggplot2)
 
-ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
-  theme_minimal() -> p
+  theme_minimal()
 
 p + scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
 ```

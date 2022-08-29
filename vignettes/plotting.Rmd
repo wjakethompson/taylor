@@ -142,7 +142,7 @@ ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
 The `scale_fill_albums()` and `scale_color_albums()` functions automatically assign color based on the album name. These are wrappers around `ggplot2::scale_fill_manual()` and `ggplot2::scale_color_manual()`, respectively. This means that the colors will still be assigned correctly, even if the ordering of the albums changes, or not all levels are present.
 
 ```{r warning = FALSE, fig.alt = "The same bar graph as the previous image, but only showing five albums, and the ordering of the y-axis has been made random. However, the fill of the bar for each album still corresponds to that album's cover."}
-rand_critic <- metacritic[sample(seq_len(nrow(metacritic)), 5),]
+rand_critic <- metacritic[sample(seq_len(nrow(metacritic)), 5), ]
 rand_critic$album_name <- factor(rand_critic$album_name,
                                  levels = sample(rand_critic$album_name,
                                                  size = nrow(rand_critic)))

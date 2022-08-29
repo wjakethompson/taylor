@@ -85,7 +85,7 @@ check_real_range <- function(x, name, lb, ub) {
 
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
-  } else if (x < lb | x > ub) {
+  } else if (x < lb || x > ub) {
     abort_bad_argument(name, must = glue::glue("be between {lb} and {ub}"))
   } else {
     x

@@ -43,7 +43,8 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
                           filter(value != "",
                                  !str_detect(value, "^\\[.*\\]$")) %>%
                           rowid_to_column("line") %>%
-                          select(line, lyric = value, element, element_artist) %>%
+                          select(line, lyric = value, element,
+                                 element_artist) %>%
                           mutate(lyric = str_replace_all(lyric, "’", "'"),
                                  lyric = str_replace_all(lyric, "‘", "'"),
                                  lyric = str_replace_all(lyric, "…", "..."),
@@ -135,7 +136,9 @@ base_info <- lyrics %>%
   mutate(track_name = str_replace_all(track_name, "^Mr ", "Mr. "),
          track_name = str_replace_all(track_name, "^Thats ", "That's ")) %>%
   # edits for Red (Taylor's Version)
-  mutate(track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")) %>%
+  mutate(
+    track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")
+    ) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -305,7 +308,9 @@ spotify_join <- spotify %>%
   # edits for evermore
   mutate(track_name = str_replace_all(track_name, "‘", "'")) %>%
   # edits for Red (Taylor's Version)
-  mutate(track_name = str_replace_all(track_name, "Trouble\\(", "Trouble (")) %>%
+  mutate(
+    track_name = str_replace_all(track_name, "Trouble\\(", "Trouble (")
+    ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
   nest(spotify = -c(album_name, track_name))
