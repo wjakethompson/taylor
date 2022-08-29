@@ -12,6 +12,9 @@
   
 * Fixed some additional non-ASCII characters in the lyrics for all albums (@EricWu2003, #16).
 
+* Minor tweaks to the color palettes for each album to better capture the vibes,
+  rather than just pulling from album artwork.
+
 # taylor 1.0.0
 
 ## Breaking changes
