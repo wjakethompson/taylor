@@ -17,3 +17,13 @@
   --toc-active: #C7C5B6;  /* background color for active TOC */
   --toc-hover: #7C9694;   /* background color for hover TOC */
 }
+
+/* Collapsible menu button on mobile (--nav-link) */
+span.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(267%) hue-rotate(15deg) brightness(91%) contrast(83%);
+}
+
+/* Anchor image in headings (--text-link) */
+a.anchor {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(86%) saturate(1008%) hue-rotate(342deg) brightness(93%) contrast(91%);
+}
