@@ -29,7 +29,7 @@ album_palettes <- lapply(list(
   lover        = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
   folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
   evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),
-  midnights    = c("#5F6890", "#8483A3", "#AA9EB6", "#959FB4", "#82A1B3")
+  midnights    = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6")
 ), color_palette)
 
 #' @rdname album_palettes
