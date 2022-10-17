@@ -184,18 +184,20 @@ single_uri <- tribble(
   "American Girl",                     "",
   "Bad Blood (Remix)",                 "6xsEAm6w9oMQYYg3jkEkMT",
   "Beautiful Ghosts",                  "2evEoQAhIMaa9PfjTT5skG",
+  "Carolina",                          "4axSuOg3BqsowKjRpj59RU",
   "Christmas Tree Farm",               "2mvabkN1i2gLnGAPUVdwek",
   "Crazier",                           "5vyxXfD5gLlyPxGZMEjtmd",
   "Eyes Open",                         "6KEemo78n0RnCQWKkeOdXz",
   "I Don't Wanna Live Forever",        "2y5aJvzXhHPA94U5GFAcXe",
+  "Lover (Remix)",                     "3i9UVldZOE0aD0JnyfAZZ0",
   "Only The Young",                    "2slqvGLwzZZYsT4K4Y1GBC",
   "Ronan",                             "0Nw8hv79MLJa1yjtsEgz08",
   "Safe & Sound",                      "0z9UVN8VBHJ9HdfYsOuuNf",
+  "September",                         "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
-  "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
-  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL",
   "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv",
-  "Carolina",                          "4axSuOg3BqsowKjRpj59RU"
+  "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
+  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL"
 )
 
 feature_uri <- tribble(
@@ -317,9 +319,10 @@ spotify_join <- spotify %>%
 
 
 # QC for data ------------------------------------------------------------------
-# Ideally should return 0 rows. 7 rows currently expected:
+# Ideally should return 0 rows. 8 rows currently expected:
 # 1-6 Beautiful Eyes is not currently available on Spotify or any service
 # 7 American Girl is exclusive to Napster
+# 8 Three Sad Virgins not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%

@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* Added "Lover (Remix)" with Shawn Mendes, Taylor's cover of Earth, Wind, and Fire's "September," and "Three Sad Virgins" from Saturday Night Live to `taylor_all_songs`.
+
 * Added "Carolina" from the *Where the Crawdads Sing* soundtrack to `taylor_all_songs`.
 
 * "This Love (Taylor's Version)" has been added as a non-album single.
