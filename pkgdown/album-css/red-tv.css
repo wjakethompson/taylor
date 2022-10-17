@@ -1,0 +1,19 @@
+:root {
+  --nav-bkg: #592617;     /* nav bar background */
+  --nav-link: #C7C5B6;    /* nav bar link color */
+  --nav-higl: #B38468;    /* nav hover background */
+
+  --sdb-link: #967862;    /* hyperlinks in sidebar */
+  --sdb-hover: #592617;   /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094; /* author roles */
+
+  --pg-header: #592617;   /* heading color & text links */
+  --text-link: #592617;   /* hyperlinks in text */
+  --a-hover: #967862;     /* hyperlink hover */
+
+  --btn-color: #967862;   /* copy button color */
+  --btn-hover: #B38468;   /* copy button hover */
+
+  --toc-active: #C7C5B6;  /* background color for active TOC */
+  --toc-hover: #7C9694;   /* background color for hover TOC */
+}
