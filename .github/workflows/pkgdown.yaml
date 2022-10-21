@@ -41,7 +41,7 @@ jobs:
 
       - name: Deploy to Netlify
         if: github.event_name == 'pull_request'
-        uses: nwtgck/actions-netlify@1.1
+        uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: './docs'
           production-branch: main
