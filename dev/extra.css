@@ -1,33 +1,34 @@
 :root {
-  --nav-bkg: #592617;     /* nav bar background */
-  --nav-link: #C7C5B6;    /* nav bar link color */
-  --nav-higl: #B38468;    /* nav hover background */
+  --nav-bkg: #AA9EB6;     /* nav bar background */
+  --nav-link: #121D27;    /* nav bar link color */
+  --nav-higl: #121D27;    /* nav hover background */
 
-  --sdb-link: #967862;    /* hyperlinks in sidebar */
-  --sdb-hover: #592617;   /* hyperlink hover in sidebar*/
+  --sdb-link: #5A658B;    /* hyperlinks in sidebar */
+  --sdb-hover: #85A7BA;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
-  --pg-header: #592617;   /* heading color & text links */
-  --text-link: #592617;   /* hyperlinks in text */
-  --a-hover: #967862;     /* hyperlink hover */
+  --pg-header: #121D27;   /* heading color & text links */
+  --text-link: #121D27;   /* hyperlinks in text */
+  --a-hover: #5A658B;     /* hyperlink hover */
 
-  --btn-color: #967862;   /* copy button color */
-  --btn-hover: #B38468;   /* copy button hover */
+  --btn-color: #5A658B;   /* copy button color */
+  --btn-hover: #85A7BA;   /* copy button hover */
 
-  --toc-active: #C7C5B6;  /* background color for active TOC */
-  --toc-hover: #7C9694;   /* background color for hover TOC */
+  --toc-active: #121D27;  /* background color for active TOC */
+  --toc-hover: #AA9EB6;   /* background color for hover TOC */
+  --toc-htext: #121D27;   /* color of TOC hover text (default to --nav-bkg */
 }
 
 
 /* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
 /* Collapsible menu button on mobile (--nav-link) */
 span.navbar-toggler-icon {
-  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(267%) hue-rotate(15deg) brightness(91%) contrast(83%);
+  filter: brightness(0) saturate(100%) invert(6%) sepia(14%) saturate(3207%) hue-rotate(170deg) brightness(90%) contrast(89%);
 }
 
 /* Anchor image in headings (--text-link) */
 a.anchor {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(86%) saturate(1008%) hue-rotate(342deg) brightness(93%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(6%) sepia(14%) saturate(3207%) hue-rotate(170deg) brightness(90%) contrast(89%);
 }
 
 
@@ -109,13 +110,13 @@ a.anchor {
 
 /* Sidebar ------------------------------------------------------------------ */
 /* link color */
-#pkgdown-sidebar a {
+.list-unstyled a {
   color: var(--sdb-link);
   text-decoration: none;
 }
 
 /* link color hover */
-#pkgdown-sidebar a:hover {
+.list-unstyled a:hover {
   text-decoration: underline;
   color: var(--sdb-hover);
 }
@@ -128,7 +129,7 @@ h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
 }
 
 /* developer roles */
-#pkgdown-sidebar small.roles {
+aside small.roles {
   font-size: 0.75em;
   color: var(--sdb-roles);
 }
@@ -217,5 +218,5 @@ h4 {
 #toc>.nav a.nav-link:hover,
 #toc>.nav a.nav-link:focus {
   background-color: var(--toc-hover);
-  color: var(--nav-bkg) !important;
+  color: var(--toc-htext) !important;
 }
