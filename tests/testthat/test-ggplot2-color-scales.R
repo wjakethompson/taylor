@@ -495,9 +495,6 @@ test_that("binned color work", {
 test_that("album scale works", {
   studio <- subset(taylor_albums, !ep)
 
-  # for testing, give a value to debut
-  studio$metacritic_score[1] <- 72L
-
   # no leveling
   no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
     geom_col(aes(fill = album_name)) +
@@ -547,7 +544,8 @@ test_that("album scale works", {
   beyonce <- rbind(small_studio, data.frame(album_name = "Lemonade",
                                             ep = FALSE,
                                             album_release = NA,
-                                            metacritic_score = 92L))
+                                            metacritic_score = 92L,
+                                            user_score = 8.0))
 
   # default bad label = blank
   miss1 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +
