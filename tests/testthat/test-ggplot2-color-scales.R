@@ -39,6 +39,9 @@ test_that("discrete fill works", {
   evermore <- fill_base +
     scale_fill_taylor_d(album = "evermore")
 
+  midnights <- fill_base +
+    scale_fill_taylor_d(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-d", fearless_tv)
@@ -50,6 +53,7 @@ test_that("discrete fill works", {
   vdiffr::expect_doppelganger("lover-fill-d", lover)
   vdiffr::expect_doppelganger("folklore-fill-d", folklore)
   vdiffr::expect_doppelganger("evermore-fill-d", evermore)
+  vdiffr::expect_doppelganger("midnights-fill-d", midnights)
 })
 
 test_that("discrete color works", {
@@ -90,6 +94,9 @@ test_that("discrete color works", {
   evermore <- color_base +
     scale_color_taylor_d(album = "evermore")
 
+  midnights <- color_base +
+    scale_color_taylor_d(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-color-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-d", fearless_tv)
@@ -101,6 +108,7 @@ test_that("discrete color works", {
   vdiffr::expect_doppelganger("lover-color-d", lover)
   vdiffr::expect_doppelganger("folklore-color-d", folklore)
   vdiffr::expect_doppelganger("evermore-color-d", evermore)
+  vdiffr::expect_doppelganger("midnights-color-d", midnights)
 })
 
 test_that("continuous fill works", {
@@ -175,6 +183,9 @@ test_that("continuous fill works", {
   evermore <- fill_base +
     scale_fill_taylor_c(album = "evermore")
 
+  midnights <- fill_base +
+    scale_fill_taylor_c(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-c", fearless_tv)
@@ -186,6 +197,7 @@ test_that("continuous fill works", {
   vdiffr::expect_doppelganger("lover-fill-c", lover)
   vdiffr::expect_doppelganger("folklore-fill-c", folklore)
   vdiffr::expect_doppelganger("evermore-fill-c", evermore)
+  vdiffr::expect_doppelganger("midnights-fill-c", midnights)
 })
 
 test_that("continuous color works", {
@@ -353,6 +365,9 @@ test_that("continuous color works", {
   evermore <- color_base +
     scale_color_taylor_c(album = "evermore")
 
+  midnights <- color_base +
+    scale_color_taylor_c(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-color-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-c", fearless_tv)
@@ -364,6 +379,7 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("lover-color-c", lover)
   vdiffr::expect_doppelganger("folklore-color-c", folklore)
   vdiffr::expect_doppelganger("evermore-color-c", evermore)
+  vdiffr::expect_doppelganger("midnights-color-c", midnights)
 })
 
 test_that("binned fill works", {
@@ -404,6 +420,9 @@ test_that("binned fill works", {
   evermore <- fill_base +
     scale_fill_taylor_b(album = "evermore")
 
+  midnights <- fill_base +
+    scale_fill_taylor_b(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-b", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-b", fearless_tv)
@@ -415,6 +434,7 @@ test_that("binned fill works", {
   vdiffr::expect_doppelganger("lover-fill-b", lover)
   vdiffr::expect_doppelganger("folklore-fill-b", folklore)
   vdiffr::expect_doppelganger("evermore-fill-b", evermore)
+  vdiffr::expect_doppelganger("midnights-fill-b", midnights)
 })
 
 test_that("binned color work", {
@@ -455,6 +475,9 @@ test_that("binned color work", {
   evermore <- color_base +
     scale_color_taylor_b(album = "evermore")
 
+  midnights <- color_base +
+    scale_color_taylor_b(album = "midnights")
+
   vdiffr::expect_doppelganger("taylor-swift-color-b", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-b", fearless_tv)
@@ -466,13 +489,11 @@ test_that("binned color work", {
   vdiffr::expect_doppelganger("lover-color-b", lover)
   vdiffr::expect_doppelganger("folklore-color-b", folklore)
   vdiffr::expect_doppelganger("evermore-color-b", evermore)
+  vdiffr::expect_doppelganger("midnights-color-b", midnights)
 })
 
 test_that("album scale works", {
   studio <- subset(taylor_albums, !ep)
-
-  # for testing, give a value to debut
-  studio$metacritic_score[1] <- 72L
 
   # no leveling
   no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
@@ -523,7 +544,8 @@ test_that("album scale works", {
   beyonce <- rbind(small_studio, data.frame(album_name = "Lemonade",
                                             ep = FALSE,
                                             album_release = NA,
-                                            metacritic_score = 92L))
+                                            metacritic_score = 92L,
+                                            user_score = 8.0))
 
   # default bad label = blank
   miss1 <- ggplot(beyonce, aes(x = metacritic_score, y = album_name)) +

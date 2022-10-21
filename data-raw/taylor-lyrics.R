@@ -57,7 +57,7 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
                       }))
 
 base_info <- lyrics %>%
-  mutate(bonus_track = str_detect(album_name, "deluxe|platinum")) %>%
+  mutate(bonus_track = str_detect(album_name, "deluxe|platinum|3am|target")) %>%
   mutate(
     album_name = str_replace_all(album_name, "-", " "),
     album_name = str_to_title(album_name),
@@ -74,6 +74,8 @@ base_info <- lyrics %>%
       album_name == "Folklore Deluxe Edition" ~ "folklore (deluxe edition)",
       album_name == "Evermore" ~ "evermore",
       album_name == "Evermore Deluxe Edition" ~ "evermore (deluxe edition)",
+      album_name == "Midnights 3am Edition" ~ "Midnights (3am Edition)",
+      album_name == "Midnights Target Exclusive" ~ "Midnights (Target Exclusive)",
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
@@ -139,6 +141,20 @@ base_info <- lyrics %>%
   mutate(
     track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")
     ) %>%
+  # edits for midnights
+  mutate(track_name = str_replace_all(track_name, "Anti Hero", "Anti-Hero"),
+         track_name = str_replace_all(track_name, "Youre", "You're"),
+         track_name = str_replace_all(track_name, "You're On Your Own Kid",
+                                      "You're On Your Own, Kid"),
+         track_name = str_replace_all(track_name, "Question", "Question...?"),
+         track_name = str_replace_all(track_name, "Wouldve", "Would've"),
+         track_name = str_replace_all(track_name, "Couldve", "Could've"),
+         track_name = str_replace_all(track_name, "Would've Could've Should've",
+                                      "Would've, Could've, Should've"),
+         track_name = str_replace_all(track_name, "Stringrmx",
+                                      "(Strings Remix)"),
+         track_name = str_replace_all(track_name, "Pianormx",
+                                      "(Piano Remix)")) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -166,6 +182,8 @@ base_info <- lyrics %>%
     album_name == "1989 (Deluxe)" ~ "1989",
     album_name == "folklore (deluxe edition)" ~ "folklore",
     album_name == "evermore (deluxe edition)" ~ "evermore",
+    album_name == "Midnights (3am Edition)" ~ "Midnights",
+    album_name == "Midnights (Target Exclusive)" ~ "Midnights",
     TRUE ~ album_name
   )) %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -184,18 +202,20 @@ single_uri <- tribble(
   "American Girl",                     "",
   "Bad Blood (Remix)",                 "6xsEAm6w9oMQYYg3jkEkMT",
   "Beautiful Ghosts",                  "2evEoQAhIMaa9PfjTT5skG",
+  "Carolina",                          "4axSuOg3BqsowKjRpj59RU",
   "Christmas Tree Farm",               "2mvabkN1i2gLnGAPUVdwek",
   "Crazier",                           "5vyxXfD5gLlyPxGZMEjtmd",
   "Eyes Open",                         "6KEemo78n0RnCQWKkeOdXz",
   "I Don't Wanna Live Forever",        "2y5aJvzXhHPA94U5GFAcXe",
+  "Lover (Remix)",                     "3i9UVldZOE0aD0JnyfAZZ0",
   "Only The Young",                    "2slqvGLwzZZYsT4K4Y1GBC",
   "Ronan",                             "0Nw8hv79MLJa1yjtsEgz08",
   "Safe & Sound",                      "0z9UVN8VBHJ9HdfYsOuuNf",
+  "September",                         "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
-  "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
-  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL",
   "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv",
-  "Carolina",                          "4axSuOg3BqsowKjRpj59RU"
+  "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
+  "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL"
 )
 
 feature_uri <- tribble(
@@ -224,7 +244,8 @@ spotify <- tribble(
   "reputation",                          "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
-  "evermore",                            "6AORtDjduMM3bupSWzbTSG"
+  "evermore",                            "6AORtDjduMM3bupSWzbTSG",
+  "Midnights",                           "3lS1y25WAhcqJDATJK70Mq"
 ) %>%
   mutate(track = map(album_uri,
                      function(.x) {
@@ -317,9 +338,12 @@ spotify_join <- spotify %>%
 
 
 # QC for data ------------------------------------------------------------------
-# Ideally should return 0 rows. 7 rows currently expected:
-# 1-6 Beautiful Eyes is not currently available on Spotify or any service
-# 7 American Girl is exclusive to Napster
+# Check for tracks missing from Spotify
+# Ideally should return 0 rows. 11 rows currently expected:
+# 1-3 Three Midnights bonus tracks exclusive to Target are not on Spotify
+# 4-9 Beautiful Eyes is not currently available on Spotify or any service
+# 10 American Girl is exclusive to Napster
+# 11 Three Sad Virgins not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
@@ -336,8 +360,8 @@ spotify_join <- spotify %>%
 (extra <- spotify_join %>%
   anti_join(base_info, by = c("album_name", "track_name")))
 
-# Check for non-ASCII characters. 16 errors (4 rows) expected:
-# 13 é
+# Check for non-ASCII characters. 17 errors (4 rows) expected:
+# 14 é
 # 1 í
 # 1 ï
 # 1 ó
@@ -377,21 +401,23 @@ taylor_all_songs <- base_info %>%
 taylor_album_songs <- taylor_all_songs %>%
   filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
                            "Speak Now", "Red (Taylor's Version)", "1989",
-                           "reputation", "Lover", "folklore", "evermore"))
+                           "reputation", "Lover", "folklore", "evermore",
+                           "Midnights"))
 
 metacritic <- tribble(
-  ~album_name,                           ~metacritic_score,
-  "Taylor Swift",                        NA_integer_,
-  "Fearless",                            73L,
-  "Fearless (Taylor's Version)",         82L,
-  "Speak Now",                           77L,
-  "Red",                                 77L,
-  "Red (Taylor's Version)",              96L,
-  "1989",                                76L,
-  "reputation",                          71L,
-  "Lover",                               79L,
-  "folklore",                            88L,
-  "evermore",                            85L
+  ~album_name,                           ~metacritic_score, ~user_score,
+  "Taylor Swift",                        67L,               9.2,
+  "Fearless",                            73L,               8.4,
+  "Fearless (Taylor's Version)",         82L,               8.9,
+  "Speak Now",                           77L,               8.7,
+  "Red",                                 77L,               8.5,
+  "Red (Taylor's Version)",              91L,               9.0,
+  "1989",                                76L,               8.2,
+  "reputation",                          71L,               8.3,
+  "Lover",                               79L,               8.4,
+  "folklore",                            88L,               9.0,
+  "evermore",                            85L,               8.9,
+  "Midnights",                           94L,               9.0
 )
 
 taylor_albums <- taylor_all_songs %>%

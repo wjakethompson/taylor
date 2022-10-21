@@ -28,7 +28,8 @@ album_palettes <- lapply(list(
   reputation   = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
   lover        = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
   folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
-  evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7")
+  evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),
+  midnights    = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6")
 ), color_palette)
 
 #' @rdname album_palettes
@@ -44,7 +45,8 @@ album_compare <- color_palette(
     reputation   = "#2C2C2C",
     lover        = "#EBBED3",
     folklore     = "#949494",
-    evermore     = "#421E18")
+    evermore     = "#421E18",
+    midnights    = "#AA9EB6")
 )
 
 
@@ -81,7 +83,7 @@ album_compare <- color_palette(
 #'   geom_col()
 album_levels <- c("Taylor Swift", "Fearless", "Fearless (Taylor's Version)",
                   "Speak Now", "Red", "Red (Taylor's Version)", "1989",
-                  "reputation", "Lover", "folklore", "evermore")
+                  "reputation", "Lover", "folklore", "evermore", "Midnights")
 
 
 # Scale functions --------------------------------------------------------------
@@ -115,7 +117,8 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                    reputation   = taylor::album_palettes[["reputation"]],
                    lover        = taylor::album_palettes[["lover"]],
                    folklore     = taylor::album_palettes[["folklore"]],
-                   evermore     = taylor::album_palettes[["evermore"]], {
+                   evermore     = taylor::album_palettes[["evermore"]],
+                   midnights    = taylor::album_palettes[["midnights"]], {
                      rlang::warn(paste0("Album '", album, "' does not exist. ",
                                         "Defaulting to 'Lover'."))
                      taylor::album_palettes[["lover"]]

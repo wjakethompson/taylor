@@ -1,5 +1,18 @@
 # taylor (development version)
 
+* Added *Midnights* to `taylor_all_songs` and `taylor_album_songs`.
+
+* New color palette added to `album_palettes` for *Midnights*.
+
+* New single color added to `album_compare` for *Midnights*.
+
+* Metacritic score for *Midnights* has been added to
+  `taylor_albums`.
+  
+* A new `user_score` column for user ratings from Metacritic was added to `taylor_albums`.
+
+* Added "Lover (Remix)" with Shawn Mendes, Taylor's cover of Earth, Wind, and Fire's "September," and "Three Sad Virgins" from Saturday Night Live to `taylor_all_songs`.
+
 * Added "Carolina" from the *Where the Crawdads Sing* soundtrack to `taylor_all_songs`.
 
 * "This Love (Taylor's Version)" has been added as a non-album single.

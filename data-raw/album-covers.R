@@ -17,7 +17,8 @@ tribble(
   "reputation",                  "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                       "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                    "2fenSS68JI1h4Fo296JfGr",
-  "evermore",                    "2Xoteh7uEpea4TohMxjtaq"
+  "evermore",                    "2Xoteh7uEpea4TohMxjtaq",
+  "Midnights",                   "151w1FgRZfnKZA9FEcg9Z3"
 ) |>
   pwalk(function(album_name, album_uri) {
     album <- get_album(album_uri)
