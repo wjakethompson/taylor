@@ -56,26 +56,26 @@ Version)*). We stan artists owning their own songs.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 171 × 29
-#>    album_name   ep    album_release track_number track_name    artist  featuring
-#>    <chr>        <lgl> <date>               <int> <chr>         <chr>   <chr>    
-#>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw    Taylor… <NA>     
-#>  2 Taylor Swift FALSE 2006-10-24               2 Picture To B… Taylor… <NA>     
-#>  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On… Taylor… <NA>     
-#>  4 Taylor Swift FALSE 2006-10-24               4 A Place In T… Taylor… <NA>     
-#>  5 Taylor Swift FALSE 2006-10-24               5 Cold As You   Taylor… <NA>     
-#>  6 Taylor Swift FALSE 2006-10-24               6 The Outside   Taylor… <NA>     
-#>  7 Taylor Swift FALSE 2006-10-24               7 Tied Togethe… Taylor… <NA>     
-#>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautif… Taylor… <NA>     
-#>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sa… Taylor… <NA>     
-#> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song … Taylor… <NA>     
-#> # … with 161 more rows, and 22 more variables: bonus_track <lgl>,
-#> #   promotional_release <date>, single_release <date>, track_release <date>,
-#> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
-#> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
-#> #   liveness <dbl>, valence <dbl>, tempo <dbl>, time_signature <int>,
-#> #   duration_ms <int>, explicit <lgl>, key_name <chr>, mode_name <chr>,
-#> #   key_mode <chr>, lyrics <list>
+#> # A tibble: 194 × 29
+#>    album_name ep    album_re…¹ track…² track…³ artist featu…⁴ bonus…⁵ promotio…⁶
+#>    <chr>      <lgl> <date>       <int> <chr>   <chr>  <chr>   <lgl>   <date>    
+#>  1 Taylor Sw… FALSE 2006-10-24       1 Tim Mc… Taylo… <NA>    FALSE   NA        
+#>  2 Taylor Sw… FALSE 2006-10-24       2 Pictur… Taylo… <NA>    FALSE   NA        
+#>  3 Taylor Sw… FALSE 2006-10-24       3 Teardr… Taylo… <NA>    FALSE   NA        
+#>  4 Taylor Sw… FALSE 2006-10-24       4 A Plac… Taylo… <NA>    FALSE   NA        
+#>  5 Taylor Sw… FALSE 2006-10-24       5 Cold A… Taylo… <NA>    FALSE   NA        
+#>  6 Taylor Sw… FALSE 2006-10-24       6 The Ou… Taylo… <NA>    FALSE   NA        
+#>  7 Taylor Sw… FALSE 2006-10-24       7 Tied T… Taylo… <NA>    FALSE   NA        
+#>  8 Taylor Sw… FALSE 2006-10-24       8 Stay B… Taylo… <NA>    FALSE   NA        
+#>  9 Taylor Sw… FALSE 2006-10-24       9 Should… Taylo… <NA>    FALSE   NA        
+#> 10 Taylor Sw… FALSE 2006-10-24      10 Mary's… Taylo… <NA>    FALSE   NA        
+#> # … with 184 more rows, 20 more variables: single_release <date>,
+#> #   track_release <date>, danceability <dbl>, energy <dbl>, key <int>,
+#> #   loudness <dbl>, mode <int>, speechiness <dbl>, acousticness <dbl>,
+#> #   instrumentalness <dbl>, liveness <dbl>, valence <dbl>, tempo <dbl>,
+#> #   time_signature <int>, duration_ms <int>, explicit <lgl>, key_name <chr>,
+#> #   mode_name <chr>, key_mode <chr>, lyrics <list>, and abbreviated variable
+#> #   names ¹​album_release, ²​track_number, ³​track_name, ⁴​featuring, …
 ```
 
 You can access Taylor’s entire discography with `taylor_all_songs`. This
@@ -85,26 +85,26 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 245 × 29
-#>    album_name   ep    album_release track_number track_name    artist  featuring
-#>    <chr>        <lgl> <date>               <int> <chr>         <chr>   <chr>    
-#>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw    Taylor… <NA>     
-#>  2 Taylor Swift FALSE 2006-10-24               2 Picture To B… Taylor… <NA>     
-#>  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On… Taylor… <NA>     
-#>  4 Taylor Swift FALSE 2006-10-24               4 A Place In T… Taylor… <NA>     
-#>  5 Taylor Swift FALSE 2006-10-24               5 Cold As You   Taylor… <NA>     
-#>  6 Taylor Swift FALSE 2006-10-24               6 The Outside   Taylor… <NA>     
-#>  7 Taylor Swift FALSE 2006-10-24               7 Tied Togethe… Taylor… <NA>     
-#>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautif… Taylor… <NA>     
-#>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sa… Taylor… <NA>     
-#> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song … Taylor… <NA>     
-#> # … with 235 more rows, and 22 more variables: bonus_track <lgl>,
-#> #   promotional_release <date>, single_release <date>, track_release <date>,
-#> #   danceability <dbl>, energy <dbl>, key <int>, loudness <dbl>, mode <int>,
-#> #   speechiness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
-#> #   liveness <dbl>, valence <dbl>, tempo <dbl>, time_signature <int>,
-#> #   duration_ms <int>, explicit <lgl>, key_name <chr>, mode_name <chr>,
-#> #   key_mode <chr>, lyrics <list>
+#> # A tibble: 274 × 29
+#>    album_name ep    album_re…¹ track…² track…³ artist featu…⁴ bonus…⁵ promotio…⁶
+#>    <chr>      <lgl> <date>       <int> <chr>   <chr>  <chr>   <lgl>   <date>    
+#>  1 Taylor Sw… FALSE 2006-10-24       1 Tim Mc… Taylo… <NA>    FALSE   NA        
+#>  2 Taylor Sw… FALSE 2006-10-24       2 Pictur… Taylo… <NA>    FALSE   NA        
+#>  3 Taylor Sw… FALSE 2006-10-24       3 Teardr… Taylo… <NA>    FALSE   NA        
+#>  4 Taylor Sw… FALSE 2006-10-24       4 A Plac… Taylo… <NA>    FALSE   NA        
+#>  5 Taylor Sw… FALSE 2006-10-24       5 Cold A… Taylo… <NA>    FALSE   NA        
+#>  6 Taylor Sw… FALSE 2006-10-24       6 The Ou… Taylo… <NA>    FALSE   NA        
+#>  7 Taylor Sw… FALSE 2006-10-24       7 Tied T… Taylo… <NA>    FALSE   NA        
+#>  8 Taylor Sw… FALSE 2006-10-24       8 Stay B… Taylo… <NA>    FALSE   NA        
+#>  9 Taylor Sw… FALSE 2006-10-24       9 Should… Taylo… <NA>    FALSE   NA        
+#> 10 Taylor Sw… FALSE 2006-10-24      10 Mary's… Taylo… <NA>    FALSE   NA        
+#> # … with 264 more rows, 20 more variables: single_release <date>,
+#> #   track_release <date>, danceability <dbl>, energy <dbl>, key <int>,
+#> #   loudness <dbl>, mode <int>, speechiness <dbl>, acousticness <dbl>,
+#> #   instrumentalness <dbl>, liveness <dbl>, valence <dbl>, tempo <dbl>,
+#> #   time_signature <int>, duration_ms <int>, explicit <lgl>, key_name <chr>,
+#> #   mode_name <chr>, key_mode <chr>, lyrics <list>, and abbreviated variable
+#> #   names ¹​album_release, ²​track_number, ³​track_name, ⁴​featuring, …
 ```
 
 Finally, there is a small data set, `taylor_albums`, summarizing
@@ -112,22 +112,24 @@ Taylor’s album release history.
 
 ``` r
 taylor_albums
-#> # A tibble: 13 × 4
-#>    album_name                          ep    album_release metacritic_score
-#>    <chr>                               <lgl> <date>                   <int>
-#>  1 Taylor Swift                        FALSE 2006-10-24                  NA
-#>  2 The Taylor Swift Holiday Collection TRUE  2007-10-14                  NA
-#>  3 Beautiful Eyes                      TRUE  2008-07-15                  NA
-#>  4 Fearless                            FALSE 2008-11-11                  73
-#>  5 Speak Now                           FALSE 2010-10-25                  77
-#>  6 Red                                 FALSE 2012-10-22                  77
-#>  7 1989                                FALSE 2014-10-27                  76
-#>  8 reputation                          FALSE 2017-11-10                  71
-#>  9 Lover                               FALSE 2019-08-23                  79
-#> 10 folklore                            FALSE 2020-07-24                  88
-#> 11 evermore                            FALSE 2020-12-11                  85
-#> 12 Fearless (Taylor's Version)         FALSE 2021-04-09                  82
-#> 13 Red (Taylor's Version)              FALSE 2021-11-12                  96
+#> # A tibble: 14 × 5
+#>    album_name                          ep    album_release metacritic_…¹ user_…²
+#>    <chr>                               <lgl> <date>                <int>   <dbl>
+#>  1 Taylor Swift                        FALSE 2006-10-24               67     9.2
+#>  2 The Taylor Swift Holiday Collection TRUE  2007-10-14               NA    NA  
+#>  3 Beautiful Eyes                      TRUE  2008-07-15               NA    NA  
+#>  4 Fearless                            FALSE 2008-11-11               73     8.4
+#>  5 Speak Now                           FALSE 2010-10-25               77     8.7
+#>  6 Red                                 FALSE 2012-10-22               77     8.5
+#>  7 1989                                FALSE 2014-10-27               76     8.2
+#>  8 reputation                          FALSE 2017-11-10               71     8.3
+#>  9 Lover                               FALSE 2019-08-23               79     8.4
+#> 10 folklore                            FALSE 2020-07-24               88     9  
+#> 11 evermore                            FALSE 2020-12-11               85     8.9
+#> 12 Fearless (Taylor's Version)         FALSE 2021-04-09               82     8.9
+#> 13 Red (Taylor's Version)              FALSE 2021-11-12               91     9  
+#> 14 Midnights                           FALSE 2022-10-21               94     9  
+#> # … with abbreviated variable names ¹​metacritic_score, ²​user_score
 ```
 
 ## Code of Conduct
