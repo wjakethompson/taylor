@@ -5,7 +5,7 @@
 \alias{album_levels}
 \title{Correct ordering of Taylor Swift's albums}
 \format{
-A vector of length 11. Each element is an album
+A vector of length 12. Each element is an album
 name, in an order that can be used for making factor variables.
 }
 \usage{

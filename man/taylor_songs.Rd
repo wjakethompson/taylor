@@ -3,10 +3,12 @@
 \docType{data}
 \name{taylor_all_songs}
 \alias{taylor_all_songs}
+\alias{taylor_album_songs}
 \title{Data for Taylor Swift songs}
 \format{
-A \link[tibble:tibble-package]{tibble} with 248
-rows and 29 variables. Each row is one song.
+\code{taylor_all_songs} is a \link[tibble:tibble-package]{tibble} with
+274 rows and 29 variables.
+Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
 separately from one of Taylor's studio albums or EPs.
@@ -85,6 +87,11 @@ defined by \url{https://genius.com/} (e.g., \verb{Verse 1}, \code{Chorus}, etc.)
 track (e.g., \code{HAIM} is featured on \emph{No Body, No Crime}).
 }
 }
+
+\code{taylor_album_songs} is a \link[tibble:tibble-package]{tibble} containing
+the same 29 variables, but only with
+194 rows, one for each song from an official studio
+album (see Details).
 }
 \source{
 \url{https://genius.com/artists/Taylor-swift}
@@ -93,13 +100,16 @@ track (e.g., \code{HAIM} is featured on \emph{No Body, No Crime}).
 }
 \usage{
 taylor_all_songs
+
+taylor_album_songs
 }
 \description{
-A data set containing lyrics to and characteristics of all officially
+A data containing lyrics to and characteristics of all officially
 released Taylor Swift songs. This includes albums, EPs, and individually
 released singles.
 }
 \details{
+\code{taylor_all_songs} contains all songs in Taylor's discography.
 Lyrics come from Genius, and songs characteristics come from the Spotify API.
 Some data is known to be missing. The Beautiful Eyes EP is not available on
 any streaming service, and therefore has no data from the Spotify API.
@@ -126,5 +136,16 @@ from \emph{folklore (deluxe edition)}, but the \code{album_name} is listed only 
 \emph{folklore}. The \code{bonus_track} variable can be used to determine which songs
 appeared on the standard version of an album vs. a deluxe or platinum
 edition.
+
+\code{taylor_album_songs} contains the same information as \code{taylor_all_songs}, but
+only for Taylor's official studio albums. Thus, \code{taylor_album_songs} is a
+subset of \code{\link{taylor_all_songs}}, with EPs and individual singles excluded.
+Critically, this subset also only includes versions owned by Taylor when
+possible, because we stan artists owning their own work. This means that
+although both \emph{Fearless} and \emph{Fearless (Taylor's Version)} appear in the full
+\code{\link{taylor_all_songs}} data, only \emph{Fearless (Taylor's Version)} appears in this
+subset. This also means that this data set will change as additional
+re-releases are made available (i.e., \emph{Red} was replaced with
+\emph{Red (Taylor's Version)} in \href{https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/}{version 1.0.0}).
 }
 \keyword{datasets}
