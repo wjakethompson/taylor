@@ -43,7 +43,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: nwtgck/actions-netlify@v1.1
         with:
-          publish-dir: './docs'
+          publish-dir: './docs/dev'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message:
