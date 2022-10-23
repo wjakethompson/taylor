@@ -500,6 +500,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums() +
     scale_color_albums()
 
@@ -511,6 +512,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums() +
     scale_color_albums()
 
@@ -523,6 +525,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums() +
     scale_color_albums()
 
@@ -536,6 +539,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums() +
     scale_color_albums()
 
@@ -552,6 +556,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5, na.rm = TRUE) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums() +
     scale_color_albums()
 
@@ -560,6 +565,7 @@ test_that("album scale works", {
     geom_col(aes(fill = album_name)) +
     geom_point(aes(fill = album_name, color = album_name),
                shape = 21, size = 5) +
+    expand_limits(x = c(0, 100)) +
     scale_fill_albums(na.value = "red") +
     scale_color_albums(na.value = "red")
 
