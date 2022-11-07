@@ -146,6 +146,6 @@ although both \emph{Fearless} and \emph{Fearless (Taylor's Version)} appear in t
 \code{\link{taylor_all_songs}} data, only \emph{Fearless (Taylor's Version)} appears in this
 subset. This also means that this data set will change as additional
 re-releases are made available (i.e., \emph{Red} was replaced with
-\emph{Red (Taylor's Version)} in \href{https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/}{version 1.0.0}).
+\emph{Red (Taylor's Version)} in \href{https://www.wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/}{version 1.0.0}).
 }
 \keyword{datasets}

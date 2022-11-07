@@ -43,7 +43,7 @@
 #' subset. This also means that this data set will change as additional
 #' re-releases are made available (i.e., *Red* was replaced with
 #' *Red (Taylor's Version)* in [version
-#' 1.0.0](https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/)).
+#' 1.0.0](https://www.wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/)).
 #'
 #' @format `taylor_all_songs` is a [tibble][tibble::tibble-package] with
 #' `r nrow(taylor_all_songs)` rows and `r ncol(taylor_all_songs)` variables.
