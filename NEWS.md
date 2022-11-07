@@ -1,15 +1,15 @@
-# taylor (development version)
+# taylor 2.0.0
 
-* Spotify updated audio data for "Renegade"
+## Breaking changes
 
 * Added *Midnights* to `taylor_all_songs` and `taylor_album_songs`.
 
-* New color palette added to `album_palettes` for *Midnights*.
+* Spotify updated audio data for songs on *Red (Taylor's Version)*.
+  These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
 
-* New single color added to `album_compare` for *Midnights*.
+* Spotify updated audio data for "Renegade"
 
-* Metacritic score for *Midnights* has been added to
-  `taylor_albums`.
+## New features
   
 * A new `user_score` column for user ratings from Metacritic was added to `taylor_albums`.
 
@@ -22,9 +22,15 @@
   
 * Added "The Joker and the Queen" from Ed Sheeran's *=* to `taylor_all_songs`.
 
-* Spotify updated audio data for songs on *Red (Taylor's Version)*.
-  These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
+## Minor improvements and fixes
   
+* New color palette added to `album_palettes` for *Midnights*.
+
+* New single color added to `album_compare` for *Midnights*.
+
+* Metacritic score for *Midnights* has been added to
+  `taylor_albums`.
+
 * Fixed some additional non-ASCII characters in the lyrics for all albums (@EricWu2003, #16).
 
 * Minor tweaks to the color palettes for each album to better capture the vibes,
