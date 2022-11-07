@@ -63,6 +63,10 @@ a.anchor {
 }
 
 /* dropdown menu */
+.dropdown-header {
+  color: var(--nav-link);
+}
+
 .dropdown-menu {
   background-color: var(--nav-bkg);
   border-color: var(--nav-link);
