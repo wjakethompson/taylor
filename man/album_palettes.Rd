@@ -6,11 +6,11 @@
 \alias{album_compare}
 \title{Color palettes based on Taylor Swift's albums}
 \format{
-A list of length 11. Each element contains a
+A list of length 12. Each element contains a
 color palette for one of Taylor Swift's studio albums. The list elements
 are named according to the name of the album.
 
-An object of class \code{taylor_color_palette} (inherits from \code{vctrs_vctr}, \code{character}) of length 11.
+An object of class \code{taylor_color_palette} (inherits from \code{vctrs_vctr}, \code{character}) of length 12.
 }
 \source{
 Colors derived from album covers using 'Colormind'.

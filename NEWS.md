@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* Spotify updated audio data for "Renegade"
+
 * Added *Midnights* to `taylor_all_songs` and `taylor_album_songs`.
 
 * New color palette added to `album_palettes` for *Midnights*.

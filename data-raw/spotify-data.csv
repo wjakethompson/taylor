@@ -265,6 +265,6 @@ NA,Both Of Us,B.o.B,Taylor Swift,0.677,0.722,7,-7.088,1,0.0522,0.0213,0,0.207,0.
 NA,Gasoline (Remix),HAIM,Taylor Swift,0.658,0.717,1,-4.257,0,0.0633,0.0846,0.0022,0.12,0.595,133.074,4,193373,FALSE,C#,minor,C# minor
 NA,Half Of My Heart,John Mayer,NA,0.681,0.593,5,-9.327,1,0.0251,0.435,1.17e-4,0.106,0.731,115.058,4,250373,FALSE,F,major,F major
 NA,Highway Don't Care,Tim McGraw,"Taylor Swift, Keith Urban",0.47,0.79,2,-5.352,1,0.039,0.0216,0,0.0863,0.495,158.061,4,276880,FALSE,D,major,D major
-NA,Renegade,Big Red Machine,Taylor Swift,0.532,0.708,0,-8.121,1,0.0505,0.435,0.0236,0.107,0.586,167.977,4,254467,FALSE,C,major,C major
+NA,Renegade,Big Red Machine,Taylor Swift,0.532,0.708,0,-8.121,1,0.0505,0.435,0.0236,0.107,0.586,167.977,4,254467,TRUE,C,major,C major
 NA,Two Is Better Than One,Boys Like Girls,Taylor Swift,0.521,0.702,0,-5.189,1,0.0331,0.189,0,0.0962,0.25,127.976,4,242840,FALSE,C,major,C major
 NA,The Joker And The Queen,Ed Sheeran,Taylor Swift,0.528,0.309,0,-7.398,1,0.0329,0.924,2.1e-6,0.282,0.307,133.83,4,185422,FALSE,C,major,C major
