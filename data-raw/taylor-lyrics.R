@@ -407,7 +407,7 @@ taylor_album_songs <- taylor_all_songs %>%
 
 metacritic <- tribble(
   ~album_name,                           ~metacritic_score, ~user_score,
-  "Midnights",                           88L,               8.4,
+  "Midnights",                           85L,               8.3,
   "Red (Taylor's Version)",              91L,               9.0,
   "Fearless (Taylor's Version)",         82L,               8.9,
   "evermore",                            85L,               8.9,
@@ -415,10 +415,10 @@ metacritic <- tribble(
   "Lover",                               79L,               8.4,
   "reputation",                          71L,               8.3,
   "1989",                                76L,               8.2,
-  "Red",                                 77L,               8.5,
+  "Red",                                 77L,               8.6,
   "Speak Now",                           77L,               8.7,
   "Fearless",                            73L,               8.4,
-  "Taylor Swift",                        67L,               9.2
+  "Taylor Swift",                        67L,               9.1
 )
 
 taylor_albums <- taylor_all_songs %>%
