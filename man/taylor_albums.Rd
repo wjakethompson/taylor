@@ -15,6 +15,7 @@ play (\code{TRUE}).
 \item \code{album_release}: The date the album was released, in the ISO-8601 format
 (YYYY-MM-DD).
 \item \code{metacritic_score}: The official album rating from metacritic.
+\item \code{user_score}: The user rating from metacritic.
 }
 }
 \source{

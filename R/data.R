@@ -145,6 +145,7 @@
 #' * `album_release`: The date the album was released, in the ISO-8601 format
 #'   (YYYY-MM-DD).
 #' * `metacritic_score`: The official album rating from metacritic.
+#' * `user_score`: The user rating from metacritic.
 #'
 #' @details
 #' This data set includes all official studio albums and EPs with new tracks.
