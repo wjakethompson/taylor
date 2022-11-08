@@ -1,6 +1,6 @@
 Package: taylor
 Title: Lyrics and Song Data for Taylor Swift's Discography
-Version: 2.0.0
+Version: 2.0.0.9000
 Authors@R: 
     person(given = "W. Jake",
            family = "Thompson",
