@@ -26,7 +26,7 @@ jobs:
           extra-packages: any::covr
           needs: coverage
 
-       - name: Test coverage
+      - name: Test coverage
         run: |
           covr::codecov(
             quiet = FALSE,
