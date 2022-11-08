@@ -7,7 +7,8 @@
 * Spotify updated audio data for songs on *Red (Taylor's Version)*.
   These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
 
-* Spotify updated audio data for "Renegade"
+* Spotify updated audio data for "Renegade".
+  These changes are reflected in `taylor_all_songs` and `taylor_album_songs`.
 
 ## New features
   
