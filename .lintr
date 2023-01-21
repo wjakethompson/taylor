@@ -1,2 +1,6 @@
-exclusions: list("R/ggplot2-color-scales.R" = c(75, 99, 119, 144, 194, 206),
-                 "R/data-checks.R" = 38)
+linters: linters_with_defaults()
+exclusions: list(
+    "R/ggplot2-color-scales.R" = c(75, 99, 119, 144, 194, 206),
+    "R/data-checks.R" = 38
+  )
+encoding: "UTF-8"
