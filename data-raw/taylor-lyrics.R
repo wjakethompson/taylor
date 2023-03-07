@@ -419,7 +419,7 @@ metacritic <- tribble(
   "Red",                                 77L,               8.5,
   "Speak Now",                           77L,               8.6,
   "Fearless",                            73L,               8.4,
-  "Taylor Swift",                        67L,               8.6
+  "Taylor Swift",                        67L,               8.5
 )
 
 taylor_albums <- taylor_all_songs %>%
