@@ -1,5 +1,11 @@
 # taylor (development version)
 
+## Minor improvements and fixes
+
+* Fixed S3 generic/method consistency issue for **vctrs** classes that was creating a warning in r-devel on CRAN.
+
+* Updated Metacritic user ratings.
+
 # taylor 2.0.0
 
 ## Breaking changes

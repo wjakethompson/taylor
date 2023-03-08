@@ -115,12 +115,12 @@ taylor_albums
 #> # A tibble: 14 × 5
 #>    album_name                          ep    album_release metacritic_…¹ user_…²
 #>    <chr>                               <lgl> <date>                <int>   <dbl>
-#>  1 Taylor Swift                        FALSE 2006-10-24               67     9.1
+#>  1 Taylor Swift                        FALSE 2006-10-24               67     8.5
 #>  2 The Taylor Swift Holiday Collection TRUE  2007-10-14               NA    NA  
 #>  3 Beautiful Eyes                      TRUE  2008-07-15               NA    NA  
 #>  4 Fearless                            FALSE 2008-11-11               73     8.4
-#>  5 Speak Now                           FALSE 2010-10-25               77     8.7
-#>  6 Red                                 FALSE 2012-10-22               77     8.6
+#>  5 Speak Now                           FALSE 2010-10-25               77     8.6
+#>  6 Red                                 FALSE 2012-10-22               77     8.5
 #>  7 1989                                FALSE 2014-10-27               76     8.2
 #>  8 reputation                          FALSE 2017-11-10               71     8.3
 #>  9 Lover                               FALSE 2019-08-23               79     8.4
