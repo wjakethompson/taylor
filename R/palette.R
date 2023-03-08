@@ -89,12 +89,12 @@ is_color_palette <- function(pal) {
 }
 
 #' @export
-vec_ptype_abbr.taylor_color_palette <- function(pal, ...) {
+vec_ptype_abbr.taylor_color_palette <- function(x, ...) {
   "clpal"
 }
 
 #' @export
-vec_ptype_full.taylor_color_palette <- function(pal, ...) {
+vec_ptype_full.taylor_color_palette <- function(x, ...) {
   paste0("color_palette")
 }
 
@@ -102,21 +102,21 @@ vec_ptype_full.taylor_color_palette <- function(pal, ...) {
 # Printing methods -------------------------------------------------------------
 #' @method obj_print_data taylor_color_palette
 #' @export
-obj_print_data.taylor_color_palette <- function(pal, ...) {
-  UseMethod("obj_print_data.taylor_color_palette", pal)
+obj_print_data.taylor_color_palette <- function(x, ...) {
+  UseMethod("obj_print_data.taylor_color_palette", x)
 }
 
 #' @method obj_print_data.taylor_color_palette default
 #' @export
-obj_print_data.taylor_color_palette.default <- function(pal, ...) {
-  styles <- lapply(pal, crayon::make_style, bg = TRUE)
+obj_print_data.taylor_color_palette.default <- function(x, ...) {
+  styles <- lapply(x, crayon::make_style, bg = TRUE)
   invisible(
     mapply(
       function(.x, .y) {
         cat("", .y("  "), .x, "\n")
         return(invisible(.x))
       },
-      vec_names(pal), styles,
+      vec_names(x), styles,
       USE.NAMES = FALSE
     )
   )
