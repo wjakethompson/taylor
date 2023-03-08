@@ -1,4 +1,4 @@
-# taylor (development version)
+# taylor 2.0.1
 
 ## Minor improvements and fixes
 
