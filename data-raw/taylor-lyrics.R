@@ -214,7 +214,9 @@ single_uri <- tribble(
   "Safe & Sound",                      "0z9UVN8VBHJ9HdfYsOuuNf",
   "September",                         "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",              "0RFCHlNuTeUHIB36VuVbOL",
+  "The Alcott",                        "6INztpNwOTlfSKTuPo0HOP",
   "This Love (Taylor's Version)",      "4d1CG5ei1E2vGbvmgf5KKv",
+  "Three Sad Virgins",                 "",
   "Today Was A Fairytale",             "4pFvEWbjBpPUdYRQly0THs",
   "Wildest Dreams (Taylor's Version)", "1Ov37jtRQ2YNAe8HzfczkL"
 )
