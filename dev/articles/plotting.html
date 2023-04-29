@@ -222,23 +222,22 @@ ratings of Taylor’s albums, stored in
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 14 × 5</span></span></span>
-<span><span class="co">#&gt;    album_name                          ep    album_release metacritic_…¹ user_…²</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                               <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift                        FALSE 2006-10-24               67     8.5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> The Taylor Swift Holiday Collection TRUE  2007-10-14               <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Beautiful Eyes                      TRUE  2008-07-15               <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Fearless                            FALSE 2008-11-11               73     8.4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Speak Now                           FALSE 2010-10-25               77     8.6</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Red                                 FALSE 2012-10-22               77     8.5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 1989                                FALSE 2014-10-27               76     8.2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> reputation                          FALSE 2017-11-10               71     8.3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Lover                               FALSE 2019-08-23               79     8.4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> folklore                            FALSE 2020-07-24               88     9  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> evermore                            FALSE 2020-12-11               85     8.9</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> Fearless (Taylor's Version)         FALSE 2021-04-09               82     8.9</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Red (Taylor's Version)              FALSE 2021-11-12               91     9  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Midnights                           FALSE 2022-10-21               85     8.3</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with abbreviated variable names ¹​metacritic_score, ²​user_score</span></span></span></code></pre></div>
+<span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> The Taylor Swift Holiday Col… TRUE  2007-10-14                  <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Beautiful Eyes                TRUE  2008-07-15                  <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Fearless                      FALSE 2008-11-11                  73        8.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Speak Now                     FALSE 2010-10-25                  77        8.6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Red                           FALSE 2012-10-22                  77        8.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 1989                          FALSE 2014-10-27                  76        8.2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> reputation                    FALSE 2017-11-10                  71        8.3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Lover                         FALSE 2019-08-23                  79        8.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> folklore                      FALSE 2020-07-24                  88        9  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> evermore                      FALSE 2020-12-11                  85        8.9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> Fearless (Taylor's Version)   FALSE 2021-04-09                  82        8.9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Midnights                     FALSE 2022-10-21                  85        8.3</span></span></code></pre></div>
 <p>Let’s create a bar graph showing the rating of each album. We’ll
 first make the album name a factor variable. A convenience variable,
 <code><a href="../reference/album_levels.html">taylor::album_levels</a></code>, is included in the package that will
