@@ -2,6 +2,7 @@ library(tidyverse)
 library(spotifyr)
 library(stringi)
 library(readxl)
+library(rvest)
 library(here)
 library(fs)
 
@@ -407,22 +408,15 @@ taylor_album_songs <- taylor_all_songs %>%
                            "reputation", "Lover", "folklore", "evermore",
                            "Midnights"))
 
-# https://www.metacritic.com/person/taylor-swift
-metacritic <- tribble(
-  ~album_name,                           ~metacritic_score, ~user_score,
-  "Midnights",                           85L,               8.3,
-  "Red (Taylor's Version)",              91L,               9.0,
-  "Fearless (Taylor's Version)",         82L,               8.9,
-  "evermore",                            85L,               8.9,
-  "folklore",                            88L,               9.0,
-  "Lover",                               79L,               8.4,
-  "reputation",                          71L,               8.3,
-  "1989",                                76L,               8.2,
-  "Red",                                 77L,               8.5,
-  "Speak Now",                           77L,               8.6,
-  "Fearless",                            73L,               8.4,
-  "Taylor Swift",                        67L,               8.5
-)
+site <- read_html("https://www.metacritic.com/person/taylor-swift")
+metacritic <- html_table(site) |>
+  pluck(2) |>
+  separate_wider_regex(`Title:`,
+                       patterns = c(metacritic_score = "[0-9]*",
+                                    "\\n\\n[ ]*",
+                                    album_name = ".*")) |>
+  mutate(metacritic_score = as.integer(metacritic_score)) |>
+  select(album_name, metacritic_score, user_score = `User score:`)
 
 taylor_albums <- taylor_all_songs %>%
   distinct(album_name, ep, album_release) %>%
