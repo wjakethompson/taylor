@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
+
 # taylor 2.0.1
 
 ## Minor improvements and fixes
