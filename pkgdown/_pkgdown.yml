@@ -63,6 +63,10 @@ reference:
   - album_levels
   - title_case
 
+- title: Miscellaneous
+  contents:
+  - translate_bracelet
+
 articles:
 - title: Plotting
   navbar: ~

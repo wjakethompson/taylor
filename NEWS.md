@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
+
 * Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
 
 * Added Era's Tour promotional singles "All of the Girls You Loved Before," "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and "Safe & Sound (Taylor's Version)."
