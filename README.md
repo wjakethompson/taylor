@@ -56,7 +56,7 @@ Version)*). We stan artists owning their own songs.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 194 × 29
+#> # A tibble: 196 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -69,7 +69,7 @@ taylor_album_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 184 more rows
+#> # ℹ 186 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
@@ -85,7 +85,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 279 × 29
+#> # A tibble: 281 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -98,7 +98,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 269 more rows
+#> # ℹ 271 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
