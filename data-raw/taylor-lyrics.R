@@ -81,6 +81,8 @@ base_info <- lyrics %>%
         "Midnights (Target Exclusive)",
       album_name == "Midnights Til Dawn Edition" ~
         "Midnights (The Til Dawn Edition)",
+      album_name == "Midnights Late Night Edition" ~
+        "Midnights (The Late Night Edition)",
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
@@ -172,6 +174,8 @@ base_info <- lyrics %>%
                                       "[Taylor's Version]"),
          track_name = str_replace_all(track_name, "Tv",
                                       "(Taylor's Version)"),
+         track_name = str_replace_all(track_name, "(?<=[a-z]\\ )Ftv",
+                                      "(From The Vault)"),
          track_name = str_replace_all(track_name, "Ftv",
                                       "[From The Vault]")) %>%
   # edits for singles
@@ -193,6 +197,7 @@ base_info <- lyrics %>%
     album_name == "Midnights (3am Edition)" ~ "Midnights",
     album_name == "Midnights (Target Exclusive)" ~ "Midnights",
     album_name == "Midnights (The Til Dawn Edition)" ~ "Midnights",
+    album_name == "Midnights (The Late Night Edition)" ~ "Midnights",
     TRUE ~ album_name
   )) %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -365,9 +370,10 @@ spotify_join <- spotify %>%
 # Check for tracks missing from Spotify
 # Ideally should return 0 rows. 11 rows currently expected:
 # 1-2 Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 3-8 Beautiful Eyes is not currently available on Spotify or any service
-# 9 American Girl is exclusive to Napster
-# 10 Three Sad Virgins not available on Spotify
+# 3 Midnight bonus track exclusive to the Late Night Edition
+# 4-9 Beautiful Eyes is not currently available on Spotify or any service
+# 10 American Girl is exclusive to Napster
+# 11 Three Sad Virgins not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
