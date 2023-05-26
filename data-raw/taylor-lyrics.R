@@ -162,7 +162,7 @@ base_info <- lyrics %>%
          track_name = str_replace_all(track_name, "Pianormx",
                                       "(Piano Remix)"),
          track_name = str_replace_all(track_name, "Mldr",
-                                      "(More Lana Del Ray)")) %>%
+                                      "(More Lana Del Rey)")) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -311,7 +311,7 @@ spotify_join <- spotify %>%
     track_name = str_replace(
       track_name,
       fixed("Snow On The Beach (Feat. More Lana Del Rey)"),
-      "Snow On The Beach (More Lana Del Ray)"
+      "Snow On The Beach (More Lana Del Rey)"
     ),
     track_name = str_replace(track_name,
                              fixed("Karma (Feat. Ice Spice)"),
