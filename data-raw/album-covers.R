@@ -19,14 +19,14 @@ tribble(
   "folklore",                    "2fenSS68JI1h4Fo296JfGr",
   "evermore",                    "2Xoteh7uEpea4TohMxjtaq",
   "Midnights",                   "151w1FgRZfnKZA9FEcg9Z3"
-) |>
+) %>%
   pwalk(function(album_name, album_uri) {
     album <- get_album(album_uri)
-    cover <- album$images |>
-      slice_max(order_by = height, n = 1) |>
+    cover <- album$images %>%
+      slice_max(order_by = height, n = 1) %>%
       pull(url)
-    save_name <- str_to_lower(album_name) |>
-      str_replace_all("\\(taylor's version\\)", "tv") |>
+    save_name <- str_to_lower(album_name) %>%
+      str_replace_all("\\(taylor's version\\)", "tv") %>%
       str_replace_all("\\ ", "-")
     download.file(cover, here("inst", "album-covers", glue("{save_name}.jpeg")))
   })
@@ -39,12 +39,12 @@ codes <- c("#B8396B", "#8C4F66", "#FFF5CC", "#76BAE0", "#EBBED3")
 scales::show_col(codes)
 
 new_codes <- purrr::map_dfr(codes, function(x) {
-  col2rgb(x) |>
-    tibble::as_tibble(.name_repair = ~"value", rownames = "color") |>
-    tidyr::pivot_wider(names_from = color, values_from = value) |>
+  col2rgb(x) %>%
+    tibble::as_tibble(.name_repair = ~"value", rownames = "color") %>%
+    tidyr::pivot_wider(names_from = color, values_from = value) %>%
     dplyr::mutate(hex = x, .before = 1)
-}) |>
-  dplyr::arrange(red, green, blue) |>
+}) %>%
+  dplyr::arrange(red, green, blue) %>%
   dplyr::pull(hex)
 
 scales::show_col(new_codes)

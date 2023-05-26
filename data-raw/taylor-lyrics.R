@@ -429,13 +429,13 @@ taylor_album_songs <- taylor_all_songs %>%
                            "Midnights"))
 
 site <- read_html("https://www.metacritic.com/person/taylor-swift")
-metacritic <- html_table(site) |>
-  pluck(2) |>
+metacritic <- html_table(site) %>%
+  pluck(2) %>%
   separate_wider_regex(`Title:`,
                        patterns = c(metacritic_score = "[0-9]*",
                                     "\\n\\n[ ]*",
-                                    album_name = ".*")) |>
-  mutate(metacritic_score = as.integer(metacritic_score)) |>
+                                    album_name = ".*")) %>%
+  mutate(metacritic_score = as.integer(metacritic_score)) %>%
   select(album_name, metacritic_score, user_score = `User score:`)
 
 taylor_albums <- taylor_all_songs %>%
