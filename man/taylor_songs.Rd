@@ -7,7 +7,7 @@
 \title{Data for Taylor Swift songs}
 \format{
 \code{taylor_all_songs} is a \link[tibble:tibble-package]{tibble} with
-279 rows and 29 variables.
+282 rows and 29 variables.
 Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
@@ -90,7 +90,7 @@ track (e.g., \code{HAIM} is featured on \emph{No Body, No Crime}).
 
 \code{taylor_album_songs} is a \link[tibble:tibble-package]{tibble} containing
 the same 29 variables, but only with
-194 rows, one for each song from an official studio
+197 rows, one for each song from an official studio
 album (see Details).
 }
 \source{
