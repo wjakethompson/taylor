@@ -58,7 +58,8 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
                       }))
 
 base_info <- lyrics %>%
-  mutate(bonus_track = str_detect(album_name, "deluxe|platinum|3am|target")) %>%
+  mutate(bonus_track = str_detect(album_name,
+                                  "deluxe|platinum|3am|target|edition")) %>%
   mutate(
     album_name = str_replace_all(album_name, "-", " "),
     album_name = str_to_title(album_name),
@@ -78,11 +79,16 @@ base_info <- lyrics %>%
       album_name == "Midnights 3am Edition" ~ "Midnights (3am Edition)",
       album_name == "Midnights Target Exclusive" ~
         "Midnights (Target Exclusive)",
+      album_name == "Midnights Til Dawn Edition" ~
+        "Midnights (The Til Dawn Edition)",
+      album_name == "Midnights Late Night Edition" ~
+        "Midnights (The Late Night Edition)",
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
     album_name = na_if(album_name, "Features")) %>%
-  left_join(albums, by = "album_name") %>%
+  left_join(albums, by = "album_name",
+            relationship = "many-to-one") %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
          lyrics) %>%
   # standard file name changes
@@ -156,7 +162,9 @@ base_info <- lyrics %>%
          track_name = str_replace_all(track_name, "Stringrmx",
                                       "(Strings Remix)"),
          track_name = str_replace_all(track_name, "Pianormx",
-                                      "(Piano Remix)")) %>%
+                                      "(Piano Remix)"),
+         track_name = str_replace_all(track_name, "Mldr",
+                                      "(More Lana Del Rey)")) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -166,6 +174,8 @@ base_info <- lyrics %>%
                                       "[Taylor's Version]"),
          track_name = str_replace_all(track_name, "Tv",
                                       "(Taylor's Version)"),
+         track_name = str_replace_all(track_name, "(?<=[a-z]\\ )Ftv",
+                                      "(From The Vault)"),
          track_name = str_replace_all(track_name, "Ftv",
                                       "[From The Vault]")) %>%
   # edits for singles
@@ -186,6 +196,8 @@ base_info <- lyrics %>%
     album_name == "evermore (deluxe edition)" ~ "evermore",
     album_name == "Midnights (3am Edition)" ~ "Midnights",
     album_name == "Midnights (Target Exclusive)" ~ "Midnights",
+    album_name == "Midnights (The Til Dawn Edition)" ~ "Midnights",
+    album_name == "Midnights (The Late Night Edition)" ~ "Midnights",
     TRUE ~ album_name
   )) %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -253,7 +265,7 @@ spotify <- tribble(
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
   "evermore",                            "6AORtDjduMM3bupSWzbTSG",
-  "Midnights",                           "3lS1y25WAhcqJDATJK70Mq"
+  "Midnights",                           "1fnJ7k0bllNfL1kVdNVW1A"
 ) %>%
   mutate(track = map(album_uri,
                      function(.x) {
@@ -299,6 +311,18 @@ spotify_join <- spotify %>%
                                   track_name,
                                 TRUE ~ str_to_title(track_name)),
          track_name = str_replace_all(track_name, "’", "'")) %>%
+  # remixes encoded as features
+  mutate(
+    track_name = str_replace(
+      track_name,
+      fixed("Snow On The Beach (Feat. More Lana Del Rey)"),
+      "Snow On The Beach (More Lana Del Rey)"
+    ),
+    track_name = str_replace(track_name,
+                             fixed("Karma (Feat. Ice Spice)"),
+                             "Karma (Remix)"),
+    track_name = str_replace(track_name,
+                             "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")) %>%
   # edits for Taylor Swift
   mutate(track_name = str_replace_all(track_name, "Mcgraw", "McGraw"),
          track_name = str_replace(track_name,
@@ -313,10 +337,7 @@ spotify_join <- spotify %>%
                                       "Forever & Always (Piano Version)"),
          track_name = str_replace_all(track_name, "Superstar", "SuperStar")) %>%
   # edits for Fearless (Taylor's Version)
-  mutate(track_name = str_replace(track_name,
-                                  "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)",
-                                  ""),
-         track_name = str_replace_all(track_name,
+  mutate(track_name = str_replace_all(track_name,
                                       "(?<=\\)\\ )\\(Taylor's Version\\)",
                                       "[Taylor's Version]"),
          track_name = str_replace_all(track_name, fixed("(From The Vault)"),
@@ -348,7 +369,8 @@ spotify_join <- spotify %>%
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
 # Ideally should return 0 rows. 11 rows currently expected:
-# 1-3 Three Midnights bonus tracks exclusive to Target are not on Spotify
+# 1-2 Two Midnights bonus tracks exclusive to Target are not on Spotify
+# 3 Midnight bonus track exclusive to the Late Night Edition
 # 4-9 Beautiful Eyes is not currently available on Spotify or any service
 # 10 American Girl is exclusive to Napster
 # 11 Three Sad Virgins not available on Spotify
@@ -413,13 +435,13 @@ taylor_album_songs <- taylor_all_songs %>%
                            "Midnights"))
 
 site <- read_html("https://www.metacritic.com/person/taylor-swift")
-metacritic <- html_table(site) |>
-  pluck(2) |>
+metacritic <- html_table(site) %>%
+  pluck(2) %>%
   separate_wider_regex(`Title:`,
                        patterns = c(metacritic_score = "[0-9]*",
                                     "\\n\\n[ ]*",
-                                    album_name = ".*")) |>
-  mutate(metacritic_score = as.integer(metacritic_score)) |>
+                                    album_name = ".*")) %>%
+  mutate(metacritic_score = as.integer(metacritic_score)) %>%
   select(album_name, metacritic_score, user_score = `User score:`)
 
 taylor_albums <- taylor_all_songs %>%

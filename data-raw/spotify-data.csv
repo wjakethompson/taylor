@@ -223,26 +223,29 @@ evermore,closure,Taylor Swift,NA,0.689,0.704,9,-10.813,1,0.245,0.835,4.83e-6,0.1
 evermore,evermore,Taylor Swift,Bon Iver,0.39,0.27,1,-10.673,1,0.0308,0.937,0.00227,0.111,0.32,125.177,5,304107,FALSE,C#,major,C# major
 evermore,right where you left me,Taylor Swift,NA,0.581,0.619,10,-6.524,1,0.0282,0.769,1.06e-4,0.117,0.645,137.915,4,245027,FALSE,A#,major,A# major
 evermore,it's time to go,Taylor Swift,NA,0.592,0.41,0,-12.426,1,0.0397,0.801,1.39e-5,0.09,0.416,151.923,4,254640,FALSE,C,major,C major
-Midnights,Lavender Haze,Taylor Swift,NA,0.735,0.444,10,-10.519,1,0.0684,0.204,0.0012,0.17,0.0984,97.038,4,202396,TRUE,A#,major,A# major
-Midnights,Maroon,Taylor Swift,NA,0.658,0.378,7,-8.3,1,0.0379,0.0593,0,0.0976,0.0382,108.034,4,218271,TRUE,G,major,G major
-Midnights,Anti-Hero,Taylor Swift,NA,0.638,0.634,4,-6.582,1,0.0457,0.133,1.23e-6,0.152,0.519,96.953,4,200690,FALSE,E,major,E major
-Midnights,Snow On The Beach,Taylor Swift,Lana Del Rey,0.659,0.323,9,-13.425,1,0.0436,0.735,0.00321,0.116,0.154,110.007,4,256124,TRUE,A,major,A major
-Midnights,"You're On Your Own, Kid",Taylor Swift,NA,0.694,0.38,2,-10.307,1,0.0614,0.416,8.47e-6,0.126,0.376,120.044,4,194207,FALSE,D,major,D major
-Midnights,Midnight Rain,Taylor Swift,NA,0.636,0.377,0,-11.721,1,0.0708,0.71,6.51e-5,0.115,0.23,139.966,4,174783,FALSE,C,major,C major
-Midnights,Question...?,Taylor Swift,NA,0.751,0.502,7,-8.777,1,0.162,0.226,0,0.297,0.112,108.989,4,210557,TRUE,G,major,G major
-Midnights,Vigilante Shit,Taylor Swift,NA,0.87,0.279,4,-11.134,0,0.364,0.16,1.74e-5,0.121,0.16,79.996,4,164801,TRUE,E,minor,E minor
-Midnights,Bejeweled,Taylor Swift,NA,0.7,0.55,7,-9.13,1,0.0653,0.0661,1.02e-4,0.091,0.412,164.003,4,194166,FALSE,G,major,G major
-Midnights,Labyrinth,Taylor Swift,NA,0.487,0.313,0,-15.434,1,0.0487,0.791,0.348,0.124,0.141,110.039,4,247962,FALSE,C,major,C major
-Midnights,Karma,Taylor Swift,NA,0.649,0.622,8,-7.054,1,0.0582,0.074,0,0.594,0.106,90.024,4,204852,TRUE,G#,major,G# major
-Midnights,Sweet Nothing,Taylor Swift,NA,0.334,0.161,0,-14.875,1,0.0506,0.967,4.71e-5,0.115,0.396,176.747,4,188497,FALSE,C,major,C major
-Midnights,Mastermind,Taylor Swift,NA,0.661,0.352,4,-14.077,1,0.117,0.571,0.00147,0.0884,0.13,125.934,4,191039,FALSE,E,major,E major
-Midnights,The Great War,Taylor Swift,NA,0.573,0.741,5,-8.987,1,0.0353,0.219,2.23e-5,0.0842,0.554,96.016,4,240356,FALSE,F,major,F major
-Midnights,Bigger Than The Whole Sky,Taylor Swift,NA,0.422,0.235,6,-12.379,1,0.0568,0.826,0.00648,0.115,0.068,165.71,4,218503,FALSE,F#,major,F# major
-Midnights,Paris,Taylor Swift,NA,0.7,0.509,7,-10.547,1,0.0789,0.112,3.27e-5,0.137,0.345,110.947,4,196259,FALSE,G,major,G major
-Midnights,High Infidelity,Taylor Swift,NA,0.646,0.529,10,-10.179,1,0.0864,0.723,0,0.0885,0.755,87.862,4,231475,FALSE,A#,major,A# major
-Midnights,Glitch,Taylor Swift,NA,0.675,0.466,11,-9.738,0,0.201,0.361,0,0.11,0.347,140.864,4,148781,FALSE,B,minor,B minor
-Midnights,"Would've, Could've, Should've",Taylor Swift,NA,0.483,0.84,7,-6.508,1,0.119,0.43,5.75e-4,0.146,0.55,157.979,4,260362,FALSE,G,major,G major
-Midnights,Dear Reader,Taylor Swift,NA,0.562,0.388,0,-12.088,1,0.0705,0.481,0.00145,0.117,0.159,107.747,4,225194,FALSE,C,major,C major
+Midnights,Lavender Haze,Taylor Swift,NA,0.735,0.454,7,-10.516,0,0.0876,0.236,0.00113,0.133,0.0751,97.043,4,202396,TRUE,G,minor,G minor
+Midnights,Maroon,Taylor Swift,NA,0.65,0.397,7,-8.237,1,0.0365,0.0609,1.4e-6,0.089,0.0382,108.055,4,218271,TRUE,G,major,G major
+Midnights,Anti-Hero,Taylor Swift,NA,0.637,0.649,4,-6.59,1,0.0584,0.115,1.22e-6,0.147,0.497,96.935,4,200690,FALSE,E,major,E major
+Midnights,Snow On The Beach,Taylor Swift,Lana Del Rey,0.653,0.331,9,-13.534,1,0.039,0.705,0.0013,0.116,0.166,110.014,4,256124,TRUE,A,major,A major
+Midnights,"You're On Your Own, Kid",Taylor Swift,NA,0.694,0.386,2,-10.312,1,0.0597,0.423,1.05e-5,0.126,0.39,120.044,4,194207,FALSE,D,major,D major
+Midnights,Midnight Rain,Taylor Swift,NA,0.654,0.372,0,-11.704,1,0.0667,0.705,6.78e-5,0.114,0.198,140.15,4,174783,FALSE,C,major,C major
+Midnights,Question...?,Taylor Swift,NA,0.741,0.509,7,-8.747,1,0.19,0.205,0,0.262,0.113,108.978,4,210557,TRUE,G,major,G major
+Midnights,Vigilante Shit,Taylor Swift,NA,0.867,0.272,4,-11.014,0,0.363,0.157,3.42e-5,0.118,0.157,79.962,4,164801,TRUE,E,minor,E minor
+Midnights,Bejeweled,Taylor Swift,NA,0.695,0.546,7,-9.184,1,0.066,0.0648,1.28e-4,0.0883,0.425,164,4,194166,FALSE,G,major,G major
+Midnights,Labyrinth,Taylor Swift,NA,0.493,0.308,0,-15.489,1,0.0436,0.804,0.328,0.123,0.13,109.993,4,247962,FALSE,C,major,C major
+Midnights,Karma,Taylor Swift,NA,0.647,0.614,8,-7.091,1,0.0651,0.0782,0,0.611,0.0956,90.034,4,204852,TRUE,G#,major,G# major
+Midnights,Sweet Nothing,Taylor Swift,NA,0.335,0.166,0,-14.958,1,0.048,0.967,1.2e-4,0.115,0.391,175.917,4,188497,FALSE,C,major,C major
+Midnights,Mastermind,Taylor Swift,NA,0.661,0.345,4,-14.037,1,0.144,0.545,9.15e-4,0.0871,0.126,125.977,4,191039,FALSE,E,major,E major
+Midnights,The Great War,Taylor Swift,NA,0.573,0.737,5,-9.002,1,0.0352,0.203,2.78e-5,0.0851,0.592,96.009,4,240356,FALSE,F,major,F major
+Midnights,Bigger Than The Whole Sky,Taylor Swift,NA,0.48,0.22,6,-12.469,1,0.0425,0.837,0.00269,0.116,0.0633,82.951,4,218503,FALSE,F#,major,F# major
+Midnights,Paris,Taylor Swift,NA,0.691,0.498,7,-10.519,1,0.101,0.116,3.07e-5,0.136,0.454,110.963,4,196259,FALSE,G,major,G major
+Midnights,High Infidelity,Taylor Swift,NA,0.564,0.545,10,-10.17,1,0.104,0.726,0,0.0878,0.766,176.082,4,231475,FALSE,A#,major,A# major
+Midnights,Glitch,Taylor Swift,NA,0.677,0.451,11,-9.744,0,0.19,0.318,0,0.11,0.399,140.845,4,148781,FALSE,B,minor,B minor
+Midnights,"Would've, Could've, Should've",Taylor Swift,NA,0.482,0.837,0,-6.501,1,0.12,0.435,0.00147,0.123,0.534,157.96,4,260362,FALSE,C,major,C major
+Midnights,Dear Reader,Taylor Swift,NA,0.475,0.386,0,-12.038,1,0.0737,0.497,0.00104,0.119,0.162,107.601,4,225194,FALSE,C,major,C major
+Midnights,Hits Different,Taylor Swift,NA,0.672,0.782,5,-6.499,1,0.0421,0.148,4.73e-6,0.296,0.239,106.026,4,234467,TRUE,F,major,F major
+Midnights,Snow On The Beach (More Lana Del Rey),Taylor Swift,Lana Del Rey,0.664,0.401,6,-10.934,0,0.0344,0.806,3.5e-6,0.108,0.315,109.846,4,229943,TRUE,F#,minor,F# minor
+Midnights,Karma (Remix),Taylor Swift,Ice Spice,0.615,0.616,8,-6.523,1,0.0622,0.0623,0,0.579,0.0734,89.977,4,201493,TRUE,G#,major,G# major
 NA,All Of The Girls You Loved Before,Taylor Swift,NA,0.718,0.467,2,-9.66,1,0.0398,0.707,6.92e-5,0.126,0.396,95.96,3,221407,FALSE,D,major,D major
 NA,Bad Blood (Remix),Taylor Swift,Kendrick Lamar,0.654,0.655,11,-7.388,0,0.106,0.0294,0,0.139,0.221,170.16,4,200107,FALSE,B,minor,B minor
 NA,Beautiful Ghosts,Taylor Swift,NA,0.382,0.219,4,-10.068,1,0.0677,0.85,0,0.0954,0.222,175.561,3,261053,FALSE,E,major,E major
@@ -271,5 +274,5 @@ NA,Gasoline (Remix),HAIM,Taylor Swift,0.658,0.717,1,-4.257,0,0.0633,0.0846,0.002
 NA,Half Of My Heart,John Mayer,NA,0.681,0.593,5,-9.327,1,0.0251,0.435,1.17e-4,0.106,0.731,115.058,4,250373,FALSE,F,major,F major
 NA,Highway Don't Care,Tim McGraw,"Taylor Swift, Keith Urban",0.47,0.79,2,-5.352,1,0.039,0.0216,0,0.0863,0.495,158.061,4,276880,FALSE,D,major,D major
 NA,Renegade,Big Red Machine,Taylor Swift,0.532,0.708,0,-8.121,1,0.0505,0.435,0.0236,0.107,0.586,167.977,4,254467,TRUE,C,major,C major
-NA,Two Is Better Than One,Boys Like Girls,Taylor Swift,0.521,0.702,0,-5.189,1,0.0331,0.189,0,0.0962,0.25,127.976,4,242840,FALSE,C,major,C major
+NA,Two Is Better Than One,BOYS LIKE GIRLS,Taylor Swift,0.521,0.702,0,-5.189,1,0.0331,0.189,0,0.0962,0.25,127.976,4,242840,FALSE,C,major,C major
 NA,The Joker And The Queen,Ed Sheeran,Taylor Swift,0.528,0.309,0,-7.398,1,0.0329,0.924,2.1e-6,0.282,0.307,133.83,4,185422,FALSE,C,major,C major

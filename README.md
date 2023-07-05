@@ -56,7 +56,7 @@ Version)*). We stan artists owning their own songs.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 194 × 29
+#> # A tibble: 197 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -69,7 +69,7 @@ taylor_album_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 184 more rows
+#> # ℹ 187 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
@@ -85,7 +85,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 278 × 29
+#> # A tibble: 282 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -98,7 +98,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 268 more rows
+#> # ℹ 272 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
@@ -115,7 +115,7 @@ taylor_albums
 #> # A tibble: 14 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
 #>    <chr>                         <lgl> <date>                   <int>      <dbl>
-#>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.5
+#>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4
 #>  2 The Taylor Swift Holiday Col… TRUE  2007-10-14                  NA       NA  
 #>  3 Beautiful Eyes                TRUE  2008-07-15                  NA       NA  
 #>  4 Fearless                      FALSE 2008-11-11                  73        8.4
@@ -127,7 +127,7 @@ taylor_albums
 #> 10 folklore                      FALSE 2020-07-24                  88        9  
 #> 11 evermore                      FALSE 2020-12-11                  85        8.9
 #> 12 Fearless (Taylor's Version)   FALSE 2021-04-09                  82        8.9
-#> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        9  
+#> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 ```
 

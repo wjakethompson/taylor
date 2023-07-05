@@ -1,5 +1,11 @@
 # taylor (development version)
 
+* Added Spotify data for "Hits Different" after it was released to streaming as part of *Midnights (The Til Dawn Edition)*.
+
+* Added "Snow on the Beach (More Lana Del Rey)" and "Karma (Remix)" from *Midnights (The Til Dawn Edition)*.
+
+* New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
+
 * Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
 
 * Added Era's Tour promotional singles "All of the Girls You Loved Before," "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and "Safe & Sound (Taylor's Version)."
