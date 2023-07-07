@@ -68,6 +68,8 @@ base_info <- lyrics %>%
       album_name == "Fearless Platinum Edition" ~ "Fearless (Platinum Edition)",
       album_name == "Fearless Taylors Version" ~ "Fearless (Taylor's Version)",
       album_name == "Speak Now Deluxe" ~ "Speak Now (Deluxe)",
+      album_name == "Speak Now Taylors Version" ~
+        "Speak Now (Taylor's Version)",
       album_name == "Red Deluxe Edition" ~ "Red (Deluxe Edition)",
       album_name == "Red Taylors Version" ~ "Red (Taylor's Version)",
       album_name == "1989 Deluxe" ~ "1989 (Deluxe)",
@@ -258,6 +260,7 @@ spotify <- tribble(
   "Fearless",                            "43OpbkiiIxJO8ktIB777Nn",
   "Fearless (Taylor's Version)",         "4hDok0OAJd57SGIT8xuWJH",
   "Speak Now",                           "5EpMjweRD573ASl7uNiHym",
+  "Speak Now (Taylor's Version)",        "5AEDGbliTTfjOB8TSm1sxt",
   "Red",                                 "1KlU96Hw9nlvqpBPlSqcTV",
   "Red (Taylor's Version)",              "6kZ42qRrzov54LcAk4onW9",
   "1989",                                "34OkZVpuzBa9y40DCy0LPR",
@@ -430,7 +433,8 @@ taylor_all_songs <- base_info %>%
 
 taylor_album_songs <- taylor_all_songs %>%
   filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
-                           "Speak Now", "Red (Taylor's Version)", "1989",
+                           "Speak Now (Taylor's Version)",
+                           "Red (Taylor's Version)", "1989",
                            "reputation", "Lover", "folklore", "evermore",
                            "Midnights"))
 
@@ -438,10 +442,13 @@ site <- read_html("https://www.metacritic.com/person/taylor-swift")
 metacritic <- html_table(site) %>%
   pluck(2) %>%
   separate_wider_regex(`Title:`,
-                       patterns = c(metacritic_score = "[0-9]*",
+                       patterns = c(metacritic_score = "[0-9|tbd]*",
                                     "\\n\\n[ ]*",
                                     album_name = ".*")) %>%
-  mutate(metacritic_score = as.integer(metacritic_score)) %>%
+  mutate(metacritic_score = na_if(metacritic_score, "tbd"),
+         metacritic_score = as.integer(metacritic_score),
+         album_name = str_replace_all(album_name, fixed("[Taylor's Version]"),
+                                      "(Taylor's Version)")) %>%
   select(album_name, metacritic_score, user_score = `User score:`)
 
 taylor_albums <- taylor_all_songs %>%
