@@ -1,10 +1,28 @@
 # taylor (development version)
 
+## Breaking changes
+
+* *Speak Now (Taylor's Version)* has replaced *Speak Now* in `taylor_album_songs` (#25).
+
+## New features
+
+* New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
+
+## Minor improvements and fixes
+
+* New color palette added to `album_palettes` for *Speak Now (Taylor's Version)*.
+
+* New single color added to `album_compare` for *Speak Now (Taylor's Version)*.
+
+* Metacritic score for *Speak Now (Taylor's Version)* has been added to
+  `taylor_albums`.
+  
+* Hex logo and pkgdown website have been updated to have a
+  *Speak Now (Taylor's Version)* theme.
+
 * Added Spotify data for "Hits Different" after it was released to streaming as part of *Midnights (The Til Dawn Edition)*.
 
 * Added "Snow on the Beach (More Lana Del Rey)" and "Karma (Remix)" from *Midnights (The Til Dawn Edition)*.
-
-* New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
 
 * Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
 
