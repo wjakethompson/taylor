@@ -518,6 +518,7 @@ test_that("binned color work", {
 
 test_that("album scale works", {
   studio <- subset(taylor_albums, !ep)
+  studio$metacritic_score[which(is.na(studio$metacritic_score))] <- 92L
 
   # no leveling
   no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
