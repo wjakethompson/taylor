@@ -24,7 +24,7 @@ taylor::taylor_all_songs |>
 library(tidyverse)
 library(taylor)
 
-taylor_album_songs |>
+p <- taylor_album_songs |>
   filter(album_name == "Speak Now (Taylor's Version)", !is.na(energy)) |>
   mutate(track_name = fct_inorder(track_name)) |>
   ggplot(aes(x = energy, y = fct_rev(track_name))) +
@@ -33,7 +33,7 @@ taylor_album_songs |>
   labs(x = "Song energy", y = NULL) +
   theme_minimal() +
   theme(axis.text = element_text(size = 20),
-        axis.title = element_text(size = 24)) -> p
+        axis.title = element_text(size = 24))
 
 ggsave(filename = "song-energy.png", plot = p, path = "~/Desktop",
        width = 20, height = 20 * 0.618, units = "in", dpi = 320)
@@ -41,13 +41,16 @@ ggsave(filename = "song-energy.png", plot = p, path = "~/Desktop",
 # copy console to: https://carbon.vercel.app/
 # Night Owl theme, R language, export/download png
 
-# Alt text 1: A horizontal bar graph with song titles on the y-axis and song energy on the x-axis. The bars are filled with colors in a gradient from x to x.
-# Alt text 2: Code to create the bar graph. {insert code}
+#' Alt text 1: A horizontal bar graph with song titles on the y-axis and song
+#' energy on the x-axis. The bars are filled with colors in a gradient from x
+#' to x.
+#' Alt text 2: Code to create the bar graph. {insert code}
 
 
 #' And perhaps most importantly, a new hex sticker!
 
-# Alt text: The {taylor} hex logo. The image is an abstract version of the {album} album cover, with text {Taylor} overlayed.
+#' Alt text: The {taylor} hex logo. The image is an abstract version of the
+#' {album} album cover, with text {Taylor} overlayed.
 
 
 #' Please check out the updates and open any issues on the GitHub repo!
