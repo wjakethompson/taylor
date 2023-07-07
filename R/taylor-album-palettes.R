@@ -22,6 +22,7 @@ album_palettes <- lapply(list(
   fearless     = c("#6E4823", "#976F34", "#CBA863", "#ECD59F", "#E1D4C2"),
   fearless_tv  = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
   speak_now    = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
+  speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
   red          = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
   red_tv       = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
   `1989`       = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
@@ -39,6 +40,7 @@ album_compare <- color_palette(
     fearless     = "#CBA863",
     fearless_tv  = "#624324",
     speak_now    = "#833C63",
+    speak_now_tv = "#4a2454",
     red          = "#A91E47",
     red_tv       = "#731803",
     `1989`       = "#846578",
@@ -81,9 +83,13 @@ album_compare <- color_palette(
 #'                                    levels = album_levels)
 #' ggplot(studio_albums, aes(x = metacritic_score, y = album_name)) +
 #'   geom_col()
-album_levels <- c("Taylor Swift", "Fearless", "Fearless (Taylor's Version)",
-                  "Speak Now", "Red", "Red (Taylor's Version)", "1989",
-                  "reputation", "Lover", "folklore", "evermore", "Midnights")
+album_levels <- c("Taylor Swift",
+                  "Fearless", "Fearless (Taylor's Version)",
+                  "Speak Now", "Speak Now (Taylor's Version)",
+                  "Red", "Red (Taylor's Version)",
+                  "1989",
+                  "reputation",
+                  "Lover", "folklore", "evermore", "Midnights")
 
 
 # Scale functions --------------------------------------------------------------
@@ -111,6 +117,7 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                    fearless     = taylor::album_palettes[["fearless"]],
                    fearless_tv  = taylor::album_palettes[["fearless_tv"]],
                    speak_now    = taylor::album_palettes[["speak_now"]],
+                   speak_now_tv = taylor::album_palettes[["speak_now_tv"]],
                    red          = taylor::album_palettes[["red"]],
                    red_tv       = taylor::album_palettes[["red_tv"]],
                    `1989`       = taylor::album_palettes[["1989"]],

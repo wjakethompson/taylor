@@ -16,7 +16,10 @@ test_that("discrete fill works", {
     scale_fill_taylor_d(album = "Fearless (Taylor's Version)")
 
   speak_now <- fill_base +
-    scale_fill_taylor_d(album = "speak_now")
+    scale_fill_taylor_d(album = "Speak Now")
+
+  speak_now_tv <- fill_base +
+    scale_fill_taylor_d(album = "Speak Now (Taylor's Version)")
 
   red <- fill_base +
     scale_fill_taylor_d(album = "Red")
@@ -46,6 +49,7 @@ test_that("discrete fill works", {
   vdiffr::expect_doppelganger("fearless-fill-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-d", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-fill-d", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-fill-d", speak_now_tv)
   vdiffr::expect_doppelganger("red-fill-d", red)
   vdiffr::expect_doppelganger("red-tv-fill-d", red_tv)
   vdiffr::expect_doppelganger("1989-fill-d", `1989`)
@@ -71,7 +75,10 @@ test_that("discrete color works", {
     scale_color_taylor_d(album = "Fearless (Taylor's Version)")
 
   speak_now <- color_base +
-    scale_color_taylor_d(album = "speak_now")
+    scale_color_taylor_d(album = "Speak Now")
+
+  speak_now_tv <- color_base +
+    scale_color_taylor_d(album = "Speak Now (Taylor's Version)")
 
   red <- color_base +
     scale_color_taylor_d(album = "Red")
@@ -101,6 +108,7 @@ test_that("discrete color works", {
   vdiffr::expect_doppelganger("fearless-color-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-d", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-color-d", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-color-d", speak_now_tv)
   vdiffr::expect_doppelganger("red-color-d", red)
   vdiffr::expect_doppelganger("red-tv-color-d", red_tv)
   vdiffr::expect_doppelganger("1989-color-d", `1989`)
@@ -160,7 +168,10 @@ test_that("continuous fill works", {
     scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
 
   speak_now <- fill_base +
-    scale_fill_taylor_c(album = "speak_now")
+    scale_fill_taylor_c(album = "Speak Now")
+
+  speak_now_tv <- fill_base +
+    scale_fill_taylor_c(album = "Speak Now (Taylor's Version)")
 
   red <- fill_base +
     scale_fill_taylor_c(album = "Red")
@@ -190,6 +201,7 @@ test_that("continuous fill works", {
   vdiffr::expect_doppelganger("fearless-fill-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-c", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-fill-c", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-fill-c", speak_now_tv)
   vdiffr::expect_doppelganger("red-fill-c", red)
   vdiffr::expect_doppelganger("red-tv-fill-c", red_tv)
   vdiffr::expect_doppelganger("1989-fill-c", `1989`)
@@ -342,7 +354,10 @@ test_that("continuous color works", {
     scale_color_taylor_c(album = "Fearless (Taylor's Version)")
 
   speak_now <- color_base +
-    scale_color_taylor_c(album = "speak_now")
+    scale_color_taylor_c(album = "Speak Now")
+
+  speak_now_tv <- color_base +
+    scale_color_taylor_c(album = "Speak Now (Taylor's Version)")
 
   red <- color_base +
     scale_color_taylor_c(album = "Red")
@@ -372,6 +387,7 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("fearless-color-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-c", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-color-c", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-color-c", speak_now_tv)
   vdiffr::expect_doppelganger("red-color-c", red)
   vdiffr::expect_doppelganger("red-tv-color-c", red_tv)
   vdiffr::expect_doppelganger("1989-color-c", `1989`)
@@ -398,6 +414,9 @@ test_that("binned fill works", {
 
   speak_now <- fill_base +
     scale_fill_taylor_b(album = "Speak Now")
+
+  speak_now_tv <- fill_base +
+    scale_fill_taylor_b(album = "Speak Now (Taylor's Version)")
 
   red <- fill_base +
     scale_fill_taylor_b(album = "Red")
@@ -427,6 +446,7 @@ test_that("binned fill works", {
   vdiffr::expect_doppelganger("fearless-fill-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-b", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-fill-b", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-fill-b", speak_now_tv)
   vdiffr::expect_doppelganger("red-fill-b", red)
   vdiffr::expect_doppelganger("red-tv-fill-b", red_tv)
   vdiffr::expect_doppelganger("1989-fill-b", `1989`)
@@ -453,6 +473,9 @@ test_that("binned color work", {
 
   speak_now <- color_base +
     scale_color_taylor_b(album = "Speak Now")
+
+  speak_now_tv <- color_base +
+    scale_color_taylor_b(album = "Speak Now (Taylor's Version)")
 
   red <- color_base +
     scale_color_taylor_b(album = "Red")
@@ -482,6 +505,7 @@ test_that("binned color work", {
   vdiffr::expect_doppelganger("fearless-color-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-b", fearless_tv)
   vdiffr::expect_doppelganger("speak-now-color-b", speak_now)
+  vdiffr::expect_doppelganger("speak-now-tv-color-b", speak_now_tv)
   vdiffr::expect_doppelganger("red-color-b", red)
   vdiffr::expect_doppelganger("red-tv-color-b", red_tv)
   vdiffr::expect_doppelganger("1989-color-b", `1989`)
@@ -494,6 +518,7 @@ test_that("binned color work", {
 
 test_that("album scale works", {
   studio <- subset(taylor_albums, !ep)
+  studio$metacritic_score[which(is.na(studio$metacritic_score))] <- 92L
 
   # no leveling
   no_level <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +

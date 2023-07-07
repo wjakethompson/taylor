@@ -48,7 +48,7 @@ my_small_pal
 
 ## Built-in palettes
 
-The {taylor} package comes with a few palettes built-in, based on Taylor Swift's album covers. There can be viewed using `taylor::album_palettes`.
+The {taylor} package comes with a few palettes built-in, based on Taylor Swift's album covers. They can be viewed using `taylor::album_palettes`.
 
 ```{r}
 album_palettes
