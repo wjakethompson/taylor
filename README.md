@@ -125,11 +125,11 @@ taylor_albums
 #>  8 reputation                    FALSE 2017-11-10                  71        8.3
 #>  9 Lover                         FALSE 2019-08-23                  79        8.4
 #> 10 folklore                      FALSE 2020-07-24                  88        9  
-#> 11 evermore                      FALSE 2020-12-11                  85        8.9
+#> 11 evermore                      FALSE 2020-12-11                  85        9  
 #> 12 Fearless (Taylor's Version)   FALSE 2021-04-09                  82        8.9
-#> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9
+#> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        9  
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
-#> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  NA        9.7
+#> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.3
 ```
 
 ## Code of Conduct
