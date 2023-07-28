@@ -28,6 +28,8 @@
 
 * Added Era's Tour promotional singles "All of the Girls You Loved Before," "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and "Safe & Sound (Taylor's Version)."
 
+* The `type` argument of `color_palette()` has been removed. This argument was previously deprecated with a warning in version 1.0.0.
+
 # taylor 2.0.1
 
 ## Minor improvements and fixes

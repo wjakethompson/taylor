@@ -5,7 +5,7 @@
 \alias{is_color_palette}
 \title{Create a custom color palette}
 \usage{
-color_palette(pal = character(), n = length(pal), type = deprecated())
+color_palette(pal = character(), n = length(pal))
 
 is_color_palette(pal)
 }
@@ -16,10 +16,6 @@ is_color_palette(pal)
 }}
 
 \item{n}{The number of colors}
-
-\item{type}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} \code{type} is no longer supported;
-this function will automatically interpolate additional or subset values
-based on whether \code{n} is greater or less than \code{length(pal)}.}
 }
 \value{
 A color palette object.
