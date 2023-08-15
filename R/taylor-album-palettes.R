@@ -37,7 +37,7 @@ album_palettes <- lapply(list(
 #' @rdname album_palettes
 #' @export
 album_compare <- color_palette(
-  c(taylor_swift = "#1BAEC6",
+  c(taylor_swift = "#1D4737",
     fearless     = "#CBA863",
     fearless_tv  = "#624324",
     speak_now    = "#833C63",
@@ -50,7 +50,7 @@ album_compare <- color_palette(
     lover        = "#EBBED3",
     folklore     = "#949494",
     evermore     = "#421E18",
-    midnights    = "#AA9EB6")
+    midnights    = "#5A658B")
 )
 
 
@@ -89,7 +89,6 @@ album_levels <- c("Taylor Swift",
                   "Fearless", "Fearless (Taylor's Version)",
                   "Speak Now", "Speak Now (Taylor's Version)",
                   "Red", "Red (Taylor's Version)",
-                  "1989",
                   "1989", "1989 (Taylor's Version)",
                   "reputation",
                   "Lover", "folklore", "evermore", "Midnights")
