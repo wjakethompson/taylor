@@ -27,13 +27,13 @@
 </defs>
 <g clip-path='url(#cpNjguOTd8NjM0LjgzfDIyLjc4fDU0NS4xMQ==)'>
 <rect x='68.97' y='22.78' width='565.86' height='522.33' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='94.69' y='35.42' width='344.66' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1BAEC6;' />
+<rect x='94.69' y='35.42' width='344.66' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1D4737;' />
 <rect x='94.69' y='203.91' width='406.39' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #EBBED3;' />
 <rect x='94.69' y='372.41' width='375.53' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #CBA863;' />
 <rect x='94.69' y='119.67' width='396.10' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #833C63;' />
 <rect x='94.69' y='456.65' width='390.96' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #846578;' />
 <rect x='94.69' y='288.16' width='473.27' height='75.82' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter;' />
-<circle cx='439.35' cy='73.33' r='5.69' style='stroke-width: 0.71; stroke: #1BAEC6; fill: #1BAEC6;' />
+<circle cx='439.35' cy='73.33' r='5.69' style='stroke-width: 0.71; stroke: #1D4737; fill: #1D4737;' />
 <circle cx='501.09' cy='241.82' r='5.69' style='stroke-width: 0.71; stroke: #EBBED3; fill: #EBBED3;' />
 <circle cx='470.22' cy='410.32' r='5.69' style='stroke-width: 0.71; stroke: #CBA863; fill: #CBA863;' />
 <circle cx='490.80' cy='157.58' r='5.69' style='stroke-width: 0.71; stroke: #833C63; fill: #833C63;' />
@@ -83,8 +83,8 @@
 <rect x='646.50' y='309.60' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #833C63;' />
 <circle cx='654.43' cy='317.53' r='5.69' style='stroke-width: 0.71; stroke: #833C63; fill: #833C63;' />
 <rect x='645.79' y='326.17' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='646.50' y='326.88' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1BAEC6;' />
-<circle cx='654.43' cy='334.81' r='5.69' style='stroke-width: 0.71; stroke: #1BAEC6; fill: #1BAEC6;' />
+<rect x='646.50' y='326.88' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1D4737;' />
+<circle cx='654.43' cy='334.81' r='5.69' style='stroke-width: 0.71; stroke: #1D4737; fill: #1D4737;' />
 <text x='668.55' y='251.44' style='font-size: 8.80px; font-family: sans;' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>1989</text>
 <text x='668.55' y='268.72' style='font-size: 8.80px; font-family: sans;' textLength='33.75px' lengthAdjust='spacingAndGlyphs'>Fearless</text>
 <text x='668.55' y='286.00' style='font-size: 8.80px; font-family: sans;' textLength='41.60px' lengthAdjust='spacingAndGlyphs'>Lemonade</text>
