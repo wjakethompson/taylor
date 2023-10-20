@@ -30,6 +30,9 @@ test_that("discrete fill works", {
   `1989` <- fill_base +
     scale_fill_taylor_d(album = "1989")
 
+  `1989_tv` <- fill_base +
+    scale_fill_taylor_d(album = "1989 (Taylor's Version)")
+
   reputation <- fill_base +
     scale_fill_taylor_d(album = "reputation")
 
@@ -53,6 +56,7 @@ test_that("discrete fill works", {
   vdiffr::expect_doppelganger("red-fill-d", red)
   vdiffr::expect_doppelganger("red-tv-fill-d", red_tv)
   vdiffr::expect_doppelganger("1989-fill-d", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-fill-d", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-fill-d", reputation)
   vdiffr::expect_doppelganger("lover-fill-d", lover)
   vdiffr::expect_doppelganger("folklore-fill-d", folklore)
@@ -89,6 +93,9 @@ test_that("discrete color works", {
   `1989` <- color_base +
     scale_color_taylor_d(album = "1989")
 
+  `1989_tv` <- color_base +
+    scale_color_taylor_d(album = "1989 (Taylor's Version)")
+
   reputation <- color_base +
     scale_color_taylor_d(album = "reputation")
 
@@ -112,6 +119,7 @@ test_that("discrete color works", {
   vdiffr::expect_doppelganger("red-color-d", red)
   vdiffr::expect_doppelganger("red-tv-color-d", red_tv)
   vdiffr::expect_doppelganger("1989-color-d", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-color-d", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-color-d", reputation)
   vdiffr::expect_doppelganger("lover-color-d", lover)
   vdiffr::expect_doppelganger("folklore-color-d", folklore)
@@ -182,6 +190,9 @@ test_that("continuous fill works", {
   `1989` <- fill_base +
     scale_fill_taylor_c(album = "1989")
 
+  `1989_tv` <- fill_base +
+    scale_fill_taylor_c(album = "1989 (Taylor's Version)")
+
   reputation <- fill_base +
     scale_fill_taylor_c(album = "reputation")
 
@@ -205,6 +216,7 @@ test_that("continuous fill works", {
   vdiffr::expect_doppelganger("red-fill-c", red)
   vdiffr::expect_doppelganger("red-tv-fill-c", red_tv)
   vdiffr::expect_doppelganger("1989-fill-c", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-fill-c", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-fill-c", reputation)
   vdiffr::expect_doppelganger("lover-fill-c", lover)
   vdiffr::expect_doppelganger("folklore-fill-c", folklore)
@@ -368,6 +380,9 @@ test_that("continuous color works", {
   `1989` <- color_base +
     scale_color_taylor_c(album = "1989")
 
+  `1989_tv` <- color_base +
+    scale_color_taylor_c(album = "1989 (Taylor's Version)")
+
   reputation <- color_base +
     scale_color_taylor_c(album = "reputation")
 
@@ -391,6 +406,7 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("red-color-c", red)
   vdiffr::expect_doppelganger("red-tv-color-c", red_tv)
   vdiffr::expect_doppelganger("1989-color-c", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-color-c", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-color-c", reputation)
   vdiffr::expect_doppelganger("lover-color-c", lover)
   vdiffr::expect_doppelganger("folklore-color-c", folklore)
@@ -427,6 +443,9 @@ test_that("binned fill works", {
   `1989` <- fill_base +
     scale_fill_taylor_b(album = "1989")
 
+  `1989_tv` <- fill_base +
+    scale_fill_taylor_b(album = "1989 (Taylor's Version)")
+
   reputation <- fill_base +
     scale_fill_taylor_b(album = "reputation")
 
@@ -450,6 +469,7 @@ test_that("binned fill works", {
   vdiffr::expect_doppelganger("red-fill-b", red)
   vdiffr::expect_doppelganger("red-tv-fill-b", red_tv)
   vdiffr::expect_doppelganger("1989-fill-b", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-fill-b", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-fill-b", reputation)
   vdiffr::expect_doppelganger("lover-fill-b", lover)
   vdiffr::expect_doppelganger("folklore-fill-b", folklore)
@@ -486,6 +506,9 @@ test_that("binned color work", {
   `1989` <- color_base +
     scale_color_taylor_b(album = "1989")
 
+  `1989_tv` <- color_base +
+    scale_color_taylor_b(album = "1989 (Taylor's Version)")
+
   reputation <- color_base +
     scale_color_taylor_b(album = "reputation")
 
@@ -509,6 +532,7 @@ test_that("binned color work", {
   vdiffr::expect_doppelganger("red-color-b", red)
   vdiffr::expect_doppelganger("red-tv-color-b", red_tv)
   vdiffr::expect_doppelganger("1989-color-b", `1989`)
+  vdiffr::expect_doppelganger("1989-tv-color-b", `1989_tv`)
   vdiffr::expect_doppelganger("reputation-color-b", reputation)
   vdiffr::expect_doppelganger("lover-color-b", lover)
   vdiffr::expect_doppelganger("folklore-color-b", folklore)
