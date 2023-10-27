@@ -446,10 +446,15 @@ taylor_all_songs <- base_info %>%
   relocate(artist, featuring, .after = track_name)
 
 taylor_album_songs <- taylor_all_songs %>%
-  filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
+  filter(album_name %in% c("Taylor Swift",
+                           "Fearless (Taylor's Version)",
                            "Speak Now (Taylor's Version)",
-                           "Red (Taylor's Version)", "1989",
-                           "reputation", "Lover", "folklore", "evermore",
+                           "Red (Taylor's Version)",
+                           "1989 (Taylor's Version)",
+                           "reputation",
+                           "Lover",
+                           "folklore",
+                           "evermore",
                            "Midnights"))
 
 # Manual metacritic - boo!
