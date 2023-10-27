@@ -93,7 +93,8 @@ base_info <- lyrics %>%
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
-    album_name = na_if(album_name, "Features")) %>%
+    album_name = na_if(album_name, "Features")
+  ) %>%
   left_join(albums, by = "album_name",
             relationship = "many-to-one") %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -155,7 +156,7 @@ base_info <- lyrics %>%
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")
-    ) %>%
+  ) %>%
   # edits for midnights
   mutate(track_name = str_replace_all(track_name, "Anti Hero", "Anti-Hero"),
          track_name = str_replace_all(track_name, "Youre", "You're"),
@@ -338,7 +339,8 @@ spotify_join <- spotify %>%
                              fixed("Karma (Feat. Ice Spice)"),
                              "Karma (Remix)"),
     track_name = str_replace(track_name,
-                             "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")) %>%
+                             "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")
+  ) %>%
   # edits for Taylor Swift
   mutate(track_name = str_replace_all(track_name, "Mcgraw", "McGraw"),
          track_name = str_replace(track_name,
@@ -376,7 +378,7 @@ spotify_join <- spotify %>%
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "Trouble\\(", "Trouble (")
-    ) %>%
+  ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
   nest(spotify = -c(album_name, track_name))
@@ -398,14 +400,14 @@ spotify_join <- spotify %>%
 
 # Check for tracks with multiple records. Should be 0 rows.
 (dups <- spotify_join %>%
-  mutate(rows = map_int(spotify, nrow)) %>%
-  filter(rows > 1))
+   mutate(rows = map_int(spotify, nrow)) %>%
+   filter(rows > 1))
 
 # Check for songs in Spotify not in base_info. 6 rows currently expected:
 # 1-3 Bonus tracks from Speak Now with no lyrics on Genius
 # 4-6 Voice memos from 1989
 (extra <- spotify_join %>%
-  anti_join(base_info, by = c("album_name", "track_name")))
+   anti_join(base_info, by = c("album_name", "track_name")))
 
 # Check for non-ASCII characters. 17 errors (4 rows) expected:
 # 14 é
@@ -419,16 +421,18 @@ base_info %>%
                 .names = "{.col}_ascii")) %>%
   filter(!if_all(ends_with("ascii"))) %>%
   select(album_name, track_name, line, lyric) %>%
-  mutate(ascii_flag = map(lyric,
-                          .f = function(.x) {
-                            str_split(.x, "") %>%
-                              flatten_chr() %>%
-                              enframe() %>%
-                              mutate(ascii = map_lgl(value,
-                                                     stri_enc_isascii)) %>%
-                              filter(!ascii) %>%
-                              select(value, ascii)
-  })) %>%
+  mutate(
+    ascii_flag = map(lyric,
+                     .f = function(.x) {
+                       str_split(.x, "") %>%
+                         flatten_chr() %>%
+                         enframe() %>%
+                         mutate(ascii = map_lgl(value,
+                                                stri_enc_isascii)) %>%
+                         filter(!ascii) %>%
+                         select(value, ascii)
+                     })
+  ) %>%
   unnest(ascii_flag) %>%
   count(value)
 
@@ -457,40 +461,6 @@ taylor_album_songs <- taylor_all_songs %>%
                            "evermore",
                            "Midnights"))
 
-# Manual metacritic - boo!
-# metacritic <- tribble(
-#   ~album_name,                           ~metacritic_score, ~user_score,
-#   "1989 (Taylor's Version)",             100L,              NA_real_,
-#   "Speak Now (Taylor's Version)",        81L,               9.2,
-#   "Midnights",                           85L,               8.3,
-#   "Red (Taylor's Version)",              91L,               9.0,
-#   "Fearless (Taylor's Version)",         82L,               8.9,
-#   "evermore",                            85L,               8.9,
-#   "folklore",                            88L,               9.0,
-#   "Lover",                               79L,               8.4,
-#   "reputation",                          71L,               8.3,
-#   "1989",                                76L,               8.2,
-#   "Red",                                 77L,               8.5,
-#   "Speak Now",                           77L,               8.6,
-#   "Fearless",                            73L,               8.4,
-#   "Taylor Swift",                        67L,               8.5
-# )
-
-# Old metacritic website ~ summer 2023
-# site <- read_html("https://www.metacritic.com/person/taylor-swift")
-# metacritic <- html_table(site) %>%
-#   pluck(2) %>%
-#   separate_wider_regex(`Title:`,
-#                        patterns = c(metacritic_score = "[0-9|tbd]*",
-#                                     "\\n\\n[ ]*",
-#                                     album_name = ".*")) %>%
-#   mutate(metacritic_score = na_if(metacritic_score, "tbd"),
-#          metacritic_score = as.integer(metacritic_score),
-#          album_name = str_replace_all(album_name, fixed("[Taylor's Version]"),
-#                                       "(Taylor's Version)")) %>%
-#   select(album_name, metacritic_score, user_score = `User score:`)
-
-# semi-automated metacritic
 metacritic <- tribble(
   ~album_name,                     ~metacritic_name,
   "1989 (Taylor's Version)",       "1989-taylors-version",
