@@ -1,19 +1,16 @@
 ## Release summary
 
-This is a patch release to resolve CRAN checks on r-devel.
+This is a major release including new data.
 
 ## Test environments
 
-* local R installation macOS 13.2.1, R 4.2.1
-* macOS 12.6.3 (on github actions), R 4.2.2
-* windows server 2022 (on github actions), R 4.2.2
-* ubuntu 22.04.2 (on github actions), R 4.2.2
-* ubuntu 22.04.2 (on github actions), R 4.1.3
-* ubuntu 22.04.2 (on github actions), R-devel
+* local R installation macOS 13.5.2, R 4.3.1
+* macOS 12.6.9 (on github actions), R 4.3.1
+* windows server 2022 x64 (on github actions), R 4.3.1
+* ubuntu 22.04.3 (on github actions), R 4.3.1
+* ubuntu 22.04.3 (on github actions), R 4.2.3
+* ubuntu 22.04.3 (on github actions), R-devel
 * win-builder (devel)
-* windows server 2022 (on r-hub), R-devel
-* ubuntu 20.04.1 (on r-hub), R 4.2.2
-* fedora (on r-hub), R-devel
 
 ## R CMD check results
 
