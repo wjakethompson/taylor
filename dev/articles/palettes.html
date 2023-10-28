@@ -235,6 +235,14 @@ Taylor Swift’s album covers. They can be viewed using
 <span><span class="co">#&gt;  <span style="background-color: #D7D7AF;">  </span> #C6B69C </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #D8D8CF </span></span>
 <span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $`1989_tv`</span></span>
+<span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #5F87AF;">  </span> #487398 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #87AFD7;">  </span> #659BBB </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AFD7D7;">  </span> #8BB5D2 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #BCBCBC;">  </span> #AFC5D4 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #E4DFD3 </span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $reputation</span></span>
 <span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
 <span><span class="co">#&gt;  <span style="background-color: #303030;">  </span> #2C2C2C </span></span>
@@ -287,8 +295,8 @@ Taylor Swift’s album covers. They can be viewed using
 from each album, <code><a href="../reference/album_palettes.html">taylor::album_compare</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_compare</span></span>
-<span><span class="co">#&gt; &lt;color_palette[13]&gt;</span></span>
-<span><span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> taylor_swift </span></span>
+<span><span class="co">#&gt; &lt;color_palette[14]&gt;</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #005F5F;">  </span> taylor_swift </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> fearless </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #875F00;">  </span> fearless_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #AF5F87;">  </span> speak_now </span></span>
@@ -296,11 +304,12 @@ from each album, <code><a href="../reference/album_palettes.html">taylor::album_
 <span><span class="co">#&gt;  <span style="background-color: #AF005F;">  </span> red </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #870000;">  </span> red_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> 1989 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AFD7D7;">  </span> 1989_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #303030;">  </span> reputation </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> lover </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> folklore </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> evermore </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #AFAFD7;">  </span> midnights</span></span></code></pre></div>
+<span><span class="co">#&gt;  <span style="background-color: #8787AF;">  </span> midnights</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="using-color-palettes-with-ggplot2">Using color palettes with {ggplot2}<a class="anchor" aria-label="anchor" href="#using-color-palettes-with-ggplot2"></a>
@@ -344,12 +353,14 @@ to map our palette to the species of penguin.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link">palmerpenguins</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"firebrick"</span>, <span class="st">"goldenrod"</span>, <span class="st">"navy"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Adelie <span class="op">=</span> <span class="st">"firebrick"</span>,</span>
+<span>                               Chinstrap <span class="op">=</span> <span class="st">"goldenrod"</span>,</span>
+<span>                               Gentoo <span class="op">=</span> <span class="st">"navy"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">penguin_pal</span></span>
 <span><span class="co">#&gt; &lt;color_palette[3]&gt;</span></span>
-<span><span class="co">#&gt;  <span style="background-color: #D70000;">  </span> firebrick </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #FFAF00;">  </span> goldenrod </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #0000AF;">  </span> navy</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #D70000;">  </span> Adelie </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #FFAF00;">  </span> Chinstrap </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #0000AF;">  </span> Gentoo</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">species</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
