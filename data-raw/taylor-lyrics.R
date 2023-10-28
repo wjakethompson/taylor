@@ -182,6 +182,8 @@ base_info <- lyrics %>%
                                       "[Taylor's Version]"),
          track_name = str_replace_all(track_name, "Tv Ftv",
                                       "(Taylor's Version) [From The Vault]"),
+         track_name = str_replace_all(track_name, "Rmx Tv",
+                                      "(Remix) [Taylor's Version]"),
          track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
          track_name = str_replace_all(track_name, "Tv",
@@ -276,8 +278,7 @@ spotify <- tribble(
   "Red",                                 "1KlU96Hw9nlvqpBPlSqcTV",
   "Red (Taylor's Version)",              "6kZ42qRrzov54LcAk4onW9",
   "1989",                                "34OkZVpuzBa9y40DCy0LPR",
-  # "1989 (Taylor's Version)",             "1o59UpKw81iHR0HPiSkJR0",
-  "1989 (Taylor's Version)",             "64LU4c1nfjz1t4VnGhagcg",
+  "1989 (Taylor's Version)",             "1o59UpKw81iHR0HPiSkJR0",
   "reputation",                          "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
@@ -339,6 +340,9 @@ spotify_join <- spotify %>%
                              fixed("Karma (Feat. Ice Spice)"),
                              "Karma (Remix)"),
     track_name = str_replace(track_name,
+                             fixed("Bad Blood (Feat. Kendrick Lamar)"),
+                             "Bad Blood (Remix)"),
+    track_name = str_replace(track_name,
                              "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")
   ) %>%
   # edits for Taylor Swift
@@ -386,13 +390,13 @@ spotify_join <- spotify %>%
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 13 rows currently expected:
-# 1-2 Two 1989 (Taylor's Version) deluxe tracks are not on Spotify
-# 3-4 Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 5 Midnight bonus track exclusive to the Late Night Edition
-# 6-11 Beautiful Eyes is not currently available on Spotify or any service
-# 12 American Girl is exclusive to Napster
-# 13 Three Sad Virgins is not available on Spotify
+# Ideally should return 0 rows. 12 rows currently expected:
+# 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
+# 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
+# 4    Midnight bonus track exclusive to the Late Night Edition
+# 5-10 Beautiful Eyes is not currently available on Spotify or any service
+# 11   American Girl is exclusive to Napster
+# 12   Three Sad Virgins is not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
