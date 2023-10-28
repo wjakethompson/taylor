@@ -17,7 +17,8 @@ test_that("palettes have expected length", {
     all(mapply(function(x, y) {
       x %in% y
     },
-               album_compare, album_palettes)))
+    album_compare, album_palettes))
+  )
 
   # palette and factor names
   short_names <- tolower(album_levels)

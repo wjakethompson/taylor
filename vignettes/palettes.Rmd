@@ -97,7 +97,9 @@ Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` 
 ```{r message = FALSE, warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from our custom color palette. Adelie penguins are shown in red circles, Chinstrap penguins in yellow triangles, and Gentoo penguins in blue squares."}
 library(palmerpenguins)
 
-penguin_pal <- color_palette(c("firebrick", "goldenrod", "navy"))
+penguin_pal <- color_palette(c(Adelie = "firebrick",
+                               Chinstrap = "goldenrod",
+                               Gentoo = "navy"))
 penguin_pal
 
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +

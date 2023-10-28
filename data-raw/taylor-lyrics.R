@@ -73,6 +73,11 @@ base_info <- lyrics %>%
       album_name == "Red Deluxe Edition" ~ "Red (Deluxe Edition)",
       album_name == "Red Taylors Version" ~ "Red (Taylor's Version)",
       album_name == "1989 Deluxe" ~ "1989 (Deluxe)",
+      album_name == "1989 Taylors Version" ~ "1989 (Taylor's Version)",
+      album_name == "1989 Taylors Version Deluxe" ~
+        "1989 (Taylor's Version) [Deluxe]",
+      album_name == "1989 Taylors Version Tangerine Edition" ~
+        "1989 (Taylor's Version) [Tangerine Edition]",
       album_name == "Reputation" ~ "reputation",
       album_name == "Folklore" ~ "folklore",
       album_name == "Folklore Deluxe Edition" ~ "folklore (deluxe edition)",
@@ -88,7 +93,8 @@ base_info <- lyrics %>%
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
-    album_name = na_if(album_name, "Features")) %>%
+    album_name = na_if(album_name, "Features")
+  ) %>%
   left_join(albums, by = "album_name",
             relationship = "many-to-one") %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -150,7 +156,7 @@ base_info <- lyrics %>%
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")
-    ) %>%
+  ) %>%
   # edits for midnights
   mutate(track_name = str_replace_all(track_name, "Anti Hero", "Anti-Hero"),
          track_name = str_replace_all(track_name, "Youre", "You're"),
@@ -167,6 +173,10 @@ base_info <- lyrics %>%
                                       "(Piano Remix)"),
          track_name = str_replace_all(track_name, "Mldr",
                                       "(More Lana Del Rey)")) %>%
+  # edits for 1989 (Taylor's Version)
+  mutate(track_name = str_replace_all(track_name, "Slut", "\"Slut!\""),
+         track_name = str_replace_all(track_name, "Is It Over Now",
+                                      "Is It Over Now?")) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -194,6 +204,10 @@ base_info <- lyrics %>%
     album_name == "Speak Now (Deluxe)" ~ "Speak Now",
     album_name == "Red (Deluxe Edition)" ~ "Red",
     album_name == "1989 (Deluxe)" ~ "1989",
+    album_name == "1989 (Taylor's Version) [Deluxe]" ~
+      "1989 (Taylor's Version)",
+    album_name == "1989 (Taylor's Version) [Tangerine Edition]" ~
+      "1989 (Taylor's Version)",
     album_name == "folklore (deluxe edition)" ~ "folklore",
     album_name == "evermore (deluxe edition)" ~ "evermore",
     album_name == "Midnights (3am Edition)" ~ "Midnights",
@@ -234,10 +248,8 @@ single_uri <- tribble(
   "September",                              "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",                   "0RFCHlNuTeUHIB36VuVbOL",
   "The Alcott",                             "6INztpNwOTlfSKTuPo0HOP",
-  "This Love (Taylor's Version)",           "4d1CG5ei1E2vGbvmgf5KKv",
   "Three Sad Virgins",                      "",
-  "Today Was A Fairytale",                  "4pFvEWbjBpPUdYRQly0THs",
-  "Wildest Dreams (Taylor's Version)",      "1Ov37jtRQ2YNAe8HzfczkL"
+  "Today Was A Fairytale",                  "4pFvEWbjBpPUdYRQly0THs"
 )
 
 feature_uri <- tribble(
@@ -264,6 +276,8 @@ spotify <- tribble(
   "Red",                                 "1KlU96Hw9nlvqpBPlSqcTV",
   "Red (Taylor's Version)",              "6kZ42qRrzov54LcAk4onW9",
   "1989",                                "34OkZVpuzBa9y40DCy0LPR",
+  # "1989 (Taylor's Version)",             "1o59UpKw81iHR0HPiSkJR0",
+  "1989 (Taylor's Version)",             "64LU4c1nfjz1t4VnGhagcg",
   "reputation",                          "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
@@ -325,7 +339,8 @@ spotify_join <- spotify %>%
                              fixed("Karma (Feat. Ice Spice)"),
                              "Karma (Remix)"),
     track_name = str_replace(track_name,
-                             "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")) %>%
+                             "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)", "")
+  ) %>%
   # edits for Taylor Swift
   mutate(track_name = str_replace_all(track_name, "Mcgraw", "McGraw"),
          track_name = str_replace(track_name,
@@ -363,7 +378,7 @@ spotify_join <- spotify %>%
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "Trouble\\(", "Trouble (")
-    ) %>%
+  ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
   nest(spotify = -c(album_name, track_name))
@@ -371,12 +386,13 @@ spotify_join <- spotify %>%
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 11 rows currently expected:
-# 1-2 Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 3 Midnight bonus track exclusive to the Late Night Edition
-# 4-9 Beautiful Eyes is not currently available on Spotify or any service
-# 10 American Girl is exclusive to Napster
-# 11 Three Sad Virgins not available on Spotify
+# Ideally should return 0 rows. 13 rows currently expected:
+# 1-2 Two 1989 (Taylor's Version) deluxe tracks are not on Spotify
+# 3-4 Two Midnights bonus tracks exclusive to Target are not on Spotify
+# 5 Midnight bonus track exclusive to the Late Night Edition
+# 6-11 Beautiful Eyes is not currently available on Spotify or any service
+# 12 American Girl is exclusive to Napster
+# 13 Three Sad Virgins is not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
@@ -384,14 +400,14 @@ spotify_join <- spotify %>%
 
 # Check for tracks with multiple records. Should be 0 rows.
 (dups <- spotify_join %>%
-  mutate(rows = map_int(spotify, nrow)) %>%
-  filter(rows > 1))
+   mutate(rows = map_int(spotify, nrow)) %>%
+   filter(rows > 1))
 
 # Check for songs in Spotify not in base_info. 6 rows currently expected:
 # 1-3 Bonus tracks from Speak Now with no lyrics on Genius
 # 4-6 Voice memos from 1989
 (extra <- spotify_join %>%
-  anti_join(base_info, by = c("album_name", "track_name")))
+   anti_join(base_info, by = c("album_name", "track_name")))
 
 # Check for non-ASCII characters. 17 errors (4 rows) expected:
 # 14 é
@@ -405,16 +421,18 @@ base_info %>%
                 .names = "{.col}_ascii")) %>%
   filter(!if_all(ends_with("ascii"))) %>%
   select(album_name, track_name, line, lyric) %>%
-  mutate(ascii_flag = map(lyric,
-                          .f = function(.x) {
-                            str_split(.x, "") %>%
-                              flatten_chr() %>%
-                              enframe() %>%
-                              mutate(ascii = map_lgl(value,
-                                                     stri_enc_isascii)) %>%
-                              filter(!ascii) %>%
-                              select(value, ascii)
-  })) %>%
+  mutate(
+    ascii_flag = map(lyric,
+                     .f = function(.x) {
+                       str_split(.x, "") %>%
+                         flatten_chr() %>%
+                         enframe() %>%
+                         mutate(ascii = map_lgl(value,
+                                                stri_enc_isascii)) %>%
+                         filter(!ascii) %>%
+                         select(value, ascii)
+                     })
+  ) %>%
   unnest(ascii_flag) %>%
   count(value)
 
@@ -432,24 +450,53 @@ taylor_all_songs <- base_info %>%
   relocate(artist, featuring, .after = track_name)
 
 taylor_album_songs <- taylor_all_songs %>%
-  filter(album_name %in% c("Taylor Swift", "Fearless (Taylor's Version)",
+  filter(album_name %in% c("Taylor Swift",
+                           "Fearless (Taylor's Version)",
                            "Speak Now (Taylor's Version)",
-                           "Red (Taylor's Version)", "1989",
-                           "reputation", "Lover", "folklore", "evermore",
+                           "Red (Taylor's Version)",
+                           "1989 (Taylor's Version)",
+                           "reputation",
+                           "Lover",
+                           "folklore",
+                           "evermore",
                            "Midnights"))
 
-site <- read_html("https://www.metacritic.com/person/taylor-swift")
-metacritic <- html_table(site) %>%
-  pluck(2) %>%
-  separate_wider_regex(`Title:`,
-                       patterns = c(metacritic_score = "[0-9|tbd]*",
-                                    "\\n\\n[ ]*",
-                                    album_name = ".*")) %>%
-  mutate(metacritic_score = na_if(metacritic_score, "tbd"),
-         metacritic_score = as.integer(metacritic_score),
-         album_name = str_replace_all(album_name, fixed("[Taylor's Version]"),
-                                      "(Taylor's Version)")) %>%
-  select(album_name, metacritic_score, user_score = `User score:`)
+metacritic <- tribble(
+  ~album_name,                     ~metacritic_name,
+  "1989 (Taylor's Version)",       "1989-taylors-version",
+  "Speak Now (Taylor's Version)",  "speak-now-taylors-version",
+  "Midnights",                     "midnights",
+  "Red (Taylor's Version)",        "red-taylors-version",
+  "Fearless (Taylor's Version)",   "fearless-taylors-version",
+  "evermore",                      "evermore",
+  "folklore",                      "folklore",
+  "Lover",                         "lover",
+  "reputation",                    "reputation",
+  "1989",                          "1989",
+  "Red",                           "red",
+  "Speak Now",                     "speak-now",
+  "Fearless",                      "fearless",
+  "Taylor Swift",                  "taylor-swift"
+) %>%
+  mutate(ratings = map(metacritic_name,
+                       function(.x) {
+                         url <- glue::glue("https://www.metacritic.com/",
+                                           "music/{.x}/taylor-swift")
+                         site <- read_html(url)
+
+                         critic <- html_element(site, ".metascore_w span") %>%
+                           html_text()
+
+                         user <- html_element(site, ".user") %>%
+                           html_text()
+
+                         if (user == "tbd") user <- NA_real_
+
+                         tibble(metacritic_score = as.integer(critic),
+                                user_score = as.double(user))
+                       })) %>%
+  unnest(ratings) %>%
+  select(-metacritic_name)
 
 taylor_albums <- taylor_all_songs %>%
   distinct(album_name, ep, album_release) %>%

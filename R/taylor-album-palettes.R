@@ -26,6 +26,7 @@ album_palettes <- lapply(list(
   red          = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
   red_tv       = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
   `1989`       = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
+  `1989_tv`    = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
   reputation   = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
   lover        = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
   folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
@@ -36,7 +37,7 @@ album_palettes <- lapply(list(
 #' @rdname album_palettes
 #' @export
 album_compare <- color_palette(
-  c(taylor_swift = "#1BAEC6",
+  c(taylor_swift = "#1D4737",
     fearless     = "#CBA863",
     fearless_tv  = "#624324",
     speak_now    = "#833C63",
@@ -44,11 +45,12 @@ album_compare <- color_palette(
     red          = "#A91E47",
     red_tv       = "#731803",
     `1989`       = "#846578",
+    `1989_tv`    = "#8BB5D2",
     reputation   = "#2C2C2C",
     lover        = "#EBBED3",
     folklore     = "#949494",
     evermore     = "#421E18",
-    midnights    = "#AA9EB6")
+    midnights    = "#5A658B")
 )
 
 
@@ -87,7 +89,7 @@ album_levels <- c("Taylor Swift",
                   "Fearless", "Fearless (Taylor's Version)",
                   "Speak Now", "Speak Now (Taylor's Version)",
                   "Red", "Red (Taylor's Version)",
-                  "1989",
+                  "1989", "1989 (Taylor's Version)",
                   "reputation",
                   "Lover", "folklore", "evermore", "Midnights")
 
@@ -121,6 +123,7 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                    red          = taylor::album_palettes[["red"]],
                    red_tv       = taylor::album_palettes[["red_tv"]],
                    `1989`       = taylor::album_palettes[["1989"]],
+                   `1989_tv`    = taylor::album_palettes[["1989_tv"]],
                    reputation   = taylor::album_palettes[["reputation"]],
                    lover        = taylor::album_palettes[["lover"]],
                    folklore     = taylor::album_palettes[["folklore"]],

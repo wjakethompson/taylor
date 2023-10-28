@@ -4,21 +4,23 @@
 
 * *Speak Now (Taylor's Version)* has replaced *Speak Now* in `taylor_album_songs` (#25).
 
+* *1989 (Taylor's Version)* has replaced *1989* in `taylor_album_songs` (#30).
+
 ## New features
 
 * New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
 
 ## Minor improvements and fixes
 
-* New color palette added to `album_palettes` for *Speak Now (Taylor's Version)*.
+* New color palettes added to `album_palettes` for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)*.
 
-* New single color added to `album_compare` for *Speak Now (Taylor's Version)*.
+* New single colors added to `album_compare` for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)*.
 
-* Metacritic score for *Speak Now (Taylor's Version)* has been added to
+* Metacritic scores for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)* have been added to
   `taylor_albums`.
   
 * Hex logo and pkgdown website have been updated to have a
-  *Speak Now (Taylor's Version)* theme.
+  *1989 (Taylor's Version)* theme.
 
 * Added Spotify data for "Hits Different" after it was released to streaming as part of *Midnights (The Til Dawn Edition)*.
 
@@ -27,6 +29,8 @@
 * Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
 
 * Added Era's Tour promotional singles "All of the Girls You Loved Before," "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and "Safe & Sound (Taylor's Version)."
+
+* "This Love (Taylor's Version)" and "Wildest Dreams (Taylor's Version)" have been moved from non-album singles to *1989 (Taylor's Version)*.
 
 * The `type` argument of `color_palette()` has been removed. This argument was previously deprecated with a warning in version 1.0.0.
 

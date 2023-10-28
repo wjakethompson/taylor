@@ -15,6 +15,7 @@ tribble(
   "Red",                          "1EoDsNmgTLtmwe1BDAVxV5",
   "Red (Taylor's Version)",       "6kZ42qRrzov54LcAk4onW9",
   "1989",                         "2QJmrSgbdM35R67eoGQo4j",
+  "1989 (Taylor's Version)",      "64LU4c1nfjz1t4VnGhagcg",
   "reputation",                   "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                        "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                     "2fenSS68JI1h4Fo296JfGr",
