@@ -8,7 +8,9 @@
 
 ## New features
 
-* New function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
+* A new data set, `eras_tour_surprise` has been added that includes information on all of the surprise songs played on the first North American leg of The Eras Tour.
+
+* A new function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
 
 ## Minor improvements and fixes
 
