@@ -1,4 +1,4 @@
-# taylor (development version)
+# taylor 3.0.0
 
 ## Breaking changes
 
