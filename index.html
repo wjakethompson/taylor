@@ -20,8 +20,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Mulish-0.4.5/font.css" rel="stylesheet">
-<link href="deps/Source_Code_Pro-0.4.5/font.css" rel="stylesheet">
+<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Mulish-0.4.7/font.css" rel="stylesheet">
+<link href="deps/Source_Code_Pro-0.4.7/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
@@ -56,7 +56,7 @@
     
     <a class="navbar-brand me-2" href="index.html">taylor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">2.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,6 +79,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2023-11-09-taylor-3.0.0/">Version 3.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2022-11-13-taylor-2.0.0/">Version 2.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/">Version 1.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
@@ -132,70 +133,71 @@
 <p>There are three main data sets. The first is <code>taylor_album_songs</code>, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., <em>Only the Young</em>, <em>Christmas Tree Farm</em>, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., <em>Fearless</em> is excluded in favor of <em>Fearless (Taylor’s Version)</em>). We stan artists owning their own songs.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_album_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 194 × 29</span></span>
-<span><span class="co">#&gt;    album_name ep    album_re…¹ track…² track…³ artist featu…⁴ bonus…⁵ promotio…⁶</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;      &lt;lgl&gt; &lt;date&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;   &lt;lgl&gt;   &lt;date&gt;    </span></span>
-<span><span class="co">#&gt;  1 Taylor Sw… FALSE 2006-10-24       1 Tim Mc… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  2 Taylor Sw… FALSE 2006-10-24       2 Pictur… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  3 Taylor Sw… FALSE 2006-10-24       3 Teardr… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  4 Taylor Sw… FALSE 2006-10-24       4 A Plac… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  5 Taylor Sw… FALSE 2006-10-24       5 Cold A… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  6 Taylor Sw… FALSE 2006-10-24       6 The Ou… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  7 Taylor Sw… FALSE 2006-10-24       7 Tied T… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  8 Taylor Sw… FALSE 2006-10-24       8 Stay B… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  9 Taylor Sw… FALSE 2006-10-24       9 Should… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt; 10 Taylor Sw… FALSE 2006-10-24      10 Mary's… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt; # … with 184 more rows, 20 more variables: single_release &lt;date&gt;,</span></span>
-<span><span class="co">#&gt; #   track_release &lt;date&gt;, danceability &lt;dbl&gt;, energy &lt;dbl&gt;, key &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;, acousticness &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;, tempo &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key_name &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;, and abbreviated variable</span></span>
-<span><span class="co">#&gt; #   names ¹​album_release, ²​track_number, ³​track_name, ⁴​featuring, …</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 209 × 29</span></span>
+<span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
+<span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  2 Taylor Swift FALSE 2006-10-24               2 Picture To Bu… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On … Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  4 Taylor Swift FALSE 2006-10-24               4 A Place In Th… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  5 Taylor Swift FALSE 2006-10-24               5 Cold As You    Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  6 Taylor Swift FALSE 2006-10-24               6 The Outside    Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  7 Taylor Swift FALSE 2006-10-24               7 Tied Together… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt; # ℹ 199 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
+<span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span></span>
+<span><span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
 <p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_all_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 274 × 29</span></span>
-<span><span class="co">#&gt;    album_name ep    album_re…¹ track…² track…³ artist featu…⁴ bonus…⁵ promotio…⁶</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;      &lt;lgl&gt; &lt;date&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;   &lt;lgl&gt;   &lt;date&gt;    </span></span>
-<span><span class="co">#&gt;  1 Taylor Sw… FALSE 2006-10-24       1 Tim Mc… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  2 Taylor Sw… FALSE 2006-10-24       2 Pictur… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  3 Taylor Sw… FALSE 2006-10-24       3 Teardr… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  4 Taylor Sw… FALSE 2006-10-24       4 A Plac… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  5 Taylor Sw… FALSE 2006-10-24       5 Cold A… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  6 Taylor Sw… FALSE 2006-10-24       6 The Ou… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  7 Taylor Sw… FALSE 2006-10-24       7 Tied T… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  8 Taylor Sw… FALSE 2006-10-24       8 Stay B… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt;  9 Taylor Sw… FALSE 2006-10-24       9 Should… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt; 10 Taylor Sw… FALSE 2006-10-24      10 Mary's… Taylo… &lt;NA&gt;    FALSE   NA        </span></span>
-<span><span class="co">#&gt; # … with 264 more rows, 20 more variables: single_release &lt;date&gt;,</span></span>
-<span><span class="co">#&gt; #   track_release &lt;date&gt;, danceability &lt;dbl&gt;, energy &lt;dbl&gt;, key &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;, acousticness &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;, tempo &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key_name &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;, and abbreviated variable</span></span>
-<span><span class="co">#&gt; #   names ¹​album_release, ²​track_number, ³​track_name, ⁴​featuring, …</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 325 × 29</span></span>
+<span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
+<span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  2 Taylor Swift FALSE 2006-10-24               2 Picture To Bu… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  3 Taylor Swift FALSE 2006-10-24               3 Teardrops On … Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  4 Taylor Swift FALSE 2006-10-24               4 A Place In Th… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  5 Taylor Swift FALSE 2006-10-24               5 Cold As You    Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  6 Taylor Swift FALSE 2006-10-24               6 The Outside    Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  7 Taylor Swift FALSE 2006-10-24               7 Tied Together… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt; # ℹ 315 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
+<span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span></span>
+<span><span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
 <p>Finally, there is a small data set, <code>taylor_albums</code>, summarizing Taylor’s album release history.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
-<span><span class="co">#&gt; # A tibble: 14 × 5</span></span>
-<span><span class="co">#&gt;    album_name                          ep    album_release metacritic_…¹ user_…²</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                               &lt;lgl&gt; &lt;date&gt;                &lt;int&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Taylor Swift                        FALSE 2006-10-24               67     8.5</span></span>
-<span><span class="co">#&gt;  2 The Taylor Swift Holiday Collection TRUE  2007-10-14               NA    NA  </span></span>
-<span><span class="co">#&gt;  3 Beautiful Eyes                      TRUE  2008-07-15               NA    NA  </span></span>
-<span><span class="co">#&gt;  4 Fearless                            FALSE 2008-11-11               73     8.4</span></span>
-<span><span class="co">#&gt;  5 Speak Now                           FALSE 2010-10-25               77     8.6</span></span>
-<span><span class="co">#&gt;  6 Red                                 FALSE 2012-10-22               77     8.5</span></span>
-<span><span class="co">#&gt;  7 1989                                FALSE 2014-10-27               76     8.2</span></span>
-<span><span class="co">#&gt;  8 reputation                          FALSE 2017-11-10               71     8.3</span></span>
-<span><span class="co">#&gt;  9 Lover                               FALSE 2019-08-23               79     8.4</span></span>
-<span><span class="co">#&gt; 10 folklore                            FALSE 2020-07-24               88     9  </span></span>
-<span><span class="co">#&gt; 11 evermore                            FALSE 2020-12-11               85     8.9</span></span>
-<span><span class="co">#&gt; 12 Fearless (Taylor's Version)         FALSE 2021-04-09               82     8.9</span></span>
-<span><span class="co">#&gt; 13 Red (Taylor's Version)              FALSE 2021-11-12               91     9  </span></span>
-<span><span class="co">#&gt; 14 Midnights                           FALSE 2022-10-21               85     8.3</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​metacritic_score, ²​user_score</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 16 × 5</span></span>
+<span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                         &lt;lgl&gt; &lt;date&gt;                   &lt;int&gt;      &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
+<span><span class="co">#&gt;  2 The Taylor Swift Holiday Col… TRUE  2007-10-14                  NA       NA  </span></span>
+<span><span class="co">#&gt;  3 Beautiful Eyes                TRUE  2008-07-15                  NA       NA  </span></span>
+<span><span class="co">#&gt;  4 Fearless                      FALSE 2008-11-11                  73        8.4</span></span>
+<span><span class="co">#&gt;  5 Speak Now                     FALSE 2010-10-25                  77        8.6</span></span>
+<span><span class="co">#&gt;  6 Red                           FALSE 2012-10-22                  77        8.6</span></span>
+<span><span class="co">#&gt;  7 1989                          FALSE 2014-10-27                  76        8.3</span></span>
+<span><span class="co">#&gt;  8 reputation                    FALSE 2017-11-10                  71        8.3</span></span>
+<span><span class="co">#&gt;  9 Lover                         FALSE 2019-08-23                  79        8.4</span></span>
+<span><span class="co">#&gt; 10 folklore                      FALSE 2020-07-24                  88        9  </span></span>
+<span><span class="co">#&gt; 11 evermore                      FALSE 2020-12-11                  85        8.9</span></span>
+<span><span class="co">#&gt; 12 Fearless (Taylor's Version)   FALSE 2021-04-09                  82        8.9</span></span>
+<span><span class="co">#&gt; 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9</span></span>
+<span><span class="co">#&gt; 14 Midnights                     FALSE 2022-10-21                  85        8.3</span></span>
+<span><span class="co">#&gt; 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2</span></span>
+<span><span class="co">#&gt; 16 1989 (Taylor's Version)       FALSE 2023-10-27                  95       NA</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>

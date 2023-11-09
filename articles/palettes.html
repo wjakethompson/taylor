@@ -16,8 +16,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Mulish-0.4.5/font.css" rel="stylesheet">
-<link href="../deps/Source_Code_Pro-0.4.5/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Mulish-0.4.7/font.css" rel="stylesheet">
+<link href="../deps/Source_Code_Pro-0.4.7/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
@@ -48,7 +48,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">taylor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">2.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">3.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,6 +71,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-news">
     <h6 class="dropdown-header" data-toc-skip>Releases</h6>
+    <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2023-11-09-taylor-3.0.0/">Version 3.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2022-11-13-taylor-2.0.0/">Version 2.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/">Version 1.0.0</a>
     <a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2021-09-01-taylor-0.2.0/">Version 0.2.0</a>
@@ -166,7 +167,7 @@ representative colors.</p>
 <h2 id="built-in-palettes">Built-in palettes<a class="anchor" aria-label="anchor" href="#built-in-palettes"></a>
 </h2>
 <p>The {taylor} package comes with a few palettes built-in, based on
-Taylor Swift’s album covers. There can be viewed using
+Taylor Swift’s album covers. They can be viewed using
 <code><a href="../reference/album_palettes.html">taylor::album_palettes</a></code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_palettes</span></span>
@@ -202,6 +203,14 @@ Taylor Swift’s album covers. There can be viewed using
 <span><span class="co">#&gt;  <span style="background-color: #D7AFD7;">  </span> #D1A0C7 </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #DADADA;">  </span> #F5E8E2 </span></span>
 <span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $speak_now_tv</span></span>
+<span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #00005F;">  </span> #2A122C </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #5F005F;">  </span> #4a2454 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #875F87;">  </span> #72325F </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AF5FAF;">  </span> #874886 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AF87AF;">  </span> #96689A </span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $red</span></span>
 <span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
 <span><span class="co">#&gt;  <span style="background-color: #00005F;">  </span> #201F39 </span></span>
@@ -225,6 +234,14 @@ Taylor Swift’s album covers. There can be viewed using
 <span><span class="co">#&gt;  <span style="background-color: #AF875F;">  </span> #92573C </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #D7D7AF;">  </span> #C6B69C </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #D8D8CF </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $`1989_tv`</span></span>
+<span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #5F87AF;">  </span> #487398 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #87AFD7;">  </span> #659BBB </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AFD7D7;">  </span> #8BB5D2 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #BCBCBC;">  </span> #AFC5D4 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #FFFFD7;">  </span> #E4DFD3 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $reputation</span></span>
 <span><span class="co">#&gt; &lt;color_palette[5]&gt;</span></span>
@@ -278,19 +295,21 @@ Taylor Swift’s album covers. There can be viewed using
 from each album, <code><a href="../reference/album_palettes.html">taylor::album_compare</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_compare</span></span>
-<span><span class="co">#&gt; &lt;color_palette[12]&gt;</span></span>
-<span><span class="co">#&gt;  <span style="background-color: #00D7D7;">  </span> taylor_swift </span></span>
+<span><span class="co">#&gt; &lt;color_palette[14]&gt;</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #005F5F;">  </span> taylor_swift </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> fearless </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #875F00;">  </span> fearless_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #AF5F87;">  </span> speak_now </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #5F005F;">  </span> speak_now_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #AF005F;">  </span> red </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #870000;">  </span> red_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #AF8787;">  </span> 1989 </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #AFD7D7;">  </span> 1989_tv </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #303030;">  </span> reputation </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> lover </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> folklore </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> evermore </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #AFAFD7;">  </span> midnights</span></span></code></pre></div>
+<span><span class="co">#&gt;  <span style="background-color: #8787AF;">  </span> midnights</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="using-color-palettes-with-ggplot2">Using color palettes with {ggplot2}<a class="anchor" aria-label="anchor" href="#using-color-palettes-with-ggplot2"></a>
@@ -334,12 +353,14 @@ to map our palette to the species of penguin.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link">palmerpenguins</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"firebrick"</span>, <span class="st">"goldenrod"</span>, <span class="st">"navy"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Adelie <span class="op">=</span> <span class="st">"firebrick"</span>,</span>
+<span>                               Chinstrap <span class="op">=</span> <span class="st">"goldenrod"</span>,</span>
+<span>                               Gentoo <span class="op">=</span> <span class="st">"navy"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">penguin_pal</span></span>
 <span><span class="co">#&gt; &lt;color_palette[3]&gt;</span></span>
-<span><span class="co">#&gt;  <span style="background-color: #D70000;">  </span> firebrick </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #FFAF00;">  </span> goldenrod </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #0000AF;">  </span> navy</span></span>
+<span><span class="co">#&gt;  <span style="background-color: #D70000;">  </span> Adelie </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #FFAF00;">  </span> Chinstrap </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #0000AF;">  </span> Gentoo</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">species</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
