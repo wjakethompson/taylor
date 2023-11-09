@@ -1,6 +1,7 @@
 linters: linters_with_defaults()
 exclusions: list(
-    "R/ggplot2-color-scales.R" = c(75, 99, 119, 144, 194, 206),
-    "R/data-checks.R" = 38
+    "R/ggplot2-color-scales.R" = list(
+      object_name_linter = Inf
+    )
   )
 encoding: "UTF-8"
