@@ -9,6 +9,7 @@ eras_tour_surprise <- read_xlsx(here("data-raw", "surprise-songs.xlsx")) %>%
          night = as.integer(night)) %>%
   filter(date < today())
 
+
 # QC data file -----------------------------------------------------------------
 # Check for track names are consistent. Should be 0 rows.
 (bad_name <- eras_tour_surprise %>%
