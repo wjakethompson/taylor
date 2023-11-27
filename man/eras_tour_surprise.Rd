@@ -5,7 +5,7 @@
 \alias{eras_tour_surprise}
 \title{The Eras Tour Surprise Songs}
 \format{
-A \link[tibble:tibble-package]{tibble} with 114
+A \link[tibble:tibble-package]{tibble} with 132
 rows and 8 variables:
 \itemize{
 \item \code{leg}: The leg of the tour (e.g., North America, South America, etc.).
