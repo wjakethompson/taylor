@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* Surprise songs from the South American leg of the tour have been added to `eras_tour_surprise`.
+
 # taylor 3.0.0
 
 ## Breaking changes
