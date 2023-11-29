@@ -134,7 +134,7 @@ taylor_albums
 #> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
-#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  95       NA
+#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA
 ```
 
 ## Code of Conduct
