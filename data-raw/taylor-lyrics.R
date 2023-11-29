@@ -370,8 +370,8 @@ spotify_join <- spotify %>%
          track_name = str_replace_all(
            track_name,
            fixed("(Taylor's Version) (From The Vault)"),
-           "(Taylor's Version) [From The Vault]")
-         ) %>%
+           "(Taylor's Version) [From The Vault]"
+         )) %>%
   # edits for Red
   mutate(track_name = str_replace_all(track_name, "I Knew You Were Trouble.",
                                       "I Knew You Were Trouble"),
