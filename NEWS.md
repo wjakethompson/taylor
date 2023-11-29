@@ -2,6 +2,8 @@
 
 * Surprise songs from the South American leg of the tour have been added to `eras_tour_surprise`.
 
+* Spotify data for "You're Losing Me (From The Vault)" has been added.
+
 # taylor 3.0.0
 
 ## Breaking changes

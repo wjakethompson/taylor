@@ -267,6 +267,11 @@ feature_uri <- tribble(
   "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP"
 )
 
+bonus_uri <- tribble(
+  ~album_name, ~track_name,                         ~track_uri,
+  "Midnights", "You're Losing Me (From The Vault)", "3CWq0pAKKTWb0K4yiglDc4"
+)
+
 spotify <- tribble(
   ~album_name,                           ~album_uri,
   "Taylor Swift",                        "7mzrIsaAjnXihW3InKjlC3",
@@ -294,7 +299,7 @@ spotify <- tribble(
                          select(track_name = name, track_uri = id)
                      })) %>%
   unnest(track) %>%
-  bind_rows(single_uri, feature_uri) %>%
+  bind_rows(bonus_uri, single_uri, feature_uri) %>%
   mutate(spotify = map(track_uri,
                        function(.x, key_lookup) {
                          if (.x == "") return(NULL)
@@ -362,8 +367,11 @@ spotify_join <- spotify %>%
   mutate(track_name = str_replace_all(track_name,
                                       "(?<=\\)\\ )\\(Taylor's Version\\)",
                                       "[Taylor's Version]"),
-         track_name = str_replace_all(track_name, fixed("(From The Vault)"),
-                                      "[From The Vault]")) %>%
+         track_name = str_replace_all(
+           track_name,
+           fixed("(Taylor's Version) (From The Vault)"),
+           "(Taylor's Version) [From The Vault]"
+         )) %>%
   # edits for Red
   mutate(track_name = str_replace_all(track_name, "I Knew You Were Trouble.",
                                       "I Knew You Were Trouble"),
@@ -381,7 +389,12 @@ spotify_join <- spotify %>%
   mutate(track_name = str_replace_all(track_name, "‘", "'")) %>%
   # edits for Red (Taylor's Version)
   mutate(
-    track_name = str_replace_all(track_name, "Trouble\\(", "Trouble (")
+    track_name = str_replace_all(track_name, "Trouble\\(", "Trouble ("),
+    track_name = str_replace_all(
+      track_name,
+      fixed("[Taylor's Version] (From The Vault)"),
+      "[Taylor's Version] [From The Vault]"
+    )
   ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
@@ -390,13 +403,12 @@ spotify_join <- spotify %>%
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 12 rows currently expected:
+# Ideally should return 0 rows. 11 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
 # 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 4    Midnight bonus track exclusive to the Late Night Edition
-# 5-10 Beautiful Eyes is not currently available on Spotify or any service
-# 11   American Girl is exclusive to Napster
-# 12   Three Sad Virgins is not available on Spotify
+# 4-9  Beautiful Eyes is not currently available on Spotify or any service
+# 10   American Girl is exclusive to Napster
+# 11   Three Sad Virgins is not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
