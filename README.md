@@ -37,7 +37,7 @@ You can install the released version of {taylor} from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
-install.packages(taylor)
+install.packages("taylor")
 ```
 
 To install the development version from [GitHub](https://github.com/)

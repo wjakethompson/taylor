@@ -4,6 +4,8 @@
 
 * Spotify data for "You're Losing Me (From The Vault)" has been added.
 
+* Fixed installation instructions in README (@scarioscia, #37).
+
 # taylor 3.0.0
 
 ## Breaking changes
