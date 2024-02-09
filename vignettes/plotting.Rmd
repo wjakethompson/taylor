@@ -11,7 +11,7 @@ vignette: >
 ```{r, child="children/chunk-options.txt"}
 ```
 
-In addition to data sets, {taylor} also includes a few helper functions for easily making plots created with [{ggplot2}](https://ggplot2.tidyverse.org) have a Taylor Swift theme. For this vignette, I'm assuming you are already familiar with {ggplot2} and can make basic plots. 
+In addition to data sets, taylor also includes a few helper functions for easily making plots created with [ggplot2](https://ggplot2.tidyverse.org) have a Taylor Swift theme. For this vignette, I'm assuming you are already familiar with ggplot2 and can make basic plots. 
 
 Once you have a ggplot created, you can add album-themed color palettes to your plots using the family of `scale_taylor` functions:
 
@@ -72,7 +72,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ## Continuous and binned scales
 
-When using a continuous scale, values are interpolated between the colors defined in each palette. The *Fearless (Taylor's Version)* palette is a particularly good use case for this. To illustrate, we'll use the classic example included in the {ggplot2} package of the eruptions of the Old Faithful geyser and the duration of the eruptions.
+When using a continuous scale, values are interpolated between the colors defined in each palette. The *Fearless (Taylor's Version)* palette is a particularly good use case for this. To illustrate, we'll use the classic example included in the ggplot2 package of the eruptions of the Old Faithful geyser and the duration of the eruptions.
 
 ```{r warning = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
 p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
@@ -89,7 +89,7 @@ p + scale_fill_taylor_c(album = "reputation")
 p + scale_fill_taylor_c(album = "folklore")
 ```
 
-Just like with other {ggplot2} scales, we can also use the `_b` variants to create a binned color scale.
+Just like with other ggplot2 scales, we can also use the `_b` variants to create a binned color scale.
 
 ```{r warning = FALSE, fig.alt = "The same heat map as the previous figures, but instead of a smooth continuous color scale, values have been binned into four categories, with color inspired by the evermore album cover."}
 p + scale_fill_taylor_b(album = "evermore")
@@ -106,7 +106,7 @@ taylor_albums
 
 Let's create a bar graph showing the rating of each album. We'll first make the album name a factor variable. A convenience variable, `taylor::album_levels`, is included in the package that will let us easily order the factor by album release date.^[Albums are not precisely in release order. Re-releases are ordered next to the original release. See `?taylor::album_levels` for details.] Metacritic doesn't have a rating for Taylor's debut album, *Taylor Swift*, so I will manually assign a value so that we can see the full scale in action. We'll give each bar its own color to add some pizzazz to the plot.
 
-```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors follow the {ggplot2} default, resulting in a rainbow-like palette."}
+```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors follow the ggplot2 default, resulting in a rainbow-like palette."}
 metacritic <- taylor_albums
 
 # Not Taylor's best work, so we'll give it a 72

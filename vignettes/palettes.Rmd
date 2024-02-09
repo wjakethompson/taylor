@@ -11,11 +11,11 @@ vignette: >
 ```{r, child="children/chunk-options.txt"}
 ```
 
-The {taylor} package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
+The taylor package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
 
 ## Creating palettes
 
-{taylor} uses [{vctrs}](https://vctrs.r-lib.org/) to create a special vector class of color palettes that can be used to create and visualize palettes. We can create a palette using the `color_palette()` function. We only have to pass a vector of hexadecimal values or valid R color (from `colors()`), and a palette is created that will print a preview of the colors.
+taylor uses [{vctrs}](https://vctrs.r-lib.org/) to create a special vector class of color palettes that can be used to create and visualize palettes. We can create a palette using the `color_palette()` function. We only have to pass a vector of hexadecimal values or valid R color (from `colors()`), and a palette is created that will print a preview of the colors.
 
 ```{r}
 library(taylor)
@@ -40,7 +40,7 @@ my_small_pal
 
 ## Built-in palettes
 
-The {taylor} package comes with a few palettes built-in, based on Taylor Swift's album covers. They can be viewed using `taylor::album_palettes`.
+The taylor package comes with a few palettes built-in, based on Taylor Swift's album covers. They can be viewed using `taylor::album_palettes`.
 
 ```{r}
 album_palettes
@@ -58,9 +58,9 @@ Also included is a palette that includes one representative color from each albu
 album_compare
 ```
 
-## Using color palettes with {ggplot2}
+## Using color palettes with ggplot2
 
-The {taylor} package comes with a set of functions built in for plotting in {ggplot2} with the album palettes. For example, we can use `scale_fill_taylor_c()` to create a continuous scale based on one of the album palettes. For more details on how to use the scale functions included in {taylor}, check out `vignette("plotting")`.
+The taylor package comes with a set of functions built in for plotting in ggplot2 with the album palettes. For example, we can use `scale_fill_taylor_c()` to create a continuous scale based on one of the album palettes. For more details on how to use the scale functions included in taylor, check out `vignette("plotting")`.
 
 ```{r message = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
 library(ggplot2)
@@ -72,7 +72,7 @@ p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 p + scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
 ```
 
-You can also use your custom palettes with {ggplot2}. For example, we can create a palette of greens, and then use `ggplot2::scale_fill_gradientn()` or `ggplot2::scale_color_gradientn()` to use the palette.
+You can also use your custom palettes with ggplot2. For example, we can create a palette of greens, and then use `ggplot2::scale_fill_gradientn()` or `ggplot2::scale_color_gradientn()` to use the palette.
 
 ```{r fig.alt = "The same heatmap as the previous figure, but instead of the fill using a palette based on Fearless (Taylor's Version), the color palette goes from light green to dark green."}
 green_pal <- color_palette(c("#E5F5E0", "#A1D99B", "#31A354"))

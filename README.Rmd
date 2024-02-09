@@ -32,13 +32,13 @@ knitr::opts_chunk$set(
 
 ## Overview <img src="man/figures/logo.png" align="right" width="120" />
 
-The goal of {taylor} is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
 ![](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
 
 ## Installation
 
-You can install the released version of {taylor} from [CRAN](https://cran.r-project.org/) with:
+You can install the released version of taylor from [CRAN](https://cran.r-project.org/) with:
 
 ``` r
 install.packages("taylor")

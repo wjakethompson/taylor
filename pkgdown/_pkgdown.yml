@@ -50,9 +50,9 @@ reference:
   - is_color_palette
   - album_palettes
   - album_compare
-- subtitle: "{ggplot2} scales"
+- subtitle: "ggplot2 scales"
   desc: >
-    Color scales functions can be used to easily give plots made with {ggplot2}
+    Color scales functions can be used to easily give plots made with ggplot2
     a Taylor Swift theme. These functions use the color palettes based on
     Taylor Swift's album covers to give an album-based theme to plot objects.
     For example usage, see `vignette("plotting")`.
