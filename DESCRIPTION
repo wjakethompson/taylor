@@ -34,6 +34,7 @@ Suggests:
     knitr,
     pkgdown,
     rmarkdown,
+    bookdown,
     spelling,
     testthat (>= 3.0.0),
     vdiffr (>= 1.0.2)
