@@ -9,7 +9,7 @@
 ^docs$
 ^pkgdown$
 ^CODE_OF_CONDUCT\.md$
-vignettes/*
+vignettes/_site.yml
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^revdep$

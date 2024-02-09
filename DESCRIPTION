@@ -32,6 +32,7 @@ Imports:
 Suggests: 
     palmerpenguins,
     knitr,
+    pkgdown,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),

@@ -8,15 +8,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.asp = 0.618,
-  fig.retina = 3,
-  fig.width = 7,
-  out.width = "90%"
-)
+```{r, child="children/chunk-options.txt"}
 ```
 
 The {taylor} package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
