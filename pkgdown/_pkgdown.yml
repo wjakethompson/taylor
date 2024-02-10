@@ -69,8 +69,13 @@ reference:
   - translate_bracelet
 
 articles:
-- title: Plotting
+- title: Get started
   navbar: ~
+  contents:
+  - lyrics
+
+- title: Plotting
+  navbar: Plotting
   contents:
   - plotting
   - palettes
