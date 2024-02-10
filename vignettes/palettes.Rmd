@@ -1,6 +1,5 @@
 ---
 title: "Using and creating color palettes"
-output: rmarkdown::html_vignette
 description: |
   The plots were in screaming color.
 vignette: >
