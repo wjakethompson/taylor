@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![R package version](https://www.r-pkg.org/badges/version/taylor)](https://CRAN.R-project.org/package=taylor)
-[![Package downloads](https://cranlogs.r-pkg.org/badges/taylor)](https://cran.r-project.org/package=taylor)</br>
+[![Package downloads](https://cranlogs.r-pkg.org/badges/grand-total/taylor)](https://cran.r-project.org/package=measr)</br>
 [![R-CMD-check](https://github.com/wjakethompson/taylor/workflows/R-CMD-check/badge.svg)](https://github.com/wjakethompson/taylor/actions)
 [![codecov](https://codecov.io/gh/wjakethompson/taylor/branch/main/graph/badge.svg?token=TECvfoOYHh)](https://app.codecov.io/gh/wjakethompson/taylor)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b80199c9-57a9-4d08-87e9-4887a67d01e4/deploy-status)](https://app.netlify.com/sites/r-taylor/deploys)</br>
@@ -32,13 +32,13 @@ knitr::opts_chunk$set(
 
 ## Overview <img src="man/figures/logo.png" align="right" width="120" />
 
-The goal of {taylor} is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
 ![](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
 
 ## Installation
 
-You can install the released version of {taylor} from [CRAN](https://cran.r-project.org/) with:
+You can install the released version of taylor from [CRAN](https://cran.r-project.org/) with:
 
 ``` r
 install.packages("taylor")
@@ -72,5 +72,7 @@ taylor_albums
 ```
 
 ## Code of Conduct
-  
-Please note that the {taylor} project is released with a [Contributor Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+Contributions are welcome.
+To ensure a smooth process, please review the [Contributing Guide](https://taylor.wjakethompson.com/CONTRIBUTING.html).
+Please note that the taylor project is released with a [Contributor Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

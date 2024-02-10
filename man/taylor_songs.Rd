@@ -66,7 +66,7 @@ euphoric).
 (\code{FALSE}).
 }
 
-Finally, the last set of variables include those calculated from the Spotify
+Finally, the last set of variables includes those calculated from the Spotify
 API data, and a list column containing song lyrics.
 \itemize{
 \item \code{key_name}: Corresponds directly to the \code{key}, but the integer is converted
@@ -75,8 +75,10 @@ to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).
 converted to the mode name (e.g., \code{0} becomes \code{minor}).
 \item \code{key_mode}: A combination of the \code{key_name} and \code{mode_name} variables
 (e.g., \verb{C minor}).
-\item \code{lyrics}: A list column containing the lyrics to each song. Each element is
-a data frame with 4 variables:
+\item \code{lyrics}: A list column containing the lyrics to each song. The lyrics can
+be unnested with \code{\link[tidyr:unnest]{tidyr::unnest()}} (i.e.,
+\code{tidyr::unnest(taylor_all_songs, lyrics)}). Each element is a data frame
+with 4 variables. :
 \itemize{
 \item \code{line}: The line number of the song.
 \item \code{lyric}: The lyric for the given line.
@@ -84,7 +86,7 @@ a data frame with 4 variables:
 defined by \url{https://genius.com/} (e.g., \verb{Verse 1}, \code{Chorus}, etc.).
 \item \code{element_artist}: The artist performing the element. Usually
 \verb{Taylor Swift}, but other artists appear if they are featured on the
-track (e.g., \code{HAIM} is featured on \emph{No Body, No Crime}).
+track (e.g., \code{HAIM} is featured on \emph{no body, no crime}).
 }
 }
 

@@ -12,7 +12,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![R package
 version](https://www.r-pkg.org/badges/version/taylor)](https://CRAN.R-project.org/package=taylor)
 [![Package
-downloads](https://cranlogs.r-pkg.org/badges/taylor)](https://cran.r-project.org/package=taylor)</br>
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/taylor)](https://cran.r-project.org/package=measr)</br>
 [![R-CMD-check](https://github.com/wjakethompson/taylor/workflows/R-CMD-check/badge.svg)](https://github.com/wjakethompson/taylor/actions)
 [![codecov](https://codecov.io/gh/wjakethompson/taylor/branch/main/graph/badge.svg?token=TECvfoOYHh)](https://app.codecov.io/gh/wjakethompson/taylor)
 [![Netlify
@@ -24,7 +24,7 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 
 ## Overview <img src="man/figures/logo.png" align="right" width="120" />
 
-The goal of {taylor} is to provide easy access to a curated data set of
+The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
@@ -33,7 +33,7 @@ API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
 ## Installation
 
-You can install the released version of {taylor} from
+You can install the released version of taylor from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
@@ -134,11 +134,14 @@ taylor_albums
 #> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
-#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA
+#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  95       NA
 ```
 
 ## Code of Conduct
 
-Please note that the {taylor} project is released with a [Contributor
-Code of Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+Contributions are welcome. To ensure a smooth process, please review the
+[Contributing
+Guide](https://taylor.wjakethompson.com/CONTRIBUTING.html). Please note
+that the taylor project is released with a [Contributor Code of
+Conduct](https://taylor.wjakethompson.com/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.

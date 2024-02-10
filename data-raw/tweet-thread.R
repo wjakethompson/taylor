@@ -49,8 +49,8 @@ ggsave(filename = "song-energy.png", plot = p, path = "~/Desktop",
 
 #' And perhaps most importantly, a new hex sticker!
 
-#' Alt text: The {taylor} hex logo. The image is an abstract version of the
-#' {album} album cover, with text {Taylor} overlayed.
+#' Alt text: The taylor hex logo. The image is an abstract version of the
+#' {album} album cover, with text "Taylor" overlayed.
 
 
 #' Please check out the updates and open any issues on the GitHub repo!
