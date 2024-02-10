@@ -102,14 +102,14 @@
 #'  (`FALSE`).
 #'
 #' Finally, the last set of variables includes those calculated from the Spotify
-#' API data, and a list column containing song lyrics.
+#' API data, and a list-column containing song lyrics.
 #' * `key_name`: Corresponds directly to the `key`, but the integer is converted
 #'   to the key name using Pitch Class notation (e.g., `0` becomes `C`).
 #' * `mode_name`: Corresponds directly to the `mode`, but the integer is
 #'   converted to the mode name (e.g., `0` becomes `minor`).
 #' * `key_mode`: A combination of the `key_name` and `mode_name` variables
 #'   (e.g., `C minor`).
-#' * `lyrics`: A list column containing the lyrics to each song. The lyrics can
+#' * `lyrics`: A list-column containing the lyrics to each song. The lyrics can
 #'   be unnested with [tidyr::unnest()] (i.e.,
 #'   `tidyr::unnest(taylor_all_songs, lyrics)`). Each element is a data frame
 #'   with 4 variables. :
