@@ -30,6 +30,7 @@ Imports:
     tibble,
     vctrs
 Suggests: 
+    dplyr,
     palmerpenguins,
     knitr,
     pkgdown,
@@ -38,6 +39,7 @@ Suggests:
     spelling,
     testthat (>= 3.0.0),
     tidyr,
+    purrr,
     vdiffr (>= 1.0.2)
 Config/testthat/edition: 3
 Encoding: UTF-8
