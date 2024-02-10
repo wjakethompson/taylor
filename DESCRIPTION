@@ -2,17 +2,14 @@ Package: taylor
 Title: Lyrics and Song Data for Taylor Swift's Discography
 Version: 3.0.0.9000
 Authors@R: 
-    person(given = "W. Jake",
-           family = "Thompson",
-           role = c("aut", "cre", "cph"),
-           email = "wjakethompson@gmail.com",
+    person("W. Jake", "Thompson", , "wjakethompson@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-7339-0300"))
-Description: A comprehensive resource for data on Taylor Swift songs. Data is
-    included for all officially released studio albums, extended plays (EPs),
-    and individual singles are included. Data comes from
-    'Genius' (lyrics) and 'Spotify' (song characteristics). Additional functions
-    are included for easily creating data visualizations with color palettes
-    inspired by Taylor Swift's album covers.
+Description: A comprehensive resource for data on Taylor Swift songs. Data
+    is included for all officially released studio albums, extended plays
+    (EPs), and individual singles are included. Data comes from 'Genius'
+    (lyrics) and 'Spotify' (song characteristics). Additional functions
+    are included for easily creating data visualizations with color
+    palettes inspired by Taylor Swift's album covers.
 License: MIT + file LICENSE
 URL: https://taylor.wjakethompson.com,
     https://github.com/wjakethompson/taylor
@@ -30,21 +27,22 @@ Imports:
     tibble,
     vctrs
 Suggests: 
-    dplyr,
-    palmerpenguins,
-    knitr,
-    pkgdown,
-    rmarkdown,
     bookdown,
+    dplyr,
+    knitr,
+    palmerpenguins,
+    pkgdown,
+    purrr,
+    rmarkdown,
     spelling,
     testthat (>= 3.0.0),
     tidyr,
-    purrr,
     vdiffr (>= 1.0.2)
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-VignetteBuilder: knitr
