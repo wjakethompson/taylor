@@ -11,6 +11,10 @@ eras_tour_surprise <- read_xlsx(here("data-raw", "surprise-songs.xlsx")) %>%
 
 
 # QC data file -----------------------------------------------------------------
+# Check that all past dates have been filled in. Should be 0 rows.
+(missing_dates <- eras_tour_surprise %>%
+   filter(is.na(song)))
+
 # Check that track names are consistent. Should be 0 rows.
 (bad_name <- eras_tour_surprise %>%
    filter(!(song %in% taylor_all_songs$track_name)))
