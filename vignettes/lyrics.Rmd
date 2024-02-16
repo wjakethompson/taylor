@@ -14,7 +14,7 @@ vignette: >
 The `taylor_all_songs` and `taylor_album_songs` data sets contain the lyrics for each of Taylor Swift's songs, as well as audio characteristics.
 In each data set, the lyrics are stored as a list-column.
 
-```{r}
+```{r, message = FALSE}
 library(taylor)
 library(dplyr)
 
@@ -26,9 +26,6 @@ track_lyrics
 
 In other words, both `taylor_all_songs` and `taylor_ablum_songs` are [nested data frames](https://tidyr.tidyverse.org/articles/nest.html).
 Each has one row per track, and the lyrics for each track are are stored in another data frame nested within each row.
-In this vignette, we'll describe how access the lyrics for each track and provide some examples for how the lyrics can be used.
-
-## Accessing lyrics in a list-column
 
 There are three primary ways to access data from a nested list-column.
 The first is to extract individual list elements.
@@ -76,8 +73,3 @@ track_lyrics %>%
 
 The resulting data frame is still one row per song, because we have not unnested the lyrics.
 However, our summary statistic has been added as an additional column.
-In the next section, we'll look at some realistic example of using `tidyr::unnest()` and `purrr::map()` to analyze the lyrics data.
-
-## Analyzing Taylor Swift's lyrics
-
-
