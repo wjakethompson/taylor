@@ -5,8 +5,8 @@
 \alias{eras_tour_surprise}
 \title{The Eras Tour Surprise Songs}
 \format{
-A \link[tibble:tibble-package]{tibble} with 140
-rows and 8 variables:
+A \link[tibble:tibble-package]{tibble} with 146
+rows and 9 variables:
 \itemize{
 \item \code{leg}: The leg of the tour (e.g., North America, South America, etc.).
 \item \code{date}: The date of the show in ISO 8601 format (yyyy-mm-dd).
