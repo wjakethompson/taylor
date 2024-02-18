@@ -15,7 +15,8 @@ and state. For international shows, the location is the city and country.
 \item \code{night}: The show number within each city.
 \item \code{dress}: The color of the dress Taylor wore on the given night.
 \item \code{instrument}: The instrument used to play the song (guitar or piano).
-\item \code{song}: The track name of the song.
+\item \code{song}: The track name of the primary surprise song.
+\item \code{mashup}: Additional songs included in a mashup with the primary song.
 \item \code{guest}: The special guest (if any) that joined Taylor to play the song.
 }
 }
