@@ -7,10 +7,9 @@
 #'
 #' @importFrom ggplot2 waiver
 #'
-#' @docType package
 #' @noRd
 #' @name taylor
-NULL
+"_PACKAGE"
 
 #' Internal vctrs methods
 #'
