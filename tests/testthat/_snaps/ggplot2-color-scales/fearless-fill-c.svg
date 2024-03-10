@@ -352,17 +352,17 @@
 <polyline points='236.79,54.38 239.53,54.38 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='236.79,33.32 239.53,33.32 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <rect x='461.16' y='245.79' width='32.55' height='101.73' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<text x='461.16' y='254.50' style='font-size: 11.00px; font-family: sans;' textLength='26.30px' lengthAdjust='spacingAndGlyphs'>value</text>
 <image width='17.28' height='86.40' x='461.16' y='261.12' preserveAspectRatio='none' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAEsCAYAAAACUNnVAAAAzklEQVQ4ja2Q3RHDMAiDBftP1Rm6QCdRHhybX/subV9yRIIPYXzeLyoAKECorGpoAqjY76q8Fg2pRoY6CqAQNs11wlEETYywNxvyFb5NT0IJQsFlOG32cVTzw9h8ax10q1XKIQbijqkl3j2BsOMJ4HzWqDg1W0QG8qC4vrXNAEZeMTw+xPVjNYZFS30lwSQz3ba03Ie4aJc097lA2IU0FHqt4CO00fyDdXvRPKJd/pcYQPPOXcjkRmNQUsVGCxc9dC0QYsVGO7q/xugninsB3pC1PkP9prUAAAAASUVORK5CYII='/>
+<polyline points='474.98,342.11 478.44,342.11 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='474.98,311.64 478.44,311.64 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='474.98,281.17 478.44,281.17 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='464.61,342.11 461.16,342.11 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='464.61,311.64 461.16,311.64 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
+<polyline points='464.61,281.17 461.16,281.17 ' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
 <text x='483.92' y='345.14' style='font-size: 8.80px; font-family: sans;' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='483.92' y='314.67' style='font-size: 8.80px; font-family: sans;' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>5</text>
 <text x='483.92' y='284.19' style='font-size: 8.80px; font-family: sans;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>10</text>
-<text x='461.16' y='254.50' style='font-size: 11.00px; font-family: sans;' textLength='26.30px' lengthAdjust='spacingAndGlyphs'>value</text>
-<line x1='461.16' y1='342.11' x2='464.61' y2='342.11' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
-<line x1='461.16' y1='311.64' x2='464.61' y2='311.64' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
-<line x1='461.16' y1='281.17' x2='464.61' y2='281.17' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
-<line x1='474.98' y1='342.11' x2='478.44' y2='342.11' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
-<line x1='474.98' y1='311.64' x2='478.44' y2='311.64' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
-<line x1='474.98' y1='281.17' x2='478.44' y2='281.17' style='stroke-width: 0.38; stroke: #FFFFFF; stroke-linecap: butt;' />
 <text x='239.53' y='14.56' style='font-size: 13.20px; font-family: sans;' textLength='74.08px' lengthAdjust='spacingAndGlyphs'>fearless-fill-c</text>
 </g>
 </svg>

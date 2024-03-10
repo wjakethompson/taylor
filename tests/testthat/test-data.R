@@ -11,7 +11,7 @@ test_that("data has expected dimensions", {
   expect_equal(ncol(taylor_albums), 5L)
 
   # surprise songs
-  expect_equal(ncol(eras_tour_surprise), 8L)
+  expect_equal(ncol(eras_tour_surprise), 9L)
 
   albums <-
     unique(taylor_all_songs[which((!taylor_all_songs$ep) &
@@ -58,7 +58,7 @@ test_that("column names match documentation expectation", {
   # surprise songs
   expect_equal(colnames(eras_tour_surprise), c("leg", "date", "city", "night",
                                                "dress", "instrument", "song",
-                                               "guest"))
+                                               "mashup", "guest"))
 })
 
 test_that("non-TV versions are excluded when possible", {
@@ -76,11 +76,15 @@ test_that("non-TV versions are excluded when possible", {
 })
 
 test_that("surprise songs are the correct version", {
-  expect_true(all(eras_tour_surprise$song %in% taylor_all_songs$track_name))
+  songs <- eras_tour_surprise$song
+  mashups <- eras_tour_surprise$mashup[which(!is.na(eras_tour_surprise$mashup))]
+  mashups <- unlist(strsplit(mashups, split = "; "))
 
-  no_tv_songs <- eras_tour_surprise$song[grep("Taylor's Version",
-                                              eras_tour_surprise$song,
-                                              invert = TRUE)]
+  expect_true(all(c(songs, mashups) %in% taylor_all_songs$track_name))
+
+  no_tv_songs <- c(songs, mashups)[grep("Taylor's Version",
+                                        eras_tour_surprise$song,
+                                        invert = TRUE)]
   expect_false(any(paste(no_tv_songs, "(Taylor's Version)") %in%
                      taylor_all_songs$track_name))
 })

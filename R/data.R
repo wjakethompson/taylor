@@ -1,6 +1,6 @@
 #' Data for Taylor Swift songs
 #'
-#' A data containing lyrics to and characteristics of all officially
+#' A data set containing lyrics to, and characteristics of, all officially
 #' released Taylor Swift songs. This includes albums, EPs, and individually
 #' released singles.
 #'
@@ -171,6 +171,7 @@
 #' * `night`: The show number within each city.
 #' * `dress`: The color of the dress Taylor wore on the given night.
 #' * `instrument`: The instrument used to play the song (guitar or piano).
-#' * `song`: The track name of the song.
+#' * `song`: The track name of the primary surprise song.
+#' * `mashup`: Additional songs included in a mashup with the primary song.
 #' * `guest`: The special guest (if any) that joined Taylor to play the song.
 "eras_tour_surprise"

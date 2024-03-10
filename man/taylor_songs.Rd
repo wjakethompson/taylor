@@ -104,7 +104,7 @@ taylor_all_songs
 taylor_album_songs
 }
 \description{
-A data containing lyrics to and characteristics of all officially
+A data set containing lyrics to, and characteristics of, all officially
 released Taylor Swift songs. This includes albums, EPs, and individually
 released singles.
 }
