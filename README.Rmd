@@ -53,7 +53,7 @@ remotes::install_github("wjakethompson/taylor")
 
 ## Example
 
-There are three main data sets. The first is `taylor_album_songs`, which includes lyrics and audio features from the Spotify API for all songs on Taylor's official studio albums. Notably this excludes singles released separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., *Fearless* is excluded in favor of *Fearless (Taylor's Version)*). We stan artists owning their own songs.
+There are three main data sets. The first is `taylor_album_songs`, which includes lyrics and audio features from the Spotify API for all songs on Taylor's official studio albums. Notably this excludes singles released separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., *Fearless* is excluded in favor of *Fearless (Taylor's Version)*). We support artists owning their work.
 
 ```{r album-songs}
 taylor_album_songs
