@@ -44,9 +44,8 @@ scale_colour_taylor_d <- function(..., alpha = 1, begin = 0, end = 1,
                                   direction = 1, album = "Lover",
                                   aesthetics = "colour") {
   ggplot2::discrete_scale(
-    aesthetics,
-    "taylor_d",
-    taylor_pal(alpha, begin, end, direction, album),
+    aesthetics = aesthetics,
+    palette = taylor_pal(alpha, begin, end, direction, album),
     ...
   )
 }
@@ -61,9 +60,8 @@ scale_fill_taylor_d <- function(..., alpha = 1, begin = 0, end = 1,
                                 direction = 1, album = "Lover",
                                 aesthetics = "fill") {
   ggplot2::discrete_scale(
-    aesthetics,
-    "taylor_d",
-    taylor_pal(alpha, begin, end, direction, album),
+    aesthetics = aesthetics,
+    palette = taylor_pal(alpha, begin, end, direction, album),
     ...
   )
 }
@@ -75,9 +73,8 @@ scale_colour_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
                                   space = "Lab", na.value = "grey50",
                                   guide = "colourbar", aesthetics = "colour") {
   ggplot2::continuous_scale(
-    aesthetics,
-    "taylor_c",
-    scales::gradient_n_pal(
+    aesthetics = aesthetics,
+    palette = scales::gradient_n_pal(
       taylor_pal(alpha, begin, end, direction, album)(6),
       values,
       space
@@ -99,9 +96,8 @@ scale_fill_taylor_c <- function(..., alpha = 1, begin = 0, end = 1,
                                 space = "Lab", na.value = "grey50",
                                 guide = "colourbar", aesthetics = "fill") {
   ggplot2::continuous_scale(
-    aesthetics,
-    "taylor_c",
-    scales::gradient_n_pal(
+    aesthetics = aesthetics,
+    palette = scales::gradient_n_pal(
       taylor_pal(alpha, begin, end, direction, album)(6),
       values,
       space
@@ -120,9 +116,8 @@ scale_colour_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
                                   guide = "coloursteps",
                                   aesthetics = "colour") {
   ggplot2::binned_scale(
-    aesthetics,
-    "taylor_b",
-    scales::gradient_n_pal(
+    aesthetics = aesthetics,
+    palette = scales::gradient_n_pal(
       taylor_pal(alpha, begin, end, direction, album)(6),
       values,
       space
@@ -144,9 +139,8 @@ scale_fill_taylor_b <- function(..., alpha = 1, begin = 0, end = 1,
                                 space = "Lab", na.value = "grey50",
                                 guide = "coloursteps", aesthetics = "fill") {
   ggplot2::binned_scale(
-    aesthetics,
-    "taylor_b",
-    scales::gradient_n_pal(
+    aesthetics = aesthetics,
+    palette = scales::gradient_n_pal(
       taylor_pal(alpha, begin, end, direction, album)(6),
       values,
       space
