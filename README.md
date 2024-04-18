@@ -56,7 +56,7 @@ Taylor’s official studio albums. Notably this excludes singles released
 separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*,
 etc.), and non-Taylor-owned albums that have a Taylor-owned alternative
 (e.g., *Fearless* is excluded in favor of *Fearless (Taylor’s
-Version)*). We stand for artists owning their own songs.
+Version)*). We support artists owning their work.
 
 ``` r
 taylor_album_songs
