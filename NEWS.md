@@ -1,54 +1,76 @@
 # taylor (development version)
 
-* Surprise songs from the South American leg of the tour have been added to `eras_tour_surprise`.
+* Surprise songs from the South American and Asia-Pacific legs of the tour have
+  been added to `eras_tour_surprise`.
 
 * Spotify data for "You're Losing Me (From The Vault)" has been added.
 
 * Fixed installation instructions in README (@scarioscia, #37).
 
+* Updated documentation with additional vignettes.
+  * `vignette("taylor")` provides and overview of the package and links to
+    example analyses.
+  * `vigentte("lyrics")` describes different methods for accessing lyrics in a
+    nested list column (#35).
+
 # taylor 3.0.0
 
 ## Breaking changes
 
-* *Speak Now (Taylor's Version)* has replaced *Speak Now* in `taylor_album_songs` (#25).
+* *Speak Now (Taylor's Version)* has replaced *Speak Now* in
+  `taylor_album_songs` (#25).
 
 * *1989 (Taylor's Version)* has replaced *1989* in `taylor_album_songs` (#30).
 
 ## New features
 
-* A new data set, `eras_tour_surprise` has been added that includes information on all of the surprise songs played on the first North American leg of The Eras Tour.
+* A new data set, `eras_tour_surprise` has been added that includes information
+  on all of the surprise songs played on the first North American leg of The
+  Eras Tour.
 
-* A new function, `translate_bracelet()` can be used to find the song and line from the first letter of each word, as is common on the Eras Tour friendship bracelets.
+* A new function, `translate_bracelet()` can be used to find the song and line
+  from the first letter of each word, as is common on the Eras Tour friendship
+  bracelets.
 
 ## Minor improvements and fixes
 
-* New color palettes added to `album_palettes` for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)*.
+* New color palettes added to `album_palettes` for
+  *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)*.
 
-* New single colors added to `album_compare` for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)*.
+* New single colors added to `album_compare` for *Speak Now (Taylor's Version)*
+  and *1989 (Taylor's Version)*.
 
-* Metacritic scores for *Speak Now (Taylor's Version)* and *1989 (Taylor's Version)* have been added to
-  `taylor_albums`.
+* Metacritic scores for *Speak Now (Taylor's Version)* and
+  *1989 (Taylor's Version)* have been added to `taylor_albums`.
   
 * Hex logo and pkgdown website have been updated to have a
   *1989 (Taylor's Version)* theme.
 
-* Added Spotify data for "Hits Different" after it was released to streaming as part of *Midnights (The Til Dawn Edition)*.
+* Added Spotify data for "Hits Different" after it was released to streaming as
+  part of *Midnights (The Til Dawn Edition)*.
 
-* Added "Snow on the Beach (More Lana Del Rey)" and "Karma (Remix)" from *Midnights (The Til Dawn Edition)*.
+* Added "Snow on the Beach (More Lana Del Rey)" and "Karma (Remix)" from
+  *Midnights (The Til Dawn Edition)*.
 
-* Added "The Alcott" from The National's *First Two Pages of Frankenstein* to `taylor_all_songs`.
+* Added "The Alcott" from The National's *First Two Pages of Frankenstein* to
+  `taylor_all_songs`.
 
-* Added Era's Tour promotional singles "All of the Girls You Loved Before," "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and "Safe & Sound (Taylor's Version)."
+* Added Era's Tour promotional singles "All of the Girls You Loved Before,"
+  "If This Was a Movie (Taylor's Version)," "Eyes Open (Taylor's Version)," and
+  "Safe & Sound (Taylor's Version)."
 
-* "This Love (Taylor's Version)" and "Wildest Dreams (Taylor's Version)" have been moved from non-album singles to *1989 (Taylor's Version)*.
+* "This Love (Taylor's Version)" and "Wildest Dreams (Taylor's Version)" have
+  been moved from non-album singles to *1989 (Taylor's Version)*.
 
-* The `type` argument of `color_palette()` has been removed. This argument was previously deprecated with a warning in version 1.0.0.
+* The `type` argument of `color_palette()` has been removed. This argument was
+  previously deprecated with a warning in version 1.0.0.
 
 # taylor 2.0.1
 
 ## Minor improvements and fixes
 
-* Fixed S3 generic/method consistency issue for **vctrs** classes that was creating a warning in r-devel on CRAN.
+* Fixed S3 generic/method consistency issue for **vctrs** classes that was
+  creating a warning in r-devel on CRAN.
 
 * Updated Metacritic user ratings.
 
@@ -66,11 +88,15 @@
 
 ## New features
   
-* A new `user_score` column for user ratings from Metacritic was added to `taylor_albums`.
+* A new `user_score` column for user ratings from Metacritic was added to
+  `taylor_albums`.
 
-* Added "Lover (Remix)" with Shawn Mendes, Taylor's cover of Earth, Wind, and Fire's "September," and "Three Sad Virgins" from Saturday Night Live to `taylor_all_songs`.
+* Added "Lover (Remix)" with Shawn Mendes, Taylor's cover of Earth, Wind, and
+  Fire's "September," and "Three Sad Virgins" from Saturday Night Live to
+  `taylor_all_songs`.
 
-* Added "Carolina" from the *Where the Crawdads Sing* soundtrack to `taylor_all_songs`.
+* Added "Carolina" from the *Where the Crawdads Sing* soundtrack to
+  `taylor_all_songs`.
 
 * "This Love (Taylor's Version)" has been added as a non-album single.
   Presumably this will eventually move to *1989 (Taylor's Version)*.
@@ -86,7 +112,8 @@
 * Metacritic score for *Midnights* has been added to
   `taylor_albums`.
 
-* Fixed some additional non-ASCII characters in the lyrics for all albums (@EricWu2003, #16).
+* Fixed some additional non-ASCII characters in the lyrics for all albums
+  (@EricWu2003, #16).
 
 * Minor tweaks to the color palettes for each album to better capture the vibes,
   rather than just pulling from album artwork.
