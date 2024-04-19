@@ -58,8 +58,12 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
                       }))
 
 base_info <- lyrics %>%
-  mutate(bonus_track = str_detect(album_name,
-                                  "deluxe|platinum|3am|target|edition")) %>%
+  mutate(
+    bonus_track = str_detect(
+      album_name,
+      "deluxe|platinum|3am|target|edition|anthology"
+    )
+  ) %>%
   mutate(
     album_name = str_replace_all(album_name, "-", " "),
     album_name = str_to_title(album_name),
@@ -90,6 +94,10 @@ base_info <- lyrics %>%
         "Midnights (The Til Dawn Edition)",
       album_name == "Midnights Late Night Edition" ~
         "Midnights (The Late Night Edition)",
+      album_name == "The Tortured Poets Department" ~
+        "THE TORTURED POETS DEPARTMENT",
+      album_name == "The Tortured Poets Department The Anthology" ~
+        "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
       TRUE ~ album_name
     ),
     album_name = na_if(album_name, "Non Album"),
@@ -177,6 +185,26 @@ base_info <- lyrics %>%
   mutate(track_name = str_replace_all(track_name, "Slut", "\"Slut!\""),
          track_name = str_replace_all(track_name, "Is It Over Now",
                                       "Is It Over Now?")) %>%
+  # edits for THE TORTURED POETS DEPARTMENT
+  mutate(track_name = str_replace_all(track_name, "So Long London",
+                                      "So Long, London"),
+         track_name = str_replace_all(track_name, "Florida$", "Florida!!!"),
+         track_name = str_replace_all(track_name, "Guilty As Sin",
+                                      "Guilty As Sin?"),
+         track_name = str_replace_all(track_name,
+                                      "Whos Afraid Of Little Old Me",
+                                      "Who's Afraid Of Little Old Me?"),
+         track_name = str_replace_all(track_name, "Him No Really I Can",
+                                      "Him (No Really I Can)"),
+         track_name = str_replace_all(track_name, "Loml", "loml"),
+         track_name = str_replace_all(track_name, "I'mgonnagetyouback",
+                                      "imgonnagetyouback"),
+         track_name = str_replace_all(track_name, "How Did It End",
+                                      "How Did It End?"),
+         track_name = str_replace_all(track_name, "Thank You Aimee",
+                                      "thanK you aIMee"),
+         track_name = str_replace_all(track_name, "Peoples Windows",
+                                      "People's Windows")) %>%
   # edits for general Taylor's Version and vault tracks
   mutate(track_name = str_replace_all(track_name, "(?<=\\)\\ )Tv",
                                       "[Taylor's Version]"),
@@ -216,6 +244,8 @@ base_info <- lyrics %>%
     album_name == "Midnights (Target Exclusive)" ~ "Midnights",
     album_name == "Midnights (The Til Dawn Edition)" ~ "Midnights",
     album_name == "Midnights (The Late Night Edition)" ~ "Midnights",
+    album_name == "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY" ~
+      "THE TORTURED POETS DEPARTMENT",
     TRUE ~ album_name
   )) %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
@@ -288,7 +318,8 @@ spotify <- tribble(
   "Lover",                               "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                            "1pzvBxYgT6OVwJLtHkrdQK",
   "evermore",                            "6AORtDjduMM3bupSWzbTSG",
-  "Midnights",                           "1fnJ7k0bllNfL1kVdNVW1A"
+  "Midnights",                           "1fnJ7k0bllNfL1kVdNVW1A",
+  "THE TORTURED POETS DEPARTMENT",       "5H7ixXZfsNMGbIE5OBSpcb"
 ) %>%
   mutate(track = map(album_uri,
                      function(.x) {
@@ -396,6 +427,14 @@ spotify_join <- spotify %>%
       "[Taylor's Version] [From The Vault]"
     )
   ) %>%
+  # edits for THE TORTURED POETS DEPARTMENT
+  mutate(
+    track_name = str_replace_all(track_name, "Loml", "loml"),
+    track_name = str_replace_all(track_name, "Imgonnagetyouback",
+                                 "imgonnagetyouback"),
+    track_name = str_replace_all(track_name, "Thank You Aimee",
+                                 "thanK you aIMee")
+  ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
   nest(spotify = -c(album_name, track_name))
@@ -475,10 +514,12 @@ taylor_album_songs <- taylor_all_songs %>%
                            "Lover",
                            "folklore",
                            "evermore",
-                           "Midnights"))
+                           "Midnights",
+                           "THE TORTURED POETS DEPARTMENT"))
 
 metacritic <- tribble(
   ~album_name,                     ~metacritic_name,
+  "THE TORTURED POETS DEPARTMENT", "the-tortured-poets-department",
   "1989 (Taylor's Version)",       "1989-taylors-version",
   "Speak Now (Taylor's Version)",  "speak-now-taylors-version",
   "Midnights",                     "midnights",
