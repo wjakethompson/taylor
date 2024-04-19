@@ -1,0 +1,237 @@
+:root {
+  --nav-bkg: #1C160F;     /* nav bar background */
+  --nav-link: #F7F4F0;    /* nav bar link color */
+  --nav-higl: #F7F4F0;    /* nav hover background */
+
+  --sdb-link: #1C160F;    /* hyperlinks in sidebar */
+  --sdb-hover: #635B3A;   /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094; /* author roles */
+
+  --pg-header: #1C160F;   /* heading color & text links */
+  --text-link: #1C160F;   /* hyperlinks in text */
+  --a-hover: #635B3A;     /* hyperlink hover */
+
+  --btn-color: #1C160F;   /* copy button color */
+  --btn-hover: #635B3A;   /* copy button hover */
+
+  --toc-active: #ADA795;  /* background color for active TOC */
+  --toc-hover: #ADA795;   /* background color for hover TOC */
+  --toc-htext: #1C160F;   /* color of TOC hover text (default to --nav-bkg */
+}
+
+
+/* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
+/* Collapsible menu button on mobile (--nav-link) */
+span.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+}
+
+/* Anchor image in headings (--text-link) */
+a.anchor {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+}
+
+
+/* Navbar ------------------------------------------------------------------- */
+/* Navbar color */
+.bg-light {
+  background-color: var(--nav-bkg) !important;
+}
+
+/* Color of links in navbar and hover links */
+.nav-link {
+  color: var(--nav-link) !important;
+}
+
+/* active nav links */
+.navbar-light .navbar-nav .active>.nav-link {
+  background: var(--nav-link);
+  color: var(--nav-bkg) !important;
+}
+
+/* inactive nav links hover */
+.navbar-light .navbar-nav .nav-item>.nav-link:hover {
+  background: var(--nav-higl);
+  color: var(--nav-bkg) !important;
+}
+
+/* button padding */
+li.nav-item {
+  padding-right: .5em;
+}
+
+/* package name in navbar */
+.navbar-brand {
+  color: var(--nav-link) !important;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+/* dropdown menu */
+.dropdown-header {
+  color: var(--nav-link);
+}
+
+.dropdown-menu {
+  background-color: var(--nav-bkg);
+  border-color: var(--nav-link);
+}
+
+/* dropdown menu links */
+.dropdown-item, .dropdown-menu > li > a {
+  background-color: var(--nav-bkg);
+  color: var(--nav-link);
+}
+
+/* dropdown menu links hover */
+.dropdown-item:hover, .dropdown-menu > li > a:hover {
+    color: var(--nav-bkg);
+    text-decoration: none;
+    background-color: var(--nav-higl);
+}
+
+/* Collapsible menu button on mobile */
+.navbar-light .navbar-toggler {
+  border-color: var(--nav-bkg);
+  color: var(--nav-higl);
+}
+
+/* package verion - dev */
+.text-danger {
+  font-size: 75%;
+  color: var(--nav-bkg) !important;
+  background-color: var(--nav-link);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* package version - release */
+.text-muted {
+  font-size: 75%;
+  color: var(--nav-higl) !important;
+  background-color: var(--nav-bkg);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+
+/* Sidebar ------------------------------------------------------------------ */
+/* link color */
+.list-unstyled a {
+  color: var(--sdb-link);
+  text-decoration: none;
+}
+
+/* link color hover */
+.list-unstyled a:hover {
+  text-decoration: underline;
+  color: var(--sdb-hover);
+}
+
+/* headings */
+h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: var(--pg-header);
+}
+
+/* developer roles */
+aside small.roles {
+  font-size: 0.75em;
+  color: var(--sdb-roles);
+}
+
+
+/* Format text -------------------------------------------------------------- */
+/* homepage heading */
+#overview- {
+  margin-top: 0.75em;
+}
+
+/* link colors */
+a {
+  color: var(--text-link);
+}
+a:hover {
+  color: var(--a-hover);
+}
+
+/* add underline to links in paragraphs */
+p a {
+  text-decoration: underline var(--text-link) dotted;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: from-font;
+}
+p a:hover {
+  text-decoration: underline var(--text-link) solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: from-font;
+}
+
+/* headers */
+h1 {
+  font-size: 2.0em;
+  font-weight: 400;
+  color: var(--pg-header);
+  letter-spacing: .08em;
+}
+h2 {
+  font-size: 1.7em;
+  text-transform: none;
+  font-weight: 300;
+  color: var(--pg-header);
+  letter-spacing: .08em;
+}
+h3 {
+  font-size: 1.2em;
+  text-transform: none;
+  font-weight: 200;
+  color: var(--pg-header);
+  letter-spacing: .1em;
+}
+h4 {
+  font-size: 1.2em;
+  text-transform: none;
+  font-weight: 600;
+  color: var(--pg-header);
+  letter-spacing: .05em;
+}
+
+
+/* Copy Buttons ------------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--btn-color);
+  border-color: var(--btn-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--btn-hover);
+}
+
+
+/* Table of contents -------------------------------------------------------- */
+#toc>.nav a.nav-link {
+  color: var(--pg-header) !important;
+}
+
+#toc>.nav a.nav-link.active {
+  background-color: var(--toc-active);
+  color: var(--nav-bkg) !important;
+}
+
+#toc>.nav a.nav-link:hover,
+#toc>.nav a.nav-link:focus {
+  background-color: var(--toc-hover);
+  color: var(--toc-htext) !important;
+}
+
+/* Vignette tables ---------------------------------------------------------- */
+table.taylor-examples td {
+  width: 33.333%;
+  vertical-align: middle;
+}
