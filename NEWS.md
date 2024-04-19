@@ -12,6 +12,18 @@
     example analyses.
   * `vigentte("lyrics")` describes different methods for accessing lyrics in a
     nested list column (#35).
+    
+* Added tracks from *THE TORTURED POETS DEPARTMENT* to `taylor_all_songs` and
+  `taylor_album_songs`.
+
+* Metacritic score for *THE TORTURED POETS DEPARTMENT* has been added to
+  `taylor_albums`.
+  
+* New color palette added to `album_palettes` for
+  *THE TORTURED POETS DEPARTMENT*.
+
+* New single color added to `album_compare` for *THE TORTURED POETS DEPARTMENT*.
+
 
 # taylor 3.0.0
 
