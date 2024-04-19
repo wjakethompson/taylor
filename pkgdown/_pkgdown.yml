@@ -77,8 +77,8 @@ articles:
 - title: Plotting
   navbar: Plotting
   contents:
-  - plotting
   - palettes
+  - plotting
 
 news:
   releases:
