@@ -60,7 +60,7 @@ Version)*). We support artists owning their work.
 
 ``` r
 taylor_album_songs
-#> # A tibble: 209 × 29
+#> # A tibble: 240 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -73,7 +73,7 @@ taylor_album_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 199 more rows
+#> # ℹ 230 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
@@ -89,7 +89,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 325 × 29
+#> # A tibble: 356 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -102,7 +102,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 315 more rows
+#> # ℹ 346 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
@@ -116,7 +116,7 @@ Taylor’s album release history.
 
 ``` r
 taylor_albums
-#> # A tibble: 16 × 5
+#> # A tibble: 17 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
 #>    <chr>                         <lgl> <date>                   <int>      <dbl>
 #>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4
@@ -134,7 +134,8 @@ taylor_albums
 #> 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
-#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  95       NA
+#> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  
+#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  90       NA
 ```
 
 ## Code of Conduct

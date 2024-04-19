@@ -7,7 +7,7 @@
 \title{Data for Taylor Swift songs}
 \format{
 \code{taylor_all_songs} is a \link[tibble:tibble-package]{tibble} with
-325 rows and 29 variables.
+356 rows and 29 variables.
 Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
@@ -67,7 +67,7 @@ euphoric).
 }
 
 Finally, the last set of variables includes those calculated from the Spotify
-API data, and a list column containing song lyrics.
+API data, and a list-column containing song lyrics.
 \itemize{
 \item \code{key_name}: Corresponds directly to the \code{key}, but the integer is converted
 to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).
@@ -75,7 +75,7 @@ to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).
 converted to the mode name (e.g., \code{0} becomes \code{minor}).
 \item \code{key_mode}: A combination of the \code{key_name} and \code{mode_name} variables
 (e.g., \verb{C minor}).
-\item \code{lyrics}: A list column containing the lyrics to each song. The lyrics can
+\item \code{lyrics}: A list-column containing the lyrics to each song. The lyrics can
 be unnested with \code{\link[tidyr:unnest]{tidyr::unnest()}} (i.e.,
 \code{tidyr::unnest(taylor_all_songs, lyrics)}). Each element is a data frame
 with 4 variables. :
@@ -92,7 +92,7 @@ track (e.g., \code{HAIM} is featured on \emph{no body, no crime}).
 
 \code{taylor_album_songs} is a \link[tibble:tibble-package]{tibble} containing
 the same 29 variables, but only with
-209 rows, one for each song from an official studio
+240 rows, one for each song from an official studio
 album (see Details).
 }
 \source{
