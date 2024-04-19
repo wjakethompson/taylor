@@ -18,7 +18,7 @@ In each data set, the lyrics are stored as a list-column.
 library(taylor)
 library(dplyr)
 
-track_lyrics <- taylor_album_songs %>% 
+track_lyrics <- taylor_album_songs %>%
   select(album_name, track_name, lyrics)
 
 track_lyrics
@@ -45,15 +45,15 @@ Rather than having a data set that is one row per song, we now have a data set t
 ```{r}
 library(tidyr)
 
-track_lyrics %>% 
+track_lyrics %>%
   unnest(lyrics)
 ```
 
 If we are interested in the lyrics for only a specific album or a specific song, we can always use `dplyr::filter()` to include only the data we are interested in.
 
 ```{r}
-track_lyrics %>% 
-  filter(track_name == "Cruel Summer") %>% 
+track_lyrics %>%
+  filter(track_name == "Cruel Summer") %>%
   unnest(lyrics)
 ```
 
@@ -66,8 +66,8 @@ Because `nrow()` returns and integer value, we'll use `purrr::map_int()`.
 ```{r}
 library(purrr)
 
-track_lyrics %>% 
-  filter(album_name == "Lover") %>% 
+track_lyrics %>%
+  filter(album_name == "Lover") %>%
   mutate(lines = map_int(lyrics, nrow))
 ```
 
