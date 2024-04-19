@@ -148,7 +148,7 @@ missing_firsts <- tibble(date = as.Date(c("2023-11-01",
 day_ones <- surprise_song_count %>%
   slice_min(date, by = c(leg, album_name)) %>%
   select(leg, date, album_name) %>%
-  mutate(date = date - lubridate::ddays(1))
+  mutate(date = date - 1)
 
 surprise_song_count %>%
   bind_rows(missing_firsts) %>%
