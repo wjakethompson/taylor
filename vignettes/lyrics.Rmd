@@ -1,0 +1,75 @@
+---
+title: "Working with lyrics data"
+description: |
+  How to access song lyrics and work with the data.
+vignette: >
+  %\VignetteIndexEntry{Working with lyrics data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, child="children/chunk-options.txt"}
+```
+
+The `taylor_all_songs` and `taylor_album_songs` data sets contain the lyrics for each of Taylor Swift's songs, as well as audio characteristics.
+In each data set, the lyrics are stored as a list-column.
+
+```{r, message = FALSE}
+library(taylor)
+library(dplyr)
+
+track_lyrics <- taylor_album_songs %>%
+  select(album_name, track_name, lyrics)
+
+track_lyrics
+```
+
+In other words, both `taylor_all_songs` and `taylor_ablum_songs` are [nested data frames](https://tidyr.tidyverse.org/articles/nest.html).
+Each has one row per track, and the lyrics for each track are are stored in another data frame nested within each row.
+
+There are three primary ways to access data from a nested list-column.
+The first is to extract individual list elements.
+For example, if we want to see the lyrics for "Cruel Summer," we can look up which row of the data set contains "Cruel Summer" and then access that element of the list.
+
+```{r}
+track_row <- which(track_lyrics$track_name == "Cruel Summer")
+track_lyrics$lyrics[[track_row]]
+```
+
+As expected, this returns another data frame, with one row for each line in the song.
+However, this approach only allows us to unnest one track at a time.
+A more efficient method for extracting data in a nested list-column is to use `tidyr::unnest()`.
+This approach unnests all of the data in a list-column at once.
+Rather than having a data set that is one row per song, we now have a data set that is one row per line per song.
+
+```{r}
+library(tidyr)
+
+track_lyrics %>%
+  unnest(lyrics)
+```
+
+If we are interested in the lyrics for only a specific album or a specific song, we can always use `dplyr::filter()` to include only the data we are interested in.
+
+```{r}
+track_lyrics %>%
+  filter(track_name == "Cruel Summer") %>%
+  unnest(lyrics)
+```
+
+Finally, sometimes we want to perform a calculation on each element of a list-column.
+In this case, we don't necessarily need to unnest each element.
+Instead, we can use a combination of `dplyr::mutate()` and `purrr::map()` to apply a function to each element of the list-column.
+For example, we if want to know the number of lines in each song, we can apply `nrow()` to each element of the list column.
+Because `nrow()` returns and integer value, we'll use `purrr::map_int()`.
+
+```{r}
+library(purrr)
+
+track_lyrics %>%
+  filter(album_name == "Lover") %>%
+  mutate(lines = map_int(lyrics, nrow))
+```
+
+The resulting data frame is still one row per song, because we have not unnested the lyrics.
+However, our summary statistic has been added as an additional column.

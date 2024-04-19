@@ -1,0 +1,219 @@
+---
+title: "Welcome to taylor"
+description: |
+  Learn about the package and what it can do!
+vignette: >
+  %\VignetteIndexEntry{Introduction to taylor}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, child="children/chunk-options.txt"}
+```
+
+taylor is an R package for accessing and exploring data related to Taylor Swift's discography.
+It provides built in data sets containing information on the audio characteristics and lyrics of Taylor's songs.
+Additionally, taylor offers some helper functions for creating Taylor Swift-themed data visualizations.
+
+This document introduces you to taylor's functionality, and shows you how to use them to learn about Taylor Swift's music.
+
+```{r setup}
+library(taylor)
+```
+
+## I trace the evidence
+
+The main data set is `taylor_all_songs`.
+This data set contains audio features from Spotify and lyrics from Genius for each of Taylor Swift's songs.
+
+```{r}
+taylor_all_songs
+```
+
+The audio features include the danceability, energy, and valence of each track, which are described in the [documentation for the Spotify API](https://developer.spotify.com/documentation/web-api/reference/get-audio-features).
+The data set also includes meta data for each track such as the key, tempo, time signature, and duration.
+Finally, the lyrics for each track are included in a nested list column.
+The lyrics can be accessed by using `tidyr::unnest()`, or by using `purrr::map()` to apply a function to each set of lyrics.
+For a detailed description of accessing lyrics, see `vignette("lyrics")`.
+
+A related data set is `taylor_album_songs`.
+This data set contains all of the same information as `taylor_all_songs`, but is filtered to only include tracks that are on official studio albums.
+This means that standalone singles (e.g., "Only The Young") and features (e.g., Big Red Machine's "Renegade") are not included.
+We also exclude albums Taylor doesn't own, but for which a *Taylor's Version* has been released.
+For example, *1989* is excluded in favor of *1989 (Taylor's Version)*, but *Taylor Swift* (debut) is included because a *Taylor's Version* of that album has not been released.
+
+taylor also include a small data set called `taylor_albums`.
+This data set includes the release date for each album, as well as critic and user ratings from [Metacritic](https://www.metacritic.com/person/taylor-swift/).
+
+```{r}
+taylor_albums
+```
+
+Finally, there is a data set dedicated to The Eras Tour, specifically the surprise songs that Taylor plays at each show.
+The data set, `eras_tour_surprise`, contains the date and location of each show, the color dress Taylor wore during the acoustic set, and the song that was performed on each instrument (piano and guitar).
+The data set also includes information on any additional songs that were performed as mashups and guests that Taylor brought out for a performance.
+
+```{r}
+eras_tour_surprise
+```
+
+
+## Just another picture to burn
+
+Often as we explore data, we want to create data visualizations.
+Naturally, if we're exploring data for Taylor Swift, we need Taylor Swift-themed visualizations.
+taylor includes several color palettes and helper functions for `{ggplot2}` to facilitate these visualizations.
+
+First, there are color palettes inspired by each album stored in `album_palettes`.
+For example, we can look at a color palette based on the cover art for the *Lover* album.
+
+```{r}
+album_palettes$lover
+```
+
+There is also a color palette that contains one color for each album, which is useful when comparing albums to each other.
+For a complete description of color palette functionality in taylor, see `vignette("palettes")`.
+
+```{r}
+album_compare
+```
+
+taylor also includes several functions for using the built-in palettes for color and fill scales with ggplot2.
+As an example, `scale_color_albums()` to map the `album_compare` palette to geometries that have color mapped to the album name.
+In the following plot, we display the cumulative number of surprise songs played from each album and use `scale_color_albums()` to highlight each album within its respective facet.
+
+<details><summary>Plot code</summary>
+
+```{r eras-plot, eval = FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+surprise_song_count <- eras_tour_surprise %>%
+  nest(dat = -c(leg, date, city, night)) %>%
+  arrange(date) %>%
+  mutate(leg = factor(leg, levels = unique(eras_tour_surprise$leg),
+                      labels = c("North America\n(Leg 1)",
+                                 "South\nAmerica",
+                                 "Asia-Pacific"))) %>%
+  mutate(show_number = seq_len(n()), .after = night) %>%
+  unnest(dat) %>%
+  left_join(distinct(taylor_album_songs, track_name, album_name),
+            join_by(song == track_name),
+            relationship = "many-to-one") %>%
+  count(leg, date, city, night, show_number, album_name) %>%
+  complete(nesting(leg, date, city, night, show_number), album_name) %>%
+  mutate(n = replace_na(n, 0)) %>%
+  arrange(album_name, date, night) %>%
+  mutate(surprise_count = cumsum(n), .by = album_name) %>%
+  mutate(album_name = replace_na(album_name, "Other"),
+         album_name = factor(album_name, c(album_levels, "Other")),
+         album_group = album_name)
+
+ggplot(surprise_song_count) +
+  facet_wrap(~ album_name, ncol = 3) +
+  geom_line(data = ~select(.x, -album_name),
+            aes(x = show_number, y = surprise_count, group = album_group),
+            color = "grey80", na.rm = TRUE) +
+  geom_line(aes(x = show_number, y = surprise_count, color = album_name),
+            show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
+  scale_color_albums(na.value = "grey80") +
+  labs(x = "Show", y = "Songs Played") +
+  theme_minimal() +
+  theme(strip.text.x = element_text(hjust = 0, size = 10),
+        axis.title = element_text(size = 9))
+```
+
+</details>
+
+```{r eras-plot, echo = FALSE, message = FALSE, warning = FALSE}
+#| fig-asp: 1.1
+#| fig-alt: >
+#|   A series of line plots showing the increases in the total number of songs
+#|   from each album that Taylor has played as surprise songs during The Eras
+#|   Tour.
+
+```
+
+Or we can take a closer look at *1989 (Taylor's Version)*.
+In this figure we can see that from early June to August, Taylor took a long break between playing songs from this album.
+The break ended when Taylor resumed playing songs leading up to the announcement of *1989 (Taylor's Version)* at in Los Angeles at the end of the first U.S. leg of the tour.
+For more details on ggplot2 scales provided by taylor, see `vignette("plotting")`.
+
+<details><summary>Plot code</summary>
+
+```{r eras-1989, eval = FALSE}
+missing_firsts <- tibble(date = as.Date(c("2023-11-01",
+                                          "2024-02-01")))
+day_ones <- surprise_song_count %>%
+  slice_min(date, by = c(leg, album_name)) %>%
+  select(leg, date, album_name) %>%
+  mutate(date = date - 1)
+
+surprise_song_count %>%
+  bind_rows(missing_firsts) %>%
+  arrange(date) %>%
+  fill(leg, .direction = "up") %>%
+  bind_rows(day_ones) %>%
+  arrange(album_name, date) %>%
+  group_by(album_name) %>%
+  fill(surprise_count, .direction = "down") %>%
+  ggplot() +
+  facet_grid(cols = vars(leg), scales = "free_x", space = "free_x") +
+  geom_line(aes(x = date, y = surprise_count, group = album_name),
+            color = "grey80", na.rm = TRUE) +
+  geom_line(data = ~filter(.x, album_name == "1989 (Taylor's Version)"),
+            aes(x = date, y = surprise_count, color = album_name),
+            show.legend = FALSE, size = 2, na.rm = TRUE) +
+  scale_color_albums() +
+  scale_x_date(breaks = "month", date_labels = "%b %Y", expand = c(.02, .02)) +
+  labs(x = NULL, y = "Songs Played") +
+  theme_minimal() +
+  theme(strip.text.x = element_text(hjust = 0, size = 10),
+        axis.title = element_text(size = 9))
+```
+
+</details>
+
+```{r eras-1989, echo = FALSE, message = FALSE, warning = FALSE}
+#| fig-alt: >
+#|   A series of line plots showing the increases in the total number of songs
+#|   from each album that Taylor has played as surprise songs during The Eras
+#|   Tour.
+
+```
+
+
+## I could show you incredible things
+
+There are many ways we can explore the data, but, honestly, baby, who's counting?
+Below is a collection of analyses that use data from taylor that I have found in the wild.
+If you use the data and find it useful, please reach out---I love to see the package used!
+
+```{r examples, echo = FALSE, results = "asis"}
+examples <- read.csv("data/example-uses.csv")
+cells <- paste("<td>",
+               paste0("  <a href=\"", examples$href, "\">"),
+               paste0("    <img src=\"", examples$preview, "\" ",
+                      "alt=\"", examples$description, "\" width=\"100%\"/>"),
+               "  </a>",
+               "</td>",
+               sep = "\n")
+
+needed_rows <- ceiling(length(cells) / 3)
+rows <- vapply(seq_len(needed_rows),
+               function(x) {
+                 paste("<tr>",
+                       paste(cells[((x * 3) - 2):(x * 3)], collapse = "\n"),
+                       "</tr>",
+                       sep = "\n")
+               },
+               character(1))
+
+tab <- paste("<table class=\"taylor-examples\" width=\"100%\">",
+             paste(rows, collapse = "\n"),
+             "</table>",
+             sep = "\n")
+
+cat(tab)
+```

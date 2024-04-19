@@ -101,23 +101,25 @@
 #' * `explicit`: Logical. Does the track contain explicit lyrics (`TRUE`) or not
 #'  (`FALSE`).
 #'
-#' Finally, the last set of variables include those calculated from the Spotify
-#' API data, and a list column containing song lyrics.
+#' Finally, the last set of variables includes those calculated from the Spotify
+#' API data, and a list-column containing song lyrics.
 #' * `key_name`: Corresponds directly to the `key`, but the integer is converted
 #'   to the key name using Pitch Class notation (e.g., `0` becomes `C`).
 #' * `mode_name`: Corresponds directly to the `mode`, but the integer is
 #'   converted to the mode name (e.g., `0` becomes `minor`).
 #' * `key_mode`: A combination of the `key_name` and `mode_name` variables
 #'   (e.g., `C minor`).
-#' * `lyrics`: A list column containing the lyrics to each song. Each element is
-#'   a data frame with 4 variables:
+#' * `lyrics`: A list-column containing the lyrics to each song. The lyrics can
+#'   be unnested with [tidyr::unnest()] (i.e.,
+#'   `tidyr::unnest(taylor_all_songs, lyrics)`). Each element is a data frame
+#'   with 4 variables. :
 #'   * `line`: The line number of the song.
 #'   * `lyric`: The lyric for the given line.
 #'   * `element`: The element of the song the line and lyric belong to, as
 #'     defined by <https://genius.com/> (e.g., `Verse 1`, `Chorus`, etc.).
 #'   * `element_artist`: The artist performing the element. Usually
 #'     `Taylor Swift`, but other artists appear if they are featured on the
-#'     track (e.g., `HAIM` is featured on *No Body, No Crime*).
+#'     track (e.g., `HAIM` is featured on *no body, no crime*).
 #'
 #' @source \url{https://genius.com/artists/Taylor-swift}
 #' @source \url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}

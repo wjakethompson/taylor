@@ -55,6 +55,11 @@ a.anchor {
   color: var(--nav-bkg) !important;
 }
 
+/* button padding */
+li.nav-item {
+  padding-right: .5em;
+}
+
 /* package name in navbar */
 .navbar-brand {
   color: var(--nav-link) !important;
@@ -223,4 +228,10 @@ h4 {
 #toc>.nav a.nav-link:focus {
   background-color: var(--toc-hover);
   color: var(--toc-htext) !important;
+}
+
+/* Vignette tables ---------------------------------------------------------- */
+table.taylor-examples td {
+  width: 33.333%;
+  vertical-align: middle;
 }

@@ -13,7 +13,6 @@ Checklist of things that should be updated when adding a new album:
 - [ ] Add singles and release dates to `data-raw/releases.xlsx`
 - [ ] Add Spotify album code to `data-raw/taylor-lyrics.R` (~ line 250)
 - [ ] Run `data-raw/taylor-lyrics.R`
-- [ ] Add album cover to `inst/album-covers` using `data-raw/album-covers.R`
 - [ ] Add color palette to `R/taylor-album-palettes.R`
 - [ ] Add color to existing `album_compare` palette in `R/taylor-album-palettes.R`
 - [ ] Update `album_levels` in `R/taylor-album-palettes.R`
