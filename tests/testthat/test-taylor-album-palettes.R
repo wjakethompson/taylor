@@ -24,6 +24,7 @@ test_that("palettes have expected length", {
   short_names <- tolower(album_levels)
   short_names <- gsub("\\ ", "_", short_names)
   short_names <- gsub("\\(taylor's_version\\)", "tv", short_names)
+  short_names <- gsub("the_(tortured_poets)_department", "\\1", short_names)
 
   expect_identical(sort(album_levels), sort(noep$album_name))
   expect_identical(short_names, names(album_palettes))

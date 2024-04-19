@@ -146,7 +146,7 @@ ggplot(rand_critic, aes(x = metacritic_score, y = album_name)) +
   theme_minimal()
 ```
 
-However, this also means that album names must match the expected names. That is, if you change or reformat an album name, the fill colors won't be found. For example, if we capitalize all the album titles, the fill color will be missing for *reputation*, *folklore*, and *evermore*, which are stylized in all lower case. The expected names are defined in the `taylor::album_levels` object.
+However, this also means that album names must match the expected names. That is, if you change or reformat an album name, the fill colors won't be found. For example, if we use title case for all the album titles, the fill color will be missing for *reputation*, *folklore*, and *evermore*, which are stylized in all lower case, as well as *THE TORTURED POETS DEPARTMENT*, which is stylized in all upper case. The expected names are defined in the `taylor::album_levels` object.
 
 ```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors for each bar a based on the ablum cover. On y-axis, evermore, folklore, and repuation, have been spelled in title case, rather than lower case, resulting in no bar showing for these albums."}
 upper_critic <- metacritic
