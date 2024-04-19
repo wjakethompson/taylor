@@ -18,39 +18,41 @@
 #'
 #' album_palettes$evermore
 album_palettes <- lapply(list(
-  taylor_swift = c("#1D4737", "#81A757", "#1BAEC6", "#523d28", "#E7DBCC"),
-  fearless     = c("#6E4823", "#976F34", "#CBA863", "#ECD59F", "#E1D4C2"),
-  fearless_tv  = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
-  speak_now    = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
-  speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
-  red          = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
-  red_tv       = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
-  `1989`       = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
-  `1989_tv`    = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
-  reputation   = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
-  lover        = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
-  folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
-  evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),
-  midnights    = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6")
+  taylor_swift   = c("#1D4737", "#81A757", "#1BAEC6", "#523d28", "#E7DBCC"),
+  fearless       = c("#6E4823", "#976F34", "#CBA863", "#ECD59F", "#E1D4C2"),
+  fearless_tv    = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
+  speak_now      = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
+  speak_now_tv   = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
+  red            = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
+  red_tv         = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
+  `1989`         = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
+  `1989_tv`      = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
+  reputation     = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
+  lover          = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
+  folklore       = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
+  evermore       = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),
+  midnights      = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6"),
+  tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0")
 ), color_palette)
 
 #' @rdname album_palettes
 #' @export
 album_compare <- color_palette(
-  c(taylor_swift = "#1D4737",
-    fearless     = "#CBA863",
-    fearless_tv  = "#624324",
-    speak_now    = "#833C63",
-    speak_now_tv = "#4a2454",
-    red          = "#A91E47",
-    red_tv       = "#731803",
-    `1989`       = "#846578",
-    `1989_tv`    = "#8BB5D2",
-    reputation   = "#2C2C2C",
-    lover        = "#EBBED3",
-    folklore     = "#949494",
-    evermore     = "#421E18",
-    midnights    = "#5A658B")
+  c(taylor_swift   = "#1D4737",
+    fearless       = "#CBA863",
+    fearless_tv    = "#624324",
+    speak_now      = "#833C63",
+    speak_now_tv   = "#4a2454",
+    red            = "#A91E47",
+    red_tv         = "#731803",
+    `1989`         = "#846578",
+    `1989_tv`      = "#8BB5D2",
+    reputation     = "#2C2C2C",
+    lover          = "#EBBED3",
+    folklore       = "#949494",
+    evermore       = "#421E18",
+    midnights      = "#5A658B",
+    tortured_poets = "#1C160F")
 )
 
 
@@ -91,7 +93,8 @@ album_levels <- c("Taylor Swift",
                   "Red", "Red (Taylor's Version)",
                   "1989", "1989 (Taylor's Version)",
                   "reputation",
-                  "Lover", "folklore", "evermore", "Midnights")
+                  "Lover", "folklore", "evermore", "Midnights",
+                  "THE TORTURED POETS DEPARTMENT")
 
 
 # Scale functions --------------------------------------------------------------
@@ -113,26 +116,30 @@ taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
   lookup_pal <- tolower(album)
   lookup_pal <- gsub("\\ ", "_", lookup_pal)
   lookup_pal <- gsub("\\(taylor's_version\\)", "tv", lookup_pal)
+  lookup_pal <- gsub("the_(tortured_poets)_department", "\\1", lookup_pal)
 
-  option <- switch(EXPR = lookup_pal,
-                   taylor_swift = taylor::album_palettes[["taylor_swift"]],
-                   fearless     = taylor::album_palettes[["fearless"]],
-                   fearless_tv  = taylor::album_palettes[["fearless_tv"]],
-                   speak_now    = taylor::album_palettes[["speak_now"]],
-                   speak_now_tv = taylor::album_palettes[["speak_now_tv"]],
-                   red          = taylor::album_palettes[["red"]],
-                   red_tv       = taylor::album_palettes[["red_tv"]],
-                   `1989`       = taylor::album_palettes[["1989"]],
-                   `1989_tv`    = taylor::album_palettes[["1989_tv"]],
-                   reputation   = taylor::album_palettes[["reputation"]],
-                   lover        = taylor::album_palettes[["lover"]],
-                   folklore     = taylor::album_palettes[["folklore"]],
-                   evermore     = taylor::album_palettes[["evermore"]],
-                   midnights    = taylor::album_palettes[["midnights"]], {
-                     rlang::warn(paste0("Album '", album, "' does not exist. ",
-                                        "Defaulting to 'Lover'."))
-                     taylor::album_palettes[["lover"]]
-                   })
+  option <- switch(
+    EXPR = lookup_pal,
+    taylor_swift   = taylor::album_palettes[["taylor_swift"]],
+    fearless       = taylor::album_palettes[["fearless"]],
+    fearless_tv    = taylor::album_palettes[["fearless_tv"]],
+    speak_now      = taylor::album_palettes[["speak_now"]],
+    speak_now_tv   = taylor::album_palettes[["speak_now_tv"]],
+    red            = taylor::album_palettes[["red"]],
+    red_tv         = taylor::album_palettes[["red_tv"]],
+    `1989`         = taylor::album_palettes[["1989"]],
+    `1989_tv`      = taylor::album_palettes[["1989_tv"]],
+    reputation     = taylor::album_palettes[["reputation"]],
+    lover          = taylor::album_palettes[["lover"]],
+    folklore       = taylor::album_palettes[["folklore"]],
+    evermore       = taylor::album_palettes[["evermore"]],
+    midnights      = taylor::album_palettes[["midnights"]],
+    tortured_poets = taylor::album_palettes[["tortured_poets"]], {
+      rlang::warn(paste0("Album '", album, "' does not exist. ",
+                         "Defaulting to 'Lover'."))
+      taylor::album_palettes[["lover"]]
+    }
+  )
 
   fn_cols <- grDevices::colorRamp(option, space = "Lab",
                                   interpolate = "spline")
