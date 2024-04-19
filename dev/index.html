@@ -130,7 +130,7 @@
 <p>There are three main data sets. The first is <code>taylor_album_songs</code>, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., <em>Only the Young</em>, <em>Christmas Tree Farm</em>, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., <em>Fearless</em> is excluded in favor of <em>Fearless (Taylor’s Version)</em>). We support artists owning their work.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_album_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 209 × 29</span></span>
+<span><span class="co">#&gt; # A tibble: 240 × 29</span></span>
 <span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
@@ -143,7 +143,7 @@
 <span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
-<span><span class="co">#&gt; # ℹ 199 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 230 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
 <span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
@@ -153,7 +153,7 @@
 <p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_all_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 325 × 29</span></span>
+<span><span class="co">#&gt; # A tibble: 356 × 29</span></span>
 <span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
@@ -166,7 +166,7 @@
 <span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
-<span><span class="co">#&gt; # ℹ 315 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 346 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
 <span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
@@ -176,7 +176,7 @@
 <p>Finally, there is a small data set, <code>taylor_albums</code>, summarizing Taylor’s album release history.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
-<span><span class="co">#&gt; # A tibble: 16 × 5</span></span>
+<span><span class="co">#&gt; # A tibble: 17 × 5</span></span>
 <span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                         &lt;lgl&gt; &lt;date&gt;                   &lt;int&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
@@ -194,7 +194,8 @@
 <span><span class="co">#&gt; 13 Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9</span></span>
 <span><span class="co">#&gt; 14 Midnights                     FALSE 2022-10-21                  85        8.3</span></span>
 <span><span class="co">#&gt; 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2</span></span>
-<span><span class="co">#&gt; 16 1989 (Taylor's Version)       FALSE 2023-10-27                  95       NA</span></span></code></pre></div>
+<span><span class="co">#&gt; 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  </span></span>
+<span><span class="co">#&gt; 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  90       NA</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>

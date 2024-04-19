@@ -131,7 +131,7 @@ list-column.</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">album_name</span>, <span class="va">track_name</span>, <span class="va">lyrics</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">track_lyrics</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 209 × 3</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 240 × 3</span></span></span>
 <span><span class="co">#&gt;    album_name   track_name                 lyrics           </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift Tim McGraw                 <span style="color: #949494;">&lt;tibble [55 × 4]&gt;</span></span></span>
@@ -144,7 +144,7 @@ list-column.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Taylor Swift Stay Beautiful             <span style="color: #949494;">&lt;tibble [51 × 4]&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Taylor Swift Should've Said No          <span style="color: #949494;">&lt;tibble [44 × 4]&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Taylor Swift Mary's Song (Oh My My My)  <span style="color: #949494;">&lt;tibble [38 × 4]&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 199 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 230 more rows</span></span></span></code></pre></div>
 <p>In other words, both <code>taylor_all_songs</code> and
 <code>taylor_ablum_songs</code> are <a href="https://tidyr.tidyverse.org/articles/nest.html" class="external-link">nested data
 frames</a>. Each has one row per track, and the lyrics for each track
@@ -183,7 +183,7 @@ row per line per song.</p>
 <span></span>
 <span><span class="va">track_lyrics</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">lyrics</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10,600 × 6</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 12,151 × 6</span></span></span>
 <span><span class="co">#&gt;    album_name   track_name  line lyric                    element element_artist</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift Tim McGraw     1 <span style="color: #949494;">"</span>He said the way my blu… Verse 1 Taylor Swift  </span></span>
@@ -196,7 +196,7 @@ row per line per song.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Taylor Swift Tim McGraw     8 <span style="color: #949494;">"</span>And then the time we w… Verse 1 Taylor Swift  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Taylor Swift Tim McGraw     9 <span style="color: #949494;">"</span>But when you think Tim… Chorus  Taylor Swift  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Taylor Swift Tim McGraw    10 <span style="color: #949494;">"</span>I hope you think my fa… Chorus  Taylor Swift  </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 10,590 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 12,141 more rows</span></span></span></code></pre></div>
 <p>If we are interested in the lyrics for only a specific album or a
 specific song, we can always use <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">dplyr::filter()</a></code> to include
 only the data we are interested in.</p>

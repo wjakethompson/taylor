@@ -227,7 +227,7 @@ ratings of Taylor’s albums, stored in
 <code><a href="../reference/taylor_albums.html">taylor::taylor_albums</a></code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 16 × 5</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 17 × 5</span></span></span>
 <span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
@@ -245,7 +245,8 @@ ratings of Taylor’s albums, stored in
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Midnights                     FALSE 2022-10-21                  85        8.3</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 1989 (Taylor's Version)       FALSE 2023-10-27                  90       <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 1989 (Taylor's Version)       FALSE 2023-10-27                  90       <span style="color: #BB0000;">NA</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  90       <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
 <p>Let’s create a bar graph showing the rating of each album. We’ll
 first make the album name a factor variable. A convenience variable,
 <code><a href="../reference/album_levels.html">taylor::album_levels</a></code>, is included in the package that will
@@ -299,11 +300,12 @@ of the albums changes, or not all levels are present.</p>
 <p><img src="plotting_files/figure-html/unnamed-chunk-12-1.png" alt="The same bar graph as the previous image, but only showing five albums, and the ordering of the y-axis has been made random. However, the fill of the bar for each album still corresponds to that album's cover." width="90%" style="display: block; margin: auto;"></p>
 <p>However, this also means that album names must match the expected
 names. That is, if you change or reformat an album name, the fill colors
-won’t be found. For example, if we capitalize all the album titles, the
-fill color will be missing for <em>reputation</em>, <em>folklore</em>,
-and <em>evermore</em>, which are stylized in all lower case. The
-expected names are defined in the <code><a href="../reference/album_levels.html">taylor::album_levels</a></code>
-object.</p>
+won’t be found. For example, if we use title case for all the album
+titles, the fill color will be missing for <em>reputation</em>,
+<em>folklore</em>, and <em>evermore</em>, which are stylized in all
+lower case, as well as <em>THE TORTURED POETS DEPARTMENT</em>, which is
+stylized in all upper case. The expected names are defined in the
+<code><a href="../reference/album_levels.html">taylor::album_levels</a></code> object.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">upper_critic</span> <span class="op">&lt;-</span> <span class="va">metacritic</span></span>
 <span><span class="va">upper_critic</span><span class="op">$</span><span class="va">album_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">upper_critic</span><span class="op">$</span><span class="va">album_name</span>,</span>

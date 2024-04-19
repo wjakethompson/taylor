@@ -136,7 +136,7 @@ contains audio features from Spotify and lyrics from Genius for each of
 Taylor Swift’s songs.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_all_songs</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 325 × 29</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 356 × 29</span></span></span>
 <span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <span style="color: #BB0000;">NA</span>       </span></span>
@@ -149,7 +149,7 @@ Taylor Swift’s songs.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <span style="color: #BB0000;">NA</span>       </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <span style="color: #BB0000;">NA</span>       </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <span style="color: #BB0000;">NA</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 315 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 346 more rows</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span></span>
@@ -180,7 +180,7 @@ has not been released.</p>
 each album, as well as critic and user ratings from <a href="https://www.metacritic.com/person/taylor-swift/" class="external-link">Metacritic</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 16 × 5</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 17 × 5</span></span></span>
 <span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
@@ -198,7 +198,8 @@ each album, as well as critic and user ratings from <a href="https://www.metacri
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Red (Taylor's Version)        FALSE 2021-11-12                  91        8.9</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Midnights                     FALSE 2022-10-21                  85        8.3</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 1989 (Taylor's Version)       FALSE 2023-10-27                  90       <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 1989 (Taylor's Version)       FALSE 2023-10-27                  90       <span style="color: #BB0000;">NA</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  90       <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
 <p>Finally, there is a data set dedicated to The Eras Tour, specifically
 the surprise songs that Taylor plays at each show. The data set,
 <code>eras_tour_surprise</code>, contains the date and location of each
@@ -248,7 +249,7 @@ description of color palette functionality in taylor, see
 <code><a href="../articles/palettes.html">vignette("palettes")</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_compare</span></span>
-<span><span class="co">#&gt; &lt;color_palette[14]&gt;</span></span>
+<span><span class="co">#&gt; &lt;color_palette[15]&gt;</span></span>
 <span><span class="co">#&gt;  <span style="background-color: #005F5F;">  </span> taylor_swift </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> fearless </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #875F00;">  </span> fearless_tv </span></span>
@@ -262,7 +263,8 @@ description of color palette functionality in taylor, see
 <span><span class="co">#&gt;  <span style="background-color: #FFD7D7;">  </span> lover </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #8A8A8A;">  </span> folklore </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #5F0000;">  </span> evermore </span></span>
-<span><span class="co">#&gt;  <span style="background-color: #8787AF;">  </span> midnights</span></span></code></pre></div>
+<span><span class="co">#&gt;  <span style="background-color: #8787AF;">  </span> midnights </span></span>
+<span><span class="co">#&gt;  <span style="background-color: #1C1C1C;">  </span> tortured_poets</span></span></code></pre></div>
 <p>taylor also includes several functions for using the built-in
 palettes for color and fill scales with ggplot2. As an example,
 <code><a href="../reference/scale_albums.html">scale_color_albums()</a></code> to map the <code>album_compare</code>

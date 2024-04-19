@@ -93,7 +93,7 @@ released singles.</p>
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
     <p><code>taylor_all_songs</code> is a <a href="https://tibble.tidyverse.org/reference/tibble-package.html" class="external-link">tibble</a> with
-325 rows and 29 variables.
+356 rows and 29 variables.
 Each row is one song.</p><ul><li><p><code>album_name</code>: The name of the album. <code>NA</code> if the song was released
 separately from one of Taylor's studio albums or EPs.</p></li>
 <li><p><code>ep</code>: Logical. Is the album a full studio album (<code>FALSE</code>) or an extended
@@ -145,13 +145,13 @@ euphoric).</p></li>
 <li><p><code>explicit</code>: Logical. Does the track contain explicit lyrics (<code>TRUE</code>) or not
 (<code>FALSE</code>).</p></li>
 </ul><p>Finally, the last set of variables includes those calculated from the Spotify
-API data, and a list column containing song lyrics.</p><ul><li><p><code>key_name</code>: Corresponds directly to the <code>key</code>, but the integer is converted
+API data, and a list-column containing song lyrics.</p><ul><li><p><code>key_name</code>: Corresponds directly to the <code>key</code>, but the integer is converted
 to the key name using Pitch Class notation (e.g., <code>0</code> becomes <code>C</code>).</p></li>
 <li><p><code>mode_name</code>: Corresponds directly to the <code>mode</code>, but the integer is
 converted to the mode name (e.g., <code>0</code> becomes <code>minor</code>).</p></li>
 <li><p><code>key_mode</code>: A combination of the <code>key_name</code> and <code>mode_name</code> variables
 (e.g., <code>C minor</code>).</p></li>
-<li><p><code>lyrics</code>: A list column containing the lyrics to each song. The lyrics can
+<li><p><code>lyrics</code>: A list-column containing the lyrics to each song. The lyrics can
 be unnested with <code><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">tidyr::unnest()</a></code> (i.e.,
 <code>tidyr::unnest(taylor_all_songs, lyrics)</code>). Each element is a data frame
 with 4 variables. :</p><ul><li><p><code>line</code>: The line number of the song.</p></li>
@@ -164,7 +164,7 @@ track (e.g., <code>HAIM</code> is featured on <em>no body, no crime</em>).</p></
 </ul></li>
 </ul><p><code>taylor_album_songs</code> is a <a href="https://tibble.tidyverse.org/reference/tibble-package.html" class="external-link">tibble</a> containing
 the same 29 variables, but only with
-209 rows, one for each song from an official studio
+240 rows, one for each song from an official studio
 album (see Details).</p>
     </div>
     <div class="section level2">
