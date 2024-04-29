@@ -1,14 +1,14 @@
 :root {
   --nav-bkg: #1C160F;     /* nav bar background */
-  --nav-link: #F7F4F0;    /* nav bar link color */
-  --nav-higl: #F7F4F0;    /* nav hover background */
+  --nav-link: #ADA795;    /* nav bar link color */
+  --nav-higl: #ADA795;    /* nav hover background */
 
   --sdb-link: #1C160F;    /* hyperlinks in sidebar */
   --sdb-hover: #635B3A;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
   --pg-header: #1C160F;   /* heading color & text links */
-  --text-link: #1C160F;   /* hyperlinks in text */
+  --text-link: #3F3824;   /* hyperlinks in text */
   --a-hover: #635B3A;     /* hyperlink hover */
 
   --btn-color: #1C160F;   /* copy button color */
