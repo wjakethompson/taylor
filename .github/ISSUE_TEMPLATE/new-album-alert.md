@@ -10,6 +10,7 @@ assignees: ''
 Checklist of things that should be updated when adding a new album:
 
 - [ ] Add lyrics to `data-raw/lyrics`
+- [ ] In terminal, run `python3 data-raw/fix-chars.py` 
 - [ ] Add singles and release dates to `data-raw/releases.xlsx`
 - [ ] Add Spotify album code to `data-raw/taylor-lyrics.R` (~ line 250)
 - [ ] Run `data-raw/taylor-lyrics.R`
