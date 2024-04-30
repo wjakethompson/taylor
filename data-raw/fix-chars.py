@@ -24,9 +24,9 @@ def replaceChars(filepath):
 
 
 working_dir = path.dirname(__file__)
-raw_lyric_dir = "data-raw/lyrics"
+raw_lyric_dir = "lyrics"
 
-os.chdir(raw_lyric_dir)
+os.chdir(join(working_dir, raw_lyric_dir))
 album_titles = [name for name in os.listdir(".") if os.path.isdir(name)]
 
 
