@@ -24,6 +24,8 @@
 
 * New single color added to `album_compare` for *THE TORTURED POETS DEPARTMENT*.
 
+* Corrected non-ASCII characters in `data-raw/lyrics/` (@ericwu17, #44, #45).
+
 
 # taylor 3.0.0
 
@@ -125,7 +127,7 @@
   `taylor_albums`.
 
 * Fixed some additional non-ASCII characters in the lyrics for all albums
-  (@EricWu2003, #16).
+  (@ericwu17, #16).
 
 * Minor tweaks to the color palettes for each album to better capture the vibes,
   rather than just pulling from album artwork.
