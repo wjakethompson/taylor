@@ -135,7 +135,7 @@ taylor_albums
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
 #> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  
-#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  90       NA
+#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA
 ```
 
 ## Code of Conduct
