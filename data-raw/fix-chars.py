@@ -3,23 +3,23 @@ from os.path import join
 from os import path
 
 def replaceChars(filepath):
-    lyrics = ""
-    with open(filepath, 'r') as f:
-        lyrics = f.read()
+	lyrics = ""
+	with open(filepath, 'r') as f:
+		lyrics = f.read()
 
-        lyrics = lyrics.replace("е", "e")
-        # lyrics = lyrics.replace("”", "\"")
-        # lyrics = lyrics.replace("“", "\"")
-        # lyrics = lyrics.replace("’", "\'")
-        lyrics = lyrics.replace("\u2005", " ")
-        lyrics = lyrics.replace("\u205f", " ")
-        lyrics = lyrics.replace("\u200b", " ")
-        lyrics = lyrics.replace("—", "-") # this is a long dash
-        lyrics = lyrics.replace("–", "-") # this is a different long dash
-        # lyrics = lyrics.replace("…", "...")
+		lyrics = lyrics.replace("е", "e")
+		# lyrics = lyrics.replace("”", "\"")
+		# lyrics = lyrics.replace("“", "\"")
+		# lyrics = lyrics.replace("’", "\'")
+		lyrics = lyrics.replace("\u2005", " ")
+		lyrics = lyrics.replace("\u205f", " ")
+		lyrics = lyrics.replace("\u200b", " ")
+		lyrics = lyrics.replace("—", "-") # this is a long dash
+		lyrics = lyrics.replace("–", "-") # this is a different long dash
+		# lyrics = lyrics.replace("…", "...")
 
-    with open(filepath, 'w') as f:
-        f.write(lyrics)
+	with open(filepath, 'w') as f:
+		f.write(lyrics)
 
 
 
@@ -34,5 +34,7 @@ for album in album_titles:
 	os.chdir(join(working_dir, raw_lyric_dir, album))
 	for path in os.listdir("."):
 		if not os.path.isfile(path):
+			continue
+		if not path.endswith(".txt"):
 			continue
 		replaceChars(path)
