@@ -1,15 +1,15 @@
 ## Release summary
 
-This is a major release including new data.
+This is a minor release to add new data.
 
 ## Test environments
 
-* local R installation macOS 13.5.2, R 4.3.1
-* macOS 12.6.9 (on github actions), R 4.3.1
-* windows server 2022 x64 (on github actions), R 4.3.1
-* ubuntu 22.04.3 (on github actions), R 4.3.1
-* ubuntu 22.04.3 (on github actions), R 4.2.3
-* ubuntu 22.04.3 (on github actions), R-devel
+* local R installation macOS 14.4.1, R 4.4.0
+* macOS 14.4.1 (on github actions), R 4.4.0
+* windows server 2022 x64 (on github actions), R 4.4.0
+* ubuntu 22.04.4 LTS (on github actions), R 4.4.0
+* ubuntu 22.04.4 LTS (on github actions), R 4.3.3
+* ubuntu 22.04.4 LTS (on github actions), R-devel
 * win-builder (devel)
 
 ## R CMD check results
