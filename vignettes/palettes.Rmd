@@ -11,7 +11,7 @@ vignette: >
 ```{r, child="children/chunk-options.txt"}
 ```
 
-The taylor package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://twitter.com/josiahparry) in the [cpcinema](https://github.com/JosiahParry/cpcinema) package.
+The taylor package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://josiahparry.com/) in the [cpcinema](https://github.com/JosiahParry/cpcinema) package.
 
 ## Creating palettes
 
@@ -84,7 +84,7 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   theme_minimal()
 ```
 
-Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins) to map our palette to the species of penguin.
+Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) to map our palette to the species of penguin.
 
 ```{r message = FALSE, warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from our custom color palette. Adelie penguins are shown in red circles, Chinstrap penguins in yellow triangles, and Gentoo penguins in blue squares."}
 library(palmerpenguins)
