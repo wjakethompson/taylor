@@ -1,31 +1,32 @@
 # taylor (development version)
 
-* Surprise songs from the South American and Asia-Pacific legs of the tour have
-  been added to `eras_tour_surprise`.
+## New features
+
+* New data and visualization tools have been added for
+  *THE TORTURED POETS DEPARTMENT*.
+  * Added lyrics and Spotify audio features to `taylor_all_songs` and
+  `taylor_album_songs`.
+  * Added composite critic score from Metacritic to
+  `taylor_albums`.
+  * Added a new themed color palette to `album_palettes`.
+  * Added a new single color to `album_compare`.
 
 * Spotify data for "You're Losing Me (From The Vault)" has been added.
 
+* Surprise songs from the South American and Asia-Pacific legs of the tour have
+  been added to `eras_tour_surprise`.
+
+## Minor improvements and fixed
+
 * Fixed installation instructions in README (@scarioscia, #37).
+
+* Corrected non-ASCII characters in `data-raw/lyrics/` (@ericwu17, #44, #45).
 
 * Updated documentation with additional vignettes.
   * `vignette("taylor")` provides and overview of the package and links to
     example analyses.
   * `vigentte("lyrics")` describes different methods for accessing lyrics in a
     nested list column (#35).
-    
-* Added tracks from *THE TORTURED POETS DEPARTMENT* to `taylor_all_songs` and
-  `taylor_album_songs`.
-
-* Metacritic score for *THE TORTURED POETS DEPARTMENT* has been added to
-  `taylor_albums`.
-  
-* New color palette added to `album_palettes` for
-  *THE TORTURED POETS DEPARTMENT*.
-
-* New single color added to `album_compare` for *THE TORTURED POETS DEPARTMENT*.
-
-* Corrected non-ASCII characters in `data-raw/lyrics/` (@ericwu17, #44, #45).
-
 
 # taylor 3.0.0
 
