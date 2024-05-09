@@ -1,6 +1,6 @@
 Package: taylor
 Title: Lyrics and Song Data for Taylor Swift's Discography
-Version: 3.1.0
+Version: 3.1.0.9000
 Authors@R: 
     person("W. Jake", "Thompson", , "wjakethompson@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-7339-0300"))
