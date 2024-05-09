@@ -1,10 +1,12 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
+  lyrics: lyrics.html
   palettes: palettes.html
   plotting: plotting.html
-last_built: 2023-11-09T02:37Z
+  taylor: taylor.html
+last_built: 2024-05-09T13:25Z
 urls:
   reference: https://taylor.wjakethompson.com/reference
   article: https://taylor.wjakethompson.com/articles
