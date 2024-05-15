@@ -109,16 +109,19 @@ surprise_song_count <- eras_tour_surprise %>%
   arrange(album_name, date, night) %>%
   mutate(surprise_count = cumsum(n), .by = album_name) %>%
   left_join(select(taylor_albums, album_name, album_release),
-            by = "album_name") %>% 
-  mutate(surprise_count = case_when(album_name == "THE TORTURED POETS DEPARTMENT" &
-                                      date < album_release ~ NA_integer_,
-                                    .default = surprise_count)) %>% 
+            by = "album_name") %>%
+  mutate(surprise_count = case_when(
+    album_name == "THE TORTURED POETS DEPARTMENT" &
+      date < album_release ~ NA_integer_,
+    .default = surprise_count
+  )) %>%
   add_row(leg = factor("Europe"), album_name = "THE TORTURED POETS DEPARTMENT",
-          show_number = 83.5, surprise_count = 0L) %>% 
+          show_number = 83.5, surprise_count = 0L) %>%
   mutate(album_name = replace_na(album_name, "Other"),
          album_group = album_name,
          album_name = factor(album_name, c(album_levels, "Other"),
-                             labels = c(gsub("POETS DEPARTMENT", "POETS\nDEPARTMENT",
+                             labels = c(gsub("POETS DEPARTMENT",
+                                             "POETS\nDEPARTMENT",
                                              album_levels), "Other")))
 
 ggplot(surprise_song_count) +
