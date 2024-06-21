@@ -1,5 +1,15 @@
 # taylor (development version)
 
+* Added "us." from Gracie Abrams's *The Secret of Us* to `taylor_all_songs`.
+
+* Added songs for which Taylor has written (but didn't record or feature on) to `taylor_all_songs`. This includes:
+  * "1 step forward, 3 steps back" and "deja vu" from Olivia Rodrigo's *SOUR*
+  * "Best Days Of Your Life" from Kellie Pickler's self-titled album
+  * "Better Man" from Little Big Town's *The Breaker*
+  * "This is What You Came For" by Calvin Harris (feat. Rihanna)
+  * "TMZ" from Weird Al Yankovic's *Apocalypse*
+  * "You'll Always Find Your Way Back Home" from Miley Cyrus on the *Hannah Montana: The Movie* soundtrack
+
 # taylor 3.1.0
 
 ## New features
