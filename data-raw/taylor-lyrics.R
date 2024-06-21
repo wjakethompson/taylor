@@ -100,13 +100,15 @@ base_info <- lyrics %>%
         "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
       TRUE ~ album_name
     ),
+    writer_only = album_name == "Writer",
     album_name = na_if(album_name, "Non Album"),
-    album_name = na_if(album_name, "Features")
+    album_name = na_if(album_name, "Features"),
+    album_name = na_if(album_name, "Writer")
   ) %>%
   left_join(albums, by = "album_name",
             relationship = "many-to-one") %>%
   select(album_name, ep, album_release, track_number, track_name, bonus_track,
-         lyrics) %>%
+         writer_only, lyrics) %>%
   # standard file name changes
   mutate(track_name = path_ext_remove(track_name),
          track_name = str_replace_all(track_name, "-", " "),
@@ -220,8 +222,14 @@ base_info <- lyrics %>%
                                       "(From The Vault)"),
          track_name = str_replace_all(track_name, "Ftv",
                                       "[From The Vault]")) %>%
-  # edits for singles
-  mutate(track_name = str_replace_all(track_name, "Rmx", "(Remix)")) %>%
+  # edits for singles and writing credits
+  mutate(track_name = str_replace_all(track_name, "Rmx", "(Remix)"),
+         track_name = case_when(track_name == "Us" ~ "us.",
+                                .default = track_name),
+         track_name = str_replace_all(track_name, "1 Step Forward 3 Steps Back",
+                                      "1 step forward, 3 steps back"),
+         track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
+         track_name = str_replace_all(track_name, "Tmz", "TMZ")) %>%
   left_join(singles, by = c("album_name", "track_name")) %>%
   rowwise() %>%
   mutate(track_release = min(album_release, promotional_release, single_release,
@@ -294,7 +302,19 @@ feature_uri <- tribble(
   "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
   "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
   "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
-  "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP"
+  "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP",
+  "us.",                        "0hhzNPE68LWLfgZwdpxVdR"
+)
+
+writer_uri <- tribble(
+  ~track_name,                              ~track_uri,
+  "1 step forward, 3 steps back",           "4wcBRRpIfesgcyUtis7PEg",
+  "Best Days Of Your Life",                 "16jvUOIQ2P54P0bNN4rAdv",
+  "Better Man",                             "23TxRN09aR1RB0G0tFoT0b",
+  "deja vu",                                "6HU7h9RYOaPRFeh0R3UeAr",
+  "This Is What You Came For",              "0azC730Exh71aQlOt9Zj3y",
+  "TMZ",                                    "2Y9YdGPN7AtVfpTvXfRbc6",
+  "You'll Always Find Your Way Back Home",  "12wSL3tGk3MtbDEhfG7xy3"
 )
 
 bonus_uri <- tribble(
@@ -330,7 +350,7 @@ spotify <- tribble(
                          select(track_name = name, track_uri = id)
                      })) %>%
   unnest(track) %>%
-  bind_rows(bonus_uri, single_uri, feature_uri) %>%
+  bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) %>%
   mutate(spotify = map(track_uri,
                        function(.x, key_lookup) {
                          if (.x == "") return(NULL)
@@ -435,6 +455,14 @@ spotify_join <- spotify %>%
     track_name = str_replace_all(track_name, "Thank You Aimee",
                                  "thanK you aIMee")
   ) %>%
+  # edits for singles, features, and writing credits
+  mutate(
+    track_name = str_replace_all(track_name,  "1 Step Forward, 3 Steps Back",
+                                 "1 step forward, 3 steps back"),
+    track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
+    track_name = str_replace_all(track_name, "Tmz", "TMZ"),
+    track_name = str_replace_all(track_name, "Us\\.", "us.")
+  ) %>%
   # export data for joining
   write_csv(here("data-raw", "spotify-data.csv")) %>%
   nest(spotify = -c(album_name, track_name))
@@ -464,11 +492,12 @@ spotify_join <- spotify %>%
 (extra <- spotify_join %>%
    anti_join(base_info, by = c("album_name", "track_name")))
 
-# Check for non-ASCII characters. 17 errors (4 rows) expected:
-# 14 é
-# 1 í
-# 1 ï
-# 1 ó
+# Check for non-ASCII characters. 35 errors (5 rows) expected:
+# 9  à
+# 23 é
+# 1  í
+# 1  ï
+# 1  ó
 base_info %>%
   select(where(is.character), lyrics) %>%
   unnest(lyrics) %>%
