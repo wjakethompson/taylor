@@ -25,21 +25,22 @@ eras_tour_surprise <- read_xlsx(here("data-raw", "surprise-songs.xlsx")) %>%
 
 # Check that we're using Taylor's Version when possible. Should be 0 rows.
 (not_tv <- eras_tour_surprise %>%
-  filter(!str_detect(song, fixed("Taylor's Version"))) %>%
   select(song, mashup) %>%
   separate_longer_delim(mashup, delim = "; ") %>%
   pivot_longer(cols = everything(), names_to = "type", values_to = "song") %>%
   filter(!is.na(song)) %>%
+  filter(!str_detect(song, fixed("Taylor's Version"))) %>%
   mutate(tv = map(song,
                   \(x) {
                     taylor_all_songs %>%
-                      filter(str_detect(track_name, x)) %>%
+                      filter(str_detect(track_name, fixed(x))) %>%
                       filter(str_detect(track_name,
                                         fixed("Taylor's Version"))) %>%
                       select(album_name, track_name)
                   })) %>%
   filter(map_lgl(tv, \(x) nrow(x) > 0)) %>%
   select(type, song, tv) %>%
-  unnest(tv))
+  unnest(tv) %>%
+  distinct())
 
 use_data(eras_tour_surprise, overwrite = TRUE)
