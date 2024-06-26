@@ -100,7 +100,8 @@ check_real_range <- function(x, name, lb, ub) {
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
   } else if (x < lb || x > ub) {
-    abort_bad_argument(name, must = cli::format_inline("be between {lb} and {ub}"))
+    exp_value <- cli::format_inline("be between {lb} and {ub}")
+    abort_bad_argument(name, must = exp_value)
   } else {
     x
   }
@@ -119,7 +120,8 @@ check_exact_abs_int <- function(x, name, value) {
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
   } else if (abs(x) != value) {
-    abort_bad_argument(name, must = cli::format_inline("be {value} or -{value}"))
+    exp_value <- cli::format_inline("be {value} or -{value}")
+    abort_bad_argument(name, must = exp_value)
   } else {
     x
   }
