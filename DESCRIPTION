@@ -40,6 +40,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
+Config/Needs/website: bookdown
 Encoding: UTF-8
 Language: en-US
 LazyData: true
