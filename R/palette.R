@@ -94,7 +94,7 @@ obj_print_data.taylor_color_palette <- function(x, ...) {
 #' @method obj_print_data.taylor_color_palette default
 #' @export
 obj_print_data.taylor_color_palette.default <- function(x, ...) {
-  styles <- lapply(x, crayon::make_style, bg = TRUE)
+  styles <- lapply(x, cli::make_ansi_style, bg = TRUE)
   invisible(
     mapply(
       function(.x, .y) {

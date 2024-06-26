@@ -1,5 +1,7 @@
 # taylor (development version)
 
+* taylor now displays output using cli instead of crayon.
+
 * Added "us." from Gracie Abrams's *The Secret of Us* to `taylor_all_songs`.
 
 * Added songs for which Taylor has written (but didn't record or feature on) to `taylor_all_songs`. This includes:
