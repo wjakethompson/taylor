@@ -61,7 +61,7 @@ Finally, sometimes we want to perform a calculation on each element of a list-co
 In this case, we don't necessarily need to unnest each element.
 Instead, we can use a combination of `dplyr::mutate()` and `purrr::map()` to apply a function to each element of the list-column.
 For example, we if want to know the number of lines in each song, we can apply `nrow()` to each element of the list column.
-Because `nrow()` returns and integer value, we'll use `purrr::map_int()`.
+Because `nrow()` returns and integer value, we'll use `vapply()` (we can also use `purrr::map_int()`).
 
 ```{r}
 track_lyrics %>%
