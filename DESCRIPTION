@@ -31,7 +31,6 @@ Suggests:
     dplyr,
     knitr,
     palmerpenguins,
-    pkgdown,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
