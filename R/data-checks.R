@@ -1,15 +1,25 @@
 # Checkers ---------------------------------------------------------------------
-abort_bad_argument <- function(arg, must, not = NULL) {
-  msg <- glue::glue("`{arg}` must {must}")
-  if (!is.null(not)) {
-    msg <- glue::glue("{msg}; not {not}")
+abort_bad_argument <- function(arg, must, not = NULL, info = NULL, call = rlang::caller_env(), .envir = parent.frame()) {
+  if (is.null(not)) {
+    msg <- "{.arg {arg}} must {must}"
+  } else {
+    msg <- "{.arg {arg}} must {must}; not {not}"
   }
 
-  rlang::abort("error_bad_argument",
-               message = msg,
-               arg = arg,
-               must = must,
-               not = not)
+  # Format info message based on caller's environment.
+  if (!is.null(info)) {
+    info <- cli::format_message(info, .envir = .envir)
+  }
+
+
+  cli::cli_abort(
+    class = "error_bad_argument",
+    message = c(msg, info),
+    arg = arg,
+    must = must,
+    not = not,
+    call = call
+  )
 }
 
 check_palette <- function(x, name) {
@@ -18,7 +28,7 @@ check_palette <- function(x, name) {
   }
 
   # make sure no missing values present
-  if (any(rlang::are_na(x))) {
+  if (anyNA(x)) {
     abort_bad_argument(name, must = "not contain missing values")
   }
 
@@ -39,9 +49,8 @@ check_palette <- function(x, name) {
   if (!all(valid_hex)) {
     abort_bad_argument(
       name,
-      must = glue::glue("be valid hexadecimal values or from `colors()`.\n",
-                        "Problematic values: ",
-                        "{paste(x[!valid_hex], collapse = ', ')}")
+      must = "be valid hexadecimal values or from `colors()`.",
+      info = c(i = "Problematic values: {.val {x[!valid_hex]}}.")
     )
   }
 
@@ -86,7 +95,7 @@ check_real_range <- function(x, name, lb, ub) {
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
   } else if (x < lb || x > ub) {
-    abort_bad_argument(name, must = glue::glue("be between {lb} and {ub}"))
+    abort_bad_argument(name, must = cli::format_inline("be between {lb} and {ub}"))
   } else {
     x
   }
@@ -105,7 +114,7 @@ check_exact_abs_int <- function(x, name, value) {
   if (is.na(x)) {
     abort_bad_argument(name, must = "be non-missing")
   } else if (abs(x) != value) {
-    abort_bad_argument(name, must = glue::glue("be {value} or -{value}"))
+    abort_bad_argument(name, must = cli::format_inline("be {value} or -{value}"))
   } else {
     x
   }
