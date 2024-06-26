@@ -55,7 +55,7 @@ check_palette <- function(x, name) {
     abort_bad_argument(
       name,
       must = "be valid hexadecimal values or from `colors()`.",
-      info = c(i = "Problematic values: {.val {x[!valid_hex]}}.")
+      info = c(i = "Problematic value{?s}: {.val {x[!valid_hex]}}.")
     )
   }
 
