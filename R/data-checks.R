@@ -1,5 +1,10 @@
 # Checkers ---------------------------------------------------------------------
-abort_bad_argument <- function(arg, must, not = NULL, info = NULL, call = rlang::caller_env(), .envir = parent.frame()) {
+abort_bad_argument <- function(arg,
+                               must,
+                               not = NULL,
+                               info = NULL,
+                               call = rlang::caller_env(),
+                               .envir = parent.frame()) {
   if (is.null(not)) {
     msg <- "{.arg {arg}} must {must}"
   } else {
