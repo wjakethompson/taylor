@@ -23,17 +23,12 @@
 
     Code
       a_local_variable <- "local var"
-      footer <- cli::format_message(c(x = "Look at {.val {a_local_var}}"))
-    Condition
-      Error:
-      ! Could not evaluate cli `{}` expression: `a_local_var`.
-      Caused by error:
-      ! object 'a_local_var' not found
-    Code
+      footer <- cli::format_message(c(x = "Look at {.val {a_local_variable}}"))
       abort_bad_argument("size", "be an integer", footer = footer)
     Condition
       Error:
-      ! object 'footer' not found
+      ! `size` must be an integer
+      x Look at "local var"
 
 # check_palette() throws informative error.
 

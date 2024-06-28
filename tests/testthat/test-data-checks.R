@@ -16,7 +16,7 @@ test_that("abort_bad_argument() is informative.", {
 test_that("abort_bad_argument() can add inline markup to footer", {
   expect_snapshot(error = TRUE, {
     a_local_variable <- "local var"
-    footer <- cli::format_message(c("x" = "Look at {.val {a_local_var}}"))
+    footer <- cli::format_message(c("x" = "Look at {.val {a_local_variable}}"))
     abort_bad_argument("size", "be an integer", footer = footer)
   })
 })
