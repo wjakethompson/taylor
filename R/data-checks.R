@@ -6,7 +6,7 @@ abort_bad_argument <- function(arg, must, not = NULL, extra = NULL,
     msg <- paste0(msg, "; not {not}")
   }
   if (!is.null(extra)) {
-    msg <- c(msg, cli::format_message(extra))
+    msg <- c(msg, extra)
   }
   if (!is.null(custom)) {
     msg <- custom
@@ -48,7 +48,8 @@ check_palette <- function(x, arg = rlang::caller_arg(x),
       must = "be valid hexadecimal values or from `colors()`.",
       extra = cli::format_message(
         c(i = "Problematic value{?s}: {.val {x[!valid_hex]}}.")
-      )
+      ),
+      call = call
     )
   }
 
