@@ -1,5 +1,10 @@
 # taylor (development version)
 
+* Error messages have been improved display the function that was called,
+  rather than function where the error appeared (@olivroy, #49).
+
+* Color palettes are now displayed using cli instead of crayon (@olivroy, #49).
+
 * Added "us." from Gracie Abrams's *The Secret of Us* to `taylor_all_songs`.
 
 * Added songs for which Taylor has written (but didn't record or feature on) to `taylor_all_songs`. This includes:

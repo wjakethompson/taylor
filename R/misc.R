@@ -13,7 +13,7 @@
 #' title_case("Taylor Swift")
 #' title_case("TAYLOR SWIFT")
 title_case <- function(string) {
-  string <- check_character(string, name = "string")
+  string <- check_character(string)
 
   string <- tolower(string)
   s <- strsplit(string, " ")[[1]]

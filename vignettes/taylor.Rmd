@@ -187,10 +187,10 @@ surprise_song_count %>%
 ## I could show you incredible things
 
 There are many ways we can explore the data, but, honestly, baby, who's counting?
-`r ifelse(pkgdown::in_pkgdown(), "Below is", "On the [package website](https://taylor.wjakethompson.com), you can find")` a collection of analyses that use data from taylor that I have found in the wild.
+`r ifelse(identical(Sys.getenv("IN_PKGDOWN"), "true"), "Below is", "On the [package website](https://taylor.wjakethompson.com), you can find")` a collection of analyses that use data from taylor that I have found in the wild.
 If you use the data and find it useful, please reach out---I love to see the package used!
 
-```{r examples, echo = FALSE, results = "asis", eval = pkgdown::in_pkgdown()}
+```{r examples, echo = FALSE, results = "asis", eval = identical(Sys.getenv("IN_PKGDOWN"), "true")}
 examples <- read.csv("data/example-uses.csv")
 cells <- paste("<td>",
                paste0("  <a href=\"", examples$href, "\">"),
