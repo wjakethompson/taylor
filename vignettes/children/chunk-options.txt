@@ -1,5 +1,5 @@
 ```{r chunk-options, include=FALSE}
-if (requireNamespace("pkgdown", quietly = TRUE) && pkgdown::in_pkgdown()) {
+if (identical(Sys.getenv("IN_PKGDOWN"), "true")) {
   tiny_width <- small_width <- med_width <- 7
   large_width <- 8
 } else {

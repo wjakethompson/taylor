@@ -13,7 +13,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 version](https://www.r-pkg.org/badges/version/taylor)](https://CRAN.R-project.org/package=taylor)
 [![Package
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/taylor)](https://cran.r-project.org/package=measr)</br>
-[![R-CMD-check](https://github.com/wjakethompson/taylor/workflows/R-CMD-check/badge.svg)](https://github.com/wjakethompson/taylor/actions)
+[![R-CMD-check](https://github.com/wjakethompson/taylor/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wjakethompson/taylor/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/wjakethompson/taylor/branch/main/graph/badge.svg?token=TECvfoOYHh)](https://app.codecov.io/gh/wjakethompson/taylor)
 [![Netlify
 Status](https://api.netlify.com/api/v1/badges/b80199c9-57a9-4d08-87e9-4887a67d01e4/deploy-status)](https://app.netlify.com/sites/r-taylor/deploys)</br>
@@ -89,7 +89,7 @@ as *Taylor’s Version*.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 356 × 29
+#> # A tibble: 364 × 29
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -102,7 +102,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 346 more rows
+#> # ℹ 354 more rows
 #> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
