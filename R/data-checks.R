@@ -21,7 +21,7 @@ check_palette <- function(x, arg = rlang::caller_arg(x),
   }
 
   # make sure no missing values present
-  if (any(rlang::are_na(x))) {
+  if (anyNA(x) || !rlang::is_atomic(x)) {
     abort_bad_argument(arg = arg, must = "not contain missing values",
                        call = call)
   }
