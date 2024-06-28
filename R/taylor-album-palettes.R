@@ -100,9 +100,9 @@ album_levels <- c("Taylor Swift",
 # Scale functions --------------------------------------------------------------
 taylor_col <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                        album = "Lover") {
-  begin <- check_real_range(begin, name = "begin", lb = 0, ub = 1)
-  end <- check_real_range(end, name = "end", lb = 0, ub = 1)
-  direction <- check_exact_abs_int(direction, name = "direction", value = 1)
+  begin <- check_real_range(begin, lb = 0, ub = 1)
+  end <- check_real_range(end, lb = 0, ub = 1)
+  direction <- check_exact_abs_int(direction, value = 1)
 
   if (n == 0) {
     return(character(0))

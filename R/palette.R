@@ -30,11 +30,11 @@
 #'   theme_minimal()
 color_palette <- function(pal = character(), n = length(pal)) {
   # check palette and cast to character
-  pal <- check_palette(pal, name = "pal")
+  pal <- check_palette(pal)
   pal <- vec_cast(pal, character())
 
   # check n
-  n <- check_pos_int(n, name = "n")
+  n <- check_pos_int(n)
 
   new_color_palette(pal = pal, n = n)
 }

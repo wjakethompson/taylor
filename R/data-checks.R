@@ -1,40 +1,31 @@
 # Checkers ---------------------------------------------------------------------
-abort_bad_argument <- function(arg,
-                               must,
-                               not = NULL,
-                               info = NULL,
-                               call = rlang::caller_env(),
-                               .envir = parent.frame()) {
-  if (is.null(not)) {
-    msg <- "{.arg {arg}} must {must}"
-  } else {
-    msg <- "{.arg {arg}} must {must}; not {not}"
+abort_bad_argument <- function(arg, must, not = NULL, extra = NULL,
+                               custom = NULL, call) {
+  msg <- glue::glue("{{.arg {arg}}} must {must}")
+  if (!is.null(not)) {
+    msg <- glue::glue("{msg}; not {not}")
+  }
+  if (!is.null(extra)) {
+    msg <- c(msg, cli::format_message(extra))
+  }
+  if (!is.null(custom)) {
+    msg <- custom
   }
 
-  # Format info message based on caller's environment.
-  if (!is.null(info)) {
-    info <- cli::format_message(info, .envir = .envir)
-  }
-
-
-  cli::cli_abort(
-    class = "error_bad_argument",
-    message = c(msg, info),
-    arg = arg,
-    must = must,
-    not = not,
-    call = call
-  )
+  cli::cli_abort(msg, call = call)
 }
 
-check_palette <- function(x, name) {
+check_palette <- function(x, arg = rlang::caller_arg(x),
+                          call = rlang::caller_env()) {
   if (!is.character(x)) {
-    abort_bad_argument(name, must = "be a character vector", not = typeof(x))
+    abort_bad_argument(arg = arg, must = "be a character vector",
+                       not = typeof(x), call = call)
   }
 
   # make sure no missing values present
-  if (anyNA(x)) {
-    abort_bad_argument(name, must = "not contain missing values")
+  if (any(rlang::are_na(x))) {
+    abort_bad_argument(arg = arg, must = "not contain missing values",
+                       call = call)
   }
 
   # look for R color specifications
@@ -53,9 +44,11 @@ check_palette <- function(x, name) {
   valid_hex <- grepl("^#(?:[0-9a-fA-F]{6,8}){1}$", new_x)
   if (!all(valid_hex)) {
     abort_bad_argument(
-      name,
+      arg = arg,
       must = "be valid hexadecimal values or from `colors()`.",
-      info = c(i = "Problematic value{?s}: {.val {x[!valid_hex]}}.")
+      extra = cli::format_message(
+        c(i = "Problematic value{?s}: {.val {x[!valid_hex]}}.")
+      )
     )
   }
 
@@ -69,71 +62,88 @@ check_palette <- function(x, name) {
   return(new_x)
 }
 
-check_pos_int <- function(x, name) {
+check_pos_int <- function(x, arg = rlang::caller_arg(x),
+                          call = rlang::caller_env()) {
   if (!is.numeric(x)) {
-    abort_bad_argument(name, must = "be numeric", not = typeof(x))
+    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
+                       call = call)
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(name, must = "have length of 1", not = length(x))
+    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
+                       call = call)
+  }
+
+  if (is.na(x)) {
+    abort_bad_argument(arg = arg, must = "be non-missing", call = call)
   }
   x <- as.integer(x)
 
-  if (is.na(x)) {
-    abort_bad_argument(name, must = "be non-missing")
-  } else if (x < 0) {
-    abort_bad_argument(name, must = "be greater than 0")
+  if (x < 0) {
+    abort_bad_argument(arg = arg, must = "be greater than 0", call = call)
   } else {
     x
   }
 }
 
-check_real_range <- function(x, name, lb, ub) {
+check_real_range <- function(x, lb, ub, arg = rlang::caller_arg(x),
+                             call = rlang::caller_env()) {
   if (!is.numeric(x)) {
-    abort_bad_argument(name, must = "be numeric", not = typeof(x))
+    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
+                       call = call)
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(name, must = "have length of 1", not = length(x))
+    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
+                       call = call)
   }
 
   if (is.na(x)) {
-    abort_bad_argument(name, must = "be non-missing")
+    abort_bad_argument(arg = arg, must = "be non-missing", call = call)
   } else if (x < lb || x > ub) {
-    exp_value <- cli::format_inline("be between {lb} and {ub}")
-    abort_bad_argument(name, must = exp_value)
+    abort_bad_argument(arg = arg,
+                       must = cli::format_inline("be between {lb} and {ub}"),
+                       call = call)
   } else {
     x
   }
 }
 
-check_exact_abs_int <- function(x, name, value) {
+check_exact_abs_int <- function(x, value, arg = rlang::caller_arg(x),
+                                call = rlang::caller_env()) {
   if (!is.numeric(x)) {
-    abort_bad_argument(name, must = "be numeric", not = typeof(x))
+    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
+                       call = call)
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(name, must = "have length of 1", not = length(x))
+    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
+                       call = call)
   }
-  x <- as.integer(x)
 
   if (is.na(x)) {
-    abort_bad_argument(name, must = "be non-missing")
-  } else if (abs(x) != value) {
-    exp_value <- cli::format_inline("be {value} or -{value}")
-    abort_bad_argument(name, must = exp_value)
+    abort_bad_argument(arg = arg, must = "be non-missing", call = call)
+  }
+
+  if (abs(x) != value) {
+    abort_bad_argument(arg = arg,
+                       must = cli::format_inline("be {value} or -{value}"),
+                       call = call)
   } else {
-    x
+    as.integer(x)
   }
 }
 
-check_character <- function(x, name) {
+check_character <- function(x, arg = rlang::caller_arg(x),
+                            call = rlang::caller_env()) {
   if (!is.character(x)) {
-    abort_bad_argument(name, must = "be character", not = typeof(x))
+    abort_bad_argument(arg = arg, must = "be character", not = typeof(x),
+                       call = call)
   }
 
   if (is.na(x)) {
-    abort_bad_argument(name, must = "be non-missing")
+    abort_bad_argument(arg = arg, must = "be non-missing",
+                       call = call)
   }
   x
 }

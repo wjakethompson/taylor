@@ -14,7 +14,7 @@
 #'
 #' translate_bracelet("kimbkiagkitbimhotw")
 translate_bracelet <- function(abbr) {
-  abbr <- check_character(abbr, name = "abbr")
+  abbr <- check_character(abbr)
 
   lyric_abbr <- vapply(taylor::taylor_all_songs$lyrics,
                        function(.x) {
