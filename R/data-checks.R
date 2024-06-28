@@ -1,18 +1,16 @@
 # Checkers ---------------------------------------------------------------------
-abort_bad_argument <- function(arg, must, not = NULL, extra = NULL,
-                               custom = NULL, call) {
+abort_bad_argument <- function(arg, must = NULL, not = NULL, footer = NULL,
+                               custom = NULL, call = rlang::caller_env()) {
   msg <- "{.arg {arg}} must {must}"
   if (!is.null(not)) {
     msg <- paste0(msg, "; not {not}")
   }
-  if (!is.null(extra)) {
-    msg <- c(msg, extra)
-  }
   if (!is.null(custom)) {
     msg <- custom
+    footer <- NULL
   }
 
-  cli::cli_abort(msg, call = call)
+  cli::cli_abort(msg, footer = footer, call = call)
 }
 
 check_palette <- function(x, arg = rlang::caller_arg(x),
@@ -46,7 +44,7 @@ check_palette <- function(x, arg = rlang::caller_arg(x),
     abort_bad_argument(
       arg = arg,
       must = "be valid hexadecimal values or from `colors()`.",
-      extra = cli::format_message(
+      footer = cli::format_message(
         c(i = "Problematic value{?s}: {.val {x[!valid_hex]}}.")
       ),
       call = call
