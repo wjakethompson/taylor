@@ -1,9 +1,9 @@
 # Checkers ---------------------------------------------------------------------
 abort_bad_argument <- function(arg, must, not = NULL, extra = NULL,
                                custom = NULL, call) {
-  msg <- glue::glue("{{.arg {arg}}} must {must}")
+  msg <- "{.arg {arg}} must {must}"
   if (!is.null(not)) {
-    msg <- glue::glue("{msg}; not {not}")
+    msg <- paste0(msg, "; not {not}")
   }
   if (!is.null(extra)) {
     msg <- c(msg, cli::format_message(extra))
