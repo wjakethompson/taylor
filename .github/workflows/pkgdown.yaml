@@ -36,7 +36,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::pkgdown, local::.
+          extra-packages: any::pkgdown, any::bookdown, local::.
           needs: website
 
       - name: Build site
@@ -45,7 +45,7 @@ jobs:
 
       - name: Deploy to Netlify
         if: github.event_name == 'pull_request'
-        uses: nwtgck/actions-netlify@v2.0.0
+        uses: nwtgck/actions-netlify@v3.0.0
         with:
           publish-dir: './docs/dev'
           production-branch: main
@@ -54,6 +54,9 @@ jobs:
             'Deploy from GHA: ${{ github.event.pull_request.title || github.event.head_commit.message }} (${{ github.sha }})'
           enable-pull-request-comment: true
           enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
 
       - name: Deploy to GitHub pages 🚀
