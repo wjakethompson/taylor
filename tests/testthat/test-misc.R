@@ -1,6 +1,8 @@
 test_that("capitalization works", {
-  expect_error(title_case(2), "character")
-  expect_error(title_case(NA_character_), "non-missing")
+  expect_snapshot(error = TRUE, {
+    title_case(2)
+    title_case(NA_character_)
+  })
 
   expect_identical(title_case("taylor swift"), "Taylor Swift")
   expect_identical(title_case("TAYLOR SWIFT"), "Taylor Swift")

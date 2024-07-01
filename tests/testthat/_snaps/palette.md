@@ -1,9 +1,28 @@
+# palette creation work
+
+    Code
+      color_palette(c("firetruck", "ocean"))
+    Condition
+      Error in `color_palette()`:
+      ! `pal` must be valid hexadecimal values or from `colors()`.
+      i Problematic values: "firetruck" and "ocean".
+    Code
+      color_palette(c("#00ZVPQ", "#IOBNOB"))
+    Condition
+      Error in `color_palette()`:
+      ! `pal` must be valid hexadecimal values or from `colors()`.
+      i Problematic values: "#00ZVPQ" and "#IOBNOB".
+    Code
+      color_palette(c("#00ZVPQ", "red"))
+    Condition
+      Error in `color_palette()`:
+      ! `pal` must be valid hexadecimal values or from `colors()`.
+      i Problematic value: "#00ZVPQ".
+
 # various formatting works
 
     Code
-      df1 <- tibble::tibble(red = album_palettes$red, evermore = album_palettes$
-        evermore)
-      print(df1)
+      df1
     Output
       # A tibble: 5 x 2
         red     evermore
@@ -17,7 +36,7 @@
 ---
 
     Code
-      print(album_palettes$lover)
+      album_palettes$lover
     Output
       <color_palette[5]>
           #76BAE0 
@@ -25,8 +44,11 @@
           #B8396B 
           #EBBED3 
           #FFF5CC 
+
+---
+
     Code
-      print(album_palettes$folklore)
+      album_palettes$folklore
     Output
       <color_palette[5]>
           #3E3E3E 
@@ -38,35 +60,27 @@
 ---
 
     Code
-      col1 <- c("wheat", "firebrick", "navy")
-      col2 <- c("#009fb7", "#fed766", "#696773")
-      col3 <- c("goldenrod", "#85898a")
-      col4 <- c(ku_blue = "#0051ba", ku_crimson = "#e8000d", "#ffc82d")
-      pal1 <- color_palette(col1)
-      pal2 <- color_palette(col2)
-      pal3 <- color_palette(col3)
-      pal4 <- color_palette(col4)
-      print(pal1)
+      color_palette(col1)
     Output
       <color_palette[3]>
           wheat 
           firebrick 
           navy 
     Code
-      print(pal2)
+      color_palette(col2)
     Output
       <color_palette[3]>
           #009fb7 
           #fed766 
           #696773 
     Code
-      print(pal3)
+      color_palette(col3)
     Output
       <color_palette[2]>
           goldenrod 
           #85898a 
     Code
-      print(pal4)
+      color_palette(col4)
     Output
       <color_palette[3]>
           ku_blue 
