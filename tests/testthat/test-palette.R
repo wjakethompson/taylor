@@ -1,7 +1,9 @@
 test_that("palette creation work", {
-  expect_error(color_palette(c("firetruck", "ocean")), "hexadecimal")
-  expect_error(color_palette(c("#00ZVPQ", "#IOBNOB")), "hexadecimal")
-  expect_error(color_palette(c("#00ZVPQ", "red")), "hexadecimal")
+  expect_snapshot(error = TRUE, {
+    color_palette(c("firetruck", "ocean"))
+    color_palette(c("#00ZVPQ", "#IOBNOB"))
+    color_palette(c("#00ZVPQ", "red"))
+  })
 
   wjake_colors <- c("#009fb7", "#fed766")
   wjake_palette <- color_palette(wjake_colors)
@@ -93,32 +95,24 @@ test_that("casting and coercion work", {
 })
 
 test_that("various formatting works", {
-  expect_snapshot({
-    df1 <- tibble::tibble(red = album_palettes$red,
-                          evermore = album_palettes$evermore)
-    print(df1)
-  })
+  df1 <- tibble::tibble(
+    red = album_palettes$red,
+    evermore = album_palettes$evermore
+  )
+  expect_snapshot(df1)
+
+  expect_snapshot(album_palettes$lover)
+  expect_snapshot(album_palettes$folklore)
+
+  col1 <- c("wheat", "firebrick", "navy")
+  col2 <- c("#009fb7", "#fed766", "#696773")
+  col3 <- c("goldenrod", "#85898a")
+  col4 <- c(ku_blue = "#0051ba", ku_crimson = "#e8000d", "#ffc82d")
 
   expect_snapshot({
-    print(album_palettes$lover)
-
-    print(album_palettes$folklore)
-  })
-
-  expect_snapshot({
-    col1 <- c("wheat", "firebrick", "navy")
-    col2 <- c("#009fb7", "#fed766", "#696773")
-    col3 <- c("goldenrod", "#85898a")
-    col4 <- c(ku_blue = "#0051ba", ku_crimson = "#e8000d", "#ffc82d")
-
-    pal1 <- color_palette(col1)
-    pal2 <- color_palette(col2)
-    pal3 <- color_palette(col3)
-    pal4 <- color_palette(col4)
-
-    print(pal1)
-    print(pal2)
-    print(pal3)
-    print(pal4)
+    color_palette(col1)
+    color_palette(col2)
+    color_palette(col3)
+    color_palette(col4)
   })
 })

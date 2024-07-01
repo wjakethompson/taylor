@@ -32,14 +32,18 @@ test_that("palettes have expected length", {
   expect_identical(names(album_palettes), names(album_compare))
 })
 
-test_that("we get errors", {
-  expect_error(taylor_col(5, begin = -1), "between 0 and 1")
-  expect_error(taylor_col(5, begin = 2), "between 0 and 1")
-  expect_error(taylor_col(5, end = -1), "between 0 and 1")
-  expect_error(taylor_col(5, end = 2), "between 0 and 1")
+test_that("taylor_col() throws informative error.", {
+  expect_snapshot(error = TRUE, {
+    taylor_col(5, begin = -1)
+    taylor_col(5, begin = 2)
+    taylor_col(5, end = -1)
+    taylor_col(5, end = 2)
+  })
 
-  expect_error(taylor_col(5, direction = 2), "be 1 or -1")
-  expect_error(taylor_col(5, direction = -3), "be 1 or -1")
+  expect_snapshot(error = TRUE, {
+    taylor_col(5, direction = 2)
+    taylor_col(5, direction = -3)
+  })
 })
 
 test_that("no colors works", {
