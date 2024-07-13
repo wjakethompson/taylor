@@ -7,7 +7,7 @@ devtools::load_all()
 eras_tour_surprise <- read_xlsx(here("data-raw", "surprise-songs.xlsx")) %>%
   mutate(date = as_date(date),
          night = as.integer(night)) %>%
-  filter(date <= today())
+  filter(date < today())
 
 
 # QC data file -----------------------------------------------------------------
