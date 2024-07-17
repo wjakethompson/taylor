@@ -492,6 +492,19 @@ spotify_join <- spotify %>%
 (extra <- spotify_join %>%
    anti_join(base_info, by = c("album_name", "track_name")))
 
+# Check for writing credits only. 7 rows currently expected:
+# 1 step forward, 3 steps back - Olivia Rodrigo
+# Best Days Of Your Life - Kellie Pickler
+# Better Man - Little Big Town
+# deja vu - Olivia Rodrigo
+# This Is What You Came For - Calvin Harris
+# TMZ - "Weird Al" Yankovic
+# You'll Always Find Your Way Back Home - Hannah Montana
+(writing <- spotify_join %>%
+   unnest("spotify") %>%
+   filter(artist != "Taylor Swift") %>%
+   filter(is.na(featuring) | !str_detect(featuring, "Taylor Swift")))
+
 # Check for non-ASCII characters. 35 errors (5 rows) expected:
 # 9  à
 # 23 é
