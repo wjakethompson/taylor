@@ -15,6 +15,9 @@
   * "TMZ" from Weird Al Yankovic's *Apocalypse*
   * "You'll Always Find Your Way Back Home" from Miley Cyrus on the *Hannah Montana: The Movie* soundtrack
 
+* Removed Spotify data for John Mayer's "Half Of My Heart," as the version
+  featuring Taylor Swift is no longer available.
+
 # taylor 3.1.0
 
 ## New features
