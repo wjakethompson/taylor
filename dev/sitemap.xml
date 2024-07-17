@@ -1,78 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/articles/lyrics.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/articles/palettes.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/articles/plotting.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/articles/taylor.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/index.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/album_levels.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/album_palettes.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/color_palette.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/eras_tour_surprise.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/scale_albums.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/scale_taylor.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/taylor-package.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/taylor-vctrs.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/taylor_albums.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/taylor_songs.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/title_case.html</loc>
-  </url>
-  <url>
-    <loc>https://taylor.wjakethompson.com/dev/reference/translate_bracelet.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://taylor.wjakethompson.com/dev/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/CONTRIBUTING.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/LICENSE-text.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/LICENSE.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/articles/index.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/articles/lyrics.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/articles/palettes.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/articles/plotting.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/articles/taylor.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/authors.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/index.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/news/index.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/album_levels.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/album_palettes.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/color_palette.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/eras_tour_surprise.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/index.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/scale_albums.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/scale_taylor.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/taylor-package.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/taylor-vctrs.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/taylor_albums.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/taylor_songs.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/title_case.html</loc></url>
+<url><loc>https://taylor.wjakethompson.com/dev/reference/translate_bracelet.html</loc></url>
 </urlset>
+
