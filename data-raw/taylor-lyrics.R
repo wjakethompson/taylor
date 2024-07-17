@@ -470,12 +470,13 @@ spotify_join <- spotify %>%
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 11 rows currently expected:
+# Ideally should return 0 rows. 12 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
 # 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
 # 4-9  Beautiful Eyes is not currently available on Spotify or any service
 # 10   American Girl is exclusive to Napster
-# 11   Three Sad Virgins is not available on Spotify
+# 11   Half Of My Heart is not available on Spotify (version featuring Taylor)
+# 12   Three Sad Virgins is not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
