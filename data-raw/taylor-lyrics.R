@@ -287,8 +287,6 @@ single_uri <- tribble(
   "Safe & Sound (Taylor's Version)",        "6Q237Ts37YGYRIi5Vy5lVX",
   "September",                              "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",                   "0RFCHlNuTeUHIB36VuVbOL",
-  "The Alcott",                             "6INztpNwOTlfSKTuPo0HOP",
-  "Three Sad Virgins",                      "",
   "Today Was A Fairytale",                  "4pFvEWbjBpPUdYRQly0THs"
 )
 
@@ -298,11 +296,13 @@ feature_uri <- tribble(
   "Birch",                      "7wo2UNeQBowm28hfAJsEMz",
   "Both Of Us",                 "3r9bgSJlJz2zlevcBRYXko",
   "Gasoline (Remix)",           "645Exr2lJIO45Guht3qyIa",
-  "Half Of My Heart",           "7hR5toSPEgwFZ78jfHdANM",
+  "Half Of My Heart",           "",
   "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
   "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
-  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
+  "The Alcott",                 "6INztpNwOTlfSKTuPo0HOP",
   "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP",
+  "Three Sad Virgins",          "",
+  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
   "us.",                        "0hhzNPE68LWLfgZwdpxVdR"
 )
 
@@ -470,12 +470,13 @@ spotify_join <- spotify %>%
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 11 rows currently expected:
+# Ideally should return 0 rows. 12 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
 # 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
 # 4-9  Beautiful Eyes is not currently available on Spotify or any service
 # 10   American Girl is exclusive to Napster
-# 11   Three Sad Virgins is not available on Spotify
+# 11   Half Of My Heart is not available on Spotify (version featuring Taylor)
+# 12   Three Sad Virgins is not available on Spotify
 (missing <- base_info %>%
    left_join(spotify_join, by = c("album_name", "track_name")) %>%
    filter(map_lgl(spotify, is.null)) %>%
@@ -491,6 +492,19 @@ spotify_join <- spotify %>%
 # 4-6 Voice memos from 1989
 (extra <- spotify_join %>%
    anti_join(base_info, by = c("album_name", "track_name")))
+
+# Check for writing credits only. 7 rows currently expected:
+# 1 step forward, 3 steps back - Olivia Rodrigo
+# Best Days Of Your Life - Kellie Pickler
+# Better Man - Little Big Town
+# deja vu - Olivia Rodrigo
+# This Is What You Came For - Calvin Harris
+# TMZ - "Weird Al" Yankovic
+# You'll Always Find Your Way Back Home - Hannah Montana
+(writing <- spotify_join %>%
+   unnest("spotify") %>%
+   filter(artist != "Taylor Swift") %>%
+   filter(is.na(featuring) | !str_detect(featuring, "Taylor Swift")))
 
 # Check for non-ASCII characters. 35 errors (5 rows) expected:
 # 9  à
@@ -530,7 +544,17 @@ taylor_all_songs <- base_info %>%
   mutate(album_release = min(album_release)) %>%
   ungroup() %>%
   mutate(bonus_track = case_when(is.na(album_name) ~ NA,
-                                 TRUE ~ bonus_track)) %>%
+                                 TRUE ~ bonus_track),
+         artist = case_when(track_name == "Half Of My Heart" ~ "John Mayer",
+                            track_name == "Three Sad Virgins" ~
+                              "Please Don't Destroy",
+                            is.na(artist) ~ "Taylor Swift",
+                            .default = artist),
+         featuring = case_when(track_name == "Half Of My Heart" ~
+                                 "Taylor Swift",
+                               track_name == "Three Sad Virgins" ~
+                                 "Pete Davidson, Taylor Swift",
+                               .default = featuring)) %>%
   relocate(artist, featuring, .after = track_name)
 
 taylor_album_songs <- taylor_all_songs %>%
