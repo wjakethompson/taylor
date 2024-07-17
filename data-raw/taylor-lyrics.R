@@ -298,7 +298,6 @@ feature_uri <- tribble(
   "Birch",                      "7wo2UNeQBowm28hfAJsEMz",
   "Both Of Us",                 "3r9bgSJlJz2zlevcBRYXko",
   "Gasoline (Remix)",           "645Exr2lJIO45Guht3qyIa",
-  "Half Of My Heart",           "7hR5toSPEgwFZ78jfHdANM",
   "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
   "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
   "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
