@@ -544,7 +544,17 @@ taylor_all_songs <- base_info %>%
   mutate(album_release = min(album_release)) %>%
   ungroup() %>%
   mutate(bonus_track = case_when(is.na(album_name) ~ NA,
-                                 TRUE ~ bonus_track)) %>%
+                                 TRUE ~ bonus_track),
+         artist = case_when(track_name == "Half Of My Heart" ~ "John Mayer",
+                            track_name == "Three Sad Virgins" ~
+                              "Please Don't Destroy",
+                            is.na(artist) ~ "Taylor Swift",
+                            .default = artist),
+         featuring = case_when(track_name == "Half Of My Heart" ~
+                                 "Taylor Swift",
+                               track_name == "Three Sad Virgins" ~
+                                 "Pete Davidson, Taylor Swift",
+                               .default = featuring)) %>%
   relocate(artist, featuring, .after = track_name)
 
 taylor_album_songs <- taylor_all_songs %>%
