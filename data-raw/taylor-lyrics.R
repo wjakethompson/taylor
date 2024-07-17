@@ -287,8 +287,6 @@ single_uri <- tribble(
   "Safe & Sound (Taylor's Version)",        "6Q237Ts37YGYRIi5Vy5lVX",
   "September",                              "5eGX87IiKsGuzS3iw4CfCX",
   "Sweeter Than Fiction",                   "0RFCHlNuTeUHIB36VuVbOL",
-  "The Alcott",                             "6INztpNwOTlfSKTuPo0HOP",
-  "Three Sad Virgins",                      "",
   "Today Was A Fairytale",                  "4pFvEWbjBpPUdYRQly0THs"
 )
 
@@ -298,10 +296,13 @@ feature_uri <- tribble(
   "Birch",                      "7wo2UNeQBowm28hfAJsEMz",
   "Both Of Us",                 "3r9bgSJlJz2zlevcBRYXko",
   "Gasoline (Remix)",           "645Exr2lJIO45Guht3qyIa",
+  "Half Of My Heart",           "",
   "Highway Don't Care",         "4wFUdSCer8bdQsrp1M90sa",
   "Renegade",                   "1aU1wpYBSpP0M6IiihY5Ue",
-  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
+  "The Alcott",                 "6INztpNwOTlfSKTuPo0HOP",
   "The Joker and the Queen",    "6N1K5OVVCopBjGViHs2IvP",
+  "Three Sad Virgins",          "",
+  "Two Is Better Than One",     "1MaqkdFNIKPdpQGDzme5ss",
   "us.",                        "0hhzNPE68LWLfgZwdpxVdR"
 )
 
