@@ -21,7 +21,8 @@ eras_tour_surprise <- read_xlsx(here("data-raw", "surprise-songs.xlsx")) %>%
    separate_longer_delim(mashup, delim = "; ") %>%
    pivot_longer(cols = everything(), names_to = "type", values_to = "song") %>%
    filter(!is.na(song)) %>%
-   filter(!(song %in% taylor_all_songs$track_name)))
+   filter(!(song %in% taylor_all_songs$track_name)) %>%
+   filter(song != "Thinking Out Loud"))
 
 # Check that we're using Taylor's Version when possible. Should be 0 rows.
 (not_tv <- eras_tour_surprise %>%
