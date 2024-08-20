@@ -1,7 +1,7 @@
 ```{r chunk-options, include=FALSE}
 if (identical(Sys.getenv("IN_PKGDOWN"), "true")) {
   tiny_width <- small_width <- med_width <- 7
-  large_width <- 8
+  large_width <- 9
 } else {
   tiny_width <- small_width <- med_width <- 5
   large_width <- 5.5
