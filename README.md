@@ -22,14 +22,18 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-## Overview <img src="man/figures/logo.png" align="right" width="120" />
+## Overview <img src="man/figures/logo.png" alt="Hex logo for the taylor R package" align="right" width="120" />
 
 The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
 comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
 API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 
-![](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
+<figure>
+<img src="https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif"
+alt="GIF of Taylor saying “yes”" />
+<figcaption aria-hidden="true">GIF of Taylor saying “yes”</figcaption>
+</figure>
 
 ## Installation
 
