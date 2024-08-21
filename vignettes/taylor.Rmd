@@ -89,13 +89,16 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 
+leg_labels <- unique(eras_tour_surprise$leg)
+leg_labels <- gsub("America \\(Leg 1\\)", "America\n(Leg 1)", leg_labels)
+leg_labels <- gsub("South America", "South\nAmerica", leg_labels)
+leg_labels <- gsub("Asia-Pacific", "Asia-\nPacific", leg_labels)
+
 surprise_song_count <- eras_tour_surprise %>%
   nest(dat = -c(leg, date, city, night)) %>%
   arrange(date) %>%
   mutate(leg = factor(leg, levels = unique(eras_tour_surprise$leg),
-                      labels = c("North America\n(Leg 1)",
-                                 "South\nAmerica",
-                                 "Asia-Pacific"))) %>%
+                      labels = leg_labels)) %>%
   mutate(show_number = seq_len(n()), .after = night) %>%
   unnest(dat) %>%
   left_join(distinct(taylor_album_songs, track_name, album_name),
@@ -106,18 +109,31 @@ surprise_song_count <- eras_tour_surprise %>%
   mutate(n = replace_na(n, 0)) %>%
   arrange(album_name, date, night) %>%
   mutate(surprise_count = cumsum(n), .by = album_name) %>%
+  left_join(select(taylor_albums, album_name, album_release),
+            by = "album_name") %>%
+  mutate(surprise_count = case_when(
+    album_name == "THE TORTURED POETS DEPARTMENT" &
+      date < album_release ~ NA_integer_,
+    .default = surprise_count
+  )) %>%
+  add_row(leg = factor("Europe"), album_name = "THE TORTURED POETS DEPARTMENT",
+          show_number = 83.5, surprise_count = 0L) %>%
   mutate(album_name = replace_na(album_name, "Other"),
-         album_name = factor(album_name, c(album_levels, "Other")),
-         album_group = album_name)
+         album_group = album_name,
+         album_name = factor(album_name, c(album_levels, "Other"),
+                             labels = c(gsub("POETS DEPARTMENT",
+                                             "POETS\nDEPARTMENT",
+                                             album_levels), "Other")))
 
 ggplot(surprise_song_count) +
   facet_wrap(~ album_name, ncol = 3) +
   geom_line(data = ~select(.x, -album_name),
             aes(x = show_number, y = surprise_count, group = album_group),
             color = "grey80", na.rm = TRUE) +
-  geom_line(aes(x = show_number, y = surprise_count, color = album_name),
+  geom_line(aes(x = show_number, y = surprise_count, color = album_group),
             show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
   scale_color_albums(na.value = "grey80") +
+  scale_x_continuous(breaks = c(1, seq(20, 500, 20))) +
   labs(x = "Show", y = "Songs Played") +
   theme_minimal() +
   theme(strip.text.x = element_text(hjust = 0, size = 10),
@@ -144,7 +160,8 @@ For more details on ggplot2 scales provided by taylor, see `vignette("plotting")
 
 ```{r eras-1989, eval = FALSE}
 missing_firsts <- tibble(date = as.Date(c("2023-11-01",
-                                          "2024-02-01")))
+                                          "2024-02-01",
+                                          "2024-05-01")))
 day_ones <- surprise_song_count %>%
   slice_min(date, by = c(leg, album_name)) %>%
   select(leg, date, album_name) %>%
@@ -164,9 +181,9 @@ surprise_song_count %>%
             color = "grey80", na.rm = TRUE) +
   geom_line(data = ~filter(.x, album_name == "1989 (Taylor's Version)"),
             aes(x = date, y = surprise_count, color = album_name),
-            show.legend = FALSE, size = 2, na.rm = TRUE) +
+            show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
   scale_color_albums() +
-  scale_x_date(breaks = "month", date_labels = "%b %Y", expand = c(.02, .02)) +
+  scale_x_date(breaks = "month", date_labels = "%b\n%Y", expand = c(.02, .02)) +
   labs(x = NULL, y = "Songs Played") +
   theme_minimal() +
   theme(strip.text.x = element_text(hjust = 0, size = 10),
@@ -175,7 +192,7 @@ surprise_song_count %>%
 
 </details>
 
-```{r eras-1989, echo = FALSE, message = FALSE, warning = FALSE}
+```{r eras-1989, echo = FALSE, message = FALSE, warning = FALSE, fig.width = large_width}
 #| fig-alt: >
 #|   A series of line plots showing the increases in the total number of songs
 #|   from each album that Taylor has played as surprise songs during The Eras
