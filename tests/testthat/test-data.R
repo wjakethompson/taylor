@@ -82,7 +82,10 @@ test_that("surprise songs are the correct version", {
   mashups <- unlist(strsplit(mashups, split = "; "))
 
   expect_true(all(c(songs, mashups) %in%
-                    c(taylor_all_songs$track_name, "Thinking Out Loud")))
+                    c(taylor_all_songs$track_name,
+                      "Thinking Out Loud",
+                      "Espresso", "Please Please Please",
+                      "I Love You, I'm Sorry")))
 
   no_tv_songs <- c(songs, mashups)[grep("Taylor's Version",
                                         eras_tour_surprise$song,
