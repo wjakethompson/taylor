@@ -17,6 +17,9 @@
 
 * Removed Spotify data for John Mayer's "Half Of My Heart," as the version
   featuring Taylor Swift is no longer available.
+  
+* Updated `eras_tour_surprise` data to include songs from the European and final
+  North American legs of the tour.
 
 # taylor 3.1.0
 
