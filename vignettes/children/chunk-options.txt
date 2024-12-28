@@ -1,4 +1,6 @@
 ```{r chunk-options, include=FALSE}
+library(taylor)
+
 if (identical(Sys.getenv("IN_PKGDOWN"), "true")) {
   tiny_width <- small_width <- med_width <- 7
   large_width <- 9
