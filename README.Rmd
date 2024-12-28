@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# taylor
+# taylor <a href="https://taylor.wjakethompson.com"><img src="man/figures/logo.png" align="right" height="138" alt="taylor website" /></a>
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
@@ -30,7 +30,7 @@ knitr::opts_chunk$set(
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-## Overview <img src="man/figures/logo.png" alt="Hex logo for the taylor R package" align="right" width="120" />
+## Overview
 
 The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
 

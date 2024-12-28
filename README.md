@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# taylor
+# taylor <a href="https://taylor.wjakethompson.com"><img src="man/figures/logo.png" align="right" height="138" alt="taylor website" /></a>
 
 <!-- badges: start -->
 
@@ -22,7 +22,7 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-## Overview <img src="man/figures/logo.png" alt="Hex logo for the taylor R package" align="right" width="120" />
+## Overview
 
 The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
