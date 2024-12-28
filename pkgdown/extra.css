@@ -32,6 +32,39 @@ a.anchor {
 }
 
 
+/* Home page ---------------------------------------------------------------- */
+.template-home {
+  .page-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-height: 0;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-bottom: 1px solid $faint-border;
+
+    h1 {margin-top: 0rem}
+
+    @include media-breakpoint-down(sm) {
+      margin: 0.5rem 0;
+      padding: 0.5rem 0;
+    }
+  }
+  img.logo {
+    margin-left: 0;
+
+    @include media-breakpoint-down(sm) {
+      width: 100px;
+    }
+  }
+}
+
+
+figcaption {
+  display: none;
+}
+
+
 /* Navbar ------------------------------------------------------------------- */
 /* Navbar color */
 .bg-light {
@@ -44,13 +77,13 @@ a.anchor {
 }
 
 /* active nav links */
-.navbar-light .navbar-nav .active>.nav-link {
+.navbar-nav .active>.nav-link {
   background: var(--nav-link);
   color: var(--nav-bkg) !important;
 }
 
 /* inactive nav links hover */
-.navbar-light .navbar-nav .nav-item>.nav-link:hover {
+.navbar-nav .nav-item>.nav-link:hover {
   background: var(--nav-higl);
   color: var(--nav-bkg) !important;
 }
@@ -91,7 +124,7 @@ li.nav-item {
 }
 
 /* Collapsible menu button on mobile */
-.navbar-light .navbar-toggler {
+.navbar-toggler {
   border-color: var(--nav-bkg);
   color: var(--nav-higl);
 }
