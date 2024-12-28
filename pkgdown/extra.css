@@ -1,22 +1,22 @@
 :root {
-  --nav-bkg: #1C160F;     /* nav bar background */
-  --nav-link: #ADA795;    /* nav bar link color */
-  --nav-higl: #ADA795;    /* nav hover background */
+  --nav-bkg: #000000;     /* nav bar background */
+  --nav-link: #FFFFFF;    /* nav bar link color */
+  --nav-higl: #FFFFFF;    /* nav hover background */
 
-  --sdb-link: #1C160F;    /* hyperlinks in sidebar */
-  --sdb-hover: #635B3A;   /* hyperlink hover in sidebar*/
+  --sdb-link: #6a80b7;    /* hyperlinks in sidebar */
+  --sdb-hover: #c1dee4;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
-  --pg-header: #1C160F;   /* heading color & text links */
-  --text-link: #3F3824;   /* hyperlinks in text */
-  --a-hover: #635B3A;     /* hyperlink hover */
+  --pg-header: #000000;   /* heading color & text links */
+  --text-link: #5c3e42;   /* hyperlinks in text */
+  --a-hover: #e69fb1;     /* hyperlink hover */
 
-  --btn-color: #1C160F;   /* copy button color */
-  --btn-hover: #635B3A;   /* copy button hover */
+  --btn-color: #000000;   /* copy button color */
+  --btn-hover: #c9bccd;   /* copy button hover */
 
-  --toc-active: #ADA795;  /* background color for active TOC */
-  --toc-hover: #ADA795;   /* background color for hover TOC */
-  --toc-htext: #1C160F;   /* color of TOC hover text (default to --nav-bkg */
+  --toc-active: #dde9c3;  /* background color for active TOC */
+  --toc-hover: #dde9c3;   /* background color for hover TOC */
+  --toc-htext: #000000;   /* color of TOC hover text (default to --nav-bkg) */
 }
 
 
