@@ -90,9 +90,7 @@ library(tidyr)
 library(ggplot2)
 
 leg_labels <- unique(eras_tour_surprise$leg)
-# leg_labels <- gsub("America \\(Leg 1\\)", "America\n(Leg 1)", leg_labels)
 leg_labels <- gsub("South America", "South\nAmerica", leg_labels)
-# leg_labels <- gsub("Asia-Pacific", "Asia-\nPacific", leg_labels)
 
 surprise_song_count <- eras_tour_surprise %>%
   nest(dat = -c(leg, date, city, night)) %>%
@@ -179,8 +177,8 @@ surprise_dat <- surprise_song_count %>%
   group_by(album_name) %>%
   fill(surprise_count, .direction = "down")
 
-tour1 <- surprise_dat %>% 
-  filter(leg %in% c("North America (Leg 1)", "South\nAmerica")) %>% 
+tour1 <- surprise_dat %>%
+  filter(leg %in% c("North America (Leg 1)", "South\nAmerica")) %>%
   ggplot() +
   facet_grid(cols = vars(leg), scales = "free_x", space = "free_x") +
   geom_line(aes(x = date, y = surprise_count, group = album_name),
@@ -196,8 +194,8 @@ tour1 <- surprise_dat %>%
   theme(strip.text.x = element_text(hjust = 0, size = 10),
         axis.title = element_text(size = 9))
 
-tour2 <- surprise_dat %>% 
-  filter(!leg %in% c("North America (Leg 1)", "South\nAmerica")) %>% 
+tour2 <- surprise_dat %>%
+  filter(!leg %in% c("North America (Leg 1)", "South\nAmerica")) %>%
   ggplot() +
   facet_grid(cols = vars(leg), scales = "free_x", space = "free_x") +
   geom_line(aes(x = date, y = surprise_count, group = album_name),
