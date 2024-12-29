@@ -1,4 +1,4 @@
-# taylor (development version)
+# taylor 3.2.0
 
 ## New features
 
