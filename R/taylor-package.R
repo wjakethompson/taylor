@@ -12,8 +12,9 @@ NULL
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @importFrom ggplot2 waiver
-#' @importFrom tibble tibble
-#' @importFrom methods setOldClass
+#' @importFrom lifecycle deprecated
 #' @importFrom lifecycle deprecated is_present deprecate_warn deprecate_soft
+#' @importFrom methods setOldClass
+#' @importFrom tibble tibble
 ## usethis namespace: end
 NULL
