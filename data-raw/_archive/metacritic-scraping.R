@@ -1,3 +1,6 @@
+library(tidyverse)
+library(rvest)
+
 # Manual metacritic - boo!
 metacritic <- tribble(
   ~album_name,                           ~metacritic_score, ~user_score,
