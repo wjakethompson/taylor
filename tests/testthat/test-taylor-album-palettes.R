@@ -14,10 +14,13 @@ test_that("palettes have expected length", {
 
   # all album compare colors are in their respective full palette
   expect_true(
-    all(mapply(function(x, y) {
-      x %in% y
-    },
-    album_compare, album_palettes))
+    all(mapply(
+      function(x, y) {
+        x %in% y
+      },
+      album_compare,
+      album_palettes
+    ))
   )
 
   # palette and factor names
@@ -62,15 +65,21 @@ test_that("direction works", {
 test_that("bad album warns", {
   expect_warning(taylor_col(5, album = "sour"), "does not exist")
   expect_warning(
-    expect_identical(taylor_col(5, album = "sour"),
-                     taylor_col(5, album = "Lover"))
+    expect_identical(
+      taylor_col(5, album = "sour"),
+      taylor_col(5, album = "Lover")
+    )
   )
 })
 
 test_that("we get expected values", {
-  expect_identical(taylor_col(5),
-                   paste0(vec_cast(album_palettes$lover, character()), "FF"))
+  expect_identical(
+    taylor_col(5),
+    paste0(vec_cast(album_palettes$lover, character()), "FF")
+  )
 
-  expect_identical(taylor_col(5, album = "folklore"),
-                   paste0(vec_cast(album_palettes$folklore, character()), "FF"))
+  expect_identical(
+    taylor_col(5, album = "folklore"),
+    paste0(vec_cast(album_palettes$folklore, character()), "FF")
+  )
 })

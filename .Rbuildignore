@@ -12,3 +12,5 @@
 ^\.github$
 ^\.lintr$
 ^CRAN-SUBMISSION$
+^[.]?air[.]toml$
+^\.vscode$

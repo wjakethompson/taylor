@@ -1,6 +1,12 @@
 # Checkers ---------------------------------------------------------------------
-abort_bad_argument <- function(arg, must = NULL, not = NULL, footer = NULL,
-                               custom = NULL, call = rlang::caller_env()) {
+abort_bad_argument <- function(
+  arg,
+  must = NULL,
+  not = NULL,
+  footer = NULL,
+  custom = NULL,
+  call = rlang::caller_env()
+) {
   msg <- "{.arg {arg}} must {must}"
   if (!is.null(not)) {
     msg <- paste0(msg, "; not {not}")
@@ -13,17 +19,27 @@ abort_bad_argument <- function(arg, must = NULL, not = NULL, footer = NULL,
   cli::cli_abort(msg, footer = footer, call = call)
 }
 
-check_palette <- function(x, arg = rlang::caller_arg(x),
-                          call = rlang::caller_env()) {
+check_palette <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.character(x)) {
-    abort_bad_argument(arg = arg, must = "be a character vector",
-                       not = typeof(x), call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "be a character vector",
+      not = typeof(x),
+      call = call
+    )
   }
 
   # make sure no missing values present
   if (anyNA(x) || !rlang::is_atomic(x)) {
-    abort_bad_argument(arg = arg, must = "not contain missing values",
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "not contain missing values",
+      call = call
+    )
   }
 
   # look for R color specifications
@@ -32,8 +48,12 @@ check_palette <- function(x, arg = rlang::caller_arg(x),
   if (length(r_colors) > 0) {
     r_hex <- sapply(x[r_colors], function(.x) {
       r_rgb <- grDevices::col2rgb(.x)
-      grDevices::rgb(red = r_rgb["red", 1], green = r_rgb["green", 1],
-                     blue = r_rgb["blue", 1], maxColorValue = 255)
+      grDevices::rgb(
+        red = r_rgb["red", 1],
+        green = r_rgb["green", 1],
+        blue = r_rgb["blue", 1],
+        maxColorValue = 255
+      )
     })
     new_x[r_colors] <- r_hex
   }
@@ -61,16 +81,27 @@ check_palette <- function(x, arg = rlang::caller_arg(x),
   return(new_x)
 }
 
-check_pos_int <- function(x, arg = rlang::caller_arg(x),
-                          call = rlang::caller_env()) {
+check_pos_int <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.numeric(x)) {
-    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "be numeric",
+      not = typeof(x),
+      call = call
+    )
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "have length of 1",
+      not = length(x),
+      call = call
+    )
   }
 
   if (is.na(x)) {
@@ -85,39 +116,66 @@ check_pos_int <- function(x, arg = rlang::caller_arg(x),
   }
 }
 
-check_real_range <- function(x, lb, ub, arg = rlang::caller_arg(x),
-                             call = rlang::caller_env()) {
+check_real_range <- function(
+  x,
+  lb,
+  ub,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.numeric(x)) {
-    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "be numeric",
+      not = typeof(x),
+      call = call
+    )
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "have length of 1",
+      not = length(x),
+      call = call
+    )
   }
 
   if (is.na(x)) {
     abort_bad_argument(arg = arg, must = "be non-missing", call = call)
   } else if (x < lb || x > ub) {
-    abort_bad_argument(arg = arg,
-                       must = cli::format_inline("be between {lb} and {ub}"),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = cli::format_inline("be between {lb} and {ub}"),
+      call = call
+    )
   } else {
     x
   }
 }
 
-check_exact_abs_int <- function(x, value, arg = rlang::caller_arg(x),
-                                call = rlang::caller_env()) {
+check_exact_abs_int <- function(
+  x,
+  value,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.numeric(x)) {
-    abort_bad_argument(arg = arg, must = "be numeric", not = typeof(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "be numeric",
+      not = typeof(x),
+      call = call
+    )
   }
 
   if (length(x) != 1) {
-    abort_bad_argument(arg = arg, must = "have length of 1", not = length(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "have length of 1",
+      not = length(x),
+      call = call
+    )
   }
 
   if (is.na(x)) {
@@ -125,24 +183,32 @@ check_exact_abs_int <- function(x, value, arg = rlang::caller_arg(x),
   }
 
   if (abs(x) != value) {
-    abort_bad_argument(arg = arg,
-                       must = cli::format_inline("be {value} or -{value}"),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = cli::format_inline("be {value} or -{value}"),
+      call = call
+    )
   } else {
     as.integer(x)
   }
 }
 
-check_character <- function(x, arg = rlang::caller_arg(x),
-                            call = rlang::caller_env()) {
+check_character <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.character(x)) {
-    abort_bad_argument(arg = arg, must = "be character", not = typeof(x),
-                       call = call)
+    abort_bad_argument(
+      arg = arg,
+      must = "be character",
+      not = typeof(x),
+      call = call
+    )
   }
 
   if (is.na(x)) {
-    abort_bad_argument(arg = arg, must = "be non-missing",
-                       call = call)
+    abort_bad_argument(arg = arg, must = "be non-missing", call = call)
   }
   x
 }

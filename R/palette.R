@@ -53,11 +53,13 @@ new_color_palette <- function(pal = character(), n = length(pal)) {
 
   nms <- if (is.null(names(out))) out else names(out)
 
-  new_vctr(out,
-           n_colors = n,
-           names = nms,
-           class = "taylor_color_palette",
-           inherit_base_type = TRUE)
+  new_vctr(
+    out,
+    n_colors = n,
+    names = nms,
+    class = "taylor_color_palette",
+    inherit_base_type = TRUE
+  )
 }
 
 n_colors <- function(x) attr(x, "n_colors")
@@ -101,7 +103,8 @@ obj_print_data.taylor_color_palette.default <- function(x, ...) {
         cat("", .y("  "), .x, "\n")
         return(invisible(.x))
       },
-      vec_names(x), styles,
+      vec_names(x),
+      styles,
       USE.NAMES = FALSE
     )
   )
@@ -111,8 +114,10 @@ obj_print_data.taylor_color_palette.default <- function(x, ...) {
 # Coercion ---------------------------------------------------------------------
 #' @export
 vec_ptype2.taylor_color_palette.taylor_color_palette <- function(x, y, ...) {
-  new_color_palette(pal = c(vec_data(x), vec_data(y)),
-                    n = sum(n_colors(x), n_colors(y)))
+  new_color_palette(
+    pal = c(vec_data(x), vec_data(y)),
+    n = sum(n_colors(x), n_colors(y))
+  )
 }
 
 #' @export

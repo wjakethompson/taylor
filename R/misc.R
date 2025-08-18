@@ -18,8 +18,11 @@ title_case <- function(string) {
   string <- tolower(string)
   s <- strsplit(string, " ")[[1]]
 
-  ret <- paste(sub("\\b([a-z])", "\\U\\1", s, perl = TRUE),
-               sep = "", collapse = " ")
+  ret <- paste(
+    sub("\\b([a-z])", "\\U\\1", s, perl = TRUE),
+    sep = "",
+    collapse = " "
+  )
   return(ret)
 }
 title_case <- Vectorize(title_case, USE.NAMES = FALSE)

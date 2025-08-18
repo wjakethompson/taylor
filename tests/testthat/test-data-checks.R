@@ -6,10 +6,19 @@ test_that("abort_bad_argument() is informative.", {
   )
   expect_snapshot(error = TRUE, {
     abort_bad_argument("size", "be an integer", not = "character")
-    abort_bad_argument("size", must = "be an integer", not = "character",
-                       footer = c(i = "please"))
-    abort_bad_argument("size", must = "be an integer", not = "character",
-                       footer = "required", custom = "A new error")
+    abort_bad_argument(
+      "size",
+      must = "be an integer",
+      not = "character",
+      footer = c(i = "please")
+    )
+    abort_bad_argument(
+      "size",
+      must = "be an integer",
+      not = "character",
+      footer = "required",
+      custom = "A new error"
+    )
   })
 })
 
@@ -46,14 +55,16 @@ test_that("check_palette() works", {
   expect_identical(
     check_palette(c("firebrick", "goldenrod", "navy")),
     c(
-      firebrick = "#B22222", goldenrod = "#DAA520",
+      firebrick = "#B22222",
+      goldenrod = "#DAA520",
       navy = "#000080"
     )
   )
   expect_identical(
     check_palette(c("firebrick", "#009fb7", "#FED766")),
     c(
-      firebrick = "#B22222", `#009fb7` = "#009fb7",
+      firebrick = "#B22222",
+      `#009fb7` = "#009fb7",
       `#FED766` = "#FED766"
     )
   )
