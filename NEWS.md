@@ -1,5 +1,9 @@
 # taylor (development version)
 
+* Updated API due to Spotify changes. Implications for data:
+  * Lost columns: `liveness`, `speechiness`, `time_signature`
+  * Data may be slightly different ([conversions](https://soundstat.info/article/Understanding-Audio-Analysis.html) applied to make it match as much as possible)
+
 # taylor 3.2.0
 
 ## New features
