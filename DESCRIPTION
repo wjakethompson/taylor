@@ -30,7 +30,6 @@ Suggests:
     bookdown,
     dplyr,
     knitr,
-    palmerpenguins,
     patchwork,
     rmarkdown,
     spelling,

@@ -58,12 +58,11 @@ The `album` argument can be changed to use a different Taylor-inspired palette. 
 p + scale_fill_taylor_d(album = "Speak Now")
 ```
 
-We can also use these functions for non-Taylor Swift data. For example, here we use `scale_color_taylor_d()` to plot some data from the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) package.
+We can also use these functions for non-Taylor Swift data. For example, here we use `scale_color_taylor_d()` to plot some data about `?penguins`.
 
 ```{r warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from the color palette for Lover."}
-library(palmerpenguins)
 
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+ggplot(penguins, aes(x = bill_len, y = bill_dep)) +
   geom_point(aes(shape = species, color = species), size = 3) +
   scale_color_taylor_d(album = "Lover") +
   theme_minimal()
