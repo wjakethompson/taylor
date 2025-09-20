@@ -12,3 +12,4 @@
 ^\.github$
 ^\.lintr$
 ^CRAN-SUBMISSION$
+^\.httr-oauth$
