@@ -379,8 +379,6 @@ base_info <- lyrics %>%
 
 
 # Get Spotify information ------------------------------------------------------
-access_token <- get_spotify_access_token()
-
 key_lookup <- tibble(
   key = 0:11,
   key_name = c("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
@@ -441,7 +439,7 @@ bonus_uri <- tribble(
   "Midnights", "You're Losing Me (From The Vault)", "3CWq0pAKKTWb0K4yiglDc4"
 )
 
-spotify <- tribble(
+spotify_ids <- tribble(
   ~album_name,                                      ~album_uri,
   "Taylor Swift",                                   "7mzrIsaAjnXihW3InKjlC3",
   "The Taylor Swift Holiday Collection",            "7vzYp7FrKnTRoktBYsx9SF",
@@ -471,6 +469,24 @@ spotify <- tribble(
   ) %>%
   unnest(track) %>%
   bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) %>%
+  rename(spotify_album_uri = album_uri, spotify_track_uri = track_uri)
+
+# reccobeats -------------------------------------------------------------------
+devtools::load_all()
+
+reccobeats_audio_features <- spotify_ids %>%
+  mutate(
+    reccobeats = map(
+      spotify_track_uri,
+      \(x) {
+        Sys.sleep(1)
+        get_reccobeats_audio_features(track_id = x)
+      }
+    )
+  )
+
+# soundstat --------------------------------------------------------------------
+spotify_ids %>%
   mutate(
     spotify = map(
       track_uri,
