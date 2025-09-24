@@ -31,8 +31,12 @@ get_spotify_track_info <- function(
   track_id,
   api_key = get_spotify_access_token()
 ) {
-  check_character(track_id)
+  check_character(track_id, allow_na = TRUE)
   check_character(api_key)
+
+  if (is.na(track_id) || track_id == "") {
+    return(NULL)
+  }
 
   spotify_track <- spotifyr::get_track(track_id, authorization = api_key)
 
@@ -163,22 +167,7 @@ get_soundstat_audio_features <- function(
   check_character(api_key)
 
   if (is.na(track_id) || track_id == "") {
-    no_info <- tibble::tibble(
-      danceability = NA_real_,
-      energy = NA_real_,
-      loudness = NA_real_,
-      acousticness = NA_real_,
-      instrumentalness = NA_real_,
-      valence = NA_real_,
-      tempo = NA_real_,
-      key = NA_integer_,
-      mode = NA_integer_,
-      key_name = NA_character_,
-      mode_name = NA_character_,
-      key_mode = NA_character_
-    )
-
-    return(no_info)
+    return(NULL)
   }
 
   resp <- httr2::request("https://soundstat.info/api/v1") |>
@@ -328,25 +317,8 @@ soundstat_testing_key <- function() {
 get_reccobeats_audio_features <- function(track_id) {
   check_character(track_id, allow_na = TRUE)
 
-  no_info <- tibble::tibble(
-    danceability = NA_real_,
-    energy = NA_real_,
-    loudness = NA_real_,
-    speechiness = NA_real_,
-    acousticness = NA_real_,
-    instrumentalness = NA_real_,
-    liveness = NA_real_,
-    valence = NA_real_,
-    tempo = NA_real_,
-    key = NA_integer_,
-    mode = NA_integer_,
-    key_name = NA_character_,
-    mode_name = NA_character_,
-    key_mode = NA_character_
-  )
-
   if (is.na(track_id) || track_id == "") {
-    return(no_info)
+    return(NULL)
   }
 
   resp <- httr2::request("https://api.reccobeats.com/v1") |>
@@ -357,7 +329,7 @@ get_reccobeats_audio_features <- function(track_id) {
     httr2::resp_body_json()
 
   if (identical(resp$content, list())) {
-    return(no_info)
+    return(NULL)
   }
 
   resp$content[[1]] |>

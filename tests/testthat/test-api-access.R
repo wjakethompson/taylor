@@ -21,6 +21,9 @@ test_that("spotify api", {
   expect_equal(so_high_school$artist, "Taylor Swift")
   expect_equal(so_high_school$featuring, NA_character_)
 
+  expect_null(get_spotify_track_info(track_id = ""))
+  expect_null(get_spotify_track_info(track_id = NA_character_))
+
   # nothing saved to renviron --------------------------------------------------
   withr::local_envvar(list("SPOTIFY_CLIENT_ID" = ""))
   without_local <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
@@ -37,7 +40,6 @@ test_that("spotify api", {
 
 test_that("soundstat api", {
   so_high_school <- get_soundstat_audio_features("7Mts0OfPorF4iwOomvfqn1")
-  missing_id <- get_soundstat_audio_features(track_id = NA_character_)
 
   expect_equal(
     colnames(so_high_school),
@@ -56,7 +58,6 @@ test_that("soundstat api", {
       "key_mode"
     )
   )
-  expect_equal(colnames(so_high_school), colnames(missing_id))
 
   expect_equal(
     so_high_school |>
@@ -68,25 +69,8 @@ test_that("soundstat api", {
     0L
   )
 
-  expect_equal(
-    missing_id |>
-      dplyr::mutate(
-        dplyr::across(dplyr::everything(), is.na),
-        missing = sum(dplyr::c_across(dplyr::everything()))
-      ) |>
-      dplyr::pull("missing"),
-    12L
-  )
-
-  expect_equal(
-    get_soundstat_audio_features(track_id = "") |>
-      dplyr::mutate(
-        dplyr::across(dplyr::everything(), is.na),
-        missing = sum(dplyr::c_across(dplyr::everything()))
-      ) |>
-      dplyr::pull("missing"),
-    12L
-  )
+  expect_null(get_soundstat_audio_features(track_id = ""))
+  expect_null(get_soundstat_audio_features(track_id = NA_character_))
 
   # nothing saved to renviron --------------------------------------------------
   withr::local_envvar(list("SOUNDSTAT_KEY" = ""))
@@ -115,7 +99,6 @@ test_that("setting soundstat envvar", {
 
 test_that("reccobeats api", {
   so_high_school <- get_reccobeats_audio_features("7Mts0OfPorF4iwOomvfqn1")
-  bad_id <- get_reccobeats_audio_features("so-high-school")
 
   expect_equal(
     colnames(so_high_school),
@@ -136,7 +119,6 @@ test_that("reccobeats api", {
       "key_mode"
     )
   )
-  expect_equal(colnames(so_high_school), colnames(bad_id))
 
   expect_equal(
     so_high_school |>
@@ -148,35 +130,8 @@ test_that("reccobeats api", {
     0L
   )
 
-  expect_equal(
-    get_reccobeats_audio_features(track_id = NA_character_) |>
-      dplyr::mutate(
-        dplyr::across(dplyr::everything(), is.na),
-        missing = sum(dplyr::c_across(dplyr::everything()))
-      ) |>
-      dplyr::pull("missing"),
-    14L
-  )
-
-  expect_equal(
-    get_reccobeats_audio_features(track_id = "") |>
-      dplyr::mutate(
-        dplyr::across(dplyr::everything(), is.na),
-        missing = sum(dplyr::c_across(dplyr::everything()))
-      ) |>
-      dplyr::pull("missing"),
-    14L
-  )
-
-  expect_equal(
-    bad_id |>
-      dplyr::mutate(
-        dplyr::across(dplyr::everything(), is.na),
-        missing = sum(dplyr::c_across(dplyr::everything()))
-      ) |>
-      dplyr::pull("missing"),
-    14L
-  )
+  expect_null(get_reccobeats_audio_features(track_id = ""))
+  expect_null(get_reccobeats_audio_features(track_id = NA_character_))
 })
 
 test_that("api testing helpers", {
