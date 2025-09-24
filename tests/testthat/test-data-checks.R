@@ -126,6 +126,7 @@ test_that("check_character() errors well", {
   expect_snapshot(error = TRUE, {
     check_character(1, arg = "taylor")
     check_character(NA_character_)
+    check_character(NULL)
   })
 })
 
@@ -133,4 +134,24 @@ test_that("character works", {
   expect_identical(check_character("string", "test_arg"), "string")
   expect_identical(check_character("String", "test_arg"), "String")
   expect_identical(check_character("STRING", "test_arg"), "STRING")
+  expect_identical(check_character(NULL, allow_null = TRUE), NULL)
+  expect_identical(
+    check_character(NA_character_, allow_na = TRUE),
+    NA_character_
+  )
+})
+
+test_that("check_logical() errors well", {
+  expect_snapshot(error = TRUE, {
+    check_logical(1, arg = "taylor")
+    check_logical(NA)
+    check_logical(NULL)
+  })
+})
+
+test_that("logical works", {
+  expect_identical(check_logical(TRUE, "test_arg"), TRUE)
+  expect_identical(check_logical(FALSE, "test_arg"), FALSE)
+  expect_identical(check_logical(NULL, allow_null = TRUE), NULL)
+  expect_identical(check_logical(NA, allow_na = TRUE), NA)
 })

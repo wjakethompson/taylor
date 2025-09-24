@@ -37,6 +37,7 @@ test_that("spotify api", {
 
 test_that("soundstat api", {
   so_high_school <- get_soundstat_audio_features("7Mts0OfPorF4iwOomvfqn1")
+  missing_id <- get_soundstat_audio_features(track_id = NA_character_)
 
   expect_equal(
     colnames(so_high_school),
@@ -55,6 +56,7 @@ test_that("soundstat api", {
       "key_mode"
     )
   )
+  expect_equal(colnames(so_high_school), colnames(missing_id))
 
   expect_equal(
     so_high_school |>
@@ -64,6 +66,26 @@ test_that("soundstat api", {
       ) |>
       dplyr::pull("missing"),
     0L
+  )
+
+  expect_equal(
+    missing_id |>
+      dplyr::mutate(
+        dplyr::across(dplyr::everything(), is.na),
+        missing = sum(dplyr::c_across(dplyr::everything()))
+      ) |>
+      dplyr::pull("missing"),
+    12L
+  )
+
+  expect_equal(
+    get_soundstat_audio_features(track_id = "") |>
+      dplyr::mutate(
+        dplyr::across(dplyr::everything(), is.na),
+        missing = sum(dplyr::c_across(dplyr::everything()))
+      ) |>
+      dplyr::pull("missing"),
+    12L
   )
 
   # nothing saved to renviron --------------------------------------------------

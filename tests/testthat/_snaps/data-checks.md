@@ -159,4 +159,27 @@
     Condition
       Error:
       ! `NA_character_` must be non-missing
+    Code
+      check_character(NULL)
+    Condition
+      Error:
+      ! `NULL` must be character; not NULL
+
+# check_logical() errors well
+
+    Code
+      check_logical(1, arg = "taylor")
+    Condition
+      Error:
+      ! `taylor` must be logical; not double
+    Code
+      check_logical(NA)
+    Condition
+      Error:
+      ! `NA` must be non-missing
+    Code
+      check_logical(NULL)
+    Condition
+      Error:
+      ! `NULL` must be logical; not NULL
 

@@ -195,9 +195,15 @@ check_exact_abs_int <- function(
 
 check_character <- function(
   x,
+  allow_na = FALSE,
+  allow_null = FALSE,
   arg = rlang::caller_arg(x),
   call = rlang::caller_env()
 ) {
+  if (is.null(x) && allow_null) {
+    return(x)
+  }
+
   if (!is.character(x)) {
     abort_bad_argument(
       arg = arg,
@@ -207,7 +213,33 @@ check_character <- function(
     )
   }
 
-  if (is.na(x)) {
+  if (is.na(x) && !allow_na) {
+    abort_bad_argument(arg = arg, must = "be non-missing", call = call)
+  }
+  x
+}
+
+check_logical <- function(
+  x,
+  allow_na = FALSE,
+  allow_null = FALSE,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
+  if (is.null(x) && allow_null) {
+    return(x)
+  }
+
+  if (!is.logical(x)) {
+    abort_bad_argument(
+      arg = arg,
+      must = "be logical",
+      not = typeof(x),
+      call = call
+    )
+  }
+
+  if (is.na(x) && !allow_na) {
     abort_bad_argument(arg = arg, must = "be non-missing", call = call)
   }
   x

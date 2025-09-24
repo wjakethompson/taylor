@@ -31,6 +31,9 @@ get_spotify_track_info <- function(
   track_id,
   api_key = get_spotify_access_token()
 ) {
+  check_character(track_id)
+  check_character(api_key)
+
   spotify_track <- spotifyr::get_track(track_id, authorization = api_key)
 
   tibble::tibble(
@@ -155,6 +158,29 @@ get_soundstat_audio_features <- function(
   convert_values = FALSE,
   api_key = get_soundstat_api_key()
 ) {
+  check_character(track_id, allow_na = TRUE)
+  check_logical(convert_values)
+  check_character(api_key)
+
+  if (is.na(track_id) || track_id == "") {
+    no_info <- tibble::tibble(
+      danceability = NA_real_,
+      energy = NA_real_,
+      loudness = NA_real_,
+      acousticness = NA_real_,
+      instrumentalness = NA_real_,
+      valence = NA_real_,
+      tempo = NA_real_,
+      key = NA_integer_,
+      mode = NA_integer_,
+      key_name = NA_character_,
+      mode_name = NA_character_,
+      key_mode = NA_character_
+    )
+
+    return(no_info)
+  }
+
   resp <- httr2::request("https://soundstat.info/api/v1") |>
     httr2::req_url_path_append("/track") |>
     httr2::req_url_path_append(track_id) |>
@@ -233,6 +259,8 @@ get_soundstat_api_key <- function() {
 #' @export
 #' @rdname soundstat-api
 set_soundstat_api_key <- function(key = NULL) {
+  check_character(key, allow_null = TRUE)
+
   if (is.null(key)) {
     key <- askpass::askpass("Please enter your API key")
     if (is.null(key)) {
@@ -298,6 +326,8 @@ soundstat_testing_key <- function() {
 #' # So High School
 #' get_reccobeats_audio_features(track_id = "7Mts0OfPorF4iwOomvfqn1")
 get_reccobeats_audio_features <- function(track_id) {
+  check_character(track_id, allow_na = TRUE)
+
   no_info <- tibble::tibble(
     danceability = NA_real_,
     energy = NA_real_,
