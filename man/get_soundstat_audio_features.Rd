@@ -16,7 +16,7 @@ get_soundstat_audio_features(
 \item{convert_values}{Logical. For SoundStat features, should audio features
 be converted to the Spotify scale. See details for conversion formulas.}
 
-\item{api_key}{}
+\item{api_key}{A SoundStat API key, e.g., \code{\link[=get_soundstat_api_key]{get_soundstat_api_key()}}.}
 }
 \value{
 A \link[tibble:tibble-package]{tibble} with track audio features,

@@ -4,11 +4,10 @@
 \alias{get_reccobeats_audio_features}
 \title{Reccobeats audio features}
 \usage{
-get_reccobeats_audio_features(track_id, rate_limit_wait = 30)
+get_reccobeats_audio_features(track_id)
 }
 \arguments{
-\item{rate_limit_wait}{Number of seconds to wait before making another
-request if the rate limit is exceeded.}
+\item{track_id}{The Spotify ID for a track.}
 }
 \value{
 \itemize{

@@ -22,8 +22,8 @@ metacritic <- tribble(
 
 # Old metacritic website ~ summer 2023
 site <- read_html("https://www.metacritic.com/person/taylor-swift")
-metacritic <- html_table(site) %>%
-  pluck(2) %>%
+metacritic <- html_table(site) |>
+  pluck(2) |>
   separate_wider_regex(
     `Title:`,
     patterns = c(
@@ -31,7 +31,7 @@ metacritic <- html_table(site) %>%
       "\\n\\n[ ]*",
       album_name = ".*"
     )
-  ) %>%
+  ) |>
   mutate(
     metacritic_score = na_if(metacritic_score, "tbd"),
     metacritic_score = as.integer(metacritic_score),
@@ -40,5 +40,5 @@ metacritic <- html_table(site) %>%
       fixed("[Taylor's Version]"),
       "(Taylor's Version)"
     )
-  ) %>%
+  ) |>
   select(album_name, metacritic_score, user_score = `User score:`)

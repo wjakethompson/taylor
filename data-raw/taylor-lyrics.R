@@ -9,55 +9,55 @@ library(fs)
 release_dates <- read_xlsx(
   here("data-raw", "releases.xlsx"),
   col_types = c("text", "text", "date", "date")
-) %>%
+) |>
   mutate(
     promotional_release = lubridate::ymd(promotional_release),
     release_date = lubridate::ymd(release_date)
   )
 
-albums <- release_dates %>%
-  filter(is.na(track_name)) %>%
-  rename(album_release = release_date) %>%
+albums <- release_dates |>
+  filter(is.na(track_name)) |>
+  rename(album_release = release_date) |>
   mutate(
     ep = album_name %in%
       c("The Taylor Swift Holiday Collection", "Beautiful Eyes")
-  ) %>%
+  ) |>
   select(album_name, ep, album_release)
 
-singles <- release_dates %>%
-  filter(!is.na(track_name)) %>%
-  rename(single_release = release_date) %>%
+singles <- release_dates |>
+  filter(!is.na(track_name)) |>
+  rename(single_release = release_date) |>
   select(album_name, track_name, promotional_release, single_release)
 
-lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
-  as_tibble() %>%
-  mutate(album = path_file(path_dir(value)), track = path_file(value)) %>%
-  separate(album, c(NA, "album_name"), sep = "_", fill = "left") %>%
+lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
+  as_tibble() |>
+  mutate(album = path_file(path_dir(value)), track = path_file(value)) |>
+  separate(album, c(NA, "album_name"), sep = "_", fill = "left") |>
   separate(
     track,
     c("track_number", "track_name"),
     sep = "_",
     convert = TRUE,
     fill = "left"
-  ) %>%
+  ) |>
   mutate(
     lyrics = map(value, function(.x) {
-      read_lines(.x) %>%
-        as_tibble() %>%
+      read_lines(.x) |>
+        as_tibble() |>
         mutate(
           element = str_extract(value, "(?<=^\\[).*(?=\\]$)")
-        ) %>%
+        ) |>
         separate(
           element,
           c("element", "element_artist"),
           sep = ": ",
           fill = "right"
-        ) %>%
-        replace_na(list(element_artist = "Taylor Swift")) %>%
-        fill(element, element_artist) %>%
-        filter(value != "", !str_detect(value, "^\\[.*\\]$")) %>%
-        rowid_to_column("line") %>%
-        select(line, lyric = value, element, element_artist) %>%
+        ) |>
+        replace_na(list(element_artist = "Taylor Swift")) |>
+        fill(element, element_artist) |>
+        filter(value != "", !str_detect(value, "^\\[.*\\]$")) |>
+        rowid_to_column("line") |>
+        select(line, lyric = value, element, element_artist) |>
         mutate(
           lyric = str_replace_all(lyric, "’", "'"),
           lyric = str_replace_all(lyric, "‘", "'"),
@@ -72,13 +72,13 @@ lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) %>%
     })
   )
 
-base_info <- lyrics %>%
+base_info <- lyrics |>
   mutate(
     bonus_track = str_detect(
       album_name,
       "deluxe|platinum|3am|target|edition|anthology"
     )
-  ) %>%
+  ) |>
   mutate(
     album_name = str_replace_all(album_name, "-", " "),
     album_name = str_to_title(album_name),
@@ -119,8 +119,8 @@ base_info <- lyrics %>%
     album_name = na_if(album_name, "Non Album"),
     album_name = na_if(album_name, "Features"),
     album_name = na_if(album_name, "Writer")
-  ) %>%
-  left_join(albums, by = "album_name", relationship = "many-to-one") %>%
+  ) |>
+  left_join(albums, by = "album_name", relationship = "many-to-one") |>
   select(
     album_name,
     ep,
@@ -130,7 +130,7 @@ base_info <- lyrics %>%
     bonus_track,
     writer_only,
     lyrics
-  ) %>%
+  ) |>
   # standard file name changes
   mutate(
     track_name = path_ext_remove(track_name),
@@ -139,7 +139,7 @@ base_info <- lyrics %>%
       str_detect(album_name, "folklore|evermore") ~ str_to_lower(track_name),
       TRUE ~ str_to_title(track_name)
     )
-  ) %>%
+  ) |>
   # edits for Taylor Swift
   mutate(
     track_name = str_replace_all(track_name, "Mcgraw", "McGraw"),
@@ -151,21 +151,21 @@ base_info <- lyrics %>%
     ),
     track_name = str_replace_all(track_name, "Im", "I'm"),
     track_name = str_replace_all(track_name, "Popv", "(Pop Version)")
-  ) %>%
+  ) |>
   # edits for Beautiful Eyes
   mutate(
     track_name = str_replace_all(track_name, "Altv", "(Alternate Version)"),
     track_name = str_replace_all(track_name, "Acousticv", "(Acoustic Version)"),
     track_name = str_replace_all(track_name, "Radioe", "(Radio Edit)"),
     track_name = str_replace_all(track_name, "I Heart", "I Heart ?")
-  ) %>%
+  ) |>
   # edits for Fearless
   mutate(
     track_name = str_replace_all(track_name, "Youre", "You're"),
     track_name = str_replace_all(track_name, " N ", " & "),
     track_name = str_replace_all(track_name, "Pianov", "(Piano Version)"),
     track_name = str_replace_all(track_name, "Superstar", "SuperStar")
-  ) %>%
+  ) |>
   # edits for Red
   mutate(
     track_name = str_replace_all(
@@ -179,7 +179,7 @@ base_info <- lyrics %>%
       "Come Back...Be Here"
     ),
     track_name = str_replace_all(track_name, "Odr", "(Original Demo Recording)")
-  ) %>%
+  ) |>
   # edits for reputation
   mutate(
     track_name = str_replace_all(
@@ -191,13 +191,13 @@ base_info <- lyrics %>%
     track_name = str_replace_all(track_name, "So It Goes", "So It Goes..."),
     track_name = str_replace_all(track_name, "Dont", "Don't"),
     track_name = str_replace_all(track_name, "Cant", "Can't")
-  ) %>%
+  ) |>
   # edits for Lover
   mutate(
     track_name = str_replace_all(track_name, "Youll", "You'll"),
     track_name = str_replace_all(track_name, "^Me$", "ME!"),
     track_name = str_replace_all(track_name, "Its Nice", "It's Nice")
-  ) %>%
+  ) |>
   # edits for evermore
   mutate(
     track_name = str_replace_all(track_name, "its time", "it's time"),
@@ -207,16 +207,16 @@ base_info <- lyrics %>%
       "no body no crime",
       "no body, no crime"
     )
-  ) %>%
+  ) |>
   # edits for Fearless (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "^Mr ", "Mr. "),
     track_name = str_replace_all(track_name, "^Thats ", "That's ")
-  ) %>%
+  ) |>
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "10mv", "(10 Minute Version)")
-  ) %>%
+  ) |>
   # edits for midnights
   mutate(
     track_name = str_replace_all(track_name, "Anti Hero", "Anti-Hero"),
@@ -237,7 +237,7 @@ base_info <- lyrics %>%
     track_name = str_replace_all(track_name, "Stringrmx", "(Strings Remix)"),
     track_name = str_replace_all(track_name, "Pianormx", "(Piano Remix)"),
     track_name = str_replace_all(track_name, "Mldr", "(More Lana Del Rey)")
-  ) %>%
+  ) |>
   # edits for 1989 (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "Slut", "\"Slut!\""),
@@ -246,7 +246,7 @@ base_info <- lyrics %>%
       "Is It Over Now",
       "Is It Over Now?"
     )
-  ) %>%
+  ) |>
   # edits for THE TORTURED POETS DEPARTMENT
   mutate(
     track_name = str_replace_all(
@@ -287,7 +287,7 @@ base_info <- lyrics %>%
       "Peoples Windows",
       "People's Windows"
     )
-  ) %>%
+  ) |>
   # edits for general Taylor's Version and vault tracks
   mutate(
     track_name = str_replace_all(
@@ -317,7 +317,7 @@ base_info <- lyrics %>%
       "(From The Vault)"
     ),
     track_name = str_replace_all(track_name, "Ftv", "[From The Vault]")
-  ) %>%
+  ) |>
   # edits for singles and writing credits
   mutate(
     track_name = str_replace_all(track_name, "Rmx", "(Remix)"),
@@ -329,9 +329,9 @@ base_info <- lyrics %>%
     ),
     track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
     track_name = str_replace_all(track_name, "Tmz", "TMZ")
-  ) %>%
-  left_join(singles, by = c("album_name", "track_name")) %>%
-  rowwise() %>%
+  ) |>
+  left_join(singles, by = c("album_name", "track_name")) |>
+  rowwise() |>
   mutate(
     track_release = min(
       album_release,
@@ -339,8 +339,8 @@ base_info <- lyrics %>%
       single_release,
       na.rm = TRUE
     )
-  ) %>%
-  ungroup() %>%
+  ) |>
+  ungroup() |>
   # set up album names for Spotify
   mutate(
     album_name = case_when(
@@ -363,7 +363,7 @@ base_info <- lyrics %>%
         "THE TORTURED POETS DEPARTMENT",
       TRUE ~ album_name
     )
-  ) %>%
+  ) |>
   select(
     album_name,
     ep,
@@ -457,24 +457,24 @@ spotify_ids <- tribble(
   "evermore",                                       "6AORtDjduMM3bupSWzbTSG",
   "Midnights",                                      "1fnJ7k0bllNfL1kVdNVW1A",
   "THE TORTURED POETS DEPARTMENT",                  "5H7ixXZfsNMGbIE5OBSpcb"
-) %>%
+) |>
   mutate(
     track = map(album_uri, function(.x) {
       album <- get_album(.x)
 
-      album$tracks$items %>%
-        as_tibble() %>%
+      album$tracks$items |>
+        as_tibble() |>
         select(track_name = name, track_uri = id)
     })
-  ) %>%
-  unnest(track) %>%
-  bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) %>%
+  ) |>
+  unnest(track) |>
+  bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) |>
   rename(spotify_album_uri = album_uri, spotify_track_uri = track_uri)
 
 # reccobeats -------------------------------------------------------------------
 devtools::load_all()
 
-reccobeats_audio_features <- spotify_ids %>%
+reccobeats_audio_features <- spotify_ids |>
   mutate(
     reccobeats = map(
       spotify_track_uri,
@@ -486,7 +486,7 @@ reccobeats_audio_features <- spotify_ids %>%
   )
 
 # soundstat --------------------------------------------------------------------
-spotify_ids %>%
+spotify_ids |>
   mutate(
     spotify = map(
       track_uri,
@@ -497,8 +497,8 @@ spotify_ids %>%
         track <- get_track(.x)
         feat <- get_track_audio_features(.x)
 
-        feat %>%
-          left_join(key_lookup, by = "key") %>%
+        feat |>
+          left_join(key_lookup, by = "key") |>
           mutate(
             explicit = track$explicit,
             mode_name = case_when(
@@ -506,7 +506,7 @@ spotify_ids %>%
               mode == 1L ~ "major"
             ),
             key_mode = paste(key_name, mode_name)
-          ) %>%
+          ) |>
           select(
             danceability:tempo,
             time_signature,
@@ -515,11 +515,11 @@ spotify_ids %>%
             key_name,
             mode_name,
             key_mode
-          ) %>%
+          ) |>
           mutate(
             artist = paste(track$artists$name, collapse = ", "),
             .before = 1
-          ) %>%
+          ) |>
           separate(
             artist,
             c("artist", "featuring"),
@@ -530,10 +530,10 @@ spotify_ids %>%
       },
       key_lookup = key_lookup
     )
-  ) %>%
+  ) |>
   unnest(spotify)
 
-spotify_join <- spotify %>%
+spotify_join <- spotify |>
   select(
     album_name,
     track_name,
@@ -544,7 +544,7 @@ spotify_join <- spotify %>%
     key_name,
     mode_name,
     key_mode
-  ) %>%
+  ) |>
   # general formatting
   mutate(
     track_name = case_when(
@@ -552,7 +552,7 @@ spotify_join <- spotify %>%
       TRUE ~ str_to_title(track_name)
     ),
     track_name = str_replace_all(track_name, "’", "'")
-  ) %>%
+  ) |>
   # remixes encoded as features
   mutate(
     track_name = str_replace(
@@ -575,7 +575,7 @@ spotify_join <- spotify %>%
       "\\ \\([f|F]eat\\.\\ [^\\(\\)]*\\)",
       ""
     )
-  ) %>%
+  ) |>
   # edits for Taylor Swift
   mutate(
     track_name = str_replace_all(track_name, "Mcgraw", "McGraw"),
@@ -589,7 +589,7 @@ spotify_join <- spotify %>%
       "Teardrops On My Guitar - Pop Version",
       "Teardrops On My Guitar (Pop Version)"
     )
-  ) %>%
+  ) |>
   # edits for Fearless
   mutate(
     track_name = str_replace_all(
@@ -598,7 +598,7 @@ spotify_join <- spotify %>%
       "Forever & Always (Piano Version)"
     ),
     track_name = str_replace_all(track_name, "Superstar", "SuperStar")
-  ) %>%
+  ) |>
   # edits for Fearless (Taylor's Version)
   mutate(
     track_name = str_replace_all(
@@ -611,7 +611,7 @@ spotify_join <- spotify %>%
       fixed("(Taylor's Version) (From The Vault)"),
       "(Taylor's Version) [From The Vault]"
     )
-  ) %>%
+  ) |>
   # edits for Red
   mutate(
     track_name = str_replace_all(
@@ -634,13 +634,13 @@ spotify_join <- spotify %>%
       " - Acoustic",
       " (Acoustic Version)"
     )
-  ) %>%
+  ) |>
   # edits for Lover
-  mutate(track_name = str_replace_all(track_name, "Me!", "ME!")) %>%
+  mutate(track_name = str_replace_all(track_name, "Me!", "ME!")) |>
   # edits for folklore
-  mutate(track_name = str_replace_all(track_name, " - bonus track", "")) %>%
+  mutate(track_name = str_replace_all(track_name, " - bonus track", "")) |>
   # edits for evermore
-  mutate(track_name = str_replace_all(track_name, "‘", "'")) %>%
+  mutate(track_name = str_replace_all(track_name, "‘", "'")) |>
   # edits for Red (Taylor's Version)
   mutate(
     track_name = str_replace_all(track_name, "Trouble\\(", "Trouble ("),
@@ -649,7 +649,7 @@ spotify_join <- spotify %>%
       fixed("[Taylor's Version] (From The Vault)"),
       "[Taylor's Version] [From The Vault]"
     )
-  ) %>%
+  ) |>
   # edits for THE TORTURED POETS DEPARTMENT
   mutate(
     track_name = str_replace_all(track_name, "Loml", "loml"),
@@ -663,7 +663,7 @@ spotify_join <- spotify %>%
       "Thank You Aimee",
       "thanK you aIMee"
     )
-  ) %>%
+  ) |>
   # edits for singles, features, and writing credits
   mutate(
     track_name = str_replace_all(
@@ -674,9 +674,9 @@ spotify_join <- spotify %>%
     track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
     track_name = str_replace_all(track_name, "Tmz", "TMZ"),
     track_name = str_replace_all(track_name, "Us\\.", "us.")
-  ) %>%
+  ) |>
   # export data for joining
-  write_csv(here("data-raw", "spotify-data.csv")) %>%
+  write_csv(here("data-raw", "spotify-data.csv")) |>
   nest(spotify = -c(album_name, track_name))
 
 
@@ -689,20 +689,20 @@ spotify_join <- spotify %>%
 # 10   American Girl is exclusive to Napster
 # 11   Half Of My Heart is not available on Spotify (version featuring Taylor)
 # 12   Three Sad Virgins is not available on Spotify
-(missing <- base_info %>%
-  left_join(spotify_join, by = c("album_name", "track_name")) %>%
-  filter(map_lgl(spotify, is.null)) %>%
+(missing <- base_info |>
+  left_join(spotify_join, by = c("album_name", "track_name")) |>
+  filter(map_lgl(spotify, is.null)) |>
   select(album_name, track_name))
 
 # Check for tracks with multiple records. Should be 0 rows.
-(dups <- spotify_join %>%
-  mutate(rows = map_int(spotify, nrow)) %>%
+(dups <- spotify_join |>
+  mutate(rows = map_int(spotify, nrow)) |>
   filter(rows > 1))
 
 # Check for songs in Spotify not in base_info. 6 rows currently expected:
 # 1-3 Bonus tracks from Speak Now with no lyrics on Genius
 # 4-6 Voice memos from 1989
-(extra <- spotify_join %>%
+(extra <- spotify_join |>
   anti_join(base_info, by = c("album_name", "track_name")))
 
 # Check for writing credits only. 7 rows currently expected:
@@ -713,9 +713,9 @@ spotify_join <- spotify %>%
 # This Is What You Came For - Calvin Harris
 # TMZ - "Weird Al" Yankovic
 # You'll Always Find Your Way Back Home - Hannah Montana
-(writing <- spotify_join %>%
-  unnest("spotify") %>%
-  filter(artist != "Taylor Swift") %>%
+(writing <- spotify_join |>
+  unnest("spotify") |>
+  filter(artist != "Taylor Swift") |>
   filter(is.na(featuring) | !str_detect(featuring, "Taylor Swift")))
 
 # Check for non-ASCII characters. 35 errors (5 rows) expected:
@@ -724,38 +724,38 @@ spotify_join <- spotify %>%
 # 1  í
 # 1  ï
 # 1  ó
-base_info %>%
-  select(where(is.character), lyrics) %>%
-  unnest(lyrics) %>%
+base_info |>
+  select(where(is.character), lyrics) |>
+  unnest(lyrics) |>
   mutate(across(
     where(is.character),
     stringi::stri_enc_isascii,
     .names = "{.col}_ascii"
-  )) %>%
-  filter(!if_all(ends_with("ascii"))) %>%
-  select(album_name, track_name, line, lyric) %>%
+  )) |>
+  filter(!if_all(ends_with("ascii"))) |>
+  select(album_name, track_name, line, lyric) |>
   mutate(
     ascii_flag = map(lyric, .f = function(.x) {
-      str_split(.x, "") %>%
-        flatten_chr() %>%
-        enframe() %>%
-        mutate(ascii = map_lgl(value, stri_enc_isascii)) %>%
-        filter(!ascii) %>%
+      str_split(.x, "") |>
+        flatten_chr() |>
+        enframe() |>
+        mutate(ascii = map_lgl(value, stri_enc_isascii)) |>
+        filter(!ascii) |>
         select(value, ascii)
     })
-  ) %>%
-  unnest(ascii_flag) %>%
+  ) |>
+  unnest(ascii_flag) |>
   count(value)
 
 
 # Write data files -------------------------------------------------------------
-taylor_all_songs <- base_info %>%
-  left_join(spotify_join, by = c("album_name", "track_name")) %>%
-  relocate(spotify, .before = lyrics) %>%
-  unnest(spotify, keep_empty = TRUE) %>%
-  group_by(album_name) %>%
-  mutate(album_release = min(album_release)) %>%
-  ungroup() %>%
+taylor_all_songs <- base_info |>
+  left_join(spotify_join, by = c("album_name", "track_name")) |>
+  relocate(spotify, .before = lyrics) |>
+  unnest(spotify, keep_empty = TRUE) |>
+  group_by(album_name) |>
+  mutate(album_release = min(album_release)) |>
+  ungroup() |>
   mutate(
     bonus_track = case_when(is.na(album_name) ~ NA, TRUE ~ bonus_track),
     artist = case_when(
@@ -769,10 +769,10 @@ taylor_all_songs <- base_info %>%
       track_name == "Three Sad Virgins" ~ "Pete Davidson, Taylor Swift",
       .default = featuring
     )
-  ) %>%
+  ) |>
   relocate(artist, featuring, .after = track_name)
 
-taylor_album_songs <- taylor_all_songs %>%
+taylor_album_songs <- taylor_all_songs |>
   filter(
     album_name %in%
       c(
@@ -823,7 +823,7 @@ metacritic <- tribble(
   "fearless",
   "Taylor Swift",
   "taylor-swift"
-) %>%
+) |>
   mutate(
     ratings = map(metacritic_name, function(.x) {
       url <- glue::glue(
@@ -832,10 +832,10 @@ metacritic <- tribble(
       )
       site <- read_html(url)
 
-      critic <- html_element(site, ".metascore_w span") %>%
+      critic <- html_element(site, ".metascore_w span") |>
         html_text()
 
-      user <- html_element(site, ".user") %>%
+      user <- html_element(site, ".user") |>
         html_text()
 
       if (user == "tbd") {
@@ -847,14 +847,14 @@ metacritic <- tribble(
         user_score = as.double(user)
       )
     })
-  ) %>%
-  unnest(ratings) %>%
+  ) |>
+  unnest(ratings) |>
   select(-metacritic_name)
 
-taylor_albums <- taylor_all_songs %>%
-  distinct(album_name, ep, album_release) %>%
-  filter(!is.na(album_name)) %>%
-  left_join(metacritic, by = "album_name") %>%
+taylor_albums <- taylor_all_songs |>
+  distinct(album_name, ep, album_release) |>
+  filter(!is.na(album_name)) |>
+  left_join(metacritic, by = "album_name") |>
   arrange(album_release)
 
 use_data(taylor_all_songs, taylor_album_songs, taylor_albums, overwrite = TRUE)

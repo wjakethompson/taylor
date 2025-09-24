@@ -15,27 +15,30 @@ URL: https://taylor.wjakethompson.com,
     https://github.com/wjakethompson/taylor
 BugReports: https://github.com/wjakethompson/taylor/issues
 Depends: 
-    R (>= 3.6)
+    R (>= 4.1.0)
 Imports: 
+    askpass,
     cli,
+    dplyr,
     ggplot2,
     glue,
+    httr2,
+    jsonlite,
     lifecycle,
     methods,
     rlang,
     scales,
+    spotifyr,
     tibble,
+    tidyr,
     vctrs
 Suggests: 
     bookdown,
-    dplyr,
     knitr,
-    palmerpenguins,
     patchwork,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
-    tidyr,
     vdiffr (>= 1.0.2)
 VignetteBuilder: 
     knitr

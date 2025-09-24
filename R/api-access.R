@@ -36,7 +36,7 @@ get_spotify_track_info <- function(
   tibble::tibble(
     duration_ms = spotify_track$duration_ms,
     explicit = spotify_track$explicit
-  ) %>%
+  ) |>
     tibble::add_column(
       album_name = spotify_track$album$name,
       track_name = spotify_track$name,
@@ -44,7 +44,7 @@ get_spotify_track_info <- function(
       .before = 1
     ) |>
     tidyr::separate_wider_delim(
-      cols = artist,
+      cols = "artist",
       delim = ", ",
       names = c("artist", "featuring"),
       too_few = "align_start",
@@ -108,7 +108,7 @@ spotify_testing_key <- function() {
 #' @param track_id The Spotify ID for a track.
 #' @param convert_values Logical. For SoundStat features, should audio features
 #'   be converted to the Spotify scale. See details for conversion formulas.
-#' @param api_key
+#' @param api_key A SoundStat API key, e.g., [get_soundstat_api_key()].
 #'
 #' @details
 #' Due to differences in algorithms and methodologies, the SoundStat audio
@@ -155,27 +155,17 @@ get_soundstat_audio_features <- function(
   convert_values = FALSE,
   api_key = get_soundstat_api_key()
 ) {
-  res <- httr::GET(
-    url = glue::glue("https://soundstat.info/api/v1/track/{track_id}"),
-    config = httr::add_headers(`x-api-key` = api_key)
-  )
+  resp <- httr2::request("https://soundstat.info/api/v1") |>
+    httr2::req_url_path_append("/track") |>
+    httr2::req_url_path_append(track_id) |>
+    httr2::req_headers(`x-api-key` = api_key) |>
+    httr2::req_retry(
+      max_seconds = 300,
+      is_transient = \(resp) httr2::resp_status(resp) %in% c(429, 503, 202)
+    ) |>
+    httr2::req_perform()
 
-  if (res$status_code == 202) {
-    status_check <- httr::GET(
-      url = glue::glue("https://soundstat.info/api/v1/track/{track_id}/status"),
-      config = httr::add_headers(`x-api-key` = api_key)
-    )
-    if (status_check$status_code == 200) {
-      res <- httr::GET(
-        url = glue::glue("https://soundstat.info/api/v1/track/{track_id}"),
-        config = httr::add_headers(`x-api-key` = api_key)
-      )
-    } else {
-      cli::cli_abort("Unsuccessful analysis for track: {track_id}")
-    }
-  }
-
-  raw_dat <- jsonlite::fromJSON(rawToChar(res$content))
+  raw_dat <- httr2::resp_body_json(resp)
   raw_dat$features$segments <- NULL
   raw_dat$features$beats <- NULL
 
@@ -245,6 +235,9 @@ get_soundstat_api_key <- function() {
 set_soundstat_api_key <- function(key = NULL) {
   if (is.null(key)) {
     key <- askpass::askpass("Please enter your API key")
+    if (is.null(key)) {
+      cli::cli_abort("API key not provided")
+    }
   }
   Sys.setenv("SOUNDSTAT_KEY" = key)
 }
@@ -264,8 +257,7 @@ soundstat_testing_key <- function() {
 #'
 #' Access the Reccobeats API to get audio features for tracks.
 #'
-#' @param rate_limit_wait Number of seconds to wait before making another
-#'   request if the rate limit is exceeded.
+#' @param track_id The Spotify ID for a track.
 #'
 #' @returns
 #'   * `get_reccobeats_audio_features()` returns a
@@ -305,9 +297,7 @@ soundstat_testing_key <- function() {
 #' @examplesIf taylor_examples()
 #' # So High School
 #' get_reccobeats_audio_features(track_id = "7Mts0OfPorF4iwOomvfqn1")
-get_reccobeats_audio_features <- function(track_id, rate_limit_wait = 30) {
-  # working track_id: "2IprIjGNRlj3TfqUWCAo0C"
-
+get_reccobeats_audio_features <- function(track_id) {
   no_info <- tibble::tibble(
     danceability = NA_real_,
     energy = NA_real_,
@@ -319,36 +309,29 @@ get_reccobeats_audio_features <- function(track_id, rate_limit_wait = 30) {
     valence = NA_real_,
     tempo = NA_real_,
     key = NA_integer_,
-    mode = NA_integer_
+    mode = NA_integer_,
+    key_name = NA_character_,
+    mode_name = NA_character_,
+    key_mode = NA_character_
   )
 
   if (is.na(track_id) || track_id == "") {
     return(no_info)
   }
 
-  api_url <- glue::glue(
-    "https://api.reccobeats.com/v1/audio-features?ids={track_id}"
-  )
+  resp <- httr2::request("https://api.reccobeats.com/v1") |>
+    httr2::req_url_path_append("/audio-features") |>
+    httr2::req_url_query(ids = track_id) |>
+    httr2::req_retry(max_tries = 10) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
 
-  res <- httr::GET(
-    url = api_url,
-    config = httr::add_headers(Accept = 'application/json')
-  )
-  if (res$status_code == 429) {
-    Sys.sleep(rate_limit_wait)
-    res <- httr::GET(
-      url = api_url,
-      config = httr::add_headers(Accept = 'application/json')
-    )
-  }
-  raw_dat <- jsonlite::fromJSON(rawToChar(res$content))
-
-  if (identical(raw_dat$content, list())) {
+  if (identical(resp$content, list())) {
     return(no_info)
   }
 
-  raw_dat$content %>%
-    tibble::as_tibble() %>%
+  resp$content[[1]] |>
+    tibble::as_tibble() |>
     dplyr::select(
       "danceability",
       "energy",
@@ -361,16 +344,30 @@ get_reccobeats_audio_features <- function(track_id, rate_limit_wait = 30) {
       "tempo",
       "key",
       "mode"
-    ) %>%
+    ) |>
     dplyr::left_join(key_lookup, by = "key") |>
     dplyr::mutate(
-      mode_name = dplyr::case_when(mode == 0L ~ "minor", mode == 1L ~ "major"),
-      key_mode = paste(key_name, mode_name)
+      mode_name = dplyr::case_when(
+        .data$mode == 0L ~ "minor",
+        .data$mode == 1L ~ "major"
+      ),
+      key_mode = paste(.data$key_name, .data$mode_name)
     )
 }
 
 
 # testing helpers --------------------------------------------------------------
+
+#' Determine if code is executed interactively or in pkgdown
+#'
+#' Used for determining examples that shouldn't be run on CRAN, but can be run
+#' for the pkgdown website.
+#'
+#' @return A logical value indicating whether or not the examples should be run.
+#'
+#' @export
+#' @examples
+#' taylor_examples()
 taylor_examples <- function() {
   httr2::secret_has_key("TAYLOR_KEY") && is_pkgdown()
 }
