@@ -1,0 +1,362 @@
+album_name,spotify_album_uri,track_name,spotify_track_uri,danceability,energy,loudness,speechiness,acousticness,instrumentalness,liveness,valence,tempo,key,mode,key_name,mode_name,key_mode
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tim McGraw,0Om9WAB5RS09L80DyOfTNa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Picture To Burn,32mVHdy0bi1XKgr0ajsBlG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops On My Guitar - Radio Single Remix,7zMcNqs55Mxer82bvZFkpg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Place in this World,73OX8GdpOeGzKC6OvGSbsv,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Cold As You,7an1exwMnfYRcdVQm0yDev,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,The Outside,2QA3IixpRcKyOdG7XDzRgv,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tied Together with a Smile,6K0CJLVXqbGMeJSmJ4ENKK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Stay Beautiful,2ZoOmCSgj0ypVAmGd1ve4y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Should've Said No,16MVSD0mGI4RMQT83Qzm69,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Mary's Song (Oh My My My),2QrQCMel6v2JiLxqrg4p2O,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Our Song,15DeqWWQB4dcEWzJg15VrN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,I'm Only Me When I'm With You,0JIdBrXGSJXS72zjF9ss9u,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Invisible,5OOd01o2YS1QFwdpVLds3r,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Perfectly Good Heart,1spLfUJxtyVyiKKTegQ2r4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops on My Guitar - Pop Version,4pJi1rVt9GNegU9kywjg4z,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Last Christmas,2IprIjGNRlj3TfqUWCAo0C,0.702,0.77,-5.319,0.0372,0.31,0,0.149,0.685,116.009,5,1,F,major,F major
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmases When You Were Mine,1g09DZjQ7yBommCT6POY2n,0.625,0.206,-12.568,0.0285,0.646,0,0.0915,0.392,79.466,7,1,G,major,G major
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Santa Baby,71IScwIe7bcIlpnlkbKVQw,0.759,0.509,-6.593,0.0271,0.159,0,0.153,0.75,107.948,5,1,F,major,F major
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Silent Night,1cJkUN5LAotktryx2nPCr7,0.423,0.311,-7.581,0.0319,0.621,0,0.0987,0.134,119.546,7,1,G,major,G major
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmas Must Be Something More,31JVjy3XWnh6C2zf4kLCXN,0.689,0.793,-4.838,0.0356,0.298,0,0.107,0.506,122.879,7,1,G,major,G major
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,White Christmas,7GZ3KDorsc1yWndEtzGTjf,0.562,0.392,-9.014,0.0287,0.587,0,0.224,0.514,145.792,9,1,A,major,A major
+Fearless,43OpbkiiIxJO8ktIB777Nn,Jump Then Fall,08gavXombT6KR0af88i9tA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Untouchable,2IZ00ed83ygPIiacYScWUE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always - Piano Version,46HGgtwmmuEB8mvDCyjyAc,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Come In With The Rain,4pl5zcqCv4vc3cB7M4MZ6f,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,SuperStar,14Bljc3pOOG0xQX3wqhLN9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Other Side Of The Door,0xvsgzM8AtBtRHZm5rav8A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Fearless,3F6czr26ZwGU5O5CHY04Ma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Fifteen,3M0w3fhdXByHLCNAoi5c9G,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Love Story,0kN3oXYWWAk1uC0y2WoyOE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Hey Stephen,6wcFdMmiDscAhZJrcVFumx,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,White Horse,4jPtq9shRdUv8Zjr0a5xkD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,You Belong With Me,3as6Wz3mwbTnusWhZjTUNr,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Breathe,6S9G7J3EB1ZY0rrZPwsBg5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Tell Me Why,4XrP7vKBjKLEYlRZdb0Ygr,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,You're Not Sorry,6HWYtS215rxaaMjvpyG18W,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Way I Loved You,77VotUUL79U10TAnYdqwvr,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always,1zxrcAk6eiytfavqriMcKT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Best Day,5YbZZ2gYfvW1UvHHF4pVaD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless,43OpbkiiIxJO8ktIB777Nn,Change,0RdcBnAXyH2YZZvcBVu2k6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fearless (Taylor’s Version),77sMIMlNaSURUAXq5coCxE,0.569,0.741,-4.963,0.0282,0.0122,0,0.333,0.43,100.118,5,1,F,major,F major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fifteen (Taylor’s Version),2nqio0SfWg6gh2eCtfuMa5,0.559,0.646,-4.61,0.0272,0.116,0,0.32,0.289,95.466,7,1,G,major,G major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Love Story (Taylor’s Version),6YvqWjhGD8mB5QXcbcUKtx,0.627,0.792,-4.311,0.031,0.13,3.97e-6,0.0845,0.415,119.054,2,1,D,major,D major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Hey Stephen (Taylor’s Version),550erGcdD9n6PnwxrvYqZT,0.788,0.571,-6.135,0.0296,0.106,0,0.0934,0.797,115.99,6,1,F#,major,F# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,White Horse (Taylor’s Version),5YL553x8sHderRBDlm3NM3,0.423,0.517,-7.377,0.0486,0.369,0,0.177,0.366,185.262,0,1,C,major,C major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You Belong With Me (Taylor’s Version),1qrpoAMXodY6895hGKoUpA,0.632,0.773,-4.856,0.0346,0.0623,0,0.0885,0.474,130.033,6,1,F#,major,F# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Breathe (feat. Colbie Caillat) (Taylor’s Version),7HC7R2D8WjXVcUHJyEGjRs,0.506,0.626,-6.066,0.0287,0.156,0,0.228,0.321,148.035,1,1,C#,major,C# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Tell Me Why (Taylor’s Version),0k0vFacOHNuArLWMiH60p7,0.578,0.909,-3.669,0.0628,0.0222,0,0.333,0.541,100.023,7,1,G,major,G major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You’re Not Sorry (Taylor’s Version),6iiAfo4wTA2CVC3Uwx9uh8,0.506,0.444,-4.99,0.0285,0.0538,0,0.123,0.241,133.873,6,1,F#,major,F# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Way I Loved You (Taylor’s Version),22bPsP2jCgbLUvh82U0Z3M,0.402,0.732,-4.665,0.0484,0.0033,0,0.108,0.472,161.032,5,1,F,major,F major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Taylor’s Version),1msEuwSBneBKpVCZQcFTsU,0.598,0.821,-4.433,0.0447,0.0231,0,0.143,0.673,128.03,10,1,A#,major,A# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Best Day (Taylor’s Version),6ON9UuIq49xXY9GPmHIYRp,0.642,0.576,-8.524,0.0282,0.488,0,0.159,0.469,125,1,1,C#,major,C# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Change (Taylor’s Version),3ExweHKZF9B752DPQByRVT,0.499,0.815,-4.063,0.0341,1.91e-4,0,0.181,0.344,95.999,5,1,F,major,F major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Jump Then Fall (Taylor’s Version),2m3ObD945KvpE5y9A1eUWm,0.572,0.69,-6.201,0.0358,0.0474,0,0.0897,0.624,160.111,2,1,D,major,D major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Untouchable (Taylor’s Version),0tQ9vBYpldCuikPsbgOVKA,0.393,0.531,-6.112,0.0329,0.0181,0,0.169,0.224,200.391,5,1,F,major,F major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Piano Version) (Taylor’s Version),01QdEx6kFr78ZejhQtWR5m,0.546,0.273,-9.208,0.0308,0.819,0,0.137,0.271,118.753,9,1,A,major,A major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Come In With The Rain (Taylor’s Version),1n2wszmJyVkw6FHqyLnQsY,0.476,0.564,-5.677,0.0269,0.0406,0,0.102,0.167,143.929,2,1,D,major,D major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Superstar (Taylor’s Version),51A8eKvvZz9uydvIZ7xRSV,0.454,0.555,-6.69,0.0283,0.157,0,0.343,0.171,171.862,2,1,D,major,D major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Other Side Of The Door (Taylor’s Version),1cSFlSBdpT4F5vb1frQ231,0.432,0.873,-4.367,0.0577,0.0279,0,0.167,0.629,163.936,4,1,E,major,E major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Today Was A Fairytale (Taylor’s Version),2JoJrsEV15OzbijS47lids,0.482,0.779,-5.025,0.0409,0.0135,0,0.296,0.328,158.162,7,1,G,major,G major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault),4CHpVfAhuxNJ3ibExe6kxO,0.599,0.494,-7.61,0.0372,0.816,0,0.101,0.44,142.893,2,1,D,major,D major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Mr. Perfectly Fine (Taylor’s Version) (From The Vault),2CYVETnhM9aytqrazYYwrK,0.66,0.817,-6.269,0.0521,0.162,0,0.0667,0.714,135.942,11,0,B,minor,B minor
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,We Were Happy (Taylor’s Version) (From The Vault),34V9RiEPe8MNdU32qJsJa1,0.609,0.373,-8.819,0.0263,0.849,0,0.0779,0.13,106.007,0,1,C,major,C major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault),7eResoqEJJAVTkQYSqvO3P,0.588,0.608,-7.062,0.0365,0.225,0,0.092,0.508,90.201,5,1,F,major,F major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Don’t You (Taylor’s Version) (From The Vault),4uuEGH5SVuzkkSFjo2DEiY,0.563,0.473,-11.548,0.0503,0.514,1.2e-5,0.109,0.405,101.934,3,1,D#,major,D# major
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Bye Bye Baby (Taylor’s Version) (From The Vault),4qUijfYU8EoIWiY6oSyrgT,0.624,0.624,-7.86,0.053900000000000003,0.334,0,0.0995,0.527,80.132,5,1,F,major,F major
+Speak Now,5EpMjweRD573ASl7uNiHym,Mine,6LZaxlycSWrJZ4Volb25qx,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Sparks Fly,1q8E1FfFuhd12c5JcJwPxQ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Back To December,7lxADouiWFkwR7ZV2GKUcH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Speak Now,1nYWTzy5zu3zEPNgB1sItW,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Dear John,1ubvV5ECkm6nSI6g1HmbBK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Mean,4N60XfcTE1ysLZGbYgnYXq,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,The Story Of Us,19tHCfzUSoy5HkpxcmbA0A,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Never Grow Up,74WBGgUnpKrJXt6TETfR6Z,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Enchanted,14LtANuaslKWyYbktUrHBU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Better Than Revenge,1By2VQkUN0Frd8mKNV5NYC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Innocent,3kfgJql90tzgoxByioAMXR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Haunted,11UaQaEp2LvdspTyyuE3ur,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Last Kiss,1D27z8xNzjW0Mwwt1NCWhJ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Long Live,7DjCRhhFo9PPzca1BjMLcf,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Ours,1EQn3Uc5AyUXoiPLeyCrrg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,If This Was A Movie,0vvt4IZOMkRug195S4MUq0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Superman,2R7C9dDqv1UPycvepBFziA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Back To December - Acoustic,6IH2Z54gYPLqgJtxZjX80i,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Haunted - Acoustic Version,62rlxI6g2PNaWsHoiRryto,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now,5EpMjweRD573ASl7uNiHym,Mine - POP Mix,0fAbfDiuQiUwV7FUcFfRGY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mine (Taylor's Version),7G0gBu6nLdhFDPRLc0HdDG,0.647,0.793,-2.903,0.0363,0.00314,1.93e-6,0.174,0.5,121.101,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Sparks Fly (Taylor’s Version),3MytWN8L7shNYzGl4tAKRp,0.605,0.769,-2.413,0.032,0.0241,0,0.0936,0.366,114.921,5,1,F,major,F major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Back To December (Taylor's Version),79uDOz0zuuWS7HWxzMmTa2,0.486,0.635,-3.994,0.0278,0.00705,0,0.119,0.235,141.868,2,1,D,major,D major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Speak Now (Taylor's Version),5xXqyjLicvEpch72qEryFT,0.734,0.686,-2.926,0.0349,0.225,0,0.136,0.598,119.002,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Dear John (Taylor's Version),1zU8j1x3yi9xalMF96pzKp,0.379,0.468,-5.07,0.0298,0.0327,0,0.158,0.115,119.447,4,1,E,major,E major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mean (Taylor's Version),30Y4CV7A6YqtQtTTo7Ue4j,0.526,0.7,-3.95,0.0392,0.321,0,0.213,0.596,163.949,4,1,E,major,E major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,The Story Of Us (Taylor's Version),6dTA6y0C2ReQklntzZl8l3,0.516,0.784,-2.636,0.0563,0.00136,0,0.0499,0.552,139.787,4,1,E,major,E major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Never Grow Up (Taylor's Version),2EFZ9emtKWEglWUQGEQ3P9,0.684,0.339,-7.259,0.029,0.867,0,0.194,0.572,125.054,2,1,D,major,D major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Enchanted (Taylor's Version),3sW3oSbzsfecv9XoUdGs7h,0.52,0.553,-3.546,0.0269,0.016,0,0.165,0.227,81.949,8,1,G#,major,G# major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Better Than Revenge (Taylor's Version),0NwGC0v03ysCYINtg6ns58,0.505,0.893,-3.013,0.0771,7.95e-4,0,0.178,0.659,145.913,11,0,B,minor,B minor
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Innocent (Taylor's Version),12nBPF4Rh4XLFJV0YLN7uj,0.524,0.611,-5.298,0.0297,0.0972,0,0.127,0.126,133.583,1,0,C#,minor,C# minor
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Haunted (Taylor's Version),4tMzIAFTFdqGBQLdfbPces,0.44,0.916,-1.927,0.0629,0.00552,0,0.252,0.371,162.025,5,1,F,major,F major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Last Kiss (Taylor's Version),59KOoHFcw5XfICnO57holu,0.557,0.362,-8.641,0.0263,0.443,3.57e-6,0.1,0.187,79.573,10,1,A#,major,A# major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Long Live (Taylor's Version),4hqJ4bSlYJOXb6Z4SRmzxs,0.38,0.628,-4.054,0.038,0.0162,0,0.227,0.0984,203.826,0,1,C,major,C major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Ours (Taylor’s Version),3yNJkriPzWjkkDAWHIAVUq,0.539,0.475,-8.411,0.0287,0.42,0,0.109,0.293,159.824,0,1,C,major,C major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Superman (Taylor’s Version),4evLyY5Ue1Wesc61t2KXAU,0.537,0.733,-3.506,0.0302,0.00207,0,0.11,0.347,131.898,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault),4e3ZNTAV6PCrdYMUrUlMpQ,0.547,0.854,-4.753,0.0526,0.018,0,0.156,0.26,131.068,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,When Emma Falls in Love (Taylor’s Version) (From The Vault),0zo975x58DlXbZllWvfYhg,0.524,0.759,-4.714,0.0471,0.168,0,0.104,0.234,77.879,2,1,D,major,D major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,I Can See You (Taylor’s Version) (From The Vault),5kHMfzgLZP95O9NBy0ku4v,0.695,0.768,-4.883,0.0344,0.0577,0,0.0426,0.813,123.054,6,1,F#,major,F# major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Castles Crumbling (feat. Hayley Williams) (Taylor’s Version) (From The Vault),4ABYxlb92WBIjHu7TIKmml,0.578,0.565,-8.064,0.0441,0.342,0,0.0662,0.351,147.781,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Foolish One (Taylor’s Version) (From The Vault),4s8BIKx4Zh6ryAEz8RTlaU,0.672,0.613,-4.709,0.0298,0.599,0,0.112,0.557,97.041,7,1,G,major,G major
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Timeless (Taylor’s Version) (From The Vault),1HCdems7PQZRj42QDWLA0A,0.629,0.578,-5.806,0.0319,0.332,0,0.0868,0.651,142.887,3,1,D#,major,D# major
+Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace,5zyCYmiaVE5y26EZuwZbsw,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Red,1RvQQGwaPipiNgz8RXAKA8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous,0XfOV7qY3834QpFVwOb6CC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,I Knew You Were Trouble.,0ciHz919LVKoH4zgxyMPZ9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,All Too Well,1q3RiD1tIWUpGsNFADMlvl,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,22,3bIxTsfeNMO7Nt2J3EUKrA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,I Almost Do,31pEV5lPJi7btskZoUr2yu,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,We Are Never Ever Getting Back Together,1OYARuagDrpgNNQ4loO1Cs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Stay Stay Stay,1x0J8LFX23d5h1zzuzZorc,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Last Time,7vvIpJZye5cRR6De1LKM0m,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Holy Ground,5d2Kn9oAAh9S2EbyCo1i52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Sad Beautiful Tragic,5QKhg4r4Ibt0LVTmWEXTEg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Lucky One,2wtHlpYSgC7xEdD3DrSHNL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Everything Has Changed,7gdwoOmi258QJq0hmQ4hto,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Starlight,0vqI4ZIMuifeKeItGiWbPj,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Begin Again,48A0aShHlovDfTMucMrE66,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Moment I Knew,5AsmAjBSSQjRPWgAYIp8tm,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Come Back...Be Here,4qyalTRMRH5YuEntvvMvq0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Girl At Home,6cf6rLb8qcklvJv90W6HCW,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous - Original Demo Recording,7BT9K9BDqq6HI2oWH5UMZQ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,Red - Original Demo Recording,4mqgn90sCeVSYqcoftTQTd,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace - Acoustic,5G9AVKld9q7DCrmoY42raf,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Taylor's Version),6lzc0Al0zfZOIFsFvBS1ki,0.594,0.713,-5.314,0.0503,3.28e-4,0,0.114,0.328,129.958,9,1,A,major,A major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Red (Taylor's Version),4OAuvHryIVv4kMDNSLuPt6,0.516,0.777,-4.908,0.0375,0.00108,1.62e-6,0.0761,0.408,125.047,1,0,C#,minor,C# minor
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Treacherous (Taylor's Version),3S7HNKPakdwNEBFIVTL6dZ,0.645,0.593,-6.506,0.0288,0.0344,1.27e-4,0.13,0.299,109.984,2,1,D,major,D major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Knew You Were Trouble (Taylor's Version),6AtZLIzUINvExIUy4QhdjP,0.584,0.557,-6.371,0.0342,0.0129,0,0.0576,0.767,154.008,6,1,F#,major,F# major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (Taylor's Version),3nsfB1vus2qaloUdcBZvDu,0.44,0.528,-7.809,0.0317,0.0171,0.00203,0.234,0.132,185.972,0,1,C,major,C major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,22 (Taylor's Version),3yII7UwgLF6K5zW3xad3MP,0.642,0.695,-5.62,0.0281,4.43e-4,1.02e-5,0.0753,0.642,103.984,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Almost Do (Taylor's Version),2r9CbjYgFhtAmcFv1cSquB,0.511,0.559,-6.587,0.0264,0.0167,0,0.113,0.248,145.88,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,We Are Never Ever Getting Back Together (Taylor's Version),5YqltLsjdqFtvqE7Nrysvs,0.567,0.686,-6.139,0.175,0.0317,1.86e-6,0.0732,0.716,172.014,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Stay Stay Stay (Taylor's Version),7eQj6r5PIdYKEIZjucBMcq,0.693,0.681,-7.039,0.025,0.0848,0,0.0768,0.663,100.02,0,1,C,major,C major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version),0y6kdSRCVQhSsHSpWvTUm7,0.502,0.534,-5.954,0.0278,0.0399,0,0.0977,0.155,94.05,2,1,D,major,D major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Holy Ground (Taylor's Version),7J4b3LVCIGO4CMBDFLPoP6,0.622,0.809,-5.623,0.0638,0.0288,0.00218,0.109,0.511,156.894,9,1,A,major,A major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Sad Beautiful Tragic (Taylor's Version),73qMN9bXy7MSPwwGfH3wQr,0.601,0.406,-11.827,0.0275,0.622,9.19e-5,0.133,0.232,130.059,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Lucky One (Taylor's Version),4e5ayHsOLJNLTGfjau2mEw,0.686,0.571,-7.138,0.05,0.066,0,0.0608,0.538,117.889,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version),7qEUFOVcxRI19tbT68JcYK,0.498,0.61,-5.098,0.0363,0.271,0,0.223,0.474,79.918,6,1,F#,major,F# major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Starlight (Taylor's Version),7A2cNLRT0YJc1yjxHlKihs,0.628,0.685,-5.864,0.0358,0.00324,0,0.18,0.605,126.014,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Begin Again (Taylor's Version),05GsNucq8Bngd9fnd4fRa0,0.519,0.527,-7.673,0.0274,0.075,0,0.132,0.267,78.915,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Moment I Knew (Taylor's Version),0NRHj8hDwwmSPaA41o379r,0.636,0.402,-7.855,0.031,0.0494,0,0.107,0.208,125.952,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Come Back...Be Here (Taylor's Version),4pNApnaUWAL2J4KO2eqokq,0.46,0.632,-6.031,0.0302,0.0158,0,0.0822,0.399,79.846,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Girl At Home (Taylor's Version),0DMVrlMUn01M0IcpDbwgu7,0.691,0.736,-6.974,0.0326,0.00955,1.88e-5,0.101,0.612,125.089,5,1,F,major,F major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Acoustic Version) (Taylor's Version),5jAIouBES8LWMiriuNq170,0.445,0.131,-13.778,0.0564,0.663,1.57e-6,0.108,0.101,208.918,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Ronan (Taylor's Version),7nWui6jiMM2m9qFmET1Mtj,0.623,0.279,-10.802,0.031,0.661,0,0.193,0.38,116.04,0,1,C,major,C major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Better Man (Taylor's Version) (From The Vault),4OmFmE0fzcMG6g0Y8p4eSD,0.473,0.579,-5.824,0.0384,0.214,0,0.0877,0.255,73.942,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault),01K4zKU104LyJ8gMb7227B,0.606,0.377,-9.455,0.0275,0.817,0,0.154,0.446,101.96,0,1,C,major,C major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Babe (Taylor's Version) (From The Vault),0v4z1tuZvn6LGknom9Qx7d,0.584,0.743,-7.075,0.0931,0.0538,2.83e-6,0.121,0.746,167.844,4,1,E,major,E major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Message In A Bottle (Taylor's Version) (From The Vault),3z6XUommYDWPHeFhmhhT6j,0.622,0.791,-6.106,0.0535,0.00188,3.72e-6,0.083,0.494,115.915,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault),4CkgMiMqZ5JzW9iYXSTMTL,0.391,0.715,-4.516,0.0495,0.167,0,0.183,0.473,149.654,0,1,C,major,C major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Forever Winter (Taylor's Version) (From The Vault),3oGVx9RBmiYGv5ZCecWLkx,0.611,0.552,-5.828,0.031,0.256,0,0.134,0.41,116.012,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault),4IQkfUsrwXol38VV3U7t7T,0.61,0.488,-6.918,0.0293,0.817,0,0.312,0.443,125.039,3,1,D#,major,D# major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Very First Night (Taylor's Version) (From The Vault),6pYNq0ZwpPVazKzsqpf0G8,0.678,0.733,-5.025,0.0281,0.00115,0,0.104,0.581,121.009,7,1,G,major,G major
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (10 Minute Version) (Taylor's Version) (From The Vault),5enxwA8aAbwZbf5qCHORXi,0.631,0.518,-8.771,0.0303,0.274,0,0.088,0.205,93.023,0,1,C,major,C major
+1989,34OkZVpuzBa9y40DCy0LPR,Welcome To New York,33Kq0AT5rvwyE4azisG08x,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Blank Space,2sC2P3BN0IXujNaaSyDmtP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Style,1fo2ctLqj3zBhRQKOXprol,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Out Of The Woods,6Nde5KuTXyB7jlPO4upaBo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,All You Had To Do Was Stay,0lmMtDQ2ElasKU2qDAE6NN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Shake It Off,3fthfkkvy9av3q3uAGVf7U,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would,1B5VzXPqMlvRw0U4HJY3dJ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Bad Blood,0yN4fNzmVnmgC0dsOoi9Wh,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Wildest Dreams,106R7Z57WYzBAfrXImV30y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,How You Get The Girl,6wfugRLamFsTRbPcCpNnP7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,This Love,1kTPQnabROVkW9bUXdCGrB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,I Know Places,2zfgVd034GlUvk7LqBHl6u,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Clean,4bXCcoesMt8u99xMsbLr9U,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,Wonderland,6iWMI5oOhWrDbLbjmwTWFq,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,You Are In Love,4A2LfnduSTsE8u0ecYROxE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,New Romantics,6rZVy6FIG7lSJQMFXHo12z,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1989,34OkZVpuzBa9y40DCy0LPR,I Know Places - Voice Memo,4JQm7ebhsrt10wmrP6AfXL,0.592,0.128,-17.932,0.589,0.829,0,0.527,0.15,78.828,9,0,A,minor,A minor
+1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would - Voice Memo,4TtyvyI42C0KFnbDZvNC8Y,0.781,0.357,-16.394,0.912,0.717,0,0.185,0.645,118.317,0,1,C,major,C major
+1989,34OkZVpuzBa9y40DCy0LPR,Blank Space - Voice Memo,0yisH8r0f3Mkq34kjzUlCV,0.675,0.234,-15.064,0.721,0.801,0,0.657,0.578,127.296,5,0,F,minor,F minor
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Welcome To New York (Taylor's Version),4WUepByoeqcedHoYhSNHRt,0.76,0.602,-4.871,0.0316,0.00661,1.33e-4,0.325,0.685,116.989,7,1,G,major,G major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Blank Space (Taylor's Version),0108kcWLnn2HlH2kedi1gn,0.732,0.719,-5.469,0.0645,0.0901,0,0.331,0.71,96.035,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Style (Taylor's Version),3Vpk1hfMAQme8VJ0SNRSkd,0.514,0.821,-4.803,0.0444,4.56e-4,0.0232,0.0946,0.298,94.884,7,1,G,major,G major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Out Of The Woods (Taylor's Version),1OcSfkeCg9hRC2sFKB4IMJ,0.544,0.884,-5.973,0.0383,4.66e-4,1.34e-4,0.381,0.184,91.981,7,1,G,major,G major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,All You Had To Do Was Stay (Taylor's Version),2k0ZEeAqzvYMcx9Qt5aClQ,0.589,0.713,-5.614,0.0308,7.78e-4,0,0.188,0.54,97.069,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Shake It Off (Taylor's Version),50yNTF0Od55qnHLxYsA5Pw,0.632,0.805,-5.707,0.069,0.0112,2.51e-5,0.156,0.903,160.052,7,1,G,major,G major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Wish You Would (Taylor's Version),3FxJDucHWdw6caWTKO5b23,0.671,0.853,-6.568,0.0417,0.00388,9.48e-6,0.0812,0.523,118.032,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (Taylor's Version),7oZONwFiFIErZcXAtTu7FY,0.624,0.711,-6.347,0.159,0.0369,3.13e-6,0.19,0.347,169.999,7,1,G,major,G major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wildest Dreams (Taylor's Version),27exgla7YBw9DUNNcTIpjy,0.587,0.663,-7.439,0.0598,0.0348,9.95e-5,0.0971,0.539,139.993,8,1,G#,major,G# major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,How You Get The Girl (Taylor's Version),733OhaXQIHY7BKtY3vnSkn,0.761,0.67,-5.956,0.0537,0.00198,1.08e-5,0.0873,0.519,120.014,5,1,F,major,F major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,This Love (Taylor’s Version),4WBEj8TeGtRPNJdOmT3WJW,0.47,0.494,-8.672,0.0349,0.302,0,0.0672,0.0524,144.039,4,1,E,major,E major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Know Places (Taylor's Version),1ULabO0PEsdJekqVH6G10G,0.572,0.807,-5.348,0.0574,0.0846,0,0.071,0.626,160.015,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Clean (Taylor's Version),0lKUBmEyQfzsQHozyeXzES,0.782,0.379,-8.964,0.0303,0.297,2.98e-5,0.103,0.267,103.99,4,1,E,major,E major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wonderland (Taylor's Version),6HRsJu8vcnzYDN4t0570FY,0.387,0.703,-5.956,0.0545,0.0105,1.1e-5,0.128,0.32,123.18,3,1,D#,major,D# major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,You Are In Love (Taylor's Version),0TyGh27YQ5LknmiDhCzJiT,0.554,0.509,-9.403,0.0455,0.572,2.08e-6,0.113,0.401,85.079,2,1,D,major,D major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,New Romantics (Taylor's Version),5M787RexsAiVYjQusM98CV,0.653,0.848,-5.936,0.0583,0.00516,4.24e-6,0.0798,0.724,122.017,5,1,F,major,F major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,"""Slut!"" (Taylor's Version) (From The Vault)",0CD7DzeCsuPJygddqlUVYa,0.621,0.415,-13.187,0.0543,0.33,1.12e-4,0.0634,0.313,77.978,2,1,D,major,D major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Say Don't Go (Taylor's Version) (From The Vault),3CCRVu4F91Qp2mnGjmWBrf,0.632,0.539,-8.375,0.0342,0.0684,5.82e-6,0.132,0.186,109.962,4,1,E,major,E major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Now That We Don't Talk (Taylor's Version) (From The Vault),5QUIK7ZtziW8kGWo8RqopF,0.8,0.509,-9.386,0.034,0.16,3.05e-5,0.0834,0.0768,109.994,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Suburban Legends (Taylor's Version) (From The Vault),6M9ppdfFjR1AbpUl3Y8DcV,0.695,0.607,-8.84,0.0357,0.212,0,0.102,0.394,118.043,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Is It Over Now? (Taylor's Version) (From The Vault),6IG3sQ8s9nfk6TUlVzRhbN,0.599,0.651,-7.343,0.035,0.0486,0,0.126,0.153,100.001,0,1,C,major,C major
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (feat. Kendrick Lamar) (Taylor's Version),6qAcApH8obo8eqatCKUHd9,0.604,0.644,-6.931,0.0889,0.0143,0,0.237,0.197,170.088,2,1,D,major,D major
+reputation,6DEjYFkNZh67HP7R9PSZvv,...Ready For It?,2yLa0QULdQr0qAIvVwN6B5,0.613,0.764,-6.509,0.136,0.0527,0,0.197,0.417,160.015,2,1,D,major,D major
+reputation,6DEjYFkNZh67HP7R9PSZvv,End Game,2x0WlnmfG39ZuDmstl9xfX,0.649,0.589,-6.237,0.0558,0.00845,0,0.108,0.151,159.073,2,1,D,major,D major
+reputation,6DEjYFkNZh67HP7R9PSZvv,I Did Something Bad,4svZDCRz4cJoneBpjpx8DJ,0.696,0.602,-6.156,0.159,0.0679,2.11e-5,0.0696,0.305,82.989,0,0,C,minor,C minor
+reputation,6DEjYFkNZh67HP7R9PSZvv,Don’t Blame Me,1R0a2iXumgCiFb7HEZ7gUE,0.615,0.534,-6.719,0.0386,0.106,1.76e-5,0.0607,0.193,135.917,9,0,A,minor,A minor
+reputation,6DEjYFkNZh67HP7R9PSZvv,Delicate,6NFyWDv5CjfwuzoCkw47Xf,0.75,0.404,-10.178,0.0682,0.216,3.57e-4,0.0911,0.0499,95.045,9,0,A,minor,A minor
+reputation,6DEjYFkNZh67HP7R9PSZvv,Look What You Made Me Do,1P17dC1amhFzptugyAO7Il,0.766,0.709,-6.471,0.123,0.204,1.41e-5,0.126,0.506,128.07,9,0,A,minor,A minor
+reputation,6DEjYFkNZh67HP7R9PSZvv,So It Goes...,5PxFv9yJEg9dxvbZggykro,0.574,0.61,-7.283,0.0732,0.122,1.1e-6,0.13,0.374,74.957,2,1,D,major,D major
+reputation,6DEjYFkNZh67HP7R9PSZvv,Gorgeous,1ZY1PqizIl78geGM4xWlEA,0.8,0.535,-6.684,0.135,0.0713,9.48e-6,0.213,0.451,92.027,7,1,G,major,G major
+reputation,6DEjYFkNZh67HP7R9PSZvv,Getaway Car,0VE4kBnHJUgtMf0dy6DRmW,0.562,0.689,-6.745,0.127,0.00465,2.23e-6,0.0888,0.351,172.054,2,1,D,major,D major
+reputation,6DEjYFkNZh67HP7R9PSZvv,King Of My Heart,7HuBDWi18s4aJM8UFnNheH,0.675,0.703,-7.902,0.0382,0.00882,2.21e-6,0.0391,0.314,110.01,0,1,C,major,C major
+reputation,6DEjYFkNZh67HP7R9PSZvv,Dancing With Our Hands Tied,7I7JbDv63ZJJsSi24DyJrz,0.624,0.691,-6.686,0.196,0.0604,1.1e-5,0.138,0.284,160.024,0,0,C,minor,C minor
+reputation,6DEjYFkNZh67HP7R9PSZvv,Dress,6oVxXO5oQ4pTpO8RSnkzvv,0.719,0.469,-8.792,0.0533,0.0329,0,0.169,0.0851,120.085,0,1,C,major,C major
+reputation,6DEjYFkNZh67HP7R9PSZvv,This Is Why We Can't Have Nice Things,07NxDD1iKCHbAldceD7QLP,0.567,0.789,-5.986,0.115,0.0156,0,0.382,0.438,163.96,5,1,F,major,F major
+reputation,6DEjYFkNZh67HP7R9PSZvv,Call It What You Want,1GwMQaZz6Au3QLDbjbMdme,0.598,0.504,-9.874,0.0731,0.186,2.21e-4,0.34,0.252,163.954,9,1,A,major,A major
+reputation,6DEjYFkNZh67HP7R9PSZvv,New Year’s Day,7F5oktn5YOsR9eR5YsFtqb,0.661,0.151,-12.864,0.0354,0.921,0,0.13,0.23,94.922,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,I Forgot That You Existed,43rA71bccXFGD4C8GOpIlN,0.664,0.316,-10.345,0.519,0.298,2.03e-6,0.0812,0.541,92.875,5,1,F,major,F major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Cruel Summer,1BxfuPKGuaTgP7aM0Bbdwr,0.552,0.702,-5.707,0.157,0.117,2.06e-5,0.105,0.564,169.994,9,1,A,major,A major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Lover,1dGr1c8CrMLDpV6mPbImSI,0.359,0.543,-7.582,0.0919,0.492,1.58e-5,0.118,0.453,68.534,7,1,G,major,G major
+Lover,1NAmidJlEaVgA3MpcPFYGq,The Man,3RauEVgRgj1IuWdJ9fDs70,0.777,0.658,-5.191,0.054,0.0767,0,0.0901,0.633,110.048,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,The Archer,3pHkh7d0lzM2AldUtz2x37,0.292,0.574,-9.375,0.0401,0.12,0.00569,0.0663,0.166,124.344,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,I Think He Knows,2YWtcWi3a83pdEg3Gif4Pd,0.897,0.366,-8.029,0.0569,0.00889,3.53e-4,0.0715,0.416,100.003,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Miss Americana & The Heartbreak Prince,214nt20w5wOxJnY462klLw,0.662,0.747,-6.926,0.0736,0.028,0.00615,0.138,0.487,150.088,11,0,B,minor,B minor
+Lover,1NAmidJlEaVgA3MpcPFYGq,Paper Rings,4y5bvROuBDPr5fuwXbIBZR,0.811,0.719,-6.553,0.0497,0.0129,1.36e-5,0.0742,0.865,103.979,9,1,A,major,A major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Cornelia Street,12M5uqx0ZuwkpLp5rJim1a,0.824,0.624,-9.728,0.0827,0.781,1.89e-4,0.1,0.248,102.012,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Death By A Thousand Cuts,2dgFqt3w9xIQRjhPtwNk3D,0.712,0.732,-6.754,0.0629,0.454,0,0.319,0.313,94.071,4,1,E,major,E major
+Lover,1NAmidJlEaVgA3MpcPFYGq,London Boy,1LLXZFeAHK9R4xUramtUKw,0.695,0.71,-6.639,0.05,0.0246,1.04e-4,0.133,0.557,157.925,1,1,C#,major,C# major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Soon You’ll Get Better (feat. The Chicks),4AYtqFyFbX0Xkc2wtcygTr,0.433,0.182,-12.566,0.0641,0.907,0,0.123,0.421,207.476,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,False God,5hQSXkFgbxjZo9uCwd11so,0.739,0.32,-10.862,0.239,0.736,1.47e-4,0.111,0.351,79.97,11,0,B,minor,B minor
+Lover,1NAmidJlEaVgA3MpcPFYGq,You Need To Calm Down,6RRNNciQGZEXnqk8SQ9yv5,0.771,0.671,-5.617,0.0553,0.00929,0,0.0637,0.714,85.026,2,1,D,major,D major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Afterglow,1SymEzIT3H8UZfibCs3TYi,0.756,0.449,-8.746,0.0344,0.13,0,0.114,0.399,111.011,9,1,A,major,A major
+Lover,1NAmidJlEaVgA3MpcPFYGq,ME! (feat. Brendon Urie of Panic! At The Disco),2Rk4JlNc2TPmZe2af99d45,0.61,0.83,-4.105,0.0571,0.033,0,0.118,0.728,182.162,0,1,C,major,C major
+Lover,1NAmidJlEaVgA3MpcPFYGq,It’s Nice To Have A Friend,1SmiQ65iSAbPto6gPFlBYm,0.737,0.175,-9.912,0.0401,0.971,3.37e-4,0.171,0.545,70.008,10,1,A#,major,A# major
+Lover,1NAmidJlEaVgA3MpcPFYGq,Daylight,1fzAuUVbzlhZ1lJAx9PtY6,0.557,0.496,-9.602,0.0563,0.808,1.73e-4,0.0772,0.265,149.983,0,1,C,major,C major
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the 1,4pfrrhvplbJZAIsfosGWQP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,cardigan,0KRYCBwIpWYFNrXOmXbyUh,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the last great american dynasty,2olxzvoFI9IpxqFeUv7WOX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,exile (feat. Bon Iver),5S4aYQAJOwJMAamANWlICO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,my tears ricochet,5P2bHCDM2tsgIaYWsZMhu5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,mirrorball,2I8YAEA1VmCuP1wkJHMpTw,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,seven,76mOLcXOjOEhyY4mMF1l3r,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,august,6nK2pIKFcRc5frrZKHgsiT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,this is me trying,7cm50Lw03k6VvRauJtkyTj,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,illicit affairs,6DrLROM5MG9bxWHeEG5elq,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,invisible string,2ehRU518I0hYqMGQnk4lDY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,mad woman,0RP1kqoSPkVXsKiQNhMKzV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,epiphany,1EXa37LpSvi3OQ9UYQ28rD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,betty,3IhtE4fkytdrtEfV34UzkD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,peace,6JlI8Ay77m4nJvZTHvfT1J,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,hoax,0YeDG5HnKnG7jpArkzsSPa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the lakes - bonus track,0eFQWVz0qIxDOvhLpZ40P7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,willow,2gVhfX2Gy1T9kDuS9azrF7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,champagne problems,1gcyHQpBQ1lfXGdhZmWrHP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,gold rush,3Dby3p1m6IOZn2gIIqECgK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,‘tis the damn season,6sQckd3Z8NPxVVKUnavY1F,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,tolerate it,6lCvK2AR2uOKkVFCVlAzzm,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,"no body, no crime (feat. HAIM)",6uwfVkaOM1mcMkFmSn35ix,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,happiness,55Vf4bimc1Rtfg0PAQRAo2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,dorothea,66tOfHVH3aUrscg8vExRV4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,coney island (feat. The National),2awNGIJHodfLZSClB3PYhz,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,ivy,43Ykum9T72UOPhBN31grpN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,cowboy like me,52OkpDsU6MmPx1AwGOb6Ap,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,long story short,5VYWxXUpxuxEmCqMLDqICo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,marjorie,5uICWmZTLkpEVbK22PBP6e,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,closure,6a8aUhYbaQBUI8PcJ5ZmQ6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,evermore (feat. Bon Iver),6Wlq9rqkxrqj5Kls4Kw14H,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,right where you left me - bonus track,3zwMVvkBe2qIKDObWgXw4N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+evermore,6AORtDjduMM3bupSWzbTSG,it’s time to go - bonus track,1kdWw77ZpYOkhxeuhzU1j6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Lavender Haze,24emu3sabKISjRkrys28jq,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Maroon,6qxvy9Pe4RJIq5JBVbbwbS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Anti-Hero,5qIHFdkW6phMsTZlN2g8Lc,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. Lana Del Rey),7GA86Uo2jYbj8vIXe2nyWd,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,"You're On Your Own, Kid",6PQOU00xWNrGwCZzboriXy,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Midnight Rain,4eKMqf9ZMSclDX7V9Ptg7x,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Question...?,7oomkQSYf1ia2VnVEWfFIU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Vigilante Shit,0GKDhq6ZbmSbRHd3eyGlB7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bejeweled,0VpF6RLdCfPIeYRwMu4tZK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Labyrinth,4bBDkw2KBMX0tcgAaXC83Q,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma,45R112Jz5hQeKgITXgSXzs,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Sweet Nothing,2L09RYwH5Pjzca6PmbUAw3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Mastermind,1QQii3pa5m8MEda0nbkjfw,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,The Great War,2VuqMjgoKaOHNM8HpxtXKx,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bigger Than The Whole Sky,71CBDRKmF2VeRKYMG1DFBh,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Paris,5tWxKWq1DSP1s9WQ5PWuqu,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,High Infidelity,1SztNGCwEHJEVFx90E5g7D,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Glitch,7C0w28EsX0Um2FrZs9gso2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,"Would've, Could've, Should've",4txojlesMFQZGWxwz2EeqB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Dear Reader,10GRRCR5fctuOF4GFmATJI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Hits Different,3xYJScVfxByb61dYHTwiby,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. More Lana Del Rey),4zmKGsrXjLmljb5fTaBTot,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma (feat. Ice Spice),4i6cwNY6oIUU2XZxPIw82Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fortnight (feat. Post Malone),6dODwocEuGzHAavXqTbwHv,0.504,0.386,-10.976,0.0308,0.502,1.53e-5,0.0961,0.281,192.004,11,1,B,major,B major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Tortured Poets Department,4PdLaGZubp4lghChqp8erB,0.604,0.428,-8.441,0.0255,0.0483,0,0.126,0.292,110.259,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,My Boy Only Breaks His Favorite Toys,7uGYWMwRy24dm7RUDDhUlD,0.596,0.563,-7.362,0.0269,0.137,0,0.302,0.481,97.073,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Down Bad,1kbEbBdEgQdQeLXCJh28pJ,0.541,0.366,-10.412,0.0748,0.56,1e-6,0.0946,0.168,159.707,11,1,B,major,B major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,"So Long, London",7wAkQFShJ27V8362MqevQr,0.423,0.533,-11.388,0.322,0.73,0.00264,0.0816,0.248,160.218,9,1,A,major,A major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,But Daddy I Love Him,4QMgEffJQuKtjCNvqfRZ0m,0.521,0.72,-7.684,0.104,0.384,0,0.135,0.438,79.943,4,1,E,major,E major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fresh Out The Slammer,7IWcDWOfiooH5hRs9XOVYz,0.33,0.483,-9.394,0.0399,0.624,0,0.111,0.34,87.115,9,1,A,major,A major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Florida!!! (feat. Florence + The Machine),5ExOm0dh4NyRyAdSAO9hyM,0.533,0.573,-7.123,0.138,0.178,0,0.309,0.398,150.088,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Guilty as Sin?,799KrpEbhZp0MHeiA8YK9P,0.626,0.428,-8.374,0.0261,0.607,0,0.0921,0.487,94.95,2,1,D,major,D major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Who’s Afraid of Little Old Me?,2d8UxVNhJinc8uat9PoM9y,0.606,0.338,-10.555,0.048,0.315,0,0.106,0.238,119.88,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Fix Him (No Really I Can),5chnRTB9qMK3W1M41SnU9s,0.661,0.257,-13.961,0.045,0.768,1.72e-6,0.176,0.318,106.896,6,0,F#,minor,F# minor
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,loml,3YkNIrAvbKNrrwwEd7NVLl,0.423,0.272,-12.56,0.0489,0.858,0,0.108,0.195,78.539,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Do It With a Broken Heart,2fPvQfGQEZOKtJ9qXeL4x8,0.701,0.751,-8.39,0.0502,0.123,0,0.15,0.22,129.994,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Smallest Man Who Ever Lived,1xtw1krCR6Dw2KwkXw5z63,0.426,0.41,-9.083,0.0581,0.52,0,0.338,0.263,142.377,10,1,A#,major,A# major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Alchemy,1tuNqJOtRQVHvONR8Lg3MZ,0.64,0.421,-8.802,0.0273,0.422,0,0.103,0.353,100.056,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Clara Bow,4d9PtIEVij9jW5OaLinH66,0.686,0.318,-11.046,0.0263,0.636,0.00144,0.106,0.214,104.088,7,1,G,major,G major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Black Dog,62E2nR0od0M5HYxuYLaDz7,0.527,0.27,-10.855,0.038,0.707,0,0.102,0.23,154.042,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,imgonnagetyouback,1kcwpPDQnqEqmezzXdJTCP,0.784,0.391,-9.471,0.0633,0.608,0,0.252,0.15,110.007,9,1,A,major,A major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Albatross,4EF6IyONolQy0bIQXm2EmX,0.352,0.479,-8.942,0.0583,0.655,0,0.0935,0.292,172.013,2,1,D,major,D major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Chloe or Sam or Sophia or Marcus,1rmEsOezwf2lmIZTMAO5Ag,0.516,0.451,-8.552,0.0446,0.78,0,0.105,0.218,70.266,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,How Did It End?,5Bedn0svl0ZD7RGmJkmKKw,0.492,0.379,-8.859,0.0257,0.785,0.00093000000000000005,0.108,0.273,83.993,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,So High School,7Mts0OfPorF4iwOomvfqn1,0.366,0.866,-4.514,0.0466,0.0274,3.07e-6,0.106,0.293,176.07,7,1,G,major,G major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Hate It Here,3hlGuz3loYoLfI3bpwieWq,0.485,0.562,-7.197,0.0346,0.717,0,0.357,0.297,105.953,2,1,D,major,D major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,thanK you aIMee,7ogK4lJDVDMU6A6vYR5rvD,0.609,0.541,-8.013,0.0346,0.609,0,0.122,0.252,95.997,7,1,G,major,G major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Look in People's Windows,1Zai5UJ2di3qEuR2HeT2s8,0.763,0.274,-11.429,0.0738,0.69,0,0.164,0.385,90.796,1,0,C#,minor,C# minor
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Prophecy,18WFFUIsewmA8g31KAeo3e,0.421,0.525,-10.359,0.0472,0.825,2.67e-6,0.308,0.535,167.927,10,1,A#,major,A# major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Cassandra,0g4fMVo4JjwnIpTfFfLdxS,0.587,0.587,-9.879,0.0595,0.806,0,0.137,0.514,139.963,10,1,A#,major,A# major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Peter,3zMDGj4D8ogaYgAIZPeU7S,0.342,0.376,-8.212,0.0372,0.805,0,0.0593,0.29,176.859,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Bolter,2913xXOVAIDAqxzV2g4VcU,0.455,0.586,-7.978,0.0492,0.638,0,0.131,0.481,183.694,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Robin,2CnjDMdpRjlWv04Xk3s6MW,0.476,0.386,-10.601,0.03,0.791,4.23e-4,0.1,0.158,138.265,0,1,C,major,C major
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Manuscript,1DTRUYVd8rYpla9hhVVwjo,0.509,0.256,-11.665,0.0306,0.901,2.43e-6,0.103,0.436,94.184,0,1,C,major,C major
+Midnights,NA,You're Losing Me (From The Vault),3CWq0pAKKTWb0K4yiglDc4,0.744,0.396,-13.712,0.057,0.509,0.00319,0.121,0.18,102.969,0,1,C,major,C major
+NA,NA,All Of The Girls You Loved Before,4P9Q0GojKVXpRTJCaL3kyy,0.729,0.467,-9.682,0.0419,0.71,4.53e-5,0.129,0.401,96.042,2,1,D,major,D major
+NA,NA,American Girl,,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Bad Blood (Remix),6xsEAm6w9oMQYYg3jkEkMT,0.654,0.655,-7.388,0.106,0.0294,0,0.139,0.221,170.16,11,0,B,minor,B minor
+NA,NA,Beautiful Ghosts,2evEoQAhIMaa9PfjTT5skG,0.382,0.219,-10.068,0.0677,0.85,0,0.0954,0.222,175.561,4,1,E,major,E major
+NA,NA,Carolina,4axSuOg3BqsowKjRpj59RU,0.476,0.189,-13.777,0.0329,0.904,4.52e-6,0.254,0.324,115.851,11,0,B,minor,B minor
+NA,NA,Christmas Tree Farm,2mvabkN1i2gLnGAPUVdwek,0.598,0.68,-4.505,0.0331,0.06,0,0.324,0.437,134.002,7,1,G,major,G major
+NA,NA,Crazier,5vyxXfD5gLlyPxGZMEjtmd,0.452,0.544,-5.423,0.0277,0.0631,5.33e-6,0.104,0.158,133.042,4,1,E,major,E major
+NA,NA,Eyes Open,6KEemo78n0RnCQWKkeOdXz,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Eyes Open (Taylor's Version),0gPmM1WtVRg3uENW3o8bfx,0.567,0.762,-7.05,0.0358,6.35e-4,5.65e-4,0.186,0.238,136.982,7,1,G,major,G major
+NA,NA,I Don't Wanna Live Forever,2y5aJvzXhHPA94U5GFAcXe,0.735,0.443,-8.432,0.0556,0.0601,1.91e-5,0.213,0.107,117.968,0,1,C,major,C major
+NA,NA,If This Was A Movie (Taylor's Version),0q6vsjvnCIWrtwRckCV7y0,0.472,0.664,-4.805,0.0275,0.1,0,0.224,0.253,147.896,4,1,E,major,E major
+NA,NA,Lover (Remix),3i9UVldZOE0aD0JnyfAZZ0,0.448,0.603,-7.176,0.064,0.433,0,0.0862,0.422,205.272,7,1,G,major,G major
+NA,NA,Only The Young,2slqvGLwzZZYsT4K4Y1GBC,0.56,0.78,-4.895,0.0517,0.00244,0,0.0714,0.602,93.516,5,0,F,minor,F minor
+NA,NA,Ronan,0Nw8hv79MLJa1yjtsEgz08,0.565,0.255,-10.152,0.0314,0.646,0,0.127,0.174,57.964,0,1,C,major,C major
+NA,NA,Safe & Sound,0z9UVN8VBHJ9HdfYsOuuNf,0.471,0.3,-10.807,0.028,0.883,1.05e-5,0.0698,0.289,144.319,7,1,G,major,G major
+NA,NA,Safe & Sound (Taylor's Version),6Q237Ts37YGYRIi5Vy5lVX,0.406,0.318,-11.052,0.0284,0.79,2.88e-6,0.0754,0.278,145.126,7,1,G,major,G major
+NA,NA,September,5eGX87IiKsGuzS3iw4CfCX,0.641,0.444,-6.482,0.0239,0.412,0.00121,0.179,0.588,107.081,6,1,F#,major,F# major
+NA,NA,Sweeter Than Fiction,0RFCHlNuTeUHIB36VuVbOL,0.71,0.614,-6.965,0.0366,0.00164,1.54e-4,0.0785,0.673,135.012,6,1,F#,major,F# major
+NA,NA,Today Was A Fairytale,4pFvEWbjBpPUdYRQly0THs,0.491,0.703,-4.5,0.0319,0.0307,5.72e-6,0.167,0.344,157.988,7,1,G,major,G major
+NA,NA,Babe,7FFfYM4JE1vj5n4rhHxg8q,0.535,0.777,-3.292,0.207,0.0187,1.62e-6,0.136,0.664,171.72,4,1,E,major,E major
+NA,NA,Birch,7wo2UNeQBowm28hfAJsEMz,0.644,0.639,-13.545,0.0466,0.889,0.143,0.0993,0.255,92.012,8,1,G#,major,G# major
+NA,NA,Both Of Us,3r9bgSJlJz2zlevcBRYXko,0.677,0.722,-7.088,0.0522,0.0213,0,0.207,0.0483,125.091,7,1,G,major,G major
+NA,NA,Gasoline (Remix),645Exr2lJIO45Guht3qyIa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Half Of My Heart,,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Highway Don't Care,4wFUdSCer8bdQsrp1M90sa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Renegade,1aU1wpYBSpP0M6IiihY5Ue,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,The Alcott,6INztpNwOTlfSKTuPo0HOP,0.366,0.47,-10.57,0.031,0.817,0.00206,0.108,0.429,156.037,0,1,C,major,C major
+NA,NA,The Joker and the Queen,6N1K5OVVCopBjGViHs2IvP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Three Sad Virgins,,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Two Is Better Than One,1MaqkdFNIKPdpQGDzme5ss,0.521,0.702,-5.189,0.0331,0.189,0,0.0962,0.25,127.976,0,1,C,major,C major
+NA,NA,us.,0hhzNPE68LWLfgZwdpxVdR,0.533,0.553,-6.486,0.0296,0.498,0,0.0911,0.391,102.043,7,1,G,major,G major
+NA,NA,"1 step forward, 3 steps back",4wcBRRpIfesgcyUtis7PEg,0.473,0.203,-12.627,0.102,0.941,0,0.126,0.419,168.884,2,1,D,major,D major
+NA,NA,Best Days Of Your Life,16jvUOIQ2P54P0bNN4rAdv,0.649,0.862,-5.12,0.0568,0.0235,0,0.0737,0.538,127.939,9,1,A,major,A major
+NA,NA,Better Man,23TxRN09aR1RB0G0tFoT0b,0.514,0.836,-3.663,0.0382,0.112,0,0.0878,0.501,143.888,5,1,F,major,F major
+NA,NA,deja vu,6HU7h9RYOaPRFeh0R3UeAr,0.442,0.612,-7.222,0.112,0.584,5.7e-6,0.37,0.178,180.917,2,1,D,major,D major
+NA,NA,This Is What You Came For,0azC730Exh71aQlOt9Zj3y,0.631,0.927,-2.787,0.0332,0.199,0.119,0.148,0.465,123.962,9,0,A,minor,A minor
+NA,NA,TMZ,2Y9YdGPN7AtVfpTvXfRbc6,0.74,0.618,-8.337,0.0327,0.0439,0,0.106,0.668,134.948,1,1,C#,major,C# major
+NA,NA,You'll Always Find Your Way Back Home,12wSL3tGk3MtbDEhfG7xy3,0.577,0.906,-3.673,0.0583,0.0304,0,0.189,0.692,152.946,8,1,G#,major,G# major
