@@ -1,4 +1,18 @@
 test_that("spotify api", {
+  client_id <- httr2::secret_decrypt(
+    "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
+    "TAYLOR_KEY"
+  )
+  client_secret = httr2::secret_decrypt(
+    "LZneUpdwTawqZOBb6Qx481OvOL9U9Jxz9QZhm9FwUQ6QsPLkQTV1FbMweVKFKUR9",
+    "TAYLOR_KEY"
+  )
+
+  # with known envvars ---------------------------------------------------------
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = client_id,
+    "SPOTIFY_CLIENT_SECRET" = client_secret
+  ))
   so_high_school <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
 
   expect_equal(
@@ -39,6 +53,14 @@ test_that("spotify api", {
 })
 
 test_that("soundstat api", {
+  soundstat_key <- httr2::secret_decrypt(
+    paste0("cFg1OO1frsH8Up0AhTQu09k86iUHZmK-rtok8wcVJMCfChKc6Oyc5GRqhVQJ_",
+           "s34RFw8qdhKJZY0aco"),
+    "TAYLOR_KEY"
+  )
+
+  # with known envvars ---------------------------------------------------------
+  withr::local_envvar(list("SOUNDSTAT_KEY" = soundstat_key))
   so_high_school <- get_soundstat_audio_features("7Mts0OfPorF4iwOomvfqn1")
 
   expect_equal(
@@ -132,6 +154,7 @@ test_that("reccobeats api", {
 
   expect_null(get_reccobeats_audio_features(track_id = ""))
   expect_null(get_reccobeats_audio_features(track_id = NA_character_))
+  expect_null(get_reccobeats_audio_features(track_id = "so-high-school"))
 })
 
 test_that("api testing helpers", {
