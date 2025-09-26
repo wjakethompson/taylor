@@ -170,21 +170,25 @@ get_soundstat_audio_features <- function(
     return(NULL)
   }
 
-  resp <- httr2::request("https://soundstat.info/api/v1") |>
+  api_call <- httr2::request("https://soundstat.info/api/v1") |>
     httr2::req_url_path_append("/track") |>
     httr2::req_url_path_append(track_id) |>
     httr2::req_headers(`x-api-key` = api_key) |>
-    httr2::req_retry(
-      max_seconds = 300,
-      is_transient = \(resp) httr2::resp_status(resp) %in% c(429, 503, 202)
-    ) |>
-    httr2::req_perform()
+    httr2::req_retry(max_tries = 10)
+
+  resp <- httr2::req_perform(api_call)
+  if (httr2::resp_status(resp) == 202) {
+    monitor <- api_call |>
+      httr2::req_url_path_append("status") |>
+      httr2::req_perform()
+    resp <- httr2::req_perform(api_call)
+  }
 
   raw_dat <- httr2::resp_body_json(resp)
   raw_dat$features$segments <- NULL
   raw_dat$features$beats <- NULL
 
-  tibble::as_tibble(raw_dat$features) |>
+  res <- tibble::as_tibble(raw_dat$features) |>
     dplyr::select(
       "danceability",
       "energy",
@@ -196,12 +200,6 @@ get_soundstat_audio_features <- function(
       "key",
       "mode"
     ) |>
-    dplyr::mutate(
-      acousticness = .data$acousticness * 0.005,
-      energy = .data$energy * 2.25,
-      instrumentalness = .data$instrumentalness * 0.03,
-      loudness = -1 * (1 - .data$loudness) * 14
-    ) |>
     dplyr::left_join(key_lookup, by = "key") |>
     dplyr::mutate(
       mode_name = dplyr::case_when(
@@ -210,6 +208,18 @@ get_soundstat_audio_features <- function(
       ),
       key_mode = paste(.data$key_name, .data$mode_name)
     )
+
+  if (convert_values) {
+    res <- res |>
+      dplyr::mutate(
+        acousticness = .data$acousticness * 0.005,
+        energy = .data$energy * 2.25,
+        instrumentalness = .data$instrumentalness * 0.03,
+        loudness = -1 * (1 - .data$loudness) * 14
+      )
+  }
+
+  res
 }
 
 #' SoundStat API helpers

@@ -96,8 +96,20 @@ test_that("soundstat api", {
 
   # nothing saved to renviron --------------------------------------------------
   withr::local_envvar(list("SOUNDSTAT_KEY" = ""))
-  without_local <- get_soundstat_audio_features("7Mts0OfPorF4iwOomvfqn1")
-  expect_identical(so_high_school, without_local)
+  without_local <- get_soundstat_audio_features(
+    track_id = "7Mts0OfPorF4iwOomvfqn1",
+    convert_values = TRUE
+  )
+  expect_identical(
+    dplyr::mutate(
+      so_high_school,
+      acousticness = .data$acousticness * 0.005,
+      energy = .data$energy * 2.25,
+      instrumentalness = .data$instrumentalness * 0.03,
+      loudness = -1 * (1 - .data$loudness) * 14
+    ),
+    without_local
+  )
 
   # no keys found --------------------------------------------------------------
   withr::local_envvar(list("SOUNDSTAT_KEY" = "", "TESTTHAT" = "false"))
