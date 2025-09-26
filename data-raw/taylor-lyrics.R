@@ -471,19 +471,35 @@ spotify_ids <- tribble(
   bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) |>
   rename(spotify_album_uri = album_uri, spotify_track_uri = track_uri)
 
-# reccobeats -------------------------------------------------------------------
+
+# song info --------------------------------------------------------------------
 devtools::load_all()
 
+spotify_track_info <- spotify_ids |>
+  mutate(spotify = map(spotify_track_uri, get_spotify_track_info))
+
+spotify_track_info |>
+  rename(album = album_name, track = track_name) |>
+  unnest("spotify", keep_empty = TRUE) |>
+  write_rds(here("data-raw", "spotify-track-info.rds")) |>
+  write_csv(here("data-raw", "spotify-track-info.csv"))
+
+soundstat_audio_features <- spotify_ids |>
+  mutate(soundstat = map(spotify_track_uri, get_soundstat_audio_features))
+
+soundstat_audio_features |>
+  unnest(soundstat, keep_empty = TRUE) |>
+  write_rds(here("data-raw", "soundstat-audio-features.rds")) |>
+  write_csv(here("data-raw", "soundstat-audio-features.csv"))
+
 reccobeats_audio_features <- spotify_ids |>
-  mutate(
-    reccobeats = map(
-      spotify_track_uri,
-      \(x) {
-        Sys.sleep(1)
-        get_reccobeats_audio_features(track_id = x)
-      }
-    )
-  )
+  mutate(reccobeats = map(spotify_track_uri, get_reccobeats_audio_features))
+
+reccobeats_audio_features |>
+  unnest(reccobeats, keep_empty = TRUE) |>
+  write_rds(here("data-raw", "reccobeats-audio-features.rds")) |>
+  write_csv(here("data-raw", "reccobeats-audio-features.csv"))
+
 
 # soundstat --------------------------------------------------------------------
 spotify_ids |>
