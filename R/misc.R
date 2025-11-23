@@ -23,6 +23,6 @@ title_case <- function(string) {
     sep = "",
     collapse = " "
   )
-  return(ret)
+  ret
 }
 title_case <- Vectorize(title_case, USE.NAMES = FALSE)

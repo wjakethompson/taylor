@@ -79,7 +79,7 @@ get_spotify_access_token <- function() {
   }
 
   if (is_testing() || is_pkgdown()) {
-    return(spotify_testing_key())
+    return(spotify_testing_key()) # nolint: return_linter
   } else {
     cli::cli_abort(
       cli::format_message(
@@ -178,9 +178,11 @@ get_soundstat_audio_features <- function(
 
   resp <- httr2::req_perform(api_call)
   if (httr2::resp_status(resp) == 202) {
+    # nolint start: object_usage_linter
     monitor <- api_call |>
       httr2::req_url_path_append("status") |>
       httr2::req_perform()
+    # nolint end
     resp <- httr2::req_perform(api_call)
   }
 
@@ -243,7 +245,7 @@ get_soundstat_api_key <- function() {
   }
 
   if (is_testing()) {
-    return(soundstat_testing_key())
+    return(soundstat_testing_key()) # nolint: return_linter
   } else {
     cli::cli_abort(
       cli::format_message(

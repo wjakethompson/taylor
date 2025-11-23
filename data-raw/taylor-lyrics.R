@@ -478,7 +478,6 @@ spotify_ids <- tribble(
 devtools::load_all()
 safe_soundstat <- safely(get_soundstat_audio_features)
 soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
-  # print(track_id)
   if (
     track_id %in%
       c(
@@ -493,21 +492,21 @@ soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
   track_file <- here("data-raw", "soundstat", glue("{track_id}.rds"))
 
   if (file_exists(track_file) && use_archive) {
-    return(read_rds(track_file))
+    return(readr::read_rds(track_file))
   }
 
   resp <- safe_soundstat(track_id)
   if (!is.null(resp$result)) {
     resp <- resp$result
     if (save) {
-      write_rds(resp, file = track_file)
+      readr::write_rds(resp, file = track_file)
     }
 
-    return(resp)
+    return(resp) # nolint: return_linter
   } else if (file_exists(track_file)) {
-    return(read_rds(track_file))
+    return(readr::read_rds(track_file)) # nolint: return_linter
   } else {
-    return(NULL)
+    return(NULL) # nolint: return_linter
   }
 }
 
@@ -523,6 +522,7 @@ spotify_track_info |>
   write_csv(here("data-raw", "spotify-track-info.csv"))
 
 soundstat_audio_features <- spotify_ids |>
+  # nolint start: commented_code_linter
   # mutate(
   #   file_exists = map_lgl(
   #     spotify_track_uri,
@@ -531,6 +531,7 @@ soundstat_audio_features <- spotify_ids |>
   # ) |>
   # filter(!file_exists) |>
   # select(-file_exists) |>
+  # nolint end
   filter(album_name != "Beautiful Eyes") |>
   mutate(
     soundstat = map(spotify_track_uri, \(x) {
@@ -718,12 +719,14 @@ feature_join <- full_join(
         ) |>
         pull(all_na)
 
-      if (all_na) return(NULL) else return(x)
+      if (all_na) return(NULL) else return(x) # nolint: return_linter
     })
   )
 
 
 # QC for data ------------------------------------------------------------------
+# nolint start: indentation_linter
+
 # Check for tracks missing from Spotify
 # Ideally should return 0 rows. 9 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
@@ -760,6 +763,8 @@ feature_join <- full_join(
   unnest("features") |>
   filter(artist != "Taylor Swift") |>
   filter(is.na(featuring) | !str_detect(featuring, "Taylor Swift")))
+
+# nolint end
 
 # Check for non-ASCII characters. 35 errors (5 rows) expected:
 # 9  à

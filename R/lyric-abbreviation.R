@@ -63,7 +63,7 @@ translate_bracelet <- function(abbr) {
             },
             character(1)
           )
-          return(start)
+          start
         },
         character(1)
       )

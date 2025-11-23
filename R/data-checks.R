@@ -78,7 +78,7 @@ check_palette <- function(
     names(new_x)[missing_nms] <- x[missing_nms]
   }
 
-  return(new_x)
+  new_x
 }
 
 check_pos_int <- function(
