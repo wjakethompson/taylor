@@ -54,8 +54,10 @@ test_that("spotify api", {
 
 test_that("soundstat api", {
   soundstat_key <- httr2::secret_decrypt(
-    paste0("cFg1OO1frsH8Up0AhTQu09k86iUHZmK-rtok8wcVJMCfChKc6Oyc5GRqhVQJ_",
-           "s34RFw8qdhKJZY0aco"),
+    paste0(
+      "cFg1OO1frsH8Up0AhTQu09k86iUHZmK-rtok8wcVJMCfChKc6Oyc5GRqhVQJ_",
+      "s34RFw8qdhKJZY0aco"
+    ),
     "TAYLOR_KEY"
   )
 
