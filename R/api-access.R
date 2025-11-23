@@ -45,8 +45,6 @@ get_spotify_track_info <- function(
     explicit = spotify_track$explicit
   ) |>
     tibble::add_column(
-      album_name = spotify_track$album$name,
-      track_name = spotify_track$name,
       artist = paste(spotify_track$artists$name, collapse = ", "),
       .before = 1
     ) |>
@@ -85,8 +83,10 @@ get_spotify_access_token <- function() {
   } else {
     cli::cli_abort(
       cli::format_message(
-        c("No access token found, please see",
-          "{.fun spotifyr::get_spotify_access_token}")
+        c(
+          "No access token found, please see",
+          "{.fun spotifyr::get_spotify_access_token}"
+        )
       )
     )
   }
@@ -247,9 +247,11 @@ get_soundstat_api_key <- function() {
   } else {
     cli::cli_abort(
       cli::format_message(
-        c("No API key found, please supply with {.arg api_key} argument or",
+        c(
+          "No API key found, please supply with {.arg api_key} argument or",
           "with the",
-          "{.help [{.envvar SOUNDSTAT_KEY} env var](get_soundstat_api_key)}")
+          "{.help [{.envvar SOUNDSTAT_KEY} env var](get_soundstat_api_key)}"
+        )
       )
     )
   }
@@ -271,8 +273,10 @@ set_soundstat_api_key <- function(key = NULL) {
 
 soundstat_testing_key <- function() {
   httr2::secret_decrypt(
-    paste0("cFg1OO1frsH8Up0AhTQu09k86iUHZmK-rtok8wcVJMCfChKc6Oyc5GRqhVQJ_",
-           "s34RFw8qdhKJZY0aco"),
+    paste0(
+      "cFg1OO1frsH8Up0AhTQu09k86iUHZmK-rtok8wcVJMCfChKc6Oyc5GRqhVQJ_",
+      "s34RFw8qdhKJZY0aco"
+    ),
     "TAYLOR_KEY"
   )
 }

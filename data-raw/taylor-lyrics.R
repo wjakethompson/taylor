@@ -4,6 +4,7 @@ library(stringi)
 library(readxl)
 library(rvest)
 library(here)
+library(glue)
 library(fs)
 
 release_dates <- read_xlsx(
@@ -443,19 +444,20 @@ spotify_ids <- tribble(
   ~album_name,                                      ~album_uri,
   "Taylor Swift",                                   "7mzrIsaAjnXihW3InKjlC3",
   "The Taylor Swift Holiday Collection",            "7vzYp7FrKnTRoktBYsx9SF",
+  "Beautiful Eyes",                                 "5yHBYleC8huFBV5B1jP218",
   "Fearless",                                       "43OpbkiiIxJO8ktIB777Nn",
-  "Fearless (Taylor's Version)",                    "4hDok0OAJd57SGIT8xuWJH",
   "Speak Now",                                      "5EpMjweRD573ASl7uNiHym",
-  "Speak Now (Taylor's Version)",                   "5AEDGbliTTfjOB8TSm1sxt",
   "Red",                                            "1KlU96Hw9nlvqpBPlSqcTV",
-  "Red (Taylor's Version)",                         "6kZ42qRrzov54LcAk4onW9",
   "1989",                                           "34OkZVpuzBa9y40DCy0LPR",
-  "1989 (Taylor's Version)",                        "1o59UpKw81iHR0HPiSkJR0",
   "reputation",                                     "6DEjYFkNZh67HP7R9PSZvv",
   "Lover",                                          "1NAmidJlEaVgA3MpcPFYGq",
   "folklore",                                       "1pzvBxYgT6OVwJLtHkrdQK",
   "evermore",                                       "6AORtDjduMM3bupSWzbTSG",
+  "Fearless (Taylor's Version)",                    "4hDok0OAJd57SGIT8xuWJH",
+  "Red (Taylor's Version)",                         "6kZ42qRrzov54LcAk4onW9",
   "Midnights",                                      "1fnJ7k0bllNfL1kVdNVW1A",
+  "Speak Now (Taylor's Version)",                   "5AEDGbliTTfjOB8TSm1sxt",
+  "1989 (Taylor's Version)",                        "1o59UpKw81iHR0HPiSkJR0",
   "THE TORTURED POETS DEPARTMENT",                  "5H7ixXZfsNMGbIE5OBSpcb"
 ) |>
   mutate(
@@ -472,9 +474,45 @@ spotify_ids <- tribble(
   rename(spotify_album_uri = album_uri, spotify_track_uri = track_uri)
 
 
-# song info --------------------------------------------------------------------
+# api functions ----------------------------------------------------------------
 devtools::load_all()
+safe_soundstat <- safely(get_soundstat_audio_features)
+soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
+  # print(track_id)
+  if (
+    track_id %in%
+      c(
+        "4JQm7ebhsrt10wmrP6AfXL",
+        "4TtyvyI42C0KFnbDZvNC8Y",
+        "0yisH8r0f3Mkq34kjzUlCV"
+      )
+  ) {
+    return(NULL)
+  }
 
+  track_file <- here("data-raw", "soundstat", glue("{track_id}.rds"))
+
+  if (file_exists(track_file) && use_archive) {
+    return(read_rds(track_file))
+  }
+
+  resp <- safe_soundstat(track_id)
+  if (!is.null(resp$result)) {
+    resp <- resp$result
+    if (save) {
+      write_rds(resp, file = track_file)
+    }
+
+    return(resp)
+  } else if (file_exists(track_file)) {
+    return(read_rds(track_file))
+  } else {
+    return(NULL)
+  }
+}
+
+
+# song info --------------------------------------------------------------------
 spotify_track_info <- spotify_ids |>
   mutate(spotify = map(spotify_track_uri, get_spotify_track_info))
 
@@ -485,7 +523,20 @@ spotify_track_info |>
   write_csv(here("data-raw", "spotify-track-info.csv"))
 
 soundstat_audio_features <- spotify_ids |>
-  mutate(soundstat = map(spotify_track_uri, get_soundstat_audio_features))
+  # mutate(
+  #   file_exists = map_lgl(
+  #     spotify_track_uri,
+  #     \(x) file_exists(glue("data-raw/soundstat/{x}.rds"))
+  #   )
+  # ) |>
+  # filter(!file_exists) |>
+  # select(-file_exists) |>
+  filter(album_name != "Beautiful Eyes") |>
+  mutate(
+    soundstat = map(spotify_track_uri, \(x) {
+      soundstat_api(x, use_archive = TRUE)
+    })
+  )
 
 soundstat_audio_features |>
   unnest(soundstat, keep_empty = TRUE) |>
@@ -501,66 +552,15 @@ reccobeats_audio_features |>
   write_csv(here("data-raw", "reccobeats-audio-features.csv"))
 
 
-# soundstat --------------------------------------------------------------------
-spotify_ids |>
-  mutate(
-    spotify = map(
-      track_uri,
-      function(.x, key_lookup) {
-        if (.x == "") {
-          return(NULL)
-        }
-        track <- get_track(.x)
-        feat <- get_track_audio_features(.x)
-
-        feat |>
-          left_join(key_lookup, by = "key") |>
-          mutate(
-            explicit = track$explicit,
-            mode_name = case_when(
-              mode == 0L ~ "minor",
-              mode == 1L ~ "major"
-            ),
-            key_mode = paste(key_name, mode_name)
-          ) |>
-          select(
-            danceability:tempo,
-            time_signature,
-            duration_ms,
-            explicit,
-            key_name,
-            mode_name,
-            key_mode
-          ) |>
-          mutate(
-            artist = paste(track$artists$name, collapse = ", "),
-            .before = 1
-          ) |>
-          separate(
-            artist,
-            c("artist", "featuring"),
-            sep = ", ",
-            extra = "merge",
-            fill = "right"
-          )
-      },
-      key_lookup = key_lookup
-    )
-  ) |>
-  unnest(spotify)
-
-spotify_join <- spotify |>
-  select(
-    album_name,
-    track_name,
-    artist:tempo,
-    time_signature,
-    duration_ms,
-    explicit,
-    key_name,
-    mode_name,
-    key_mode
-  ) |>
+# join data --------------------------------------------------------------------
+feature_join <- full_join(
+  spotify_track_info,
+  soundstat_audio_features,
+  join_by(album_name, spotify_album_uri, track_name, spotify_track_uri),
+  relationship = "one-to-one"
+) |>
+  unnest(c(spotify, soundstat), keep_empty = TRUE) |>
+  select(-c(spotify_album_uri, spotify_track_uri)) |>
   # general formatting
   mutate(
     track_name = case_when(
@@ -680,6 +680,20 @@ spotify_join <- spotify |>
       "thanK you aIMee"
     )
   ) |>
+  # edits for Beautiful Eyes EP
+  mutate(
+    track_name = str_replace_all(
+      track_name,
+      "- Alternate Version",
+      "(Alternate Version)"
+    ),
+    track_name = str_replace_all(
+      track_name,
+      "- Radio Edit",
+      "(Radio Edit)"
+    ),
+    track_name = str_replace_all(track_name, fixed("I Heart?"), "I Heart ?")
+  ) |>
   # edits for singles, features, and writing credits
   mutate(
     track_name = str_replace_all(
@@ -692,33 +706,46 @@ spotify_join <- spotify |>
     track_name = str_replace_all(track_name, "Us\\.", "us.")
   ) |>
   # export data for joining
-  write_csv(here("data-raw", "spotify-data.csv")) |>
-  nest(spotify = -c(album_name, track_name))
+  write_csv(here("data-raw", "audio-features-data.csv")) |>
+  nest(features = -c(album_name, track_name)) |>
+  mutate(
+    features = map(features, \(x) {
+      all_na <- x |>
+        rowwise() |>
+        mutate(
+          across(everything(), as.character),
+          all_na = all(is.na(c_across(everything())))
+        ) |>
+        pull(all_na)
+
+      if (all_na) return(NULL) else return(x)
+    })
+  )
 
 
 # QC for data ------------------------------------------------------------------
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 12 rows currently expected:
+# Ideally should return 0 rows. 9 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
 # 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 4-9  Beautiful Eyes is not currently available on Spotify or any service
-# 10   American Girl is exclusive to Napster
-# 11   Half Of My Heart is not available on Spotify (version featuring Taylor)
-# 12   Three Sad Virgins is not available on Spotify
+# 4    American Girl is exclusive to Napster
+# 5    Half Of My Heart is not available on Spotify (version featuring Taylor)
+# 6    Three Sad Virgins is not available on Spotify
 (missing <- base_info |>
-  left_join(spotify_join, by = c("album_name", "track_name")) |>
-  filter(map_lgl(spotify, is.null)) |>
+  left_join(feature_join, by = c("album_name", "track_name")) |>
+  filter(map_lgl(features, is.null)) |>
   select(album_name, track_name))
 
 # Check for tracks with multiple records. Should be 0 rows.
-(dups <- spotify_join |>
-  mutate(rows = map_int(spotify, nrow)) |>
+(dups <- feature_join |>
+  filter(!map_lgl(features, is.null)) |>
+  mutate(rows = map_int(features, nrow)) |>
   filter(rows > 1))
 
 # Check for songs in Spotify not in base_info. 6 rows currently expected:
 # 1-3 Bonus tracks from Speak Now with no lyrics on Genius
 # 4-6 Voice memos from 1989
-(extra <- spotify_join |>
+(extra <- feature_join |>
   anti_join(base_info, by = c("album_name", "track_name")))
 
 # Check for writing credits only. 7 rows currently expected:
@@ -729,8 +756,8 @@ spotify_join <- spotify |>
 # This Is What You Came For - Calvin Harris
 # TMZ - "Weird Al" Yankovic
 # You'll Always Find Your Way Back Home - Hannah Montana
-(writing <- spotify_join |>
-  unnest("spotify") |>
+(writing <- feature_join |>
+  unnest("features") |>
   filter(artist != "Taylor Swift") |>
   filter(is.na(featuring) | !str_detect(featuring, "Taylor Swift")))
 
@@ -766,9 +793,9 @@ base_info |>
 
 # Write data files -------------------------------------------------------------
 taylor_all_songs <- base_info |>
-  left_join(spotify_join, by = c("album_name", "track_name")) |>
-  relocate(spotify, .before = lyrics) |>
-  unnest(spotify, keep_empty = TRUE) |>
+  left_join(feature_join, by = c("album_name", "track_name")) |>
+  relocate(features, .before = lyrics) |>
+  unnest(features, keep_empty = TRUE) |>
   group_by(album_name) |>
   mutate(album_release = min(album_release)) |>
   ungroup() |>
@@ -786,59 +813,55 @@ taylor_all_songs <- base_info |>
       .default = featuring
     )
   ) |>
-  relocate(artist, featuring, .after = track_name)
+  relocate(artist, featuring, .after = track_name) |>
+  select(
+    album_name:track_release,
+    danceability,
+    energy:tempo,
+    duration_ms,
+    explicit,
+    key:lyrics
+  )
 
 taylor_album_songs <- taylor_all_songs |>
   filter(
     album_name %in%
       c(
         "Taylor Swift",
-        "Fearless (Taylor's Version)",
-        "Speak Now (Taylor's Version)",
-        "Red (Taylor's Version)",
-        "1989 (Taylor's Version)",
+        "Fearless",
+        "Speak Now",
+        "Red",
+        "1989",
         "reputation",
         "Lover",
         "folklore",
         "evermore",
+        "Fearless (Taylor's Version)",
+        "Red (Taylor's Version)",
         "Midnights",
+        "Speak Now (Taylor's Version)",
+        "1989 (Taylor's Version)",
         "THE TORTURED POETS DEPARTMENT"
       )
   )
 
 metacritic <- tribble(
-  ~album_name,
-  ~metacritic_name,
-  "THE TORTURED POETS DEPARTMENT",
-  "the-tortured-poets-department",
-  "1989 (Taylor's Version)",
-  "1989-taylors-version",
-  "Speak Now (Taylor's Version)",
-  "speak-now-taylors-version",
-  "Midnights",
-  "midnights",
-  "Red (Taylor's Version)",
-  "red-taylors-version",
-  "Fearless (Taylor's Version)",
-  "fearless-taylors-version",
-  "evermore",
-  "evermore",
-  "folklore",
-  "folklore",
-  "Lover",
-  "lover",
-  "reputation",
-  "reputation",
-  "1989",
-  "1989",
-  "Red",
-  "red",
-  "Speak Now",
-  "speak-now",
-  "Fearless",
-  "fearless",
-  "Taylor Swift",
-  "taylor-swift"
+  ~album_name, ~metacritic_name,
+  "THE TORTURED POETS DEPARTMENT", "the-tortured-poets-department",
+  "1989 (Taylor's Version)",       "1989-taylors-version",
+  "Speak Now (Taylor's Version)",  "speak-now-taylors-version",
+  "Midnights",                     "midnights",
+  "Red (Taylor's Version)",        "red-taylors-version",
+  "Fearless (Taylor's Version)",   "fearless-taylors-version",
+  "evermore",                      "evermore",
+  "folklore",                      "folklore",
+  "Lover",                         "lover",
+  "reputation",                    "reputation",
+  "1989",                          "1989",
+  "Red",                           "red",
+  "Speak Now",                     "speak-now",
+  "Fearless",                      "fearless",
+  "Taylor Swift",                  "taylor-swift"
 ) |>
   mutate(
     ratings = map(metacritic_name, function(.x) {
