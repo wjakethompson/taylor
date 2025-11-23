@@ -1,362 +1,368 @@
-album,spotify_album_uri,track,spotify_track_uri,album_name,track_name,artist,featuring,duration_ms,explicit
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tim McGraw,0Om9WAB5RS09L80DyOfTNa,Taylor Swift,Tim McGraw,Taylor Swift,NA,232106,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Picture To Burn,32mVHdy0bi1XKgr0ajsBlG,Taylor Swift,Picture To Burn,Taylor Swift,NA,173066,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops On My Guitar - Radio Single Remix,7zMcNqs55Mxer82bvZFkpg,Taylor Swift,Teardrops On My Guitar - Radio Single Remix,Taylor Swift,NA,203040,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Place in this World,73OX8GdpOeGzKC6OvGSbsv,Taylor Swift,A Place in this World,Taylor Swift,NA,199200,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Cold As You,7an1exwMnfYRcdVQm0yDev,Taylor Swift,Cold As You,Taylor Swift,NA,239013,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,The Outside,2QA3IixpRcKyOdG7XDzRgv,Taylor Swift,The Outside,Taylor Swift,NA,207106,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tied Together with a Smile,6K0CJLVXqbGMeJSmJ4ENKK,Taylor Swift,Tied Together with a Smile,Taylor Swift,NA,248106,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Stay Beautiful,2ZoOmCSgj0ypVAmGd1ve4y,Taylor Swift,Stay Beautiful,Taylor Swift,NA,236053,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Should've Said No,16MVSD0mGI4RMQT83Qzm69,Taylor Swift,Should've Said No,Taylor Swift,NA,242200,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Mary's Song (Oh My My My),2QrQCMel6v2JiLxqrg4p2O,Taylor Swift,Mary's Song (Oh My My My),Taylor Swift,NA,213080,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Our Song,15DeqWWQB4dcEWzJg15VrN,Taylor Swift,Our Song,Taylor Swift,NA,201106,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,I'm Only Me When I'm With You,0JIdBrXGSJXS72zjF9ss9u,Taylor Swift,I'm Only Me When I'm With You,Taylor Swift,NA,213053,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Invisible,5OOd01o2YS1QFwdpVLds3r,Taylor Swift,Invisible,Taylor Swift,NA,203226,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Perfectly Good Heart,1spLfUJxtyVyiKKTegQ2r4,Taylor Swift,A Perfectly Good Heart,Taylor Swift,NA,220146,FALSE
-Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops on My Guitar - Pop Version,4pJi1rVt9GNegU9kywjg4z,Taylor Swift,Teardrops on My Guitar - Pop Version,Taylor Swift,NA,179066,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Last Christmas,2IprIjGNRlj3TfqUWCAo0C,The Taylor Swift Holiday Collection,Last Christmas,Taylor Swift,NA,208253,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmases When You Were Mine,1g09DZjQ7yBommCT6POY2n,The Taylor Swift Holiday Collection,Christmases When You Were Mine,Taylor Swift,NA,184253,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Santa Baby,71IScwIe7bcIlpnlkbKVQw,The Taylor Swift Holiday Collection,Santa Baby,Taylor Swift,NA,158600,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Silent Night,1cJkUN5LAotktryx2nPCr7,The Taylor Swift Holiday Collection,Silent Night,Taylor Swift,NA,209893,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmas Must Be Something More,31JVjy3XWnh6C2zf4kLCXN,The Taylor Swift Holiday Collection,Christmas Must Be Something More,Taylor Swift,NA,232146,FALSE
-The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,White Christmas,7GZ3KDorsc1yWndEtzGTjf,The Taylor Swift Holiday Collection,White Christmas,Taylor Swift,NA,154000,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Jump Then Fall,08gavXombT6KR0af88i9tA,Fearless Platinum Edition,Jump Then Fall,Taylor Swift,NA,237066,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Untouchable,2IZ00ed83ygPIiacYScWUE,Fearless Platinum Edition,Untouchable,Taylor Swift,NA,311040,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always - Piano Version,46HGgtwmmuEB8mvDCyjyAc,Fearless Platinum Edition,Forever & Always - Piano Version,Taylor Swift,NA,267506,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Come In With The Rain,4pl5zcqCv4vc3cB7M4MZ6f,Fearless Platinum Edition,Come In With The Rain,Taylor Swift,NA,238106,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,SuperStar,14Bljc3pOOG0xQX3wqhLN9,Fearless Platinum Edition,SuperStar,Taylor Swift,NA,261453,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,The Other Side Of The Door,0xvsgzM8AtBtRHZm5rav8A,Fearless Platinum Edition,The Other Side Of The Door,Taylor Swift,NA,237600,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Fearless,3F6czr26ZwGU5O5CHY04Ma,Fearless Platinum Edition,Fearless,Taylor Swift,NA,242000,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Fifteen,3M0w3fhdXByHLCNAoi5c9G,Fearless Platinum Edition,Fifteen,Taylor Swift,NA,294346,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Love Story,0kN3oXYWWAk1uC0y2WoyOE,Fearless Platinum Edition,Love Story,Taylor Swift,NA,235280,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Hey Stephen,6wcFdMmiDscAhZJrcVFumx,Fearless Platinum Edition,Hey Stephen,Taylor Swift,NA,254320,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,White Horse,4jPtq9shRdUv8Zjr0a5xkD,Fearless Platinum Edition,White Horse,Taylor Swift,NA,234440,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,You Belong With Me,3as6Wz3mwbTnusWhZjTUNr,Fearless Platinum Edition,You Belong With Me,Taylor Swift,NA,231146,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Breathe,6S9G7J3EB1ZY0rrZPwsBg5,Fearless Platinum Edition,Breathe,Taylor Swift,Colbie Caillat,263986,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Tell Me Why,4XrP7vKBjKLEYlRZdb0Ygr,Fearless Platinum Edition,Tell Me Why,Taylor Swift,NA,200560,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,You're Not Sorry,6HWYtS215rxaaMjvpyG18W,Fearless Platinum Edition,You're Not Sorry,Taylor Swift,NA,261800,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,The Way I Loved You,77VotUUL79U10TAnYdqwvr,Fearless Platinum Edition,The Way I Loved You,Taylor Swift,NA,244240,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always,1zxrcAk6eiytfavqriMcKT,Fearless Platinum Edition,Forever & Always,Taylor Swift,NA,225333,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,The Best Day,5YbZZ2gYfvW1UvHHF4pVaD,Fearless Platinum Edition,The Best Day,Taylor Swift,NA,245346,FALSE
-Fearless,43OpbkiiIxJO8ktIB777Nn,Change,0RdcBnAXyH2YZZvcBVu2k6,Fearless Platinum Edition,Change,Taylor Swift,NA,281053,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fearless (Taylor’s Version),77sMIMlNaSURUAXq5coCxE,Fearless (Taylor's Version),Fearless (Taylor’s Version),Taylor Swift,NA,241591,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fifteen (Taylor’s Version),2nqio0SfWg6gh2eCtfuMa5,Fearless (Taylor's Version),Fifteen (Taylor’s Version),Taylor Swift,NA,294419,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Love Story (Taylor’s Version),6YvqWjhGD8mB5QXcbcUKtx,Fearless (Taylor's Version),Love Story (Taylor’s Version),Taylor Swift,NA,235766,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Hey Stephen (Taylor’s Version),550erGcdD9n6PnwxrvYqZT,Fearless (Taylor's Version),Hey Stephen (Taylor’s Version),Taylor Swift,NA,254254,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,White Horse (Taylor’s Version),5YL553x8sHderRBDlm3NM3,Fearless (Taylor's Version),White Horse (Taylor’s Version),Taylor Swift,NA,234515,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You Belong With Me (Taylor’s Version),1qrpoAMXodY6895hGKoUpA,Fearless (Taylor's Version),You Belong With Me (Taylor’s Version),Taylor Swift,NA,231124,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Breathe (feat. Colbie Caillat) (Taylor’s Version),7HC7R2D8WjXVcUHJyEGjRs,Fearless (Taylor's Version),Breathe (feat. Colbie Caillat) (Taylor’s Version),Taylor Swift,Colbie Caillat,263377,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Tell Me Why (Taylor’s Version),0k0vFacOHNuArLWMiH60p7,Fearless (Taylor's Version),Tell Me Why (Taylor’s Version),Taylor Swift,NA,200575,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You’re Not Sorry (Taylor’s Version),6iiAfo4wTA2CVC3Uwx9uh8,Fearless (Taylor's Version),You’re Not Sorry (Taylor’s Version),Taylor Swift,NA,261842,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Way I Loved You (Taylor’s Version),22bPsP2jCgbLUvh82U0Z3M,Fearless (Taylor's Version),The Way I Loved You (Taylor’s Version),Taylor Swift,NA,243136,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Taylor’s Version),1msEuwSBneBKpVCZQcFTsU,Fearless (Taylor's Version),Forever & Always (Taylor’s Version),Taylor Swift,NA,225328,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Best Day (Taylor’s Version),6ON9UuIq49xXY9GPmHIYRp,Fearless (Taylor's Version),The Best Day (Taylor’s Version),Taylor Swift,NA,245290,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Change (Taylor’s Version),3ExweHKZF9B752DPQByRVT,Fearless (Taylor's Version),Change (Taylor’s Version),Taylor Swift,NA,279359,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Jump Then Fall (Taylor’s Version),2m3ObD945KvpE5y9A1eUWm,Fearless (Taylor's Version),Jump Then Fall (Taylor’s Version),Taylor Swift,NA,237580,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Untouchable (Taylor’s Version),0tQ9vBYpldCuikPsbgOVKA,Fearless (Taylor's Version),Untouchable (Taylor’s Version),Taylor Swift,NA,312107,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Piano Version) (Taylor’s Version),01QdEx6kFr78ZejhQtWR5m,Fearless (Taylor's Version),Forever & Always (Piano Version) (Taylor’s Version),Taylor Swift,NA,267833,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Come In With The Rain (Taylor’s Version),1n2wszmJyVkw6FHqyLnQsY,Fearless (Taylor's Version),Come In With The Rain (Taylor’s Version),Taylor Swift,NA,237338,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Superstar (Taylor’s Version),51A8eKvvZz9uydvIZ7xRSV,Fearless (Taylor's Version),Superstar (Taylor’s Version),Taylor Swift,NA,263865,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Other Side Of The Door (Taylor’s Version),1cSFlSBdpT4F5vb1frQ231,Fearless (Taylor's Version),The Other Side Of The Door (Taylor’s Version),Taylor Swift,NA,238443,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Today Was A Fairytale (Taylor’s Version),2JoJrsEV15OzbijS47lids,Fearless (Taylor's Version),Today Was A Fairytale (Taylor’s Version),Taylor Swift,NA,241822,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault),4CHpVfAhuxNJ3ibExe6kxO,Fearless (Taylor's Version),You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault),Taylor Swift,Maren Morris,220839,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Mr. Perfectly Fine (Taylor’s Version) (From The Vault),2CYVETnhM9aytqrazYYwrK,Fearless (Taylor's Version),Mr. Perfectly Fine (Taylor’s Version) (From The Vault),Taylor Swift,NA,277591,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,We Were Happy (Taylor’s Version) (From The Vault),34V9RiEPe8MNdU32qJsJa1,Fearless (Taylor's Version),We Were Happy (Taylor’s Version) (From The Vault),Taylor Swift,NA,244236,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault),7eResoqEJJAVTkQYSqvO3P,Fearless (Taylor's Version),That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault),Taylor Swift,Keith Urban,189495,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Don’t You (Taylor’s Version) (From The Vault),4uuEGH5SVuzkkSFjo2DEiY,Fearless (Taylor's Version),Don’t You (Taylor’s Version) (From The Vault),Taylor Swift,NA,208608,FALSE
-Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Bye Bye Baby (Taylor’s Version) (From The Vault),4qUijfYU8EoIWiY6oSyrgT,Fearless (Taylor's Version),Bye Bye Baby (Taylor’s Version) (From The Vault),Taylor Swift,NA,242157,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Mine,6LZaxlycSWrJZ4Volb25qx,Speak Now (Deluxe Edition),Mine,Taylor Swift,NA,230706,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Sparks Fly,1q8E1FfFuhd12c5JcJwPxQ,Speak Now (Deluxe Edition),Sparks Fly,Taylor Swift,NA,260933,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Back To December,7lxADouiWFkwR7ZV2GKUcH,Speak Now (Deluxe Edition),Back To December,Taylor Swift,NA,293026,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Speak Now,1nYWTzy5zu3zEPNgB1sItW,Speak Now (Deluxe Edition),Speak Now,Taylor Swift,NA,240760,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Dear John,1ubvV5ECkm6nSI6g1HmbBK,Speak Now (Deluxe Edition),Dear John,Taylor Swift,NA,403920,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Mean,4N60XfcTE1ysLZGbYgnYXq,Speak Now (Deluxe Edition),Mean,Taylor Swift,NA,237733,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,The Story Of Us,19tHCfzUSoy5HkpxcmbA0A,Speak Now (Deluxe Edition),The Story Of Us,Taylor Swift,NA,265666,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Never Grow Up,74WBGgUnpKrJXt6TETfR6Z,Speak Now (Deluxe Edition),Never Grow Up,Taylor Swift,NA,290466,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Enchanted,14LtANuaslKWyYbktUrHBU,Speak Now (Deluxe Edition),Enchanted,Taylor Swift,NA,352186,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Better Than Revenge,1By2VQkUN0Frd8mKNV5NYC,Speak Now (Deluxe Edition),Better Than Revenge,Taylor Swift,NA,217160,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Innocent,3kfgJql90tzgoxByioAMXR,Speak Now (Deluxe Edition),Innocent,Taylor Swift,NA,302253,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Haunted,11UaQaEp2LvdspTyyuE3ur,Speak Now (Deluxe Edition),Haunted,Taylor Swift,NA,242080,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Last Kiss,1D27z8xNzjW0Mwwt1NCWhJ,Speak Now (Deluxe Edition),Last Kiss,Taylor Swift,NA,367133,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Long Live,7DjCRhhFo9PPzca1BjMLcf,Speak Now (Deluxe Edition),Long Live,Taylor Swift,NA,317453,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Ours,1EQn3Uc5AyUXoiPLeyCrrg,Speak Now (Deluxe Edition),Ours,Taylor Swift,NA,237920,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,If This Was A Movie,0vvt4IZOMkRug195S4MUq0,Speak Now (Deluxe Edition),If This Was A Movie,Taylor Swift,NA,234546,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Superman,2R7C9dDqv1UPycvepBFziA,Speak Now (Deluxe Edition),Superman,Taylor Swift,NA,275960,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Back To December - Acoustic,6IH2Z54gYPLqgJtxZjX80i,Speak Now (Deluxe Edition),Back To December - Acoustic,Taylor Swift,NA,292560,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Haunted - Acoustic Version,62rlxI6g2PNaWsHoiRryto,Speak Now (Deluxe Edition),Haunted - Acoustic Version,Taylor Swift,NA,217613,FALSE
-Speak Now,5EpMjweRD573ASl7uNiHym,Mine - POP Mix,0fAbfDiuQiUwV7FUcFfRGY,Speak Now (Deluxe Edition),Mine - POP Mix,Taylor Swift,NA,230333,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mine (Taylor's Version),7G0gBu6nLdhFDPRLc0HdDG,Speak Now (Taylor's Version),Mine (Taylor's Version),Taylor Swift,NA,231706,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Sparks Fly (Taylor’s Version),3MytWN8L7shNYzGl4tAKRp,Speak Now (Taylor's Version),Sparks Fly (Taylor’s Version),Taylor Swift,NA,261230,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Back To December (Taylor's Version),79uDOz0zuuWS7HWxzMmTa2,Speak Now (Taylor's Version),Back To December (Taylor's Version),Taylor Swift,NA,294189,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Speak Now (Taylor's Version),5xXqyjLicvEpch72qEryFT,Speak Now (Taylor's Version),Speak Now (Taylor's Version),Taylor Swift,NA,242473,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Dear John (Taylor's Version),1zU8j1x3yi9xalMF96pzKp,Speak Now (Taylor's Version),Dear John (Taylor's Version),Taylor Swift,NA,405906,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mean (Taylor's Version),30Y4CV7A6YqtQtTTo7Ue4j,Speak Now (Taylor's Version),Mean (Taylor's Version),Taylor Swift,NA,238693,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,The Story Of Us (Taylor's Version),6dTA6y0C2ReQklntzZl8l3,Speak Now (Taylor's Version),The Story Of Us (Taylor's Version),Taylor Swift,NA,267653,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Never Grow Up (Taylor's Version),2EFZ9emtKWEglWUQGEQ3P9,Speak Now (Taylor's Version),Never Grow Up (Taylor's Version),Taylor Swift,NA,292920,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Enchanted (Taylor's Version),3sW3oSbzsfecv9XoUdGs7h,Speak Now (Taylor's Version),Enchanted (Taylor's Version),Taylor Swift,NA,353253,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Better Than Revenge (Taylor's Version),0NwGC0v03ysCYINtg6ns58,Speak Now (Taylor's Version),Better Than Revenge (Taylor's Version),Taylor Swift,NA,220306,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Innocent (Taylor's Version),12nBPF4Rh4XLFJV0YLN7uj,Speak Now (Taylor's Version),Innocent (Taylor's Version),Taylor Swift,NA,301221,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Haunted (Taylor's Version),4tMzIAFTFdqGBQLdfbPces,Speak Now (Taylor's Version),Haunted (Taylor's Version),Taylor Swift,NA,245413,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Last Kiss (Taylor's Version),59KOoHFcw5XfICnO57holu,Speak Now (Taylor's Version),Last Kiss (Taylor's Version),Taylor Swift,NA,369120,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Long Live (Taylor's Version),4hqJ4bSlYJOXb6Z4SRmzxs,Speak Now (Taylor's Version),Long Live (Taylor's Version),Taylor Swift,NA,317960,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Ours (Taylor’s Version),3yNJkriPzWjkkDAWHIAVUq,Speak Now (Taylor's Version),Ours (Taylor’s Version),Taylor Swift,NA,235803,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Superman (Taylor’s Version),4evLyY5Ue1Wesc61t2KXAU,Speak Now (Taylor's Version),Superman (Taylor’s Version),Taylor Swift,NA,274945,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault),4e3ZNTAV6PCrdYMUrUlMpQ,Speak Now (Taylor's Version),Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault),Taylor Swift,Fall Out Boy,266466,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,When Emma Falls in Love (Taylor’s Version) (From The Vault),0zo975x58DlXbZllWvfYhg,Speak Now (Taylor's Version),When Emma Falls in Love (Taylor’s Version) (From The Vault),Taylor Swift,NA,252385,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,I Can See You (Taylor’s Version) (From The Vault),5kHMfzgLZP95O9NBy0ku4v,Speak Now (Taylor's Version),I Can See You (Taylor’s Version) (From The Vault),Taylor Swift,NA,273186,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Castles Crumbling (feat. Hayley Williams) (Taylor’s Version) (From The Vault),4ABYxlb92WBIjHu7TIKmml,Speak Now (Taylor's Version),Castles Crumbling (feat. Hayley Williams) (Taylor’s Version) (From The Vault),Taylor Swift,Hayley Williams,306062,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Foolish One (Taylor’s Version) (From The Vault),4s8BIKx4Zh6ryAEz8RTlaU,Speak Now (Taylor's Version),Foolish One (Taylor’s Version) (From The Vault),Taylor Swift,NA,311765,FALSE
-Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Timeless (Taylor’s Version) (From The Vault),1HCdems7PQZRj42QDWLA0A,Speak Now (Taylor's Version),Timeless (Taylor’s Version) (From The Vault),Taylor Swift,NA,321396,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace,5zyCYmiaVE5y26EZuwZbsw,Red (Deluxe Edition),State Of Grace,Taylor Swift,NA,295186,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Red,1RvQQGwaPipiNgz8RXAKA8,Red (Deluxe Edition),Red,Taylor Swift,NA,220826,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous,0XfOV7qY3834QpFVwOb6CC,Red (Deluxe Edition),Treacherous,Taylor Swift,NA,240773,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,I Knew You Were Trouble.,0ciHz919LVKoH4zgxyMPZ9,Red (Deluxe Edition),I Knew You Were Trouble.,Taylor Swift,NA,217973,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,All Too Well,1q3RiD1tIWUpGsNFADMlvl,Red (Deluxe Edition),All Too Well,Taylor Swift,NA,327893,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,22,3bIxTsfeNMO7Nt2J3EUKrA,Red (Deluxe Edition),22,Taylor Swift,NA,230133,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,I Almost Do,31pEV5lPJi7btskZoUr2yu,Red (Deluxe Edition),I Almost Do,Taylor Swift,NA,242573,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,We Are Never Ever Getting Back Together,1OYARuagDrpgNNQ4loO1Cs,Red (Deluxe Edition),We Are Never Ever Getting Back Together,Taylor Swift,NA,191880,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Stay Stay Stay,1x0J8LFX23d5h1zzuzZorc,Red (Deluxe Edition),Stay Stay Stay,Taylor Swift,NA,204826,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,The Last Time,7vvIpJZye5cRR6De1LKM0m,Red (Deluxe Edition),The Last Time,Taylor Swift,Gary Lightbody,298293,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Holy Ground,5d2Kn9oAAh9S2EbyCo1i52,Red (Deluxe Edition),Holy Ground,Taylor Swift,NA,201853,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Sad Beautiful Tragic,5QKhg4r4Ibt0LVTmWEXTEg,Red (Deluxe Edition),Sad Beautiful Tragic,Taylor Swift,NA,283680,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,The Lucky One,2wtHlpYSgC7xEdD3DrSHNL,Red (Deluxe Edition),The Lucky One,Taylor Swift,NA,240133,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Everything Has Changed,7gdwoOmi258QJq0hmQ4hto,Red (Deluxe Edition),Everything Has Changed,Taylor Swift,Ed Sheeran,243933,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Starlight,0vqI4ZIMuifeKeItGiWbPj,Red (Deluxe Edition),Starlight,Taylor Swift,NA,217826,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Begin Again,48A0aShHlovDfTMucMrE66,Red (Deluxe Edition),Begin Again,Taylor Swift,NA,237613,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,The Moment I Knew,5AsmAjBSSQjRPWgAYIp8tm,Red (Deluxe Edition),The Moment I Knew,Taylor Swift,NA,285560,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Come Back...Be Here,4qyalTRMRH5YuEntvvMvq0,Red (Deluxe Edition),Come Back...Be Here,Taylor Swift,NA,222706,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Girl At Home,6cf6rLb8qcklvJv90W6HCW,Red (Deluxe Edition),Girl At Home,Taylor Swift,NA,220320,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous - Original Demo Recording,7BT9K9BDqq6HI2oWH5UMZQ,Red (Deluxe Edition),Treacherous - Original Demo Recording,Taylor Swift,NA,239720,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,Red - Original Demo Recording,4mqgn90sCeVSYqcoftTQTd,Red (Deluxe Edition),Red - Original Demo Recording,Taylor Swift,NA,226280,FALSE
-Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace - Acoustic,5G9AVKld9q7DCrmoY42raf,Red (Deluxe Edition),State Of Grace - Acoustic,Taylor Swift,NA,323080,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Taylor's Version),6lzc0Al0zfZOIFsFvBS1ki,Red (Taylor's Version),State Of Grace (Taylor's Version),Taylor Swift,NA,295413,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Red (Taylor's Version),4OAuvHryIVv4kMDNSLuPt6,Red (Taylor's Version),Red (Taylor's Version),Taylor Swift,NA,223093,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Treacherous (Taylor's Version),3S7HNKPakdwNEBFIVTL6dZ,Red (Taylor's Version),Treacherous (Taylor's Version),Taylor Swift,NA,242720,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Knew You Were Trouble (Taylor's Version),6AtZLIzUINvExIUy4QhdjP,Red (Taylor's Version),I Knew You Were Trouble (Taylor's Version),Taylor Swift,NA,219760,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (Taylor's Version),3nsfB1vus2qaloUdcBZvDu,Red (Taylor's Version),All Too Well (Taylor's Version),Taylor Swift,NA,329160,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,22 (Taylor's Version),3yII7UwgLF6K5zW3xad3MP,Red (Taylor's Version),22 (Taylor's Version),Taylor Swift,NA,230960,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Almost Do (Taylor's Version),2r9CbjYgFhtAmcFv1cSquB,Red (Taylor's Version),I Almost Do (Taylor's Version),Taylor Swift,NA,244586,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,We Are Never Ever Getting Back Together (Taylor's Version),5YqltLsjdqFtvqE7Nrysvs,Red (Taylor's Version),We Are Never Ever Getting Back Together (Taylor's Version),Taylor Swift,NA,193146,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Stay Stay Stay (Taylor's Version),7eQj6r5PIdYKEIZjucBMcq,Red (Taylor's Version),Stay Stay Stay (Taylor's Version),Taylor Swift,NA,205786,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version),0y6kdSRCVQhSsHSpWvTUm7,Red (Taylor's Version),The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version),Taylor Swift,Gary Lightbody,299080,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Holy Ground (Taylor's Version),7J4b3LVCIGO4CMBDFLPoP6,Red (Taylor's Version),Holy Ground (Taylor's Version),Taylor Swift,NA,202960,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Sad Beautiful Tragic (Taylor's Version),73qMN9bXy7MSPwwGfH3wQr,Red (Taylor's Version),Sad Beautiful Tragic (Taylor's Version),Taylor Swift,NA,284773,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Lucky One (Taylor's Version),4e5ayHsOLJNLTGfjau2mEw,Red (Taylor's Version),The Lucky One (Taylor's Version),Taylor Swift,NA,240466,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version),7qEUFOVcxRI19tbT68JcYK,Red (Taylor's Version),Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version),Taylor Swift,Ed Sheeran,245426,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Starlight (Taylor's Version),7A2cNLRT0YJc1yjxHlKihs,Red (Taylor's Version),Starlight (Taylor's Version),Taylor Swift,NA,220413,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Begin Again (Taylor's Version),05GsNucq8Bngd9fnd4fRa0,Red (Taylor's Version),Begin Again (Taylor's Version),Taylor Swift,NA,238866,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Moment I Knew (Taylor's Version),0NRHj8hDwwmSPaA41o379r,Red (Taylor's Version),The Moment I Knew (Taylor's Version),Taylor Swift,NA,285280,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Come Back...Be Here (Taylor's Version),4pNApnaUWAL2J4KO2eqokq,Red (Taylor's Version),Come Back...Be Here (Taylor's Version),Taylor Swift,NA,223333,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Girl At Home (Taylor's Version),0DMVrlMUn01M0IcpDbwgu7,Red (Taylor's Version),Girl At Home (Taylor's Version),Taylor Swift,NA,220520,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Acoustic Version) (Taylor's Version),5jAIouBES8LWMiriuNq170,Red (Taylor's Version),State Of Grace (Acoustic Version) (Taylor's Version),Taylor Swift,NA,321640,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Ronan (Taylor's Version),7nWui6jiMM2m9qFmET1Mtj,Red (Taylor's Version),Ronan (Taylor's Version),Taylor Swift,NA,264253,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Better Man (Taylor's Version) (From The Vault),4OmFmE0fzcMG6g0Y8p4eSD,Red (Taylor's Version),Better Man (Taylor's Version) (From The Vault),Taylor Swift,NA,297013,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault),01K4zKU104LyJ8gMb7227B,Red (Taylor's Version),Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault),Taylor Swift,Phoebe Bridgers,258812,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Babe (Taylor's Version) (From The Vault),0v4z1tuZvn6LGknom9Qx7d,Red (Taylor's Version),Babe (Taylor's Version) (From The Vault),Taylor Swift,NA,224240,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Message In A Bottle (Taylor's Version) (From The Vault),3z6XUommYDWPHeFhmhhT6j,Red (Taylor's Version),Message In A Bottle (Taylor's Version) (From The Vault),Taylor Swift,NA,225960,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault),4CkgMiMqZ5JzW9iYXSTMTL,Red (Taylor's Version),I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault),Taylor Swift,Chris Stapleton,285106,TRUE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Forever Winter (Taylor's Version) (From The Vault),3oGVx9RBmiYGv5ZCecWLkx,Red (Taylor's Version),Forever Winter (Taylor's Version) (From The Vault),Taylor Swift,NA,263533,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault),4IQkfUsrwXol38VV3U7t7T,Red (Taylor's Version),Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault),Taylor Swift,Ed Sheeran,240226,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Very First Night (Taylor's Version) (From The Vault),6pYNq0ZwpPVazKzsqpf0G8,Red (Taylor's Version),The Very First Night (Taylor's Version) (From The Vault),Taylor Swift,NA,200280,FALSE
-Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (10 Minute Version) (Taylor's Version) (From The Vault),5enxwA8aAbwZbf5qCHORXi,Red (Taylor's Version),All Too Well (10 Minute Version) (Taylor's Version) (From The Vault),Taylor Swift,NA,613026,TRUE
-1989,34OkZVpuzBa9y40DCy0LPR,Welcome To New York,33Kq0AT5rvwyE4azisG08x,1989 (Deluxe Edition),Welcome To New York,Taylor Swift,NA,212600,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Blank Space,2sC2P3BN0IXujNaaSyDmtP,1989 (Deluxe Edition),Blank Space,Taylor Swift,NA,231826,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Style,1fo2ctLqj3zBhRQKOXprol,1989 (Deluxe Edition),Style,Taylor Swift,NA,231000,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Out Of The Woods,6Nde5KuTXyB7jlPO4upaBo,1989 (Deluxe Edition),Out Of The Woods,Taylor Swift,NA,235800,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,All You Had To Do Was Stay,0lmMtDQ2ElasKU2qDAE6NN,1989 (Deluxe Edition),All You Had To Do Was Stay,Taylor Swift,NA,193293,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Shake It Off,3fthfkkvy9av3q3uAGVf7U,1989 (Deluxe Edition),Shake It Off,Taylor Swift,NA,219200,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would,1B5VzXPqMlvRw0U4HJY3dJ,1989 (Deluxe Edition),I Wish You Would,Taylor Swift,NA,207440,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Bad Blood,0yN4fNzmVnmgC0dsOoi9Wh,1989 (Deluxe Edition),Bad Blood,Taylor Swift,NA,211933,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Wildest Dreams,106R7Z57WYzBAfrXImV30y,1989 (Deluxe Edition),Wildest Dreams,Taylor Swift,NA,220440,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,How You Get The Girl,6wfugRLamFsTRbPcCpNnP7,1989 (Deluxe Edition),How You Get The Girl,Taylor Swift,NA,247533,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,This Love,1kTPQnabROVkW9bUXdCGrB,1989 (Deluxe Edition),This Love,Taylor Swift,NA,250093,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,I Know Places,2zfgVd034GlUvk7LqBHl6u,1989 (Deluxe Edition),I Know Places,Taylor Swift,NA,195706,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Clean,4bXCcoesMt8u99xMsbLr9U,1989 (Deluxe Edition),Clean,Taylor Swift,NA,271000,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Wonderland,6iWMI5oOhWrDbLbjmwTWFq,1989 (Deluxe Edition),Wonderland,Taylor Swift,NA,245560,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,You Are In Love,4A2LfnduSTsE8u0ecYROxE,1989 (Deluxe Edition),You Are In Love,Taylor Swift,NA,267106,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,New Romantics,6rZVy6FIG7lSJQMFXHo12z,1989 (Deluxe Edition),New Romantics,Taylor Swift,NA,230466,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,I Know Places - Voice Memo,4JQm7ebhsrt10wmrP6AfXL,1989 (Deluxe Edition),I Know Places - Voice Memo,Taylor Swift,NA,216333,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would - Voice Memo,4TtyvyI42C0KFnbDZvNC8Y,1989 (Deluxe Edition),I Wish You Would - Voice Memo,Taylor Swift,NA,107133,FALSE
-1989,34OkZVpuzBa9y40DCy0LPR,Blank Space - Voice Memo,0yisH8r0f3Mkq34kjzUlCV,1989 (Deluxe Edition),Blank Space - Voice Memo,Taylor Swift,NA,131186,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Welcome To New York (Taylor's Version),4WUepByoeqcedHoYhSNHRt,1989 (Taylor's Version) [Deluxe],Welcome To New York (Taylor's Version),Taylor Swift,NA,212600,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Blank Space (Taylor's Version),0108kcWLnn2HlH2kedi1gn,1989 (Taylor's Version) [Deluxe],Blank Space (Taylor's Version),Taylor Swift,NA,231833,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Style (Taylor's Version),3Vpk1hfMAQme8VJ0SNRSkd,1989 (Taylor's Version) [Deluxe],Style (Taylor's Version),Taylor Swift,NA,231000,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Out Of The Woods (Taylor's Version),1OcSfkeCg9hRC2sFKB4IMJ,1989 (Taylor's Version) [Deluxe],Out Of The Woods (Taylor's Version),Taylor Swift,NA,235800,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,All You Had To Do Was Stay (Taylor's Version),2k0ZEeAqzvYMcx9Qt5aClQ,1989 (Taylor's Version) [Deluxe],All You Had To Do Was Stay (Taylor's Version),Taylor Swift,NA,193289,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Shake It Off (Taylor's Version),50yNTF0Od55qnHLxYsA5Pw,1989 (Taylor's Version) [Deluxe],Shake It Off (Taylor's Version),Taylor Swift,NA,219209,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Wish You Would (Taylor's Version),3FxJDucHWdw6caWTKO5b23,1989 (Taylor's Version) [Deluxe],I Wish You Would (Taylor's Version),Taylor Swift,NA,207650,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (Taylor's Version),7oZONwFiFIErZcXAtTu7FY,1989 (Taylor's Version) [Deluxe],Bad Blood (Taylor's Version),Taylor Swift,NA,211103,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wildest Dreams (Taylor's Version),27exgla7YBw9DUNNcTIpjy,1989 (Taylor's Version) [Deluxe],Wildest Dreams (Taylor's Version),Taylor Swift,NA,220433,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,How You Get The Girl (Taylor's Version),733OhaXQIHY7BKtY3vnSkn,1989 (Taylor's Version) [Deluxe],How You Get The Girl (Taylor's Version),Taylor Swift,NA,247533,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,This Love (Taylor’s Version),4WBEj8TeGtRPNJdOmT3WJW,1989 (Taylor's Version) [Deluxe],This Love (Taylor’s Version),Taylor Swift,NA,250100,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Know Places (Taylor's Version),1ULabO0PEsdJekqVH6G10G,1989 (Taylor's Version) [Deluxe],I Know Places (Taylor's Version),Taylor Swift,NA,195700,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Clean (Taylor's Version),0lKUBmEyQfzsQHozyeXzES,1989 (Taylor's Version) [Deluxe],Clean (Taylor's Version),Taylor Swift,NA,271000,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wonderland (Taylor's Version),6HRsJu8vcnzYDN4t0570FY,1989 (Taylor's Version) [Deluxe],Wonderland (Taylor's Version),Taylor Swift,NA,245566,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,You Are In Love (Taylor's Version),0TyGh27YQ5LknmiDhCzJiT,1989 (Taylor's Version) [Deluxe],You Are In Love (Taylor's Version),Taylor Swift,NA,267389,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,New Romantics (Taylor's Version),5M787RexsAiVYjQusM98CV,1989 (Taylor's Version) [Deluxe],New Romantics (Taylor's Version),Taylor Swift,NA,230177,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,"""Slut!"" (Taylor's Version) (From The Vault)",0CD7DzeCsuPJygddqlUVYa,1989 (Taylor's Version) [Deluxe],"""Slut!"" (Taylor's Version) (From The Vault)",Taylor Swift,NA,180381,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Say Don't Go (Taylor's Version) (From The Vault),3CCRVu4F91Qp2mnGjmWBrf,1989 (Taylor's Version) [Deluxe],Say Don't Go (Taylor's Version) (From The Vault),Taylor Swift,NA,279833,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Now That We Don't Talk (Taylor's Version) (From The Vault),5QUIK7ZtziW8kGWo8RqopF,1989 (Taylor's Version) [Deluxe],Now That We Don't Talk (Taylor's Version) (From The Vault),Taylor Swift,NA,146436,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Suburban Legends (Taylor's Version) (From The Vault),6M9ppdfFjR1AbpUl3Y8DcV,1989 (Taylor's Version) [Deluxe],Suburban Legends (Taylor's Version) (From The Vault),Taylor Swift,NA,171818,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Is It Over Now? (Taylor's Version) (From The Vault),6IG3sQ8s9nfk6TUlVzRhbN,1989 (Taylor's Version) [Deluxe],Is It Over Now? (Taylor's Version) (From The Vault),Taylor Swift,NA,229477,FALSE
-1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (feat. Kendrick Lamar) (Taylor's Version),6qAcApH8obo8eqatCKUHd9,1989 (Taylor's Version) [Deluxe],Bad Blood (feat. Kendrick Lamar) (Taylor's Version),Taylor Swift,Kendrick Lamar,199773,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,...Ready For It?,2yLa0QULdQr0qAIvVwN6B5,reputation,...Ready For It?,Taylor Swift,NA,208186,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,End Game,2x0WlnmfG39ZuDmstl9xfX,reputation,End Game,Taylor Swift,"Ed Sheeran, Future",244826,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,I Did Something Bad,4svZDCRz4cJoneBpjpx8DJ,reputation,I Did Something Bad,Taylor Swift,NA,238253,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Don’t Blame Me,1R0a2iXumgCiFb7HEZ7gUE,reputation,Don’t Blame Me,Taylor Swift,NA,236413,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Delicate,6NFyWDv5CjfwuzoCkw47Xf,reputation,Delicate,Taylor Swift,NA,232253,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Look What You Made Me Do,1P17dC1amhFzptugyAO7Il,reputation,Look What You Made Me Do,Taylor Swift,NA,211853,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,So It Goes...,5PxFv9yJEg9dxvbZggykro,reputation,So It Goes...,Taylor Swift,NA,227906,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Gorgeous,1ZY1PqizIl78geGM4xWlEA,reputation,Gorgeous,Taylor Swift,NA,209680,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Getaway Car,0VE4kBnHJUgtMf0dy6DRmW,reputation,Getaway Car,Taylor Swift,NA,233626,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,King Of My Heart,7HuBDWi18s4aJM8UFnNheH,reputation,King Of My Heart,Taylor Swift,NA,214320,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Dancing With Our Hands Tied,7I7JbDv63ZJJsSi24DyJrz,reputation,Dancing With Our Hands Tied,Taylor Swift,NA,211506,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Dress,6oVxXO5oQ4pTpO8RSnkzvv,reputation,Dress,Taylor Swift,NA,230373,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,This Is Why We Can't Have Nice Things,07NxDD1iKCHbAldceD7QLP,reputation,This Is Why We Can't Have Nice Things,Taylor Swift,NA,207133,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,Call It What You Want,1GwMQaZz6Au3QLDbjbMdme,reputation,Call It What You Want,Taylor Swift,NA,203506,FALSE
-reputation,6DEjYFkNZh67HP7R9PSZvv,New Year’s Day,7F5oktn5YOsR9eR5YsFtqb,reputation,New Year’s Day,Taylor Swift,NA,235466,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,I Forgot That You Existed,43rA71bccXFGD4C8GOpIlN,Lover,I Forgot That You Existed,Taylor Swift,NA,170640,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Cruel Summer,1BxfuPKGuaTgP7aM0Bbdwr,Lover,Cruel Summer,Taylor Swift,NA,178426,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Lover,1dGr1c8CrMLDpV6mPbImSI,Lover,Lover,Taylor Swift,NA,221306,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,The Man,3RauEVgRgj1IuWdJ9fDs70,Lover,The Man,Taylor Swift,NA,190360,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,The Archer,3pHkh7d0lzM2AldUtz2x37,Lover,The Archer,Taylor Swift,NA,211240,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,I Think He Knows,2YWtcWi3a83pdEg3Gif4Pd,Lover,I Think He Knows,Taylor Swift,NA,173386,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Miss Americana & The Heartbreak Prince,214nt20w5wOxJnY462klLw,Lover,Miss Americana & The Heartbreak Prince,Taylor Swift,NA,234146,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Paper Rings,4y5bvROuBDPr5fuwXbIBZR,Lover,Paper Rings,Taylor Swift,NA,222400,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Cornelia Street,12M5uqx0ZuwkpLp5rJim1a,Lover,Cornelia Street,Taylor Swift,NA,287266,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Death By A Thousand Cuts,2dgFqt3w9xIQRjhPtwNk3D,Lover,Death By A Thousand Cuts,Taylor Swift,NA,198533,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,London Boy,1LLXZFeAHK9R4xUramtUKw,Lover,London Boy,Taylor Swift,NA,190240,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Soon You’ll Get Better (feat. The Chicks),4AYtqFyFbX0Xkc2wtcygTr,Lover,Soon You’ll Get Better (feat. The Chicks),Taylor Swift,The Chicks,201586,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,False God,5hQSXkFgbxjZo9uCwd11so,Lover,False God,Taylor Swift,NA,200306,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,You Need To Calm Down,6RRNNciQGZEXnqk8SQ9yv5,Lover,You Need To Calm Down,Taylor Swift,NA,171360,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Afterglow,1SymEzIT3H8UZfibCs3TYi,Lover,Afterglow,Taylor Swift,NA,223293,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,ME! (feat. Brendon Urie of Panic! At The Disco),2Rk4JlNc2TPmZe2af99d45,Lover,ME! (feat. Brendon Urie of Panic! At The Disco),Taylor Swift,"Brendon Urie, Panic! At The Disco",193000,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,It’s Nice To Have A Friend,1SmiQ65iSAbPto6gPFlBYm,Lover,It’s Nice To Have A Friend,Taylor Swift,NA,150440,FALSE
-Lover,1NAmidJlEaVgA3MpcPFYGq,Daylight,1fzAuUVbzlhZ1lJAx9PtY6,Lover,Daylight,Taylor Swift,NA,293453,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,the 1,4pfrrhvplbJZAIsfosGWQP,folklore (deluxe version),the 1,Taylor Swift,NA,210240,TRUE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,cardigan,0KRYCBwIpWYFNrXOmXbyUh,folklore (deluxe version),cardigan,Taylor Swift,NA,239560,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,the last great american dynasty,2olxzvoFI9IpxqFeUv7WOX,folklore (deluxe version),the last great american dynasty,Taylor Swift,NA,231000,TRUE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,exile (feat. Bon Iver),5S4aYQAJOwJMAamANWlICO,folklore (deluxe version),exile (feat. Bon Iver),Taylor Swift,Bon Iver,285640,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,my tears ricochet,5P2bHCDM2tsgIaYWsZMhu5,folklore (deluxe version),my tears ricochet,Taylor Swift,NA,255893,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,mirrorball,2I8YAEA1VmCuP1wkJHMpTw,folklore (deluxe version),mirrorball,Taylor Swift,NA,208973,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,seven,76mOLcXOjOEhyY4mMF1l3r,folklore (deluxe version),seven,Taylor Swift,NA,208906,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,august,6nK2pIKFcRc5frrZKHgsiT,folklore (deluxe version),august,Taylor Swift,NA,261920,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,this is me trying,7cm50Lw03k6VvRauJtkyTj,folklore (deluxe version),this is me trying,Taylor Swift,NA,195106,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,illicit affairs,6DrLROM5MG9bxWHeEG5elq,folklore (deluxe version),illicit affairs,Taylor Swift,NA,190893,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,invisible string,2ehRU518I0hYqMGQnk4lDY,folklore (deluxe version),invisible string,Taylor Swift,NA,252880,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,mad woman,0RP1kqoSPkVXsKiQNhMKzV,folklore (deluxe version),mad woman,Taylor Swift,NA,237266,TRUE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,epiphany,1EXa37LpSvi3OQ9UYQ28rD,folklore (deluxe version),epiphany,Taylor Swift,NA,289746,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,betty,3IhtE4fkytdrtEfV34UzkD,folklore (deluxe version),betty,Taylor Swift,NA,294520,TRUE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,peace,6JlI8Ay77m4nJvZTHvfT1J,folklore (deluxe version),peace,Taylor Swift,NA,234000,TRUE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,hoax,0YeDG5HnKnG7jpArkzsSPa,folklore (deluxe version),hoax,Taylor Swift,NA,220040,FALSE
-folklore,1pzvBxYgT6OVwJLtHkrdQK,the lakes - bonus track,0eFQWVz0qIxDOvhLpZ40P7,folklore (deluxe version),the lakes - bonus track,Taylor Swift,NA,211813,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,willow,2gVhfX2Gy1T9kDuS9azrF7,evermore (deluxe version),willow,Taylor Swift,NA,214706,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,champagne problems,1gcyHQpBQ1lfXGdhZmWrHP,evermore (deluxe version),champagne problems,Taylor Swift,NA,244000,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,gold rush,3Dby3p1m6IOZn2gIIqECgK,evermore (deluxe version),gold rush,Taylor Swift,NA,185320,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,‘tis the damn season,6sQckd3Z8NPxVVKUnavY1F,evermore (deluxe version),‘tis the damn season,Taylor Swift,NA,229840,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,tolerate it,6lCvK2AR2uOKkVFCVlAzzm,evermore (deluxe version),tolerate it,Taylor Swift,NA,245440,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,"no body, no crime (feat. HAIM)",6uwfVkaOM1mcMkFmSn35ix,evermore (deluxe version),"no body, no crime (feat. HAIM)",Taylor Swift,HAIM,215626,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,happiness,55Vf4bimc1Rtfg0PAQRAo2,evermore (deluxe version),happiness,Taylor Swift,NA,315146,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,dorothea,66tOfHVH3aUrscg8vExRV4,evermore (deluxe version),dorothea,Taylor Swift,NA,225880,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,coney island (feat. The National),2awNGIJHodfLZSClB3PYhz,evermore (deluxe version),coney island (feat. The National),Taylor Swift,The National,275320,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,ivy,43Ykum9T72UOPhBN31grpN,evermore (deluxe version),ivy,Taylor Swift,NA,260440,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,cowboy like me,52OkpDsU6MmPx1AwGOb6Ap,evermore (deluxe version),cowboy like me,Taylor Swift,NA,275040,TRUE
-evermore,6AORtDjduMM3bupSWzbTSG,long story short,5VYWxXUpxuxEmCqMLDqICo,evermore (deluxe version),long story short,Taylor Swift,NA,215920,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,marjorie,5uICWmZTLkpEVbK22PBP6e,evermore (deluxe version),marjorie,Taylor Swift,NA,257773,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,closure,6a8aUhYbaQBUI8PcJ5ZmQ6,evermore (deluxe version),closure,Taylor Swift,NA,180653,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,evermore (feat. Bon Iver),6Wlq9rqkxrqj5Kls4Kw14H,evermore (deluxe version),evermore (feat. Bon Iver),Taylor Swift,Bon Iver,304106,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,right where you left me - bonus track,3zwMVvkBe2qIKDObWgXw4N,evermore (deluxe version),right where you left me - bonus track,Taylor Swift,NA,245026,FALSE
-evermore,6AORtDjduMM3bupSWzbTSG,it’s time to go - bonus track,1kdWw77ZpYOkhxeuhzU1j6,evermore (deluxe version),it’s time to go - bonus track,Taylor Swift,NA,254640,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Lavender Haze,24emu3sabKISjRkrys28jq,Midnights (The Til Dawn Edition),Lavender Haze,Taylor Swift,NA,202395,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Maroon,6qxvy9Pe4RJIq5JBVbbwbS,Midnights (The Til Dawn Edition),Maroon,Taylor Swift,NA,218270,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Anti-Hero,5qIHFdkW6phMsTZlN2g8Lc,Midnights (The Til Dawn Edition),Anti-Hero,Taylor Swift,NA,200690,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. Lana Del Rey),7GA86Uo2jYbj8vIXe2nyWd,Midnights (The Til Dawn Edition),Snow On The Beach (feat. Lana Del Rey),Taylor Swift,Lana Del Rey,256124,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,"You're On Your Own, Kid",6PQOU00xWNrGwCZzboriXy,Midnights (The Til Dawn Edition),"You're On Your Own, Kid",Taylor Swift,NA,194206,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Midnight Rain,4eKMqf9ZMSclDX7V9Ptg7x,Midnights (The Til Dawn Edition),Midnight Rain,Taylor Swift,NA,174782,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Question...?,7oomkQSYf1ia2VnVEWfFIU,Midnights (The Til Dawn Edition),Question...?,Taylor Swift,NA,210556,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Vigilante Shit,0GKDhq6ZbmSbRHd3eyGlB7,Midnights (The Til Dawn Edition),Vigilante Shit,Taylor Swift,NA,164801,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bejeweled,0VpF6RLdCfPIeYRwMu4tZK,Midnights (The Til Dawn Edition),Bejeweled,Taylor Swift,NA,194165,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Labyrinth,4bBDkw2KBMX0tcgAaXC83Q,Midnights (The Til Dawn Edition),Labyrinth,Taylor Swift,NA,247962,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma,45R112Jz5hQeKgITXgSXzs,Midnights (The Til Dawn Edition),Karma,Taylor Swift,NA,204852,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Sweet Nothing,2L09RYwH5Pjzca6PmbUAw3,Midnights (The Til Dawn Edition),Sweet Nothing,Taylor Swift,NA,188496,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Mastermind,1QQii3pa5m8MEda0nbkjfw,Midnights (The Til Dawn Edition),Mastermind,Taylor Swift,NA,191039,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,The Great War,2VuqMjgoKaOHNM8HpxtXKx,Midnights (The Til Dawn Edition),The Great War,Taylor Swift,NA,240355,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bigger Than The Whole Sky,71CBDRKmF2VeRKYMG1DFBh,Midnights (The Til Dawn Edition),Bigger Than The Whole Sky,Taylor Swift,NA,218502,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Paris,5tWxKWq1DSP1s9WQ5PWuqu,Midnights (The Til Dawn Edition),Paris,Taylor Swift,NA,196258,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,High Infidelity,1SztNGCwEHJEVFx90E5g7D,Midnights (The Til Dawn Edition),High Infidelity,Taylor Swift,NA,231475,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Glitch,7C0w28EsX0Um2FrZs9gso2,Midnights (The Til Dawn Edition),Glitch,Taylor Swift,NA,148781,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,"Would've, Could've, Should've",4txojlesMFQZGWxwz2EeqB,Midnights (The Til Dawn Edition),"Would've, Could've, Should've",Taylor Swift,NA,260361,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Dear Reader,10GRRCR5fctuOF4GFmATJI,Midnights (The Til Dawn Edition),Dear Reader,Taylor Swift,NA,225194,FALSE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Hits Different,3xYJScVfxByb61dYHTwiby,Midnights (The Til Dawn Edition),Hits Different,Taylor Swift,NA,234466,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. More Lana Del Rey),4zmKGsrXjLmljb5fTaBTot,Midnights (The Til Dawn Edition),Snow On The Beach (feat. More Lana Del Rey),Taylor Swift,Lana Del Rey,229942,TRUE
-Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma (feat. Ice Spice),4i6cwNY6oIUU2XZxPIw82Y,Midnights (The Til Dawn Edition),Karma (feat. Ice Spice),Taylor Swift,Ice Spice,201493,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fortnight (feat. Post Malone),6dODwocEuGzHAavXqTbwHv,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Fortnight (feat. Post Malone),Taylor Swift,Post Malone,228965,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Tortured Poets Department,4PdLaGZubp4lghChqp8erB,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Tortured Poets Department,Taylor Swift,NA,293048,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,My Boy Only Breaks His Favorite Toys,7uGYWMwRy24dm7RUDDhUlD,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,My Boy Only Breaks His Favorite Toys,Taylor Swift,NA,203801,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Down Bad,1kbEbBdEgQdQeLXCJh28pJ,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Down Bad,Taylor Swift,NA,261228,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,"So Long, London",7wAkQFShJ27V8362MqevQr,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,"So Long, London",Taylor Swift,NA,262974,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,But Daddy I Love Him,4QMgEffJQuKtjCNvqfRZ0m,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,But Daddy I Love Him,Taylor Swift,NA,340428,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fresh Out The Slammer,7IWcDWOfiooH5hRs9XOVYz,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Fresh Out The Slammer,Taylor Swift,NA,210789,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Florida!!! (feat. Florence + The Machine),5ExOm0dh4NyRyAdSAO9hyM,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Florida!!! (feat. Florence + The Machine),Taylor Swift,Florence + The Machine,215463,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Guilty as Sin?,799KrpEbhZp0MHeiA8YK9P,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Guilty as Sin?,Taylor Swift,NA,254365,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Who’s Afraid of Little Old Me?,2d8UxVNhJinc8uat9PoM9y,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Who’s Afraid of Little Old Me?,Taylor Swift,NA,334084,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Fix Him (No Really I Can),5chnRTB9qMK3W1M41SnU9s,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,I Can Fix Him (No Really I Can),Taylor Swift,NA,156297,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,loml,3YkNIrAvbKNrrwwEd7NVLl,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,loml,Taylor Swift,NA,277156,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Do It With a Broken Heart,2fPvQfGQEZOKtJ9qXeL4x8,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,I Can Do It With a Broken Heart,Taylor Swift,NA,218004,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Smallest Man Who Ever Lived,1xtw1krCR6Dw2KwkXw5z63,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Smallest Man Who Ever Lived,Taylor Swift,NA,245541,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Alchemy,1tuNqJOtRQVHvONR8Lg3MZ,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Alchemy,Taylor Swift,NA,196900,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Clara Bow,4d9PtIEVij9jW5OaLinH66,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Clara Bow,Taylor Swift,NA,216662,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Black Dog,62E2nR0od0M5HYxuYLaDz7,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Black Dog,Taylor Swift,NA,238857,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,imgonnagetyouback,1kcwpPDQnqEqmezzXdJTCP,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,imgonnagetyouback,Taylor Swift,NA,222072,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Albatross,4EF6IyONolQy0bIQXm2EmX,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Albatross,Taylor Swift,NA,183878,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Chloe or Sam or Sophia or Marcus,1rmEsOezwf2lmIZTMAO5Ag,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Chloe or Sam or Sophia or Marcus,Taylor Swift,NA,213281,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,How Did It End?,5Bedn0svl0ZD7RGmJkmKKw,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,How Did It End?,Taylor Swift,NA,238706,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,So High School,7Mts0OfPorF4iwOomvfqn1,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,So High School,Taylor Swift,NA,228800,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Hate It Here,3hlGuz3loYoLfI3bpwieWq,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,I Hate It Here,Taylor Swift,NA,243875,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,thanK you aIMee,7ogK4lJDVDMU6A6vYR5rvD,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,thanK you aIMee,Taylor Swift,NA,263817,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Look in People's Windows,1Zai5UJ2di3qEuR2HeT2s8,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,I Look in People's Windows,Taylor Swift,NA,131907,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Prophecy,18WFFUIsewmA8g31KAeo3e,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Prophecy,Taylor Swift,NA,249807,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Cassandra,0g4fMVo4JjwnIpTfFfLdxS,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Cassandra,Taylor Swift,NA,240205,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Peter,3zMDGj4D8ogaYgAIZPeU7S,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Peter,Taylor Swift,NA,283957,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Bolter,2913xXOVAIDAqxzV2g4VcU,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Bolter,Taylor Swift,NA,238241,TRUE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Robin,2CnjDMdpRjlWv04Xk3s6MW,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,Robin,Taylor Swift,NA,240893,FALSE
-THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Manuscript,1DTRUYVd8rYpla9hhVVwjo,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,The Manuscript,Taylor Swift,NA,224743,FALSE
-Midnights,NA,You're Losing Me (From The Vault),3CWq0pAKKTWb0K4yiglDc4,You're Losing Me (From The Vault),You’re Losing Me (From The Vault),Taylor Swift,NA,277831,FALSE
-NA,NA,All Of The Girls You Loved Before,4P9Q0GojKVXpRTJCaL3kyy,All Of The Girls You Loved Before,All Of The Girls You Loved Before,Taylor Swift,NA,221407,FALSE
-NA,NA,American Girl,,NA,NA,NA,NA,NA,NA
-NA,NA,Bad Blood (Remix),6xsEAm6w9oMQYYg3jkEkMT,Bad Blood,Bad Blood,Taylor Swift,Kendrick Lamar,200106,FALSE
-NA,NA,Beautiful Ghosts,2evEoQAhIMaa9PfjTT5skG,Cats: Highlights From The Motion Picture Soundtrack,"Beautiful Ghosts - From The Motion Picture Soundtrack ""Cats""",Taylor Swift,NA,261053,FALSE
-NA,NA,Carolina,4axSuOg3BqsowKjRpj59RU,Carolina (From The Motion Picture “Where The Crawdads Sing”),Carolina - From The Motion Picture “Where The Crawdads Sing”,Taylor Swift,NA,264438,FALSE
-NA,NA,Christmas Tree Farm,2mvabkN1i2gLnGAPUVdwek,Christmas Tree Farm,Christmas Tree Farm,Taylor Swift,NA,228026,FALSE
-NA,NA,Crazier,5vyxXfD5gLlyPxGZMEjtmd,Hannah Montana The Movie,Crazier,Taylor Swift,NA,191946,FALSE
-NA,NA,Eyes Open,6KEemo78n0RnCQWKkeOdXz,The Hunger Games: Songs From District 12 And Beyond,Eyes Open,Taylor Swift,NA,244586,FALSE
-NA,NA,Eyes Open (Taylor's Version),0gPmM1WtVRg3uENW3o8bfx,The More Red (Taylor’s Version) Chapter,Eyes Open (Taylor's Version),Taylor Swift,NA,243264,FALSE
-NA,NA,I Don't Wanna Live Forever,2y5aJvzXhHPA94U5GFAcXe,Fifty Shades Darker (Original Motion Picture Soundtrack),I Don’t Wanna Live Forever (Fifty Shades Darker),ZAYN,Taylor Swift,245653,FALSE
-NA,NA,If This Was A Movie (Taylor's Version),0q6vsjvnCIWrtwRckCV7y0,The More Fearless (Taylor’s Version) Chapter,If This Was A Movie (Taylor’s Version),Taylor Swift,NA,237022,FALSE
-NA,NA,Lover (Remix),3i9UVldZOE0aD0JnyfAZZ0,Lover (Remix) [feat. Shawn Mendes],Lover (Remix) [feat. Shawn Mendes],Taylor Swift,Shawn Mendes,221306,FALSE
-NA,NA,Only The Young,2slqvGLwzZZYsT4K4Y1GBC,Only The Young (Featured in Miss Americana),Only The Young - Featured in Miss Americana,Taylor Swift,NA,157507,FALSE
-NA,NA,Ronan,0Nw8hv79MLJa1yjtsEgz08,Ronan,Ronan,Taylor Swift,NA,265306,FALSE
-NA,NA,Safe & Sound,0z9UVN8VBHJ9HdfYsOuuNf,The Hunger Games: Songs From District 12 And Beyond,Safe & Sound - from The Hunger Games Soundtrack,Taylor Swift,The Civil Wars,240066,FALSE
-NA,NA,Safe & Sound (Taylor's Version),6Q237Ts37YGYRIi5Vy5lVX,The More Red (Taylor’s Version) Chapter,Safe & Sound (feat. Joy Williams and John Paul White) (Taylor’s Version),Taylor Swift,"Joy Williams, John Paul White",239668,FALSE
-NA,NA,September,5eGX87IiKsGuzS3iw4CfCX,Spotify Singles,September - Recorded at The Tracking Room Nashville,Taylor Swift,NA,187823,FALSE
-NA,NA,Sweeter Than Fiction,0RFCHlNuTeUHIB36VuVbOL,Sweeter Than Fiction,"Sweeter Than Fiction - From ""One Chance"" Soundtrack",Taylor Swift,NA,237640,FALSE
-NA,NA,Today Was A Fairytale,4pFvEWbjBpPUdYRQly0THs,Today Was A Fairytale,Today Was A Fairytale,Taylor Swift,NA,242480,FALSE
-NA,NA,Babe,7FFfYM4JE1vj5n4rhHxg8q,Babe (feat. Taylor Swift),Babe (feat. Taylor Swift),Sugarland,Taylor Swift,215106,FALSE
-NA,NA,Birch,7wo2UNeQBowm28hfAJsEMz,How Long Do You Think It's Gonna Last?,Birch,Big Red Machine,Taylor Swift,330066,TRUE
-NA,NA,Both Of Us,3r9bgSJlJz2zlevcBRYXko,Strange Clouds,Both of Us (feat. Taylor Swift),B.o.B,Taylor Swift,216120,TRUE
-NA,NA,Gasoline (Remix),645Exr2lJIO45Guht3qyIa,Women In Music Pt. III,Gasoline (feat. Taylor Swift),HAIM,Taylor Swift,193373,FALSE
-NA,NA,Half Of My Heart,,NA,NA,NA,NA,NA,NA
-NA,NA,Highway Don't Care,4wFUdSCer8bdQsrp1M90sa,Two Lanes Of Freedom,Highway Don't Care,Tim McGraw,"Taylor Swift, Keith Urban",276880,FALSE
-NA,NA,Renegade,1aU1wpYBSpP0M6IiihY5Ue,Renegade (feat. Taylor Swift),Renegade (feat. Taylor Swift),Big Red Machine,Taylor Swift,254466,TRUE
-NA,NA,The Alcott,6INztpNwOTlfSKTuPo0HOP,First Two Pages of Frankenstein,The Alcott (feat. Taylor Swift),The National,Taylor Swift,267773,FALSE
-NA,NA,The Joker and the Queen,6N1K5OVVCopBjGViHs2IvP,The Joker And The Queen (feat. Taylor Swift),The Joker And The Queen (feat. Taylor Swift),Ed Sheeran,Taylor Swift,185422,FALSE
-NA,NA,Three Sad Virgins,,NA,NA,NA,NA,NA,NA
-NA,NA,Two Is Better Than One,1MaqkdFNIKPdpQGDzme5ss,Love Drunk,Two Is Better Than One (feat. Taylor Swift),BOYS LIKE GIRLS,Taylor Swift,242840,FALSE
-NA,NA,us.,0hhzNPE68LWLfgZwdpxVdR,The Secret of Us,us. (feat. Taylor Swift),Gracie Abrams,Taylor Swift,242666,TRUE
-NA,NA,"1 step forward, 3 steps back",4wcBRRpIfesgcyUtis7PEg,SOUR,"1 step forward, 3 steps back",Olivia Rodrigo,NA,163586,TRUE
-NA,NA,Best Days Of Your Life,16jvUOIQ2P54P0bNN4rAdv,Kellie Pickler (Deluxe Version),Best Days of Your Life,Kellie Pickler,NA,226800,FALSE
-NA,NA,Better Man,23TxRN09aR1RB0G0tFoT0b,The Breaker,Better Man,Little Big Town,NA,263120,FALSE
-NA,NA,deja vu,6HU7h9RYOaPRFeh0R3UeAr,SOUR,deja vu,Olivia Rodrigo,NA,215506,TRUE
-NA,NA,This Is What You Came For,0azC730Exh71aQlOt9Zj3y,This Is What You Came For,This Is What You Came For,Calvin Harris,Rihanna,222160,FALSE
-NA,NA,TMZ,2Y9YdGPN7AtVfpTvXfRbc6,Alpocalypse,"TMZ (Parody of ""You Belong With Me"" by Taylor Swift)","""Weird Al"" Yankovic",NA,219720,FALSE
-NA,NA,You'll Always Find Your Way Back Home,12wSL3tGk3MtbDEhfG7xy3,Hannah Montana The Movie,You'll Always Find Your Way Back Home,Hannah Montana,NA,224186,FALSE
+album,spotify_album_uri,track,spotify_track_uri,artist,featuring,duration_ms,explicit
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tim McGraw,0Om9WAB5RS09L80DyOfTNa,Taylor Swift,NA,232106,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Picture To Burn,32mVHdy0bi1XKgr0ajsBlG,Taylor Swift,NA,173066,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops On My Guitar - Radio Single Remix,7zMcNqs55Mxer82bvZFkpg,Taylor Swift,NA,203040,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Place in this World,73OX8GdpOeGzKC6OvGSbsv,Taylor Swift,NA,199200,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Cold As You,7an1exwMnfYRcdVQm0yDev,Taylor Swift,NA,239013,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,The Outside,2QA3IixpRcKyOdG7XDzRgv,Taylor Swift,NA,207106,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Tied Together with a Smile,6K0CJLVXqbGMeJSmJ4ENKK,Taylor Swift,NA,248106,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Stay Beautiful,2ZoOmCSgj0ypVAmGd1ve4y,Taylor Swift,NA,236053,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Should've Said No,16MVSD0mGI4RMQT83Qzm69,Taylor Swift,NA,242200,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Mary's Song (Oh My My My),2QrQCMel6v2JiLxqrg4p2O,Taylor Swift,NA,213080,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Our Song,15DeqWWQB4dcEWzJg15VrN,Taylor Swift,NA,201106,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,I'm Only Me When I'm With You,0JIdBrXGSJXS72zjF9ss9u,Taylor Swift,NA,213053,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Invisible,5OOd01o2YS1QFwdpVLds3r,Taylor Swift,NA,203226,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,A Perfectly Good Heart,1spLfUJxtyVyiKKTegQ2r4,Taylor Swift,NA,220146,FALSE
+Taylor Swift,7mzrIsaAjnXihW3InKjlC3,Teardrops on My Guitar - Pop Version,4pJi1rVt9GNegU9kywjg4z,Taylor Swift,NA,179066,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Last Christmas,2IprIjGNRlj3TfqUWCAo0C,Taylor Swift,NA,208253,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmases When You Were Mine,1g09DZjQ7yBommCT6POY2n,Taylor Swift,NA,184253,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Santa Baby,71IScwIe7bcIlpnlkbKVQw,Taylor Swift,NA,158600,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Silent Night,1cJkUN5LAotktryx2nPCr7,Taylor Swift,NA,209893,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,Christmas Must Be Something More,31JVjy3XWnh6C2zf4kLCXN,Taylor Swift,NA,232146,FALSE
+The Taylor Swift Holiday Collection,7vzYp7FrKnTRoktBYsx9SF,White Christmas,7GZ3KDorsc1yWndEtzGTjf,Taylor Swift,NA,154000,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,Beautiful Eyes,4jXhdWmUhZEhE2t9SljMOj,Taylor Swift,NA,178480,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,Should've Said No - Alternate Version,105XnsH9A3AndTH0tmIR7e,Taylor Swift,NA,224453,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,Teardrops On My Guitar - Acoustic Version,70JCz9MjjZsh8GHrLlfpiq,Taylor Swift,NA,175986,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,Picture To Burn - Radio Edit,32mVHdy0bi1XKgr0ajsBlG,Taylor Swift,NA,173066,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,I'm Only Me When I'm With You,0JIdBrXGSJXS72zjF9ss9u,Taylor Swift,NA,213053,FALSE
+Beautiful Eyes,5yHBYleC8huFBV5B1jP218,I Heart?,2kttlwS9VA4Lc5ONJ5WeX8,Taylor Swift,NA,193133,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Jump Then Fall,08gavXombT6KR0af88i9tA,Taylor Swift,NA,237066,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Untouchable,2IZ00ed83ygPIiacYScWUE,Taylor Swift,NA,311040,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always - Piano Version,46HGgtwmmuEB8mvDCyjyAc,Taylor Swift,NA,267506,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Come In With The Rain,4pl5zcqCv4vc3cB7M4MZ6f,Taylor Swift,NA,238106,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,SuperStar,14Bljc3pOOG0xQX3wqhLN9,Taylor Swift,NA,261453,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Other Side Of The Door,0xvsgzM8AtBtRHZm5rav8A,Taylor Swift,NA,237600,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Fearless,3F6czr26ZwGU5O5CHY04Ma,Taylor Swift,NA,242000,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Fifteen,3M0w3fhdXByHLCNAoi5c9G,Taylor Swift,NA,294346,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Love Story,0kN3oXYWWAk1uC0y2WoyOE,Taylor Swift,NA,235280,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Hey Stephen,6wcFdMmiDscAhZJrcVFumx,Taylor Swift,NA,254320,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,White Horse,4jPtq9shRdUv8Zjr0a5xkD,Taylor Swift,NA,234440,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,You Belong With Me,3as6Wz3mwbTnusWhZjTUNr,Taylor Swift,NA,231146,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Breathe,6S9G7J3EB1ZY0rrZPwsBg5,Taylor Swift,Colbie Caillat,263986,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Tell Me Why,4XrP7vKBjKLEYlRZdb0Ygr,Taylor Swift,NA,200560,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,You're Not Sorry,6HWYtS215rxaaMjvpyG18W,Taylor Swift,NA,261800,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Way I Loved You,77VotUUL79U10TAnYdqwvr,Taylor Swift,NA,244240,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Forever & Always,1zxrcAk6eiytfavqriMcKT,Taylor Swift,NA,225333,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,The Best Day,5YbZZ2gYfvW1UvHHF4pVaD,Taylor Swift,NA,245346,FALSE
+Fearless,43OpbkiiIxJO8ktIB777Nn,Change,0RdcBnAXyH2YZZvcBVu2k6,Taylor Swift,NA,281053,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Mine,6LZaxlycSWrJZ4Volb25qx,Taylor Swift,NA,230706,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Sparks Fly,1q8E1FfFuhd12c5JcJwPxQ,Taylor Swift,NA,260933,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Back To December,7lxADouiWFkwR7ZV2GKUcH,Taylor Swift,NA,293026,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Speak Now,1nYWTzy5zu3zEPNgB1sItW,Taylor Swift,NA,240760,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Dear John,1ubvV5ECkm6nSI6g1HmbBK,Taylor Swift,NA,403920,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Mean,4N60XfcTE1ysLZGbYgnYXq,Taylor Swift,NA,237733,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,The Story Of Us,19tHCfzUSoy5HkpxcmbA0A,Taylor Swift,NA,265666,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Never Grow Up,74WBGgUnpKrJXt6TETfR6Z,Taylor Swift,NA,290466,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Enchanted,14LtANuaslKWyYbktUrHBU,Taylor Swift,NA,352186,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Better Than Revenge,1By2VQkUN0Frd8mKNV5NYC,Taylor Swift,NA,217160,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Innocent,3kfgJql90tzgoxByioAMXR,Taylor Swift,NA,302253,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Haunted,11UaQaEp2LvdspTyyuE3ur,Taylor Swift,NA,242080,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Last Kiss,1D27z8xNzjW0Mwwt1NCWhJ,Taylor Swift,NA,367133,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Long Live,7DjCRhhFo9PPzca1BjMLcf,Taylor Swift,NA,317453,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Ours,1EQn3Uc5AyUXoiPLeyCrrg,Taylor Swift,NA,237920,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,If This Was A Movie,0vvt4IZOMkRug195S4MUq0,Taylor Swift,NA,234546,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Superman,2R7C9dDqv1UPycvepBFziA,Taylor Swift,NA,275960,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Back To December - Acoustic,6IH2Z54gYPLqgJtxZjX80i,Taylor Swift,NA,292560,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Haunted - Acoustic Version,62rlxI6g2PNaWsHoiRryto,Taylor Swift,NA,217613,FALSE
+Speak Now,5EpMjweRD573ASl7uNiHym,Mine - POP Mix,0fAbfDiuQiUwV7FUcFfRGY,Taylor Swift,NA,230333,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace,5zyCYmiaVE5y26EZuwZbsw,Taylor Swift,NA,295186,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Red,1RvQQGwaPipiNgz8RXAKA8,Taylor Swift,NA,220826,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous,0XfOV7qY3834QpFVwOb6CC,Taylor Swift,NA,240773,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,I Knew You Were Trouble.,0ciHz919LVKoH4zgxyMPZ9,Taylor Swift,NA,217973,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,All Too Well,1q3RiD1tIWUpGsNFADMlvl,Taylor Swift,NA,327893,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,22,3bIxTsfeNMO7Nt2J3EUKrA,Taylor Swift,NA,230133,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,I Almost Do,31pEV5lPJi7btskZoUr2yu,Taylor Swift,NA,242573,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,We Are Never Ever Getting Back Together,1OYARuagDrpgNNQ4loO1Cs,Taylor Swift,NA,191880,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Stay Stay Stay,1x0J8LFX23d5h1zzuzZorc,Taylor Swift,NA,204826,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Last Time,7vvIpJZye5cRR6De1LKM0m,Taylor Swift,Gary Lightbody,298293,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Holy Ground,5d2Kn9oAAh9S2EbyCo1i52,Taylor Swift,NA,201853,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Sad Beautiful Tragic,5QKhg4r4Ibt0LVTmWEXTEg,Taylor Swift,NA,283680,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Lucky One,2wtHlpYSgC7xEdD3DrSHNL,Taylor Swift,NA,240133,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Everything Has Changed,7gdwoOmi258QJq0hmQ4hto,Taylor Swift,Ed Sheeran,243933,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Starlight,0vqI4ZIMuifeKeItGiWbPj,Taylor Swift,NA,217826,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Begin Again,48A0aShHlovDfTMucMrE66,Taylor Swift,NA,237613,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,The Moment I Knew,5AsmAjBSSQjRPWgAYIp8tm,Taylor Swift,NA,285560,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Come Back...Be Here,4qyalTRMRH5YuEntvvMvq0,Taylor Swift,NA,222706,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Girl At Home,6cf6rLb8qcklvJv90W6HCW,Taylor Swift,NA,220320,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Treacherous - Original Demo Recording,7BT9K9BDqq6HI2oWH5UMZQ,Taylor Swift,NA,239720,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,Red - Original Demo Recording,4mqgn90sCeVSYqcoftTQTd,Taylor Swift,NA,226280,FALSE
+Red,1KlU96Hw9nlvqpBPlSqcTV,State Of Grace - Acoustic,5G9AVKld9q7DCrmoY42raf,Taylor Swift,NA,323080,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Welcome To New York,33Kq0AT5rvwyE4azisG08x,Taylor Swift,NA,212600,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Blank Space,2sC2P3BN0IXujNaaSyDmtP,Taylor Swift,NA,231826,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Style,1fo2ctLqj3zBhRQKOXprol,Taylor Swift,NA,231000,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Out Of The Woods,6Nde5KuTXyB7jlPO4upaBo,Taylor Swift,NA,235800,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,All You Had To Do Was Stay,0lmMtDQ2ElasKU2qDAE6NN,Taylor Swift,NA,193293,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Shake It Off,3fthfkkvy9av3q3uAGVf7U,Taylor Swift,NA,219200,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would,1B5VzXPqMlvRw0U4HJY3dJ,Taylor Swift,NA,207440,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Bad Blood,0yN4fNzmVnmgC0dsOoi9Wh,Taylor Swift,NA,211933,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Wildest Dreams,106R7Z57WYzBAfrXImV30y,Taylor Swift,NA,220440,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,How You Get The Girl,6wfugRLamFsTRbPcCpNnP7,Taylor Swift,NA,247533,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,This Love,1kTPQnabROVkW9bUXdCGrB,Taylor Swift,NA,250093,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,I Know Places,2zfgVd034GlUvk7LqBHl6u,Taylor Swift,NA,195706,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Clean,4bXCcoesMt8u99xMsbLr9U,Taylor Swift,NA,271000,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Wonderland,6iWMI5oOhWrDbLbjmwTWFq,Taylor Swift,NA,245560,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,You Are In Love,4A2LfnduSTsE8u0ecYROxE,Taylor Swift,NA,267106,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,New Romantics,6rZVy6FIG7lSJQMFXHo12z,Taylor Swift,NA,230466,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,I Know Places - Voice Memo,4JQm7ebhsrt10wmrP6AfXL,Taylor Swift,NA,216333,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,I Wish You Would - Voice Memo,4TtyvyI42C0KFnbDZvNC8Y,Taylor Swift,NA,107133,FALSE
+1989,34OkZVpuzBa9y40DCy0LPR,Blank Space - Voice Memo,0yisH8r0f3Mkq34kjzUlCV,Taylor Swift,NA,131186,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,...Ready For It?,2yLa0QULdQr0qAIvVwN6B5,Taylor Swift,NA,208186,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,End Game,2x0WlnmfG39ZuDmstl9xfX,Taylor Swift,"Ed Sheeran, Future",244826,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,I Did Something Bad,4svZDCRz4cJoneBpjpx8DJ,Taylor Swift,NA,238253,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Don’t Blame Me,1R0a2iXumgCiFb7HEZ7gUE,Taylor Swift,NA,236413,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Delicate,6NFyWDv5CjfwuzoCkw47Xf,Taylor Swift,NA,232253,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Look What You Made Me Do,1P17dC1amhFzptugyAO7Il,Taylor Swift,NA,211853,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,So It Goes...,5PxFv9yJEg9dxvbZggykro,Taylor Swift,NA,227906,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Gorgeous,1ZY1PqizIl78geGM4xWlEA,Taylor Swift,NA,209680,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Getaway Car,0VE4kBnHJUgtMf0dy6DRmW,Taylor Swift,NA,233626,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,King Of My Heart,7HuBDWi18s4aJM8UFnNheH,Taylor Swift,NA,214320,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Dancing With Our Hands Tied,7I7JbDv63ZJJsSi24DyJrz,Taylor Swift,NA,211506,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Dress,6oVxXO5oQ4pTpO8RSnkzvv,Taylor Swift,NA,230373,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,This Is Why We Can't Have Nice Things,07NxDD1iKCHbAldceD7QLP,Taylor Swift,NA,207133,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,Call It What You Want,1GwMQaZz6Au3QLDbjbMdme,Taylor Swift,NA,203506,FALSE
+reputation,6DEjYFkNZh67HP7R9PSZvv,New Year’s Day,7F5oktn5YOsR9eR5YsFtqb,Taylor Swift,NA,235466,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,I Forgot That You Existed,43rA71bccXFGD4C8GOpIlN,Taylor Swift,NA,170640,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Cruel Summer,1BxfuPKGuaTgP7aM0Bbdwr,Taylor Swift,NA,178426,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Lover,1dGr1c8CrMLDpV6mPbImSI,Taylor Swift,NA,221306,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,The Man,3RauEVgRgj1IuWdJ9fDs70,Taylor Swift,NA,190360,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,The Archer,3pHkh7d0lzM2AldUtz2x37,Taylor Swift,NA,211240,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,I Think He Knows,2YWtcWi3a83pdEg3Gif4Pd,Taylor Swift,NA,173386,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Miss Americana & The Heartbreak Prince,214nt20w5wOxJnY462klLw,Taylor Swift,NA,234146,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Paper Rings,4y5bvROuBDPr5fuwXbIBZR,Taylor Swift,NA,222400,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Cornelia Street,12M5uqx0ZuwkpLp5rJim1a,Taylor Swift,NA,287266,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Death By A Thousand Cuts,2dgFqt3w9xIQRjhPtwNk3D,Taylor Swift,NA,198533,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,London Boy,1LLXZFeAHK9R4xUramtUKw,Taylor Swift,NA,190240,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Soon You’ll Get Better (feat. The Chicks),4AYtqFyFbX0Xkc2wtcygTr,Taylor Swift,The Chicks,201586,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,False God,5hQSXkFgbxjZo9uCwd11so,Taylor Swift,NA,200306,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,You Need To Calm Down,6RRNNciQGZEXnqk8SQ9yv5,Taylor Swift,NA,171360,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Afterglow,1SymEzIT3H8UZfibCs3TYi,Taylor Swift,NA,223293,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,ME! (feat. Brendon Urie of Panic! At The Disco),2Rk4JlNc2TPmZe2af99d45,Taylor Swift,"Brendon Urie, Panic! At The Disco",193000,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,It’s Nice To Have A Friend,1SmiQ65iSAbPto6gPFlBYm,Taylor Swift,NA,150440,FALSE
+Lover,1NAmidJlEaVgA3MpcPFYGq,Daylight,1fzAuUVbzlhZ1lJAx9PtY6,Taylor Swift,NA,293453,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the 1,4pfrrhvplbJZAIsfosGWQP,Taylor Swift,NA,210240,TRUE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,cardigan,0KRYCBwIpWYFNrXOmXbyUh,Taylor Swift,NA,239560,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the last great american dynasty,2olxzvoFI9IpxqFeUv7WOX,Taylor Swift,NA,231000,TRUE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,exile (feat. Bon Iver),5S4aYQAJOwJMAamANWlICO,Taylor Swift,Bon Iver,285640,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,my tears ricochet,5P2bHCDM2tsgIaYWsZMhu5,Taylor Swift,NA,255893,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,mirrorball,2I8YAEA1VmCuP1wkJHMpTw,Taylor Swift,NA,208973,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,seven,76mOLcXOjOEhyY4mMF1l3r,Taylor Swift,NA,208906,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,august,6nK2pIKFcRc5frrZKHgsiT,Taylor Swift,NA,261920,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,this is me trying,7cm50Lw03k6VvRauJtkyTj,Taylor Swift,NA,195106,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,illicit affairs,6DrLROM5MG9bxWHeEG5elq,Taylor Swift,NA,190893,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,invisible string,2ehRU518I0hYqMGQnk4lDY,Taylor Swift,NA,252880,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,mad woman,0RP1kqoSPkVXsKiQNhMKzV,Taylor Swift,NA,237266,TRUE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,epiphany,1EXa37LpSvi3OQ9UYQ28rD,Taylor Swift,NA,289746,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,betty,3IhtE4fkytdrtEfV34UzkD,Taylor Swift,NA,294520,TRUE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,peace,6JlI8Ay77m4nJvZTHvfT1J,Taylor Swift,NA,234000,TRUE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,hoax,0YeDG5HnKnG7jpArkzsSPa,Taylor Swift,NA,220040,FALSE
+folklore,1pzvBxYgT6OVwJLtHkrdQK,the lakes - bonus track,0eFQWVz0qIxDOvhLpZ40P7,Taylor Swift,NA,211813,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,willow,2gVhfX2Gy1T9kDuS9azrF7,Taylor Swift,NA,214706,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,champagne problems,1gcyHQpBQ1lfXGdhZmWrHP,Taylor Swift,NA,244000,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,gold rush,3Dby3p1m6IOZn2gIIqECgK,Taylor Swift,NA,185320,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,‘tis the damn season,6sQckd3Z8NPxVVKUnavY1F,Taylor Swift,NA,229840,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,tolerate it,6lCvK2AR2uOKkVFCVlAzzm,Taylor Swift,NA,245440,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,"no body, no crime (feat. HAIM)",6uwfVkaOM1mcMkFmSn35ix,Taylor Swift,HAIM,215626,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,happiness,55Vf4bimc1Rtfg0PAQRAo2,Taylor Swift,NA,315146,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,dorothea,66tOfHVH3aUrscg8vExRV4,Taylor Swift,NA,225880,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,coney island (feat. The National),2awNGIJHodfLZSClB3PYhz,Taylor Swift,The National,275320,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,ivy,43Ykum9T72UOPhBN31grpN,Taylor Swift,NA,260440,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,cowboy like me,52OkpDsU6MmPx1AwGOb6Ap,Taylor Swift,NA,275040,TRUE
+evermore,6AORtDjduMM3bupSWzbTSG,long story short,5VYWxXUpxuxEmCqMLDqICo,Taylor Swift,NA,215920,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,marjorie,5uICWmZTLkpEVbK22PBP6e,Taylor Swift,NA,257773,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,closure,6a8aUhYbaQBUI8PcJ5ZmQ6,Taylor Swift,NA,180653,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,evermore (feat. Bon Iver),6Wlq9rqkxrqj5Kls4Kw14H,Taylor Swift,Bon Iver,304106,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,right where you left me - bonus track,3zwMVvkBe2qIKDObWgXw4N,Taylor Swift,NA,245026,FALSE
+evermore,6AORtDjduMM3bupSWzbTSG,it’s time to go - bonus track,1kdWw77ZpYOkhxeuhzU1j6,Taylor Swift,NA,254640,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fearless (Taylor’s Version),77sMIMlNaSURUAXq5coCxE,Taylor Swift,NA,241591,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Fifteen (Taylor’s Version),2nqio0SfWg6gh2eCtfuMa5,Taylor Swift,NA,294419,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Love Story (Taylor’s Version),6YvqWjhGD8mB5QXcbcUKtx,Taylor Swift,NA,235766,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Hey Stephen (Taylor’s Version),550erGcdD9n6PnwxrvYqZT,Taylor Swift,NA,254254,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,White Horse (Taylor’s Version),5YL553x8sHderRBDlm3NM3,Taylor Swift,NA,234515,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You Belong With Me (Taylor’s Version),1qrpoAMXodY6895hGKoUpA,Taylor Swift,NA,231124,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Breathe (feat. Colbie Caillat) (Taylor’s Version),7HC7R2D8WjXVcUHJyEGjRs,Taylor Swift,Colbie Caillat,263377,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Tell Me Why (Taylor’s Version),0k0vFacOHNuArLWMiH60p7,Taylor Swift,NA,200575,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You’re Not Sorry (Taylor’s Version),6iiAfo4wTA2CVC3Uwx9uh8,Taylor Swift,NA,261842,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Way I Loved You (Taylor’s Version),22bPsP2jCgbLUvh82U0Z3M,Taylor Swift,NA,243136,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Taylor’s Version),1msEuwSBneBKpVCZQcFTsU,Taylor Swift,NA,225328,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Best Day (Taylor’s Version),6ON9UuIq49xXY9GPmHIYRp,Taylor Swift,NA,245290,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Change (Taylor’s Version),3ExweHKZF9B752DPQByRVT,Taylor Swift,NA,279359,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Jump Then Fall (Taylor’s Version),2m3ObD945KvpE5y9A1eUWm,Taylor Swift,NA,237580,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Untouchable (Taylor’s Version),0tQ9vBYpldCuikPsbgOVKA,Taylor Swift,NA,312107,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Forever & Always (Piano Version) (Taylor’s Version),01QdEx6kFr78ZejhQtWR5m,Taylor Swift,NA,267833,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Come In With The Rain (Taylor’s Version),1n2wszmJyVkw6FHqyLnQsY,Taylor Swift,NA,237338,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Superstar (Taylor’s Version),51A8eKvvZz9uydvIZ7xRSV,Taylor Swift,NA,263865,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,The Other Side Of The Door (Taylor’s Version),1cSFlSBdpT4F5vb1frQ231,Taylor Swift,NA,238443,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Today Was A Fairytale (Taylor’s Version),2JoJrsEV15OzbijS47lids,Taylor Swift,NA,241822,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault),4CHpVfAhuxNJ3ibExe6kxO,Taylor Swift,Maren Morris,220839,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Mr. Perfectly Fine (Taylor’s Version) (From The Vault),2CYVETnhM9aytqrazYYwrK,Taylor Swift,NA,277591,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,We Were Happy (Taylor’s Version) (From The Vault),34V9RiEPe8MNdU32qJsJa1,Taylor Swift,NA,244236,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault),7eResoqEJJAVTkQYSqvO3P,Taylor Swift,Keith Urban,189495,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Don’t You (Taylor’s Version) (From The Vault),4uuEGH5SVuzkkSFjo2DEiY,Taylor Swift,NA,208608,FALSE
+Fearless (Taylor's Version),4hDok0OAJd57SGIT8xuWJH,Bye Bye Baby (Taylor’s Version) (From The Vault),4qUijfYU8EoIWiY6oSyrgT,Taylor Swift,NA,242157,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Taylor's Version),6lzc0Al0zfZOIFsFvBS1ki,Taylor Swift,NA,295413,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Red (Taylor's Version),4OAuvHryIVv4kMDNSLuPt6,Taylor Swift,NA,223093,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Treacherous (Taylor's Version),3S7HNKPakdwNEBFIVTL6dZ,Taylor Swift,NA,242720,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Knew You Were Trouble (Taylor's Version),6AtZLIzUINvExIUy4QhdjP,Taylor Swift,NA,219760,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (Taylor's Version),3nsfB1vus2qaloUdcBZvDu,Taylor Swift,NA,329160,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,22 (Taylor's Version),3yII7UwgLF6K5zW3xad3MP,Taylor Swift,NA,230960,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Almost Do (Taylor's Version),2r9CbjYgFhtAmcFv1cSquB,Taylor Swift,NA,244586,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,We Are Never Ever Getting Back Together (Taylor's Version),5YqltLsjdqFtvqE7Nrysvs,Taylor Swift,NA,193146,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Stay Stay Stay (Taylor's Version),7eQj6r5PIdYKEIZjucBMcq,Taylor Swift,NA,205786,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version),0y6kdSRCVQhSsHSpWvTUm7,Taylor Swift,Gary Lightbody,299080,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Holy Ground (Taylor's Version),7J4b3LVCIGO4CMBDFLPoP6,Taylor Swift,NA,202960,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Sad Beautiful Tragic (Taylor's Version),73qMN9bXy7MSPwwGfH3wQr,Taylor Swift,NA,284773,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Lucky One (Taylor's Version),4e5ayHsOLJNLTGfjau2mEw,Taylor Swift,NA,240466,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version),7qEUFOVcxRI19tbT68JcYK,Taylor Swift,Ed Sheeran,245426,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Starlight (Taylor's Version),7A2cNLRT0YJc1yjxHlKihs,Taylor Swift,NA,220413,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Begin Again (Taylor's Version),05GsNucq8Bngd9fnd4fRa0,Taylor Swift,NA,238866,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Moment I Knew (Taylor's Version),0NRHj8hDwwmSPaA41o379r,Taylor Swift,NA,285280,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Come Back...Be Here (Taylor's Version),4pNApnaUWAL2J4KO2eqokq,Taylor Swift,NA,223333,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Girl At Home (Taylor's Version),0DMVrlMUn01M0IcpDbwgu7,Taylor Swift,NA,220520,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,State Of Grace (Acoustic Version) (Taylor's Version),5jAIouBES8LWMiriuNq170,Taylor Swift,NA,321640,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Ronan (Taylor's Version),7nWui6jiMM2m9qFmET1Mtj,Taylor Swift,NA,264253,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Better Man (Taylor's Version) (From The Vault),4OmFmE0fzcMG6g0Y8p4eSD,Taylor Swift,NA,297013,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault),01K4zKU104LyJ8gMb7227B,Taylor Swift,Phoebe Bridgers,258812,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Babe (Taylor's Version) (From The Vault),0v4z1tuZvn6LGknom9Qx7d,Taylor Swift,NA,224240,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Message In A Bottle (Taylor's Version) (From The Vault),3z6XUommYDWPHeFhmhhT6j,Taylor Swift,NA,225960,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault),4CkgMiMqZ5JzW9iYXSTMTL,Taylor Swift,Chris Stapleton,285106,TRUE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Forever Winter (Taylor's Version) (From The Vault),3oGVx9RBmiYGv5ZCecWLkx,Taylor Swift,NA,263533,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault),4IQkfUsrwXol38VV3U7t7T,Taylor Swift,Ed Sheeran,240226,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,The Very First Night (Taylor's Version) (From The Vault),6pYNq0ZwpPVazKzsqpf0G8,Taylor Swift,NA,200280,FALSE
+Red (Taylor's Version),6kZ42qRrzov54LcAk4onW9,All Too Well (10 Minute Version) (Taylor's Version) (From The Vault),5enxwA8aAbwZbf5qCHORXi,Taylor Swift,NA,613026,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Lavender Haze,24emu3sabKISjRkrys28jq,Taylor Swift,NA,202395,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Maroon,6qxvy9Pe4RJIq5JBVbbwbS,Taylor Swift,NA,218270,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Anti-Hero,5qIHFdkW6phMsTZlN2g8Lc,Taylor Swift,NA,200690,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. Lana Del Rey),7GA86Uo2jYbj8vIXe2nyWd,Taylor Swift,Lana Del Rey,256124,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,"You're On Your Own, Kid",6PQOU00xWNrGwCZzboriXy,Taylor Swift,NA,194206,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Midnight Rain,4eKMqf9ZMSclDX7V9Ptg7x,Taylor Swift,NA,174782,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Question...?,7oomkQSYf1ia2VnVEWfFIU,Taylor Swift,NA,210556,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Vigilante Shit,0GKDhq6ZbmSbRHd3eyGlB7,Taylor Swift,NA,164801,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bejeweled,0VpF6RLdCfPIeYRwMu4tZK,Taylor Swift,NA,194165,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Labyrinth,4bBDkw2KBMX0tcgAaXC83Q,Taylor Swift,NA,247962,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma,45R112Jz5hQeKgITXgSXzs,Taylor Swift,NA,204852,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Sweet Nothing,2L09RYwH5Pjzca6PmbUAw3,Taylor Swift,NA,188496,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Mastermind,1QQii3pa5m8MEda0nbkjfw,Taylor Swift,NA,191039,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,The Great War,2VuqMjgoKaOHNM8HpxtXKx,Taylor Swift,NA,240355,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Bigger Than The Whole Sky,71CBDRKmF2VeRKYMG1DFBh,Taylor Swift,NA,218502,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Paris,5tWxKWq1DSP1s9WQ5PWuqu,Taylor Swift,NA,196258,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,High Infidelity,1SztNGCwEHJEVFx90E5g7D,Taylor Swift,NA,231475,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Glitch,7C0w28EsX0Um2FrZs9gso2,Taylor Swift,NA,148781,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,"Would've, Could've, Should've",4txojlesMFQZGWxwz2EeqB,Taylor Swift,NA,260361,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Dear Reader,10GRRCR5fctuOF4GFmATJI,Taylor Swift,NA,225194,FALSE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Hits Different,3xYJScVfxByb61dYHTwiby,Taylor Swift,NA,234466,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Snow On The Beach (feat. More Lana Del Rey),4zmKGsrXjLmljb5fTaBTot,Taylor Swift,Lana Del Rey,229942,TRUE
+Midnights,1fnJ7k0bllNfL1kVdNVW1A,Karma (feat. Ice Spice),4i6cwNY6oIUU2XZxPIw82Y,Taylor Swift,Ice Spice,201493,TRUE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mine (Taylor's Version),7G0gBu6nLdhFDPRLc0HdDG,Taylor Swift,NA,231706,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Sparks Fly (Taylor’s Version),3MytWN8L7shNYzGl4tAKRp,Taylor Swift,NA,261230,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Back To December (Taylor's Version),79uDOz0zuuWS7HWxzMmTa2,Taylor Swift,NA,294189,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Speak Now (Taylor's Version),5xXqyjLicvEpch72qEryFT,Taylor Swift,NA,242473,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Dear John (Taylor's Version),1zU8j1x3yi9xalMF96pzKp,Taylor Swift,NA,405906,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Mean (Taylor's Version),30Y4CV7A6YqtQtTTo7Ue4j,Taylor Swift,NA,238693,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,The Story Of Us (Taylor's Version),6dTA6y0C2ReQklntzZl8l3,Taylor Swift,NA,267653,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Never Grow Up (Taylor's Version),2EFZ9emtKWEglWUQGEQ3P9,Taylor Swift,NA,292920,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Enchanted (Taylor's Version),3sW3oSbzsfecv9XoUdGs7h,Taylor Swift,NA,353253,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Better Than Revenge (Taylor's Version),0NwGC0v03ysCYINtg6ns58,Taylor Swift,NA,220306,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Innocent (Taylor's Version),12nBPF4Rh4XLFJV0YLN7uj,Taylor Swift,NA,301221,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Haunted (Taylor's Version),4tMzIAFTFdqGBQLdfbPces,Taylor Swift,NA,245413,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Last Kiss (Taylor's Version),59KOoHFcw5XfICnO57holu,Taylor Swift,NA,369120,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Long Live (Taylor's Version),4hqJ4bSlYJOXb6Z4SRmzxs,Taylor Swift,NA,317960,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Ours (Taylor’s Version),3yNJkriPzWjkkDAWHIAVUq,Taylor Swift,NA,235803,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Superman (Taylor’s Version),4evLyY5Ue1Wesc61t2KXAU,Taylor Swift,NA,274945,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault),4e3ZNTAV6PCrdYMUrUlMpQ,Taylor Swift,Fall Out Boy,266466,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,When Emma Falls in Love (Taylor’s Version) (From The Vault),0zo975x58DlXbZllWvfYhg,Taylor Swift,NA,252385,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,I Can See You (Taylor’s Version) (From The Vault),5kHMfzgLZP95O9NBy0ku4v,Taylor Swift,NA,273186,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Castles Crumbling (feat. Hayley Williams) (Taylor’s Version) (From The Vault),4ABYxlb92WBIjHu7TIKmml,Taylor Swift,Hayley Williams,306062,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Foolish One (Taylor’s Version) (From The Vault),4s8BIKx4Zh6ryAEz8RTlaU,Taylor Swift,NA,311765,FALSE
+Speak Now (Taylor's Version),5AEDGbliTTfjOB8TSm1sxt,Timeless (Taylor’s Version) (From The Vault),1HCdems7PQZRj42QDWLA0A,Taylor Swift,NA,321396,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Welcome To New York (Taylor's Version),4WUepByoeqcedHoYhSNHRt,Taylor Swift,NA,212600,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Blank Space (Taylor's Version),0108kcWLnn2HlH2kedi1gn,Taylor Swift,NA,231833,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Style (Taylor's Version),3Vpk1hfMAQme8VJ0SNRSkd,Taylor Swift,NA,231000,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Out Of The Woods (Taylor's Version),1OcSfkeCg9hRC2sFKB4IMJ,Taylor Swift,NA,235800,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,All You Had To Do Was Stay (Taylor's Version),2k0ZEeAqzvYMcx9Qt5aClQ,Taylor Swift,NA,193289,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Shake It Off (Taylor's Version),50yNTF0Od55qnHLxYsA5Pw,Taylor Swift,NA,219209,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Wish You Would (Taylor's Version),3FxJDucHWdw6caWTKO5b23,Taylor Swift,NA,207650,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (Taylor's Version),7oZONwFiFIErZcXAtTu7FY,Taylor Swift,NA,211103,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wildest Dreams (Taylor's Version),27exgla7YBw9DUNNcTIpjy,Taylor Swift,NA,220433,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,How You Get The Girl (Taylor's Version),733OhaXQIHY7BKtY3vnSkn,Taylor Swift,NA,247533,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,This Love (Taylor’s Version),4WBEj8TeGtRPNJdOmT3WJW,Taylor Swift,NA,250100,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,I Know Places (Taylor's Version),1ULabO0PEsdJekqVH6G10G,Taylor Swift,NA,195700,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Clean (Taylor's Version),0lKUBmEyQfzsQHozyeXzES,Taylor Swift,NA,271000,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Wonderland (Taylor's Version),6HRsJu8vcnzYDN4t0570FY,Taylor Swift,NA,245566,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,You Are In Love (Taylor's Version),0TyGh27YQ5LknmiDhCzJiT,Taylor Swift,NA,267389,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,New Romantics (Taylor's Version),5M787RexsAiVYjQusM98CV,Taylor Swift,NA,230177,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,"""Slut!"" (Taylor's Version) (From The Vault)",0CD7DzeCsuPJygddqlUVYa,Taylor Swift,NA,180381,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Say Don't Go (Taylor's Version) (From The Vault),3CCRVu4F91Qp2mnGjmWBrf,Taylor Swift,NA,279833,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Now That We Don't Talk (Taylor's Version) (From The Vault),5QUIK7ZtziW8kGWo8RqopF,Taylor Swift,NA,146436,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Suburban Legends (Taylor's Version) (From The Vault),6M9ppdfFjR1AbpUl3Y8DcV,Taylor Swift,NA,171818,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Is It Over Now? (Taylor's Version) (From The Vault),6IG3sQ8s9nfk6TUlVzRhbN,Taylor Swift,NA,229477,FALSE
+1989 (Taylor's Version),1o59UpKw81iHR0HPiSkJR0,Bad Blood (feat. Kendrick Lamar) (Taylor's Version),6qAcApH8obo8eqatCKUHd9,Taylor Swift,Kendrick Lamar,199773,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fortnight (feat. Post Malone),6dODwocEuGzHAavXqTbwHv,Taylor Swift,Post Malone,228965,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Tortured Poets Department,4PdLaGZubp4lghChqp8erB,Taylor Swift,NA,293048,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,My Boy Only Breaks His Favorite Toys,7uGYWMwRy24dm7RUDDhUlD,Taylor Swift,NA,203801,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Down Bad,1kbEbBdEgQdQeLXCJh28pJ,Taylor Swift,NA,261228,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,"So Long, London",7wAkQFShJ27V8362MqevQr,Taylor Swift,NA,262974,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,But Daddy I Love Him,4QMgEffJQuKtjCNvqfRZ0m,Taylor Swift,NA,340428,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Fresh Out The Slammer,7IWcDWOfiooH5hRs9XOVYz,Taylor Swift,NA,210789,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Florida!!! (feat. Florence + The Machine),5ExOm0dh4NyRyAdSAO9hyM,Taylor Swift,Florence + The Machine,215463,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Guilty as Sin?,799KrpEbhZp0MHeiA8YK9P,Taylor Swift,NA,254365,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Who’s Afraid of Little Old Me?,2d8UxVNhJinc8uat9PoM9y,Taylor Swift,NA,334084,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Fix Him (No Really I Can),5chnRTB9qMK3W1M41SnU9s,Taylor Swift,NA,156297,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,loml,3YkNIrAvbKNrrwwEd7NVLl,Taylor Swift,NA,277156,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Can Do It With a Broken Heart,2fPvQfGQEZOKtJ9qXeL4x8,Taylor Swift,NA,218004,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Smallest Man Who Ever Lived,1xtw1krCR6Dw2KwkXw5z63,Taylor Swift,NA,245541,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Alchemy,1tuNqJOtRQVHvONR8Lg3MZ,Taylor Swift,NA,196900,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Clara Bow,4d9PtIEVij9jW5OaLinH66,Taylor Swift,NA,216662,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Black Dog,62E2nR0od0M5HYxuYLaDz7,Taylor Swift,NA,238857,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,imgonnagetyouback,1kcwpPDQnqEqmezzXdJTCP,Taylor Swift,NA,222072,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Albatross,4EF6IyONolQy0bIQXm2EmX,Taylor Swift,NA,183878,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Chloe or Sam or Sophia or Marcus,1rmEsOezwf2lmIZTMAO5Ag,Taylor Swift,NA,213281,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,How Did It End?,5Bedn0svl0ZD7RGmJkmKKw,Taylor Swift,NA,238706,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,So High School,7Mts0OfPorF4iwOomvfqn1,Taylor Swift,NA,228800,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Hate It Here,3hlGuz3loYoLfI3bpwieWq,Taylor Swift,NA,243875,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,thanK you aIMee,7ogK4lJDVDMU6A6vYR5rvD,Taylor Swift,NA,263817,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,I Look in People's Windows,1Zai5UJ2di3qEuR2HeT2s8,Taylor Swift,NA,131907,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Prophecy,18WFFUIsewmA8g31KAeo3e,Taylor Swift,NA,249807,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Cassandra,0g4fMVo4JjwnIpTfFfLdxS,Taylor Swift,NA,240205,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Peter,3zMDGj4D8ogaYgAIZPeU7S,Taylor Swift,NA,283957,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Bolter,2913xXOVAIDAqxzV2g4VcU,Taylor Swift,NA,238241,TRUE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,Robin,2CnjDMdpRjlWv04Xk3s6MW,Taylor Swift,NA,240893,FALSE
+THE TORTURED POETS DEPARTMENT,5H7ixXZfsNMGbIE5OBSpcb,The Manuscript,1DTRUYVd8rYpla9hhVVwjo,Taylor Swift,NA,224743,FALSE
+Midnights,NA,You're Losing Me (From The Vault),3CWq0pAKKTWb0K4yiglDc4,Taylor Swift,NA,277831,FALSE
+NA,NA,All Of The Girls You Loved Before,4P9Q0GojKVXpRTJCaL3kyy,Taylor Swift,NA,221407,FALSE
+NA,NA,American Girl,,NA,NA,NA,NA
+NA,NA,Bad Blood (Remix),6xsEAm6w9oMQYYg3jkEkMT,Taylor Swift,Kendrick Lamar,200106,FALSE
+NA,NA,Beautiful Ghosts,2evEoQAhIMaa9PfjTT5skG,Taylor Swift,NA,261053,FALSE
+NA,NA,Carolina,4axSuOg3BqsowKjRpj59RU,Taylor Swift,NA,264438,FALSE
+NA,NA,Christmas Tree Farm,2mvabkN1i2gLnGAPUVdwek,Taylor Swift,NA,228026,FALSE
+NA,NA,Crazier,5vyxXfD5gLlyPxGZMEjtmd,Taylor Swift,NA,191946,FALSE
+NA,NA,Eyes Open,6KEemo78n0RnCQWKkeOdXz,Taylor Swift,NA,244586,FALSE
+NA,NA,Eyes Open (Taylor's Version),0gPmM1WtVRg3uENW3o8bfx,Taylor Swift,NA,243264,FALSE
+NA,NA,I Don't Wanna Live Forever,2y5aJvzXhHPA94U5GFAcXe,ZAYN,Taylor Swift,245653,FALSE
+NA,NA,If This Was A Movie (Taylor's Version),0q6vsjvnCIWrtwRckCV7y0,Taylor Swift,NA,237022,FALSE
+NA,NA,Lover (Remix),3i9UVldZOE0aD0JnyfAZZ0,Taylor Swift,Shawn Mendes,221306,FALSE
+NA,NA,Only The Young,2slqvGLwzZZYsT4K4Y1GBC,Taylor Swift,NA,157507,FALSE
+NA,NA,Ronan,0Nw8hv79MLJa1yjtsEgz08,Taylor Swift,NA,265306,FALSE
+NA,NA,Safe & Sound,0z9UVN8VBHJ9HdfYsOuuNf,Taylor Swift,The Civil Wars,240066,FALSE
+NA,NA,Safe & Sound (Taylor's Version),6Q237Ts37YGYRIi5Vy5lVX,Taylor Swift,"Joy Williams, John Paul White",239668,FALSE
+NA,NA,September,5eGX87IiKsGuzS3iw4CfCX,Taylor Swift,NA,187823,FALSE
+NA,NA,Sweeter Than Fiction,0RFCHlNuTeUHIB36VuVbOL,Taylor Swift,NA,237640,FALSE
+NA,NA,Today Was A Fairytale,4pFvEWbjBpPUdYRQly0THs,Taylor Swift,NA,242480,FALSE
+NA,NA,Babe,7FFfYM4JE1vj5n4rhHxg8q,Sugarland,Taylor Swift,215106,FALSE
+NA,NA,Birch,7wo2UNeQBowm28hfAJsEMz,Big Red Machine,Taylor Swift,330066,TRUE
+NA,NA,Both Of Us,3r9bgSJlJz2zlevcBRYXko,B.o.B,Taylor Swift,216120,TRUE
+NA,NA,Gasoline (Remix),645Exr2lJIO45Guht3qyIa,HAIM,Taylor Swift,193373,FALSE
+NA,NA,Half Of My Heart,,NA,NA,NA,NA
+NA,NA,Highway Don't Care,4wFUdSCer8bdQsrp1M90sa,Tim McGraw,"Taylor Swift, Keith Urban",276880,FALSE
+NA,NA,Renegade,1aU1wpYBSpP0M6IiihY5Ue,Big Red Machine,Taylor Swift,254466,TRUE
+NA,NA,The Alcott,6INztpNwOTlfSKTuPo0HOP,The National,Taylor Swift,267773,FALSE
+NA,NA,The Joker and the Queen,6N1K5OVVCopBjGViHs2IvP,Ed Sheeran,Taylor Swift,185422,FALSE
+NA,NA,Three Sad Virgins,,NA,NA,NA,NA
+NA,NA,Two Is Better Than One,1MaqkdFNIKPdpQGDzme5ss,BOYS LIKE GIRLS,Taylor Swift,242840,FALSE
+NA,NA,us.,0hhzNPE68LWLfgZwdpxVdR,Gracie Abrams,Taylor Swift,242666,TRUE
+NA,NA,"1 step forward, 3 steps back",4wcBRRpIfesgcyUtis7PEg,Olivia Rodrigo,NA,163586,TRUE
+NA,NA,Best Days Of Your Life,16jvUOIQ2P54P0bNN4rAdv,Kellie Pickler,NA,226800,FALSE
+NA,NA,Better Man,23TxRN09aR1RB0G0tFoT0b,Little Big Town,NA,263120,FALSE
+NA,NA,deja vu,6HU7h9RYOaPRFeh0R3UeAr,Olivia Rodrigo,NA,215506,TRUE
+NA,NA,This Is What You Came For,0azC730Exh71aQlOt9Zj3y,Calvin Harris,Rihanna,221900,FALSE
+NA,NA,TMZ,2Y9YdGPN7AtVfpTvXfRbc6,"""Weird Al"" Yankovic",NA,219727,FALSE
+NA,NA,You'll Always Find Your Way Back Home,12wSL3tGk3MtbDEhfG7xy3,Hannah Montana,NA,224186,FALSE
