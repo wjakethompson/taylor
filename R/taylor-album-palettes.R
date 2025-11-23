@@ -95,18 +95,18 @@ album_compare <- color_palette(
 album_levels <- c(
   "Taylor Swift",
   "Fearless",
-  "Fearless (Taylor's Version)",
   "Speak Now",
-  "Speak Now (Taylor's Version)",
   "Red",
-  "Red (Taylor's Version)",
   "1989",
-  "1989 (Taylor's Version)",
   "reputation",
   "Lover",
   "folklore",
   "evermore",
+  "Fearless (Taylor's Version)",
+  "Red (Taylor's Version)",
   "Midnights",
+  "Speak Now (Taylor's Version)",
+  "1989 (Taylor's Version)",
   "THE TORTURED POETS DEPARTMENT"
 )
 
