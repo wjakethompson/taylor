@@ -1,4 +1,36 @@
 
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=wjakethompson&project=taylor&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # taylor <a href="https://taylor.wjakethompson.com"><img src="man/figures/logo.png" align="right" height="138" alt="taylor website" /></a>
