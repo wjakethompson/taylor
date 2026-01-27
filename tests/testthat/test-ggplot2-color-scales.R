@@ -51,6 +51,9 @@ test_that("discrete fill works", {
   ttpd <- fill_base +
     scale_fill_taylor_d(album = "THE TORTURED POETS DEPARTMENT")
 
+  tloas <- fill_base +
+    scale_fill_taylor_d(album = "The Life of a Showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-d", fearless_tv)
@@ -66,6 +69,7 @@ test_that("discrete fill works", {
   vdiffr::expect_doppelganger("evermore-fill-d", evermore)
   vdiffr::expect_doppelganger("midnights-fill-d", midnights)
   vdiffr::expect_doppelganger("ttpd-fill-d", ttpd)
+  vdiffr::expect_doppelganger("tloas-fill-d", tloas)
 })
 
 test_that("discrete color works", {
@@ -118,6 +122,9 @@ test_that("discrete color works", {
   ttpd <- color_base +
     scale_color_taylor_d(album = "the tortured poets department")
 
+  tloas <- color_base +
+    scale_color_taylor_d(album = "the life of a showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-color-d", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-d", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-d", fearless_tv)
@@ -133,6 +140,7 @@ test_that("discrete color works", {
   vdiffr::expect_doppelganger("evermore-color-d", evermore)
   vdiffr::expect_doppelganger("midnights-color-d", midnights)
   vdiffr::expect_doppelganger("ttpd-color-d", ttpd)
+  vdiffr::expect_doppelganger("tloas-color-d", tloas)
 })
 
 test_that("continuous fill works", {
@@ -452,6 +460,9 @@ test_that("continuous fill works", {
   ttpd <- fill_base +
     scale_fill_taylor_c(album = "tortured poets")
 
+  tloas <- fill_base +
+    scale_fill_taylor_c(album = "showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-c", fearless_tv)
@@ -467,6 +478,7 @@ test_that("continuous fill works", {
   vdiffr::expect_doppelganger("evermore-fill-c", evermore)
   vdiffr::expect_doppelganger("midnights-fill-c", midnights)
   vdiffr::expect_doppelganger("ttpd-fill-c", ttpd)
+  vdiffr::expect_doppelganger("tloas-fill-c", tloas)
 })
 
 test_that("continuous color works", {
@@ -1523,6 +1535,9 @@ test_that("continuous color works", {
   ttpd <- color_base +
     scale_color_taylor_c(album = "Tortured Poets")
 
+  tloas <- color_base +
+    scale_color_taylor_c(album = "Showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-color-c", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-c", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-c", fearless_tv)
@@ -1538,6 +1553,7 @@ test_that("continuous color works", {
   vdiffr::expect_doppelganger("evermore-color-c", evermore)
   vdiffr::expect_doppelganger("midnights-color-c", midnights)
   vdiffr::expect_doppelganger("ttpd-color-c", ttpd)
+  vdiffr::expect_doppelganger("tloas-color-c", tloas)
 })
 
 test_that("binned fill works", {
@@ -1590,6 +1606,9 @@ test_that("binned fill works", {
   ttpd <- fill_base +
     scale_fill_taylor_b(album = "The Tortured Poets Department")
 
+  tloas <- fill_base +
+    scale_fill_taylor_b(album = "The Life Of A Showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-fill-b", taylor_swift)
   vdiffr::expect_doppelganger("fearless-fill-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-fill-b", fearless_tv)
@@ -1605,6 +1624,7 @@ test_that("binned fill works", {
   vdiffr::expect_doppelganger("evermore-fill-b", evermore)
   vdiffr::expect_doppelganger("midnights-fill-b", midnights)
   vdiffr::expect_doppelganger("ttpd-fill-b", ttpd)
+  vdiffr::expect_doppelganger("tloas-fill-b", tloas)
 })
 
 test_that("binned color work", {
@@ -1657,6 +1677,9 @@ test_that("binned color work", {
   ttpd <- color_base +
     scale_color_taylor_b(album = "the tortured poets department")
 
+  tloas <- color_base +
+    scale_color_taylor_b(album = "the life of a showgirl")
+
   vdiffr::expect_doppelganger("taylor-swift-color-b", taylor_swift)
   vdiffr::expect_doppelganger("fearless-color-b", fearless)
   vdiffr::expect_doppelganger("fearless-tv-color-b", fearless_tv)
@@ -1672,6 +1695,7 @@ test_that("binned color work", {
   vdiffr::expect_doppelganger("evermore-color-b", evermore)
   vdiffr::expect_doppelganger("midnights-color-b", midnights)
   vdiffr::expect_doppelganger("ttpd-color-b", ttpd)
+  vdiffr::expect_doppelganger("tloas-color-b", tloas)
 })
 
 test_that("album scale works", {
