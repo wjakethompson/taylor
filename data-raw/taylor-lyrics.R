@@ -7,6 +7,7 @@ library(here)
 library(glue)
 library(fs)
 
+# release dates ----------------------------------------------------------------
 release_dates <- read_xlsx(
   here("data-raw", "releases.xlsx"),
   col_types = c("text", "text", "date", "date")
@@ -30,6 +31,7 @@ singles <- release_dates |>
   rename(single_release = release_date) |>
   select(album_name, track_name, promotional_release, single_release)
 
+# lyrics -----------------------------------------------------------------------
 lyrics <- dir_ls(here("data-raw", "lyrics"), type = "file", recurse = TRUE) |>
   as_tibble() |>
   mutate(album = path_file(path_dir(value)), track = path_file(value)) |>
@@ -329,7 +331,8 @@ base_info <- lyrics |>
       "1 step forward, 3 steps back"
     ),
     track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
-    track_name = str_replace_all(track_name, "Tmz", "TMZ")
+    track_name = str_replace_all(track_name, "Tmz", "TMZ"),
+    track_name = str_replace_all(track_name, "Bein With", "Bein' With")
   ) |>
   left_join(singles, by = c("album_name", "track_name")) |>
   rowwise() |>
@@ -410,13 +413,13 @@ single_uri <- tribble(
 
 feature_uri <- tribble(
   ~track_name,                                      ~track_uri,
-  "Babe",                                           "7FFfYM4JE1vj5n4rhHxg8q",
+  "Babe",                                           "7fRruZ12gXGwBs0zXQ6e5V",
   "Birch",                                          "7wo2UNeQBowm28hfAJsEMz",
   "Both Of Us",                                     "3r9bgSJlJz2zlevcBRYXko",
   "Gasoline (Remix)",                               "645Exr2lJIO45Guht3qyIa",
   "Half Of My Heart",                               "",
   "Highway Don't Care",                             "4wFUdSCer8bdQsrp1M90sa",
-  "Renegade",                                       "1aU1wpYBSpP0M6IiihY5Ue",
+  "Renegade",                                       "73W5aXorr5vxrySFcoZqIN",
   "The Alcott",                                     "6INztpNwOTlfSKTuPo0HOP",
   "The Joker and the Queen",                        "6N1K5OVVCopBjGViHs2IvP",
   "Three Sad Virgins",                              "",
@@ -427,9 +430,11 @@ feature_uri <- tribble(
 writer_uri <- tribble(
   ~track_name,                                      ~track_uri,
   "1 step forward, 3 steps back",                   "4wcBRRpIfesgcyUtis7PEg",
+  "Bein' With My Baby",                             "1bzJItxyg2yjNcMaVhVJ9a",
   "Best Days Of Your Life",                         "16jvUOIQ2P54P0bNN4rAdv",
   "Better Man",                                     "23TxRN09aR1RB0G0tFoT0b",
   "deja vu",                                        "6HU7h9RYOaPRFeh0R3UeAr",
+  "This Is Really Happening",                       "3K1RFAkmvzwmW0fzdyeWsO",
   "This Is What You Came For",                      "0azC730Exh71aQlOt9Zj3y",
   "TMZ",                                            "2Y9YdGPN7AtVfpTvXfRbc6",
   "You'll Always Find Your Way Back Home",          "12wSL3tGk3MtbDEhfG7xy3"
@@ -444,7 +449,6 @@ spotify_ids <- tribble(
   ~album_name,                                      ~album_uri,
   "Taylor Swift",                                   "7mzrIsaAjnXihW3InKjlC3",
   "The Taylor Swift Holiday Collection",            "7vzYp7FrKnTRoktBYsx9SF",
-  "Beautiful Eyes",                                 "5yHBYleC8huFBV5B1jP218",
   "Fearless",                                       "43OpbkiiIxJO8ktIB777Nn",
   "Speak Now",                                      "5EpMjweRD573ASl7uNiHym",
   "Red",                                            "1KlU96Hw9nlvqpBPlSqcTV",
@@ -481,9 +485,14 @@ soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
   if (
     track_id %in%
       c(
+        # 1989 voice memos
         "4JQm7ebhsrt10wmrP6AfXL",
         "4TtyvyI42C0KFnbDZvNC8Y",
-        "0yisH8r0f3Mkq34kjzUlCV"
+        "0yisH8r0f3Mkq34kjzUlCV",
+
+        # writer credits that hang
+        "1bzJItxyg2yjNcMaVhVJ9a",
+        "3K1RFAkmvzwmW0fzdyeWsO"
       )
   ) {
     return(NULL)
@@ -495,6 +504,7 @@ soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
     return(readr::read_rds(track_file))
   }
 
+  print(track_id)
   resp <- safe_soundstat(track_id)
   if (!is.null(resp$result)) {
     resp <- resp$result
@@ -532,7 +542,6 @@ soundstat_audio_features <- spotify_ids |>
   # filter(!file_exists) |>
   # select(-file_exists) |>
   # nolint end
-  filter(album_name != "Beautiful Eyes") |>
   mutate(
     soundstat = map(spotify_track_uri, \(x) {
       soundstat_api(x, use_archive = TRUE)
@@ -728,15 +737,34 @@ feature_join <- full_join(
 # nolint start: indentation_linter
 
 # Check for tracks missing from Spotify
-# Ideally should return 0 rows. 9 rows currently expected:
+# Ideally should return 0 rows. 12 rows currently expected:
 # 1    Sweeter Than Fiction (Taylor's Version) only on Target Tangerine
 # 2-3  Two Midnights bonus tracks exclusive to Target are not on Spotify
-# 4    American Girl is exclusive to Napster
-# 5    Half Of My Heart is not available on Spotify (version featuring Taylor)
-# 6    Three Sad Virgins is not available on Spotify
+# 4-9  Beautiful Eyes EP
+# 10   American Girl is exclusive to Napster
+# 11   Half Of My Heart is not available on Spotify (version featuring Taylor)
+# 12   Three Sad Virgins is not available on Spotify
 (missing <- base_info |>
   left_join(feature_join, by = c("album_name", "track_name")) |>
   filter(map_lgl(features, is.null)) |>
+  select(album_name, track_name))
+
+# Check for missing soundstat information
+# Ideally should return 0 rows. 6 rows currently expected:
+# 1    Hey Stephen (TV)
+# 2    Breathe (TV)
+# 3    Tell Me Why (TV)
+# 4    White Christmas
+# 5    Bein' With My Baby (writer only)
+# 6    This Is Really Happening (writer only)
+(soundstat <- base_info |>
+  left_join(feature_join, by = c("album_name", "track_name")) |>
+  filter(!map_lgl(features, is.null)) |>
+  mutate(
+    dplyr::across(dplyr::everything(), is.na),
+    missing = sum(dplyr::c_across(dplyr::everything()))
+  ) |>
+  filter(missing > 0) |>
   select(album_name, track_name))
 
 # Check for tracks with multiple records. Should be 0 rows.
@@ -753,9 +781,11 @@ feature_join <- full_join(
 
 # Check for writing credits only. 7 rows currently expected:
 # 1 step forward, 3 steps back - Olivia Rodrigo
+# Bein' With My Baby - Shea Fisher
 # Best Days Of Your Life - Kellie Pickler
 # Better Man - Little Big Town
 # deja vu - Olivia Rodrigo
+# This Is Really Happening - Britni Hoover
 # This Is What You Came For - Calvin Harris
 # TMZ - "Weird Al" Yankovic
 # You'll Always Find Your Way Back Home - Hannah Montana
@@ -797,13 +827,54 @@ base_info |>
 
 
 # Write data files -------------------------------------------------------------
-taylor_all_songs <- base_info |>
-  left_join(feature_join, by = c("album_name", "track_name")) |>
+albums_only <- base_info |>
+  full_join(
+    feature_join,
+    by = c("album_name", "track_name"),
+    relationship = "one-to-one"
+  ) |>
+  filter(!is.na(album_name)) |>
+  mutate(
+    album_name = factor(
+      album_name,
+      levels = pull(semi_join(albums, base_info, by = "album_name"), album_name)
+    )
+  ) |>
+  arrange(album_name, track_number) |>
+  mutate(
+    track_number = 1:n(),
+    bonus_track = TRUE,
+    .by = album_name
+  ) |>
+  fill(
+    ep,
+    album_release,
+    track_release,
+    .by = album_name,
+    .direction = "down"
+  ) |>
+  mutate(album_name = as.character(album_name))
+
+non_album <- base_info |>
+  full_join(
+    feature_join,
+    by = c("album_name", "track_name"),
+    relationship = "one-to-one"
+  ) |>
+  filter(is.na(album_name))
+
+taylor_all_songs <- bind_rows(albums_only, non_album) |>
   relocate(features, .before = lyrics) |>
   unnest(features, keep_empty = TRUE) |>
   group_by(album_name) |>
   mutate(album_release = min(album_release)) |>
   ungroup() |>
+  mutate(
+    album_name = case_when(
+      is.na(album_name) ~ spotify_album,
+      .default = album_name
+    )
+  ) |>
   mutate(
     bonus_track = case_when(is.na(album_name) ~ NA, TRUE ~ bonus_track),
     artist = case_when(
@@ -829,25 +900,9 @@ taylor_all_songs <- base_info |>
   )
 
 taylor_album_songs <- taylor_all_songs |>
-  filter(
-    album_name %in%
-      c(
-        "Taylor Swift",
-        "Fearless",
-        "Speak Now",
-        "Red",
-        "1989",
-        "reputation",
-        "Lover",
-        "folklore",
-        "evermore",
-        "Fearless (Taylor's Version)",
-        "Red (Taylor's Version)",
-        "Midnights",
-        "Speak Now (Taylor's Version)",
-        "1989 (Taylor's Version)",
-        "THE TORTURED POETS DEPARTMENT"
-      )
+  semi_join(
+    albums |> filter(!ep) |> semi_join(base_info, by = "album_name"),
+    by = "album_name"
   )
 
 metacritic <- tribble(
@@ -896,6 +951,7 @@ metacritic <- tribble(
   select(-metacritic_name)
 
 taylor_albums <- taylor_all_songs |>
+  semi_join(albums, by = "album_name") |>
   distinct(album_name, ep, album_release) |>
   filter(!is.na(album_name)) |>
   left_join(metacritic, by = "album_name") |>
