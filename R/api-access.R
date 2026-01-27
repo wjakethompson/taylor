@@ -41,6 +41,7 @@ get_spotify_track_info <- function(
   spotify_track <- spotifyr::get_track(track_id, authorization = api_key)
 
   tibble::tibble(
+    spotify_album = spotify_track$album$name,
     duration_ms = spotify_track$duration_ms,
     explicit = spotify_track$explicit
   ) |>

@@ -18,20 +18,14 @@ test_that("spotify api", {
   expect_equal(
     colnames(so_high_school),
     c(
-      "album_name",
-      "track_name",
       "artist",
       "featuring",
+      "spotify_album",
       "duration_ms",
       "explicit"
     )
   )
 
-  expect_equal(
-    so_high_school$album_name,
-    "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY"
-  )
-  expect_equal(so_high_school$track_name, "So High School")
   expect_equal(so_high_school$artist, "Taylor Swift")
   expect_equal(so_high_school$featuring, NA_character_)
 
