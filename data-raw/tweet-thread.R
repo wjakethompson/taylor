@@ -6,7 +6,6 @@ library(taylor)
 #'
 #' Some highlights:
 
-
 #' Lyrics and Spotify audio data for {num tracks} {album} tracks have been
 #' added.
 
@@ -17,7 +16,6 @@ taylor::taylor_all_songs |>
 # Night Owl theme, R language, export/download png
 
 # Alt text: A scrrenshot of the new Speak Now (Taylor's Version) data. Code:
-
 
 #' A new color palette has been added to match the {album} aesthetic:
 
@@ -32,11 +30,20 @@ p <- taylor_album_songs |>
   scale_fill_taylor_d(album = "Speak Now (Taylor's Version)") +
   labs(x = "Song energy", y = NULL) +
   theme_minimal() +
-  theme(axis.text = element_text(size = 20),
-        axis.title = element_text(size = 24))
+  theme(
+    axis.text = element_text(size = 20),
+    axis.title = element_text(size = 24)
+  )
 
-ggsave(filename = "song-energy.png", plot = p, path = "~/Desktop",
-       width = 20, height = 20 * 0.618, units = "in", dpi = 320)
+ggsave(
+  filename = "song-energy.png",
+  plot = p,
+  path = "~/Desktop",
+  width = 20,
+  height = 20 * 0.618,
+  units = "in",
+  dpi = 320
+)
 
 # copy console to: https://carbon.vercel.app/
 # Night Owl theme, R language, export/download png
@@ -46,12 +53,10 @@ ggsave(filename = "song-energy.png", plot = p, path = "~/Desktop",
 #' to x.
 #' Alt text 2: Code to create the bar graph. {insert code}
 
-
 #' And perhaps most importantly, a new hex sticker!
 
 #' Alt text: The taylor hex logo. The image is an abstract version of the
 #' {album} album cover, with text "Taylor" overlayed.
-
 
 #' Please check out the updates and open any issues on the GitHub repo!
 #' You can find updated documentation (complete with a new {album} theme) at:

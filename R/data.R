@@ -71,38 +71,30 @@
 #' * `track_release`: The date the song was first publicly released. This is the
 #'   earliest of `album_release`, `promotional_release`, and `single_release`.
 #'
-#' The next set of variables come from the Spotify API. See the documentation at
-#' <https://developer.spotify.com/documentation/web-api/reference/> for complete
-#' details.
+#' The next set of variables come from the SoundStat API. See the documentation
+#' at <https://soundstat.info/> for complete details.
 #' * `danceability`: How suitable a track is for dancing. `0.0` = least
 #'   danceable, `1.0` = most danceable.
 #' * `energy`: Perceptual measure of intensity and activity. `0.0` = least
 #'   energy, `1.0` = most energy.
-#' * `key`: The key the track is in. Integer maps to standard Pitch Class
-#'   notation.
 #' * `loudness`: Loudness of track in decibels (dB), averaged across the track.
-#' * `mode`: Modality of a track (major/minor). `0` = minor, `1` = major.
-#' * `speechiness`: The presence of spoken words in a track. Values above `0.66`
-#'   indicate that the track is probably made entirely of spoken words. Values
-#'   between `0.33` and `0.66` indicate both music and speech. Values less than
-#'   `0.33` indicate the track is probably music or other non-speech tracks.
 #' * `acousticness`: Confidence that the track is acoustic. `0.0` = low
 #'   confidence, `1.0` = high confidence.
 #' * `instrumentalness`: Confidence that the track is an instrumental track
 #'   (i.e., no vocals). `0.0` = low confidence, `1.0` = high confidence.
-#' * `liveness`: Confidence that the track is a live recording (i.e., an
-#'   audience is present). `0.0` = low confidence, `1.0` = high confidence.
 #' * `valence`: Musical positiveness conveyed by the track. `0.0` = low valence
 #'   (e.g., sad, depressed, angry), `1.0` = high valence (e.g., happy, cheerful,
 #'   euphoric).
 #' * `tempo`: Estimated tempo of the track in beats per minute (BPM).
-#' * `time_signature`: Estimated overall time signature.
 #' * `duration_ms`: Duration of the track in milliseconds.
 #' * `explicit`: Logical. Does the track contain explicit lyrics (`TRUE`) or not
 #'  (`FALSE`).
+#' * `key`: The key the track is in. Integer maps to standard Pitch Class
+#'   notation.
+#' * `mode`: Modality of a track (major/minor). `0` = minor, `1` = major.
 #'
-#' Finally, the last set of variables includes those calculated from the Spotify
-#' API data, and a list-column containing song lyrics.
+#' Finally, the last set of variables includes those calculated from the
+#' Soundstat API data, and a list-column containing song lyrics.
 #' * `key_name`: Corresponds directly to the `key`, but the integer is converted
 #'   to the key name using Pitch Class notation (e.g., `0` becomes `C`).
 #' * `mode_name`: Corresponds directly to the `mode`, but the integer is
@@ -122,7 +114,7 @@
 #'     track (e.g., `HAIM` is featured on *no body, no crime*).
 #'
 #' @source \url{https://genius.com/artists/Taylor-swift}
-#' @source \url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}
+#' @source \url{https://soundstat.info}
 #' @rdname taylor_songs
 "taylor_all_songs"
 

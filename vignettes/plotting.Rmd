@@ -61,7 +61,6 @@ p + scale_fill_taylor_d(album = "Speak Now")
 We can also use these functions for non-Taylor Swift data. For example, here we use `scale_color_taylor_d()` to plot some data about `?penguins`.
 
 ```{r warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from the color palette for Lover."}
-
 ggplot(penguins, aes(x = bill_len, y = bill_dep)) +
   geom_point(aes(shape = species, color = species), size = 3) +
   scale_color_taylor_d(album = "Lover") +
@@ -111,8 +110,7 @@ metacritic <- taylor_albums
 # Not Taylor's best work, so we'll give it a 72
 metacritic$metacritic_score[1] <- 72L
 metacritic <- subset(metacritic, !is.na(metacritic_score))
-metacritic$album_name <- factor(metacritic$album_name,
-                                levels = album_levels)
+metacritic$album_name <- factor(metacritic$album_name, levels = album_levels)
 
 ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
@@ -134,9 +132,10 @@ The `scale_fill_albums()` and `scale_color_albums()` functions automatically ass
 
 ```{r warning = FALSE, fig.alt = "The same bar graph as the previous image, but only showing five albums, and the ordering of the y-axis has been made random. However, the fill of the bar for each album still corresponds to that album's cover."}
 rand_critic <- metacritic[sample(seq_len(nrow(metacritic)), 5), ]
-rand_critic$album_name <- factor(rand_critic$album_name,
-                                 levels = sample(rand_critic$album_name,
-                                                 size = nrow(rand_critic)))
+rand_critic$album_name <- factor(
+  rand_critic$album_name,
+  levels = sample(rand_critic$album_name, size = nrow(rand_critic))
+)
 
 ggplot(rand_critic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
@@ -149,9 +148,11 @@ However, this also means that album names must match the expected names. That is
 
 ```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors for each bar a based on the ablum cover. On y-axis, evermore, folklore, and repuation, have been spelled in title case, rather than lower case, resulting in no bar showing for these albums."}
 upper_critic <- metacritic
-upper_critic$album_name <- factor(upper_critic$album_name,
-                                  levels = album_levels,
-                                  labels = title_case(album_levels))
+upper_critic$album_name <- factor(
+  upper_critic$album_name,
+  levels = album_levels,
+  labels = title_case(album_levels)
+)
 
 ggplot(upper_critic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +

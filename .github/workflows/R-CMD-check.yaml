@@ -28,6 +28,7 @@ jobs:
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TAYLOR_KEY: ${{ secrets.TAYLOR_KEY }}
       R_KEEP_PKG_SOURCE: yes
 
     steps:

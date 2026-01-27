@@ -6,10 +6,19 @@ test_that("abort_bad_argument() is informative.", {
   )
   expect_snapshot(error = TRUE, {
     abort_bad_argument("size", "be an integer", not = "character")
-    abort_bad_argument("size", must = "be an integer", not = "character",
-                       footer = c(i = "please"))
-    abort_bad_argument("size", must = "be an integer", not = "character",
-                       footer = "required", custom = "A new error")
+    abort_bad_argument(
+      "size",
+      must = "be an integer",
+      not = "character",
+      footer = c(i = "please")
+    )
+    abort_bad_argument(
+      "size",
+      must = "be an integer",
+      not = "character",
+      footer = "required",
+      custom = "A new error"
+    )
   })
 })
 
@@ -46,14 +55,16 @@ test_that("check_palette() works", {
   expect_identical(
     check_palette(c("firebrick", "goldenrod", "navy")),
     c(
-      firebrick = "#B22222", goldenrod = "#DAA520",
+      firebrick = "#B22222",
+      goldenrod = "#DAA520",
       navy = "#000080"
     )
   )
   expect_identical(
     check_palette(c("firebrick", "#009fb7", "#FED766")),
     c(
-      firebrick = "#B22222", `#009fb7` = "#009fb7",
+      firebrick = "#B22222",
+      `#009fb7` = "#009fb7",
       `#FED766` = "#FED766"
     )
   )
@@ -115,6 +126,7 @@ test_that("check_character() errors well", {
   expect_snapshot(error = TRUE, {
     check_character(1, arg = "taylor")
     check_character(NA_character_)
+    check_character(NULL)
   })
 })
 
@@ -122,4 +134,24 @@ test_that("character works", {
   expect_identical(check_character("string", "test_arg"), "string")
   expect_identical(check_character("String", "test_arg"), "String")
   expect_identical(check_character("STRING", "test_arg"), "STRING")
+  expect_identical(check_character(NULL, allow_null = TRUE), NULL)
+  expect_identical(
+    check_character(NA_character_, allow_na = TRUE),
+    NA_character_
+  )
+})
+
+test_that("check_logical() errors well", {
+  expect_snapshot(error = TRUE, {
+    check_logical(1, arg = "taylor")
+    check_logical(NA)
+    check_logical(NULL)
+  })
+})
+
+test_that("logical works", {
+  expect_identical(check_logical(TRUE, "test_arg"), TRUE)
+  expect_identical(check_logical(FALSE, "test_arg"), FALSE)
+  expect_identical(check_logical(NULL, allow_null = TRUE), NULL)
+  expect_identical(check_logical(NA, allow_na = TRUE), NA)
 })

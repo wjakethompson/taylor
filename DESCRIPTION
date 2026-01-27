@@ -15,27 +15,31 @@ URL: https://taylor.wjakethompson.com,
     https://github.com/wjakethompson/taylor
 BugReports: https://github.com/wjakethompson/taylor/issues
 Depends: 
-    R (>= 3.6)
+    R (>= 4.1.0)
 Imports: 
+    askpass,
     cli,
+    dplyr,
     ggplot2,
     glue,
+    httr2,
     lifecycle,
     methods,
     rlang,
     scales,
+    spotifyr,
     tibble,
+    tidyr,
     vctrs
 Suggests: 
     bookdown,
-    dplyr,
     knitr,
     patchwork,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
-    tidyr,
-    vdiffr (>= 1.0.2)
+    vdiffr (>= 1.0.2),
+    withr
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
@@ -44,4 +48,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

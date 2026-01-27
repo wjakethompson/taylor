@@ -16,5 +16,6 @@ NULL
 #' @importFrom lifecycle deprecated is_present deprecate_warn deprecate_soft
 #' @importFrom methods setOldClass
 #' @importFrom tibble tibble
+#' @importFrom rlang .data
 ## usethis namespace: end
 NULL

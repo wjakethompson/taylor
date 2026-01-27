@@ -13,3 +13,5 @@
 ^\.lintr$
 ^CRAN-SUBMISSION$
 ^\.httr-oauth$
+^[.]?air[.]toml$
+^\.vscode$

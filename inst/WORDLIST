@@ -1,7 +1,10 @@
+Acousticness
 CMD
 Colormind
+Danceability
 EP
 EPs
+Instrumentalness
 Mendes
 Metacritic
 Midnights
@@ -11,9 +14,11 @@ ORCID
 Pickler's
 Premade
 README
+Reccobeats
 Rey
 Rihanna
 Sheeran's
+SoundStat
 Spotify
 TMZ
 YYYY
@@ -30,7 +35,6 @@ ggplot
 ggplots
 lifecycle
 metacritic
-palmerpenguins
 pkgdown
 rlang
 stan

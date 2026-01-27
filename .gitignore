@@ -5,3 +5,5 @@
 docs
 inst/doc
 .httr-oauth
+data-raw/*.rds
+data-raw/soundstat/*.rds
