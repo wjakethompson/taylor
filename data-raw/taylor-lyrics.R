@@ -842,7 +842,7 @@ albums_only <- base_info |>
   ) |>
   arrange(album_name, track_number) |>
   mutate(
-    track_number = 1:n(),
+    track_number = seq_len(n()),
     bonus_track = TRUE,
     .by = album_name
   ) |>
