@@ -1,10 +1,10 @@
 test_that("data has expected dimensions", {
   # all songs
-  expect_equal(ncol(taylor_all_songs), 29L)
+  expect_equal(ncol(taylor_all_songs), 26L)
   expect_equal(ncol(taylor_all_songs$lyrics[[1]]), 4L)
 
   # album songs
-  expect_equal(ncol(taylor_album_songs), 29L)
+  expect_equal(ncol(taylor_album_songs), 26L)
   expect_equal(ncol(taylor_album_songs$lyrics[[1]]), 4L)
 
   # albums
@@ -50,18 +50,15 @@ test_that("column names match documentation expectation", {
     "track_release",
     "danceability",
     "energy",
-    "key",
     "loudness",
-    "mode",
-    "speechiness",
     "acousticness",
     "instrumentalness",
-    "liveness",
     "valence",
     "tempo",
-    "time_signature",
     "duration_ms",
     "explicit",
+    "key",
+    "mode",
     "key_name",
     "mode_name",
     "key_mode",
@@ -106,14 +103,8 @@ test_that("column names match documentation expectation", {
 })
 
 test_that("non-TV versions are excluded when possible", {
-  albums <- unique(taylor_all_songs$album_name)
-  albums <- albums[!is.na(albums)]
-
-  no_tv <- gsub("\\ \\(Taylor's Version\\)", "", albums)
-  counts <- as.data.frame(table(no_tv))
   exclude_albums <- c(
-    taylor_albums$album_name[which(taylor_albums$ep)],
-    as.character(counts$no_tv[which(counts$Freq > 1)])
+    taylor_albums$album_name[which(taylor_albums$ep)]
   )
 
   expect_false(any(exclude_albums %in% taylor_album_songs$album_name))
