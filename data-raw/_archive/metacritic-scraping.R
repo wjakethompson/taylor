@@ -1,3 +1,6 @@
+library(tidyverse)
+library(rvest)
+
 # Manual metacritic - boo!
 metacritic <- tribble(
   ~album_name,                           ~metacritic_score, ~user_score,
@@ -19,14 +22,23 @@ metacritic <- tribble(
 
 # Old metacritic website ~ summer 2023
 site <- read_html("https://www.metacritic.com/person/taylor-swift")
-metacritic <- html_table(site) %>%
-  pluck(2) %>%
-  separate_wider_regex(`Title:`,
-                       patterns = c(metacritic_score = "[0-9|tbd]*",
-                                    "\\n\\n[ ]*",
-                                    album_name = ".*")) %>%
-  mutate(metacritic_score = na_if(metacritic_score, "tbd"),
-         metacritic_score = as.integer(metacritic_score),
-         album_name = str_replace_all(album_name, fixed("[Taylor's Version]"),
-                                      "(Taylor's Version)")) %>%
+metacritic <- html_table(site) |>
+  pluck(2) |>
+  separate_wider_regex(
+    `Title:`,
+    patterns = c(
+      metacritic_score = "[0-9|tbd]*",
+      "\\n\\n[ ]*",
+      album_name = ".*"
+    )
+  ) |>
+  mutate(
+    metacritic_score = na_if(metacritic_score, "tbd"),
+    metacritic_score = as.integer(metacritic_score),
+    album_name = str_replace_all(
+      album_name,
+      fixed("[Taylor's Version]"),
+      "(Taylor's Version)"
+    )
+  ) |>
   select(album_name, metacritic_score, user_score = `User score:`)

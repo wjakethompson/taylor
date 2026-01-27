@@ -57,9 +57,21 @@ reference:
   - album_levels
   - title_case
 
+- title: Audio API access
+  contents:
+  - get_soundstat_audio_features
+  - soundstat-api
+  - get_spotify_access_token
+  - get_spotify_track_info
+  - get_reccobeats_audio_features
+  
 - title: Miscellaneous
   contents:
   - translate_bracelet
+
+- title: internal
+  contents:
+  - taylor_examples
 
 articles:
 - title: Get started

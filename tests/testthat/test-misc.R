@@ -6,9 +6,13 @@ test_that("capitalization works", {
 
   expect_identical(title_case("taylor swift"), "Taylor Swift")
   expect_identical(title_case("TAYLOR SWIFT"), "Taylor Swift")
-  expect_identical(title_case(c("fearless", "red", "1989")),
-                   c("Fearless", "Red", "1989"))
-  expect_identical(title_case("fearless (taylor's version)"),
-                   "Fearless (Taylor's Version)")
+  expect_identical(
+    title_case(c("fearless", "red", "1989")),
+    c("Fearless", "Red", "1989")
+  )
+  expect_identical(
+    title_case("fearless (taylor's version)"),
+    "Fearless (Taylor's Version)"
+  )
   expect_identical(title_case("taylor-swift"), "Taylor-swift")
 })

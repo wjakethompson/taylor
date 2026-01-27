@@ -4,3 +4,5 @@
 .Ruserdata
 docs
 inst/doc
+data-raw/*.rds
+data-raw/soundstat/*.rds

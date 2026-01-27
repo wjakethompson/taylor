@@ -2,6 +2,9 @@ linters: linters_with_defaults()
 exclusions: list(
     "R/ggplot2-color-scales.R" = list(
       object_name_linter = Inf
+    ),
+    "data-raw/taylor-lyrics.R" = list(
+      object_usage_linter = Inf
     )
   )
 encoding: "UTF-8"
