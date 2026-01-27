@@ -1,8 +1,17 @@
 # taylor (development version)
 
-* Updated API due to Spotify changes. Implications for data:
+* Updated data API due to Spotify changes. Implications for data:
   * Lost columns: `liveness`, `speechiness`, `time_signature`
-  * Data may be slightly different ([conversions](https://soundstat.info/article/Understanding-Audio-Analysis.html) applied to make it match as much as possible)
+  * Data may be slightly different due to differences between the Spotify and
+    new SoundStat API ([conversions](https://soundstat.info/article/Understanding-Audio-Analysis.html) available if desired)
+
+* *Fearless*, *Speak Now*, *Red*, and *1989* have been added back to
+  `taylor_album_songs` now that Taylor owns all of her masters. Both the
+  originals and Taylor's Version's are included in the data.
+
+* Two new songs added where Taylor is credited as a writer
+  * "Bein' With My Baby" from Shea Fisher's *Shea*
+  * "This Is Really Happening" from Britni Hoover's *Country Strong*
 
 # taylor 3.2.0
 
