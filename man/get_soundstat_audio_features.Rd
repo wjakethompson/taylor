@@ -58,7 +58,7 @@ loudness = -(1 - sound_value) * 14
 To automatically perform these conversions, set \code{convert_values = TRUE}.
 }
 \examples{
-\dontshow{if (taylor_examples()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (taylor_examples()) withAutoprint(\{ # examplesIf}
 get_soundstat_audio_features(track_id = "7Mts0OfPorF4iwOomvfqn1")
 \dontshow{\}) # examplesIf}
 }

@@ -23,7 +23,6 @@ Imports:
     ggplot2,
     glue,
     httr2,
-    jsonlite,
     lifecycle,
     methods,
     rlang,
@@ -39,7 +38,8 @@ Suggests:
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
-    vdiffr (>= 1.0.2)
+    vdiffr (>= 1.0.2),
+    withr
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
@@ -48,4 +48,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

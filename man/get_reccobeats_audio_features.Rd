@@ -50,7 +50,7 @@ converted to the mode name (e.g., 0 becomes \code{minor}).
 Access the Reccobeats API to get audio features for tracks.
 }
 \examples{
-\dontshow{if (taylor_examples()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (taylor_examples()) withAutoprint(\{ # examplesIf}
 # So High School
 get_reccobeats_audio_features(track_id = "7Mts0OfPorF4iwOomvfqn1")
 \dontshow{\}) # examplesIf}

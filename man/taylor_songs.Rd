@@ -7,7 +7,7 @@
 \title{Data for Taylor Swift songs}
 \format{
 \code{taylor_all_songs} is a \link[tibble:tibble-package]{tibble} with
-364 rows and 29 variables.
+372 rows and 26 variables.
 Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
@@ -34,40 +34,32 @@ official single.
 earliest of \code{album_release}, \code{promotional_release}, and \code{single_release}.
 }
 
-The next set of variables come from the Spotify API. See the documentation at
-\url{https://developer.spotify.com/documentation/web-api/reference/} for complete
-details.
+The next set of variables come from the SoundStat API. See the documentation at
+\url{https://soundstat.info/} for complete details.
 \itemize{
 \item \code{danceability}: How suitable a track is for dancing. \code{0.0} = least
 danceable, \code{1.0} = most danceable.
 \item \code{energy}: Perceptual measure of intensity and activity. \code{0.0} = least
 energy, \code{1.0} = most energy.
-\item \code{key}: The key the track is in. Integer maps to standard Pitch Class
-notation.
 \item \code{loudness}: Loudness of track in decibels (dB), averaged across the track.
-\item \code{mode}: Modality of a track (major/minor). \code{0} = minor, \code{1} = major.
-\item \code{speechiness}: The presence of spoken words in a track. Values above \code{0.66}
-indicate that the track is probably made entirely of spoken words. Values
-between \code{0.33} and \code{0.66} indicate both music and speech. Values less than
-\code{0.33} indicate the track is probably music or other non-speech tracks.
 \item \code{acousticness}: Confidence that the track is acoustic. \code{0.0} = low
 confidence, \code{1.0} = high confidence.
 \item \code{instrumentalness}: Confidence that the track is an instrumental track
 (i.e., no vocals). \code{0.0} = low confidence, \code{1.0} = high confidence.
-\item \code{liveness}: Confidence that the track is a live recording (i.e., an
-audience is present). \code{0.0} = low confidence, \code{1.0} = high confidence.
 \item \code{valence}: Musical positiveness conveyed by the track. \code{0.0} = low valence
 (e.g., sad, depressed, angry), \code{1.0} = high valence (e.g., happy, cheerful,
 euphoric).
 \item \code{tempo}: Estimated tempo of the track in beats per minute (BPM).
-\item \code{time_signature}: Estimated overall time signature.
 \item \code{duration_ms}: Duration of the track in milliseconds.
 \item \code{explicit}: Logical. Does the track contain explicit lyrics (\code{TRUE}) or not
 (\code{FALSE}).
+\item \code{key}: The key the track is in. Integer maps to standard Pitch Class
+notation.
+\item \code{mode}: Modality of a track (major/minor). \code{0} = minor, \code{1} = major.
 }
 
-Finally, the last set of variables includes those calculated from the Spotify
-API data, and a list-column containing song lyrics.
+Finally, the last set of variables includes those calculated from the
+Soundstat API data, and a list-column containing song lyrics.
 \itemize{
 \item \code{key_name}: Corresponds directly to the \code{key}, but the integer is converted
 to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).
@@ -91,14 +83,14 @@ track (e.g., \code{HAIM} is featured on \emph{no body, no crime}).
 }
 
 \code{taylor_album_songs} is a \link[tibble:tibble-package]{tibble} containing
-the same 29 variables, but only with
-240 rows, one for each song from an official studio
+the same 26 variables, but only with
+320 rows, one for each song from an official studio
 album (see Details).
 }
 \source{
 \url{https://genius.com/artists/Taylor-swift}
 
-\url{https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02}
+\url{https://soundstat.info}
 }
 \usage{
 taylor_all_songs

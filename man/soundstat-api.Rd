@@ -23,7 +23,7 @@ set_soundstat_api_key(key = NULL)
 Set and retrieve a SoundStat API key
 }
 \examples{
-\dontshow{if (taylor_examples()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (taylor_examples()) withAutoprint(\{ # examplesIf}
 \donttest{get_soundstat_api_key()}
 \dontshow{\}) # examplesIf}
 }

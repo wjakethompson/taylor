@@ -28,7 +28,7 @@ not (\code{FALSE}).
 Access the Spotify API to get metadata for audio tracks.
 }
 \examples{
-\dontshow{if (taylor_examples()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (taylor_examples()) withAutoprint(\{ # examplesIf}
 # So High School
 get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
 \dontshow{\}) # examplesIf}
