@@ -33,7 +33,8 @@ album_palettes <- lapply(
     midnights = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6"),
     speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
     `1989_tv` = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
-    tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0")
+    tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0"),
+    showgirl = c("#C44615", "#EB8246", "#F0CD92", "#6CAE90", "#3E5C38")
   ),
   color_palette
 )
@@ -56,7 +57,8 @@ album_compare <- color_palette(
     midnights = "#5A658B",
     speak_now_tv = "#4a2454",
     `1989_tv` = "#8BB5D2",
-    tortured_poets = "#1C160F"
+    tortured_poets = "#1C160F",
+    showgirl = "#C44615"
   )
 )
 
@@ -107,7 +109,8 @@ album_levels <- c(
   "Midnights",
   "Speak Now (Taylor's Version)",
   "1989 (Taylor's Version)",
-  "THE TORTURED POETS DEPARTMENT"
+  "THE TORTURED POETS DEPARTMENT",
+  "The Life of a Showgirl"
 )
 
 
@@ -137,6 +140,7 @@ taylor_col <- function(
   lookup_pal <- gsub("\\ ", "_", lookup_pal)
   lookup_pal <- gsub("\\(taylor's_version\\)", "tv", lookup_pal)
   lookup_pal <- gsub("the_(tortured_poets)_department", "\\1", lookup_pal)
+  lookup_pal <- gsub("the_life_of_a_(showgirl)", "\\1", lookup_pal)
 
   option <- switch(
     EXPR = lookup_pal,
@@ -155,6 +159,7 @@ taylor_col <- function(
     evermore = taylor::album_palettes[["evermore"]],
     midnights = taylor::album_palettes[["midnights"]],
     tortured_poets = taylor::album_palettes[["tortured_poets"]],
+    showgirl = taylor::album_palettes[["showgirl"]],
     {
       rlang::warn(paste0(
         "Album '",
