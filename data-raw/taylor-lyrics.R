@@ -116,6 +116,7 @@ base_info <- lyrics |>
         "THE TORTURED POETS DEPARTMENT",
       album_name == "The Tortured Poets Department The Anthology" ~
         "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
+      album_name == "The Life Of A Showgirl" ~ "The Life of a Showgirl",
       TRUE ~ album_name
     ),
     writer_only = album_name == "Writer",
@@ -290,6 +291,11 @@ base_info <- lyrics |>
       "Peoples Windows",
       "People's Windows"
     )
+  ) |>
+  # edits for The Life of a Showgirl
+  mutate(
+    track_name = str_replace_all(track_name, "Wish List", "Wi$h Li$t"),
+    track_name = str_replace_all(track_name, "Cancelled", "CANCELLED!"),
   ) |>
   # edits for general Taylor's Version and vault tracks
   mutate(
