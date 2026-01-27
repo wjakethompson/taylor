@@ -34,8 +34,8 @@ official single.
 earliest of \code{album_release}, \code{promotional_release}, and \code{single_release}.
 }
 
-The next set of variables come from the SoundStat API. See the documentation at
-\url{https://soundstat.info/} for complete details.
+The next set of variables come from the SoundStat API. See the documentation
+at \url{https://soundstat.info/} for complete details.
 \itemize{
 \item \code{danceability}: How suitable a track is for dancing. \code{0.0} = least
 danceable, \code{1.0} = most danceable.

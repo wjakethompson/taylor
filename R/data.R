@@ -71,8 +71,8 @@
 #' * `track_release`: The date the song was first publicly released. This is the
 #'   earliest of `album_release`, `promotional_release`, and `single_release`.
 #'
-#' The next set of variables come from the SoundStat API. See the documentation at
-#' <https://soundstat.info/> for complete details.
+#' The next set of variables come from the SoundStat API. See the documentation
+#' at <https://soundstat.info/> for complete details.
 #' * `danceability`: How suitable a track is for dancing. `0.0` = least
 #'   danceable, `1.0` = most danceable.
 #' * `energy`: Perceptual measure of intensity and activity. `0.0` = least
