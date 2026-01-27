@@ -21,18 +21,18 @@ album_palettes <- lapply(
   list(
     taylor_swift = c("#1D4737", "#81A757", "#1BAEC6", "#523d28", "#E7DBCC"),
     fearless = c("#6E4823", "#976F34", "#CBA863", "#ECD59F", "#E1D4C2"),
-    fearless_tv = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
     speak_now = c("#2E1924", "#6C3127", "#833C63", "#D1A0C7", "#F5E8E2"),
-    speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
     red = c("#201F39", "#A91E47", "#7E6358", "#B0A49A", "#DDD8C9"),
-    red_tv = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
     `1989` = c("#5D4E5D", "#846578", "#92573C", "#C6B69C", "#D8D8CF"),
-    `1989_tv` = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
     reputation = c("#2C2C2C", "#515151", "#5B5B5B", "#6E6E6E", "#B9B9B9"),
     lover = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),
     folklore = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),
     evermore = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),
+    fearless_tv = c("#624324", "#A47F45", "#CAA462", "#C5AA7C", "#EEDBA9"),
+    red_tv = c("#400303", "#731803", "#967862", "#B38468", "#C7C5B6"),
     midnights = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6"),
+    speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
+    `1989_tv` = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
     tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0")
   ),
   color_palette
@@ -44,18 +44,18 @@ album_compare <- color_palette(
   c(
     taylor_swift = "#1D4737",
     fearless = "#CBA863",
-    fearless_tv = "#624324",
     speak_now = "#833C63",
-    speak_now_tv = "#4a2454",
     red = "#A91E47",
-    red_tv = "#731803",
     `1989` = "#846578",
-    `1989_tv` = "#8BB5D2",
     reputation = "#2C2C2C",
     lover = "#EBBED3",
     folklore = "#949494",
     evermore = "#421E18",
+    fearless_tv = "#624324",
+    red_tv = "#731803",
     midnights = "#5A658B",
+    speak_now_tv = "#4a2454",
+    `1989_tv` = "#8BB5D2",
     tortured_poets = "#1C160F"
   )
 )
