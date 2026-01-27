@@ -697,6 +697,11 @@ feature_join <- full_join(
       "thanK you aIMee"
     )
   ) |>
+  # edits for The Life of a Showgirl
+  mutate(
+    track_name = str_replace_all(track_name, fixed("Wi$H Li$T"), "Wi$h Li$t"),
+    track_name = str_replace_all(track_name, fixed("Cancelled!"), "CANCELLED!")
+  ) |>
   # edits for Beautiful Eyes EP
   mutate(
     track_name = str_replace_all(
@@ -768,10 +773,18 @@ feature_join <- full_join(
   left_join(feature_join, by = c("album_name", "track_name")) |>
   filter(!map_lgl(features, is.null)) |>
   mutate(
-    dplyr::across(dplyr::everything(), is.na),
-    missing = sum(dplyr::c_across(dplyr::everything()))
+    missing_info = map_lgl(features, \(x) {
+      miss <- x |>
+        select(danceability:last_col()) |>
+        mutate(
+          dplyr::across(dplyr::everything(), is.na),
+          missing = sum(dplyr::c_across(dplyr::everything()))
+        ) |>
+        pull(missing)
+      miss > 0
+    })
   ) |>
-  filter(missing > 0) |>
+  filter(missing_info) |>
   select(album_name, track_name))
 
 # Check for tracks with multiple records. Should be 0 rows.
@@ -786,7 +799,7 @@ feature_join <- full_join(
 (extra <- feature_join |>
   anti_join(base_info, by = c("album_name", "track_name")))
 
-# Check for writing credits only. 7 rows currently expected:
+# Check for writing credits only. 9 rows currently expected:
 # 1 step forward, 3 steps back - Olivia Rodrigo
 # Bein' With My Baby - Shea Fisher
 # Best Days Of Your Life - Kellie Pickler
@@ -805,7 +818,7 @@ feature_join <- full_join(
 
 # Check for non-ASCII characters. 35 errors (5 rows) expected:
 # 9  à
-# 23 é
+# 27 é
 # 1  í
 # 1  ï
 # 1  ó
@@ -914,6 +927,7 @@ taylor_album_songs <- taylor_all_songs |>
 
 metacritic <- tribble(
   ~album_name, ~metacritic_name,
+  "The Life of a Showgirl",        "the-life-of-a-showgirl",
   "THE TORTURED POETS DEPARTMENT", "the-tortured-poets-department",
   "1989 (Taylor's Version)",       "1989-taylors-version",
   "Speak Now (Taylor's Version)",  "speak-now-taylors-version",
