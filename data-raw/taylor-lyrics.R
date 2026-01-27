@@ -468,7 +468,8 @@ spotify_ids <- tribble(
   "Midnights",                                      "1fnJ7k0bllNfL1kVdNVW1A",
   "Speak Now (Taylor's Version)",                   "5AEDGbliTTfjOB8TSm1sxt",
   "1989 (Taylor's Version)",                        "1o59UpKw81iHR0HPiSkJR0",
-  "THE TORTURED POETS DEPARTMENT",                  "5H7ixXZfsNMGbIE5OBSpcb"
+  "THE TORTURED POETS DEPARTMENT",                  "5H7ixXZfsNMGbIE5OBSpcb",
+  "The Life of a Showgirl",                         "4a6NzYL1YHRUgx9e3YZI6I"
 ) |>
   mutate(
     track = map(album_uri, function(.x) {
