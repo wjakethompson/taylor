@@ -179,12 +179,14 @@ get_soundstat_audio_features <- function(
 
   resp <- httr2::req_perform(api_call)
   if (httr2::resp_status(resp) == 202) {
+    # nocov start
     # nolint start: object_usage_linter
     monitor <- api_call |>
       httr2::req_url_path_append("status") |>
       httr2::req_perform()
     # nolint end
     resp <- httr2::req_perform(api_call)
+    # nocov end
   }
 
   raw_dat <- httr2::resp_body_json(resp)
