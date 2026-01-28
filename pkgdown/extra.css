@@ -1,10 +1,10 @@
 :root {
-  --nav-bkg: #5e7651;     /* nav bar background */
-  --nav-link: #FFFFFF;    /* nav bar link color */
+  --nav-bkg: #6CAE90;     /* nav bar background */
+  --nav-link: #6CAE90;    /* nav bar link color */
   --nav-higl: #FFFFFF;    /* nav hover background */
 
-  --sdb-link: #5e7651;    /* hyperlinks in sidebar */
-  --sdb-hover: #5e7651;   /* hyperlink hover in sidebar*/
+  --sdb-link: #3E5C38;    /* hyperlinks in sidebar */
+  --sdb-hover: #3E5C38;   /* hyperlink hover in sidebar*/
   --sdb-roles: #00000094; /* author roles */
 
   --pg-header: #000000;   /* heading color & text links */
@@ -15,7 +15,7 @@
   --btn-hover: #C44615;   /* copy button hover */
 
   --toc-active: #C44615;  /* background color for active TOC */
-  --toc-hover: #C44615;   /* background color for hover TOC */
+  --toc-hover: #6CAE90;   /* background color for hover TOC */
   --toc-htext: #FFFFFF;   /* color of TOC hover text (default to --nav-bkg) */
 }
 
@@ -23,7 +23,7 @@
 /* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
 /* Collapsible menu button on mobile (--nav-link) */
 span.navbar-toggler-icon {
-  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(0%) hue-rotate(240deg) brightness(105%) contrast(103%);
 }
 
 /* Anchor image in headings (--text-link) */
@@ -36,15 +36,15 @@ a.anchor {
   background-image: url('ts-orange.png');
   background-size: cover;
   background-position: center;
-  text-shadow: 2px 1px 2px #000 !important;
+  text-shadow: 0px 0px 10px #000 !important;
 }
 
 button.nav-link {
-  text-shadow: 2px 1px 2px #000;
+  text-shadow: 0px 0px 10px #000;
 }
 
 .navbar-brand {
-  text-shadow: 2px 1px 2px #000;
+  text-shadow: 0px 0px 10px #444;
 }
 
 .text-danger {
@@ -52,6 +52,14 @@ button.nav-link {
 }
 
 .text-muted {
+  text-shadow: none;
+}
+
+.dropdown-header {
+  text-shadow: none;
+}
+
+.dropdown-item, .dropdown-menu > li > a {
   text-shadow: none;
 }
 
@@ -110,19 +118,19 @@ figcaption {
 
 /* Color of links in navbar and hover links */
 .nav-link {
-  color: var(--nav-link) !important;
+  color: var(--nav-higl) !important;
 }
 
 /* active nav links */
 .navbar-nav .active>.nav-link {
   background: var(--nav-link);
-  color: var(--nav-bkg) !important;
+  color: var(--nav-higl) !important;
 }
 
 /* inactive nav links hover */
 .navbar-nav .nav-item>.nav-link:hover {
-  background: var(--nav-higl);
-  color: var(--nav-bkg) !important;
+  background: var(--nav-bkg);
+  color: var(--nav-higl) !important;
 }
 
 /* button padding */
@@ -132,8 +140,8 @@ li.nav-item {
 
 /* package name in navbar */
 .navbar-brand {
-  color: var(--nav-link) !important;
-  font-weight: bold;
+  color: var(--nav-higl) !important;
+  font-weight: bolder;
   font-size: 150%;
 }
 
@@ -143,34 +151,35 @@ li.nav-item {
 }
 
 .dropdown-menu {
-  background-color: var(--nav-bkg);
-  border-color: var(--nav-link);
+  background-color: var(--nav-higl);
+  border-color: var(--nav-bkg);
 }
 
 /* dropdown menu links */
 .dropdown-item, .dropdown-menu > li > a {
-  background-color: var(--nav-bkg);
+  background-color: var(--nav-higl);
   color: var(--nav-link);
 }
 
 /* dropdown menu links hover */
 .dropdown-item:hover, .dropdown-menu > li > a:hover {
-    color: var(--nav-bkg);
+    color: var(--nav-higl);
     text-decoration: none;
-    background-color: var(--nav-higl);
+    background-color: var(--nav-bkg);
 }
 
 /* Collapsible menu button on mobile */
 .navbar-toggler {
   border-color: var(--nav-bkg);
   color: var(--nav-higl);
+  background-color: var(--nav-bkg);
 }
 
 /* package verion - dev */
 .text-danger {
   font-size: 75%;
-  color: var(--nav-bkg) !important;
-  background-color: var(--nav-link);
+  color: var(--nav-higl) !important;
+  background-color: var(--nav-bkg);
   border-radius: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -290,7 +299,7 @@ h4 {
 
 #toc>.nav a.nav-link.active {
   background-color: var(--toc-active);
-  color: var(--nav-bkg) !important;
+  color: var(--nav-higl) !important;
 }
 
 #toc>.nav a.nav-link:hover,

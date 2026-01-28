@@ -11,12 +11,9 @@ template:
       creator: "@wjakethompson"
       card: summary_large_image
   bslib:
-    base_font:
-      google: "Mulish"
-    heading_font:
-      google: "Mulish"
-    code_font:
-      google: "Source Code Pro"
+    base_font: {google: "Mulish"}
+    heading_font: {google: "Mulish"}
+    code_font: {google: "Source Code Pro"}
     bg: "#FFFFFF"
     fg: "#333"
 
@@ -64,7 +61,7 @@ reference:
   - get_spotify_access_token
   - get_spotify_track_info
   - get_reccobeats_audio_features
-  
+
 - title: Miscellaneous
   contents:
   - translate_bracelet
