@@ -61,6 +61,7 @@ reference:
   - get_spotify_access_token
   - get_spotify_track_info
   - get_reccobeats_audio_features
+  - taylor_sitrep
 
 - title: Miscellaneous
   contents:
