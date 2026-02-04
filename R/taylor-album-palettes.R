@@ -113,6 +113,38 @@ album_levels <- c(
   "The Life of a Showgirl"
 )
 
+album_nicknames <- list(
+  taylor_swift = c("Debut"),
+  reputation = c("rep"),
+  fearless_tv = c("Fearless TV"),
+  red_tv = c("Red TV"),
+  speak_now_tv = c("Speak Now TV"),
+  `1989_tv` = c("1989 TV"),
+  tortured_poets = c("Tortured Poets", "TTPD"),
+  showgirl = c("Showgirl")
+)
+
+# Map `album_compare` palette to real names and nicknames ----------------------
+album_labels <- function() {
+  level_names <- tibble::enframe(
+    vec_data(album_compare),
+    name = "key",
+    value = "value"
+  )
+
+  tibble::as_tibble(album_nicknames) |>
+    tidyr::pivot_longer(
+      cols = dplyr::everything(),
+      names_to = "key",
+      values_to = "name"
+    ) |>
+    dplyr::distinct() |>
+    dplyr::left_join(level_names, by = "key") |>
+    dplyr::bind_rows(
+      dplyr::mutate(level_names, name = album_levels, .before = "value"),
+      dplyr::mutate(level_names, name = key, .before = "value")
+    )
+}
 
 # Scale functions --------------------------------------------------------------
 taylor_col <- function(

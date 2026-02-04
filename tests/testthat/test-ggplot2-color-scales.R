@@ -1817,3 +1817,116 @@ test_that("album scale works", {
   vdiffr::expect_doppelganger("albums-blank-bad-label", miss1)
   vdiffr::expect_doppelganger("albums-specified-bad-label", miss2)
 })
+
+test_that("album scale works with different capitalization", {
+  studio <- subset(taylor_albums, !ep)
+  studio$metacritic_score[which(is.na(studio$metacritic_score))] <- 92L
+
+  # real name
+  real_name <- ggplot(studio, aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    geom_point(
+      aes(fill = album_name, color = album_name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  # upper case
+  all_upper <- studio |>
+    dplyr::mutate(album_name = toupper(album_name)) |>
+    ggplot(aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    geom_point(
+      aes(fill = album_name, color = album_name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  # lower case
+  all_lower <- studio |>
+    dplyr::mutate(album_name = tolower(album_name)) |>
+    ggplot(aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    geom_point(
+      aes(fill = album_name, color = album_name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  # sentence case
+  sentence <- studio |>
+    dplyr::mutate(
+      album_name = title_case(album_levels)
+    ) |>
+    ggplot(aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    geom_point(
+      aes(fill = album_name, color = album_name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  # mixed case
+  mixed <- studio |>
+    tibble::rowid_to_column(var = "album_num") |>
+    dplyr::mutate(
+      album_name = dplyr::case_when(
+        .data$album_num == 15 ~ "tortured_poets",
+        .data$album_num %% 4 == 0 ~ title_case(album_levels),
+        .data$album_num %% 3 == 0 ~ tolower(album_name),
+        .data$album_num %% 2 == 0 ~ toupper(album_name),
+        .default = album_name
+      )
+    ) |>
+    ggplot(aes(x = metacritic_score, y = album_name)) +
+    geom_col(aes(fill = album_name)) +
+    geom_point(
+      aes(fill = album_name, color = album_name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  # nicknames
+  keys <- tibble::enframe(vec_data(album_compare)) |>
+    dplyr::mutate(real_name = album_levels) |>
+    dplyr::select(key = "name", "real_name")
+
+  nicknames <- album_labels() |>
+    dplyr::filter(
+      !(.data$name %in% c(album_levels, names(vec_data(album_compare))))
+    ) |>
+    dplyr::left_join(keys, by = "key") |>
+    dplyr::left_join(studio, by = c("real_name" = "album_name")) |>
+    ggplot(aes(x = metacritic_score, y = name)) +
+    geom_col(aes(fill = name)) +
+    geom_point(
+      aes(fill = name, color = name),
+      shape = 21,
+      size = 5
+    ) +
+    expand_limits(x = c(0, 100)) +
+    scale_fill_albums() +
+    scale_color_albums()
+
+  vdiffr::expect_doppelganger("real-names", real_name)
+  vdiffr::expect_doppelganger("upper-names", all_upper)
+  vdiffr::expect_doppelganger("lower-names", all_lower)
+  vdiffr::expect_doppelganger("sentence-names", sentence)
+  vdiffr::expect_doppelganger("mixed-names", mixed)
+  vdiffr::expect_doppelganger("nicknames-names", nicknames)
+})

@@ -238,8 +238,17 @@ scale_fill_albums <- function(
   limits = force,
   na.value = NA
 ) {
-  album_pal <- vec_data(taylor::album_compare)
-  names(album_pal) <- taylor::album_levels
+  album_pal <- album_labels() |>
+    dplyr::select("name", "value") |>
+    tibble::deframe()
+
+  album_pal <- rep(album_pal, 4) |>
+    rlang::set_names(c(
+      names(album_pal),
+      tolower(names(album_pal)),
+      toupper(names(album_pal)),
+      title_case(names(album_pal))
+    ))
 
   ggplot2::scale_fill_manual(
     values = album_pal,
@@ -260,8 +269,17 @@ scale_colour_albums <- function(
   limits = force,
   na.value = NA
 ) {
-  album_pal <- vec_data(taylor::album_compare)
-  names(album_pal) <- taylor::album_levels
+  album_pal <- album_labels() |>
+    dplyr::select("name", "value") |>
+    tibble::deframe()
+
+  album_pal <- rep(album_pal, 4) |>
+    rlang::set_names(c(
+      names(album_pal),
+      tolower(names(album_pal)),
+      toupper(names(album_pal)),
+      title_case(names(album_pal))
+    ))
 
   ggplot2::scale_colour_manual(
     values = album_pal,
