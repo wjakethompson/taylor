@@ -59,7 +59,7 @@ notation.
 }
 
 Finally, the last set of variables includes those calculated from the
-Soundstat API data, and a list-column containing song lyrics.
+SoundStat API data, and a list-column containing song lyrics.
 \itemize{
 \item \code{key_name}: Corresponds directly to the \code{key}, but the integer is converted
 to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).

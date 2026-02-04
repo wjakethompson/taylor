@@ -94,7 +94,7 @@
 #' * `mode`: Modality of a track (major/minor). `0` = minor, `1` = major.
 #'
 #' Finally, the last set of variables includes those calculated from the
-#' Soundstat API data, and a list-column containing song lyrics.
+#' SoundStat API data, and a list-column containing song lyrics.
 #' * `key_name`: Corresponds directly to the `key`, but the integer is converted
 #'   to the key name using Pitch Class notation (e.g., `0` becomes `C`).
 #' * `mode_name`: Corresponds directly to the `mode`, but the integer is
