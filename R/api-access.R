@@ -90,7 +90,7 @@ get_spotify_access_token <- function() {
   }
 
   if (is_testing() || is_pkgdown()) {
-    return(spotify_testing_key())
+    return(spotify_testing_key()) # nolint: return_linter
   } else {
     cli::cli_abort(
       cli::format_message(

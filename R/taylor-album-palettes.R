@@ -142,7 +142,7 @@ album_labels <- function() {
     dplyr::left_join(level_names, by = "key") |>
     dplyr::bind_rows(
       dplyr::mutate(level_names, name = album_levels, .before = "value"),
-      dplyr::mutate(level_names, name = key, .before = "value")
+      dplyr::mutate(level_names, name = .data$key, .before = "value")
     )
 }
 
