@@ -153,10 +153,11 @@ spotify_testing_key <- function() {
 #'
 #' @details
 #' Due to differences in algorithms and methodologies, the SoundStat audio
-#' features are on a slightly different scale than the Spotify audio features
-#' that were originally included in [taylor] prior the [changes to the Spotify
-#' API](). We can convert the SoundStat values to the Spotify scale using the
-#' formulas in the [SoundStat
+#' features are on a slightly different scale than the audio features that were
+#' originally included in [taylor] prior to the [changes to the Spotify
+#' API](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api).
+#' We can convert the SoundStat values to the Spotify scale using the formulas
+#' in the [SoundStat
 #' docs](https://soundstat.info/article/Understanding-Audio-Analysis.html):
 #'
 #' ```

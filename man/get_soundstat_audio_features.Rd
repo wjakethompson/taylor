@@ -45,9 +45,10 @@ Access the SoundStat API to get audio features for tracks.
 }
 \details{
 Due to differences in algorithms and methodologies, the SoundStat audio
-features are on a slightly different scale than the Spotify audio features
-that were originally included in \link{taylor} prior the \url{changes to the SpotifyAPI}. We can convert the SoundStat values to the Spotify scale using the
-formulas in the \href{https://soundstat.info/article/Understanding-Audio-Analysis.html}{SoundStat docs}:
+features are on a slightly different scale than the audio features that were
+originally included in \link{taylor} prior to the \href{https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api}{changes to the Spotify API}.
+We can convert the SoundStat values to the Spotify scale using the formulas
+in the \href{https://soundstat.info/article/Understanding-Audio-Analysis.html}{SoundStat docs}:
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{acousticness = sound_value * 0.005
 energy = sound_value * 2.25

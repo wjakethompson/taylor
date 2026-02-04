@@ -104,12 +104,13 @@ released singles.
 }
 \details{
 \code{taylor_all_songs} contains all songs in Taylor's discography.
-Lyrics come from Genius, and songs characteristics come from the Spotify API.
+Lyrics come from Genius, and songs characteristics come from the SoundStat
+API.
 Some data is known to be missing. The Beautiful Eyes EP is not available on
-any streaming service, and therefore has no data from the Spotify API.
+any streaming service, and therefore has no data from the SoundStat API.
 Similarly, the song \emph{American Girl}, a cover of the Tom Petty original, was
 released exclusively on Rhapsody (now Napster), and therefore also does not
-have data from the Spotify API.
+have data from the SoundStat API.
 
 For songs released separately from Taylor's official albums or EPs, album
 information is not included. For example, \emph{I Don't Wanna Live Forever} was

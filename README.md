@@ -26,8 +26,8 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 
 The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
-comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
-API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+comes [Genius](https://genius.com/artists/Taylor-swift) and the
+[SoundStat API](https://soundstat.info).
 
 <figure>
 <img src="https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif"
@@ -55,12 +55,14 @@ remotes::install_github("wjakethompson/taylor")
 ## Example
 
 There are three main data sets. The first is `taylor_album_songs`, which
-includes lyrics and audio features from the Spotify API for all songs on
-Taylor’s official studio albums. Notably this excludes singles released
-separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*,
-etc.), and non-Taylor-owned albums that have a Taylor-owned alternative
-(e.g., *Fearless* is excluded in favor of *Fearless (Taylor’s
-Version)*). We support artists owning their work.
+includes lyrics and audio features from the SoundStat API for all songs
+on Taylor’s official studio albums. Notably this excludes singles
+released separately from an album (e.g., “Only the Young”, “Christmas
+Tree Farm”, etc.) and EPs (e.g., *Beautiful Eyes*). However, now that
+Taylor [owns all her
+masters](https://www.taylorswift.com/read-my-letter/), both the original
+and Taylor’s Version are included for albums that were rerecorded (e.g.,
+both *Fearless* and *Fearless (Taylor’s Version)* are present).
 
 ``` r
 taylor_album_songs
@@ -87,8 +89,8 @@ taylor_album_songs
 
 You can access Taylor’s entire discography with `taylor_all_songs`. This
 includes all of the songs in `taylor_album_songs` plus EPs, individual
-singles, and the original versions of albums that have been re-released
-as *Taylor’s Version*.
+singles, and songs where Taylor is credited as a featured artist or
+writer.
 
 ``` r
 taylor_all_songs
