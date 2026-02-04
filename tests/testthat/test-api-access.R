@@ -43,7 +43,41 @@ test_that("spotify api", {
     get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
   )
   expect_s3_class(err, "rlang_error")
-  expect_match(err$message, "No access token found")
+  expect_match(err$message, "Client ID or Secret not found")
+})
+
+test_that("setting spotify envvar", {
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = "",
+    "SPOTIFY_CLIENT_SECRET" = ""
+  ))
+  set_spotify_api_key(id = "my-client-id", secret = "my-client-secret")
+  expect_equal(Sys.getenv("SPOTIFY_CLIENT_ID"), "my-client-id")
+  expect_equal(Sys.getenv("SPOTIFY_CLIENT_SECRET"), "my-client-secret")
+
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = "",
+    "SPOTIFY_CLIENT_SECRET" = ""
+  ))
+  err <- rlang::catch_cnd(set_spotify_api_key(id = "my-client-id"))
+  expect_s3_class(err, "rlang_error")
+  expect_match(err$message, "Client Secret not provided")
+
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = "",
+    "SPOTIFY_CLIENT_SECRET" = ""
+  ))
+  err <- rlang::catch_cnd(set_spotify_api_key(secret = "my-client-secret"))
+  expect_s3_class(err, "rlang_error")
+  expect_match(err$message, "Client ID not provided")
+
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = "",
+    "SPOTIFY_CLIENT_SECRET" = ""
+  ))
+  err <- rlang::catch_cnd(set_spotify_api_key())
+  expect_s3_class(err, "rlang_error")
+  expect_match(err$message, "Client ID not provided")
 })
 
 test_that("soundstat api", {
