@@ -1,5 +1,25 @@
 # taylor (development version)
 
+## Breaking changes
+
+* `taylor_all_songs` and `taylor_album_songs` now use audio features from the
+  [SoundStat API](https://soundstat.info) due to Spotify [removing
+  access](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api)
+  to their audio features endpoint.
+  * Lost columns: `liveness`, `speechiness`, `time_signature`.
+  * Data may be slightly different due to differences between the Spotify and
+    new SoundStat API ([conversions](https://soundstat.info/article/Understanding-Audio-Analysis.html) available if desired through the 
+    `convert_values` argument to `get_soundstat_audio_features()`).
+
+* *Fearless*, *Speak Now*, *Red*, and *1989* have been added back to
+  `taylor_album_songs` now that Taylor [owns all of her
+  masters](https://taylorswift.com/read-my-letter). Both the
+  originals and Taylor's Version's are now included in the dataset.
+
+## New features
+
+### New data
+
 * New data and visualization tools have been added for
   *The Life of a Showgirl*.
   * Added lyrics and SoundState audio features to `taylor_all_songs` and
@@ -8,9 +28,19 @@
   * Added a new themed color palette to `album_palettes`.
   * Added a new single color to `album_compare`.
 
-* New functions for accessing APIs for track information
-  (`get_spotify_track_info()`) and audio features
-  (`get_soundstat_audio_features()` and `get_reccobeats_audio_features()`).
+* Two new songs added where Taylor is credited as a writer
+  * "Bein' With My Baby" from Shea Fisher's *Shea*
+  * "This Is Really Happening" from Britni Hoover's *Country Strong*
+
+### API access
+
+* `get_spotify_track_info()` is now exported to use for gathering track
+  metadata.
+
+* `get_soundstat_audio_features()` and `get_reccobeats_audio_features()` have
+  been added to provide access to audio features through the
+  [SoundStat](https://soundstat.info) and [ReccoBeats](https://reccobeats.com/)
+  APIs, respectively.
 
 * New helper functions for setting up API configuration.
   * `set_spotify_api_key()` / `get_spotify_api_key()`
@@ -18,18 +48,12 @@
 
 * `taylor_sitrep()` can be used to quickly check the configuration of API keys.
 
-* Updated data API due to Spotify changes. Implications for data:
-  * Lost columns: `liveness`, `speechiness`, `time_signature`
-  * Data may be slightly different due to differences between the Spotify and
-    new SoundStat API ([conversions](https://soundstat.info/article/Understanding-Audio-Analysis.html) available if desired)
+## Minor improvements and fixes
 
-* *Fearless*, *Speak Now*, *Red*, and *1989* have been added back to
-  `taylor_album_songs` now that Taylor owns all of her masters. Both the
-  originals and Taylor's Version's are included in the data.
-
-* Two new songs added where Taylor is credited as a writer
-  * "Bein' With My Baby" from Shea Fisher's *Shea*
-  * "This Is Really Happening" from Britni Hoover's *Country Strong*
+* `scale_color_albums()` and `scale_fill_albums()` now recognize alternate
+  capitalization (e.g., *Folklore* instead of *folklore*) and common nicknames
+  (e.g., *Debut* for *Taylor Swift*) when mapping `album_compare` to album
+  names.
 
 # taylor 3.2.0
 
