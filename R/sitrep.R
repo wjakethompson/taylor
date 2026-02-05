@@ -1,8 +1,10 @@
 #' Situation report for APIs
 #'
-#' Something...
+#' Check configuration status for Spotify and SoundStat APIs.
 #'
+#' @return Called for side effects.
 #' @export
+#'
 #' @examplesIf taylor_examples()
 #' taylor_sitrep()
 taylor_sitrep <- function() {

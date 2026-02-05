@@ -6,8 +6,11 @@
 \usage{
 taylor_sitrep()
 }
+\value{
+Called for side effects.
+}
 \description{
-Something...
+Check configuration status for Spotify and SoundStat APIs.
 }
 \examples{
 \dontshow{if (taylor_examples()) withAutoprint(\{ # examplesIf}

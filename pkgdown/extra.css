@@ -1,22 +1,36 @@
 :root {
-  --nav-bkg: #6CAE90;     /* nav bar background */
-  --nav-link: #6CAE90;    /* nav bar link color */
-  --nav-higl: #FFFFFF;    /* nav hover background */
+  --nav-bkg: #6CAE90;
+  /* nav bar background */
+  --nav-link: #6CAE90;
+  /* nav bar link color */
+  --nav-higl: #FFFFFF;
+  /* nav hover background */
 
-  --sdb-link: #3E5C38;    /* hyperlinks in sidebar */
-  --sdb-hover: #3E5C38;   /* hyperlink hover in sidebar*/
-  --sdb-roles: #00000094; /* author roles */
+  --sdb-link: #3E5C38;
+  /* hyperlinks in sidebar */
+  --sdb-hover: #3E5C38;
+  /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094;
+  /* author roles */
 
-  --pg-header: #000000;   /* heading color & text links */
-  --text-link: #C44615;   /* hyperlinks in text */
-  --a-hover: #C44615;     /* hyperlink hover */
+  --pg-header: #000000;
+  /* heading color & text links */
+  --text-link: #C44615;
+  /* hyperlinks in text */
+  --a-hover: #C44615;
+  /* hyperlink hover */
 
-  --btn-color: #000000;   /* copy button color */
-  --btn-hover: #C44615;   /* copy button hover */
+  --btn-color: #000000;
+  /* copy button color */
+  --btn-hover: #C44615;
+  /* copy button hover */
 
-  --toc-active: #C44615;  /* background color for active TOC */
-  --toc-hover: #6CAE90;   /* background color for hover TOC */
-  --toc-htext: #FFFFFF;   /* color of TOC hover text (default to --nav-bkg) */
+  --toc-active: #C44615;
+  /* background color for active TOC */
+  --toc-hover: #6CAE90;
+  /* background color for hover TOC */
+  --toc-htext: #FFFFFF;
+  /* color of TOC hover text (default to --nav-bkg) */
 }
 
 
@@ -59,11 +73,13 @@ button.nav-link {
   text-shadow: none;
 }
 
-.dropdown-item, .dropdown-menu > li > a {
+.dropdown-item,
+.dropdown-menu>li>a {
   text-shadow: none;
 }
 
-.dropdown-item:hover, .dropdown-menu > li > a:hover {
+.dropdown-item:hover,
+.dropdown-menu>li>a:hover {
   text-shadow: none;
 }
 
@@ -88,13 +104,16 @@ button.nav-link {
     padding: 2rem 0;
     border-bottom: 1px solid $faint-border;
 
-    h1 {margin-top: 0rem}
+    h1 {
+      margin-top: 0rem
+    }
 
     @include media-breakpoint-down(sm) {
       margin: 0.5rem 0;
       padding: 0.5rem 0;
     }
   }
+
   img.logo {
     margin-left: 0;
 
@@ -156,16 +175,18 @@ li.nav-item {
 }
 
 /* dropdown menu links */
-.dropdown-item, .dropdown-menu > li > a {
+.dropdown-item,
+.dropdown-menu>li>a {
   background-color: var(--nav-higl);
   color: var(--nav-link);
 }
 
 /* dropdown menu links hover */
-.dropdown-item:hover, .dropdown-menu > li > a:hover {
-    color: var(--nav-higl);
-    text-decoration: none;
-    background-color: var(--nav-bkg);
+.dropdown-item:hover,
+.dropdown-menu>li>a:hover {
+  color: var(--nav-higl);
+  text-decoration: none;
+  background-color: var(--nav-bkg);
 }
 
 /* Collapsible menu button on mobile */
@@ -209,7 +230,8 @@ li.nav-item {
 }
 
 /* headings */
-h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
+h2[data-toc-skip],
+#pkgdown-sidebar h2[data-toc-skip] {
   font-size: 1.2em;
   text-transform: uppercase;
   color: var(--pg-header);
@@ -232,6 +254,7 @@ aside small.roles {
 a {
   color: var(--text-link);
 }
+
 a:hover {
   color: var(--a-hover);
 }
@@ -242,6 +265,7 @@ p a {
   text-decoration-skip-ink: none;
   text-decoration-thickness: from-font;
 }
+
 p a:hover {
   text-decoration: underline var(--text-link) solid;
   text-decoration-skip-ink: none;
@@ -255,6 +279,7 @@ h1 {
   color: var(--pg-header);
   letter-spacing: .08em;
 }
+
 h2 {
   font-size: 1.7em;
   text-transform: none;
@@ -262,6 +287,7 @@ h2 {
   color: var(--pg-header);
   letter-spacing: .08em;
 }
+
 h3 {
   font-size: 1.2em;
   text-transform: none;
@@ -269,6 +295,7 @@ h3 {
   color: var(--pg-header);
   letter-spacing: .1em;
 }
+
 h4 {
   font-size: 1.2em;
   text-transform: none;
@@ -312,4 +339,17 @@ h4 {
 table.taylor-examples td {
   width: 33.333%;
   vertical-align: middle;
+}
+
+/* News --------------------------------------------------------------------- */
+li p {
+  margin-bottom: 0rem;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+ul ul li {
+  margin-bottom: 0rem;
 }

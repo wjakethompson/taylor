@@ -131,6 +131,7 @@ surprise_song_count <- eras_tour_surprise |>
     surprise_count = 0L
   ) |>
   mutate(
+    album_name = gsub(" \\(Taylor's Version\\)", "", album_name),
     album_name = replace_na(album_name, "Other"),
     album_group = album_name,
     album_name = factor(
@@ -215,8 +216,9 @@ tour1 <- surprise_dat |>
     na.rm = TRUE
   ) +
   geom_line(
-    data = ~ filter(.x, album_name == "1989 (Taylor's Version)"),
-    aes(x = date, y = surprise_count, color = album_name),
+    data = ~ filter(.x, album_name == "1989"),
+    aes(x = date, y = surprise_count),
+    color = album_compare["1989_tv"],
     show.legend = FALSE,
     linewidth = 2,
     na.rm = TRUE
@@ -241,8 +243,9 @@ tour2 <- surprise_dat |>
     na.rm = TRUE
   ) +
   geom_line(
-    data = ~ filter(.x, album_name == "1989 (Taylor's Version)"),
-    aes(x = date, y = surprise_count, color = album_name),
+    data = ~ filter(.x, album_name == "1989"),
+    aes(x = date, y = surprise_count),
+    color = album_compare["1989_tv"],
     show.legend = FALSE,
     linewidth = 2,
     na.rm = TRUE
