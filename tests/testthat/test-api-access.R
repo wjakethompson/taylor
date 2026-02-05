@@ -200,28 +200,56 @@ test_that("reccobeats api", {
 })
 
 test_that("api testing helpers", {
-  withr::local_envvar(list("IN_PKGDOWN" = "true", "TESTTHAT" = "true"))
+  withr::local_envvar(
+    list(
+      "IN_PKGDOWN" = "true",
+      "TESTTHAT" = "true",
+      "TAYLOR_KEY" = "sourdough"
+    )
+  )
   expect_true(taylor_examples())
   expect_true(is_testing())
   expect_true(is_pkgdown())
 
-  withr::local_envvar(list("IN_PKGDOWN" = "false", "TESTTHAT" = "true"))
+  withr::local_envvar(
+    list(
+      "IN_PKGDOWN" = "false",
+      "TESTTHAT" = "true",
+      "TAYLOR_KEY" = "sourdough"
+    )
+  )
   expect_false(taylor_examples())
   expect_true(is_testing())
   expect_false(is_pkgdown())
 
-  withr::local_envvar(list("IN_PKGDOWN" = "true", "TESTTHAT" = "false"))
+  withr::local_envvar(
+    list(
+      "IN_PKGDOWN" = "true",
+      "TESTTHAT" = "false",
+      "TAYLOR_KEY" = "sourdough"
+    )
+  )
   expect_true(taylor_examples())
   expect_false(is_testing())
   expect_true(is_pkgdown())
 
-  withr::local_envvar(list("IN_PKGDOWN" = "false", "TESTTHAT" = "false"))
+  withr::local_envvar(
+    list(
+      "IN_PKGDOWN" = "false",
+      "TESTTHAT" = "false",
+      "TAYLOR_KEY" = "sourdough"
+    )
+  )
   expect_false(taylor_examples())
   expect_false(is_testing())
   expect_false(is_pkgdown())
 
   withr::local_envvar(
-    list("IN_PKGDOWN" = "true", "TESTTHAT" = "true", "TAYLOR_KEY" = "")
+    list(
+      "IN_PKGDOWN" = "true",
+      "TESTTHAT" = "true",
+      "TAYLOR_KEY" = ""
+    )
   )
   expect_false(taylor_examples())
   expect_true(is_testing())
