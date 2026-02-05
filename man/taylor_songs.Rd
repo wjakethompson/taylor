@@ -112,11 +112,12 @@ Similarly, the song \emph{American Girl}, a cover of the Tom Petty original, was
 released exclusively on Rhapsody (now Napster), and therefore also does not
 have data from the SoundStat API.
 
-For songs released separately from Taylor's official albums or EPs, album
-information is not included. For example, \emph{I Don't Wanna Live Forever} was
-released as part of the \emph{Fifty Shades Darker} movie soundtrack. However, the
-\code{album_name} column for this song is \code{NA}, indicating that it does not appear
-on one of Taylor's albums.
+For songs released separately from Taylor's official albums or EPs, full
+album information is not included.
+For example, \emph{I Don't Wanna Live Forever} was released as part of the
+\emph{Fifty Shades Darker (Original Motion Picture Soundtrack)}.
+However, the \code{album_release} and \code{track_number} columns for this song are
+\code{NA}.
 
 Songs are only included one time. For example, if a song appears on both the
 standard and deluxe version of an album, there is only one record of the
@@ -135,12 +136,5 @@ edition.
 \code{taylor_album_songs} contains the same information as \code{taylor_all_songs}, but
 only for Taylor's official studio albums. Thus, \code{taylor_album_songs} is a
 subset of \code{\link{taylor_all_songs}}, with EPs and individual singles excluded.
-Critically, this subset also only includes versions owned by Taylor when
-possible, because we stan artists owning their own work. This means that
-although both \emph{Fearless} and \emph{Fearless (Taylor's Version)} appear in the full
-\code{\link{taylor_all_songs}} data, only \emph{Fearless (Taylor's Version)} appears in this
-subset. This also means that this data set will change as additional
-re-releases are made available (i.e., \emph{Red} was replaced with
-\emph{Red (Taylor's Version)} in \href{https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/}{version 1.0.0}).
 }
 \keyword{datasets}

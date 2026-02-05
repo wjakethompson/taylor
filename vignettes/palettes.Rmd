@@ -63,6 +63,7 @@ album_compare
 The taylor package comes with a set of functions built in for plotting in ggplot2 with the album palettes. For example, we can use `scale_fill_taylor_c()` to create a continuous scale based on one of the album palettes. For more details on how to use the scale functions included in taylor, check out `vignette("plotting")`.
 
 ```{r message = FALSE, fig.alt = "A heatmap showing a positive relationship between the waiting time between eruptions and the length of eruptions at the Old Faithful geyser. The heat map is colored using the palette based on Fearless (Taylor's Version), which moves from a dark golden brown for low density combinations up to bright gold for high density combinations."}
+
 library(ggplot2)
 
 p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
@@ -75,6 +76,7 @@ p + scale_fill_taylor_c(album = "Fearless (Taylor's Version)")
 You can also use your custom palettes with ggplot2. For example, we can create a palette of greens, and then use `ggplot2::scale_fill_gradientn()` or `ggplot2::scale_color_gradientn()` to use the palette.
 
 ```{r fig.alt = "The same heatmap as the previous figure, but instead of the fill using a palette based on Fearless (Taylor's Version), the color palette goes from light green to dark green."}
+
 green_pal <- color_palette(c("#E5F5E0", "#A1D99B", "#31A354"))
 green_pal
 
@@ -87,9 +89,12 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the [`penguins`](`?penguins`) to map our palette to the species of penguin.
 
 ```{r message = FALSE, warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from our custom color palette. Adelie penguins are shown in red circles, Chinstrap penguins in yellow triangles, and Gentoo penguins in blue squares."}
-penguin_pal <- color_palette(c(Adelie = "firebrick",
-                               Chinstrap = "goldenrod",
-                               Gentoo = "navy"))
+
+penguin_pal <- color_palette(c(
+  Adelie = "firebrick",
+  Chinstrap = "goldenrod",
+  Gentoo = "navy"
+))
 penguin_pal
 
 ggplot(penguins, aes(x = bill_len, y = bill_dep)) +

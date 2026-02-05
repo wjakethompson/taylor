@@ -17,13 +17,10 @@ specifying each album individually, you can use this shortcut vector that has
 already specified the ordering.
 }
 \details{
-Albums are listed in release order, with one notable exception. The
-"Taylor's Version" releases are list directly following the original. That
-is, \emph{Fearless (Taylor's Version)} comes directly after \emph{Fearless}, rather
-than after \emph{evermore}, when it was released. This is because
-"Taylor's Version" is often a stand-in for the original, as in
-\code{\link{taylor_album_songs}}. Thus, it more often makes more sense for the album to
-be placed with the original, rather than in the actual release order.
+Albums are listed in release order, including the "Taylor's Version"
+releases.
+That means that \emph{Fearless (Taylor's Version)} comes directly after
+\emph{evermore}, rather than after \emph{Taylor Swift} or the original \emph{Fearless}.
 }
 \examples{
 library(ggplot2)

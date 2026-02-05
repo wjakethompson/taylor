@@ -14,11 +14,12 @@
 #' released exclusively on Rhapsody (now Napster), and therefore also does not
 #' have data from the SoundStat API.
 #'
-#' For songs released separately from Taylor's official albums or EPs, album
-#' information is not included. For example, *I Don't Wanna Live Forever* was
-#' released as part of the *Fifty Shades Darker* movie soundtrack. However, the
-#' `album_name` column for this song is `NA`, indicating that it does not appear
-#' on one of Taylor's albums.
+#' For songs released separately from Taylor's official albums or EPs, full
+#' album information is not included.
+#' For example, *I Don't Wanna Live Forever* was released as part of the
+#' *Fifty Shades Darker (Original Motion Picture Soundtrack)*.
+#' However, the `album_release` and `track_number` columns for this song are
+#' `NA`.
 #'
 #' Songs are only included one time. For example, if a song appears on both the
 #' standard and deluxe version of an album, there is only one record of the
@@ -37,14 +38,6 @@
 #' `taylor_album_songs` contains the same information as `taylor_all_songs`, but
 #' only for Taylor's official studio albums. Thus, `taylor_album_songs` is a
 #' subset of [`taylor_all_songs`], with EPs and individual singles excluded.
-#' Critically, this subset also only includes versions owned by Taylor when
-#' possible, because we stan artists owning their own work. This means that
-#' although both *Fearless* and *Fearless (Taylor's Version)* appear in the full
-#' [`taylor_all_songs`] data, only *Fearless (Taylor's Version)* appears in this
-#' subset. This also means that this data set will change as additional
-#' re-releases are made available (i.e., *Red* was replaced with
-#' *Red (Taylor's Version)* in [version
-#' 1.0.0](https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/)).
 #'
 #' @format `taylor_all_songs` is a [tibble][tibble::tibble-package] with
 #' `r nrow(taylor_all_songs)` rows and `r ncol(taylor_all_songs)` variables.

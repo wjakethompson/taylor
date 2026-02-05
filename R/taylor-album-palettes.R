@@ -73,13 +73,11 @@ album_compare <- color_palette(
 #'   name, in an order that can be used for making factor variables.
 #'
 #' @details
-#' Albums are listed in release order, with one notable exception. The
-#' "Taylor's Version" releases are list directly following the original. That
-#' is, *Fearless (Taylor's Version)* comes directly after *Fearless*, rather
-#' than after *evermore*, when it was released. This is because
-#' "Taylor's Version" is often a stand-in for the original, as in
-#' [`taylor_album_songs`]. Thus, it more often makes more sense for the album to
-#' be placed with the original, rather than in the actual release order.
+#' Albums are listed in release order, including the "Taylor's Version"
+#' releases.
+#' That means that *Fearless (Taylor's Version)* comes directly after
+#' *evermore*, rather than after *Taylor Swift* or the original *Fearless*.
+#'
 #' @export
 #' @examples
 #' library(ggplot2)

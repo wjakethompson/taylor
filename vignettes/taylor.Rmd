@@ -39,10 +39,9 @@ For a detailed description of accessing lyrics, see `vignette("lyrics")`.
 A related data set is `taylor_album_songs`.
 This data set contains all of the same information as `taylor_all_songs`, but is filtered to only include tracks that are on official studio albums.
 This means that standalone singles (e.g., "Only The Young") and features (e.g., Big Red Machine's "Renegade") are not included.
-We also exclude albums Taylor doesn't own, but for which a *Taylor's Version* has been released.
-For example, *1989* is excluded in favor of *1989 (Taylor's Version)*, but *Taylor Swift* (debut) is included because a *Taylor's Version* of that album has not been released.
+However, we do include both the original and Taylor's Version of albums Taylor rerecorded now that [she owns all her masters](https://www.taylorswift.com/read-my-letter/).
 
-taylor also include a small data set called `taylor_albums`.
+taylor also includes a small data set called `taylor_albums`.
 This data set includes the release date for each album, as well as critic and user ratings from [Metacritic](https://www.metacritic.com/person/taylor-swift/).
 
 ```{r}
