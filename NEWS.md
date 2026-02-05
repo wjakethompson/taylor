@@ -13,7 +13,7 @@
 
 * *Fearless*, *Speak Now*, *Red*, and *1989* have been added back to
   `taylor_album_songs` now that Taylor [owns all of her
-  masters](https://taylorswift.com/read-my-letter). Both the
+  masters](https://www.taylorswift.com/read-my-letter). Both the
   originals and Taylor's Version's are now included in the dataset.
 
 ## New features

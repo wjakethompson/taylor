@@ -11,7 +11,7 @@ vignette: >
 ```{r, child="children/chunk-options.txt"}
 ```
 
-The taylor package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://josiahparry.com/) in the [cpcinema](https://github.com/JosiahParry/cpcinema) package.
+The taylor package comes with it's own class of color palettes, inspired by the work of [Josiah Parry](https://josiah.rs/) in the [cpcinema](https://github.com/JosiahParry/cpcinema) package.
 
 ## Creating palettes
 
