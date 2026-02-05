@@ -16,7 +16,7 @@ taylor_album_songs
 
 `taylor_all_songs` is a
 [tibble](https://tibble.tidyverse.org/reference/tibble-package.html)
-with 372 rows and 26 variables. Each row is one song.
+with 384 rows and 26 variables. Each row is one song.
 
 - `album_name`: The name of the album. `NA` if the song was released
   separately from one of Taylor's studio albums or EPs.
@@ -87,7 +87,7 @@ documentation at <https://soundstat.info/> for complete details.
 - `mode`: Modality of a track (major/minor). `0` = minor, `1` = major.
 
 Finally, the last set of variables includes those calculated from the
-Soundstat API data, and a list-column containing song lyrics.
+SoundStat API data, and a list-column containing song lyrics.
 
 - `key_name`: Corresponds directly to the `key`, but the integer is
   converted to the key name using Pitch Class notation (e.g., `0`
@@ -118,7 +118,7 @@ Soundstat API data, and a list-column containing song lyrics.
 
 `taylor_album_songs` is a
 [tibble](https://tibble.tidyverse.org/reference/tibble-package.html)
-containing the same 26 variables, but only with 320 rows, one for each
+containing the same 26 variables, but only with 332 rows, one for each
 song from an official studio album (see Details).
 
 ## Source
@@ -130,18 +130,18 @@ song from an official studio album (see Details).
 ## Details
 
 `taylor_all_songs` contains all songs in Taylor's discography. Lyrics
-come from Genius, and songs characteristics come from the Spotify API.
+come from Genius, and songs characteristics come from the SoundStat API.
 Some data is known to be missing. The Beautiful Eyes EP is not available
-on any streaming service, and therefore has no data from the Spotify
+on any streaming service, and therefore has no data from the SoundStat
 API. Similarly, the song *American Girl*, a cover of the Tom Petty
 original, was released exclusively on Rhapsody (now Napster), and
-therefore also does not have data from the Spotify API.
+therefore also does not have data from the SoundStat API.
 
-For songs released separately from Taylor's official albums or EPs,
+For songs released separately from Taylor's official albums or EPs, full
 album information is not included. For example, *I Don't Wanna Live
-Forever* was released as part of the *Fifty Shades Darker* movie
-soundtrack. However, the `album_name` column for this song is `NA`,
-indicating that it does not appear on one of Taylor's albums.
+Forever* was released as part of the *Fifty Shades Darker (Original
+Motion Picture Soundtrack)*. However, the `album_release` and
+`track_number` columns for this song are `NA`.
 
 Songs are only included one time. For example, if a song appears on both
 the standard and deluxe version of an album, there is only one record of
@@ -160,12 +160,4 @@ an album vs. a deluxe or platinum edition.
 `taylor_album_songs` contains the same information as
 `taylor_all_songs`, but only for Taylor's official studio albums. Thus,
 `taylor_album_songs` is a subset of `taylor_all_songs`, with EPs and
-individual singles excluded. Critically, this subset also only includes
-versions owned by Taylor when possible, because we stan artists owning
-their own work. This means that although both *Fearless* and *Fearless
-(Taylor's Version)* appear in the full `taylor_all_songs` data, only
-*Fearless (Taylor's Version)* appears in this subset. This also means
-that this data set will change as additional re-releases are made
-available (i.e., *Red* was replaced with *Red (Taylor's Version)* in
-[version
-1.0.0](https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/)).
+individual singles excluded.

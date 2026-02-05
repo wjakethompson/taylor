@@ -105,9 +105,10 @@ converted to the mode name (e.g., 0 becomes <code>minor</code>).</p></li>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Due to differences in algorithms and methodologies, the SoundStat audio
-features are on a slightly different scale than the Spotify audio features
-that were originally included in <a href="taylor-package.html">taylor</a> prior the <a href="changes%20to%20the%20SpotifyAPI">changes to the SpotifyAPI</a>. We can convert the SoundStat values to the Spotify scale using the
-formulas in the <a href="https://soundstat.info/article/Understanding-Audio-Analysis.html" class="external-link">SoundStat docs</a>:</p>
+features are on a slightly different scale than the audio features that were
+originally included in <a href="taylor-package.html">taylor</a> prior to the <a href="https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api" class="external-link">changes to the Spotify API</a>.
+We can convert the SoundStat values to the Spotify scale using the formulas
+in the <a href="https://soundstat.info/article/Understanding-Audio-Analysis.html" class="external-link">SoundStat docs</a>:</p>
 <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>acousticness <span class="ot">=</span> sound_value <span class="sc">*</span> <span class="fl">0.005</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>energy <span class="ot">=</span> sound_value <span class="sc">*</span> <span class="fl">2.25</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>instrumentalness <span class="ot">=</span> sound_value <span class="sc">*</span> <span class="fl">0.03</span></span>

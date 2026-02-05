@@ -54,6 +54,24 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="taylor-development-version">taylor (development version)<a class="anchor" aria-label="anchor" href="#taylor-development-version"></a></h2>
 <ul><li>
+<p>New data and visualization tools have been added for <em>The Life of a Showgirl</em>.</p>
+<ul><li>Added lyrics and SoundState audio features to <code>taylor_all_songs</code> and <code>taylor_album_songs</code>.</li>
+<li>Added composite critic score from Metacritic to <code>taylor_albums</code>.</li>
+<li>Added a new themed color palette to <code>album_palettes</code>.</li>
+<li>Added a new single color to <code>album_compare</code>.</li>
+</ul></li>
+<li><p>New functions for accessing APIs for track information (<code><a href="../reference/get_spotify_track_info.html">get_spotify_track_info()</a></code>) and audio features (<code><a href="../reference/get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code> and <code><a href="../reference/get_reccobeats_audio_features.html">get_reccobeats_audio_features()</a></code>).</p></li>
+<li>
+<p>New helper functions for setting up API configuration.</p>
+<ul><li>
+<code><a href="../reference/spotify-api.html">set_spotify_api_key()</a></code> / <code>get_spotify_api_key()</code>
+</li>
+<li>
+<code><a href="../reference/soundstat-api.html">set_soundstat_api_key()</a></code> / <code><a href="../reference/soundstat-api.html">get_soundstat_api_key()</a></code>
+</li>
+</ul></li>
+<li><p><code><a href="../reference/taylor_sitrep.html">taylor_sitrep()</a></code> can be used to quickly check the configuration of API keys.</p></li>
+<li>
 <p>Updated data API due to Spotify changes. Implications for data:</p>
 <ul><li>Lost columns: <code>liveness</code>, <code>speechiness</code>, <code>time_signature</code>
 </li>

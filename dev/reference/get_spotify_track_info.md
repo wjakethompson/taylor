@@ -17,7 +17,7 @@ get_spotify_track_info(track_id, api_key = get_spotify_access_token())
 - api_key:
 
   A Spotify access token, from
-  [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_access_token.md).
+  [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md).
 
 ## Value
 

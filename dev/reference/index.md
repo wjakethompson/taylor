@@ -64,12 +64,15 @@ plot objects. For example usage, see
 - [`get_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
   [`set_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
   : SoundStat API helpers
-- [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_access_token.md)
+- [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md)
+  [`set_spotify_api_key()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md)
   : Spotify API helpers
 - [`get_spotify_track_info()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_track_info.md)
   : Spotify track information
 - [`get_reccobeats_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_reccobeats_audio_features.md)
   : Reccobeats audio features
+- [`taylor_sitrep()`](https://taylor.wjakethompson.com/dev/reference/taylor_sitrep.md)
+  : Situation report for APIs
 
 ## Miscellaneous
 

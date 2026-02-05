@@ -4,8 +4,8 @@
 
 The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
-comes [Genius](https://genius.com/artists/Taylor-swift) and the [Spotify
-API](https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02).
+comes [Genius](https://genius.com/artists/Taylor-swift) and the
+[SoundStat API](https://soundstat.info).
 
 ![GIF of Taylor saying
 “yes”](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
@@ -32,16 +32,18 @@ remotes::install_github("wjakethompson/taylor")
 ## Example
 
 There are three main data sets. The first is `taylor_album_songs`, which
-includes lyrics and audio features from the Spotify API for all songs on
-Taylor’s official studio albums. Notably this excludes singles released
-separately from an album (e.g., *Only the Young*, *Christmas Tree Farm*,
-etc.), and non-Taylor-owned albums that have a Taylor-owned alternative
-(e.g., *Fearless* is excluded in favor of *Fearless (Taylor’s
-Version)*). We support artists owning their work.
+includes lyrics and audio features from the SoundStat API for all songs
+on Taylor’s official studio albums. Notably this excludes singles
+released separately from an album (e.g., “Only the Young”, “Christmas
+Tree Farm”, etc.) and EPs (e.g., *Beautiful Eyes*). However, now that
+Taylor [owns all her
+masters](https://www.taylorswift.com/read-my-letter/), both the original
+and Taylor’s Version are included for albums that were rerecorded (e.g.,
+both *Fearless* and *Fearless (Taylor’s Version)* are present).
 
 ``` r
 taylor_album_songs
-#> # A tibble: 240 × 29
+#> # A tibble: 332 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -54,23 +56,22 @@ taylor_album_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 230 more rows
-#> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
+#> # ℹ 322 more rows
+#> # ℹ 19 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
-#> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
-#> #   acousticness <dbl>, instrumentalness <dbl>, liveness <dbl>, valence <dbl>,
-#> #   tempo <dbl>, time_signature <int>, duration_ms <int>, explicit <lgl>,
-#> #   key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
+#> #   energy <dbl>, loudness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
+#> #   valence <dbl>, tempo <dbl>, duration_ms <int>, explicit <lgl>, key <int>,
+#> #   mode <int>, key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
 ```
 
 You can access Taylor’s entire discography with `taylor_all_songs`. This
 includes all of the songs in `taylor_album_songs` plus EPs, individual
-singles, and the original versions of albums that have been re-released
-as *Taylor’s Version*.
+singles, and songs where Taylor is credited as a featured artist or
+writer.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 364 × 29
+#> # A tibble: 384 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… <NA>     
@@ -83,13 +84,12 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… <NA>     
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… <NA>     
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… <NA>     
-#> # ℹ 354 more rows
-#> # ℹ 22 more variables: bonus_track <lgl>, promotional_release <date>,
+#> # ℹ 374 more rows
+#> # ℹ 19 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
-#> #   energy <dbl>, key <int>, loudness <dbl>, mode <int>, speechiness <dbl>,
-#> #   acousticness <dbl>, instrumentalness <dbl>, liveness <dbl>, valence <dbl>,
-#> #   tempo <dbl>, time_signature <int>, duration_ms <int>, explicit <lgl>,
-#> #   key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
+#> #   energy <dbl>, loudness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
+#> #   valence <dbl>, tempo <dbl>, duration_ms <int>, explicit <lgl>, key <int>,
+#> #   mode <int>, key_name <chr>, mode_name <chr>, key_mode <chr>, lyrics <list>
 ```
 
 Finally, there is a small data set, `taylor_albums`, summarizing
@@ -97,7 +97,7 @@ Taylor’s album release history.
 
 ``` r
 taylor_albums
-#> # A tibble: 17 × 5
+#> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
 #>    <chr>                         <lgl> <date>                   <int>      <dbl>
 #>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4
@@ -116,7 +116,8 @@ taylor_albums
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
 #> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  
-#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA
+#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA  
+#> 18 The Life of a Showgirl        FALSE 2025-10-03                  69       NA
 ```
 
 ## Code of Conduct
@@ -194,12 +195,15 @@ plot objects. For example usage, see
 - [`get_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
   [`set_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
   : SoundStat API helpers
-- [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_access_token.md)
+- [`get_spotify_access_token()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md)
+  [`set_spotify_api_key()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md)
   : Spotify API helpers
 - [`get_spotify_track_info()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_track_info.md)
   : Spotify track information
 - [`get_reccobeats_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_reccobeats_audio_features.md)
   : Reccobeats audio features
+- [`taylor_sitrep()`](https://taylor.wjakethompson.com/dev/reference/taylor_sitrep.md)
+  : Situation report for APIs
 
 ## Miscellaneous
 

@@ -27,9 +27,11 @@ First, let’s make a bar graph showing the valence of each song on
 ``` r
 library(taylor)
 library(ggplot2)
+library(dplyr)
 
-evermore <- subset(taylor_album_songs, album_name == "evermore")
-evermore$track_name <- factor(evermore$track_name, levels = evermore$track_name)
+evermore <- taylor_album_songs |>
+  filter(album_name == "evermore") |>
+  mutate(track_name = factor(track_name, levels = track_name))
 
 p <- ggplot(evermore, aes(x = valence, y = track_name, fill = track_name)) +
   geom_col(show.legend = FALSE) +
@@ -154,7 +156,7 @@ Taylor’s albums, stored in
 
 ``` r
 taylor_albums
-#> # A tibble: 17 × 5
+#> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
 #>    <chr>                         <lgl> <date>                   <int>      <dbl>
 #>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4
@@ -173,26 +175,21 @@ taylor_albums
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
 #> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  
-#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA
+#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA  
+#> 18 The Life of a Showgirl        FALSE 2025-10-03                  69       NA
 ```
 
 Let’s create a bar graph showing the rating of each album. We’ll first
 make the album name a factor variable. A convenience variable,
 [`taylor::album_levels`](https://taylor.wjakethompson.com/dev/reference/album_levels.md),
 is included in the package that will let us easily order the factor by
-album release date.[¹](#fn1) Metacritic doesn’t have a rating for
-Taylor’s debut album, *Taylor Swift*, so I will manually assign a value
-so that we can see the full scale in action. We’ll give each bar its own
-color to add some pizzazz to the plot.
+album release date. We’ll give each bar its own color to add some
+pizzazz to the plot.
 
 ``` r
-metacritic <- taylor_albums
-
-# Not Taylor's best work, so we'll give it a 72
-metacritic$metacritic_score[1] <- 72L
-metacritic <- subset(metacritic, !is.na(metacritic_score))
-metacritic$album_name <- factor(metacritic$album_name,
-                                levels = album_levels)
+metacritic <- taylor_albums |>
+  filter(!is.na(metacritic_score)) |>
+  mutate(album_name = factor(album_name, levels = album_levels))
 
 ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
@@ -236,10 +233,10 @@ correctly, even if the ordering of the albums changes, or not all levels
 are present.
 
 ``` r
-rand_critic <- metacritic[sample(seq_len(nrow(metacritic)), 5), ]
-rand_critic$album_name <- factor(rand_critic$album_name,
-                                 levels = sample(rand_critic$album_name,
-                                                 size = nrow(rand_critic)))
+set.seed(121389)
+rand_critic <- metacritic |>
+  slice_sample(n = 5) |>
+  mutate(album_name = factor(album_name, levels = sample(album_name, size = 5)))
 
 ggplot(rand_critic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
@@ -253,23 +250,28 @@ albums, and the ordering of the y-axis has been made random. However,
 the fill of the bar for each album still corresponds to that album's
 cover.](plotting_files/figure-html/unnamed-chunk-12-1.png)
 
-However, this also means that album names must match the expected names.
-That is, if you change or reformat an album name, the fill colors won’t
-be found. For example, if we use title case for all the album titles,
-the fill color will be missing for *reputation*, *folklore*, and
-*evermore*, which are stylized in all lower case, as well as *THE
-TORTURED POETS DEPARTMENT*, which is stylized in all upper case. The
-expected names are defined in the
-[`taylor::album_levels`](https://taylor.wjakethompson.com/dev/reference/album_levels.md)
-object.
+We’ve also done our best to make the album names resistant to different
+formatting decisions. For example, using all upper case or title case
+will still find the correct color for the album. We also support common
+alternatives for album names such as *Debut* for *Taylor Swift*, *TTPD*
+for the *THE TORTURED POETS DEPARTMENT*, and *TV* as a stand-in for
+*Taylor’s Version*.
 
 ``` r
-upper_critic <- metacritic
-upper_critic$album_name <- factor(upper_critic$album_name,
-                                  levels = album_levels,
-                                  labels = title_case(album_levels))
+alt_names <- metacritic |>
+  mutate(
+    album_name = case_when(
+      album_name == "Taylor Swift" ~ "Debut",
+      album_name == "folklore" ~ "FOLKLORE",
+      album_name == "Red (Taylor's Version)" ~ "Red TV",
+      album_name == "THE TORTURED POETS DEPARTMENT" ~ "TTPD",
+      album_name == "The Life of a Showgirl" ~ "The Life Of A Showgirl",
+      .default = album_name
+    ),
+    album_name = factor(album_name, levels = rev(album_name))
+  )
 
-ggplot(upper_critic, aes(x = metacritic_score, y = album_name)) +
+ggplot(alt_names, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
   scale_fill_albums() +
   labs(x = "Metacritic Rating", y = NULL) +
@@ -282,10 +284,3 @@ bar is filled with a color. The colors for each bar a based on the ablum
 cover. On y-axis, evermore, folklore, and repuation, have been spelled
 in title case, rather than lower case, resulting in no bar showing for
 these albums.](plotting_files/figure-html/unnamed-chunk-13-1.png)
-
-------------------------------------------------------------------------
-
-1.  Albums are not precisely in release order. Re-releases are ordered
-    next to the original release. See
-    [`?taylor::album_levels`](https://taylor.wjakethompson.com/dev/reference/album_levels.md)
-    for details.

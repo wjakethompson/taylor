@@ -16,12 +16,12 @@ library(taylor)
 ## I trace the evidence
 
 The main data set is `taylor_all_songs`. This data set contains audio
-features from Spotify and lyrics from Genius for each of Taylor Swift’s
-songs.
+features from [SoundStat](https://soundstat.info) and lyrics from
+[Genius](https://genius.com) for each of Taylor Swift’s songs.
 
 ``` r
 taylor_all_songs
-#> # A tibble: 372 × 26
+#> # A tibble: 384 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… NA       
@@ -34,7 +34,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… NA       
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… NA       
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… NA       
-#> # ℹ 362 more rows
+#> # ℹ 374 more rows
 #> # ℹ 19 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, loudness <dbl>, acousticness <dbl>, instrumentalness <dbl>,
@@ -43,12 +43,11 @@ taylor_all_songs
 ```
 
 The audio features include the danceability, energy, and valence of each
-track, which are described in the [documentation for the Spotify
-API](https://developer.spotify.com/documentation/web-api/reference/get-audio-features).
-The data set also includes meta data for each track such as the key,
-tempo, time signature, and duration. Finally, the lyrics for each track
-are included in a nested list column. The lyrics can be accessed by
-using
+track, which are described in the [documentation for the SoundStat
+API](https://soundstat.info/#features-section). The data set also
+includes meta data for each track such as the key, tempo, time
+signature, and duration. Finally, the lyrics for each track are included
+in a nested list column. The lyrics can be accessed by using
 [`tidyr::unnest()`](https://tidyr.tidyverse.org/reference/unnest.html),
 or by using
 [`purrr::map()`](https://purrr.tidyverse.org/reference/map.html) to
@@ -60,20 +59,18 @@ A related data set is `taylor_album_songs`. This data set contains all
 of the same information as `taylor_all_songs`, but is filtered to only
 include tracks that are on official studio albums. This means that
 standalone singles (e.g., “Only The Young”) and features (e.g., Big Red
-Machine’s “Renegade”) are not included. We also exclude albums Taylor
-doesn’t own, but for which a *Taylor’s Version* has been released. For
-example, *1989* is excluded in favor of *1989 (Taylor’s Version)*, but
-*Taylor Swift* (debut) is included because a *Taylor’s Version* of that
-album has not been released.
+Machine’s “Renegade”) are not included. However, we do include both the
+original and Taylor’s Version of albums Taylor rerecorded now that [she
+owns all her masters](https://www.taylorswift.com/read-my-letter/).
 
-taylor also include a small data set called `taylor_albums`. This data
+taylor also includes a small data set called `taylor_albums`. This data
 set includes the release date for each album, as well as critic and user
 ratings from
 [Metacritic](https://www.metacritic.com/person/taylor-swift/).
 
 ``` r
 taylor_albums
-#> # A tibble: 17 × 5
+#> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
 #>    <chr>                         <lgl> <date>                   <int>      <dbl>
 #>  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4
@@ -92,7 +89,8 @@ taylor_albums
 #> 14 Midnights                     FALSE 2022-10-21                  85        8.3
 #> 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2
 #> 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  
-#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA
+#> 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA  
+#> 18 The Life of a Showgirl        FALSE 2025-10-03                  69       NA
 ```
 
 Finally, there is a data set dedicated to The Eras Tour, specifically
@@ -150,7 +148,7 @@ description of color palette functionality in taylor, see
 
 ``` r
 album_compare
-#> <color_palette[15]>
+#> <color_palette[16]>
 #>     taylor_swift 
 #>     fearless 
 #>     speak_now 
@@ -165,7 +163,8 @@ album_compare
 #>     midnights 
 #>     speak_now_tv 
 #>     1989_tv 
-#>     tortured_poets
+#>     tortured_poets 
+#>     showgirl
 ```
 
 taylor also includes several functions for using the built-in palettes
@@ -190,47 +189,78 @@ leg_labels <- gsub("South America", "South\nAmerica", leg_labels)
 surprise_song_count <- eras_tour_surprise |>
   nest(dat = -c(leg, date, city, night)) |>
   arrange(date) |>
-  mutate(leg = factor(leg, levels = unique(eras_tour_surprise$leg),
-                      labels = leg_labels)) |>
+  mutate(
+    leg = factor(
+      leg,
+      levels = unique(eras_tour_surprise$leg),
+      labels = leg_labels
+    )
+  ) |>
   mutate(show_number = seq_len(n()), .after = night) |>
   unnest(dat) |>
-  left_join(distinct(taylor_album_songs, track_name, album_name),
-            join_by(song == track_name),
-            relationship = "many-to-one") |>
+  left_join(
+    distinct(taylor_album_songs, track_name, album_name),
+    join_by(song == track_name),
+    relationship = "many-to-one"
+  ) |>
   count(leg, date, city, night, show_number, album_name) |>
   complete(nesting(leg, date, city, night, show_number), album_name) |>
   mutate(n = replace_na(n, 0)) |>
   arrange(album_name, date, night) |>
   mutate(surprise_count = cumsum(n), .by = album_name) |>
-  left_join(select(taylor_albums, album_name, album_release),
-            by = "album_name") |>
-  mutate(surprise_count = case_when(
-    album_name == "THE TORTURED POETS DEPARTMENT" &
-      date < album_release ~ NA_integer_,
-    .default = surprise_count
-  )) |>
-  add_row(leg = factor("Europe"), album_name = "THE TORTURED POETS DEPARTMENT",
-          show_number = 83.5, surprise_count = 0L) |>
-  mutate(album_name = replace_na(album_name, "Other"),
-         album_group = album_name,
-         album_name = factor(album_name, c(album_levels, "Other"),
-                             labels = c(gsub("POETS DEPARTMENT",
-                                             "POETS\nDEPARTMENT",
-                                             album_levels), "Other")))
+  left_join(
+    select(taylor_albums, album_name, album_release),
+    by = "album_name"
+  ) |>
+  mutate(
+    surprise_count = case_when(
+      album_name == "THE TORTURED POETS DEPARTMENT" &
+        date < album_release ~ NA_integer_,
+      .default = surprise_count
+    )
+  ) |>
+  add_row(
+    leg = factor("Europe"),
+    album_name = "THE TORTURED POETS DEPARTMENT",
+    show_number = 83.5,
+    surprise_count = 0L
+  ) |>
+  mutate(
+    album_name = gsub(" \\(Taylor's Version\\)", "", album_name),
+    album_name = replace_na(album_name, "Other"),
+    album_group = album_name,
+    album_name = factor(
+      album_name,
+      c(album_levels, "Other"),
+      labels = c(
+        gsub("POETS DEPARTMENT", "POETS\nDEPARTMENT", album_levels),
+        "Other"
+      )
+    )
+  )
 
 ggplot(surprise_song_count) +
-  facet_wrap(~ album_name, ncol = 3) +
-  geom_line(data = ~select(.x, -album_name),
-            aes(x = show_number, y = surprise_count, group = album_group),
-            color = "grey80", na.rm = TRUE) +
-  geom_line(aes(x = show_number, y = surprise_count, color = album_group),
-            show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
+  facet_wrap(~album_name, ncol = 3) +
+  geom_line(
+    data = ~ select(.x, -album_name),
+    aes(x = show_number, y = surprise_count, group = album_group),
+    color = "grey80",
+    na.rm = TRUE
+  ) +
+  geom_line(
+    aes(x = show_number, y = surprise_count, color = album_group),
+    show.legend = FALSE,
+    linewidth = 2,
+    na.rm = TRUE
+  ) +
   scale_color_albums(na.value = "grey80") +
   scale_x_continuous(breaks = c(1, seq(20, 500, 20))) +
   labs(x = "Show", y = "Songs Played") +
   theme_minimal() +
-  theme(strip.text.x = element_text(hjust = 0, size = 10),
-        axis.title = element_text(size = 9))
+  theme(
+    strip.text.x = element_text(hjust = 0, size = 10),
+    axis.title = element_text(size = 9)
+  )
 ```
 
 ![A series of line plots showing the increases in the total number of
@@ -250,10 +280,9 @@ Plot code
 ``` r
 library(patchwork)
 
-missing_firsts <- tibble(date = as.Date(c("2023-11-01",
-                                          "2024-02-01",
-                                          "2024-05-01",
-                                          "2024-10-01")))
+missing_firsts <- tibble(
+  date = as.Date(c("2023-11-01", "2024-02-01", "2024-05-01", "2024-10-01"))
+)
 day_ones <- surprise_song_count |>
   slice_min(date, by = c(leg, album_name)) |>
   select(leg, date, album_name) |>
@@ -272,35 +301,55 @@ tour1 <- surprise_dat |>
   filter(leg %in% c("North America (Leg 1)", "South\nAmerica")) |>
   ggplot() +
   facet_grid(cols = vars(leg), scales = "free_x", space = "free_x") +
-  geom_line(aes(x = date, y = surprise_count, group = album_name),
-            color = "grey80", na.rm = TRUE) +
-  geom_line(data = ~filter(.x, album_name == "1989 (Taylor's Version)"),
-            aes(x = date, y = surprise_count, color = album_name),
-            show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
+  geom_line(
+    aes(x = date, y = surprise_count, group = album_name),
+    color = "grey80",
+    na.rm = TRUE
+  ) +
+  geom_line(
+    data = ~ filter(.x, album_name == "1989"),
+    aes(x = date, y = surprise_count),
+    color = album_compare["1989_tv"],
+    show.legend = FALSE,
+    linewidth = 2,
+    na.rm = TRUE
+  ) +
   scale_color_albums() +
   scale_x_date(breaks = "month", date_labels = "%b\n%Y", expand = c(.02, .02)) +
   expand_limits(y = c(0, 37)) +
   labs(x = NULL, y = "Songs Played") +
   theme_minimal() +
-  theme(strip.text.x = element_text(hjust = 0, size = 10),
-        axis.title = element_text(size = 9))
+  theme(
+    strip.text.x = element_text(hjust = 0, size = 10),
+    axis.title = element_text(size = 9)
+  )
 
 tour2 <- surprise_dat |>
   filter(!leg %in% c("North America (Leg 1)", "South\nAmerica")) |>
   ggplot() +
   facet_grid(cols = vars(leg), scales = "free_x", space = "free_x") +
-  geom_line(aes(x = date, y = surprise_count, group = album_name),
-            color = "grey80", na.rm = TRUE) +
-  geom_line(data = ~filter(.x, album_name == "1989 (Taylor's Version)"),
-            aes(x = date, y = surprise_count, color = album_name),
-            show.legend = FALSE, linewidth = 2, na.rm = TRUE) +
+  geom_line(
+    aes(x = date, y = surprise_count, group = album_name),
+    color = "grey80",
+    na.rm = TRUE
+  ) +
+  geom_line(
+    data = ~ filter(.x, album_name == "1989"),
+    aes(x = date, y = surprise_count),
+    color = album_compare["1989_tv"],
+    show.legend = FALSE,
+    linewidth = 2,
+    na.rm = TRUE
+  ) +
   scale_color_albums() +
   scale_x_date(breaks = "month", date_labels = "%b\n%Y", expand = c(.02, .02)) +
   expand_limits(y = c(0, 37)) +
   labs(x = NULL, y = "Songs Played") +
   theme_minimal() +
-  theme(strip.text.x = element_text(hjust = 0, size = 10),
-        axis.title = element_text(size = 9))
+  theme(
+    strip.text.x = element_text(hjust = 0, size = 10),
+    axis.title = element_text(size = 9)
+  )
 
 tour1 / tour2 + plot_layout(axes = "collect")
 ```

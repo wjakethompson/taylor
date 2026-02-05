@@ -19,8 +19,8 @@
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Lyrics and Song Data for Taylor Swift's Discography">
-<meta name="description" content="A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from Genius (lyrics) and Spotify (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.">
-<meta property="og:description" content="A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from Genius (lyrics) and Spotify (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.">
+<meta name="description" content="A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from Genius (lyrics) and SoundStat (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.">
+<meta property="og:description" content="A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from Genius (lyrics) and SoundStat (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.">
 <meta property="og:image" content="https://taylor.wjakethompson.com/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@wjakethompson">
@@ -94,7 +94,7 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes <a href="https://genius.com/artists/Taylor-swift" class="external-link">Genius</a> and the <a href="https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02" class="external-link">Spotify API</a>.</p>
+<p>The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes <a href="https://genius.com/artists/Taylor-swift" class="external-link">Genius</a> and the <a href="https://soundstat.info" class="external-link">SoundStat API</a>.</p>
 <figure><img src="https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif" alt="GIF of Taylor saying “yes”"><figcaption aria-hidden="true">
 GIF of Taylor saying “yes”
 </figcaption></figure>
@@ -113,10 +113,10 @@ GIF of Taylor saying “yes”
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>There are three main data sets. The first is <code>taylor_album_songs</code>, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., <em>Only the Young</em>, <em>Christmas Tree Farm</em>, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., <em>Fearless</em> is excluded in favor of <em>Fearless (Taylor’s Version)</em>). We support artists owning their work.</p>
+<p>There are three main data sets. The first is <code>taylor_album_songs</code>, which includes lyrics and audio features from the SoundStat API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., “Only the Young”, “Christmas Tree Farm”, etc.) and EPs (e.g., <em>Beautiful Eyes</em>). However, now that Taylor <a href="https://www.taylorswift.com/read-my-letter/" class="external-link">owns all her masters</a>, both the original and Taylor’s Version are included for albums that were rerecorded (e.g., both <em>Fearless</em> and <em>Fearless (Taylor’s Version)</em> are present).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_album_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 240 × 29</span></span>
+<span><span class="co">#&gt; # A tibble: 332 × 26</span></span>
 <span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
@@ -129,17 +129,16 @@ GIF of Taylor saying “yes”
 <span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
-<span><span class="co">#&gt; # ℹ 230 more rows</span></span>
-<span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
+<span><span class="co">#&gt; # ℹ 322 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 19 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
 <span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span></span>
-<span><span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
-<p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and the original versions of albums that have been re-released as <em>Taylor’s Version</em>.</p>
+<span><span class="co">#&gt; #   energy &lt;dbl&gt;, loudness &lt;dbl&gt;, acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   valence &lt;dbl&gt;, tempo &lt;dbl&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   mode &lt;int&gt;, key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
+<p>You can access Taylor’s entire discography with <code>taylor_all_songs</code>. This includes all of the songs in <code>taylor_album_songs</code> plus EPs, individual singles, and songs where Taylor is credited as a featured artist or writer.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_all_songs</span></span>
-<span><span class="co">#&gt; # A tibble: 364 × 29</span></span>
+<span><span class="co">#&gt; # A tibble: 384 × 26</span></span>
 <span><span class="co">#&gt;    album_name   ep    album_release track_number track_name     artist featuring</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt;  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     </span></span>
@@ -152,17 +151,16 @@ GIF of Taylor saying “yes”
 <span><span class="co">#&gt;  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt;  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt; 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     </span></span>
-<span><span class="co">#&gt; # ℹ 354 more rows</span></span>
-<span><span class="co">#&gt; # ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
+<span><span class="co">#&gt; # ℹ 374 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 19 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,</span></span>
 <span><span class="co">#&gt; #   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,</span></span>
-<span><span class="co">#&gt; #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; #   energy &lt;dbl&gt;, loudness &lt;dbl&gt;, acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   valence &lt;dbl&gt;, tempo &lt;dbl&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;, key &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   mode &lt;int&gt;, key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</span></span></code></pre></div>
 <p>Finally, there is a small data set, <code>taylor_albums</code>, summarizing Taylor’s album release history.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
-<span><span class="co">#&gt; # A tibble: 17 × 5</span></span>
+<span><span class="co">#&gt; # A tibble: 18 × 5</span></span>
 <span><span class="co">#&gt;    album_name                    ep    album_release metacritic_score user_score</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                         &lt;lgl&gt; &lt;date&gt;                   &lt;int&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Taylor Swift                  FALSE 2006-10-24                  67        8.4</span></span>
@@ -181,7 +179,8 @@ GIF of Taylor saying “yes”
 <span><span class="co">#&gt; 14 Midnights                     FALSE 2022-10-21                  85        8.3</span></span>
 <span><span class="co">#&gt; 15 Speak Now (Taylor's Version)  FALSE 2023-07-07                  81        9.2</span></span>
 <span><span class="co">#&gt; 16 1989 (Taylor's Version)       FALSE 2023-10-27                  90       NA  </span></span>
-<span><span class="co">#&gt; 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA</span></span></code></pre></div>
+<span><span class="co">#&gt; 17 THE TORTURED POETS DEPARTMENT FALSE 2024-04-19                  76       NA  </span></span>
+<span><span class="co">#&gt; 18 The Life of a Showgirl        FALSE 2025-10-03                  69       NA</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>

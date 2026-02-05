@@ -12,7 +12,7 @@ taylor_albums
 ## Format
 
 A [tibble](https://tibble.tidyverse.org/reference/tibble-package.html)
-with 17 rows and 5 variables:
+with 18 rows and 5 variables:
 
 - `album_name`: The name of the album. `NA` if the song was released
   separately from one of Taylor's studio albums or EPs.

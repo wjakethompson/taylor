@@ -186,7 +186,15 @@ album_palettes
 #>     #3F3824 
 #>     #635B3A 
 #>     #ADA795 
-#>     #F7F4F0
+#>     #F7F4F0 
+#> 
+#> $showgirl
+#> <color_palette[5]>
+#>     #C44615 
+#>     #EB8246 
+#>     #F0CD92 
+#>     #6CAE90 
+#>     #3E5C38
 ```
 
 Or we can access a single palette.
@@ -207,7 +215,7 @@ each album,
 
 ``` r
 album_compare
-#> <color_palette[15]>
+#> <color_palette[16]>
 #>     taylor_swift 
 #>     fearless 
 #>     speak_now 
@@ -222,7 +230,8 @@ album_compare
 #>     midnights 
 #>     speak_now_tv 
 #>     1989_tv 
-#>     tortured_poets
+#>     tortured_poets 
+#>     showgirl
 ```
 
 ## Using color palettes with ggplot2
@@ -236,6 +245,7 @@ out
 [`vignette("plotting")`](https://taylor.wjakethompson.com/dev/articles/plotting.md).
 
 ``` r
+
 library(ggplot2)
 
 p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
@@ -260,6 +270,7 @@ or
 to use the palette.
 
 ``` r
+
 green_pal <- color_palette(c("#E5F5E0", "#A1D99B", "#31A354"))
 green_pal
 #> <color_palette[3]>
@@ -287,9 +298,12 @@ Here, we use the
 to map our palette to the species of penguin.
 
 ``` r
-penguin_pal <- color_palette(c(Adelie = "firebrick",
-                               Chinstrap = "goldenrod",
-                               Gentoo = "navy"))
+
+penguin_pal <- color_palette(c(
+  Adelie = "firebrick",
+  Chinstrap = "goldenrod",
+  Gentoo = "navy"
+))
 penguin_pal
 #> <color_palette[3]>
 #>     Adelie 

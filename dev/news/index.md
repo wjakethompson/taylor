@@ -2,6 +2,33 @@
 
 ## taylor (development version)
 
+- New data and visualization tools have been added for *The Life of a
+  Showgirl*.
+
+  - Added lyrics and SoundState audio features to `taylor_all_songs` and
+    `taylor_album_songs`.
+  - Added composite critic score from Metacritic to `taylor_albums`.
+  - Added a new themed color palette to `album_palettes`.
+  - Added a new single color to `album_compare`.
+
+- New functions for accessing APIs for track information
+  ([`get_spotify_track_info()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_track_info.md))
+  and audio features
+  ([`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md)
+  and
+  [`get_reccobeats_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_reccobeats_audio_features.md)).
+
+- New helper functions for setting up API configuration.
+
+  - [`set_spotify_api_key()`](https://taylor.wjakethompson.com/dev/reference/spotify-api.md)
+    / `get_spotify_api_key()`
+  - [`set_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
+    /
+    [`get_soundstat_api_key()`](https://taylor.wjakethompson.com/dev/reference/soundstat-api.md)
+
+- [`taylor_sitrep()`](https://taylor.wjakethompson.com/dev/reference/taylor_sitrep.md)
+  can be used to quickly check the configuration of API keys.
+
 - Updated data API due to Spotify changes. Implications for data:
 
   - Lost columns: `liveness`, `speechiness`, `time_signature`

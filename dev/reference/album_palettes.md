@@ -15,12 +15,12 @@ album_compare
 
 ## Format
 
-A list of length 15. Each element contains a color palette for one of
+A list of length 16. Each element contains a color palette for one of
 Taylor Swift's studio albums. The list elements are named according to
 the name of the album.
 
 An object of class `taylor_color_palette` (inherits from `vctrs_vctr`,
-`character`) of length 15.
+`character`) of length 16.
 
 ## Source
 
@@ -154,9 +154,17 @@ album_palettes
 #>     #ADA795 
 #>     #F7F4F0 
 #> 
+#> $showgirl
+#> <color_palette[5]>
+#>     #C44615 
+#>     #EB8246 
+#>     #F0CD92 
+#>     #6CAE90 
+#>     #3E5C38 
+#> 
 
 album_compare
-#> <color_palette[15]>
+#> <color_palette[16]>
 #>     taylor_swift 
 #>     fearless 
 #>     speak_now 
@@ -172,6 +180,7 @@ album_compare
 #>     speak_now_tv 
 #>     1989_tv 
 #>     tortured_poets 
+#>     showgirl 
 
 album_palettes$evermore
 #> <color_palette[5]>

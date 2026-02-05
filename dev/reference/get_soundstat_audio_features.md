@@ -64,11 +64,11 @@ with track audio features, including:
 ## Details
 
 Due to differences in algorithms and methodologies, the SoundStat audio
-features are on a slightly different scale than the Spotify audio
-features that were originally included in
+features are on a slightly different scale than the audio features that
+were originally included in
 [taylor](https://taylor.wjakethompson.com/dev/reference/taylor-package.md)
-prior the [changes to the
-SpotifyAPI](https://taylor.wjakethompson.com/dev/reference/changes%20to%20the%20SpotifyAPI).
+prior to the [changes to the Spotify
+API](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api).
 We can convert the SoundStat values to the Spotify scale using the
 formulas in the [SoundStat
 docs](https://soundstat.info/article/Understanding-Audio-Analysis.html):
