@@ -26,6 +26,7 @@ test_that("data has expected dimensions", {
   albums <- gsub("\\ ", "_", albums)
   albums <- gsub("\\(taylor's_version\\)", "tv", albums)
   albums <- gsub("the_(tortured_poets)_department", "\\1", albums)
+  albums <- gsub("the_life_of_a_(showgirl)", "\\1", albums)
 
   expect_equal(length(albums), length(album_palettes))
   expect_equal(length(albums), length(album_compare))

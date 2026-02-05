@@ -6,7 +6,7 @@ library(taylor)
 #'
 #' Some highlights:
 
-#' Lyrics and Spotify audio data for {num tracks} {album} tracks have been
+#' Lyrics and SoundStat audio data for {num tracks} {album} tracks have been
 #' added.
 
 taylor::taylor_all_songs |>

@@ -32,7 +32,12 @@ get_spotify_track_info <- function(
   api_key = get_spotify_access_token()
 ) {
   check_character(track_id, allow_na = TRUE)
-  check_character(api_key)
+  check_character(api_key$client_id)
+  check_character(api_key$client_secret)
+  api_key <- spotifyr::get_spotify_access_token(
+    client_id = api_key$client_id,
+    client_secret = api_key$client_secret
+  )
 
   if (is.na(track_id) || track_id == "") {
     return(NULL)
@@ -60,10 +65,15 @@ get_spotify_track_info <- function(
 
 #' Spotify API helpers
 #'
-#' This is a wrapper around [spotifyr::get_spotify_access_token()] to create a
-#' Spotify access token from stored environment variables.
+#' Set and retrieve Spotify client information.
 #'
-#' @returns The Spotify access token.
+#' @param id A Spotify Client ID.
+#' @param secret A Spotify Client Secret.
+#'
+#' @returns
+#'   * `get_spotify_api_key()` returns a previously stored Client ID and Secret.
+#'   * `set_spotify_api_key()` is called for side effects only.
+#' @name spotify-api
 #' @export
 #'
 #' @examplesIf taylor_examples()
@@ -71,8 +81,8 @@ get_spotify_track_info <- function(
 get_spotify_access_token <- function() {
   client_id <- Sys.getenv("SPOTIFY_CLIENT_ID")
   client_secret <- Sys.getenv("SPOTIFY_CLIENT_SECRET")
-  if (!any(identical(client_id, ""), identical(client_secret, ""))) {
-    token <- spotifyr::get_spotify_access_token(
+  if (all(nzchar(client_id), nzchar(client_secret))) {
+    token <- list(
       client_id = client_id,
       client_secret = client_secret
     )
@@ -85,7 +95,7 @@ get_spotify_access_token <- function() {
     cli::cli_abort(
       cli::format_message(
         c(
-          "No access token found, please see",
+          "Client ID or Secret not found, please see",
           "{.fun spotifyr::get_spotify_access_token}"
         )
       )
@@ -93,8 +103,31 @@ get_spotify_access_token <- function() {
   }
 }
 
+#' @export
+#' @rdname spotify-api
+set_spotify_api_key <- function(id = NULL, secret = NULL) {
+  check_character(id, allow_null = TRUE)
+  check_character(secret, allow_null = TRUE)
+
+  if (is.null(id)) {
+    id <- askpass::askpass("Please enter your Client ID")
+    if (is.null(id)) {
+      cli::cli_abort("Client ID not provided")
+    }
+  }
+  Sys.setenv("SPOTIFY_CLIENT_ID" = id)
+
+  if (is.null(secret)) {
+    secret <- askpass::askpass("Please enter your Client Secret")
+    if (is.null(secret)) {
+      cli::cli_abort("Client Secret not provided")
+    }
+  }
+  Sys.setenv("SPOTIFY_CLIENT_SECRET" = secret)
+}
+
 spotify_testing_key <- function() {
-  spotifyr::get_spotify_access_token(
+  list(
     client_id = httr2::secret_decrypt(
       "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
       "TAYLOR_KEY"
@@ -120,10 +153,11 @@ spotify_testing_key <- function() {
 #'
 #' @details
 #' Due to differences in algorithms and methodologies, the SoundStat audio
-#' features are on a slightly different scale than the Spotify audio features
-#' that were originally included in [taylor] prior the [changes to the Spotify
-#' API](). We can convert the SoundStat values to the Spotify scale using the
-#' formulas in the [SoundStat
+#' features are on a slightly different scale than the audio features that were
+#' originally included in [taylor] prior to the [changes to the Spotify
+#' API](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api).
+#' We can convert the SoundStat values to the Spotify scale using the formulas
+#' in the [SoundStat
 #' docs](https://soundstat.info/article/Understanding-Audio-Analysis.html):
 #'
 #' ```

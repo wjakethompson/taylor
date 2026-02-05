@@ -4,20 +4,22 @@ library(rvest)
 # Manual metacritic - boo!
 metacritic <- tribble(
   ~album_name,                           ~metacritic_score, ~user_score,
-  "1989 (Taylor's Version)",             100L,              NA_real_,
+  "The Life of a Showgirl",              69L,               NA_real_,
+  "THE TORTURED POETS DEPARTMENT",       76L,               NA_real_,
+  "1989 (Taylor's Version)",             90L,               NA_real_,
   "Speak Now (Taylor's Version)",        81L,               9.2,
   "Midnights",                           85L,               8.3,
-  "Red (Taylor's Version)",              91L,               9.0,
+  "Red (Taylor's Version)",              91L,               8.9,
   "Fearless (Taylor's Version)",         82L,               8.9,
   "evermore",                            85L,               8.9,
   "folklore",                            88L,               9.0,
   "Lover",                               79L,               8.4,
   "reputation",                          71L,               8.3,
-  "1989",                                76L,               8.2,
-  "Red",                                 77L,               8.5,
+  "1989",                                76L,               8.3,
+  "Red",                                 77L,               8.6,
   "Speak Now",                           77L,               8.6,
   "Fearless",                            73L,               8.4,
-  "Taylor Swift",                        67L,               8.5
+  "Taylor Swift",                        67L,               8.4
 )
 
 # Old metacritic website ~ summer 2023

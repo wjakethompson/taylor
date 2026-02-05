@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from 'Genius' (lyrics) and 'Spotify' (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.
+A comprehensive resource for data on Taylor Swift songs. Data is included for all officially released studio albums, extended plays (EPs), and individual singles are included. Data comes from 'Genius' (lyrics) and 'SoundStat' (song characteristics). Additional functions are included for easily creating data visualizations with color palettes inspired by Taylor Swift's album covers.
 }
 \seealso{
 Useful links:

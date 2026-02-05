@@ -1,5 +1,23 @@
 # taylor (development version)
 
+* New data and visualization tools have been added for
+  *The Life of a Showgirl*.
+  * Added lyrics and SoundState audio features to `taylor_all_songs` and
+    `taylor_album_songs`.
+  * Added composite critic score from Metacritic to `taylor_albums`.
+  * Added a new themed color palette to `album_palettes`.
+  * Added a new single color to `album_compare`.
+
+* New functions for accessing APIs for track information
+  (`get_spotify_track_info()`) and audio features
+  (`get_soundstat_audio_features()` and `get_reccobeats_audio_features()`).
+
+* New helper functions for setting up API configuration.
+  * `set_spotify_api_key()` / `get_spotify_api_key()`
+  * `set_soundstat_api_key()` / `get_soundstat_api_key()`
+
+* `taylor_sitrep()` can be used to quickly check the configuration of API keys.
+
 * Updated data API due to Spotify changes. Implications for data:
   * Lost columns: `liveness`, `speechiness`, `time_signature`
   * Data may be slightly different due to differences between the Spotify and
@@ -50,9 +68,8 @@
 * New data and visualization tools have been added for
   *THE TORTURED POETS DEPARTMENT*.
   * Added lyrics and Spotify audio features to `taylor_all_songs` and
-  `taylor_album_songs`.
-  * Added composite critic score from Metacritic to
-  `taylor_albums`.
+    `taylor_album_songs`.
+  * Added composite critic score from Metacritic to `taylor_albums`.
   * Added a new themed color palette to `album_palettes`.
   * Added a new single color to `album_compare`.
 

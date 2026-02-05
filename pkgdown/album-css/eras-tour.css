@@ -1,0 +1,32 @@
+:root {
+  --nav-bkg: #000000;     /* nav bar background */
+  --nav-link: #FFFFFF;    /* nav bar link color */
+  --nav-higl: #FFFFFF;    /* nav hover background */
+
+  --sdb-link: #6a80b7;    /* hyperlinks in sidebar */
+  --sdb-hover: #c1dee4;   /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094; /* author roles */
+
+  --pg-header: #000000;   /* heading color & text links */
+  --text-link: #5c3e42;   /* hyperlinks in text */
+  --a-hover: #e69fb1;     /* hyperlink hover */
+
+  --btn-color: #000000;   /* copy button color */
+  --btn-hover: #c9bccd;   /* copy button hover */
+
+  --toc-active: #dde9c3;  /* background color for active TOC */
+  --toc-hover: #dde9c3;   /* background color for hover TOC */
+  --toc-htext: #000000;   /* color of TOC hover text (default to --nav-bkg) */
+}
+
+
+/* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
+/* Collapsible menu button on mobile (--nav-link) */
+span.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+}
+
+/* Anchor image in headings (--text-link) */
+a.anchor {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+}

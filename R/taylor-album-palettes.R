@@ -33,7 +33,8 @@ album_palettes <- lapply(
     midnights = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6"),
     speak_now_tv = c("#2A122C", "#4a2454", "#72325F", "#874886", "#96689A"),
     `1989_tv` = c("#487398", "#659BBB", "#8BB5D2", "#AFC5D4", "#E4DFD3"),
-    tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0")
+    tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0"),
+    showgirl = c("#C44615", "#EB8246", "#F0CD92", "#6CAE90", "#3E5C38")
   ),
   color_palette
 )
@@ -56,7 +57,8 @@ album_compare <- color_palette(
     midnights = "#5A658B",
     speak_now_tv = "#4a2454",
     `1989_tv` = "#8BB5D2",
-    tortured_poets = "#1C160F"
+    tortured_poets = "#1C160F",
+    showgirl = "#C44615"
   )
 )
 
@@ -71,13 +73,11 @@ album_compare <- color_palette(
 #'   name, in an order that can be used for making factor variables.
 #'
 #' @details
-#' Albums are listed in release order, with one notable exception. The
-#' "Taylor's Version" releases are list directly following the original. That
-#' is, *Fearless (Taylor's Version)* comes directly after *Fearless*, rather
-#' than after *evermore*, when it was released. This is because
-#' "Taylor's Version" is often a stand-in for the original, as in
-#' [`taylor_album_songs`]. Thus, it more often makes more sense for the album to
-#' be placed with the original, rather than in the actual release order.
+#' Albums are listed in release order, including the "Taylor's Version"
+#' releases.
+#' That means that *Fearless (Taylor's Version)* comes directly after
+#' *evermore*, rather than after *Taylor Swift* or the original *Fearless*.
+#'
 #' @export
 #' @examples
 #' library(ggplot2)
@@ -107,9 +107,42 @@ album_levels <- c(
   "Midnights",
   "Speak Now (Taylor's Version)",
   "1989 (Taylor's Version)",
-  "THE TORTURED POETS DEPARTMENT"
+  "THE TORTURED POETS DEPARTMENT",
+  "The Life of a Showgirl"
 )
 
+album_nicknames <- list(
+  taylor_swift = c("Debut"),
+  reputation = c("rep"),
+  fearless_tv = c("Fearless TV"),
+  red_tv = c("Red TV"),
+  speak_now_tv = c("Speak Now TV"),
+  `1989_tv` = c("1989 TV"),
+  tortured_poets = c("Tortured Poets", "TTPD"),
+  showgirl = c("Showgirl")
+)
+
+# Map `album_compare` palette to real names and nicknames ----------------------
+album_labels <- function() {
+  level_names <- tibble::enframe(
+    vec_data(album_compare),
+    name = "key",
+    value = "value"
+  )
+
+  tibble::as_tibble(album_nicknames) |>
+    tidyr::pivot_longer(
+      cols = dplyr::everything(),
+      names_to = "key",
+      values_to = "name"
+    ) |>
+    dplyr::distinct() |>
+    dplyr::left_join(level_names, by = "key") |>
+    dplyr::bind_rows(
+      dplyr::mutate(level_names, name = album_levels, .before = "value"),
+      dplyr::mutate(level_names, name = .data$key, .before = "value")
+    )
+}
 
 # Scale functions --------------------------------------------------------------
 taylor_col <- function(
@@ -137,6 +170,7 @@ taylor_col <- function(
   lookup_pal <- gsub("\\ ", "_", lookup_pal)
   lookup_pal <- gsub("\\(taylor's_version\\)", "tv", lookup_pal)
   lookup_pal <- gsub("the_(tortured_poets)_department", "\\1", lookup_pal)
+  lookup_pal <- gsub("the_life_of_a_(showgirl)", "\\1", lookup_pal)
 
   option <- switch(
     EXPR = lookup_pal,
@@ -155,6 +189,7 @@ taylor_col <- function(
     evermore = taylor::album_palettes[["evermore"]],
     midnights = taylor::album_palettes[["midnights"]],
     tortured_poets = taylor::album_palettes[["tortured_poets"]],
+    showgirl = taylor::album_palettes[["showgirl"]],
     {
       rlang::warn(paste0(
         "Album '",

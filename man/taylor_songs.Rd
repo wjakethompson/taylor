@@ -7,7 +7,7 @@
 \title{Data for Taylor Swift songs}
 \format{
 \code{taylor_all_songs} is a \link[tibble:tibble-package]{tibble} with
-372 rows and 26 variables.
+384 rows and 26 variables.
 Each row is one song.
 \itemize{
 \item \code{album_name}: The name of the album. \code{NA} if the song was released
@@ -59,7 +59,7 @@ notation.
 }
 
 Finally, the last set of variables includes those calculated from the
-Soundstat API data, and a list-column containing song lyrics.
+SoundStat API data, and a list-column containing song lyrics.
 \itemize{
 \item \code{key_name}: Corresponds directly to the \code{key}, but the integer is converted
 to the key name using Pitch Class notation (e.g., \code{0} becomes \code{C}).
@@ -84,7 +84,7 @@ track (e.g., \code{HAIM} is featured on \emph{no body, no crime}).
 
 \code{taylor_album_songs} is a \link[tibble:tibble-package]{tibble} containing
 the same 26 variables, but only with
-320 rows, one for each song from an official studio
+332 rows, one for each song from an official studio
 album (see Details).
 }
 \source{
@@ -104,18 +104,20 @@ released singles.
 }
 \details{
 \code{taylor_all_songs} contains all songs in Taylor's discography.
-Lyrics come from Genius, and songs characteristics come from the Spotify API.
+Lyrics come from Genius, and songs characteristics come from the SoundStat
+API.
 Some data is known to be missing. The Beautiful Eyes EP is not available on
-any streaming service, and therefore has no data from the Spotify API.
+any streaming service, and therefore has no data from the SoundStat API.
 Similarly, the song \emph{American Girl}, a cover of the Tom Petty original, was
 released exclusively on Rhapsody (now Napster), and therefore also does not
-have data from the Spotify API.
+have data from the SoundStat API.
 
-For songs released separately from Taylor's official albums or EPs, album
-information is not included. For example, \emph{I Don't Wanna Live Forever} was
-released as part of the \emph{Fifty Shades Darker} movie soundtrack. However, the
-\code{album_name} column for this song is \code{NA}, indicating that it does not appear
-on one of Taylor's albums.
+For songs released separately from Taylor's official albums or EPs, full
+album information is not included.
+For example, \emph{I Don't Wanna Live Forever} was released as part of the
+\emph{Fifty Shades Darker (Original Motion Picture Soundtrack)}.
+However, the \code{album_release} and \code{track_number} columns for this song are
+\code{NA}.
 
 Songs are only included one time. For example, if a song appears on both the
 standard and deluxe version of an album, there is only one record of the
@@ -134,12 +136,5 @@ edition.
 \code{taylor_album_songs} contains the same information as \code{taylor_all_songs}, but
 only for Taylor's official studio albums. Thus, \code{taylor_album_songs} is a
 subset of \code{\link{taylor_all_songs}}, with EPs and individual singles excluded.
-Critically, this subset also only includes versions owned by Taylor when
-possible, because we stan artists owning their own work. This means that
-although both \emph{Fearless} and \emph{Fearless (Taylor's Version)} appear in the full
-\code{\link{taylor_all_songs}} data, only \emph{Fearless (Taylor's Version)} appears in this
-subset. This also means that this data set will change as additional
-re-releases are made available (i.e., \emph{Red} was replaced with
-\emph{Red (Taylor's Version)} in \href{https://wjakethompson.com/blog/taylor/2021-12-17-taylor-1.0.0/}{version 1.0.0}).
 }
 \keyword{datasets}
