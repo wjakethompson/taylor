@@ -53,14 +53,37 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="taylor-development-version">taylor (development version)<a class="anchor" aria-label="anchor" href="#taylor-development-version"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-development-version">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-development-version"></a></h3>
 <ul><li>
-<p>New data and visualization tools have been added for <em>The Life of a Showgirl</em>.</p>
+<code>taylor_all_songs</code> and <code>taylor_album_songs</code> now use audio features from the <a href="https://soundstat.info" class="external-link">SoundStat API</a> due to Spotify <a href="https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api" class="external-link">removing access</a> to their audio features endpoint.
+<ul><li>Lost columns: <code>liveness</code>, <code>speechiness</code>, <code>time_signature</code>.</li>
+<li>Data may be slightly different due to differences between the Spotify and new SoundStat API (<a href="https://soundstat.info/article/Understanding-Audio-Analysis.html" class="external-link">conversions</a> available if desired through the <code>convert_values</code> argument to <code><a href="../reference/get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code>).</li>
+</ul></li>
+<li>
+<em>Fearless</em>, <em>Speak Now</em>, <em>Red</em>, and <em>1989</em> have been added back to <code>taylor_album_songs</code> now that Taylor <a href="https://www.taylorswift.com/read-my-letter" class="external-link">owns all of her masters</a>. Both the originals and Taylor’s Version’s are now included in the dataset.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-features-development-version">New features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
+<div class="section level4">
+<h4 id="new-data-development-version">New data<a class="anchor" aria-label="anchor" href="#new-data-development-version"></a></h4>
+<ul><li>New data and visualization tools have been added for <em>The Life of a Showgirl</em>.
 <ul><li>Added lyrics and SoundState audio features to <code>taylor_all_songs</code> and <code>taylor_album_songs</code>.</li>
 <li>Added composite critic score from Metacritic to <code>taylor_albums</code>.</li>
 <li>Added a new themed color palette to <code>album_palettes</code>.</li>
 <li>Added a new single color to <code>album_compare</code>.</li>
 </ul></li>
-<li><p>New functions for accessing APIs for track information (<code><a href="../reference/get_spotify_track_info.html">get_spotify_track_info()</a></code>) and audio features (<code><a href="../reference/get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code> and <code><a href="../reference/get_reccobeats_audio_features.html">get_reccobeats_audio_features()</a></code>).</p></li>
+<li>Two new songs added where Taylor is credited as a writer
+<ul><li>“Bein’ With My Baby” from Shea Fisher’s <em>Shea</em>
+</li>
+<li>“This Is Really Happening” from Britni Hoover’s <em>Country Strong</em>
+</li>
+</ul></li>
+</ul></div>
+<div class="section level4">
+<h4 id="api-access-development-version">API access<a class="anchor" aria-label="anchor" href="#api-access-development-version"></a></h4>
+<ul><li><p><code><a href="../reference/get_spotify_track_info.html">get_spotify_track_info()</a></code> is now exported to use for gathering track metadata.</p></li>
+<li><p><code><a href="../reference/get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code> and <code><a href="../reference/get_reccobeats_audio_features.html">get_reccobeats_audio_features()</a></code> have been added to provide access to audio features through the <a href="https://soundstat.info" class="external-link">SoundStat</a> and <a href="https://reccobeats.com/" class="external-link">ReccoBeats</a> APIs, respectively.</p></li>
 <li>
 <p>New helper functions for setting up API configuration.</p>
 <ul><li>
@@ -71,21 +94,14 @@
 </li>
 </ul></li>
 <li><p><code><a href="../reference/taylor_sitrep.html">taylor_sitrep()</a></code> can be used to quickly check the configuration of API keys.</p></li>
-<li>
-<p>Updated data API due to Spotify changes. Implications for data:</p>
-<ul><li>Lost columns: <code>liveness</code>, <code>speechiness</code>, <code>time_signature</code>
-</li>
-<li>Data may be slightly different due to differences between the Spotify and new SoundStat API (<a href="https://soundstat.info/article/Understanding-Audio-Analysis.html" class="external-link">conversions</a> available if desired)</li>
-</ul></li>
-<li><p><em>Fearless</em>, <em>Speak Now</em>, <em>Red</em>, and <em>1989</em> have been added back to <code>taylor_album_songs</code> now that Taylor owns all of her masters. Both the originals and Taylor’s Version’s are included in the data.</p></li>
-<li>
-<p>Two new songs added where Taylor is credited as a writer</p>
-<ul><li>“Bein’ With My Baby” from Shea Fisher’s <em>Shea</em>
-</li>
-<li>“This Is Really Happening” from Britni Hoover’s <em>Country Strong</em>
-</li>
-</ul></li>
 </ul></div>
+</div>
+<div class="section level3">
+<h3 id="minor-improvements-and-fixes-development-version">Minor improvements and fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-fixes-development-version"></a></h3>
+<ul><li>
+<code><a href="../reference/scale_albums.html">scale_color_albums()</a></code> and <code><a href="../reference/scale_albums.html">scale_fill_albums()</a></code> now recognize alternate capitalization (e.g., <em>Folklore</em> instead of <em>folklore</em>) and common nicknames (e.g., <em>Debut</em> for <em>Taylor Swift</em>) when mapping <code>album_compare</code> to album names.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.2.0" id="taylor-320">taylor 3.2.0<a class="anchor" aria-label="anchor" href="#taylor-320"></a></h2><p class="text-muted">CRAN release: 2025-01-07</p>
 <div class="section level3">

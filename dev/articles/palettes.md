@@ -1,7 +1,7 @@
 # Using and creating color palettes
 
 The taylor package comes with it’s own class of color palettes, inspired
-by the work of [Josiah Parry](https://josiahparry.com/) in the
+by the work of [Josiah Parry](https://josiah.rs/) in the
 [cpcinema](https://github.com/JosiahParry/cpcinema) package.
 
 ## Creating palettes

@@ -289,19 +289,19 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-transform: none;
   font-weight: 200;
   color: var(--pg-header);
-  letter-spacing: .1em;
+  letter-spacing: .08em;
 }
 
 h4 {
   font-size: 1.2em;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 100;
   color: var(--pg-header);
-  letter-spacing: .05em;
+  letter-spacing: .08em;
 }
 
 
