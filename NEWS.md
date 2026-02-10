@@ -22,7 +22,7 @@
 
 * New data and visualization tools have been added for
   *The Life of a Showgirl*.
-  * Added lyrics and SoundState audio features to `taylor_all_songs` and
+  * Added lyrics and SoundStat audio features to `taylor_all_songs` and
     `taylor_album_songs`.
   * Added composite critic score from Metacritic to `taylor_albums`.
   * Added a new themed color palette to `album_palettes`.
