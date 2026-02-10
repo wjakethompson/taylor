@@ -174,22 +174,22 @@ taylor_col <- function(
 
   option <- switch(
     EXPR = lookup_pal,
-    taylor_swift = taylor::album_palettes[["taylor_swift"]],
-    fearless = taylor::album_palettes[["fearless"]],
-    fearless_tv = taylor::album_palettes[["fearless_tv"]],
-    speak_now = taylor::album_palettes[["speak_now"]],
-    speak_now_tv = taylor::album_palettes[["speak_now_tv"]],
-    red = taylor::album_palettes[["red"]],
-    red_tv = taylor::album_palettes[["red_tv"]],
-    `1989` = taylor::album_palettes[["1989"]],
-    `1989_tv` = taylor::album_palettes[["1989_tv"]],
-    reputation = taylor::album_palettes[["reputation"]],
-    lover = taylor::album_palettes[["lover"]],
-    folklore = taylor::album_palettes[["folklore"]],
-    evermore = taylor::album_palettes[["evermore"]],
-    midnights = taylor::album_palettes[["midnights"]],
-    tortured_poets = taylor::album_palettes[["tortured_poets"]],
-    showgirl = taylor::album_palettes[["showgirl"]],
+    taylor_swift = album_palettes[["taylor_swift"]],
+    fearless = album_palettes[["fearless"]],
+    fearless_tv = album_palettes[["fearless_tv"]],
+    speak_now = album_palettes[["speak_now"]],
+    speak_now_tv = album_palettes[["speak_now_tv"]],
+    red = album_palettes[["red"]],
+    red_tv = album_palettes[["red_tv"]],
+    `1989` = album_palettes[["1989"]],
+    `1989_tv` = album_palettes[["1989_tv"]],
+    reputation = album_palettes[["reputation"]],
+    lover = album_palettes[["lover"]],
+    folklore = album_palettes[["folklore"]],
+    evermore = album_palettes[["evermore"]],
+    midnights = album_palettes[["midnights"]],
+    tortured_poets = album_palettes[["tortured_poets"]],
+    showgirl = album_palettes[["showgirl"]],
     {
       rlang::warn(paste0(
         "Album '",
@@ -197,7 +197,7 @@ taylor_col <- function(
         "' does not exist. ",
         "Defaulting to 'Lover'."
       ))
-      taylor::album_palettes[["lover"]]
+      album_palettes[["lover"]]
     }
   )
 

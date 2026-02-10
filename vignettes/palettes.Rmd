@@ -40,7 +40,7 @@ my_small_pal
 
 ## Built-in palettes
 
-The taylor package comes with a few palettes built-in, based on Taylor Swift's album covers. They can be viewed using `taylor::album_palettes`.
+The taylor package comes with a few palettes built-in, based on Taylor Swift's album covers. They can be viewed using `?album_palettes`.
 
 ```{r}
 album_palettes
@@ -52,7 +52,7 @@ Or we can access a single palette.
 album_palettes$fearless_tv
 ```
 
-Also included is a palette that includes one representative color from each album, `taylor::album_compare`.
+Also included is a palette that includes one representative color from each album, `?album_compare`.
 
 ```{r}
 album_compare
@@ -86,7 +86,7 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   theme_minimal()
 ```
 
-Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the [`penguins`](`?penguins`) to map our palette to the species of penguin.
+Finally, if we have a discrete scale, we can use `ggplot2::scale_fill_manual()` or `ggplot2::scale_color_manual()`. Here, we use the `?penguins` data to map our palette to the species of penguin.
 
 ```{r message = FALSE, warning = FALSE, fig.alt = "A scatter plot with bill length on the x-axis and bill depth on the y-axis. The shape and color of the points correspond to the species of penguin, with colors derived from our custom color palette. Adelie penguins are shown in red circles, Chinstrap penguins in yellow triangles, and Gentoo penguins in blue squares."}
 

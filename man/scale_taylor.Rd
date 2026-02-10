@@ -179,7 +179,7 @@ p + scale_color_taylor_d()
 # change scale label
 p + scale_fill_taylor_d("Mode of Track")
 
-# select album palette to use, see ?taylor::album_palettes for more details
+# select album palette to use, see `?album_palettes` for more details
 lover <- subset(taylor_album_songs, album_name == "Lover")
 (p <- ggplot(lover, aes(x = valence, y = track_name)) +
    geom_col(aes(fill = track_name)) +

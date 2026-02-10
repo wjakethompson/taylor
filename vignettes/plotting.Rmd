@@ -98,13 +98,13 @@ p + scale_fill_taylor_b(album = "evermore")
 
 ## Album scales
 
-Finally, there is an album scale that can be used when plotting data from multiple albums. Take for example the [Metacritic](https://www.metacritic.com/person/taylor-swift) ratings of Taylor's albums, stored in `taylor::taylor_albums`.
+Finally, there is an album scale that can be used when plotting data from multiple albums. Take for example the [Metacritic](https://www.metacritic.com/person/taylor-swift) ratings of Taylor's albums, stored in `?taylor_albums`.
 
 ```{r}
 taylor_albums
 ```
 
-Let's create a bar graph showing the rating of each album. We'll first make the album name a factor variable. A convenience variable, `taylor::album_levels`, is included in the package that will let us easily order the factor by album release date. We'll give each bar its own color to add some pizzazz to the plot.
+Let's create a bar graph showing the rating of each album. We'll first make the album name a factor variable. A convenience variable, `?album_levels`, is included in the package that will let us easily order the factor by album release date. We'll give each bar its own color to add some pizzazz to the plot.
 
 ```{r warning = FALSE, fig.alt = "A bar graph with the Metacritic rating on the x-axis and the album name on the y-axis. Color has been assigned to each bar such that each bar is filled with a color. The colors follow the ggplot2 default, resulting in a rainbow-like palette."}
 metacritic <- taylor_albums |>
