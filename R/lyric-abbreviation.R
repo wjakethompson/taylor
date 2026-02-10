@@ -17,7 +17,7 @@ translate_bracelet <- function(abbr) {
   abbr <- check_character(abbr)
 
   lyric_abbr <- vapply(
-    taylor_all_songs$lyrics,
+    taylor::taylor_all_songs$lyrics,
     function(.x) {
       lines <-
         vapply(
@@ -42,7 +42,7 @@ translate_bracelet <- function(abbr) {
     character(1)
   )
 
-  songs <- taylor_all_songs[
+  songs <- taylor::taylor_all_songs[
     grep(abbr, lyric_abbr),
     c("album_name", "track_name", "lyrics")
   ]
