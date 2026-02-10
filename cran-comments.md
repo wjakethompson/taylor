@@ -1,6 +1,6 @@
 ## Release summary
 
-This is a resubmission to resolve a NOTE that appeared in the pre-tests. One URL was redirected, which has now been resolved.
+This is a resubmission to resolve a NOTE for a missing URI.
 
 This is a major release to add new data and change the data source due to API changes.
 
