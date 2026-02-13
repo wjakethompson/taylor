@@ -85,6 +85,8 @@ articles:
 
 news:
   releases:
+  - text: "Version 4.0.0"
+    href: https://wjakethompson.com/blog/taylor/2026-02-13-taylor-4.0.0/
   - text: "Version 3.2.0"
     href: https://www.wjakethompson.com/blog/taylor/2025-01-13-taylor-3.2.0/
   - text: "Version 3.1.0"
