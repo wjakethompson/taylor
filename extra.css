@@ -1,29 +1,43 @@
 :root {
-  --nav-bkg: #000000;     /* nav bar background */
-  --nav-link: #FFFFFF;    /* nav bar link color */
-  --nav-higl: #FFFFFF;    /* nav hover background */
+  --nav-bkg: #6CAE90;
+  /* nav bar background */
+  --nav-link: #6CAE90;
+  /* nav bar link color */
+  --nav-higl: #FFFFFF;
+  /* nav hover background */
 
-  --sdb-link: #6a80b7;    /* hyperlinks in sidebar */
-  --sdb-hover: #c1dee4;   /* hyperlink hover in sidebar*/
-  --sdb-roles: #00000094; /* author roles */
+  --sdb-link: #3E5C38;
+  /* hyperlinks in sidebar */
+  --sdb-hover: #3E5C38;
+  /* hyperlink hover in sidebar*/
+  --sdb-roles: #00000094;
+  /* author roles */
 
-  --pg-header: #000000;   /* heading color & text links */
-  --text-link: #5c3e42;   /* hyperlinks in text */
-  --a-hover: #e69fb1;     /* hyperlink hover */
+  --pg-header: #000000;
+  /* heading color & text links */
+  --text-link: #C44615;
+  /* hyperlinks in text */
+  --a-hover: #C44615;
+  /* hyperlink hover */
 
-  --btn-color: #000000;   /* copy button color */
-  --btn-hover: #c9bccd;   /* copy button hover */
+  --btn-color: #000000;
+  /* copy button color */
+  --btn-hover: #C44615;
+  /* copy button hover */
 
-  --toc-active: #dde9c3;  /* background color for active TOC */
-  --toc-hover: #dde9c3;   /* background color for hover TOC */
-  --toc-htext: #000000;   /* color of TOC hover text (default to --nav-bkg) */
+  --toc-active: #C44615;
+  /* background color for active TOC */
+  --toc-hover: #6CAE90;
+  /* background color for hover TOC */
+  --toc-htext: #FFFFFF;
+  /* color of TOC hover text (default to --nav-bkg) */
 }
 
 
 /* plug color into: https://codepen.io/sosuke/pen/Pjoqqp -------------------- */
 /* Collapsible menu button on mobile (--nav-link) */
 span.navbar-toggler-icon {
-  filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(0%) hue-rotate(240deg) brightness(105%) contrast(103%);
 }
 
 /* Anchor image in headings (--text-link) */
@@ -31,6 +45,53 @@ a.anchor {
   filter: brightness(0) saturate(100%) invert(36%) sepia(3%) saturate(5389%) hue-rotate(11deg) brightness(88%) contrast(82%);
 }
 
+/* Navbar background images ------------------------------------------------- */
+.bg-light {
+  background-image: url('ts-orange.png');
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0px 0px 10px #000 !important;
+}
+
+button.nav-link {
+  text-shadow: 0px 0px 10px #000;
+}
+
+.navbar-brand {
+  text-shadow: 0px 0px 10px #444;
+}
+
+.text-danger {
+  text-shadow: none;
+}
+
+.text-muted {
+  text-shadow: none;
+}
+
+.dropdown-header {
+  text-shadow: none;
+}
+
+.dropdown-item,
+.dropdown-menu>li>a {
+  text-shadow: none;
+}
+
+.dropdown-item:hover,
+.dropdown-menu>li>a:hover {
+  text-shadow: none;
+}
+
+/* active nav links */
+.navbar-nav .active>.nav-link {
+  text-shadow: none;
+}
+
+/* inactive nav links hover */
+.navbar-nav .nav-item>.nav-link:hover {
+  text-shadow: none;
+}
 
 /* Home page ---------------------------------------------------------------- */
 .template-home {
@@ -43,13 +104,16 @@ a.anchor {
     padding: 2rem 0;
     border-bottom: 1px solid $faint-border;
 
-    h1 {margin-top: 0rem}
+    h1 {
+      margin-top: 0rem
+    }
 
     @include media-breakpoint-down(sm) {
       margin: 0.5rem 0;
       padding: 0.5rem 0;
     }
   }
+
   img.logo {
     margin-left: 0;
 
@@ -73,19 +137,19 @@ figcaption {
 
 /* Color of links in navbar and hover links */
 .nav-link {
-  color: var(--nav-link) !important;
+  color: var(--nav-higl) !important;
 }
 
 /* active nav links */
 .navbar-nav .active>.nav-link {
   background: var(--nav-link);
-  color: var(--nav-bkg) !important;
+  color: var(--nav-higl) !important;
 }
 
 /* inactive nav links hover */
 .navbar-nav .nav-item>.nav-link:hover {
-  background: var(--nav-higl);
-  color: var(--nav-bkg) !important;
+  background: var(--nav-bkg);
+  color: var(--nav-higl) !important;
 }
 
 /* button padding */
@@ -95,8 +159,8 @@ li.nav-item {
 
 /* package name in navbar */
 .navbar-brand {
-  color: var(--nav-link) !important;
-  font-weight: bold;
+  color: var(--nav-higl) !important;
+  font-weight: bolder;
   font-size: 150%;
 }
 
@@ -106,34 +170,37 @@ li.nav-item {
 }
 
 .dropdown-menu {
-  background-color: var(--nav-bkg);
-  border-color: var(--nav-link);
+  background-color: var(--nav-higl);
+  border-color: var(--nav-bkg);
 }
 
 /* dropdown menu links */
-.dropdown-item, .dropdown-menu > li > a {
-  background-color: var(--nav-bkg);
+.dropdown-item,
+.dropdown-menu>li>a {
+  background-color: var(--nav-higl);
   color: var(--nav-link);
 }
 
 /* dropdown menu links hover */
-.dropdown-item:hover, .dropdown-menu > li > a:hover {
-    color: var(--nav-bkg);
-    text-decoration: none;
-    background-color: var(--nav-higl);
+.dropdown-item:hover,
+.dropdown-menu>li>a:hover {
+  color: var(--nav-higl);
+  text-decoration: none;
+  background-color: var(--nav-bkg);
 }
 
 /* Collapsible menu button on mobile */
 .navbar-toggler {
   border-color: var(--nav-bkg);
   color: var(--nav-higl);
+  background-color: var(--nav-bkg);
 }
 
 /* package verion - dev */
 .text-danger {
   font-size: 75%;
-  color: var(--nav-bkg) !important;
-  background-color: var(--nav-link);
+  color: var(--nav-higl) !important;
+  background-color: var(--nav-bkg);
   border-radius: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -149,7 +216,6 @@ li.nav-item {
   padding-right: 0.5rem;
 }
 
-
 /* Sidebar ------------------------------------------------------------------ */
 /* link color */
 .list-unstyled a {
@@ -164,7 +230,8 @@ li.nav-item {
 }
 
 /* headings */
-h2[data-toc-skip], #pkgdown-sidebar h2[data-toc-skip] {
+h2[data-toc-skip],
+#pkgdown-sidebar h2[data-toc-skip] {
   font-size: 1.2em;
   text-transform: uppercase;
   color: var(--pg-header);
@@ -187,6 +254,7 @@ aside small.roles {
 a {
   color: var(--text-link);
 }
+
 a:hover {
   color: var(--a-hover);
 }
@@ -197,6 +265,7 @@ p a {
   text-decoration-skip-ink: none;
   text-decoration-thickness: from-font;
 }
+
 p a:hover {
   text-decoration: underline var(--text-link) solid;
   text-decoration-skip-ink: none;
@@ -210,6 +279,7 @@ h1 {
   color: var(--pg-header);
   letter-spacing: .08em;
 }
+
 h2 {
   font-size: 1.7em;
   text-transform: none;
@@ -217,19 +287,21 @@ h2 {
   color: var(--pg-header);
   letter-spacing: .08em;
 }
+
 h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-transform: none;
   font-weight: 200;
   color: var(--pg-header);
-  letter-spacing: .1em;
+  letter-spacing: .08em;
 }
+
 h4 {
   font-size: 1.2em;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 100;
   color: var(--pg-header);
-  letter-spacing: .05em;
+  letter-spacing: .08em;
 }
 
 
@@ -254,7 +326,7 @@ h4 {
 
 #toc>.nav a.nav-link.active {
   background-color: var(--toc-active);
-  color: var(--nav-bkg) !important;
+  color: var(--nav-higl) !important;
 }
 
 #toc>.nav a.nav-link:hover,
@@ -267,4 +339,17 @@ h4 {
 table.taylor-examples td {
   width: 33.333%;
   vertical-align: middle;
+}
+
+/* News --------------------------------------------------------------------- */
+li p {
+  margin-bottom: 0rem;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+ul ul li {
+  margin-bottom: 0rem;
 }
