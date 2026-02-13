@@ -4,7 +4,7 @@
 
 The goal of taylor is to provide easy access to a curated data set of
 Taylor Swift songs, including lyrics and audio characteristics. Data
-comes [Genius](https://genius.com/artists/Taylor-swift) and the
+comes from [Genius](https://genius.com/artists/Taylor-swift) and the
 [SoundStat API](https://soundstat.info).
 
 ![GIF of Taylor saying
