@@ -32,7 +32,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes [Genius](https://genius.com/artists/Taylor-swift) and the [SoundStat API](https://soundstat.info).
+The goal of taylor is to provide easy access to a curated data set of Taylor Swift songs, including lyrics and audio characteristics. Data comes from [Genius](https://genius.com/artists/Taylor-swift) and the [SoundStat API](https://soundstat.info).
 
 ![GIF of Taylor saying "yes"](https://media.giphy.com/media/2tg4k9pXNcGi7kZ9Pz/giphy.gif)
 
