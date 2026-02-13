@@ -11,13 +11,13 @@ Source:
 [`DESCRIPTION`](https://github.com/wjakethompson/taylor/blob/main/DESCRIPTION)
 
 Thompson W (2026). *taylor: Lyrics and Song Data for Taylor Swift's
-Discography*. R package version 3.2.0.9000,
+Discography*. R package version 4.0.0.9000,
 <https://taylor.wjakethompson.com>.
 
     @Manual{,
       title = {taylor: Lyrics and Song Data for Taylor Swift's Discography},
       author = {W. Jake Thompson},
       year = {2026},
-      note = {R package version 3.2.0.9000},
+      note = {R package version 4.0.0.9000},
       url = {https://taylor.wjakethompson.com},
     }

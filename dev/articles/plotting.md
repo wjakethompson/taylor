@@ -152,7 +152,7 @@ Finally, there is an album scale that can be used when plotting data
 from multiple albums. Take for example the
 [Metacritic](https://www.metacritic.com/person/taylor-swift) ratings of
 Taylor’s albums, stored in
-[`taylor::taylor_albums`](https://taylor.wjakethompson.com/dev/reference/taylor_albums.md).
+[`?taylor_albums`](https://taylor.wjakethompson.com/dev/reference/taylor_albums.md).
 
 ``` r
 taylor_albums
@@ -181,7 +181,7 @@ taylor_albums
 
 Let’s create a bar graph showing the rating of each album. We’ll first
 make the album name a factor variable. A convenience variable,
-[`taylor::album_levels`](https://taylor.wjakethompson.com/dev/reference/album_levels.md),
+[`?album_levels`](https://taylor.wjakethompson.com/dev/reference/album_levels.md),
 is included in the package that will let us easily order the factor by
 album release date. We’ll give each bar its own color to add some
 pizzazz to the plot.

@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">taylor</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">3.2.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">4.0.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +62,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-news" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">News</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-news">
 <li><h6 class="dropdown-header" data-toc-skip>Releases</h6></li>
+    <li><a class="external-link dropdown-item" href="https://wjakethompson.com/blog/taylor/2026-02-13-taylor-4.0.0/">Version 4.0.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2025-01-13-taylor-3.2.0/">Version 3.2.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2024-05-09-taylor-3.1.0/">Version 3.1.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2023-11-09-taylor-3.0.0/">Version 3.0.0</a></li>
@@ -155,7 +156,7 @@ representative colors.</p>
 </h2>
 <p>The taylor package comes with a few palettes built-in, based on
 Taylor Swift’s album covers. They can be viewed using
-<code><a href="../reference/album_palettes.html">taylor::album_palettes</a></code>.</p>
+<code><a href="../reference/album_palettes.html">?album_palettes</a></code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_palettes</span></span>
 <span><span class="co">#&gt; $taylor_swift</span></span>
@@ -295,7 +296,7 @@ Taylor Swift’s album covers. They can be viewed using
 <span><span class="co">#&gt;  <span style="background-color: #D7AF87;">  </span> #C5AA7C </span></span>
 <span><span class="co">#&gt;  <span style="background-color: #FFFFAF;">  </span> #EEDBA9</span></span></code></pre></div>
 <p>Also included is a palette that includes one representative color
-from each album, <code><a href="../reference/album_palettes.html">taylor::album_compare</a></code>.</p>
+from each album, <code><a href="../reference/album_palettes.html">?album_compare</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">album_compare</span></span>
 <span><span class="co">#&gt; &lt;color_palette[16]&gt;</span></span>
@@ -355,8 +356,9 @@ can create a palette of greens, and then use
 <p><img src="palettes_files/figure-html/unnamed-chunk-9-1.png" class="r-plt" alt="The same heatmap as the previous figure, but instead of the fill using a palette based on Fearless (Taylor's Version), the color palette goes from light green to dark green." width="90%" style="display: block; margin: auto;"></p>
 <p>Finally, if we have a discrete scale, we can use
 <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">ggplot2::scale_fill_manual()</a></code> or
-<code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">ggplot2::scale_color_manual()</a></code>. Here, we use the <a href="%60?penguins%60"><code>penguins</code></a> to map our palette to
-the species of penguin.</p>
+<code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">ggplot2::scale_color_manual()</a></code>. Here, we use the
+<code><a href="https://rdrr.io/r/datasets/penguins.html" class="external-link">?penguins</a></code> data to map our palette to the species of
+penguin.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">penguin_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/color_palette.html">color_palette</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>

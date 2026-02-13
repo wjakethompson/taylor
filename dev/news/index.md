@@ -2,6 +2,8 @@
 
 ## taylor (development version)
 
+## taylor 4.0.0
+
 ### Breaking changes
 
 - `taylor_all_songs` and `taylor_album_songs` now use audio features
@@ -17,7 +19,7 @@
     [`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md)).
 - *Fearless*, *Speak Now*, *Red*, and *1989* have been added back to
   `taylor_album_songs` now that Taylor [owns all of her
-  masters](https://www.taylorswift.com/read-my-letter). Both the
+  masters](https://www.taylorswift.com/read-my-letter/). Both the
   originals and Taylor’s Version’s are now included in the dataset.
 
 ### New features
@@ -26,7 +28,7 @@
 
 - New data and visualization tools have been added for *The Life of a
   Showgirl*.
-  - Added lyrics and SoundState audio features to `taylor_all_songs` and
+  - Added lyrics and SoundStat audio features to `taylor_all_songs` and
     `taylor_album_songs`.
   - Added composite critic score from Metacritic to `taylor_albums`.
   - Added a new themed color palette to `album_palettes`.

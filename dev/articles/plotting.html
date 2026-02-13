@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">taylor</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">3.2.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">4.0.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +62,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-news" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">News</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-news">
 <li><h6 class="dropdown-header" data-toc-skip>Releases</h6></li>
+    <li><a class="external-link dropdown-item" href="https://wjakethompson.com/blog/taylor/2026-02-13-taylor-4.0.0/">Version 4.0.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2025-01-13-taylor-3.2.0/">Version 3.2.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2024-05-09-taylor-3.1.0/">Version 3.1.0</a></li>
     <li><a class="external-link dropdown-item" href="https://www.wjakethompson.com/blog/taylor/2023-11-09-taylor-3.0.0/">Version 3.0.0</a></li>
@@ -202,8 +203,7 @@ palettes work great for gray scale images.</p>
 </h2>
 <p>Finally, there is an album scale that can be used when plotting data
 from multiple albums. Take for example the <a href="https://www.metacritic.com/person/taylor-swift" class="external-link">Metacritic</a>
-ratings of Taylor’s albums, stored in
-<code><a href="../reference/taylor_albums.html">taylor::taylor_albums</a></code>.</p>
+ratings of Taylor’s albums, stored in <code><a href="../reference/taylor_albums.html">?taylor_albums</a></code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">taylor_albums</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 18 × 5</span></span></span>
@@ -229,9 +229,9 @@ ratings of Taylor’s albums, stored in
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> The Life of a Showgirl        FALSE 2025-10-03                  69       <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
 <p>Let’s create a bar graph showing the rating of each album. We’ll
 first make the album name a factor variable. A convenience variable,
-<code><a href="../reference/album_levels.html">taylor::album_levels</a></code>, is included in the package that will
-let us easily order the factor by album release date. We’ll give each
-bar its own color to add some pizzazz to the plot.</p>
+<code><a href="../reference/album_levels.html">?album_levels</a></code>, is included in the package that will let us
+easily order the factor by album release date. We’ll give each bar its
+own color to add some pizzazz to the plot.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">metacritic</span> <span class="op">&lt;-</span> <span class="va">taylor_albums</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">metacritic_score</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>

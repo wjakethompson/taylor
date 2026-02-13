@@ -64,7 +64,7 @@ my_small_pal
 
 The taylor package comes with a few palettes built-in, based on Taylor
 Swift’s album covers. They can be viewed using
-[`taylor::album_palettes`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
+[`?album_palettes`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
 
 ``` r
 album_palettes
@@ -211,7 +211,7 @@ album_palettes$fearless_tv
 
 Also included is a palette that includes one representative color from
 each album,
-[`taylor::album_compare`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
+[`?album_compare`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
 
 ``` r
 album_compare
@@ -293,9 +293,8 @@ Finally, if we have a discrete scale, we can use
 [`ggplot2::scale_fill_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html)
 or
 [`ggplot2::scale_color_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html).
-Here, we use the
-[`penguins`](https://taylor.wjakethompson.com/dev/articles/%60?penguins%60)
-to map our palette to the species of penguin.
+Here, we use the [`?penguins`](https://rdrr.io/r/datasets/penguins.html)
+data to map our palette to the species of penguin.
 
 ``` r
 
