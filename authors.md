@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/wjakethompson/taylor/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/wjakethompson/taylor/blob/v4.0.0/DESCRIPTION)
 
 Thompson W (2026). *taylor: Lyrics and Song Data for Taylor Swift's
 Discography*. R package version 4.0.0,
