@@ -6,6 +6,7 @@ characteristics. In each data set, the lyrics are stored as a
 list-column.
 
 ``` r
+
 library(taylor)
 library(dplyr)
 
@@ -41,6 +42,7 @@ the data set contains “Cruel Summer” and then access that element of the
 list.
 
 ``` r
+
 track_row <- which(track_lyrics$track_name == "Cruel Summer")
 track_lyrics$lyrics[[track_row]]
 #> # A tibble: 62 × 4
@@ -69,6 +71,7 @@ than having a data set that is one row per song, we now have a data set
 that is one row per line per song.
 
 ``` r
+
 library(tidyr)
 
 track_lyrics |>
@@ -95,6 +98,7 @@ specific song, we can always use
 to include only the data we are interested in.
 
 ``` r
+
 track_lyrics |>
   filter(track_name == "Cruel Summer") |>
   unnest(lyrics)
@@ -128,6 +132,7 @@ integer value, we’ll use
 [`purrr::map_int()`](https://purrr.tidyverse.org/reference/map.html)).
 
 ``` r
+
 track_lyrics |>
   filter(album_name == "Lover") |>
   mutate(lines = vapply(lyrics, nrow, integer(1)))

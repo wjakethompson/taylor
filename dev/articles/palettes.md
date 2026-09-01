@@ -15,6 +15,7 @@ color (from [`colors()`](https://rdrr.io/r/grDevices/colors.html)), and
 a palette is created that will print a preview of the colors.
 
 ``` r
+
 library(taylor)
 
 my_pal <- color_palette(c("firebrick", "turquoise", "#0051ba"))
@@ -31,6 +32,7 @@ on an existing palette to interpolate additional values, by specifying
 that we want more colors than were originally specified.
 
 ``` r
+
 my_big_pal <- color_palette(my_pal, n = 10)
 my_big_pal
 #> <color_palette[10]>
@@ -50,6 +52,7 @@ Similarly, if we have a large color palette, we can select just a few
 representative colors.
 
 ``` r
+
 my_small_pal <- color_palette(my_big_pal, n = 5)
 my_small_pal
 #> <color_palette[5]>
@@ -67,6 +70,7 @@ Swift’s album covers. They can be viewed using
 [`?album_palettes`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
 
 ``` r
+
 album_palettes
 #> $taylor_swift
 #> <color_palette[5]>
@@ -200,6 +204,7 @@ album_palettes
 Or we can access a single palette.
 
 ``` r
+
 album_palettes$fearless_tv
 #> <color_palette[5]>
 #>     #624324 
@@ -214,6 +219,7 @@ each album,
 [`?album_compare`](https://taylor.wjakethompson.com/dev/reference/album_palettes.md).
 
 ``` r
+
 album_compare
 #> <color_palette[16]>
 #>     taylor_swift 
@@ -246,6 +252,7 @@ out
 
 ``` r
 
+
 library(ggplot2)
 
 p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
@@ -270,6 +277,7 @@ or
 to use the palette.
 
 ``` r
+
 
 green_pal <- color_palette(c("#E5F5E0", "#A1D99B", "#31A354"))
 green_pal
@@ -297,6 +305,7 @@ Here, we use the [`?penguins`](https://rdrr.io/r/datasets/penguins.html)
 data to map our palette to the species of penguin.
 
 ``` r
+
 
 penguin_pal <- color_palette(c(
   Adelie = "firebrick",

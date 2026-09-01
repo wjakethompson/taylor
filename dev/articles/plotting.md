@@ -25,6 +25,7 @@ First, let’s make a bar graph showing the valence of each song on
 *evermore*.
 
 ``` r
+
 library(taylor)
 library(ggplot2)
 library(dplyr)
@@ -49,6 +50,7 @@ We can then add some *evermore*-inspired colors using
 [`scale_fill_taylor_d()`](https://taylor.wjakethompson.com/dev/reference/scale_taylor.md).
 
 ``` r
+
 p + scale_fill_taylor_d(album = "evermore")
 ```
 
@@ -63,6 +65,7 @@ palette. For example, we can switch to *Speak Now* using
 `album = "Speak Now"`.
 
 ``` r
+
 p + scale_fill_taylor_d(album = "Speak Now")
 ```
 
@@ -79,6 +82,7 @@ to plot some data about
 [`?penguins`](https://rdrr.io/r/datasets/penguins.html).
 
 ``` r
+
 ggplot(penguins, aes(x = bill_len, y = bill_dep)) +
   geom_point(aes(shape = species, color = species), size = 3) +
   scale_color_taylor_d(album = "Lover") +
@@ -99,6 +103,7 @@ use the classic example included in the ggplot2 package of the eruptions
 of the Old Faithful geyser and the duration of the eruptions.
 
 ``` r
+
 p <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
   theme_minimal()
@@ -117,6 +122,7 @@ Similarly, both the *reputation* and *folklore* palettes work great for
 gray scale images.
 
 ``` r
+
 p + scale_fill_taylor_c(album = "reputation")
 ```
 
@@ -126,6 +132,7 @@ are show in dark grey, and more common values appear as
 white.](plotting_files/figure-html/unnamed-chunk-7-1.png)
 
 ``` r
+
 p + scale_fill_taylor_c(album = "folklore")
 ```
 
@@ -138,6 +145,7 @@ Just like with other ggplot2 scales, we can also use the `_b` variants
 to create a binned color scale.
 
 ``` r
+
 p + scale_fill_taylor_b(album = "evermore")
 ```
 
@@ -155,6 +163,7 @@ Taylor’s albums, stored in
 [`?taylor_albums`](https://taylor.wjakethompson.com/dev/reference/taylor_albums.md).
 
 ``` r
+
 taylor_albums
 #> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
@@ -187,6 +196,7 @@ album release date. We’ll give each bar its own color to add some
 pizzazz to the plot.
 
 ``` r
+
 metacritic <- taylor_albums |>
   filter(!is.na(metacritic_score)) |>
   mutate(album_name = factor(album_name, levels = album_levels))
@@ -208,6 +218,7 @@ album? Enter
 [`scale_fill_albums()`](https://taylor.wjakethompson.com/dev/reference/scale_albums.md)!
 
 ``` r
+
 ggplot(metacritic, aes(x = metacritic_score, y = album_name)) +
   geom_col(aes(fill = album_name), show.legend = FALSE) +
   scale_fill_albums() +
@@ -233,6 +244,7 @@ correctly, even if the ordering of the albums changes, or not all levels
 are present.
 
 ``` r
+
 set.seed(121389)
 rand_critic <- metacritic |>
   slice_sample(n = 5) |>
@@ -258,6 +270,7 @@ for the *THE TORTURED POETS DEPARTMENT*, and *TV* as a stand-in for
 *Taylor’s Version*.
 
 ``` r
+
 alt_names <- metacritic |>
   mutate(
     album_name = case_when(

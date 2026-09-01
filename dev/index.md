@@ -18,6 +18,7 @@ You can install the released version of taylor from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
+
 install.packages("taylor")
 ```
 
@@ -25,6 +26,7 @@ To install the development version from [GitHub](https://github.com/)
 use:
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("wjakethompson/taylor")
 ```
@@ -42,6 +44,7 @@ and Taylor’s Version are included for albums that were rerecorded (e.g.,
 both *Fearless* and *Fearless (Taylor’s Version)* are present).
 
 ``` r
+
 taylor_album_songs
 #> # A tibble: 332 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
@@ -70,6 +73,7 @@ singles, and songs where Taylor is credited as a featured artist or
 writer.
 
 ``` r
+
 taylor_all_songs
 #> # A tibble: 384 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
@@ -96,6 +100,7 @@ Finally, there is a small data set, `taylor_albums`, summarizing
 Taylor’s album release history.
 
 ``` r
+
 taylor_albums
 #> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score

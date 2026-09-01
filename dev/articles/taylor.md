@@ -10,6 +10,7 @@ This document introduces you to taylor’s functionality, and shows you
 how to use them to learn about Taylor Swift’s music.
 
 ``` r
+
 library(taylor)
 ```
 
@@ -20,6 +21,7 @@ features from [SoundStat](https://soundstat.info) and lyrics from
 [Genius](https://genius.com) for each of Taylor Swift’s songs.
 
 ``` r
+
 taylor_all_songs
 #> # A tibble: 384 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
@@ -69,6 +71,7 @@ ratings from
 [Metacritic](https://www.metacritic.com/person/taylor-swift/).
 
 ``` r
+
 taylor_albums
 #> # A tibble: 18 × 5
 #>    album_name                    ep    album_release metacritic_score user_score
@@ -102,6 +105,7 @@ includes information on any additional songs that were performed as
 mashups and guests that Taylor brought out for a performance.
 
 ``` r
+
 eras_tour_surprise
 #> # A tibble: 298 × 9
 #>    leg                date       city  night dress instrument song  mashup guest
@@ -132,6 +136,7 @@ First, there are color palettes inspired by each album stored in
 the cover art for the *Lover* album.
 
 ``` r
+
 album_palettes$lover
 #> <color_palette[5]>
 #>     #76BAE0 
@@ -147,6 +152,7 @@ description of color palette functionality in taylor, see
 [`vignette("palettes")`](https://taylor.wjakethompson.com/dev/articles/palettes.md).
 
 ``` r
+
 album_compare
 #> <color_palette[16]>
 #>     taylor_swift 
@@ -179,6 +185,7 @@ to highlight each album within its respective facet.
 Plot code
 
 ``` r
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -278,6 +285,7 @@ tour. For more details on ggplot2 scales provided by taylor, see
 Plot code
 
 ``` r
+
 library(patchwork)
 
 missing_firsts <- tibble(
@@ -365,8 +373,8 @@ counting? Below is a collection of analyses that use data from taylor
 that I have found in the wild. If you use the data and find it useful,
 please reach out—I love to see the package used!
 
-|                                                                                                                                                                                                  |                                                                                                                                                                                            |                                                                                                                                                                                             |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Julia Silge topic modeling](https://juliasilge.com/blog/taylor-swift/index_files/figure-html/unnamed-chunk-10-1.png)](https://juliasilge.com/blog/taylor-swift/)                              | [![Crafting bracelets](https://cdn.fosstodon.org/media_attachments/files/111/275/600/691/928/622/original/d3cadbb47844dc21.png)](https://fosstodon.org/@ryanahart/111275600981010402)      | [![Danceability beeswarm](https://cdn.masto.host/vissocial/media_attachments/files/111/268/872/636/513/756/original/438db8d1a9fc47ef.png)](https://vis.social/@georgios/111268873077992577) |
-| [![Average energy](https://cdn.fosstodon.org/media_attachments/files/111/263/533/563/532/762/original/2286c64153a24511.png)](https://fosstodon.org/@nrennie/111263534136045526)                  | [![Swiftly shifting tempos](https://cdn.fosstodon.org/media_attachments/files/111/256/276/115/381/437/original/452faf0a9aca766e.png)](https://fosstodon.org/@ryanahart/111256276399597870) | [![Song duration radial](https://cdn.fosstodon.org/media_attachments/files/111/250/751/304/784/167/original/89c6862657cac335.png)](https://fosstodon.org/@deepali/111250751714226638)       |
-| [![Albums as sheet music](https://fediscience.org/system/media_attachments/files/111/249/262/791/175/938/original/ecaebe4b66d85c8b.jpg)](https://fediscience.org/@c_borstell/111246953936265713) | [![Eras tour breakdown](https://cdn.fosstodon.org/media_attachments/files/111/270/764/662/176/750/original/4986ef0af073cd51.png)](https://fosstodon.org/@danoehm/111270774940496937)       | [![Spotify metrics radial](https://cdn.fosstodon.org/media_attachments/files/111/250/191/920/048/768/original/f5dcdfc73d0c6af7.png)](https://fosstodon.org/@frankhaenel/111250193319291887) |
+|  |  |  |
+|----|----|----|
+| [![Julia Silge topic modeling](https://juliasilge.com/blog/taylor-swift/index_files/figure-html/unnamed-chunk-10-1.png)](https://juliasilge.com/blog/taylor-swift/) | [![Crafting bracelets](https://cdn.fosstodon.org/media_attachments/files/111/275/600/691/928/622/original/d3cadbb47844dc21.png)](https://fosstodon.org/@ryanahart/111275600981010402) | [![Danceability beeswarm](https://cdn.masto.host/vissocial/media_attachments/files/111/268/872/636/513/756/original/438db8d1a9fc47ef.png)](https://vis.social/@georgios/111268873077992577) |
+| [![Average energy](https://cdn.fosstodon.org/media_attachments/files/111/263/533/563/532/762/original/2286c64153a24511.png)](https://fosstodon.org/@nrennie/111263534136045526) | [![Swiftly shifting tempos](https://cdn.fosstodon.org/media_attachments/files/111/256/276/115/381/437/original/452faf0a9aca766e.png)](https://fosstodon.org/@ryanahart/111256276399597870) | [![Song duration radial](https://cdn.fosstodon.org/media_attachments/files/111/250/751/304/784/167/original/89c6862657cac335.png)](https://fosstodon.org/@deepali/111250751714226638) |
+| [![Albums as sheet music](https://fediscience.org/system/media_attachments/files/111/249/262/791/175/938/original/ecaebe4b66d85c8b.jpg)](https://fediscience.org/@c_borstell/111246953936265713) | [![Eras tour breakdown](https://cdn.fosstodon.org/media_attachments/files/111/270/764/662/176/750/original/4986ef0af073cd51.png)](https://fosstodon.org/@danoehm/111270774940496937) | [![Spotify metrics radial](https://cdn.fosstodon.org/media_attachments/files/111/250/191/920/048/768/original/f5dcdfc73d0c6af7.png)](https://fosstodon.org/@frankhaenel/111250193319291887) |

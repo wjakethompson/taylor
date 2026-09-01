@@ -49,8 +49,7 @@ Other API access:
 ``` r
 # So High School
 get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
-#> # A tibble: 1 × 5
-#>   artist       featuring spotify_album                      duration_ms explicit
-#>   <chr>        <chr>     <chr>                                    <int> <lgl>   
-#> 1 Taylor Swift NA        THE TORTURED POETS DEPARTMENT: TH…      228800 FALSE   
+#> Request failed [401]. Retrying in 1 seconds...
+#> Request failed [401]. Retrying in 3.3 seconds...
+#> Error in spotifyr::get_track(track_id, authorization = api_key): Unauthorized (HTTP 401).
 ```

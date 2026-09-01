@@ -4,6 +4,8 @@
 
 ## taylor 4.0.0
 
+CRAN release: 2026-02-10
+
 ### Breaking changes
 
 - `taylor_all_songs` and `taylor_album_songs` now use audio features
@@ -284,6 +286,7 @@ CRAN release: 2021-12-14
   happens automatically if `n` is greater than `length(pal)`.
 
   ``` r
+
   my_colors <- c(ku_blue = "#0051ba", "firebrick", "#ffc82d")
   my_palette <- color_palette(my_colors)
 
@@ -324,6 +327,7 @@ CRAN release: 2021-12-14
   ([\#12](https://github.com/wjakethompson/taylor/issues/12)).
 
   ``` r
+
   my_colors <- c(ku_blue = "#0051ba", "firebrick", "#ffc82d")
   color_palette(my_colors)
   ```
