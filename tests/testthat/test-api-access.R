@@ -1,9 +1,12 @@
 test_that("spotify api", {
+  skip_on_cran()
+  skip_on_ci()
+
   client_id <- httr2::secret_decrypt(
     "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
     "TAYLOR_KEY"
   )
-  client_secret = httr2::secret_decrypt(
+  client_secret <- httr2::secret_decrypt(
     "LZneUpdwTawqZOBb6Qx481OvOL9U9Jxz9QZhm9FwUQ6QsPLkQTV1FbMweVKFKUR9",
     "TAYLOR_KEY"
   )
