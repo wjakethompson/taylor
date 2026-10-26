@@ -63,6 +63,10 @@ reference:
   - get_reccobeats_audio_features
   - taylor_sitrep
 
+- title: Lyric analysis
+  contents:
+  - analyze_rhymes
+
 - title: Miscellaneous
   contents:
   - translate_bracelet

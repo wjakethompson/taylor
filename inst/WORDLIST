@@ -2,11 +2,13 @@ Acousticness
 Bein
 Britni
 CMD
+CMU
 Colormind
 Danceability
 EP
 EPs
 Instrumentalness
+Malmi
 Mendes
 Metacritic
 Midnights
@@ -16,6 +18,7 @@ ORCID
 Pickler's
 Premade
 README
+Raplyzer
 ReccoBeats
 Reccobeats
 Rey
@@ -28,6 +31,7 @@ TTPD
 YYYY
 Yankovic's
 cli
+cmudict
 codecov
 colour
 colours
@@ -35,6 +39,7 @@ cpcinema
 danceability
 danceable
 deja
+eSpeak
 ggplot
 ggplots
 lifecycle

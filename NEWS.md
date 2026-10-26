@@ -1,5 +1,11 @@
 # taylor (development version)
 
+* New `analyze_rhymes()` detects rhymes in lyrics and calculates rhyme
+  statistics (e.g., total rhymes, unique rhymes, rhyme density). It works with
+  a string of lyrics or a data set like `taylor_album_songs`, and is an R
+  implementation of [Raplyzer](https://mining4meaning.com/2015/02/13/raplyzer/)
+  using the CMU Pronouncing Dictionary.
+
 # taylor 4.0.0
 
 ## Breaking changes
