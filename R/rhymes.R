@@ -422,7 +422,13 @@ spell_number <- function(digits, ordinal = FALSE) {
 
   n <- as.numeric(digits)
   spell <- function(.n, ordinal = FALSE) {
-    words <- if (ordinal) english::ordinal(.n) else english::as.english(.n)
+    # english picks UK style ("four hundred and one") unless the locale is
+    # en_US, so set it explicitly for consistent results across platforms
+    words <- if (ordinal) {
+      english::ordinal(.n, UK = FALSE)
+    } else {
+      english::english(.n, UK = FALSE)
+    }
     strsplit(as.character(words), "[^a-z]+")[[1]]
   }
 
