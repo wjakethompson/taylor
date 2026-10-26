@@ -9,6 +9,8 @@ Malmi, E. (2015). \emph{Raplyzer}.
 
 Carnegie Mellon University. \emph{The CMU Pronouncing Dictionary}.
 \url{https://github.com/cmusphinx/cmudict}
+
+\emph{eSpeak NG}. \url{https://github.com/espeak-ng/espeak-ng}
 }
 \usage{
 analyze_rhymes(
@@ -16,7 +18,8 @@ analyze_rhymes(
   lookback = 15,
   min_length = 2,
   remove_duplicates = TRUE,
-  lyrics_col = "lyrics"
+  lyrics_col = "lyrics",
+  pronunciation = c("auto", "espeak", "cmudict")
 )
 }
 \arguments{
@@ -37,6 +40,10 @@ parentheses or brackets (e.g., backing vocals) are always removed.}
 
 \item{lyrics_col}{If \code{x} is a data frame, the name of the list-column that
 contains the lyrics.}
+
+\item{pronunciation}{Where pronunciations come from. One of \code{"auto"} (the
+default; eSpeak if it's installed, and otherwise the CMU Pronouncing
+Dictionary), \code{"espeak"}, or \code{"cmudict"}. See Details.}
 }
 \value{
 A \link[tibble:tibble]{tibble}. If \code{x} is a character vector, there is
@@ -63,8 +70,7 @@ densely the lyrics rhyme. This is an R implementation of
 \href{https://mining4meaning.com/2015/02/13/raplyzer/}{Raplyzer} by Eric Malmi.
 }
 \details{
-Each word in the lyrics is converted to a sequence of vowel sounds using
-the \href{https://github.com/cmusphinx/cmudict}{CMU Pronouncing Dictionary}.
+Each word in the lyrics is converted to a sequence of vowel sounds.
 Consonants are ignored. For each word, the algorithm looks back at the
 previous \code{lookback} words and finds the longest matching sequence of vowels
 that ends with both words. The match starts at the last vowel of each word
@@ -82,18 +88,37 @@ Raplyzer reported a rhyme density of 0.95 for Shakespeare's poems and 0.92
 for the musical \emph{Hamilton}. However, those values aren't directly
 comparable to the values from this function, because of the differences
 described below.
+\subsection{Pronunciation}{
+
+Like the original Raplyzer, pronunciations can come from the
+\href{https://github.com/espeak-ng/espeak-ng}{eSpeak} speech synthesizer, which
+must be installed separately. If eSpeak isn't installed, pronunciations come
+from the \href{https://github.com/cmusphinx/cmudict}{CMU Pronouncing Dictionary},
+which is included in the package. Words not in the dictionary get a rough
+pronunciation from their spelling. By default (\code{pronunciation = "auto"}),
+eSpeak is used if it's installed. The two sources mostly agree, but results
+can differ slightly, so set \code{pronunciation} explicitly if you need results
+that are reproducible across computers. eSpeak is found by looking for
+\code{espeak-ng} and then \code{espeak} on the \code{PATH}, or you can set the path with
+\code{options(taylor.espeak = "path/to/espeak")}.
+
+With either source, numbers are first converted to words the way they are
+typically spoken (e.g., "22" becomes "twenty two", "1989" becomes "nineteen
+eighty nine", and "2AM" becomes "two eh em").
+}
+
+\subsection{Differences from Raplyzer}{
 
 This implementation differs from the original Raplyzer in a few ways:
 \itemize{
-\item Pronunciations come from the CMU Pronouncing Dictionary instead of the
-eSpeak speech synthesizer. Words not in the dictionary get a rough
-pronunciation from their spelling. Numbers are converted to words the
-way they are typically spoken (e.g., "22" becomes "twenty two", "1989"
-becomes "nineteen eighty nine", and "2AM" becomes "two ay em").
+\item Each word is transcribed by itself, rather than in the context of the
+full lyrics, and similar vowels are grouped the same way for both
+pronunciation sources.
 \item Diphthongs (e.g., the vowel in "night") are treated as a single vowel, so
 "night" doesn't rhyme with "trap kit".
 \item Words are considered identical when they're spelled the same, rather than
 when they're pronounced the same.
+}
 }
 }
 \examples{

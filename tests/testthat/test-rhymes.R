@@ -74,8 +74,8 @@ test_that("numbers are converted to words", {
   expect_equal(
     tokenize_words(c("It's 2 A.M.", "2:30AM", "8:05 pm", "9:00", "I am")),
     list(
-      c("it's", "two", "ay", "em"),
-      c("two", "thirty", "ay", "em"),
+      c("it's", "two", "eh", "em"),
+      c("two", "thirty", "eh", "em"),
       c("eight", "oh", "five", "pee", "em"),
       c("nine", "o'clock"),
       c("i", "am")
@@ -134,7 +134,8 @@ test_that("rhyme lengths are calculated", {
 
 test_that("character vectors are analyzed", {
   res <- analyze_rhymes(
-    "Cause, baby, now we got bad blood\nYou know it used to be mad love"
+    "Cause, baby, now we got bad blood\nYou know it used to be mad love",
+    pronunciation = "cmudict"
   )
   expect_s3_class(res, "tbl_df")
   expect_equal(
@@ -158,13 +159,23 @@ test_that("character vectors are analyzed", {
 
   # repeated rhymes are only unique once
   text <- "bad blood\nmad love\nbad blood\nmad love"
-  res <- analyze_rhymes(text, remove_duplicates = FALSE)
+  res <- analyze_rhymes(
+    text,
+    remove_duplicates = FALSE,
+    pronunciation = "cmudict"
+  )
   expect_equal(res$total_rhymes, 5)
   expect_equal(res$unique_rhymes, 2)
-  expect_equal(analyze_rhymes(text)$total_rhymes, 1)
+  expect_equal(
+    analyze_rhymes(text, pronunciation = "cmudict")$total_rhymes,
+    1
+  )
 
   # multiple songs, including missing lyrics
-  res <- analyze_rhymes(c("bad blood\nmad love", NA, "", "night\nlight", "the"))
+  res <- analyze_rhymes(
+    c("bad blood\nmad love", NA, "", "night\nlight", "the"),
+    pronunciation = "cmudict"
+  )
   expect_equal(nrow(res), 5)
   expect_equal(res$total_rhymes, c(1, NA, NA, 0, 0))
   expect_equal(res$rhyme_density, c(2 / 3, NA, NA, 0, 0))
@@ -179,7 +190,7 @@ test_that("data frames are analyzed", {
   songs$lyrics[2] <- list(NULL)
   songs$lyrics[3] <- list(songs$lyrics[[3]][0, ])
 
-  res <- analyze_rhymes(songs)
+  res <- analyze_rhymes(songs, pronunciation = "cmudict")
   expect_s3_class(res, "tbl_df")
   expect_equal(nrow(res), 3)
   expect_equal(names(res)[seq_along(songs)], names(songs))
@@ -192,13 +203,17 @@ test_that("data frames are analyzed", {
     song = c("a", "b"),
     words = list(c("bad blood", "mad love"), NULL)
   )
-  res <- analyze_rhymes(lyric_text, lyrics_col = "words")
+  res <- analyze_rhymes(
+    lyric_text,
+    lyrics_col = "words",
+    pronunciation = "cmudict"
+  )
   expect_equal(res$total_rhymes, c(1, NA))
 
   expect_snapshot(
     taylor_all_songs |>
       dplyr::filter(track_name %in% c("Tim McGraw", "Anti-Hero", "Karma")) |>
-      analyze_rhymes() |>
+      analyze_rhymes(pronunciation = "cmudict") |>
       dplyr::select("track_name", "n_words":"longest_rhyme") |>
       as.data.frame()
   )
@@ -212,4 +227,116 @@ test_that("bad arguments error", {
   expect_error(analyze_rhymes("text", min_length = 0), "at least 1")
   expect_error(analyze_rhymes("text", remove_duplicates = "yes"), "logical")
   expect_error(analyze_rhymes("text", lyrics_col = 1), "character")
+  expect_error(analyze_rhymes("text", pronunciation = "ipa"), "must be one of")
+})
+
+test_that("espeak phonemes are converted to vowels", {
+  phonemes <- c(
+    night = "n'aIt",
+    baby = "b'eIbi",
+    fire = "f'aI3",
+    about = "a#b'aUt",
+    bottle = "b'0t#@L",
+    letter = "l'Et#3",
+    opalite = "'oUp@l,aIt",
+    near = "n'i@3",
+    start = "st'A@t",
+    the = "D'@2",
+    empty = ""
+  )
+  expect_equal(
+    espeak_to_vowels(phonemes),
+    c("e", "fh", "eg", "d", "a", "fg", "ie", "h", "a", "", NA)
+  )
+
+  # vowel codes match the dictionary for these words
+  words <- names(phonemes)[1:9]
+  words <- words[words != "opalite"]
+  expect_equal(
+    espeak_to_vowels(phonemes[words]),
+    lookup_pronunciation(words)
+  )
+})
+
+test_that("pronunciation source can be chosen", {
+  local_mocked_bindings(espeak_path = function() "")
+  expect_identical(pronunciation_engine("auto"), lookup_pronunciation)
+  expect_identical(pronunciation_engine("cmudict"), lookup_pronunciation)
+  expect_error(pronunciation_engine("espeak"), "could not be found")
+  expect_error(
+    analyze_rhymes("bad blood", pronunciation = "espeak"),
+    "could not be found"
+  )
+})
+
+test_that("espeak is used when available", {
+  old_cache <- dictionary$espeak
+  dictionary$espeak <- NULL
+  withr::defer(dictionary$espeak <- old_cache)
+
+  calls <- 0
+  local_mocked_bindings(
+    espeak_path = function() "/fake/espeak",
+    run_espeak = function(words, path) {
+      calls <<- calls + 1
+      phonemes <- c(
+        bad = "b'ad",
+        blood = "bl'Vd",
+        mad = "m'ad",
+        love = "l'Vv",
+        a = "'eI",
+        fading = "f'eIdIN"
+      )
+      unname(phonemes[words])
+    }
+  )
+
+  pronounce <- pronunciation_engine("auto", words = c("bad", "blood", "a"))
+  expect_equal(calls, 1)
+  expect_equal(pronounce(c("bad", "blood", "a")), c("b", "c", ""))
+  expect_equal(calls, 1)
+
+  # dropped g's are sent to espeak as "-ing"
+  expect_equal(pronounce("fadin'"), "fh")
+  expect_equal(calls, 2)
+
+  res <- analyze_rhymes("bad blood\nmad love", pronunciation = "espeak")
+  expect_equal(res$longest_rhyme, "bad blood / mad love")
+})
+
+test_that("espeak failures fall back to the dictionary", {
+  old_cache <- dictionary$espeak
+  dictionary$espeak <- NULL
+  withr::defer(dictionary$espeak <- old_cache)
+
+  local_mocked_bindings(
+    espeak_path = function() "/fake/espeak",
+    run_espeak = function(words, path) cli::cli_abort("boom")
+  )
+  expect_warning(
+    pronounce <- pronunciation_engine("auto", words = "love"),
+    "CMU Pronouncing Dictionary was used instead"
+  )
+  expect_identical(pronounce, lookup_pronunciation)
+  expect_error(
+    pronunciation_engine("espeak", words = "love"),
+    "eSpeak failed"
+  )
+})
+
+test_that("real espeak transcriptions work", {
+  skip_if_not(nzchar(espeak_path()), "eSpeak is not installed")
+
+  words <- c("night", "light", "baby", "love", "blood", "the", "a", "fire")
+  expect_equal(
+    espeak_pronunciation(words),
+    lookup_pronunciation(words)
+  )
+
+  res <- analyze_rhymes(
+    "Cause, baby, now we got bad blood\nYou know it used to be mad love",
+    pronunciation = "espeak"
+  )
+  expect_equal(res$longest_rhyme, "bad blood / mad love")
+  expect_equal(nrow(analyze_rhymes(taylor_album_songs[1:3, ])), 3)
 })

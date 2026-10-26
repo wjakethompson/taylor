@@ -5,8 +5,7 @@
 #' [Raplyzer](https://mining4meaning.com/2015/02/13/raplyzer/) by Eric Malmi.
 #'
 #' @details
-#' Each word in the lyrics is converted to a sequence of vowel sounds using
-#' the [CMU Pronouncing Dictionary](https://github.com/cmusphinx/cmudict).
+#' Each word in the lyrics is converted to a sequence of vowel sounds.
 #' Consonants are ignored. For each word, the algorithm looks back at the
 #' previous `lookback` words and finds the longest matching sequence of vowels
 #' that ends with both words. The match starts at the last vowel of each word
@@ -25,12 +24,28 @@
 #' comparable to the values from this function, because of the differences
 #' described below.
 #'
+#' ## Pronunciation
+#' Like the original Raplyzer, pronunciations can come from the
+#' [eSpeak](https://github.com/espeak-ng/espeak-ng) speech synthesizer, which
+#' must be installed separately. If eSpeak isn't installed, pronunciations come
+#' from the [CMU Pronouncing Dictionary](https://github.com/cmusphinx/cmudict),
+#' which is included in the package. Words not in the dictionary get a rough
+#' pronunciation from their spelling. By default (`pronunciation = "auto"`),
+#' eSpeak is used if it's installed. The two sources mostly agree, but results
+#' can differ slightly, so set `pronunciation` explicitly if you need results
+#' that are reproducible across computers. eSpeak is found by looking for
+#' `espeak-ng` and then `espeak` on the `PATH`, or you can set the path with
+#' `options(taylor.espeak = "path/to/espeak")`.
+#'
+#' With either source, numbers are first converted to words the way they are
+#' typically spoken (e.g., "22" becomes "twenty two", "1989" becomes "nineteen
+#' eighty nine", and "2AM" becomes "two eh em").
+#'
+#' ## Differences from Raplyzer
 #' This implementation differs from the original Raplyzer in a few ways:
-#' * Pronunciations come from the CMU Pronouncing Dictionary instead of the
-#'   eSpeak speech synthesizer. Words not in the dictionary get a rough
-#'   pronunciation from their spelling. Numbers are converted to words the
-#'   way they are typically spoken (e.g., "22" becomes "twenty two", "1989"
-#'   becomes "nineteen eighty nine", and "2AM" becomes "two ay em").
+#' * Each word is transcribed by itself, rather than in the context of the
+#'   full lyrics, and similar vowels are grouped the same way for both
+#'   pronunciation sources.
 #' * Diphthongs (e.g., the vowel in "night") are treated as a single vowel, so
 #'   "night" doesn't rhyme with "trap kit".
 #' * Words are considered identical when they're spelled the same, rather than
@@ -49,6 +64,9 @@
 #'   parentheses or brackets (e.g., backing vocals) are always removed.
 #' @param lyrics_col If `x` is a data frame, the name of the list-column that
 #'   contains the lyrics.
+#' @param pronunciation Where pronunciations come from. One of `"auto"` (the
+#'   default; eSpeak if it's installed, and otherwise the CMU Pronouncing
+#'   Dictionary), `"espeak"`, or `"cmudict"`. See Details.
 #'
 #' @return A [tibble][tibble::tibble()]. If `x` is a character vector, there is
 #'   one row per element of `x`, with a `text` column containing the lyrics.
@@ -71,6 +89,7 @@
 #'   <https://github.com/ekQ/raplysaattori>
 #' @source Carnegie Mellon University. *The CMU Pronouncing Dictionary*.
 #'   <https://github.com/cmusphinx/cmudict>
+#' @source *eSpeak NG*. <https://github.com/espeak-ng/espeak-ng>
 #'
 #' @examples
 #' bad_blood <- paste(
@@ -87,12 +106,14 @@ analyze_rhymes <- function(
   lookback = 15,
   min_length = 2,
   remove_duplicates = TRUE,
-  lyrics_col = "lyrics"
+  lyrics_col = "lyrics",
+  pronunciation = c("auto", "espeak", "cmudict")
 ) {
   lookback <- check_pos_int(lookback)
   min_length <- check_pos_int(min_length)
   remove_duplicates <- check_logical(remove_duplicates)
   lyrics_col <- check_character(lyrics_col)
+  pronunciation <- rlang::arg_match(pronunciation)
   if (lookback < 1) {
     abort_bad_argument("lookback", must = "be at least 1")
   }
@@ -100,40 +121,47 @@ analyze_rhymes <- function(
     abort_bad_argument("min_length", must = "be at least 1")
   }
 
-  song_stats <- function(lines) {
-    if (is.null(lines) || all(is.na(lines))) {
-      return(summarize_rhymes(NULL))
-    }
-    lines <- clean_lyric_lines(lines, remove_duplicates = remove_duplicates)
-    summarize_rhymes(rhyme_detail(lines, lookback, min_length))
-  }
-
   if (is.character(x)) {
-    stats <- lapply(strsplit(x, "\n", fixed = TRUE), song_stats)
-    return(vec_cbind(tibble::tibble(text = x), vec_rbind(!!!stats)))
-  }
-
-  if (!is.data.frame(x)) {
+    songs <- strsplit(x, "\n", fixed = TRUE)
+  } else if (is.data.frame(x)) {
+    if (!lyrics_col %in% names(x) || !is.list(x[[lyrics_col]])) {
+      cli::cli_abort(
+        "{.arg x} must have a list-column named {.val {lyrics_col}}."
+      )
+    }
+    songs <- lapply(x[[lyrics_col]], function(.x) {
+      if (is.data.frame(.x)) .x$lyric else .x
+    })
+  } else {
     abort_bad_argument(
       "x",
       must = "be a character vector or data frame",
       not = class(x)[1]
     )
   }
-  if (!lyrics_col %in% names(x) || !is.list(x[[lyrics_col]])) {
-    cli::cli_abort(
-      "{.arg x} must have a list-column named {.val {lyrics_col}}."
-    )
-  }
 
-  stats <- lapply(x[[lyrics_col]], function(.x) {
-    if (is.data.frame(.x)) {
-      .x <- .x$lyric
+  songs <- lapply(songs, function(.x) {
+    if (is.null(.x) || all(is.na(.x))) {
+      return(NULL)
     }
-    song_stats(.x)
+    clean_lyric_lines(.x, remove_duplicates = remove_duplicates)
+  })
+  pronounce <- pronunciation_engine(
+    pronunciation,
+    words = unique(unlist(lapply(songs, tokenize_words)))
+  )
+
+  stats <- lapply(songs, function(.x) {
+    if (is.null(.x)) {
+      return(summarize_rhymes(NULL))
+    }
+    summarize_rhymes(rhyme_detail(.x, lookback, min_length, pronounce))
   })
   stats <- vec_rbind(!!!stats)
 
+  if (is.character(x)) {
+    return(vec_cbind(tibble::tibble(text = x), stats))
+  }
   x <- tibble::as_tibble(x)
   x[names(stats)] <- stats
   x
@@ -148,15 +176,22 @@ analyze_rhymes <- function(
 #' Find the longest rhyme for each word
 #'
 #' @param lines A character vector of cleaned lyric lines.
+#' @param pronounce A function that takes a character vector of words and
+#'   returns their coded vowel sequences.
 #' @inheritParams analyze_rhymes
 #'
 #' @return A tibble with one row per word, containing the word, the length of
 #'   its longest rhyme, and the word indices of the two parts of the rhyme.
 #' @noRd
-rhyme_detail <- function(lines, lookback = 15, min_length = 2) {
+rhyme_detail <- function(
+  lines,
+  lookback = 15,
+  min_length = 2,
+  pronounce = lookup_pronunciation
+) {
   words <- unlist(tokenize_words(lines))
   words <- words[words != ""]
-  vowels <- lookup_pronunciation(words)
+  vowels <- pronounce(words)
 
   # words without a vowel sound can't rhyme
   keep <- nchar(vowels) > 0
@@ -307,8 +342,9 @@ tokenize_words <- function(lines) {
     "\u00ee\u00ef\u00f2\u00f3\u00f4\u00f6\u00f9\u00fa\u00fb\u00fc"
   )
   lines <- chartr(accented, "aaaaeeeeiiiioooouuuu", tolower(lines))
-  # times are spoken as letters, e.g., "2AM" or "2 a.m."
-  lines <- gsub("([0-9]) ?a\\.? ?m\\b\\.?", "\\1 ay em", lines, perl = TRUE)
+  # times are spoken as letters, e.g., "2AM" or "2 a.m.", using spellings
+  # that both pronunciation sources code with the same vowels
+  lines <- gsub("([0-9]) ?a\\.? ?m\\b\\.?", "\\1 eh em", lines, perl = TRUE)
   lines <- gsub("([0-9]) ?p\\.? ?m\\b\\.?", "\\1 pee em", lines, perl = TRUE)
   words <- strsplit(lines, "[^a-z0-9']+")
   lapply(words, function(.x) {
@@ -578,4 +614,201 @@ guess_vowels <- function(word) {
   )
 
   paste(codes, collapse = "")
+}
+
+
+# Pronunciation sources --------------------------------------------------------
+#' Choose how words are converted to vowel sounds
+#'
+#' @param pronunciation One of `"auto"`, `"espeak"`, or `"cmudict"`.
+#' @param words All words that will be pronounced. For eSpeak, these are
+#'   transcribed in a single call up front.
+#' @param call The calling environment, for error messages.
+#'
+#' @return A function that takes a character vector of words and returns their
+#'   coded vowel sequences.
+#' @noRd
+pronunciation_engine <- function(
+  pronunciation = c("auto", "espeak", "cmudict"),
+  words = character(0),
+  call = rlang::caller_env()
+) {
+  pronunciation <- rlang::arg_match(pronunciation, error_call = call)
+  if (pronunciation == "cmudict") {
+    return(lookup_pronunciation)
+  }
+
+  path <- espeak_path()
+  if (!nzchar(path)) {
+    if (pronunciation == "espeak") {
+      espeak_url <- "https://github.com/espeak-ng/espeak-ng"
+      cli::cli_abort(
+        c(
+          "eSpeak could not be found.",
+          "i" = "Install {.href [eSpeak NG]({espeak_url})}, or set
+                 {.code options(taylor.espeak = \"path/to/espeak\")}."
+        ),
+        call = call
+      )
+    }
+    return(lookup_pronunciation)
+  }
+
+  vowels <- tryCatch(
+    espeak_pronunciation(words, path = path),
+    error = function(e) {
+      if (pronunciation == "espeak") {
+        cli::cli_abort("eSpeak failed.", parent = e, call = call)
+      }
+      cli::cli_warn(
+        "eSpeak failed, so the CMU Pronouncing Dictionary was used instead.",
+        parent = e,
+        call = call
+      )
+      NULL
+    }
+  )
+  if (is.null(vowels)) {
+    return(lookup_pronunciation)
+  }
+
+  function(words) espeak_pronunciation(words, path = path)
+}
+
+#' Find the eSpeak program
+#'
+#' Uses the `taylor.espeak` option if set, and otherwise looks for
+#' `espeak-ng` and then `espeak` on the `PATH`.
+#'
+#' @return The path to eSpeak, or `""` if it isn't installed.
+#' @noRd
+espeak_path <- function() {
+  path <- getOption("taylor.espeak", default = "")
+  if (nzchar(path)) {
+    return(unname(Sys.which(path)))
+  }
+  for (program in c("espeak-ng", "espeak")) {
+    path <- unname(Sys.which(program))
+    if (nzchar(path)) {
+      return(path)
+    }
+  }
+  ""
+}
+
+#' Look up the vowel sounds of words with eSpeak
+#'
+#' Transcriptions are cached for the session, so each word is only sent to
+#' eSpeak once. Words that eSpeak can't transcribe fall back to
+#' `lookup_pronunciation()`.
+#'
+#' @param words A character vector of lower case words.
+#' @param path The path to eSpeak.
+#'
+#' @return A character vector of coded vowel sequences.
+#' @noRd
+espeak_pronunciation <- function(words, path = espeak_path()) {
+  if (is.null(dictionary$espeak)) {
+    dictionary$espeak <- new.env(hash = TRUE, parent = emptyenv())
+  }
+  cache <- dictionary$espeak
+
+  new_words <- unique(words[nzchar(words)])
+  new_words <- new_words[!vapply(new_words, exists, logical(1), envir = cache)]
+  if (length(new_words) > 0) {
+    # eSpeak misreads dropped g's (e.g., "fadin'"), which don't change vowels
+    spelled <- sub("in'$", "ing", gsub("^'+", "", new_words))
+    vowels <- espeak_to_vowels(run_espeak(spelled, path = path))
+    # an isolated "a" is read as the letter, but in lyrics it's a schwa
+    vowels[new_words == "a"] <- ""
+    missing <- is.na(vowels)
+    vowels[missing] <- lookup_pronunciation(new_words[missing])
+    list2env(as.list(stats::setNames(vowels, new_words)), envir = cache)
+  }
+
+  vowels <- rep("", length(words))
+  valid <- nzchar(words)
+  vowels[valid] <- unlist(mget(words[valid], envir = cache), use.names = FALSE)
+  vowels
+}
+
+#' Transcribe words with eSpeak
+#'
+#' @param words A character vector of words.
+#' @param path The path to eSpeak.
+#'
+#' @return A character vector of eSpeak phoneme mnemonics, one per word.
+#' @noRd
+run_espeak <- function(words, path = espeak_path()) {
+  input <- tempfile(fileext = ".txt")
+  on.exit(unlink(input), add = TRUE)
+  # one word per line; the period makes each line a separate clause
+  writeLines(paste0(words, "."), input, useBytes = TRUE)
+
+  output <- suppressWarnings(system2(
+    path,
+    args = c("-q", "-x", "-v", "en-us", "-f", shQuote(input)),
+    stdout = TRUE,
+    stderr = FALSE
+  ))
+  status <- attr(output, "status")
+  if (!is.null(status) && status != 0) {
+    cli::cli_abort("eSpeak exited with status {status}.")
+  }
+  if (length(output) != length(words)) {
+    cli::cli_abort(
+      "eSpeak returned {length(output)} transcription{?s} for
+       {length(words)} word{?s}."
+    )
+  }
+
+  trimws(output)
+}
+
+#' Convert eSpeak phonemes to coded vowel sequences
+#'
+#' eSpeak phonemes are mapped to the same vowel codes used for the CMU
+#' Pronouncing Dictionary (see `data-raw/cmudict.R`), so results are similar
+#' regardless of the pronunciation source. Schwas are dropped, and
+#' diphthongs are a single vowel.
+#'
+#' @param phonemes A character vector of eSpeak phoneme mnemonics (from
+#'   `espeak -x`), one per word.
+#'
+#' @return A character vector of coded vowel sequences, or `NA` for empty
+#'   transcriptions.
+#' @noRd
+espeak_to_vowels <- function(phonemes) {
+  # longer phonemes are listed first, so they're matched before their prefixes
+  espeak_vowels <- c(
+    "aI@" = "eg", "aU@" = "dg", "i@3" = "h",
+    "A:" = "a", "A@" = "a", "O:" = "a", "O@" = "a", "o@" = "a",
+    "3:" = "g", "i:" = "h", "i@" = "h", "I#" = "h", "I2" = "h",
+    "e@" = "f", "eI" = "f", "aI" = "e", "aU" = "d", "oU" = "i",
+    "OI" = "j", "u:" = "l", "U:" = "l", "U@" = "k", "aa" = "b",
+    "a#" = "", "@2" = "", "@5" = "", "@L" = "",
+    "a" = "b", "A" = "a", "0" = "a", "O" = "a", "o" = "i",
+    "E" = "f", "e" = "f", "I" = "h", "i" = "h", "V" = "c",
+    "U" = "k", "u" = "l", "3" = "g", "@" = ""
+  )
+  pattern <- paste0(
+    "(",
+    paste(gsub("([@#:])", "\\\\\\1", names(espeak_vowels)), collapse = "|"),
+    ")"
+  )
+
+  # stress, syllable, and pause marks don't affect the vowels
+  phonemes <- gsub("[',%=_|-]", "", phonemes)
+  vapply(
+    phonemes,
+    function(.x) {
+      if (is.na(.x) || !nzchar(.x)) {
+        return(NA_character_)
+      }
+      matches <- regmatches(.x, gregexpr(pattern, .x, perl = TRUE))[[1]]
+      paste(espeak_vowels[matches], collapse = "")
+    },
+    character(1),
+    USE.NAMES = FALSE
+  )
 }

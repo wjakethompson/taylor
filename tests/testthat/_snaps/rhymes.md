@@ -2,8 +2,8 @@
 
     Code
       as.data.frame(dplyr::select(analyze_rhymes(dplyr::filter(taylor_all_songs,
-        track_name %in% c("Tim McGraw", "Anti-Hero", "Karma"))), "track_name",
-      "n_words":"longest_rhyme"))
+        track_name %in% c("Tim McGraw", "Anti-Hero", "Karma")), pronunciation = "cmudict"),
+      "track_name", "n_words":"longest_rhyme"))
     Output
         track_name n_words total_rhymes unique_rhymes rhyme_density
       1 Tim McGraw     214           40            36     0.3990610
