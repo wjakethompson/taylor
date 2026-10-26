@@ -766,8 +766,13 @@ espeak_pronunciation <- function(words, path = espeak_path()) {
 run_espeak <- function(words, path = espeak_path()) {
   input <- tempfile(fileext = ".txt")
   on.exit(unlink(input), add = TRUE)
-  # one word per line; the period makes each line a separate clause
-  writeLines(paste0(words, "."), input, useBytes = TRUE)
+  # one word per line; the period makes each line a separate clause. Write in
+  # binary mode so lines end in "\n" on Windows too: eSpeak sizes its buffer
+  # from the file length but reads in text mode, so "\r\n" endings leave
+  # unread bytes at the end that are transcribed as an extra clause
+  con <- file(input, open = "wb")
+  writeLines(paste0(words, "."), con, useBytes = TRUE)
+  close(con)
 
   output <- suppressWarnings(system2(
     path,
