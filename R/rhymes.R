@@ -584,10 +584,25 @@ guess_vowels <- function(word) {
   ends <- matches[[1]] + attr(matches[[1]], "match.length") - 1
 
   digraphs <- c(
-    ee = "h", ea = "h", ie = "h", ey = "h", ei = "f",
-    ay = "f", ai = "f", oo = "l", ou = "d", ow = "i",
-    oa = "i", oe = "i", au = "a", aw = "a", oi = "j",
-    oy = "j", ue = "l", ew = "l", ui = "l"
+    ee = "h",
+    ea = "h",
+    ie = "h",
+    ey = "h",
+    ei = "f",
+    ay = "f",
+    ai = "f",
+    oo = "l",
+    ou = "d",
+    ow = "i",
+    oa = "i",
+    oe = "i",
+    au = "a",
+    aw = "a",
+    oi = "j",
+    oy = "j",
+    ue = "l",
+    ew = "l",
+    ui = "l"
   )
   short <- c(a = "b", e = "f", i = "h", o = "a", u = "c", y = "h", I = "e")
   long <- c(a = "f", e = "h", i = "e", o = "i", u = "l", y = "e", I = "e")
@@ -781,15 +796,47 @@ run_espeak <- function(words, path = espeak_path()) {
 espeak_to_vowels <- function(phonemes) {
   # longer phonemes are listed first, so they're matched before their prefixes
   espeak_vowels <- c(
-    "aI@" = "eg", "aU@" = "dg", "i@3" = "h",
-    "A:" = "a", "A@" = "a", "O:" = "a", "O@" = "a", "o@" = "a",
-    "3:" = "g", "i:" = "h", "i@" = "h", "I#" = "h", "I2" = "h",
-    "e@" = "f", "eI" = "f", "aI" = "e", "aU" = "d", "oU" = "i",
-    "OI" = "j", "u:" = "l", "U:" = "l", "U@" = "k", "aa" = "b",
-    "a#" = "", "@2" = "", "@5" = "", "@L" = "",
-    "a" = "b", "A" = "a", "0" = "a", "O" = "a", "o" = "i",
-    "E" = "f", "e" = "f", "I" = "h", "i" = "h", "V" = "c",
-    "U" = "k", "u" = "l", "3" = "g", "@" = ""
+    "aI@" = "eg",
+    "aU@" = "dg",
+    "i@3" = "h",
+    "A:" = "a",
+    "A@" = "a",
+    "O:" = "a",
+    "O@" = "a",
+    "o@" = "a",
+    "3:" = "g",
+    "i:" = "h",
+    "i@" = "h",
+    "I#" = "h",
+    "I2" = "h",
+    "e@" = "f",
+    "eI" = "f",
+    "aI" = "e",
+    "aU" = "d",
+    "oU" = "i",
+    "OI" = "j",
+    "u:" = "l",
+    "U:" = "l",
+    "U@" = "k",
+    "aa" = "b",
+    "a#" = "",
+    "@2" = "",
+    "@5" = "",
+    "@L" = "",
+    "a" = "b",
+    "A" = "a",
+    "0" = "a",
+    "O" = "a",
+    "o" = "i",
+    "E" = "f",
+    "e" = "f",
+    "I" = "h",
+    "i" = "h",
+    "V" = "c",
+    "U" = "k",
+    "u" = "l",
+    "3" = "g",
+    "@" = ""
   )
   pattern <- paste0(
     "(",

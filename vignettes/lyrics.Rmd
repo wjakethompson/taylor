@@ -81,7 +81,10 @@ Matches can span multiple words, so "bad blood" and "mad love" form a rhyme of l
 We can analyze a single string of lyrics, with lines separated by `"\n"`.
 
 ```{r}
-analyze_rhymes("Cause, baby, now we got bad blood\nYou know it used to be mad love")
+analyze_rhymes(paste(
+  "Cause, baby, now we got bad blood",
+  "You know it used to be mad love"
+))
 ```
 
 We can also give `analyze_rhymes()` a data set with a list-column of lyrics, like `track_lyrics`.
@@ -92,6 +95,12 @@ For example, which songs on *Midnights* have the highest rhyme density (i.e., th
 track_lyrics |>
   filter(album_name == "Midnights") |>
   analyze_rhymes() |>
-  select(track_name, total_rhymes, unique_rhymes, rhyme_density, longest_rhyme) |>
+  select(
+    track_name,
+    total_rhymes,
+    unique_rhymes,
+    rhyme_density,
+    longest_rhyme
+  ) |>
   arrange(desc(rhyme_density))
 ```

@@ -20,7 +20,7 @@ cmudict <- tibble(raw = cmudict_raw) |>
   separate_wider_regex(raw, c(word = "^\\S+", "\\s+", phones = ".*$")) |>
   filter(!str_detect(word, "\\(\\d+\\)$"))
 
-# Vowel coding ------------------------------------------------------------------
+# Vowel coding -----------------------------------------------------------------
 # Mirrors the vowel handling in raplyzer's phonetics.py:
 #   * unstressed schwa (AH0) is dropped, as raplyzer ignores eSpeak's `@`
 #   * similar vowels are merged (AO -> AA, IH -> IY, EH -> EY), matching
@@ -46,9 +46,9 @@ vowel_codes <- c(
 )
 
 code_vowels <- function(phones) {
-  map_chr(str_split(phones, " "), function(ph) {
+  purrr::map_chr(stringr::str_split(phones, " "), function(ph) {
     ph <- ph[ph != "AH0"]
-    ph <- str_remove(ph, "\\d$")
+    ph <- stringr::str_remove(ph, "\\d$")
     paste(vowel_codes[ph[ph %in% names(vowel_codes)]], collapse = "")
   })
 }
@@ -85,4 +85,9 @@ sort(oov)
 
 
 # Save -------------------------------------------------------------------------
-usethis::use_data(cmu_vowels, internal = TRUE, overwrite = TRUE, compress = "xz")
+usethis::use_data(
+  cmu_vowels,
+  internal = TRUE,
+  overwrite = TRUE,
+  compress = "xz"
+)
