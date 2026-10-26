@@ -87,7 +87,9 @@ This implementation differs from the original Raplyzer in a few ways:
 \itemize{
 \item Pronunciations come from the CMU Pronouncing Dictionary instead of the
 eSpeak speech synthesizer. Words not in the dictionary get a rough
-pronunciation from their spelling. Numbers are ignored.
+pronunciation from their spelling. Numbers are converted to words the
+way they are typically spoken (e.g., "22" becomes "twenty two", "1989"
+becomes "nineteen eighty nine", and "2AM" becomes "two ay em").
 \item Diphthongs (e.g., the vowel in "night") are treated as a single vowel, so
 "night" doesn't rhyme with "trap kit".
 \item Words are considered identical when they're spelled the same, rather than

@@ -42,8 +42,55 @@ test_that("lyric lines are cleaned", {
 
   expect_equal(
     tokenize_words(c("I'm nothin' like you", "Caf\u00e9, 22!")),
-    list(c("i'm", "nothin'", "like", "you"), c("cafe", "22"))
+    list(c("i'm", "nothin'", "like", "you"), c("cafe", "twenty", "two"))
   )
+})
+
+test_that("numbers are converted to words", {
+  expect_equal(number_to_words("22"), c("twenty", "two"))
+  expect_equal(number_to_words("441"), c("four", "hundred", "forty", "one"))
+  expect_equal(number_to_words("g5"), c("g", "five"))
+
+  # years and decades
+  expect_equal(number_to_words("1989"), c("nineteen", "eighty", "nine"))
+  expect_equal(number_to_words("1905"), c("nineteen", "oh", "five"))
+  expect_equal(number_to_words("1900"), c("nineteen", "hundred"))
+  expect_equal(number_to_words("2003"), c("two", "thousand", "three"))
+  expect_equal(number_to_words("2020"), c("twenty", "twenty"))
+  expect_equal(number_to_words("'45"), c("forty", "five"))
+  expect_equal(number_to_words("'90s"), "nineties")
+  expect_equal(number_to_words("1950s"), c("nineteen", "fifties"))
+  expect_equal(number_to_words("6s"), "sixes")
+
+  # ordinals
+  expect_equal(number_to_words("16th"), "sixteenth")
+  expect_equal(number_to_words("29th"), c("twenty", "ninth"))
+  expect_equal(number_to_words("1st"), "first")
+
+  # very long numbers are dropped
+  expect_equal(number_to_words(strrep("1", 20)), character(0))
+
+  # times
+  expect_equal(
+    tokenize_words(c("It's 2 A.M.", "2:30AM", "8:05 pm", "9:00", "I am")),
+    list(
+      c("it's", "two", "ay", "em"),
+      c("two", "thirty", "ay", "em"),
+      c("eight", "oh", "five", "pee", "em"),
+      c("nine", "o'clock"),
+      c("i", "am")
+    )
+  )
+
+  # numbers can rhyme
+  detail <- rhyme_detail(
+    c("I don't know about you", "but I'm feeling 22"),
+    min_length = 1
+  )
+  n <- nrow(detail)
+  expect_equal(detail$word[n], "two")
+  expect_equal(detail$rhyme_length[n], 1)
+  expect_equal(detail$word[detail$end1[n]], "you")
 })
 
 test_that("rhyme lengths are calculated", {

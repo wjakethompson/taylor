@@ -28,7 +28,9 @@
 #' This implementation differs from the original Raplyzer in a few ways:
 #' * Pronunciations come from the CMU Pronouncing Dictionary instead of the
 #'   eSpeak speech synthesizer. Words not in the dictionary get a rough
-#'   pronunciation from their spelling. Numbers are ignored.
+#'   pronunciation from their spelling. Numbers are converted to words the
+#'   way they are typically spoken (e.g., "22" becomes "twenty two", "1989"
+#'   becomes "nineteen eighty nine", and "2AM" becomes "two ay em").
 #' * Diphthongs (e.g., the vowel in "night") are treated as a single vowel, so
 #'   "night" doesn't rhyme with "trap kit".
 #' * Words are considered identical when they're spelled the same, rather than
@@ -305,8 +307,110 @@ tokenize_words <- function(lines) {
     "\u00ee\u00ef\u00f2\u00f3\u00f4\u00f6\u00f9\u00fa\u00fb\u00fc"
   )
   lines <- chartr(accented, "aaaaeeeeiiiioooouuuu", tolower(lines))
+  # times are spoken as letters, e.g., "2AM" or "2 a.m."
+  lines <- gsub("([0-9]) ?a\\.? ?m\\b\\.?", "\\1 ay em", lines, perl = TRUE)
+  lines <- gsub("([0-9]) ?p\\.? ?m\\b\\.?", "\\1 pee em", lines, perl = TRUE)
   words <- strsplit(lines, "[^a-z0-9']+")
-  lapply(words, function(.x) .x[.x != "" & grepl("[a-z0-9]", .x)])
+  lapply(words, function(.x) {
+    .x <- .x[.x != "" & grepl("[a-z0-9]", .x)]
+    has_digit <- grepl("[0-9]", .x)
+    if (!any(has_digit)) {
+      return(.x)
+    }
+    .x <- as.list(.x)
+    .x[has_digit] <- lapply(.x[has_digit], number_to_words)
+    unlist(.x, use.names = FALSE)
+  })
+}
+
+#' Convert a word containing numbers to words
+#'
+#' Numbers are converted the way they are typically spoken in lyrics, using
+#' the english package for the number names. For example, "22" becomes
+#' "twenty two", "1989" becomes "nineteen eighty nine", "'90s" becomes
+#' "nineties", and "16th" becomes "sixteenth".
+#'
+#' @param word A single lower case word that contains at least one digit.
+#'
+#' @return A character vector of words.
+#' @noRd
+number_to_words <- function(word) {
+  word <- gsub("^'+|'+$", "", word)
+
+  # split into runs of digits and letters, e.g., "g5" or "16th"
+  parts <- regmatches(word, gregexpr("[0-9]+|[a-z']+", word))[[1]]
+  words <- character(0)
+  i <- 1
+  while (i <= length(parts)) {
+    part <- parts[i]
+    if (!grepl("^[0-9]+$", part)) {
+      words <- c(words, part)
+      i <- i + 1
+      next
+    }
+
+    suffix <- if (i < length(parts)) parts[i + 1] else ""
+    if (suffix %in% c("st", "nd", "rd", "th")) {
+      words <- c(words, spell_number(part, ordinal = TRUE))
+      i <- i + 2
+    } else if (suffix == "s") {
+      # decades, e.g., "1950s" or "90s"
+      spelled <- spell_number(part)
+      last <- length(spelled)
+      plural <- if (grepl("x$", spelled[last])) "es" else "s"
+      spelled[last] <- paste0(sub("y$", "ie", spelled[last]), plural)
+      words <- c(words, spelled)
+      i <- i + 2
+    } else {
+      words <- c(words, spell_number(part))
+      i <- i + 1
+    }
+  }
+
+  as.character(unlist(strsplit(words, "[^a-z']+"), use.names = FALSE))
+}
+
+#' Spell out a string of digits
+#'
+#' @param digits A single string of digits, e.g., "22".
+#' @param ordinal Logical. Should the number be spelled as an ordinal (e.g.,
+#'   "sixteenth")?
+#'
+#' @return A character vector of words.
+#' @noRd
+spell_number <- function(digits, ordinal = FALSE) {
+  # very long digit strings aren't spoken as numbers
+  if (nchar(digits) > 15) {
+    return(character(0))
+  }
+
+  n <- as.numeric(digits)
+  spell <- function(.n, ordinal = FALSE) {
+    words <- if (ordinal) english::ordinal(.n) else english::as.english(.n)
+    strsplit(as.character(words), "[^a-z]+")[[1]]
+  }
+
+  # leading zeros are spoken as "oh", e.g., the "05" in "8:05"
+  if (nchar(digits) == 2 && startsWith(digits, "0")) {
+    return(if (n == 0) "o'clock" else c("oh", spell(n, ordinal)))
+  }
+
+  # years are spoken in pairs, e.g., "nineteen eighty nine"
+  is_year <- nchar(digits) == 4 &&
+    ((n >= 1100 && n <= 1999) || (n >= 2010 && n <= 2099))
+  if (is_year) {
+    low <- n %% 100
+    low_words <- if (low == 0) {
+      if (ordinal) "hundredth" else "hundred"
+    } else if (low < 10) {
+      c("oh", spell(low, ordinal))
+    } else {
+      spell(low, ordinal)
+    }
+    return(c(spell(n %/% 100), low_words))
+  }
+
+  spell(n, ordinal)
 }
 
 
