@@ -464,7 +464,10 @@ dictionary <- new.env(parent = emptyenv())
 
 dictionary_get <- function(words) {
   if (is.null(dictionary$vowels)) {
+    # `cmu_vowels` is internal data in R/sysdata.rda, which lintr can't see
+    # nolint start: object_usage_linter
     dictionary$vowels <- list2env(as.list(cmu_vowels), hash = TRUE)
+    # nolint end
   }
   vowels <- rep(NA_character_, length(words))
   valid <- !is.na(words) & nzchar(words)
@@ -656,11 +659,11 @@ pronunciation_engine <- function(
   path <- espeak_path()
   if (!nzchar(path)) {
     if (pronunciation == "espeak") {
-      espeak_url <- "https://github.com/espeak-ng/espeak-ng"
       cli::cli_abort(
         c(
           "eSpeak could not be found.",
-          "i" = "Install {.href [eSpeak NG]({espeak_url})}, or set
+          "i" = "Install eSpeak NG from
+                 {.url https://github.com/espeak-ng/espeak-ng}, or set
                  {.code options(taylor.espeak = \"path/to/espeak\")}."
         ),
         call = call
