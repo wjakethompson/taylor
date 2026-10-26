@@ -18,6 +18,7 @@ test_that("pronunciations are found", {
   expect_equal(lookup_pronunciation("blorptastic"), "abh")
   expect_equal(guess_vowels("hate"), "f")
   expect_equal(guess_vowels("my"), "e")
+  expect_equal(guess_vowels("blorpy"), "ah")
   expect_equal(guess_vowels("saw"), "a")
   expect_equal(guess_vowels("mmm"), "")
 })
@@ -66,6 +67,8 @@ test_that("numbers are converted to words", {
   expect_equal(number_to_words("16th"), "sixteenth")
   expect_equal(number_to_words("29th"), c("twenty", "ninth"))
   expect_equal(number_to_words("1st"), "first")
+  expect_equal(number_to_words("1900th"), c("nineteen", "hundredth"))
+  expect_equal(number_to_words("1905th"), c("nineteen", "oh", "fifth"))
 
   # very long numbers are dropped
   expect_equal(number_to_words(strrep("1", 20)), character(0))
@@ -324,8 +327,58 @@ test_that("espeak failures fall back to the dictionary", {
   )
 })
 
+test_that("espeak is found", {
+  skip_on_cran()
+  skip_on_os("windows")
+  withr::local_options(taylor.espeak = NULL)
+  dir <- withr::local_tempdir()
+  withr::local_envvar(PATH = dir)
+
+  # not installed
+  expect_equal(espeak_path(), "")
+
+  # espeak-ng is preferred over espeak
+  espeak <- write_fake_program(dir, "espeak", "exit 0")
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak))
+  espeak_ng <- write_fake_program(dir, "espeak-ng", "exit 0")
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak_ng))
+
+  # the option takes precedence
+  withr::local_options(taylor.espeak = espeak)
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak))
+  withr::local_options(taylor.espeak = file.path(dir, "not-espeak"))
+  expect_equal(espeak_path(), "")
+})
+
+test_that("espeak errors are caught", {
+  skip_on_cran()
+  skip_on_os("windows")
+  dir <- withr::local_tempdir()
+
+  failing <- write_fake_program(dir, "failing", "exit 3")
+  expect_error(run_espeak("love", path = failing), "exited with status 3")
+
+  short <- write_fake_program(dir, "short", "echo \" l'Vv\"")
+  expect_equal(run_espeak("love", path = short), "l'Vv")
+  expect_error(
+    run_espeak(c("love", "blood"), path = short),
+    "returned 1 transcription for 2 words"
+  )
+})
+
 test_that("real espeak transcriptions work", {
-  skip_if_not(nzchar(espeak_path()), "eSpeak is not installed")
+  path <- espeak_path()
+  skip_if_no_espeak(path)
+
+  expect_equal(
+    run_espeak(c("night", "baby"), path = path),
+    c("n'aIt", "b'eIbi")
+  )
+
+  # eSpeak is used automatically when it's installed
+  pronounce <- pronunciation_engine("auto", words = "fire")
+  expect_false(identical(pronounce, lookup_pronunciation))
+  expect_equal(pronounce(c("fire", "opalite")), c("eg", "ie"))
 
   words <- c("night", "light", "baby", "love", "blood", "the", "a", "fire")
   expect_equal(
