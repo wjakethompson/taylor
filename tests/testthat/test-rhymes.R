@@ -1,0 +1,395 @@
+test_that("pronunciations are found", {
+  # dictionary words
+  expect_equal(lookup_pronunciation(c("night", "love")), c("e", "c"))
+
+  # contractions, possessives, and compounds
+  expect_equal(lookup_pronunciation("nothin'"), lookup_pronunciation("nothing"))
+  expect_equal(lookup_pronunciation("taylor's"), lookup_pronunciation("taylor"))
+  expect_equal(
+    lookup_pronunciation("teardrops"),
+    paste0(lookup_pronunciation("tear"), lookup_pronunciation("drop"))
+  )
+
+  # words without a vowel sound
+  expect_equal(lookup_pronunciation(c("the", "mmm", "22")), c("", "", ""))
+
+  # words not in the dictionary are guessed from their spelling
+  expect_true(is.na(lookup_dictionary("blorptastic")))
+  expect_equal(lookup_pronunciation("blorptastic"), "abh")
+  expect_equal(guess_vowels("hate"), "f")
+  expect_equal(guess_vowels("my"), "e")
+  expect_equal(guess_vowels("blorpy"), "ah")
+  expect_equal(guess_vowels("saw"), "a")
+  expect_equal(guess_vowels("mmm"), "")
+})
+
+test_that("lyric lines are cleaned", {
+  lines <- c(
+    "Cause, baby, now we got bad blood",
+    "(Hey!)",
+    "[Chorus]",
+    "",
+    "Cause baby now we got bad blood",
+    NA
+  )
+  expect_equal(
+    clean_lyric_lines(lines),
+    "Cause, baby, now we got bad blood"
+  )
+  expect_equal(
+    clean_lyric_lines(lines, remove_duplicates = FALSE),
+    c("Cause, baby, now we got bad blood", "Cause baby now we got bad blood")
+  )
+
+  expect_equal(
+    tokenize_words(c("I'm nothin' like you", "Caf\u00e9, 22!")),
+    list(c("i'm", "nothin'", "like", "you"), c("cafe", "twenty", "two"))
+  )
+})
+
+test_that("numbers are converted to words", {
+  expect_equal(number_to_words("22"), c("twenty", "two"))
+  expect_equal(number_to_words("441"), c("four", "hundred", "forty", "one"))
+  expect_equal(number_to_words("g5"), c("g", "five"))
+
+  # years and decades
+  expect_equal(number_to_words("1989"), c("nineteen", "eighty", "nine"))
+  expect_equal(number_to_words("1905"), c("nineteen", "oh", "five"))
+  expect_equal(number_to_words("1900"), c("nineteen", "hundred"))
+  expect_equal(number_to_words("2003"), c("two", "thousand", "three"))
+  expect_equal(number_to_words("2020"), c("twenty", "twenty"))
+  expect_equal(number_to_words("'45"), c("forty", "five"))
+  expect_equal(number_to_words("'90s"), "nineties")
+  expect_equal(number_to_words("1950s"), c("nineteen", "fifties"))
+  expect_equal(number_to_words("6s"), "sixes")
+
+  # ordinals
+  expect_equal(number_to_words("16th"), "sixteenth")
+  expect_equal(number_to_words("29th"), c("twenty", "ninth"))
+  expect_equal(number_to_words("1st"), "first")
+  expect_equal(number_to_words("1900th"), c("nineteen", "hundredth"))
+  expect_equal(number_to_words("1905th"), c("nineteen", "oh", "fifth"))
+
+  # very long numbers are dropped
+  expect_equal(number_to_words(strrep("1", 20)), character(0))
+
+  # times
+  expect_equal(
+    tokenize_words(c("It's 2 A.M.", "2:30AM", "8:05 pm", "9:00", "I am")),
+    list(
+      c("it's", "two", "eh", "em"),
+      c("two", "thirty", "eh", "em"),
+      c("eight", "oh", "five", "pee", "em"),
+      c("nine", "o'clock"),
+      c("i", "am")
+    )
+  )
+
+  # numbers can rhyme
+  detail <- rhyme_detail(
+    c("I don't know about you", "but I'm feeling 22"),
+    min_length = 1
+  )
+  n <- nrow(detail)
+  expect_equal(detail$word[n], "two")
+  expect_equal(detail$rhyme_length[n], 1)
+  expect_equal(detail$word[detail$end1[n]], "you")
+})
+
+test_that("rhyme lengths are calculated", {
+  detail <- rhyme_detail(c("bad blood", "mad love"))
+  expect_equal(detail$word, c("bad", "blood", "mad", "love"))
+  expect_equal(detail$rhyme_length, c(0, 0, 0, 2))
+  expect_equal(detail$start1[4], 1)
+  expect_equal(detail$end1[4], 2)
+  expect_equal(detail$start2[4], 3)
+
+  # rhymes can span multiple words
+  detail <- rhyme_detail(c("when you were fifteen", "caught in between"))
+  expect_equal(detail$rhyme_length[7], 2)
+  expect_equal(detail$start1[7], 4)
+  expect_equal(detail$start2[7], 7)
+
+  detail <- rhyme_detail(c("you got bad blood", "and it's mad love"))
+  expect_equal(detail$rhyme_length[7], 2)
+  expect_equal(detail$start1[7], 3)
+  expect_equal(detail$start2[7], 6)
+
+  # single vowel rhymes are ignored by default
+  expect_equal(rhyme_detail(c("night", "light"))$rhyme_length, c(0, 0))
+  expect_equal(
+    rhyme_detail(c("night", "light"), min_length = 1)$rhyme_length,
+    c(0, 1)
+  )
+
+  # identical words don't rhyme
+  expect_equal(rhyme_detail("love love")$rhyme_length, c(0, 0))
+  expect_equal(
+    rhyme_detail(c("cold as you", "so as to"))$rhyme_length,
+    rep(0, 6)
+  )
+
+  # rhymes must be within the lookback window
+  lines <- c("bad blood one two three four five six", "mad love")
+  expect_equal(max(rhyme_detail(lines, lookback = 3)$rhyme_length), 0)
+  expect_equal(max(rhyme_detail(lines, lookback = 15)$rhyme_length), 2)
+})
+
+test_that("character vectors are analyzed", {
+  res <- analyze_rhymes(
+    "Cause, baby, now we got bad blood\nYou know it used to be mad love",
+    pronunciation = "cmudict"
+  )
+  expect_s3_class(res, "tbl_df")
+  expect_equal(
+    names(res),
+    c(
+      "text",
+      "n_words",
+      "total_rhymes",
+      "unique_rhymes",
+      "rhyme_density",
+      "longest_rhyme_length",
+      "longest_rhyme"
+    )
+  )
+  expect_equal(res$n_words, 15)
+  expect_equal(res$total_rhymes, 1)
+  expect_equal(res$unique_rhymes, 1)
+  expect_equal(res$rhyme_density, 2 / 14)
+  expect_equal(res$longest_rhyme_length, 2)
+  expect_equal(res$longest_rhyme, "bad blood / mad love")
+
+  # repeated rhymes are only unique once
+  text <- "bad blood\nmad love\nbad blood\nmad love"
+  res <- analyze_rhymes(
+    text,
+    remove_duplicates = FALSE,
+    pronunciation = "cmudict"
+  )
+  expect_equal(res$total_rhymes, 5)
+  expect_equal(res$unique_rhymes, 2)
+  expect_equal(
+    analyze_rhymes(text, pronunciation = "cmudict")$total_rhymes,
+    1
+  )
+
+  # multiple songs, including missing lyrics
+  res <- analyze_rhymes(
+    c("bad blood\nmad love", NA, "", "night\nlight", "the"),
+    pronunciation = "cmudict"
+  )
+  expect_equal(nrow(res), 5)
+  expect_equal(res$total_rhymes, c(1, NA, NA, 0, 0))
+  expect_equal(res$rhyme_density, c(2 / 3, NA, NA, 0, 0))
+  expect_equal(
+    res$longest_rhyme,
+    c("bad blood / mad love", NA, NA, NA, NA)
+  )
+})
+
+test_that("data frames are analyzed", {
+  songs <- taylor_album_songs[1:3, ]
+  songs$lyrics[2] <- list(NULL)
+  songs$lyrics[3] <- list(songs$lyrics[[3]][0, ])
+
+  res <- analyze_rhymes(songs, pronunciation = "cmudict")
+  expect_s3_class(res, "tbl_df")
+  expect_equal(nrow(res), 3)
+  expect_equal(names(res)[seq_along(songs)], names(songs))
+  expect_equal(res$track_name, songs$track_name)
+  expect_false(is.na(res$rhyme_density[1]))
+  expect_true(all(is.na(res$rhyme_density[2:3])))
+
+  # custom list-column
+  lyric_text <- tibble::tibble(
+    song = c("a", "b"),
+    words = list(c("bad blood", "mad love"), NULL)
+  )
+  res <- analyze_rhymes(
+    lyric_text,
+    lyrics_col = "words",
+    pronunciation = "cmudict"
+  )
+  expect_equal(res$total_rhymes, c(1, NA))
+
+  expect_snapshot(
+    taylor_all_songs |>
+      dplyr::filter(track_name %in% c("Tim McGraw", "Anti-Hero", "Karma")) |>
+      analyze_rhymes(pronunciation = "cmudict") |>
+      dplyr::select("track_name", "n_words":"longest_rhyme") |>
+      as.data.frame()
+  )
+})
+
+test_that("bad arguments error", {
+  expect_error(analyze_rhymes(1:3), "character vector or data frame")
+  expect_error(analyze_rhymes(taylor_albums), "list-column named")
+  expect_error(analyze_rhymes("text", lookback = 0), "at least 1")
+  expect_error(analyze_rhymes("text", lookback = "a"), "numeric")
+  expect_error(analyze_rhymes("text", min_length = 0), "at least 1")
+  expect_error(analyze_rhymes("text", remove_duplicates = "yes"), "logical")
+  expect_error(analyze_rhymes("text", lyrics_col = 1), "character")
+  expect_error(analyze_rhymes("text", pronunciation = "ipa"), "must be one of")
+})
+
+test_that("espeak phonemes are converted to vowels", {
+  phonemes <- c(
+    night = "n'aIt",
+    baby = "b'eIbi",
+    fire = "f'aI3",
+    about = "a#b'aUt",
+    bottle = "b'0t#@L",
+    letter = "l'Et#3",
+    opalite = "'oUp@l,aIt",
+    near = "n'i@3",
+    start = "st'A@t",
+    the = "D'@2",
+    empty = ""
+  )
+  expect_equal(
+    espeak_to_vowels(phonemes),
+    c("e", "fh", "eg", "d", "a", "fg", "ie", "h", "a", "", NA)
+  )
+
+  # vowel codes match the dictionary for these words
+  words <- names(phonemes)[1:9]
+  words <- words[words != "opalite"]
+  expect_equal(
+    espeak_to_vowels(phonemes[words]),
+    lookup_pronunciation(words)
+  )
+})
+
+test_that("pronunciation source can be chosen", {
+  local_mocked_bindings(espeak_path = function() "")
+  expect_identical(pronunciation_engine("auto"), lookup_pronunciation)
+  expect_identical(pronunciation_engine("cmudict"), lookup_pronunciation)
+  expect_error(pronunciation_engine("espeak"), "could not be found")
+  expect_error(
+    analyze_rhymes("bad blood", pronunciation = "espeak"),
+    "could not be found"
+  )
+})
+
+test_that("espeak is used when available", {
+  old_cache <- dictionary$espeak
+  dictionary$espeak <- NULL
+  withr::defer(dictionary$espeak <- old_cache)
+
+  calls <- 0
+  local_mocked_bindings(
+    espeak_path = function() "/fake/espeak",
+    run_espeak = function(words, path) {
+      calls <<- calls + 1
+      phonemes <- c(
+        bad = "b'ad",
+        blood = "bl'Vd",
+        mad = "m'ad",
+        love = "l'Vv",
+        a = "'eI",
+        fading = "f'eIdIN"
+      )
+      unname(phonemes[words])
+    }
+  )
+
+  pronounce <- pronunciation_engine("auto", words = c("bad", "blood", "a"))
+  expect_equal(calls, 1)
+  expect_equal(pronounce(c("bad", "blood", "a")), c("b", "c", ""))
+  expect_equal(calls, 1)
+
+  # dropped g's are sent to espeak as "-ing"
+  expect_equal(pronounce("fadin'"), "fh")
+  expect_equal(calls, 2)
+
+  res <- analyze_rhymes("bad blood\nmad love", pronunciation = "espeak")
+  expect_equal(res$longest_rhyme, "bad blood / mad love")
+})
+
+test_that("espeak failures fall back to the dictionary", {
+  old_cache <- dictionary$espeak
+  dictionary$espeak <- NULL
+  withr::defer(dictionary$espeak <- old_cache)
+
+  local_mocked_bindings(
+    espeak_path = function() "/fake/espeak",
+    run_espeak = function(words, path) cli::cli_abort("boom")
+  )
+  expect_warning(
+    pronounce <- pronunciation_engine("auto", words = "love"),
+    "CMU Pronouncing Dictionary was used instead"
+  )
+  expect_identical(pronounce, lookup_pronunciation)
+  expect_error(
+    pronunciation_engine("espeak", words = "love"),
+    "eSpeak failed"
+  )
+})
+
+test_that("espeak is found", {
+  skip_on_cran()
+  skip_on_os("windows")
+  withr::local_options(taylor.espeak = NULL)
+  dir <- withr::local_tempdir()
+  withr::local_envvar(PATH = dir)
+
+  # not installed
+  expect_equal(espeak_path(), "")
+
+  # espeak-ng is preferred over espeak
+  espeak <- write_fake_program(dir, "espeak", "exit 0")
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak))
+  espeak_ng <- write_fake_program(dir, "espeak-ng", "exit 0")
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak_ng))
+
+  # the option takes precedence
+  withr::local_options(taylor.espeak = espeak)
+  expect_equal(normalizePath(espeak_path()), normalizePath(espeak))
+  withr::local_options(taylor.espeak = file.path(dir, "not-espeak"))
+  expect_equal(espeak_path(), "")
+})
+
+test_that("espeak errors are caught", {
+  skip_on_cran()
+  skip_on_os("windows")
+  dir <- withr::local_tempdir()
+
+  failing <- write_fake_program(dir, "failing", "exit 3")
+  expect_error(run_espeak("love", path = failing), "exited with status 3")
+
+  short <- write_fake_program(dir, "short", "echo \" l'Vv\"")
+  expect_equal(run_espeak("love", path = short), "l'Vv")
+  expect_error(
+    run_espeak(c("love", "blood"), path = short),
+    "returned 1 transcription for 2 words"
+  )
+})
+
+test_that("real espeak transcriptions work", {
+  path <- espeak_path()
+  skip_if_no_espeak(path)
+
+  expect_equal(
+    run_espeak(c("night", "baby"), path = path),
+    c("n'aIt", "b'eIbi")
+  )
+
+  # eSpeak is used automatically when it's installed
+  pronounce <- pronunciation_engine("auto", words = "fire")
+  expect_false(identical(pronounce, lookup_pronunciation))
+  expect_equal(pronounce(c("fire", "opalite")), c("eg", "ie"))
+
+  words <- c("night", "light", "baby", "love", "blood", "the", "a", "fire")
+  expect_equal(
+    espeak_pronunciation(words),
+    lookup_pronunciation(words)
+  )
+
+  res <- analyze_rhymes(
+    "Cause, baby, now we got bad blood\nYou know it used to be mad love",
+    pronunciation = "espeak"
+  )
+  expect_equal(res$longest_rhyme, "bad blood / mad love")
+  expect_equal(nrow(analyze_rhymes(taylor_album_songs[1:3, ])), 3)
+})

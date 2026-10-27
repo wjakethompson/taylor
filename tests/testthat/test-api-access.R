@@ -1,50 +1,41 @@
-test_that("spotify api", {
-  skip_on_cran()
-  skip_on_ci()
-
-  client_id <- httr2::secret_decrypt(
-    "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
-    "TAYLOR_KEY"
-  )
-  client_secret <- httr2::secret_decrypt(
-    "LZneUpdwTawqZOBb6Qx481OvOL9U9Jxz9QZhm9FwUQ6QsPLkQTV1FbMweVKFKUR9",
-    "TAYLOR_KEY"
+# spotify ----------------------------------------------------------------------
+test_that("getting spotify envvar", {
+  testing_key <- list(
+    client_id = httr2::secret_decrypt(
+      "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
+      "TAYLOR_KEY"
+    ),
+    client_secret = httr2::secret_decrypt(
+      "LZneUpdwTawqZOBb6Qx481OvOL9U9Jxz9QZhm9FwUQ6QsPLkQTV1FbMweVKFKUR9",
+      "TAYLOR_KEY"
+    )
   )
 
   # with known envvars ---------------------------------------------------------
   withr::local_envvar(list(
-    "SPOTIFY_CLIENT_ID" = client_id,
-    "SPOTIFY_CLIENT_SECRET" = client_secret
+    "SPOTIFY_CLIENT_ID" = "my-client-id",
+    "SPOTIFY_CLIENT_SECRET" = "my-client-secret"
   ))
-  so_high_school <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
-
   expect_equal(
-    colnames(so_high_school),
-    c(
-      "artist",
-      "featuring",
-      "spotify_album",
-      "duration_ms",
-      "explicit"
-    )
+    get_spotify_access_token(),
+    list(client_id = "my-client-id", client_secret = "my-client-secret")
   )
-
-  expect_equal(so_high_school$artist, "Taylor Swift")
-  expect_equal(so_high_school$featuring, NA_character_)
-
-  expect_null(get_spotify_track_info(track_id = ""))
-  expect_null(get_spotify_track_info(track_id = NA_character_))
 
   # nothing saved to renviron --------------------------------------------------
-  withr::local_envvar(list("SPOTIFY_CLIENT_ID" = ""))
-  without_local <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
-  expect_identical(so_high_school, without_local)
+  withr::local_envvar(list("SPOTIFY_CLIENT_ID" = "", "TESTTHAT" = "true"))
+  expect_equal(get_spotify_access_token(), testing_key)
+
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = "my-client-id",
+    "SPOTIFY_CLIENT_SECRET" = "",
+    "TESTTHAT" = "false",
+    "IN_PKGDOWN" = "true"
+  ))
+  expect_equal(get_spotify_access_token(), testing_key)
 
   # no keys found --------------------------------------------------------------
-  withr::local_envvar(list("SPOTIFY_CLIENT_ID" = "", "TESTTHAT" = "false"))
-  err <- rlang::catch_cnd(
-    get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
-  )
+  withr::local_envvar(list("TESTTHAT" = "false", "IN_PKGDOWN" = "false"))
+  err <- rlang::catch_cnd(get_spotify_access_token())
   expect_s3_class(err, "rlang_error")
   expect_match(err$message, "Client ID or Secret not found")
 })
@@ -83,6 +74,49 @@ test_that("setting spotify envvar", {
   expect_match(err$message, "Client ID not provided")
 })
 
+test_that("spotify api", {
+  skip()
+
+  client_id <- httr2::secret_decrypt(
+    "UOF5NVolAFuZUfPsrqB6zRGiuT2U6kZTly16hmop_vkzywAmTyHJaDuWl13gymsI",
+    "TAYLOR_KEY"
+  )
+  client_secret <- httr2::secret_decrypt(
+    "LZneUpdwTawqZOBb6Qx481OvOL9U9Jxz9QZhm9FwUQ6QsPLkQTV1FbMweVKFKUR9",
+    "TAYLOR_KEY"
+  )
+
+  # with known envvars ---------------------------------------------------------
+  withr::local_envvar(list(
+    "SPOTIFY_CLIENT_ID" = client_id,
+    "SPOTIFY_CLIENT_SECRET" = client_secret
+  ))
+  so_high_school <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
+
+  expect_equal(
+    colnames(so_high_school),
+    c(
+      "artist",
+      "featuring",
+      "spotify_album",
+      "duration_ms",
+      "explicit"
+    )
+  )
+
+  expect_equal(so_high_school$artist, "Taylor Swift")
+  expect_equal(so_high_school$featuring, NA_character_)
+
+  expect_null(get_spotify_track_info(track_id = ""))
+  expect_null(get_spotify_track_info(track_id = NA_character_))
+
+  # nothing saved to renviron --------------------------------------------------
+  withr::local_envvar(list("SPOTIFY_CLIENT_ID" = ""))
+  without_local <- get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
+  expect_identical(so_high_school, without_local)
+})
+
+# soundstat --------------------------------------------------------------------
 test_that("soundstat api", {
   soundstat_key <- httr2::secret_decrypt(
     paste0(
@@ -164,6 +198,7 @@ test_that("setting soundstat envvar", {
   expect_match(err$message, "API key not provided")
 })
 
+# reccobeats -------------------------------------------------------------------
 test_that("reccobeats api", {
   so_high_school <- get_reccobeats_audio_features("7Mts0OfPorF4iwOomvfqn1")
 
@@ -202,6 +237,7 @@ test_that("reccobeats api", {
   expect_null(get_reccobeats_audio_features(track_id = "so-high-school"))
 })
 
+# Helpers-----------------------------------------------------------------------
 test_that("api testing helpers", {
   withr::local_envvar(
     list(

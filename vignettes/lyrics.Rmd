@@ -71,3 +71,36 @@ track_lyrics |>
 
 The resulting data frame is still one row per song, because we have not unnested the lyrics.
 However, our summary statistic has been added as an additional column.
+
+## Analyzing rhymes
+
+The taylor package also includes `analyze_rhymes()` for summarizing how much a song's lyrics rhyme.
+This function is an R implementation of [Raplyzer](https://mining4meaning.com/2015/02/13/raplyzer/), which converts lyrics to their vowel sounds and then finds, for each word, the longest sequence of matching vowels shared with one of the previous 15 words.
+Matches can span multiple words, so "bad blood" and "mad love" form a rhyme of length 2.
+
+We can analyze a single string of lyrics, with lines separated by `"\n"`.
+
+```{r}
+analyze_rhymes(paste(
+  "Cause, baby, now we got bad blood",
+  "You know it used to be mad love"
+))
+```
+
+We can also give `analyze_rhymes()` a data set with a list-column of lyrics, like `track_lyrics`.
+The rhyme statistics are added as new columns, and the data set is still one row per song.
+For example, which songs on *Midnights* have the highest rhyme density (i.e., the average rhyme length per word)?
+
+```{r}
+track_lyrics |>
+  filter(album_name == "Midnights") |>
+  analyze_rhymes() |>
+  select(
+    track_name,
+    total_rhymes,
+    unique_rhymes,
+    rhyme_density,
+    longest_rhyme
+  ) |>
+  arrange(desc(rhyme_density))
+```

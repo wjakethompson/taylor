@@ -42,6 +42,27 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      - name: Install eSpeak NG (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y espeak-ng
+
+      - name: Install eSpeak NG (macOS)
+        if: runner.os == 'macOS'
+        run: brew install espeak-ng
+
+      - name: Install eSpeak NG (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download 1.52.0 --repo espeak-ng/espeak-ng --pattern espeak-ng.msi --dir $env:RUNNER_TEMP
+          Start-Process msiexec.exe -Wait -ArgumentList "/i `"$env:RUNNER_TEMP\espeak-ng.msi`" /qn /norestart"
+          "C:\Program Files\eSpeak NG" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Check eSpeak NG
+        run: espeak-ng --version
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck

@@ -11,6 +11,8 @@ Description: A comprehensive resource for data on Taylor Swift songs. Data
     are included for easily creating data visualizations with color
     palettes inspired by Taylor Swift's album covers.
 License: MIT + file LICENSE
+Copyright: See inst/COPYRIGHTS for the copyright holders of the CMU
+    Pronouncing Dictionary and Raplyzer.
 URL: https://taylor.wjakethompson.com,
     https://github.com/wjakethompson/taylor
 BugReports: https://github.com/wjakethompson/taylor/issues
@@ -20,6 +22,7 @@ Imports:
     askpass,
     cli,
     dplyr,
+    english,
     ggplot2,
     glue,
     httr2,
@@ -37,7 +40,7 @@ Suggests:
     patchwork,
     rmarkdown,
     spelling,
-    testthat (>= 3.0.0),
+    testthat (>= 3.1.7),
     vdiffr (>= 1.0.2),
     withr
 VignetteBuilder: 
