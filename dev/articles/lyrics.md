@@ -162,3 +162,67 @@ track_lyrics |>
 The resulting data frame is still one row per song, because we have not
 unnested the lyrics. However, our summary statistic has been added as an
 additional column.
+
+## Analyzing rhymes
+
+The taylor package also includes
+[`analyze_rhymes()`](https://taylor.wjakethompson.com/dev/reference/analyze_rhymes.md)
+for summarizing how much a song’s lyrics rhyme. This function is an R
+implementation of
+[Raplyzer](https://mining4meaning.com/2015/02/13/raplyzer/), which
+converts lyrics to their vowel sounds and then finds, for each word, the
+longest sequence of matching vowels shared with one of the previous 15
+words. Matches can span multiple words, so “bad blood” and “mad love”
+form a rhyme of length 2.
+
+We can analyze a single string of lyrics, with lines separated by
+`"\n"`.
+
+``` r
+
+analyze_rhymes(paste(
+  "Cause, baby, now we got bad blood",
+  "You know it used to be mad love"
+))
+#> # A tibble: 1 × 7
+#>   text     n_words total_rhymes unique_rhymes rhyme_density longest_rhyme_length
+#>   <chr>      <int>        <int>         <int>         <dbl>                <int>
+#> 1 Cause, …      15            1             1         0.143                    2
+#> # ℹ 1 more variable: longest_rhyme <chr>
+```
+
+We can also give
+[`analyze_rhymes()`](https://taylor.wjakethompson.com/dev/reference/analyze_rhymes.md)
+a data set with a list-column of lyrics, like `track_lyrics`. The rhyme
+statistics are added as new columns, and the data set is still one row
+per song. For example, which songs on *Midnights* have the highest rhyme
+density (i.e., the average rhyme length per word)?
+
+``` r
+
+track_lyrics |>
+  filter(album_name == "Midnights") |>
+  analyze_rhymes() |>
+  select(
+    track_name,
+    total_rhymes,
+    unique_rhymes,
+    rhyme_density,
+    longest_rhyme
+  ) |>
+  arrange(desc(rhyme_density))
+#> # A tibble: 26 × 5
+#>    track_name             total_rhymes unique_rhymes rhyme_density longest_rhyme
+#>    <chr>                         <int>         <int>         <dbl> <chr>        
+#>  1 Anti-Hero                        75            60         0.854 devices they…
+#>  2 Snow On The Beach                62            53         0.633 been lights …
+#>  3 Sweet Nothing                    30            28         0.606 your sweet n…
+#>  4 Sweet Nothing (Piano …           30            28         0.606 your sweet n…
+#>  5 Snow On The Beach (Mo…           58            49         0.572 been lights …
+#>  6 You're Losing Me (Fro…           77            65         0.566 we built or …
+#>  7 Vigilante Shit                   47            42         0.551 get even so …
+#>  8 Glitch                           39            34         0.538 maybe i'll s…
+#>  9 The Great War                    67            58         0.536 is desire / …
+#> 10 Karma                            51            40         0.489 to betrayal …
+#> # ℹ 16 more rows
+```

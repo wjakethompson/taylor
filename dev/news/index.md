@@ -2,6 +2,20 @@
 
 ## taylor (development version)
 
+- New
+  [`analyze_rhymes()`](https://taylor.wjakethompson.com/dev/reference/analyze_rhymes.md)
+  detects rhymes in lyrics and calculates rhyme statistics (e.g., total
+  rhymes, unique rhymes, rhyme density). It works with a string of
+  lyrics or a data set like `taylor_album_songs`, and is an R
+  implementation of
+  [Raplyzer](https://mining4meaning.com/2015/02/13/raplyzer/).
+  Pronunciations come from [eSpeak
+  NG](https://github.com/espeak-ng/espeak-ng) if it’s installed, and
+  otherwise from the CMU Pronouncing Dictionary, which is included in
+  the package (see the `pronunciation` argument). Numbers in lyrics are
+  converted to words with the english package (e.g., “22” becomes
+  “twenty two”).
+
 ## taylor 4.0.0
 
 CRAN release: 2026-02-10

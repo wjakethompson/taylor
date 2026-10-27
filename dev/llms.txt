@@ -210,6 +210,11 @@ plot objects. For example usage, see
 - [`taylor_sitrep()`](https://taylor.wjakethompson.com/dev/reference/taylor_sitrep.md)
   : Situation report for APIs
 
+## Lyric analysis
+
+- [`analyze_rhymes()`](https://taylor.wjakethompson.com/dev/reference/analyze_rhymes.md)
+  : Analyze rhymes in song lyrics
+
 ## Miscellaneous
 
 - [`translate_bracelet()`](https://taylor.wjakethompson.com/dev/reference/translate_bracelet.md)
