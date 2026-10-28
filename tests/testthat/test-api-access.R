@@ -187,6 +187,32 @@ test_that("soundstat api", {
   expect_match(err$message, "No API key found")
 })
 
+test_that("soundstat handles null features", {
+  httr2::local_mocked_responses(function(req) {
+    httr2::response(
+      status_code = 200L,
+      headers = list(`Content-Type` = "application/json"),
+      body = charToRaw(
+        paste0(
+          '{"id": "11hcBLPtbMp4aQI6zGQLub", "features": {',
+          '"tempo": 117, "key": 7, "mode": 1, "key_confidence": null, ',
+          '"energy": 0.583, "danceability": 0.607, "valence": null, ',
+          '"instrumentalness": 0, "acousticness": 0.186, "loudness": -6.73, ',
+          '"segments": [], "beats": []}}'
+        )
+      )
+    )
+  })
+
+  patient_zero <- get_soundstat_audio_features(
+    "11hcBLPtbMp4aQI6zGQLub",
+    api_key = "my-api-key"
+  )
+  expect_equal(nrow(patient_zero), 1L)
+  expect_true(is.na(patient_zero$valence))
+  expect_equal(patient_zero$key_mode, "G major")
+})
+
 test_that("setting soundstat envvar", {
   withr::local_envvar(list("SOUNDSTAT_KEY" = ""))
   set_soundstat_api_key(key = "my-api-key")

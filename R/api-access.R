@@ -226,6 +226,7 @@ get_soundstat_audio_features <- function(
   raw_dat <- httr2::resp_body_json(resp)
   raw_dat$features$segments <- NULL
   raw_dat$features$beats <- NULL
+  raw_dat$features <- lapply(raw_dat$features, \(x) if (is.null(x)) NA else x)
 
   res <- tibble::as_tibble(raw_dat$features) |>
     dplyr::select(
