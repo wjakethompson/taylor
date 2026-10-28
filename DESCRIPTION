@@ -30,7 +30,6 @@ Imports:
     methods,
     rlang,
     scales,
-    spotifyr,
     tibble,
     tidyr,
     vctrs

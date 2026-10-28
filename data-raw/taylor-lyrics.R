@@ -1,5 +1,4 @@
 library(tidyverse)
-library(spotifyr)
 library(stringi)
 library(readxl)
 library(rvest)
@@ -399,6 +398,7 @@ base_info <- lyrics |>
 
 
 # Get Spotify information ------------------------------------------------------
+devtools::load_all()
 key_lookup <- tibble(
   key = 0:11,
   key_name = c("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
@@ -483,13 +483,7 @@ spotify_ids <- tribble(
   "The Life of a Showgirl",                         "4hF2gTGuPYlykYuphDxi8J"
 ) |>
   mutate(
-    track = map(album_uri, function(.x) {
-      album <- get_album(.x)
-
-      album$tracks$items |>
-        as_tibble() |>
-        select(track_name = name, track_uri = id)
-    })
+    track = map(album_uri, get_spotify_album_tracks)
   ) |>
   unnest(track) |>
   bind_rows(bonus_uri, single_uri, feature_uri, writer_uri) |>
@@ -497,7 +491,6 @@ spotify_ids <- tribble(
 
 
 # api functions ----------------------------------------------------------------
-devtools::load_all()
 safe_soundstat <- safely(get_soundstat_audio_features)
 soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
   if (
@@ -769,13 +762,7 @@ feature_join <- full_join(
   select(album_name, track_name))
 
 # Check for missing soundstat information
-# Ideally should return 0 rows. 6 rows currently expected:
-# 1    Hey Stephen (TV)
-# 2    Breathe (TV)
-# 3    Tell Me Why (TV)
-# 4    White Christmas
-# 5    Bein' With My Baby (writer only)
-# 6    This Is Really Happening (writer only)
+# Ideally should return 0 rows. 0 rows currently expected:
 (soundstat <- base_info |>
   left_join(feature_join, by = c("album_name", "track_name")) |>
   filter(!map_lgl(features, is.null)) |>
@@ -933,50 +920,24 @@ taylor_album_songs <- taylor_all_songs |>
   )
 
 metacritic <- tribble(
-  ~album_name, ~metacritic_name,
-  "The Life of a Showgirl",        "the-life-of-a-showgirl",
-  "THE TORTURED POETS DEPARTMENT", "the-tortured-poets-department",
-  "1989 (Taylor's Version)",       "1989-taylors-version",
-  "Speak Now (Taylor's Version)",  "speak-now-taylors-version",
-  "Midnights",                     "midnights",
-  "Red (Taylor's Version)",        "red-taylors-version",
-  "Fearless (Taylor's Version)",   "fearless-taylors-version",
-  "evermore",                      "evermore",
-  "folklore",                      "folklore",
-  "Lover",                         "lover",
-  "reputation",                    "reputation",
-  "1989",                          "1989",
-  "Red",                           "red",
-  "Speak Now",                     "speak-now",
-  "Fearless",                      "fearless",
-  "Taylor Swift",                  "taylor-swift"
-) |>
-  mutate(
-    ratings = map(metacritic_name, function(.x) {
-      url <- glue::glue(
-        "https://www.metacritic.com/",
-        "music/{.x}/taylor-swift"
-      )
-      site <- read_html(url)
-
-      critic <- html_element(site, ".metascore_w span") |>
-        html_text()
-
-      user <- html_element(site, ".user") |>
-        html_text()
-
-      if (user == "tbd") {
-        user <- NA_real_
-      }
-
-      tibble(
-        metacritic_score = as.integer(critic),
-        user_score = as.double(user)
-      )
-    })
-  ) |>
-  unnest(ratings) |>
-  select(-metacritic_name)
+  ~album_name,                           ~metacritic_score, ~user_score,
+  "The Life of a Showgirl",              69L,               NA_real_,
+  "THE TORTURED POETS DEPARTMENT",       76L,               NA_real_,
+  "1989 (Taylor's Version)",             90L,               NA_real_,
+  "Speak Now (Taylor's Version)",        81L,               9.2,
+  "Midnights",                           85L,               8.3,
+  "Red (Taylor's Version)",              91L,               8.9,
+  "Fearless (Taylor's Version)",         82L,               8.9,
+  "evermore",                            85L,               8.9,
+  "folklore",                            88L,               9.0,
+  "Lover",                               79L,               8.4,
+  "reputation",                          71L,               8.3,
+  "1989",                                76L,               8.3,
+  "Red",                                 77L,               8.6,
+  "Speak Now",                           77L,               8.6,
+  "Fearless",                            73L,               8.4,
+  "Taylor Swift",                        67L,               8.4
+)
 
 taylor_albums <- taylor_all_songs |>
   semi_join(albums, by = "album_name") |>
