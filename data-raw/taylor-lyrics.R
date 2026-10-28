@@ -79,7 +79,7 @@ base_info <- lyrics |>
   mutate(
     bonus_track = str_detect(
       album_name,
-      "deluxe|platinum|3am|target|edition|anthology"
+      "deluxe|platinum|3am|target|edition|anthology|encore"
     )
   ) |>
   mutate(
@@ -117,6 +117,8 @@ base_info <- lyrics |>
       album_name == "The Tortured Poets Department The Anthology" ~
         "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
       album_name == "The Life Of A Showgirl" ~ "The Life of a Showgirl",
+      album_name == "The Life Of A Showgirl The Encore" ~
+        "The Life of a Showgirl: The Encore",
       TRUE ~ album_name
     ),
     writer_only = album_name == "Writer",
@@ -296,6 +298,7 @@ base_info <- lyrics |>
   mutate(
     track_name = str_replace_all(track_name, "Wish List", "Wi$h Li$t"),
     track_name = str_replace_all(track_name, "Cancelled", "CANCELLED!"),
+    track_name = str_replace_all(track_name, "Cleveland", "Cleveland!")
   ) |>
   # edits for general Taylor's Version and vault tracks
   mutate(
@@ -338,7 +341,12 @@ base_info <- lyrics |>
     ),
     track_name = str_replace_all(track_name, "Deja Vu", "deja vu"),
     track_name = str_replace_all(track_name, "Tmz", "TMZ"),
-    track_name = str_replace_all(track_name, "Bein With", "Bein' With")
+    track_name = str_replace_all(track_name, "Bein With", "Bein' With"),
+    track_name = str_replace_all(
+      track_name,
+      "I Knew It I Knew You",
+      "I Knew It, I Knew You"
+    )
   ) |>
   left_join(singles, by = c("album_name", "track_name")) |>
   rowwise() |>
@@ -371,6 +379,8 @@ base_info <- lyrics |>
       album_name == "Midnights (The Late Night Edition)" ~ "Midnights",
       album_name == "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY" ~
         "THE TORTURED POETS DEPARTMENT",
+      album_name == "The Life of a Showgirl: The Encore" ~
+        "The Life of a Showgirl",
       TRUE ~ album_name
     )
   ) |>
@@ -406,6 +416,7 @@ single_uri <- tribble(
   "Eyes Open",                                      "6KEemo78n0RnCQWKkeOdXz",
   "Eyes Open (Taylor's Version)",                   "0gPmM1WtVRg3uENW3o8bfx",
   "I Don't Wanna Live Forever",                     "2y5aJvzXhHPA94U5GFAcXe",
+  "I Knew It, I Knew You",                          "5uPaqMMt59KGrdKIitDRqa",
   "If This Was A Movie (Taylor's Version)",         "0q6vsjvnCIWrtwRckCV7y0",
   "Lover (Remix)",                                  "3i9UVldZOE0aD0JnyfAZZ0",
   "Only The Young",                                 "2slqvGLwzZZYsT4K4Y1GBC",
@@ -469,7 +480,7 @@ spotify_ids <- tribble(
   "Speak Now (Taylor's Version)",                   "5AEDGbliTTfjOB8TSm1sxt",
   "1989 (Taylor's Version)",                        "1o59UpKw81iHR0HPiSkJR0",
   "THE TORTURED POETS DEPARTMENT",                  "5H7ixXZfsNMGbIE5OBSpcb",
-  "The Life of a Showgirl",                         "4a6NzYL1YHRUgx9e3YZI6I"
+  "The Life of a Showgirl",                         "4hF2gTGuPYlykYuphDxi8J"
 ) |>
   mutate(
     track = map(album_uri, function(.x) {
