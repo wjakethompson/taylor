@@ -506,11 +506,7 @@ soundstat_api <- function(track_id, save = TRUE, use_archive = FALSE) {
         # 1989 voice memos
         "4JQm7ebhsrt10wmrP6AfXL",
         "4TtyvyI42C0KFnbDZvNC8Y",
-        "0yisH8r0f3Mkq34kjzUlCV",
-
-        # writer credits that hang
-        "1bzJItxyg2yjNcMaVhVJ9a",
-        "3K1RFAkmvzwmW0fzdyeWsO"
+        "0yisH8r0f3Mkq34kjzUlCV"
       )
   ) {
     return(NULL)
