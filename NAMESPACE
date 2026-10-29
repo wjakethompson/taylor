@@ -41,10 +41,12 @@ export(title_case)
 export(translate_bracelet)
 import(vctrs)
 importFrom(ggplot2,waiver)
-importFrom(lifecycle,deprecate_soft)
-importFrom(lifecycle,deprecate_warn)
-importFrom(lifecycle,deprecated)
-importFrom(lifecycle,is_present)
+importFrom(lifecycle,
+  deprecate_soft,
+  deprecate_warn,
+  deprecated,
+  is_present
+)
 importFrom(methods,setOldClass)
 importFrom(rlang,.data)
 importFrom(tibble,tibble)

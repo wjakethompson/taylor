@@ -56,8 +56,8 @@ get_reccobeats_audio_features(track_id = "7Mts0OfPorF4iwOomvfqn1")
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-Other API access: 
-\code{\link{get_soundstat_audio_features}()},
-\code{\link{get_spotify_track_info}()}
+Other API access:
+\code{\link[=get_soundstat_audio_features]{get_soundstat_audio_features()}},
+\code{\link[=get_spotify_track_info]{get_spotify_track_info()}}
 }
 \concept{API access}
