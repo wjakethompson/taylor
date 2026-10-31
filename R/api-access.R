@@ -77,6 +77,24 @@ get_spotify_track_info <- function(
     )
 }
 
+#' Spotify album information
+#'
+#' Access the Spotify API to get a track listing for an album.
+#'
+#' @param album_id The Spotify ID for an album.
+#' @param api_key A Spotify access token, from
+#'   [get_spotify_access_token()].
+#'
+#' @returns A [tibble][tibble::tibble-package] with containing the track listing
+#'   with 1 row per track:
+#'   * `track_name`: The name of the track.
+#'   * `track_uri`: The Spotify track ID.
+#' @export
+#' @family API access
+#'
+#' @examplesIf taylor_examples()
+#' # 1989 (Taylor's Version)
+#' get_spotify_album_tracks(album_id = "1o59UpKw81iHR0HPiSkJR0")
 get_spotify_album_tracks <- function(
   album_id,
   api_key = get_spotify_access_token()
