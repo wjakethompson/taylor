@@ -10,6 +10,11 @@
   lyrics are converted to words with the english package (e.g., "22" becomes
   "twenty two").
 
+* `get_soundstat_audio_features()` no longer errors when SoundStat returns
+  `null` for an audio feature; missing features are now returned as `NA`.
+
+* No longer depend on `{spotifyr}`.
+
 # taylor 4.0.0
 
 ## Breaking changes

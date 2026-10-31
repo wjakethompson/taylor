@@ -19,7 +19,7 @@ The Taylor Swift Holiday Collection,Christmases When You Were Mine,Taylor Swift,
 The Taylor Swift Holiday Collection,Santa Baby,Taylor Swift,NA,The Taylor Swift Holiday Collection,158600,FALSE,0.45,0.35,0.2,0.95,0.75,0.79,107.67,7,1,G,major,G major
 The Taylor Swift Holiday Collection,Silent Night,Taylor Swift,NA,The Taylor Swift Holiday Collection,209893,FALSE,0.46,0.35,0.19,0.95,0.74,0.79,120.19,2,1,D,major,D major
 The Taylor Swift Holiday Collection,Christmas Must Be Something More,Taylor Swift,NA,The Taylor Swift Holiday Collection,232146,FALSE,0.47,0.36,0.19,0.94,0.75,0.8,123.05,7,1,G,major,G major
-The Taylor Swift Holiday Collection,White Christmas,Taylor Swift,NA,The Taylor Swift Holiday Collection,154000,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+The Taylor Swift Holiday Collection,White Christmas,Taylor Swift,NA,The Taylor Swift Holiday Collection,154000,FALSE,0.562,0.392,0.27,0.587,0,0.514,145.792,9,1,A,major,A major
 Fearless,Jump Then Fall,Taylor Swift,NA,Fearless Platinum Edition,237066,FALSE,0.4,0.36,0.22,0.94,0.75,0.79,107.67,4,1,E,major,E major
 Fearless,Untouchable,Taylor Swift,NA,Fearless Platinum Edition,311040,FALSE,0.45,0.33,0.26,0.95,0.76,0.78,99.38,9,1,A,major,A major
 Fearless,Forever & Always (Piano Version),Taylor Swift,NA,Fearless Platinum Edition,267506,FALSE,0.44,0.31,0.24,0.95,0.77,0.72,112.35,4,1,E,major,E major
@@ -170,11 +170,11 @@ evermore,it's time to go,Taylor Swift,NA,evermore (deluxe version),254640,FALSE,
 Fearless (Taylor's Version),Fearless (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),241591,FALSE,0.42,0.35,0.26,0.95,0.76,0.49,101.33,5,0,F,minor,F minor
 Fearless (Taylor's Version),Fifteen (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),294419,FALSE,0.45,0.34,0.25,0.95,0.75,0.79,95.7,9,1,A,major,A major
 Fearless (Taylor's Version),Love Story (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),235766,FALSE,0.47,0.37,0.18,0.94,0.74,0.8,120.19,9,1,A,major,A major
-Fearless (Taylor's Version),Hey Stephen (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),254254,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless (Taylor's Version),Hey Stephen (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),254254,FALSE,0.788,0.571,0.31,0.106,0,0.797,115.99,6,1,F#,major,F# major
 Fearless (Taylor's Version),White Horse (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),234515,FALSE,0.42,0.3,0.33,0.96,0.76,0.78,93.96,2,1,D,major,D major
 Fearless (Taylor's Version),You Belong With Me (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),231124,FALSE,0.43,0.38,0.18,0.93,0.75,0.5,129.2,10,0,A#,minor,A# minor
-Fearless (Taylor's Version),Breathe (Taylor's Version),Taylor Swift,Colbie Caillat,Fearless (Taylor's Version),263377,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Fearless (Taylor's Version),Tell Me Why (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),200575,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fearless (Taylor's Version),Breathe (Taylor's Version),Taylor Swift,Colbie Caillat,Fearless (Taylor's Version),263377,FALSE,0.506,0.626,0.28,0.156,0,0.321,148.035,1,1,C#,major,C# major
+Fearless (Taylor's Version),Tell Me Why (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),200575,FALSE,0.578,0.909,0.21,0.0222,0,0.541,100.023,7,1,G,major,G major
 Fearless (Taylor's Version),You're Not Sorry (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),261842,FALSE,0.45,0.36,0.22,0.93,0.75,0.5,129.2,6,0,F#,minor,F# minor
 Fearless (Taylor's Version),The Way I Loved You (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),243136,FALSE,0.45,0.37,0.19,0.93,0.76,0.48,79.51,9,0,A,minor,A minor
 Fearless (Taylor's Version),Forever & Always (Taylor's Version),Taylor Swift,NA,Fearless (Taylor's Version),225328,FALSE,0.42,0.37,0.24,0.93,0.76,0.5,129.2,5,0,F,minor,F minor
@@ -321,18 +321,22 @@ THE TORTURED POETS DEPARTMENT,Peter,Taylor Swift,NA,THE TORTURED POETS DEPARTMEN
 THE TORTURED POETS DEPARTMENT,The Bolter,Taylor Swift,NA,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,238241,TRUE,0.4,0.31,0.29,0.97,0.76,0.76,92.29,0,1,C,major,C major
 THE TORTURED POETS DEPARTMENT,Robin,Taylor Swift,NA,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,240893,FALSE,0.44,0.27,0.37,0.98,0.78,0.65,136,4,1,E,major,E major
 THE TORTURED POETS DEPARTMENT,The Manuscript,Taylor Swift,NA,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,224743,FALSE,0.39,0.28,0.3,0.98,0.77,0.68,95.7,5,1,F,major,F major
-The Life of a Showgirl,The Fate Of Ophelia,Taylor Swift,NA,The Life of a Showgirl,226073,FALSE,0.58,0.31,0.28,0.97,0.76,0.49,123.05,9,0,A,minor,A minor
-The Life of a Showgirl,Elizabeth Taylor,Taylor Swift,NA,The Life of a Showgirl,208291,FALSE,0.57,0.33,0.24,0.97,0.75,0.8,166.71,2,1,D,major,D major
-The Life of a Showgirl,Opalite,Taylor Swift,NA,The Life of a Showgirl,235355,FALSE,0.59,0.33,0.26,0.96,0.76,0.8,126.05,9,1,A,major,A major
-The Life of a Showgirl,Father Figure,Taylor Swift,NA,The Life of a Showgirl,212777,TRUE,0.49,0.31,0.3,0.97,0.77,0.77,92.29,9,1,A,major,A major
-The Life of a Showgirl,Eldest Daughter,Taylor Swift,NA,The Life of a Showgirl,246356,TRUE,0.52,0.32,0.3,0.95,0.77,0.8,152,7,1,G,major,G major
-The Life of a Showgirl,Ruin The Friendship,Taylor Swift,NA,The Life of a Showgirl,220564,FALSE,0.49,0.31,0.3,0.97,0.77,0.8,156.61,7,1,G,major,G major
-The Life of a Showgirl,Actually Romantic,Taylor Swift,NA,The Life of a Showgirl,163699,TRUE,0.41,0.31,0.28,0.96,0.77,0.48,84.72,4,0,E,minor,E minor
-The Life of a Showgirl,Wi$h Li$t,Taylor Swift,NA,The Life of a Showgirl,207349,TRUE,0.52,0.28,0.37,0.97,0.78,0.75,152,0,1,C,major,C major
-The Life of a Showgirl,Wood,Taylor Swift,NA,The Life of a Showgirl,150517,TRUE,0.46,0.3,0.32,0.96,0.78,0.48,99.38,7,0,G,minor,G minor
-The Life of a Showgirl,CANCELLED!,Taylor Swift,NA,The Life of a Showgirl,211498,TRUE,0.46,0.3,0.31,0.97,0.77,0.76,89.1,9,1,A,major,A major
-The Life of a Showgirl,Honey,Taylor Swift,NA,The Life of a Showgirl,181534,TRUE,0.57,0.3,0.32,0.97,0.77,0.8,161.5,2,1,D,major,D major
-The Life of a Showgirl,The Life Of A Showgirl,Taylor Swift,Sabrina Carpenter,The Life of a Showgirl,241766,TRUE,0.56,0.3,0.3,0.97,0.76,0.8,172.27,7,1,G,major,G major
+The Life of a Showgirl,The Fate Of Ophelia,Taylor Swift,NA,The Life of a Showgirl: The Encore,226073,FALSE,0.7114,0.6581,-5.66,0.1812,0,0.5888,122.19,5,1,F,major,F major
+The Life of a Showgirl,Elizabeth Taylor,Taylor Swift,NA,The Life of a Showgirl: The Encore,208291,FALSE,0.6013,0.5934,-5.28,0.3706,0,0.5016,109.23,9,0,A,minor,A minor
+The Life of a Showgirl,Opalite,Taylor Swift,NA,The Life of a Showgirl: The Encore,235356,FALSE,0.7934,0.7359,-7.01,0.0599,0.0384,0.8005,123.66,7,1,G,major,G major
+The Life of a Showgirl,Father Figure,Taylor Swift,NA,The Life of a Showgirl: The Encore,212777,TRUE,0.6633,0.5942,-5.56,0.2725,0,0.4852,107.77,0,1,C,major,C major
+The Life of a Showgirl,Eldest Daughter,Taylor Swift,NA,The Life of a Showgirl: The Encore,246356,TRUE,0.5021,0.3485,-8.48,0.6784,0,0.2765,113.53,7,1,G,major,G major
+The Life of a Showgirl,Ruin The Friendship,Taylor Swift,NA,The Life of a Showgirl: The Encore,220564,FALSE,0.647,0.6567,-6.89,0.4046,0,0.6209,124.28,7,1,G,major,G major
+The Life of a Showgirl,Actually Romantic,Taylor Swift,NA,The Life of a Showgirl: The Encore,163699,TRUE,0.6066,0.658,-7.04,0.3644,0,0.6584,115.81,1,1,C#,major,C# major
+The Life of a Showgirl,Wi$h Li$t,Taylor Swift,NA,The Life of a Showgirl: The Encore,207349,TRUE,0.6884,0.5094,-7.35,0.6004,0,0.5054,120.55,0,1,C,major,C major
+The Life of a Showgirl,Wood,Taylor Swift,NA,The Life of a Showgirl: The Encore,150517,TRUE,0.6986,0.7608,-5.44,0.2664,0,0.7276,112.24,5,1,F,major,F major
+The Life of a Showgirl,CANCELLED!,Taylor Swift,NA,The Life of a Showgirl: The Encore,211498,TRUE,0.6028,0.5332,-7.99,0.3873,0,0.5125,110.81,5,1,F,major,F major
+The Life of a Showgirl,Honey,Taylor Swift,NA,The Life of a Showgirl: The Encore,181534,TRUE,0.7124,0.6097,-7.11,0.3008,0,0.6726,114.15,2,1,D,major,D major
+The Life of a Showgirl,The Life Of A Showgirl,Taylor Swift,Sabrina Carpenter,The Life of a Showgirl: The Encore,241766,TRUE,0.578,0.4864,-6.72,0.4347,0,0.5634,117.79,0,1,C,major,C major
+The Life of a Showgirl,Patient Zero,Taylor Swift,NA,The Life of a Showgirl: The Encore,225868,FALSE,0.6069,0.5832,-6.73,0.186,0,0.4198,117.1,7,1,G,major,G major
+The Life of a Showgirl,Cleveland!,Taylor Swift,NA,The Life of a Showgirl: The Encore,206164,FALSE,0.527,0.8107,-8.63,0.1031,0,0.6162,139.11,7,1,G,major,G major
+The Life of a Showgirl,Pink Clouding,Taylor Swift,NA,The Life of a Showgirl: The Encore,190690,FALSE,0.6423,0.4969,-8.22,0.268,0,0.519,110.91,2,1,D,major,D major
+The Life of a Showgirl,Babylon,Taylor Swift,NA,The Life of a Showgirl: The Encore,219365,FALSE,0.5799,0.5762,-5.68,0.4068,0,0.5291,119.89,7,1,G,major,G major
 Midnights,You're Losing Me (From The Vault),Taylor Swift,NA,You're Losing Me (From The Vault),277831,FALSE,0.41,0.25,0.46,0.98,0.8,0.66,103.36,0,1,C,major,C major
 NA,All Of The Girls You Loved Before,Taylor Swift,NA,All Of The Girls You Loved Before,221407,FALSE,0.43,0.27,0.36,0.98,0.78,0.68,95.7,2,1,D,major,D major
 NA,American Girl,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -344,6 +348,7 @@ NA,Crazier,Taylor Swift,NA,Hannah Montana The Movie,191946,FALSE,0.45,0.35,0.17,
 NA,Eyes Open,Taylor Swift,NA,The Hunger Games: Songs From District 12 And Beyond,244586,FALSE,0.44,0.32,0.29,0.95,0.76,0.8,136,7,1,G,major,G major
 NA,Eyes Open (Taylor's Version),Taylor Swift,NA,The More Red (Taylor’s Version) Chapter,243264,FALSE,0.43,0.35,0.28,0.94,0.76,0.8,136,9,1,A,major,A major
 NA,I Don't Wanna Live Forever,ZAYN,Taylor Swift,Fifty Shades Darker (Original Motion Picture Soundtrack),245653,FALSE,0.43,0.28,0.4,0.97,0.79,0.44,117.45,0,0,C,minor,C minor
+NA,"I Knew It, I Knew You",Taylor Swift,NA,"I Knew It, I Knew You (From ""Toy Story 5"")",178186,FALSE,0.66,0.36,0.74,0.68,0.66,0.83,93.96,7,1,G,major,G major
 NA,If This Was A Movie (Taylor's Version),Taylor Swift,NA,The More Fearless (Taylor’s Version) Chapter,237022,FALSE,0.48,0.37,0.2,0.94,0.75,0.8,147.66,8,1,G#,major,G# major
 NA,Lover (Remix),Taylor Swift,Shawn Mendes,Lover (Remix) [feat. Shawn Mendes],221306,FALSE,0.41,0.34,0.22,0.96,0.76,0.77,109.96,7,1,G,major,G major
 NA,Only The Young,Taylor Swift,NA,Only The Young (Featured in Miss Americana),157507,FALSE,0.41,0.37,0.2,0.93,0.73,0.5,126.05,10,0,A#,minor,A# minor
@@ -366,11 +371,11 @@ NA,Three Sad Virgins,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 NA,Two Is Better Than One,BOYS LIKE GIRLS,Taylor Swift,Love Drunk,242840,FALSE,0.48,0.34,0.22,0.96,0.75,0.8,129.2,7,1,G,major,G major
 NA,us.,Gracie Abrams,Taylor Swift,The Secret of Us,242666,TRUE,0.46,0.36,0.22,0.95,0.74,0.8,136,7,1,G,major,G major
 NA,"1 step forward, 3 steps back",Olivia Rodrigo,NA,SOUR,163586,TRUE,0.5,0.27,0.35,0.98,0.79,0.69,172.27,2,1,D,major,D major
-NA,Bein' With My Baby,Shea Fisher,NA,Shea,238640,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,Bein' With My Baby,Shea Fisher,NA,Shea,238640,FALSE,0.552,0.76,0.22,0.319,0,0.335,91.041,8,1,G#,major,G# major
 NA,Best Days Of Your Life,Kellie Pickler,NA,Kellie Pickler (Deluxe Version),226800,FALSE,0.48,0.37,0.19,0.95,0.75,0.8,129.2,9,1,A,major,A major
 NA,Better Man,Little Big Town,NA,The Breaker,263120,FALSE,0.5,0.35,0.21,0.95,0.74,0.5,143.55,0,0,C,minor,C minor
 NA,deja vu,Olivia Rodrigo,NA,SOUR,215506,TRUE,0.48,0.31,0.3,0.98,0.77,0.79,178.21,1,1,C#,major,C# major
-NA,This Is Really Happening,Britni Hoover,NA,Country Strong,210533,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,This Is Really Happening,Britni Hoover,NA,Country Strong,210533,FALSE,0.622,0.463,0.67,0.699,0,0.345,104.929,0,1,C,major,C major
 NA,This Is What You Came For,Calvin Harris,Rihanna,This Is What You Came For,221900,FALSE,0.47,0.32,0.31,0.95,0.77,0.79,123.05,0,1,C,major,C major
 NA,TMZ,"""Weird Al"" Yankovic",NA,Alpocalypse,219727,FALSE,0.45,0.39,0.13,0.94,0.74,0.5,147.66,3,0,D#,minor,D# minor
 NA,You'll Always Find Your Way Back Home,Hannah Montana,NA,Hannah Montana The Movie,224186,FALSE,0.46,0.38,0.17,0.93,0.75,0.51,152,10,0,A#,minor,A# minor
