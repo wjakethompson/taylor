@@ -34,24 +34,38 @@ get_spotify_track_info <- function(
   check_character(track_id, allow_na = TRUE)
   check_character(api_key$client_id)
   check_character(api_key$client_secret)
-  api_key <- spotifyr::get_spotify_access_token(
-    client_id = api_key$client_id,
-    client_secret = api_key$client_secret
-  )
+  spotify_token <- httr2::request("https://accounts.spotify.com/api/token") |>
+    httr2::req_auth_basic(
+      api_key$client_id,
+      api_key$client_secret
+    ) |>
+    httr2::req_body_form(grant_type = "client_credentials") |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
 
   if (is.na(track_id) || track_id == "") {
     return(NULL)
   }
 
-  spotify_track <- spotifyr::get_track(track_id, authorization = api_key)
+  api_call <- httr2::request("https://api.spotify.com/v1") |>
+    httr2::req_url_path_append("/tracks") |>
+    httr2::req_url_path_append(track_id) |>
+    httr2::req_auth_bearer_token(spotify_token$access_token) |>
+    httr2::req_retry(max_tries = 10)
+
+  resp <- httr2::req_perform(api_call)
+  raw_dat <- httr2::resp_body_json(resp)
 
   tibble::tibble(
-    spotify_album = spotify_track$album$name,
-    duration_ms = spotify_track$duration_ms,
-    explicit = spotify_track$explicit
+    spotify_album = raw_dat$album$name,
+    duration_ms = raw_dat$duration_ms,
+    explicit = raw_dat$explicit
   ) |>
     tibble::add_column(
-      artist = paste(spotify_track$artists$name, collapse = ", "),
+      artist = paste(
+        vapply(raw_dat$artists, \(x) x$name, character(1)),
+        collapse = ", "
+      ),
       .before = 1
     ) |>
     tidyr::separate_wider_delim(
@@ -62,6 +76,56 @@ get_spotify_track_info <- function(
       too_many = "merge"
     )
 }
+
+#' Spotify album information
+#'
+#' Access the Spotify API to get a track listing for an album.
+#'
+#' @param album_id The Spotify ID for an album.
+#' @param api_key A Spotify access token, from
+#'   [get_spotify_access_token()].
+#'
+#' @returns A [tibble][tibble::tibble-package] with containing the track listing
+#'   with 1 row per track:
+#'   * `track_name`: The name of the track.
+#'   * `track_uri`: The Spotify track ID.
+#' @export
+#' @family API access
+#'
+#' @examplesIf taylor_examples()
+#' # 1989 (Taylor's Version)
+#' get_spotify_album_tracks(album_id = "1o59UpKw81iHR0HPiSkJR0")
+get_spotify_album_tracks <- function(
+  album_id,
+  api_key = get_spotify_access_token()
+) {
+  check_character(album_id, allow_na = TRUE)
+  check_character(api_key$client_id)
+  check_character(api_key$client_secret)
+  spotify_token <- httr2::request("https://accounts.spotify.com/api/token") |>
+    httr2::req_auth_basic(
+      api_key$client_id,
+      api_key$client_secret
+    ) |>
+    httr2::req_body_form(grant_type = "client_credentials") |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
+
+  album <- httr2::request("https://api.spotify.com/v1") |>
+    httr2::req_url_path_append("albums") |>
+    httr2::req_url_path_append(album_id) |>
+    httr2::req_url_path_append("tracks?limit=50") |>
+    httr2::req_auth_bearer_token(spotify_token$access_token) |>
+    httr2::req_retry(max_tries = 10) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
+
+  tibble::tibble(
+    track_name = vapply(album$items, \(x) x$name, character(1)),
+    track_uri = vapply(album$items, \(x) x$id, character(1))
+  )
+}
+
 
 #' Spotify API helpers
 #'
@@ -96,7 +160,7 @@ get_spotify_access_token <- function() {
       cli::format_message(
         c(
           "Client ID or Secret not found, please see",
-          "{.fun spotifyr::get_spotify_access_token}"
+          "{.fun get_spotify_access_token}"
         )
       )
     )
@@ -226,6 +290,7 @@ get_soundstat_audio_features <- function(
   raw_dat <- httr2::resp_body_json(resp)
   raw_dat$features$segments <- NULL
   raw_dat$features$beats <- NULL
+  raw_dat$features <- lapply(raw_dat$features, \(x) if (is.null(x)) NA else x)
 
   res <- tibble::as_tibble(raw_dat$features) |>
     dplyr::select(

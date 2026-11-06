@@ -4,10 +4,14 @@ exclusions: list(
       object_name_linter = Inf
     ),
     "data-raw/taylor-lyrics.R" = list(
-      object_usage_linter = Inf
+      object_usage_linter = Inf,
+      commas_linter = Inf
     ),
     "data-raw/cmudict.R" = list(
       object_usage_linter = Inf
+    ),
+    "data-raw/_archive/metacritic-scraping.R" = list(
+      commas_linter = Inf
     )
   )
 encoding: "UTF-8"

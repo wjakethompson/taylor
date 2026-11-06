@@ -1,3 +1,2 @@
 [format]
 exclude = ["pkgdown/extra.css", "pkgdown/**/*.css"]
-skip = ["tribble"]

@@ -19,6 +19,7 @@ export(get_reccobeats_audio_features)
 export(get_soundstat_api_key)
 export(get_soundstat_audio_features)
 export(get_spotify_access_token)
+export(get_spotify_album_tracks)
 export(get_spotify_track_info)
 export(is_color_palette)
 export(scale_color_albums)
@@ -41,10 +42,12 @@ export(title_case)
 export(translate_bracelet)
 import(vctrs)
 importFrom(ggplot2,waiver)
-importFrom(lifecycle,deprecate_soft)
-importFrom(lifecycle,deprecate_warn)
-importFrom(lifecycle,deprecated)
-importFrom(lifecycle,is_present)
+importFrom(lifecycle,
+  deprecate_soft,
+  deprecate_warn,
+  deprecated,
+  is_present
+)
 importFrom(methods,setOldClass)
 importFrom(rlang,.data)
 importFrom(tibble,tibble)
