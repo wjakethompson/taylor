@@ -23,7 +23,7 @@ features from [SoundStat](https://soundstat.info) and lyrics from
 ``` r
 
 taylor_all_songs
-#> # A tibble: 384 × 26
+#> # A tibble: 389 × 26
 #>    album_name   ep    album_release track_number track_name     artist featuring
 #>    <chr>        <lgl> <date>               <int> <chr>          <chr>  <chr>    
 #>  1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… NA       
@@ -36,7 +36,7 @@ taylor_all_songs
 #>  8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… NA       
 #>  9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… NA       
 #> 10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… NA       
-#> # ℹ 374 more rows
+#> # ℹ 379 more rows
 #> # ℹ 19 more variables: bonus_track <lgl>, promotional_release <date>,
 #> #   single_release <date>, track_release <date>, danceability <dbl>,
 #> #   energy <dbl>, loudness <dbl>, acousticness <dbl>, instrumentalness <dbl>,

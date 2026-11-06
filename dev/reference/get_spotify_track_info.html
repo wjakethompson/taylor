@@ -89,16 +89,18 @@ not (<code>FALSE</code>).</p></li>
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other API access:
 <code><a href="get_reccobeats_audio_features.html">get_reccobeats_audio_features()</a></code>,
-<code><a href="get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code></p></div>
+<code><a href="get_soundstat_audio_features.html">get_soundstat_audio_features()</a></code>,
+<code><a href="get_spotify_album_tracks.html">get_spotify_album_tracks()</a></code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># So High School</span></span></span>
 <span class="r-in"><span><span class="fu">get_spotify_track_info</span><span class="op">(</span>track_id <span class="op">=</span> <span class="st">"7Mts0OfPorF4iwOomvfqn1"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [401]. Retrying in 1 seconds...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [401]. Retrying in 3.3 seconds...</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in spotifyr::get_track(track_id, authorization = api_key):</span> Unauthorized (HTTP 401).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   artist       featuring spotify_album                      duration_ms explicit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Taylor Swift <span style="color: #BB0000;">NA</span>        THE TORTURED POETS DEPARTMENT: TH…      <span style="text-decoration: underline;">228</span>800 FALSE   </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

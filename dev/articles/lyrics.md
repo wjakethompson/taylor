@@ -14,7 +14,7 @@ track_lyrics <- taylor_album_songs |>
   select(album_name, track_name, lyrics)
 
 track_lyrics
-#> # A tibble: 332 × 3
+#> # A tibble: 336 × 3
 #>    album_name   track_name                 lyrics           
 #>    <chr>        <chr>                      <list>           
 #>  1 Taylor Swift Tim McGraw                 <tibble [55 × 4]>
@@ -27,7 +27,7 @@ track_lyrics
 #>  8 Taylor Swift Stay Beautiful             <tibble [51 × 4]>
 #>  9 Taylor Swift Should've Said No          <tibble [44 × 4]>
 #> 10 Taylor Swift Mary's Song (Oh My My My)  <tibble [38 × 4]>
-#> # ℹ 322 more rows
+#> # ℹ 326 more rows
 ```
 
 In other words, both `taylor_all_songs` and `taylor_ablum_songs` are
@@ -76,7 +76,7 @@ library(tidyr)
 
 track_lyrics |>
   unnest(lyrics)
-#> # A tibble: 16,611 × 6
+#> # A tibble: 16,797 × 6
 #>    album_name   track_name  line lyric                    element element_artist
 #>    <chr>        <chr>      <int> <chr>                    <chr>   <chr>         
 #>  1 Taylor Swift Tim McGraw     1 "He said the way my blu… Verse 1 Taylor Swift  
@@ -89,7 +89,7 @@ track_lyrics |>
 #>  8 Taylor Swift Tim McGraw     8 "And then the time we w… Verse 1 Taylor Swift  
 #>  9 Taylor Swift Tim McGraw     9 "But when you think Tim… Chorus  Taylor Swift  
 #> 10 Taylor Swift Tim McGraw    10 "I hope you think my fa… Chorus  Taylor Swift  
-#> # ℹ 16,601 more rows
+#> # ℹ 16,787 more rows
 ```
 
 If we are interested in the lyrics for only a specific album or a

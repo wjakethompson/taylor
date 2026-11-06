@@ -21,3 +21,8 @@ Useful links:
 
 **Maintainer**: W. Jake Thompson <wjakethompson@gmail.com>
 ([ORCID](https://orcid.org/0000-0001-7339-0300)) \[copyright holder\]
+
+Authors:
+
+- W. Jake Thompson <wjakethompson@gmail.com>
+  ([ORCID](https://orcid.org/0000-0001-7339-0300)) \[copyright holder\]

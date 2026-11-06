@@ -68,6 +68,7 @@ get_reccobeats_audio_features(track_id)
 
 Other API access:
 [`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md),
+[`get_spotify_album_tracks()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_album_tracks.md),
 [`get_spotify_track_info()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_track_info.md)
 
 ## Examples

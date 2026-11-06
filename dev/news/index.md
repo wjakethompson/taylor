@@ -16,6 +16,12 @@
   converted to words with the english package (e.g., “22” becomes
   “twenty two”).
 
+- [`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md)
+  no longer errors when SoundStat returns `null` for an audio feature;
+  missing features are now returned as `NA`.
+
+- No longer depend on [spotifyr](https://github.com/charlie86/spotifyr).
+
 ## taylor 4.0.0
 
 CRAN release: 2026-02-10

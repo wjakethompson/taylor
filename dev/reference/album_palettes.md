@@ -19,9 +19,6 @@ A list of length 16. Each element contains a color palette for one of
 Taylor Swift's studio albums. The list elements are named according to
 the name of the album.
 
-An object of class `taylor_color_palette` (inherits from `vctrs_vctr`,
-`character`) of length 16.
-
 ## Source
 
 Colors derived from album covers using 'Colormind'.

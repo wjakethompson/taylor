@@ -16,7 +16,7 @@ taylor_album_songs
 
 `taylor_all_songs` is a
 [tibble](https://tibble.tidyverse.org/reference/tibble-package.html)
-with 384 rows and 26 variables. Each row is one song.
+with 389 rows and 26 variables. Each row is one song.
 
 - `album_name`: The name of the album. `NA` if the song was released
   separately from one of Taylor's studio albums or EPs.
@@ -118,7 +118,7 @@ SoundStat API data, and a list-column containing song lyrics.
 
 `taylor_album_songs` is a
 [tibble](https://tibble.tidyverse.org/reference/tibble-package.html)
-containing the same 26 variables, but only with 332 rows, one for each
+containing the same 26 variables, but only with 336 rows, one for each
 song from an official studio album (see Details).
 
 ## Source

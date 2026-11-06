@@ -84,6 +84,7 @@ To automatically perform these conversions, set `convert_values = TRUE`.
 
 Other API access:
 [`get_reccobeats_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_reccobeats_audio_features.md),
+[`get_spotify_album_tracks()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_album_tracks.md),
 [`get_spotify_track_info()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_track_info.md)
 
 ## Examples

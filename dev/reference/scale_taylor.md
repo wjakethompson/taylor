@@ -194,17 +194,17 @@ library(ggplot2)
 (p <- ggplot(taylor_album_songs, aes(x = valence, y = energy)) +
    geom_point(aes(color = mode_name), size = 2) +
    theme_bw())
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 
 p + scale_color_taylor_d()
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 
 
 # change scale label
 p + scale_fill_taylor_d("Mode of Track")
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 
 
@@ -223,14 +223,14 @@ p + scale_fill_taylor_d(album = "evermore")
 (p <- ggplot(taylor_album_songs, aes(valence, energy)) +
    geom_point(aes(color = danceability)) +
    theme_minimal())
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 
 p + scale_color_taylor_c(album = "Fearless")
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 
 p + scale_color_taylor_c(album = "folklore")
-#> Warning: Removed 9 rows containing missing values or values outside the scale range
+#> Warning: Removed 6 rows containing missing values or values outside the scale range
 #> (`geom_point()`).
 ```

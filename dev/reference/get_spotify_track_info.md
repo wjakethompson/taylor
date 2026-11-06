@@ -42,14 +42,16 @@ with track metadata, including:
 
 Other API access:
 [`get_reccobeats_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_reccobeats_audio_features.md),
-[`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md)
+[`get_soundstat_audio_features()`](https://taylor.wjakethompson.com/dev/reference/get_soundstat_audio_features.md),
+[`get_spotify_album_tracks()`](https://taylor.wjakethompson.com/dev/reference/get_spotify_album_tracks.md)
 
 ## Examples
 
 ``` r
 # So High School
 get_spotify_track_info(track_id = "7Mts0OfPorF4iwOomvfqn1")
-#> Request failed [401]. Retrying in 1 seconds...
-#> Request failed [401]. Retrying in 3.3 seconds...
-#> Error in spotifyr::get_track(track_id, authorization = api_key): Unauthorized (HTTP 401).
+#> # A tibble: 1 × 5
+#>   artist       featuring spotify_album                      duration_ms explicit
+#>   <chr>        <chr>     <chr>                                    <int> <lgl>   
+#> 1 Taylor Swift NA        THE TORTURED POETS DEPARTMENT: TH…      228800 FALSE   
 ```
